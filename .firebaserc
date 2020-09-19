@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "woozee-stock": {
+      "hosting": {
+        "woozee-stock": [
+          "woozee-stock"
+        ]
+      }
+    }
+  }
+}

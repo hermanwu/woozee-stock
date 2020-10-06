@@ -1,0 +1,10 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}

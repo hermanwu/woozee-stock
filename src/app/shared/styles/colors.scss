@@ -1,0 +1,76 @@
+// Neutral
+$white: #ffffff;
+$palette-neutral-1: #f6f6f8;
+$palette-neutral-2: #eeeff2;
+$palette-neutral-3: #e2e4e8;
+$palette-neutral-4: #cfd2d9;
+$palette-neutral-5: #a7afbe;
+$palette-neutral-6: #878fa0;
+$palette-neutral-7: #70798d;
+$palette-neutral-8: #49566f;
+$palette-neutral-9: #283654;
+$palette-neutral-10: #102041;
+
+$royal-blue-palette: (
+  50: #e9effc,
+  100: #cde1fe,
+  200: #95bdfe,
+  300: #4491fd,
+  400: #3875f0,
+  500: #215ede,
+  600: #194db8,
+  700: #12357d,
+  800: #0f2a61,
+  900: #0e234d,
+  A100: #cde1fe,
+  // dust-blue
+    A200: #95bdfe,
+  // baby-blue
+    A400: #3875f0,
+  // clear-blue
+    A700: #12357d,
+  // ribbon-blue
+    contrast:
+    (
+      50: $palette-neutral-10,
+      100: $palette-neutral-10,
+      200: $palette-neutral-10,
+      300: $palette-neutral-10,
+      400: $palette-neutral-10,
+      500: $white,
+      600: $white,
+      700: $white,
+      800: $white,
+      900: $white,
+      A100: $palette-neutral-10,
+      A200: $palette-neutral-10,
+      A400: $white,
+      A700: $white,
+    ),
+);
+
+// Blue
+$rock-blue: #e9effc;
+$dust-blue: #cde1fe;
+$baby-blue: #95bdfe;
+$sky-blue: #4491fd;
+$clear-blue: #306fef;
+$vibrant-blue: #215ede;
+$royal-blue: #194db8;
+$ribbon-blue: #12357d;
+$sapphire-blue: #0f2a61;
+$midnight-blue: #0e234d;
+
+// Red
+$spring-peach-red: #ffd2cc;
+$punch-red: #dc392d;
+$persian-red: #cb342a;
+$tabasco-red: #b42c22;
+
+// Green
+$emerald-green: #48b560;
+$chateau-green: #3fa656;
+$sea-green: #35944a;
+
+// Yellow
+$fire-yellow: #f89f2a;

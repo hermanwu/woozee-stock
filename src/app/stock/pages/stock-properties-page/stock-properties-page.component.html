@@ -1,0 +1,101 @@
+<div class="header">
+  <div class="image-container">
+    <img src="{{ stockAnalysis.images.logo }}" alt="logo" />
+  </div>
+
+  <div>
+    <h1>{{ stockTicker }}</h1>
+    <div>{{ stockAnalysis?.name?.English }}</div>
+    <div>{{ stockAnalysis?.name?.Chinese }}</div>
+  </div>
+
+  <div>
+    <button type="button" mat-raised-button color="primary" (click)="openAll()">
+      Open All
+    </button>
+  </div>
+</div>
+
+<div class="margin-top-20">
+  <mat-expansion-panel
+    [expanded]="isAllCardOpen"
+    (opened)="(true)"
+    (closed)="(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Technical
+      </mat-panel-title>
+      <mat-panel-description> </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-thoughts-display></app-thoughts-display>
+  </mat-expansion-panel>
+</div>
+
+<div class="margin-top-20">
+  <mat-expansion-panel
+    [expanded]="isAllCardOpen"
+    (opened)="(true)"
+    (closed)="(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Products
+      </mat-panel-title>
+      <mat-panel-description> </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-stock-products-list
+      [products]="stockAnalysis.products"
+    ></app-stock-products-list>
+  </mat-expansion-panel>
+</div>
+
+<div class="margin-top-20">
+  <mat-expansion-panel
+    [expanded]="isAllCardOpen"
+    (opened)="(true)"
+    (closed)="(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Fundamentals
+      </mat-panel-title>
+      <mat-panel-description> </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-fundamental-stats-display
+      [stockStats]="stockAnalysis.stats"
+    ></app-fundamental-stats-display>
+  </mat-expansion-panel>
+</div>
+
+<div class="margin-top-20">
+  <mat-expansion-panel
+    [expanded]="isAllCardOpen"
+    (opened)="(true)"
+    (closed)="(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        News
+      </mat-panel-title>
+      <mat-panel-description> </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-news-display></app-news-display>
+  </mat-expansion-panel>
+</div>
+
+<div class="margin-top-20">
+  <mat-expansion-panel
+    [expanded]="isAllCardOpen"
+    (opened)="(true)"
+    (closed)="(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Thoughts
+      </mat-panel-title>
+      <mat-panel-description> </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-thoughts-display></app-thoughts-display>
+  </mat-expansion-panel>
+</div>

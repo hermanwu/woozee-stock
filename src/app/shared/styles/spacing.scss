@@ -1,0 +1,54 @@
+// General spacing variables
+$spacing-none: 0px;
+$spacing-xx-small: 0.25rem; // 4px
+$spacing-x-small: 0.5rem; // 8px
+$spacing-small: 0.75rem; // 12px
+$spacing-medium: 1rem; // 16px
+$spacing-large: 1.5rem; // 24px
+$spacing-x-large: 2rem; // 32px
+$spacing-xx-large: 3rem; // 48px
+
+// Horizontal
+$var-spacing-horizontal-xx-small: 0.25rem; // 4px - between text and icons
+$var-spacing-horizontal-x-small: 0.5rem; // 8px - between buttons
+$var-spacing-horizontal-small: 0.75rem; // 12px
+$var-spacing-horizontal-medium: 1rem; // 16px
+$var-spacing-horizontal-large: 1.5rem; // 24px - between cards and sections
+$var-spacing-horizontal-x-large: 2rem; // 32px
+$var-spacing-horizontal-xx-large: 3rem; // 48px
+
+// Vertical
+$var-spacing-vertical-xx-small: 0.25rem; // 4px
+$var-spacing-vertical-x-small: 0.5rem; // 8px
+$var-spacing-vertical-small: 0.75rem; // 12px
+$var-spacing-vertical-medium: 1rem; // 16px
+$var-spacing-vertical-large: 1.5rem; // 24px
+$var-spacing-vertical-x-large: 2rem; // 32px
+
+.padding-none {
+  padding: 0 !important;
+}
+.padding-top-vertical-large {
+  padding-top: $var-spacing-vertical-large;
+}
+.padding-left-xx-small {
+  padding-left: $var-spacing-horizontal-xx-small;
+}
+.padding-left-x-small {
+  padding-left: $var-spacing-horizontal-x-small;
+}
+.padding-left-medium {
+  padding-left: $var-spacing-horizontal-medium;
+}
+
+.padding-left-right-x-small {
+  padding-left: $var-spacing-horizontal-x-small !important;
+  padding-right: $var-spacing-horizontal-x-small !important;
+}
+
+.padding-icon-text {
+  padding-left: $var-spacing-horizontal-xx-small;
+}
+.padding-icon-text-medium {
+  padding-left: $var-spacing-horizontal-medium;
+}

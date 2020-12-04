@@ -1,0 +1,29 @@
+<div>
+  <div class="margin-top-20" *ngFor="let type of sevenTypes">
+    <mat-expansion-panel [expanded]="isAllCardOpen" (opened)="(true)" (closed)="(false)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Technical
+        </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+        {{type}}
+
+        <div class="margin-top-20" *ngFor="let stock of stockMap[type]">
+          <mat-expansion-panel [expanded]="isAllCardOpen" (opened)="(true)" (closed)="(false)">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+              </mat-panel-title>
+              <mat-panel-description> </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div>
+              {{stock.ticker}}
+            </div>
+          </mat-expansion-panel>
+        </div>
+
+      </div>
+    </mat-expansion-panel>
+  </div>
+</div>

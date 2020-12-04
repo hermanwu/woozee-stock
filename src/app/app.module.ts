@@ -10,6 +10,7 @@ import { StockProductsListComponent } from './stock/molecules/stock-products-lis
 import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/thoughts-display.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
+import { HighGrowthIndustryComponent } from './high-growth-industry/high-growth-industry.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { StockPropertiesPageComponent } from './stock/pages/stock-properties-pag
     NewsDisplayComponent,
     FundamentalStatsDisplayComponent,
     StockProductsListComponent,
+    HighGrowthIndustryComponent,
   ],
   imports: [
     BrowserModule,

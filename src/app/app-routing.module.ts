@@ -2,18 +2,23 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
+import { HighGrowthIndustryComponent } from './high-growth-industry/high-growth-industry.component';
 
 const routes: Routes = [
   {
     path: 'stocks/:stockId',
     component: StockPropertiesPageComponent,
   },
+  {
+    path: 'industries',
+    component: HighGrowthIndustryComponent,
+  },
   { path: 'stocks', component: StockListPageComponent, pathMatch: 'full' },
-  { path: '**', redirectTo: 'stocks', pathMatch: 'full' },
+  { path: '**', redirectTo: 'industries', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

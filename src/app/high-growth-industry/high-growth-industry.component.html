@@ -1,29 +1,79 @@
 <div>
-  <div class="margin-top-20" *ngFor="let type of sevenTypes">
-    <mat-expansion-panel [expanded]="isAllCardOpen" (opened)="(true)" (closed)="(false)">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Technical
-        </mat-panel-title>
-        <mat-panel-description> </mat-panel-description>
-      </mat-expansion-panel-header>
-      <div>
-        {{type}}
+  <h1>七大科技公司 七大未来趋势</h1>
+  <h2>21支长期持有科技股组合</h2>
 
-        <div class="margin-top-20" *ngFor="let stock of stockMap[type]">
-          <mat-expansion-panel [expanded]="isAllCardOpen" (opened)="(true)" (closed)="(false)">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-              </mat-panel-title>
-              <mat-panel-description> </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div>
-              {{stock.ticker}}
-            </div>
-          </mat-expansion-panel>
-        </div>
-
-      </div>
-    </mat-expansion-panel>
+  <div class="expand-button">
+    <button mat-button (click)="isAllCardOpen = !isAllCardOpen">
+      展开全部
+    </button>
   </div>
+
+  <mat-accordion multi>
+    <mat-expansion-panel
+      [expanded]="isAllCardOpen"
+      (opened)="(true)"
+      (closed)="(false)"
+    >
+      <mat-expansion-panel-header> 适用人群 </mat-expansion-panel-header>
+      <ol>
+        <li>给不会或者不想选股投资的小白</li>
+        <li>给不想做选择的成年人--所有大的科技公司我都要</li>
+        <li>给愿意承担适度风险，投资未来的人</li>
+      </ol>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      [expanded]="isAllCardOpen"
+      (opened)="(true)"
+      (closed)="(false)"
+    >
+      <mat-expansion-panel-header> 选择原则 </mat-expansion-panel-header>
+      <ol>
+        <li>增长没有"天花板"的科技领域</li>
+        <li>可能或已经成为生活的“必需品”</li>
+        <li>人才向往的，富有创造力的公司</li>
+        <li>中美两个最大市场同时押宝</li>
+      </ol>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      [expanded]="isAllCardOpen"
+      (opened)="(true)"
+      (closed)="(false)"
+    >
+      <mat-expansion-panel-header> 七大板块 </mat-expansion-panel-header>
+
+      <mat-accordion multi>
+        <mat-expansion-panel
+          class="margin-top-20"
+          *ngFor="let type of sevenTypes"
+          [expanded]="isAllCardOpen"
+          (opened)="(true)"
+          (closed)="(false)"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title> {{ growthTypes[type].chinese }} </mat-panel-title>
+            <mat-panel-description> </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div>
+            <div class="margin-top-20" *ngFor="let stock of stockMap[type]">
+              <app-stock-display
+                [showStock]="isAllCardOpen"
+                [stock]="stock"
+              ></app-stock-display>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>结语</mat-expansion-panel-header>
+      <ul>
+        <li>欢迎提出意见或建议</li>
+        <li>点赞！订阅！打开小铃铛！</li>
+        <li>谢谢！！！</li>
+      </ul>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>

@@ -1,0 +1,18 @@
+<div *ngIf="showStock; else buyingReason">
+  <div>
+    Ticker 股票代码:
+    <strong class="float-right">{{ stock.ticker }}</strong>
+  </div>
+  <div>
+    公司名称:
+    <span class="float-right"> {{ stock.name }} {{ stock.chinese }}</span>
+  </div>
+
+  <mat-divider></mat-divider>
+</div>
+<ng-template #buyingReason>
+  <div class="flex-display">
+    <span>{{ stock.reason }}</span>
+    <button class="float-right" mat-button (click)="onShowStock()">显示</button>
+  </div>
+</ng-template>

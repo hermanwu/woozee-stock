@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Stock } from '../stock/models/stock.model';
-import { categories } from '../stock/mocks/categories.mock';
 import { GrowthType } from './growth.enum';
 
 @Component({
   selector: 'app-high-growth-industry',
   templateUrl: './high-growth-industry.component.html',
-  styleUrls: ['./high-growth-industry.component.scss']
+  styleUrls: ['./high-growth-industry.component.scss'],
 })
 export class HighGrowthIndustryComponent implements OnInit {
   isAllCardOpen = false;
@@ -19,123 +17,181 @@ export class HighGrowthIndustryComponent implements OnInit {
 
   growthTypes = {
     [GrowthType.HARDWARE]: {
-      chinese: '硬件设施'
+      chinese: '高精硬件',
     },
     [GrowthType.PRODUCTIVITY]: {
-      chinese: '生产力'
+      chinese: '生产效率',
     },
-    'logistics': {
-      chinese: '物流运输'
+    [GrowthType.LOGISTIC]: {
+      chinese: '物流运输',
     },
-    'fintech': {
-      chinese: '金融科技'
+    [GrowthType.FINTECH]: {
+      chinese: '金融科技',
     },
-    'ecommerce': {
-      chinese: '线上消费'
+    [GrowthType.ECOMMERCE]: {
+      chinese: '线上消费',
     },
-    'entertainment': {
-      chinese: '娱乐游戏'
+    [GrowthType.ENTERTAINMENT]: {
+      chinese: '娱乐游戏',
     },
-    'ad-platform': {
-      chinese: '广告平台'
-    }
-  }
+    [GrowthType.AD_PLATFORM]: {
+      chinese: '广告平台',
+    },
+  };
 
   stockArry = [
     // Hardware
     {
       ticker: 'AAPL',
-      category: GrowthType.HARDWARE
+      name: 'Apple',
+      chinese: '苹果',
+      reason: '巴菲特也投资的电子消费品',
+      category: GrowthType.HARDWARE,
     },
     {
       ticker: 'TSM',
-      category: GrowthType.HARDWARE
+      name: 'Taiwan Semiconductor Mfg. Co. Ltd.',
+      reason: '全球最大的电子半导体工厂',
+      chinese: '台积电',
+
+      category: GrowthType.HARDWARE,
     },
     {
       ticker: 'ASML',
-      category: GrowthType.HARDWARE
+      name: 'ASML Holding',
+      reason: '芯片制造的必需品',
+      chinese: '阿斯麦',
+      category: GrowthType.HARDWARE,
     },
     // Productivity
     {
       ticker: 'MSFT',
-      category: GrowthType.PRODUCTIVITY
+      name: 'Microsoft Corporation',
+      chinese: '微软',
+      reason: '云端办公生产力的必需品',
+      category: GrowthType.PRODUCTIVITY,
     },
     {
       ticker: 'ADBE',
-      category: GrowthType.PRODUCTIVITY
+      name: 'Adobe',
+      reason: '音影媒体产业人人都要会的软件',
+      category: GrowthType.PRODUCTIVITY,
     },
     {
       ticker: 'CRM',
-      category: GrowthType.PRODUCTIVITY
+      reason: '客户关系管理工具的代名词',
+      name: 'Salesforce',
+      category: GrowthType.PRODUCTIVITY,
     },
     // Logistic and Transportation.
     {
       ticker: 'TSLA',
-      category: GrowthType.LOGISTIC
+      name: 'Tesla',
+      reason: '最大的自动驾驶公司',
+      chinese: '特斯拉',
+      category: GrowthType.LOGISTIC,
     },
     {
       ticker: 'NIO',
-      category: GrowthType.LOGISTIC
+      chinese: '蔚来汽车',
+      reason: '中国电动车龙头',
+      category: GrowthType.LOGISTIC,
     },
     {
       ticker: 'UBER',
-      category: GrowthType.LOGISTIC
+      reason: '美国老百姓的物流工具',
+      chinese: '优步',
+
+      category: GrowthType.LOGISTIC,
     },
-    // Fin tech 
+    // Fin tech
     {
       ticker: 'BABA',
-      category: GrowthType.FINTECH
+      name: 'Alibaba',
+      reason: '最完整的金融生态链',
+      chinese: '阿里巴巴',
+      category: GrowthType.FINTECH,
     },
     {
       ticker: 'SQ',
-      category: GrowthType.FINTECH
+      reason: '最具创新力的金融公司',
+      name: 'Square',
+      category: GrowthType.FINTECH,
     },
     {
       ticker: 'PYPL',
-      category: GrowthType.FINTECH
+      name: 'Paypal',
+      reason: '网上电子支付的世界品牌',
+      chinese: '贝宝',
+      category: GrowthType.FINTECH,
     },
     // E commerce
     {
       ticker: 'AMZN',
-      category: GrowthType.ECOMMERCE
+      name: 'Amazon',
+      chinese: '亚马逊',
+      reason: '电子购物的代名词',
+      category: GrowthType.ECOMMERCE,
     },
     {
       ticker: 'JD',
-      category: GrowthType.ECOMMERCE
+      name: 'JD.com',
+      reason: '中国的亚马逊',
+      chinese: '京东',
+      category: GrowthType.ECOMMERCE,
     },
     {
       ticker: 'PDD',
-      category: GrowthType.ECOMMERCE
+      name: 'Pinduoduo, Inc',
+      chinese: '拼多多',
+      reason: '初生牛犊不怕虎的电商',
+      category: GrowthType.ECOMMERCE,
     },
     // Gaming and Entertainment
     {
       ticker: 'TCEHY',
-      category: GrowthType.ENTERTAINMENT
+      name: 'Tencent',
+      chinese: '腾讯',
+      reason: '神马游戏都要入股的爸爸',
+      category: GrowthType.ENTERTAINMENT,
     },
     {
       ticker: 'BILI',
-      category: GrowthType.ENTERTAINMENT
+      name: 'BiliBili',
+      chinese: '哔哩哔哩',
+      reason: '中国油管',
+      category: GrowthType.ENTERTAINMENT,
     },
     {
       ticker: 'U',
-      category: GrowthType.ENTERTAINMENT
+      name: 'Unity',
+      reason: '打造虚拟世界的必备工具',
+      category: GrowthType.ENTERTAINMENT,
     },
     // AD_PLATFORM.
     {
       ticker: 'GOOGL',
-      category: GrowthType.AD_PLATFORM
+      name: 'Alphabet / Google',
+      chinese: '谷歌',
+      reason: '最常用的最好用的搜索引擎',
+      category: GrowthType.AD_PLATFORM,
     },
     {
       ticker: 'FB',
-      category: GrowthType.AD_PLATFORM
+      name: 'Facebook',
+      chinese: '脸书',
+      reason: '最大化利用社交网络效应',
+      category: GrowthType.AD_PLATFORM,
     },
     {
       ticker: 'SNAP',
-      category: GrowthType.AD_PLATFORM
-    }
+      chinese: 'Snapchat',
+      reason: '年轻，有创造力的社交公司',
+      category: GrowthType.AD_PLATFORM,
+    },
   ];
 
-  constructor() { }
+  constructor() {}
 
   stockMap = {};
 

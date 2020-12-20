@@ -46,13 +46,15 @@
       <mat-accordion multi>
         <mat-expansion-panel
           class="margin-top-20"
-          *ngFor="let type of sevenTypes"
+          *ngFor="let type of sevenTypes; index as i"
           [expanded]="isAllCardOpen"
           (opened)="(true)"
           (closed)="(false)"
         >
           <mat-expansion-panel-header>
-            <mat-panel-title> {{ growthTypes[type].chinese }} </mat-panel-title>
+            <mat-panel-title>
+              {{ i + 1 }}. {{ growthTypes[type].chinese }}
+            </mat-panel-title>
             <mat-panel-description> </mat-panel-description>
           </mat-expansion-panel-header>
           <div>

@@ -45,13 +45,13 @@ export class HighGrowthIndustryComponent implements OnInit {
       ticker: 'AAPL',
       name: 'Apple',
       chinese: '苹果',
-      reason: '巴菲特也投资的电子消费品',
+      reason: '巴菲特也投资的电子产品',
       category: GrowthType.HARDWARE,
     },
     {
       ticker: 'TSM',
-      name: 'Taiwan Semiconductor Mfg. Co. Ltd.',
-      reason: '全球最大的电子半导体工厂',
+      name: 'Taiwan Semiconductor Mfg',
+      reason: '全球最大的半导体工厂',
       chinese: '台积电',
 
       category: GrowthType.HARDWARE,
@@ -68,13 +68,13 @@ export class HighGrowthIndustryComponent implements OnInit {
       ticker: 'MSFT',
       name: 'Microsoft Corporation',
       chinese: '微软',
-      reason: '云端办公生产力的必需品',
+      reason: '云端办公第一生产力',
       category: GrowthType.PRODUCTIVITY,
     },
     {
       ticker: 'ADBE',
       name: 'Adobe',
-      reason: '音影媒体产业人人都要会的软件',
+      reason: '音影产业人人都知道的软件',
       category: GrowthType.PRODUCTIVITY,
     },
     {
@@ -94,12 +94,12 @@ export class HighGrowthIndustryComponent implements OnInit {
     {
       ticker: 'NIO',
       chinese: '蔚来汽车',
-      reason: '中国电动车龙头',
+      reason: '中国电动车领导者',
       category: GrowthType.LOGISTIC,
     },
     {
       ticker: 'UBER',
-      reason: '美国老百姓的物流工具',
+      reason: '美国老百姓的日常物流',
       chinese: '优步',
 
       category: GrowthType.LOGISTIC,
@@ -108,7 +108,7 @@ export class HighGrowthIndustryComponent implements OnInit {
     {
       ticker: 'BABA',
       name: 'Alibaba',
-      reason: '最完整的金融生态链',
+      reason: '逼国家出手的金融公司',
       chinese: '阿里巴巴',
       category: GrowthType.FINTECH,
     },
@@ -121,7 +121,7 @@ export class HighGrowthIndustryComponent implements OnInit {
     {
       ticker: 'PYPL',
       name: 'Paypal',
-      reason: '网上电子支付的世界品牌',
+      reason: '网上支付的世界品牌',
       chinese: '贝宝',
       category: GrowthType.FINTECH,
     },
@@ -180,13 +180,13 @@ export class HighGrowthIndustryComponent implements OnInit {
       ticker: 'FB',
       name: 'Facebook',
       chinese: '脸书',
-      reason: '最大化利用社交网络效应',
+      reason: '比国家还大的社交网络',
       category: GrowthType.AD_PLATFORM,
     },
     {
       ticker: 'SNAP',
       chinese: 'Snapchat',
-      reason: '年轻，有创造力的社交公司',
+      reason: '年轻富有有创造力的社交公司',
       category: GrowthType.AD_PLATFORM,
     },
   ];

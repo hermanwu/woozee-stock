@@ -1,13 +1,13 @@
 export class MyScore {
-  trend: number;
-  technical: number;
-  ER: number;
-
+  vision: number;
+  painPoint: number;
   product: number;
-  team: number;
-  market: number;
-
-  value: number; // stats
-  dividend: number;
-  future: number;
+  customer: number;
+  businessModel: number;
+  advantage: number;
+  risk: number;
+  competitors: number;
+  trend: number;
+  marketPotential: number;
+  total: number;
 }

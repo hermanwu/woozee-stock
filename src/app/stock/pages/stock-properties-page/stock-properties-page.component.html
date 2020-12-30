@@ -1,18 +1,21 @@
 <div class="header">
   <div class="image-container">
-    <img src="{{ stockAnalysis.images.logo }}" alt="logo" />
+    <img src="{{ stockAnalysis.logo }}" alt="logo" />
   </div>
 
   <div>
-    <h1>{{ stockTicker }}</h1>
-    <div>{{ stockAnalysis?.name?.English }}</div>
-    <div>{{ stockAnalysis?.name?.Chinese }}</div>
+    <h1>{{ stockAnalysis?.name?.English }}</h1>
+    <h2>{{ stockAnalysis?.name?.Chinese }}</h2>
+    <div>Ticker: {{ stockAnalysis.ticker }}</div>
+    <ul>
+      <li *ngFor="let sentence of stockAnalysis.description">
+        {{ sentence }}
+      </li>
+    </ul>
   </div>
 
   <div>
-    <button type="button" mat-raised-button color="primary" (click)="openAll()">
-      Open All
-    </button>
+    <button type="button" mat-button (click)="openAll()">Open All</button>
   </div>
 </div>
 
@@ -23,15 +26,16 @@
     (closed)="(false)"
   >
     <mat-expansion-panel-header>
-      <mat-panel-title>
-        Technical
-      </mat-panel-title>
-      <mat-panel-description> </mat-panel-description>
+      <mat-panel-title> Vision 愿景</mat-panel-title>
     </mat-expansion-panel-header>
-    <app-thoughts-display></app-thoughts-display>
+    <ul>
+      <li *ngFor="let sentence of stockAnalysis.vision">
+        {{ sentence }}
+      </li>
+    </ul>
+    <div class="score-line">Score: {{ stockAnalysis.score.vision }} / 10</div>
   </mat-expansion-panel>
 </div>
-
 <div class="margin-top-20">
   <mat-expansion-panel
     [expanded]="isAllCardOpen"
@@ -39,14 +43,14 @@
     (closed)="(false)"
   >
     <mat-expansion-panel-header>
-      <mat-panel-title>
-        Products
-      </mat-panel-title>
+      <mat-panel-title> Products 产品 </mat-panel-title>
       <mat-panel-description> </mat-panel-description>
     </mat-expansion-panel-header>
     <app-stock-products-list
       [products]="stockAnalysis.products"
     ></app-stock-products-list>
+
+    <div class="score-line">Score: {{ stockAnalysis.score.product }} / 10</div>
   </mat-expansion-panel>
 </div>
 
@@ -57,14 +61,16 @@
     (closed)="(false)"
   >
     <mat-expansion-panel-header>
-      <mat-panel-title>
-        Fundamentals
-      </mat-panel-title>
-      <mat-panel-description> </mat-panel-description>
+      <mat-panel-title> Pain Point to Solve 解决痛点 </mat-panel-title>
     </mat-expansion-panel-header>
-    <app-fundamental-stats-display
-      [stockStats]="stockAnalysis.stats"
-    ></app-fundamental-stats-display>
+    <ul>
+      <li *ngFor="let sentence of stockAnalysis.painPoint">
+        {{ sentence }}
+      </li>
+    </ul>
+    <div class="score-line">
+      Score: {{ stockAnalysis.score.painPoint }} / 10
+    </div>
   </mat-expansion-panel>
 </div>
 
@@ -75,12 +81,15 @@
     (closed)="(false)"
   >
     <mat-expansion-panel-header>
-      <mat-panel-title>
-        News
-      </mat-panel-title>
-      <mat-panel-description> </mat-panel-description>
+      <mat-panel-title> Customers 用户</mat-panel-title>
     </mat-expansion-panel-header>
-    <app-news-display></app-news-display>
+    <ul>
+      <li *ngFor="let sentence of stockAnalysis.customers">
+        {{ sentence }}
+      </li>
+    </ul>
+
+    <div class="score-line">Score: {{ stockAnalysis.score.customer }} / 10</div>
   </mat-expansion-panel>
 </div>
 
@@ -91,11 +100,122 @@
     (closed)="(false)"
   >
     <mat-expansion-panel-header>
-      <mat-panel-title>
-        Thoughts
-      </mat-panel-title>
-      <mat-panel-description> </mat-panel-description>
+      <mat-panel-title> Business Model 商业模式 </mat-panel-title>
     </mat-expansion-panel-header>
-    <app-thoughts-display></app-thoughts-display>
+    <ul>
+      <li *ngFor="let sentence of stockAnalysis.businessModel">
+        {{ sentence }}
+      </li>
+    </ul>
+    <div class="score-line">
+      Score: {{ stockAnalysis.score.businessModel }} / 10
+    </div>
+  </mat-expansion-panel>
+</div>
+
+<div class="margin-top-20">
+  <mat-expansion-panel
+    [expanded]="isAllCardOpen"
+    (opened)="(true)"
+    (closed)="(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> Advantages 优势</mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul>
+      <li *ngFor="let sentence of stockAnalysis.advantage">
+        {{ sentence }}
+      </li>
+    </ul>
+    <div class="score-line">
+      Score: {{ stockAnalysis.score.advantage }} / 10
+    </div>
+  </mat-expansion-panel>
+</div>
+
+<div class="margin-top-20">
+  <mat-expansion-panel
+    [expanded]="isAllCardOpen"
+    (opened)="(true)"
+    (closed)="(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> Risks 风险 </mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul>
+      <li *ngFor="let sentence of stockAnalysis.risk">
+        {{ sentence }}
+      </li>
+    </ul>
+    <div class="score-line">Score: {{ stockAnalysis.score.risk }} / 10</div>
+  </mat-expansion-panel>
+</div>
+
+<div class="margin-top-20">
+  <mat-expansion-panel
+    [expanded]="isAllCardOpen"
+    (opened)="(true)"
+    (closed)="(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> Competitors 竞争对手</mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul>
+      <li *ngFor="let sentence of stockAnalysis.competitor">
+        {{ sentence }}
+      </li>
+    </ul>
+    <div class="score-line">
+      Score: {{ stockAnalysis.score.competitors }} / 10
+    </div>
+  </mat-expansion-panel>
+</div>
+
+<div class="margin-top-20">
+  <mat-expansion-panel
+    [expanded]="isAllCardOpen"
+    (opened)="(true)"
+    (closed)="(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> Market Cap Potential 市值天花板</mat-panel-title>
+    </mat-expansion-panel-header>
+    <div>Current: {{ stockAnalysis.predication?.marketCap[0] }}</div>
+    <div>Potential: {{ stockAnalysis.predication?.marketCap[1] }}</div>
+
+    <div class="score-line">
+      Score: {{ stockAnalysis.score.marketPotential }} / 10
+    </div>
+  </mat-expansion-panel>
+</div>
+
+<div class="margin-top-20">
+  <mat-expansion-panel
+    [expanded]="isAllCardOpen"
+    (opened)="(true)"
+    (closed)="(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> Trend 趋势</mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul>
+      <li *ngFor="let sentence of stockAnalysis.trend">
+        {{ sentence }}
+      </li>
+    </ul>
+    <div class="score-line">Score: {{ stockAnalysis.score.vision }} / 10</div>
+  </mat-expansion-panel>
+</div>
+
+<div class="margin-top-20">
+  <mat-expansion-panel
+    [expanded]="isAllCardOpen"
+    (opened)="(true)"
+    (closed)="(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> Final Score 我的评分</mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="score-line">Score: {{ stockAnalysis.score.total }} / 10</div>
   </mat-expansion-panel>
 </div>

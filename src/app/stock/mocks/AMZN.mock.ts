@@ -1,6 +1,4 @@
-import { StockAnalysis } from '../models/stock-analysis.model';
-
-export const AMZN: StockAnalysis = {
+export const AMZN = {
   images: {
     logo:
       'https://images-na.ssl-images-amazon.com/images/G/01/gc/designs/livepreview/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png',

@@ -1,6 +1,4 @@
-import { StockAnalysis } from '../models/stock-analysis.model';
-
-export const NIO: StockAnalysis = {
+export const NIO = {
   images: {
     logo:
       'https://lh3.googleusercontent.com/pw/ACtC-3dEyysKrE1fUvRVtEaFZvJPhvsXli4kawy6Pm_gg-KL5fDqPt3oCs4OepM2OFoD1P1awbxwv2dw4lI_R_KXOwQm2HmJmABVMNm1ymbNwhaOtAdB9OCC7qzhUc2LzaK0iVjwG-HZMKWHSwGluSmB84raUg=w678-h336-no?authuser=0',

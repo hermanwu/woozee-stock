@@ -1,6 +1,4 @@
-import { StockAnalysis } from '../models/stock-analysis.model';
-
-export const TSLA: StockAnalysis = {
+export const TSLA = {
   images: {
     logo: 'https://www.carlogos.org/car-logos/tesla-logo-2200x2800.png',
   },

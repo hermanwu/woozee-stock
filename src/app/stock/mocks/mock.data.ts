@@ -1,7 +1,7 @@
-import { StockAnalysis } from '../models/stock-analysis.model';
 import { AMZN } from './AMZN.mock';
 import { NIO } from './NIO.mock';
 import { PYPL } from './PYPL.mock';
+import { sq } from './SQ.mock';
 import { TSLA } from './TSLA.mock';
 
 export enum stockTickerEnum {
@@ -13,32 +13,7 @@ export const stockAnalysisMap = {
   NIO,
   TSLA,
   PYPL,
-};
-
-export const sq = {
-  name: {
-    English: 'Square',
-    Chinese: '亚马逊',
-  },
-  painPoint: {
-    新能源: '消除世界对于不可再生能源的依赖（由石油转向太阳能',
-    自动驾驶: '',
-  },
-  product: {
-    'point of sale': { urls: [] },
-    'cash app': '',
-  },
-  advantage: { CEO: {}, 'cash app': 'high growth' },
-  risk: {},
-  market: {},
-  strategy: {},
-  marketCap: {},
-  revenue: { growth: '40%' },
-  income: {},
-  pe: {},
-  competitor: {},
-  conclusion: {},
-  targetPrice: {},
+  sq,
 };
 
 export const chwy = {

@@ -1,6 +1,4 @@
-import { StockAnalysis } from '../models/stock-analysis.model';
-
-export const PYPL: StockAnalysis = {
+export const PYPL: any = {
   images: {
     logo:
       'https://www.paypalobjects.com/webstatic/mktg/logo-center/PP_Acceptance_Marks_for_LogoCenter_266x142.png',

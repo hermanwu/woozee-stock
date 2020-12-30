@@ -22,7 +22,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
       this.stockTicker = params[this.stockId];
-      this.stockAnalysis = stockAnalysisMap[this.stockTicker];
+      this.stockAnalysis = stockAnalysisMap[this.stockTicker.toLowerCase()];
     });
   }
 

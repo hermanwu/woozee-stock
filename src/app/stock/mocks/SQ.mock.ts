@@ -25,9 +25,9 @@ export const sq: StockAnalysis = {
   ],
   products: [
     {
-      description: 'Cash App',
+      description: 'Seller Hardware',
       imageLink:
-        'https://lh3.googleusercontent.com/pw/ACtC-3fVJX5-Zl1ifYAvvi2h738zhlGnorfNIh9Ji96wg01UQOKU3ZQe_KOsT46PNSOG4IzTA31FIzL6djsSHck6iaYNfk6AzmbjQhKJ4F1YkP6YxAqPFO48C4qdt2dB8nlR5J5AbsvlgqIM9v0qjmcblWFv=w1424-h1410-no?authuser=3',
+        'https://lh3.googleusercontent.com/pw/ACtC-3dFEaCbAtuTcfgj46vlVegVSIjkYFIkeUa_Jus5XYuvBkTHWT9t5g0WSAvsMWKQFdGCxfTCpCbUGs2pBZqn-cyIhfA1exNkqi4FUL88DoYpUB3f0DyRzOO0Li6AaoxWG1TfC5jpvxUiGmWIJ1GWMkzo=w1426-h886-no?authuser=3',
     },
     {
       description: 'Seller Software',
@@ -35,14 +35,14 @@ export const sq: StockAnalysis = {
         'https://lh3.googleusercontent.com/pw/ACtC-3c83es3kgcl6j8BtklhkCgpu_btX9DoBQkLKZRy9jS3OovKf8X4q3d9nKMLZmkYhzX4cielasUp3syJudVvB7F-g5ZGRWDHXQHPqqmHZ_gSgtUvrJ3uqGnKxvUhOz7Kn_6Wz7YdU1lXmB7EP-aJDz2i=w1564-h1466-no?authuser=3',
     },
     {
-      description: 'Seller Hardware',
+      description: 'Cash App',
       imageLink:
-        'https://lh3.googleusercontent.com/pw/ACtC-3dFEaCbAtuTcfgj46vlVegVSIjkYFIkeUa_Jus5XYuvBkTHWT9t5g0WSAvsMWKQFdGCxfTCpCbUGs2pBZqn-cyIhfA1exNkqi4FUL88DoYpUB3f0DyRzOO0Li6AaoxWG1TfC5jpvxUiGmWIJ1GWMkzo=w1426-h886-no?authuser=3',
+        'https://lh3.googleusercontent.com/pw/ACtC-3fVJX5-Zl1ifYAvvi2h738zhlGnorfNIh9Ji96wg01UQOKU3ZQe_KOsT46PNSOG4IzTA31FIzL6djsSHck6iaYNfk6AzmbjQhKJ4F1YkP6YxAqPFO48C4qdt2dB8nlR5J5AbsvlgqIM9v0qjmcblWFv=w1424-h1410-no?authuser=3',
     },
   ],
   customers: [
     'Logistic and customer relation management for small business owners.',
-    'Banking and financial services for individuals enjoy managing their wealth.',
+    'Banking and financial services for individuals that enjoy managing their wealth.',
   ],
   market: ['Banking and financial services'],
   businessModel: [

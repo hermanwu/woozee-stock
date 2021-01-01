@@ -1,19 +1,13 @@
-import { AMZN } from './AMZN.mock';
-import { NIO } from './NIO.mock';
-import { PYPL } from './PYPL.mock';
+import { pdd } from './PDD.mock';
 import { sq } from './SQ.mock';
-import { TSLA } from './TSLA.mock';
 
 export enum stockTickerEnum {
   AMZN = 'AMZN',
 }
 
 export const stockAnalysisMap = {
-  AMZN,
-  NIO,
-  TSLA,
-  PYPL,
   sq,
+  pdd,
 };
 
 export const chwy = {

@@ -9,7 +9,7 @@ export interface StockAnalysis {
   painPoint: string[]; // for market.
   products?: any[];
   customers?: string[];
-  market: string[];
+  market?: string[];
   ticker?: string;
 
   businessModel: string[]; // how to earn money.
@@ -21,10 +21,6 @@ export interface StockAnalysis {
   predication?: {
     marketCap: [string, string];
   };
-
-  conclusion: {
-    targetPrice: any;
-  };
   thoughts?: {
     hermanScore: number;
   };
@@ -35,4 +31,5 @@ export interface StockAnalysis {
     '2020-2': {};
   };
   score: MyScore;
+  lastUpdated?: Date;
 }

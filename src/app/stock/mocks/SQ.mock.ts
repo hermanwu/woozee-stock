@@ -73,10 +73,6 @@ export const sq: StockAnalysis = {
   predication: {
     marketCap: ['97B', '(50B + 10B + 250B + 350B) = 660B+'],
   },
-
-  conclusion: {
-    targetPrice: 2000,
-  },
   thoughts: {
     hermanScore: 1,
   },

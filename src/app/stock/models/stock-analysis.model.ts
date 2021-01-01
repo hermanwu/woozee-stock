@@ -1,4 +1,5 @@
 import { MyScore } from './herman-score.model';
+import { Note } from './note.model';
 import { StockStats } from './stock-stats.model';
 
 export interface StockAnalysis {
@@ -27,9 +28,11 @@ export interface StockAnalysis {
 
   trend?: string[];
   stats?: StockStats;
-  earningReports?: {
-    '2020-2': {};
-  };
+  earningReports?: any;
   score: MyScore;
   lastUpdated?: Date;
+  source?: any;
+
+  companyOfficialDocs?: Note[];
+  usefulVideos?: Note[];
 }

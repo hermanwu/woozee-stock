@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Stock } from '../../models/stock.model';
 
@@ -8,13 +8,7 @@ import { Stock } from '../../models/stock.model';
   styleUrls: ['./stock-list-page.component.scss'],
 })
 export class StockListPageComponent implements OnInit {
-  stockArray = [
-    { ticker: 'AMZN' },
-    { ticker: 'BABA' },
-    { ticker: 'TSLA' },
-    { ticker: 'NIO' },
-    { ticker: 'PYPL' },
-  ];
+  stockArray = [{ ticker: 'BILI' }, { ticker: 'PDD' }, { ticker: 'SQ' }];
   columnsToDisplay = ['ticker'];
   dataSource = new MatTableDataSource<Stock>();
 

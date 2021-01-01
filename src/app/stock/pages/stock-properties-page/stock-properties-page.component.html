@@ -7,17 +7,34 @@
     <h1>{{ stockAnalysis?.name?.English }}</h1>
     <h2>{{ stockAnalysis?.name?.Chinese }}</h2>
     <div>Ticker: {{ stockAnalysis.ticker }}</div>
-    <ul>
-      <li *ngFor="let sentence of stockAnalysis.description">
-        {{ sentence }}
-      </li>
-    </ul>
   </div>
 
   <div>
     <button type="button" mat-button (click)="openAll()">Open All</button>
   </div>
 </div>
+
+<div>
+  简介
+  <ul>
+    <li *ngFor="let sentence of stockAnalysis.description">
+      {{ sentence }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="stockAnalysis.companyOfficialDocs?.length">
+  官方文件链接
+  <ul>
+    <li *ngFor="let docs of stockAnalysis.companyOfficialDocs">
+      <div *ngFor="let link of docs.links">
+        <a target="_blank" href="{{ link }}">{{ docs.text }}</a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div></div>
 
 <div class="margin-top-20">
   <mat-expansion-panel
@@ -81,25 +98,6 @@
     (closed)="(false)"
   >
     <mat-expansion-panel-header>
-      <mat-panel-title> Customers 用户</mat-panel-title>
-    </mat-expansion-panel-header>
-    <ul>
-      <li *ngFor="let sentence of stockAnalysis.customers">
-        {{ sentence }}
-      </li>
-    </ul>
-
-    <div class="score-line">Score: {{ stockAnalysis.score.customer }} / 10</div>
-  </mat-expansion-panel>
-</div>
-
-<div class="margin-top-20">
-  <mat-expansion-panel
-    [expanded]="isAllCardOpen"
-    (opened)="(true)"
-    (closed)="(false)"
-  >
-    <mat-expansion-panel-header>
       <mat-panel-title> Business Model 商业模式 </mat-panel-title>
     </mat-expansion-panel-header>
     <ul>
@@ -110,6 +108,25 @@
     <div class="score-line">
       Score: {{ stockAnalysis.score.businessModel }} / 10
     </div>
+  </mat-expansion-panel>
+</div>
+
+<div class="margin-top-20">
+  <mat-expansion-panel
+    [expanded]="isAllCardOpen"
+    (opened)="(true)"
+    (closed)="(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> Customers 用户</mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul>
+      <li *ngFor="let sentence of stockAnalysis.customers">
+        {{ sentence }}
+      </li>
+    </ul>
+
+    <div class="score-line">Score: {{ stockAnalysis.score.customer }} / 10</div>
   </mat-expansion-panel>
 </div>
 
@@ -218,4 +235,15 @@
     </mat-expansion-panel-header>
     <div class="score-line">Score: {{ stockAnalysis.score.total }} / 100</div>
   </mat-expansion-panel>
+</div>
+
+<div class="margin-top-20" *ngIf="stockAnalysis.usefulVideos?.length">
+  有用的参考：（感谢以下材料的作者）
+  <ul>
+    <li *ngFor="let docs of stockAnalysis.usefulVideos">
+      <div *ngFor="let link of docs.links">
+        <a target="_blank" href="{{ link }}">{{ docs.text }}</a>
+      </div>
+    </li>
+  </ul>
 </div>

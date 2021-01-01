@@ -1,6 +1,4 @@
-import { StockAnalysis } from '../models/stock-analysis.model';
-
-export const pdd: StockAnalysis = {
+export const pddEnglish: StockAnalysis = {
   logo:
     'https://lh3.googleusercontent.com/pw/ACtC-3dmSbeD7O0Szd7qbdYHlCQ5G7J8WKR8DYGgAsbUxS5m_-Db-wTMdDVnzwd3Uqx0AxZjJqpX_NcuOZFDQlKZlYKQNnPh0ozR8AXVMHaUkbkZ8iFBnJzziuNiUoWaVxJ-8tyTjnwymFJ73ithN67jsHxV=w882-h736-no?authuser=3',
   name: {
@@ -9,10 +7,9 @@ export const pdd: StockAnalysis = {
   },
   ticker: 'PDD',
   description: [
-    '一个创新且发展迅速的“新电子商务”平台，可为购买者提供物有所值的商品以及有趣的交互式购物体验。',
-    '通过“ Pin”开创并普及了动态购物体验，“ Pin”是一种将社交体验与在线购物体验无缝集成的团队购买格式。',
-    '我们有意识地构建了一个类似于“虚拟市集”的平台，在该平台中，买家在相互交互的同时浏览并浏览了平台上的各种产品。',
-    '买家可以使用拼多多在流行的社交网络上分享产品信息，并邀请他们的朋友，家人和社交联系人一起购买，享受发现和购物的乐趣和兴奋，全面选择具有价值的产品。',
+    'Share product information on social networks and invite their friends, family and social contacts to purchase together',
+    'Infrastructure that seamlessly connects our platform with buyers and merchants and supports our business growth. ',
+    'Developing big data analytics, artificial intelligence and machine learning capabilities to help market place.',
   ],
   vision: [
     'Costco + Disney',
@@ -93,12 +90,6 @@ export const pdd: StockAnalysis = {
       text: '简介',
       links: [
         'https://pinduoduo.gcs-web.com/static-files/468b2c9f-9112-410d-84b3-2b22e07c7ee0',
-      ],
-    },
-    {
-      text: '更多信息',
-      links: [
-        'https://pinduoduo.gcs-web.com/static-files/afa5ca3e-247c-44a9-b05d-8e9e191f3119',
       ],
     },
   ],

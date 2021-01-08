@@ -8,6 +8,7 @@ export const NIO = {
     Chinese: '蔚来汽车',
   },
   description: [
+    'NIO设计于2014年11月开始， 在中国生产和销售高档电动汽车。 它的 车辆具有车辆连通性，自动驾驶 驾驶和人工智能。 它的首款量产车型ES8是一款7人座电动SUV， 在12月的NIO日活动上首次亮相 自2017年6月起，NIO已开始交付ES8。 2018年交付ES6（5人座电动SUV） 2019年6月。',
     'NIO Limited designs, manufactures, and sells electric vehicles',
     'The company offers five, six, and seven-seater electric SUVs.',
     'It is also involved in the provision of energy and service packages to its users',

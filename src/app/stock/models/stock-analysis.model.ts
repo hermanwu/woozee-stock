@@ -1,3 +1,4 @@
+import { News } from '../mocks/news.model';
 import { MyScore } from './herman-score.model';
 import { Note } from './note.model';
 import { StockStats } from './stock-stats.model';
@@ -29,10 +30,11 @@ export interface StockAnalysis {
   trend?: string[];
   stats?: StockStats;
   earningReports?: any;
-  score: MyScore;
+  score?: MyScore;
   lastUpdated?: Date;
   source?: any;
 
   companyOfficialDocs?: Note[];
   usefulVideos?: Note[];
+  news?: News[];
 }

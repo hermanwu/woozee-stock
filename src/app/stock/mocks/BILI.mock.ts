@@ -32,10 +32,10 @@ export const bili: StockAnalysis = {
     '开创了“子弹聊天”功能，实时评论功能，通过显示其他观看同一视频的观众的想法和感受，已经改变了观看体验',
   ],
   vision: [
-    '丰富中国年轻人的日常生活',
-    '成为探索中国年轻一代文化趋势和现象的目的地',
+    '使中国年轻人的日常生活更加丰富。',
+    '成为探索中国年轻一代文化趋势和现象的目的地。',
   ],
-  painPoint: ['分享创作的乐园', '二次元文化需求'],
+  painPoint: ['满足二次元文化需求', '提供一个分享创作的地方'],
   products: [
     {
       description: 'App',
@@ -47,8 +47,9 @@ export const bili: StockAnalysis = {
     'Z代，即1990年至2009年在中国出生的个人。他们通常接受高质量的教育，并且精通技术，对文化产品的需求旺盛，并具有自我表达和社会互动的途径',
   ],
   businessModel: [
-    '我们开创了“子弹聊天”功能，营造高度交互性和令人愉悦的观看体验，用户能够从与拥有相似志向和兴趣的其他用户的强烈情感纽带中受益。',
-    '我们充满活力的社区为不断增长的创意专业用户生成内容（PUGC）提供了动力,增强用户粘性。',
+    '开创了“子弹聊天”功能，营造高度交互性和令人愉悦的观看体验，用户能够有很强的社区感。',
+    '社区感刺激创作者生成跟多内容。',
+    '通过播放广告',
     '向多元化内容发展包括直播和移动游戏来变现。',
   ],
   advantage: [
@@ -89,9 +90,9 @@ export const bili: StockAnalysis = {
     margin: 0.3,
   },
   score: {
-    vision: 9,
+    vision: 7,
     painPoint: 8,
-    product: 10,
+    product: 8,
     customer: 8,
     businessModel: 8,
     advantage: 8,
@@ -102,4 +103,10 @@ export const bili: StockAnalysis = {
     total: 81,
   },
   source: ['https://www.youtube.com/watch?v=EZv-a0fneuQ'],
+  companyOfficialDocs: [
+    {
+      text: '股东网站',
+      links: ['https://ir.bilibili.com/investor-overview'],
+    },
+  ],
 };

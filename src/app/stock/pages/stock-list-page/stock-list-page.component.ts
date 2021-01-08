@@ -8,7 +8,13 @@ import { Stock } from '../../models/stock.model';
   styleUrls: ['./stock-list-page.component.scss'],
 })
 export class StockListPageComponent implements OnInit {
-  stockArray = [{ ticker: 'BILI' }, { ticker: 'PDD' }, { ticker: 'SQ' }];
+  stockArray = [
+    { ticker: 'BILI' },
+    { ticker: 'PDD' },
+    { ticker: 'SQ' },
+    { ticker: 'TSLA' },
+    { ticker: 'NIO' },
+  ];
   columnsToDisplay = ['ticker'];
   dataSource = new MatTableDataSource<Stock>();
 

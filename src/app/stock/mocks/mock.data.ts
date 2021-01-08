@@ -1,6 +1,7 @@
 import { bili } from './BILI.mock';
 import { pdd } from './PDD.mock';
 import { sq } from './SQ.mock';
+import { tsla } from './TSLA.mock';
 
 export enum stockTickerEnum {
   AMZN = 'AMZN',
@@ -10,6 +11,7 @@ export const stockAnalysisMap = {
   sq,
   pdd,
   bili,
+  tsla,
 };
 
 export const chwy = {

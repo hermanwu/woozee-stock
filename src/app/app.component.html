@@ -1,15 +1,26 @@
-<div class="disclaimer">
-  <p>
-    Disclaimer: The content on this website and YouTube videos are my own
-    personal opinions and for educational purposes only.
-  </p>
-  <p>Please LIKE and SUBSCRIBE, Thank you!</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <!-- <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button> -->
+    <h1>无极投资 WoozeeInvest</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="['/stocks']">Stocks 我的个股分析</a>
+      <a mat-button href="https://woozee-news.web.app">News 新闻</a>
+      <a mat-button href="https://woozee-about.web.app">About 关于我</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="main">
+  <router-outlet></router-outlet>
 </div>
 
-<router-outlet></router-outlet>
-
 <div class="disclaimer">
+  <p>如果喜欢，请点赞点阅。谢谢！</p>
   <p>Please LIKE and SUBSCRIBE, Thank you!</p>
+  <p>免责声明：本网站和YouTube视频上的内容是我个人的观点，仅用于教育目的。</p>
   <p>
     Disclaimer: The content on this website and YouTube videos are my own
     personal opinions and for educational purposes only.

@@ -5,18 +5,18 @@ import { StockStats } from './stock-stats.model';
 
 export interface StockAnalysis {
   logo: string;
-  name: any;
-  description: string[];
+  name?: any;
+  description?: string[];
   vision?: string[];
-  painPoint: string[]; // for market.
+  painPoint?: string[]; // for market.
   products?: any[];
   customers?: string[];
   market?: string[];
   ticker?: string;
 
-  businessModel: string[]; // how to earn money.
-  advantage: string[]; // over competitor
-  risk: string[];
+  businessModel?: string[]; // how to earn money.
+  advantage?: string[]; // over competitor
+  risk?: string[];
 
   competitor?: string[];
 

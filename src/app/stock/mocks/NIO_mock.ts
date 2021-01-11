@@ -9,6 +9,9 @@ export const NIO: StockAnalysis = {
   ],
 
   news: [
+    // {
+
+    // },
     {
       source: newsSource.OFFICIAL,
       title: '特斯拉2020年第四季度汽车生产和交付更新。',

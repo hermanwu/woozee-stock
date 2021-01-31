@@ -7,18 +7,29 @@ export interface StockAnalysis {
   logo: string;
   name?: any;
   description?: string[];
-  vision?: string[];
-  painPoint?: string[]; // for market.
+  ticker?: string;
+  ceoQuote?: string[];
+
+  // Facts.
   products?: any[];
   customers?: string[];
-  market?: string[];
-  ticker?: string;
+  competitor?: string[];
+  market?: string[]; // China, US, ETC
+
+  valueAndVision?: string[];
 
   businessModel?: string[]; // how to earn money.
-  advantage?: string[]; // over competitor
+
+  moat?: string[]; // As company grows, what moat
+  differentiator?: string[];
+
   risk?: string[];
 
-  competitor?: string[];
+  // TO REMOVE
+
+  vision?: string[];
+  painPoint?: string[]; // for market.
+  advantage?: string[]; // over competitor
 
   predication?: {
     marketCap: [string, string];

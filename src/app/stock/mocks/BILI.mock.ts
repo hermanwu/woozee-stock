@@ -34,6 +34,7 @@ export const bili: StockAnalysis = {
   vision: [
     '使中国年轻人的日常生活更加丰富。',
     '成为探索中国年轻一代文化趋势和现象的目的地。',
+    '亚文化会成为主流文化',
   ],
   painPoint: ['满足二次元文化需求', '提供一个分享创作的地方'],
   products: [
@@ -108,5 +109,8 @@ export const bili: StockAnalysis = {
       text: '股东网站',
       links: ['https://ir.bilibili.com/investor-overview'],
     },
+  ],
+  ceoQuote: [
+    '有一天我们将看到中国的原创动画、游戏在全世界受到欢迎。我们将看到世界各国的网民为中国人的文化创意赞叹不已。',
   ],
 };

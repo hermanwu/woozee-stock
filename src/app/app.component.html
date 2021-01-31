@@ -1,17 +1,4 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <!-- <button mat-icon-button>
-      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-    </button> -->
-    <h1>无极投资 WoozeeInvest</h1>
-    <span class="menu-spacer"></span>
-    <div>
-      <a mat-button [routerLink]="['/stocks']">Stocks 我的个股分析</a>
-      <a mat-button href="https://woozee-news.web.app">News 新闻</a>
-      <a mat-button href="https://woozee-about.web.app">About 关于我</a>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+<woozee-top-bar></woozee-top-bar>
 
 <!-- Creates a layout with a left and right sidenav and implicit content. -->
 <mat-sidenav-container>

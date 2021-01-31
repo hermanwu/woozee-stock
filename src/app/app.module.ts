@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WoozeeLibModule } from 'woozee-lib';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MistakesComponent } from './blog/mistakes/mistakes.component';
@@ -32,6 +33,7 @@ import { StockPropertiesPageComponent } from './stock/pages/stock-properties-pag
     AppRoutingModule,
     AppMaterialModule,
     BrowserAnimationsModule,
+    WoozeeLibModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,24 +1,8 @@
 <woozee-top-bar></woozee-top-bar>
 
-<!-- Creates a layout with a left and right sidenav and implicit content. -->
-<mat-sidenav-container>
-  <mat-sidenav mode="side" opened="true">
-    <mat-nav-list>
-      <mat-list-item [routerLink]="['stocks']">
-        <a>观察仓</a>
-      </mat-list-item>
-      <mat-list-item [routerLink]="['industries']">
-        <a>趋势预测</a>
-      </mat-list-item>
-      <mat-list-item disabled>
-        <a>股价预测</a>
-      </mat-list-item>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet> </router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<woozee-side-nav [routeList]="routes"
+  ><router-outlet></router-outlet
+></woozee-side-nav>
 
 <div class="disclaimer">
   <p>如果喜欢，请点赞点阅。谢谢！</p>

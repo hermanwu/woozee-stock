@@ -14,6 +14,8 @@ import { StockProductsListComponent } from './stock/molecules/stock-products-lis
 import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/thoughts-display.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
+import { TrendComponent } from './trend/trend.component';
+import { TrendIndustriesComponent } from './trend-industries/trend-industries.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { StockPropertiesPageComponent } from './stock/pages/stock-properties-pag
     HighGrowthIndustryComponent,
     MistakesComponent,
     StockDisplayComponent,
+    TrendComponent,
+    TrendIndustriesComponent,
   ],
   imports: [
     BrowserModule,

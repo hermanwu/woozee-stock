@@ -17,9 +17,6 @@ export const foreverOwnStocks = {
   MSFT: {
     position: 251,
   },
-  NFLX: {
-    position: 17,
-  },
   BABA: {
     position: 232,
   },
@@ -29,7 +26,13 @@ export const foreverOwnStocks = {
   TSLA: {
     position: 40,
   },
+  ABNB: {
+    position: 40,
+  },
+  BILI: {
+    position: 40,
+  },
   NIO: {
-    position: '750 (schwab only) + 100 (meilon)',
+    position: 40,
   },
 };

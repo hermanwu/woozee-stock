@@ -5,6 +5,8 @@ import { WoozeeLibModule } from 'woozee-lib';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MistakesComponent } from './blog/mistakes/mistakes.component';
+import { FomoStocksComponent } from './fomo-stocks/fomo-stocks.component';
+import { ForeverOwnStocksPanelComponent } from './forever-own-stocks-panel/forever-own-stocks-panel.component';
 import { HighGrowthIndustryComponent } from './high-growth-industry/high-growth-industry.component';
 import { AppMaterialModule } from './shared/styles/app-material.module';
 import { StockDisplayComponent } from './stock-display/stock-display.component';
@@ -14,8 +16,9 @@ import { StockProductsListComponent } from './stock/molecules/stock-products-lis
 import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/thoughts-display.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
-import { TrendComponent } from './trend/trend.component';
+import { TenXStocksComponent } from './ten-x-stocks/ten-x-stocks.component';
 import { TrendIndustriesComponent } from './trend-industries/trend-industries.component';
+import { TrendComponent } from './trend/trend.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { TrendIndustriesComponent } from './trend-industries/trend-industries.co
     StockDisplayComponent,
     TrendComponent,
     TrendIndustriesComponent,
+    TenXStocksComponent,
+    FomoStocksComponent,
+    ForeverOwnStocksPanelComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,8 +14,24 @@ export class AppComponent {
       route: 'stocks',
     },
     {
-      name: '产业',
-      route: '/industries',
+      name: '7大领域',
+      route: 'industries',
+    },
+    {
+      name: '永久好生意',
+      route: 'forever-own',
+    },
+    {
+      name: '风口投资',
+      route: 'trend',
+    },
+    {
+      name: '10倍投资',
+      route: '10-x',
+    },
+    {
+      name: 'FOMO投资',
+      route: 'fomo',
     },
   ];
 }

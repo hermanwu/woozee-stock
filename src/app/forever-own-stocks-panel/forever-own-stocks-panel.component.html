@@ -1,0 +1,8 @@
+<div>
+  <p>在可预见未来里，永远不会被淘汰的行业。 触及多个领域。</p>
+  <p>年营收增长在20%+</p>
+</div>
+
+<div *ngFor="let stock of stocks | keyvalue">
+  {{ stock.key }}: {{ stock.value.position }}
+</div>

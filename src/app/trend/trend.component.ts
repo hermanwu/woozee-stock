@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-trend',
   templateUrl: './trend.component.html',
-  styleUrls: ['./trend.component.scss']
+  styleUrls: ['./trend.component.scss'],
 })
 export class TrendComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

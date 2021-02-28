@@ -1,17 +1,5 @@
 <mat-toolbar color="white">
-  <mat-toolbar-row><h1>我的观察仓</h1></mat-toolbar-row>
+  <mat-toolbar-row><h1>持仓一览</h1></mat-toolbar-row>
 </mat-toolbar>
 
-<table mat-table [dataSource]="dataSource">
-  <ng-container matColumnDef="ticker">
-    <th mat-header-cell *matHeaderCellDef>Ticker</th>
-    <td mat-cell *matCellDef="let stock">
-      <a [routerLink]="['/stocks', stock.ticker]" class="margin-left-20">
-        {{ stock.ticker }}
-      </a>
-    </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-  <tr mat-row *matRowDef="let stock; columns: columnsToDisplay"></tr>
-</table>
+<woozee-stock-list-table [stocks]="stocks"></woozee-stock-list-table>

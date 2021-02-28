@@ -1,13 +1,3 @@
-.disclaimer {
-  display: grid;
-  grid-template-columns: 1fr;
-
-  > p {
-    display: flex;
-    justify-content: center;
-  }
-}
-
 .main {
   display: block;
   margin: 20px auto;

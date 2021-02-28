@@ -10,15 +10,15 @@ export class AppComponent {
 
   routes = [
     {
-      name: '自选股排名',
+      name: '持仓一览',
       route: 'stocks',
     },
     {
-      name: '7大领域',
+      name: '行业推荐',
       route: 'industries',
     },
     {
-      name: '永久好生意',
+      name: '放心投资',
       route: 'forever-own',
     },
     {
@@ -26,12 +26,8 @@ export class AppComponent {
       route: 'trend',
     },
     {
-      name: '10倍投资',
+      name: '10倍成长',
       route: '10-x',
-    },
-    {
-      name: 'FOMO投资',
-      route: 'fomo',
     },
   ];
 }

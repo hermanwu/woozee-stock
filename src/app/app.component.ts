@@ -14,7 +14,7 @@ export class AppComponent {
       route: 'stocks',
     },
     {
-      name: '行业推荐',
+      name: '组合推荐',
       route: 'industries',
     },
     {
@@ -22,7 +22,7 @@ export class AppComponent {
       route: 'forever-own',
     },
     {
-      name: '风口投资',
+      name: '风口',
       route: 'trend',
     },
     {

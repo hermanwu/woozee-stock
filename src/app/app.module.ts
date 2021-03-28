@@ -12,6 +12,7 @@ import { AppMaterialModule } from './shared/styles/app-material.module';
 import { StockDisplayComponent } from './stock-display/stock-display.component';
 import { FundamentalStatsDisplayComponent } from './stock/molecules/fundamental-stats-display/fundamental-stats-display.component';
 import { NewsDisplayComponent } from './stock/molecules/news-display/news-display.component';
+import { StockListTableComponent } from './stock/molecules/stock-list-table/stock-list-table.component';
 import { StockProductsListComponent } from './stock/molecules/stock-products-list/stock-products-list.component';
 import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/thoughts-display.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
@@ -37,6 +38,7 @@ import { TrendComponent } from './trend/trend.component';
     TenXStocksComponent,
     FomoStocksComponent,
     ForeverOwnStocksPanelComponent,
+    StockListTableComponent,
   ],
   imports: [
     BrowserModule,

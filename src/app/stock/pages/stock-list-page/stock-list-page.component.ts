@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { BOA } from 'src/app/accounts/ mock-data/boa-account';
 import { citi } from 'src/app/accounts/ mock-data/citi-account';
+import { hermanIbAccount } from 'src/app/accounts/ mock-data/herman-ib-account';
+import { jessicaPaypal } from 'src/app/accounts/ mock-data/jessica-paypal-account';
+import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
 import { schwab } from 'src/app/accounts/ mock-data/schwab-account';
 import { webull } from 'src/app/accounts/ mock-data/webull-jessica-account';
 import { myStockList, Stock } from 'woozee-lib';
@@ -18,7 +21,15 @@ export interface Equity {
 export class StockListPageComponent implements OnInit {
   readonly stockInfo = myStockList;
 
-  equities: Equity[] = [...citi, ...BOA, ...schwab, ...webull];
+  equities: Equity[] = [
+    ...citi,
+    ...BOA,
+    ...schwab,
+    ...hermanIbAccount,
+    ...webull,
+    ...jessicaPaypal,
+    ...meilongIbAccount,
+  ];
   equitySummaryMap = this.generateEquitySummaryMap(this.equities);
   stocks = [];
 

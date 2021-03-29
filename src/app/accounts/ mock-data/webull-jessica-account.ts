@@ -11,7 +11,7 @@ export const webull: Equity[] = [
   },
   {
     ticker: 'ARKF',
-    shares: 40,
+    shares: 11,
   },
   {
     ticker: 'ARKG',
@@ -23,11 +23,11 @@ export const webull: Equity[] = [
   },
   {
     ticker: 'ARKQ',
-    shares: 12,
+    shares: 8,
   },
   {
     ticker: 'ARKW',
-    shares: 52,
+    shares: 47,
   },
   {
     ticker: 'BILI',

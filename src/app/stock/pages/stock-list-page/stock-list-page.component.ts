@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { BOA } from 'src/app/accounts/ mock-data/boa-account';
-import { citi } from 'src/app/accounts/ mock-data/citi-account';
+import { BOA } from 'src/app/accounts/ mock-data/herman-boa-account';
+import { citi } from 'src/app/accounts/ mock-data/herman-citi-account';
+import { hermanFutu } from 'src/app/accounts/ mock-data/herman-futu';
 import { hermanIbAccount } from 'src/app/accounts/ mock-data/herman-ib-account';
+import { schwab } from 'src/app/accounts/ mock-data/herman-schwab-account';
 import { jessicaPaypal } from 'src/app/accounts/ mock-data/jessica-paypal-account';
+import { webull } from 'src/app/accounts/ mock-data/jessica-wubu-account';
 import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
-import { schwab } from 'src/app/accounts/ mock-data/schwab-account';
-import { webull } from 'src/app/accounts/ mock-data/webull-jessica-account';
 import { myStockList, Stock } from 'woozee-lib';
 
 export interface Equity {
@@ -26,8 +27,11 @@ export class StockListPageComponent implements OnInit {
     ...BOA,
     ...schwab,
     ...hermanIbAccount,
+    ...hermanFutu,
+
     ...webull,
     ...jessicaPaypal,
+
     ...meilongIbAccount,
   ];
   equitySummaryMap = this.generateEquitySummaryMap(this.equities);

@@ -11,9 +11,6 @@ export const foreverOwnStocks = {
   GOOGL: {
     position: 86,
   },
-  FB: {
-    position: 137,
-  },
   MSFT: {
     position: 251,
   },
@@ -24,15 +21,6 @@ export const foreverOwnStocks = {
     position: 1411,
   },
   TSLA: {
-    position: 40,
-  },
-  ABNB: {
-    position: 40,
-  },
-  BILI: {
-    position: 40,
-  },
-  NIO: {
     position: 40,
   },
 };

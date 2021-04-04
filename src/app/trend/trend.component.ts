@@ -53,6 +53,7 @@ export class TrendComponent {
     };
   };
 
+  featureToggle = false;
   treeControl = new FlatTreeControl<ExampleFlatNode>(
     (node) => node.level,
     (node) => node.expandable

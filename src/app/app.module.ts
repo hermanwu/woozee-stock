@@ -17,7 +17,6 @@ import { StockProductsListComponent } from './stock/molecules/stock-products-lis
 import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/thoughts-display.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
-import { TenXStocksComponent } from './ten-x-stocks/ten-x-stocks.component';
 import { TrendIndustriesComponent } from './trend-industries/trend-industries.component';
 import { TrendComponent } from './trend/trend.component';
 
@@ -35,7 +34,6 @@ import { TrendComponent } from './trend/trend.component';
     StockDisplayComponent,
     TrendComponent,
     TrendIndustriesComponent,
-    TenXStocksComponent,
     FomoStocksComponent,
     ForeverOwnStocksPanelComponent,
     StockListTableComponent,

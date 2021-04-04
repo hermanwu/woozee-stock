@@ -5,7 +5,6 @@ import { ForeverOwnStocksPanelComponent } from './forever-own-stocks-panel/forev
 import { HighGrowthIndustryComponent } from './high-growth-industry/high-growth-industry.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
-import { TenXStocksComponent } from './ten-x-stocks/ten-x-stocks.component';
 import { TrendComponent } from './trend/trend.component';
 
 const routes: Routes = [
@@ -30,7 +29,6 @@ const routes: Routes = [
     component: TrendComponent,
   },
   { path: 'stocks', component: StockListPageComponent, pathMatch: 'full' },
-  { path: '10-x', component: TenXStocksComponent },
   { path: '**', redirectTo: 'stocks', pathMatch: 'full' },
 ];
 

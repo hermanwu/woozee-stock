@@ -14,20 +14,16 @@ export class AppComponent {
       route: 'stocks',
     },
     {
-      name: '组合推荐',
+      name: '科技成长',
       route: 'industries',
     },
     {
-      name: '放心投资',
+      name: '长持复利',
       route: 'forever-own',
     },
     {
       name: '风口',
       route: 'trend',
-    },
-    {
-      name: '10倍成长',
-      route: '10-x',
     },
   ];
 }

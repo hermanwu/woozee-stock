@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="featureToggle">
   <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
     <!-- This is the tree node template for leaf nodes -->
     <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
@@ -24,6 +24,7 @@
     </mat-tree-node>
   </mat-tree>
 </div>
+
 <div>
   <h1>风口行业</h1>
   <h2>电动车</h2>
@@ -68,6 +69,8 @@
   <h2>数据分析</h2>
   <p>DT, ESTC, HUBS, MDB,</p>
 </div>
+
+<mat-divider></mat-divider>
 
 <div>
   <h1>风口股票</h1>

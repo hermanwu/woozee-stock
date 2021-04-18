@@ -23,15 +23,18 @@ export class StockListPageComponent implements OnInit {
   readonly stockInfo = myStockList;
 
   equities: Equity[] = [
+    // My account
     ...citi,
     ...BOA,
     ...schwab,
     ...hermanIbAccount,
     ...hermanFutu,
 
+    // Jessica Account.
     ...webull,
     ...jessicaPaypal,
 
+    // Mei long Account
     ...meilongIbAccount,
   ];
   equitySummaryMap = this.generateEquitySummaryMap(this.equities);
@@ -85,6 +88,7 @@ export class StockListPageComponent implements OnInit {
         shares: equitySummaryMap[key],
         name: stockMap[key]?.name,
         chineseName: stockMap[key]?.chineseName,
+        categories: stockMap[key]?.trends,
       });
     }
 

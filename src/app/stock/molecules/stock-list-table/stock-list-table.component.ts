@@ -20,7 +20,13 @@ export class StockListTableComponent
 
   @Input() stocks: any[];
 
-  readonly columnsToDisplay = ['ticker', 'name', 'chinese-name', 'shares'];
+  readonly columnsToDisplay = [
+    'ticker',
+    'name',
+    'chinese-name',
+    'shares',
+    'categories',
+  ];
 
   dataSource = new MatTableDataSource<any>();
 

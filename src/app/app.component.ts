@@ -10,20 +10,20 @@ export class AppComponent {
 
   routes = [
     {
-      name: '持仓一览',
+      name: '股票',
       route: 'stocks',
     },
-    {
-      name: '科技成长',
-      route: 'industries',
-    },
-    {
-      name: '长持复利',
-      route: 'forever-own',
-    },
-    {
-      name: '风口',
-      route: 'trend',
-    },
+    // {
+    //   name: '科技成长',
+    //   route: 'industries',
+    // },
+    // {
+    //   name: '长持复利',
+    //   route: 'forever-own',
+    // },
+    // {
+    //   name: '风口',
+    //   route: 'trend',
+    // },
   ];
 }

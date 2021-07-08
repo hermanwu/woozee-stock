@@ -25,7 +25,6 @@
             "aot": true,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "./node_modules/woozee-lib/material-overrides.css",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
@@ -89,7 +88,6 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "./node_modules/woozee-lib/material-overrides.css",
               "src/styles.scss"
             ],
             "scripts": []

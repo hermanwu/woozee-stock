@@ -1,4 +1,5 @@
 export const AMZN = {
+  ticker: 'AMZN',
   images: {
     logo:
       'https://images-na.ssl-images-amazon.com/images/G/01/gc/designs/livepreview/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png',
@@ -16,6 +17,20 @@ export const AMZN = {
     PS: 16.6,
     quickRatio: 1.1,
     currentRatio: 1.2,
+  },
+  earnings: {
+    2021: {
+      2: {
+        revenue: 113080,
+        operatingIncome: 7702,
+      },
+    },
+    2020: {
+      2: {
+        revenue: 88912,
+        operatingIncome: 5843,
+      },
+    },
   },
   products: [
     {

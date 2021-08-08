@@ -24,8 +24,15 @@ export class StockListTableComponent
     'ticker',
     'name',
     'chinese-name',
-    'shares',
-    'categories',
+    // 'shares',
+    // 'categories',
+    '2020SecondQuarterRevenue',
+    '2021SecondQuarterRevenue',
+    'revenue-increase',
+
+    '2020SecondOperatingIncome',
+    '2021SecondOperatingIncome',
+    'operatingIncomeIncrease',
   ];
 
   dataSource = new MatTableDataSource<any>();

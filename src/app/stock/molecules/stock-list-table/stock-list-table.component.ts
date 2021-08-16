@@ -32,7 +32,11 @@ export class StockListTableComponent
 
     '2020SecondOperatingIncome',
     '2021SecondOperatingIncome',
+
+    'latestQuarterMarketCap',
+
     'operatingIncomeIncrease',
+    'form10Q',
   ];
 
   dataSource = new MatTableDataSource<any>();

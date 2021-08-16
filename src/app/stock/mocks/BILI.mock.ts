@@ -8,7 +8,7 @@ export const bili: StockAnalysis = {
     Chinese: '哔哩哔哩',
   },
   ticker: 'BILI',
-  earningReports: [
+  earnings: [
     {
       '2020-11-18': [
         '平均每月活跃用户（MAU）达到1.972亿，移动MAU达到1.835亿，分别比2019年同期增长54％和61％。',
@@ -25,6 +25,7 @@ export const bili: StockAnalysis = {
       ],
     },
   ],
+  marketCap: {},
   description: [
     '丰富年轻一代生活的线上娱乐网站',
     '从受到动漫，漫画和游戏（ACG）启发的内容社区发展成为一个涵盖众多领域的全范围在线娱乐世界流派和媒体格式，包括视频，直播和手机游戏',

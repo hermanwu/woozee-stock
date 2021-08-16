@@ -203,6 +203,5 @@ export class HighGrowthIndustryComponent implements OnInit {
         this.stockMap[stock.category] = [stock];
       }
     }
-    console.log(this.stockMap);
   }
 }

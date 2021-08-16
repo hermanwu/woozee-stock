@@ -20,3 +20,5 @@ export enum ShortTermTrend {
   'FED unlimited QE',
   'US Election',
 }
+
+export type Trend = LongTermTrend | MidTermTrend | ShortTermTrend;

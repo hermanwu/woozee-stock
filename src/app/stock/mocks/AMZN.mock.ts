@@ -21,14 +21,17 @@ export const AMZN = {
   earnings: {
     2021: {
       2: {
-        revenue: 113080,
-        operatingIncome: 7702,
+        marketCap: 1.67e12,
+        revenue: 113080e6,
+        operatingIncome: 7702e6,
+        unit: 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 88912,
-        operatingIncome: 5843,
+        revenue: 88912e6,
+        operatingIncome: 5843e6,
+        unit: 1e6,
       },
     },
   },

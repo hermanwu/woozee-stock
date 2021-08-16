@@ -8,6 +8,7 @@ import { MistakesComponent } from './blog/mistakes/mistakes.component';
 import { FomoStocksComponent } from './fomo-stocks/fomo-stocks.component';
 import { ForeverOwnStocksPanelComponent } from './forever-own-stocks-panel/forever-own-stocks-panel.component';
 import { HighGrowthIndustryComponent } from './high-growth-industry/high-growth-industry.component';
+import { IopsPipeModule } from './shared/pipes/iops/iops-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
 import { StockDisplayComponent } from './stock-display/stock-display.component';
 import { FundamentalStatsDisplayComponent } from './stock/molecules/fundamental-stats-display/fundamental-stats-display.component';
@@ -44,6 +45,7 @@ import { TrendComponent } from './trend/trend.component';
     AppMaterialModule,
     BrowserAnimationsModule,
     WoozeeLibModule,
+    IopsPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -25,11 +25,15 @@
 
   <ng-container matColumnDef="2020SecondQuarterRevenue">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>2020第2季度收入</th>
-    <td mat-cell *matCellDef="let stock">{{ stock.lastQuarterRevenue }}</td>
+    <td mat-cell *matCellDef="let stock">
+      {{ stock.lastQuarterRevenue | unit: 2 }}
+    </td>
   </ng-container>
   <ng-container matColumnDef="2021SecondQuarterRevenue">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>2021第2季度收入</th>
-    <td mat-cell *matCellDef="let stock">{{ stock.currentQuarterRevenue }}</td>
+    <td mat-cell *matCellDef="let stock">
+      {{ stock.currentQuarterRevenue | unit: 2 }}
+    </td>
   </ng-container>
   <ng-container matColumnDef="revenue-increase">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>收入增幅</th>
@@ -46,7 +50,7 @@
       2020第2季度营业利润
     </th>
     <td mat-cell *matCellDef="let stock">
-      {{ stock.lastQuarterOperatingIncome }}
+      {{ stock.lastQuarterOperatingIncome | unit: 2 }}
     </td>
   </ng-container>
   <ng-container matColumnDef="2021SecondOperatingIncome">
@@ -54,7 +58,7 @@
       2021第2季度营业利润
     </th>
     <td mat-cell *matCellDef="let stock">
-      {{ stock.currentQuarterOperatingIncome }}
+      {{ stock.currentQuarterOperatingIncome | unit: 2 }}
     </td>
   </ng-container>
   <ng-container matColumnDef="operatingIncomeIncrease">
@@ -63,8 +67,24 @@
       {{
         (stock.currentQuarterOperatingIncome -
           stock.lastQuarterOperatingIncome) /
-          stock.lastQuarterOperatingIncome | percent
+          (stock.lastQuarterOperatingIncome > 0
+            ? stock.lastQuarterOperatingIncome
+            : -stock.lastQuarterOperatingIncome) | percent
       }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="latestQuarterMarketCap">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>最新季度估值</th>
+    <td mat-cell *matCellDef="let stock">
+      {{ stock.latestQuarterMarketCap | unit: 2 }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="form10Q">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Form 10-Q</th>
+    <td mat-cell *matCellDef="let stock">
+      <a target="_blank" href="{{ stock.current10Q }}"> Form 10-Q </a>
     </td>
   </ng-container>
 

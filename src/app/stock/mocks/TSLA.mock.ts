@@ -7,6 +7,8 @@ export const tsla: StockAnalysis = {
     Chinese: '特斯拉',
   },
   description: [''],
+  marketCap: {},
+  earnings: {},
   trend: [],
   painPoint: ['消除世界对于不可再生能源的依赖（由石油转向太阳能)', ''],
   advantage: [

@@ -8,7 +8,8 @@ export const sq: StockAnalysis = {
     Chinese: undefined,
   },
   ticker: 'SQ',
-
+  earnings: {},
+  marketCap: {},
   description: [
     'Square, Inc. creates tools that empower businesses and individuals to participate in the economy.',
     'Enables business to accept card payments and provides reporting and analytics, next-day settlement',

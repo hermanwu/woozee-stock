@@ -8,6 +8,9 @@ import { jessicaPaypal } from 'src/app/accounts/ mock-data/jessica-paypal-accoun
 import { webull } from 'src/app/accounts/ mock-data/jessica-wubu-account';
 import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
 import { AMZN } from '../../mocks/AMZN.mock';
+import { GOOGL } from '../../mocks/GOOGL.mock';
+import { U } from '../../mocks/U.mock';
+import { Z } from '../../mocks/Z.mock';
 
 export interface Equity {
   ticker: string;
@@ -44,7 +47,7 @@ export class StockListPageComponent implements OnInit {
 
   ngOnInit(): void {
     // const equitySummaryMap = this.generateEquitySummaryMap(this.equities);
-    const stockMap = this.generateStockMap([AMZN]);
+    const stockMap = this.generateStockMap([AMZN, Z, U, GOOGL]);
     this.stocks = this.convertToTableData(stockMap);
   }
 
@@ -88,10 +91,16 @@ export class StockListPageComponent implements OnInit {
         categories: stockMap[key]?.trends,
         currentQuarterRevenue: stockMap[key]?.earnings?.['2021']['2'].revenue,
         lastQuarterRevenue: stockMap[key]?.earnings?.['2020']['2'].revenue,
+
         currentQuarterOperatingIncome:
           stockMap[key]?.earnings?.['2021']['2'].operatingIncome,
         lastQuarterOperatingIncome:
           stockMap[key]?.earnings?.['2020']['2'].operatingIncome,
+
+        current10Q: stockMap[key]?.earnings?.['2021']['2']['10q'],
+
+        latestQuarterMarketCap:
+          stockMap[key]?.earnings?.['2021']['2'].marketCap,
       });
     }
 

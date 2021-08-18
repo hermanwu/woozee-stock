@@ -9,7 +9,9 @@ import { webull } from 'src/app/accounts/ mock-data/jessica-wubu-account';
 import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
 import { AAPL } from '../../mocks/AAPL.mock';
 import { AMZN } from '../../mocks/AMZN.mock';
+import { DIS } from '../../mocks/DIS.mock';
 import { GOOGL } from '../../mocks/GOOGL.mock';
+import { HD } from '../../mocks/HD';
 import { RBLX } from '../../mocks/RBLX.mock';
 import { U } from '../../mocks/U.mock';
 import { Z } from '../../mocks/Z.mock';
@@ -49,7 +51,16 @@ export class StockListPageComponent implements OnInit {
 
   ngOnInit(): void {
     // const equitySummaryMap = this.generateEquitySummaryMap(this.equities);
-    const stockMap = this.generateStockMap([AMZN, Z, U, GOOGL, AAPL, RBLX]);
+    const stockMap = this.generateStockMap([
+      AMZN,
+      Z,
+      U,
+      GOOGL,
+      AAPL,
+      RBLX,
+      DIS,
+      HD,
+    ]);
     this.stocks = this.convertToTableData(stockMap);
   }
 

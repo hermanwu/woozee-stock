@@ -26,8 +26,8 @@ export class StockListTableComponent
     'chinese-name',
     // 'shares',
     // 'categories',
-    '2020SecondQuarterRevenue',
-    '2021SecondQuarterRevenue',
+    'lastYearQuarterRevenue',
+    'currentQuarterRevenue',
     'revenue-increase',
 
     '2020SecondOperatingIncome',
@@ -36,6 +36,7 @@ export class StockListTableComponent
 
     'latestQuarterMarketCap',
 
+    'salesPrice',
     'sales-score',
     'profit-score',
 

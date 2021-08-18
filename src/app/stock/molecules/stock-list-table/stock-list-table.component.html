@@ -23,13 +23,13 @@
     <td mat-cell *matCellDef="let stock">{{ stock.chineseName }}</td>
   </ng-container>
 
-  <ng-container matColumnDef="2020SecondQuarterRevenue">
+  <ng-container matColumnDef="lastYearQuarterRevenue">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>去年同季度收入</th>
     <td mat-cell *matCellDef="let stock">
       {{ stock.lastQuarterRevenue | unit: 2 }}
     </td>
   </ng-container>
-  <ng-container matColumnDef="2021SecondQuarterRevenue">
+  <ng-container matColumnDef="currentQuarterRevenue">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>最新季度收入</th>
     <td mat-cell *matCellDef="let stock">
       {{ stock.currentQuarterRevenue | unit: 2 }}
@@ -89,9 +89,23 @@
   <ng-container matColumnDef="pressRelease">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Press Release</th>
     <td mat-cell *matCellDef="let stock">
-      <a target="_blank" href="{{ stock.currentPressRelease }}"
-        >Press Release</a
-      >
+      <span *ngIf="stock.currentPressRelease">
+        <a target="_blank" href="{{ stock.currentPressRelease }}"
+          >Press Release</a
+        >
+      </span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="salesPrice">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Quarter Sales / Market Cap
+    </th>
+    <td mat-cell *matCellDef="let stock">
+      <strong>{{
+        stock.currentQuarterRevenue / stock.latestQuarterMarketCap
+          | percent: "0.3-3"
+      }}</strong>
     </td>
   </ng-container>
 

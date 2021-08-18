@@ -143,7 +143,6 @@ export class IopsPipe implements PipeTransform {
           parsedValueInBaseUnit / potentialDisplayUnitValueInBaseUnit;
         outputUnit = potentialDisplayUnit;
         outputValue = potentialValue;
-        console.log(outputValue);
 
         // When converted value is bigger than or equal 1, stop the searching.
         if (potentialValue >= 1 || potentialValue < -1) {

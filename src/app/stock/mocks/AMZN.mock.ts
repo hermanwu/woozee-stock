@@ -19,6 +19,7 @@ export const AMZN = {
     currentRatio: 1.2,
   },
   earnings: {
+    latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
         marketCap: 1.67e12,

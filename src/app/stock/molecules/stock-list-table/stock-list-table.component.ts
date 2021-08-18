@@ -32,10 +32,14 @@ export class StockListTableComponent
 
     '2020SecondOperatingIncome',
     '2021SecondOperatingIncome',
+    'operatingIncomeIncrease',
 
     'latestQuarterMarketCap',
 
-    'operatingIncomeIncrease',
+    'sales-score',
+    'profit-score',
+
+    'pressRelease',
     'form10Q',
   ];
 

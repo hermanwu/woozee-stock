@@ -13,6 +13,7 @@ export const U: StockAnalysis = {
 
   // Earnings Report:
   earnings: {
+    latestReportQuarter: ['2021', '2'],
     website: 'https://investors.unity.com/overview/default.aspx',
     2021: {
       2: {

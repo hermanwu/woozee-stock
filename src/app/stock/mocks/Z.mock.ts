@@ -14,8 +14,10 @@ export const Z: StockAnalysis = {
 
   // Earnings Report:
   earnings: {
+    latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
+        marketCap: 24e9,
         revenue: 1309980e3,
         operatingIncome: 61725e3,
         '10q':

@@ -13,6 +13,7 @@ export const GOOGL: StockAnalysis = {
 
   // Earnings Report:
   earnings: {
+    latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
         revenue: 61880e6,

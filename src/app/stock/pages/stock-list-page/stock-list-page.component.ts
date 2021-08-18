@@ -7,8 +7,10 @@ import { schwab } from 'src/app/accounts/ mock-data/herman-schwab-account';
 import { jessicaPaypal } from 'src/app/accounts/ mock-data/jessica-paypal-account';
 import { webull } from 'src/app/accounts/ mock-data/jessica-wubu-account';
 import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
+import { AAPL } from '../../mocks/AAPL.mock';
 import { AMZN } from '../../mocks/AMZN.mock';
 import { GOOGL } from '../../mocks/GOOGL.mock';
+import { RBLX } from '../../mocks/RBLX.mock';
 import { U } from '../../mocks/U.mock';
 import { Z } from '../../mocks/Z.mock';
 
@@ -47,7 +49,7 @@ export class StockListPageComponent implements OnInit {
 
   ngOnInit(): void {
     // const equitySummaryMap = this.generateEquitySummaryMap(this.equities);
-    const stockMap = this.generateStockMap([AMZN, Z, U, GOOGL]);
+    const stockMap = this.generateStockMap([AMZN, Z, U, GOOGL, AAPL, RBLX]);
     this.stocks = this.convertToTableData(stockMap);
   }
 
@@ -84,23 +86,34 @@ export class StockListPageComponent implements OnInit {
     const result = [];
 
     for (let key of Object.keys(stockMap)) {
+      const latestYear = stockMap[key]?.earnings?.latestReportQuarter?.[0];
+      const latestQuarter = stockMap[key]?.earnings?.latestReportQuarter?.[1];
+      const previousYear = parseInt(latestYear, 10) - 1 + '';
+
       result.push({
         ticker: key,
         name: stockMap[key]?.name.English,
         chineseName: stockMap[key]?.name.Chinese,
         categories: stockMap[key]?.trends,
-        currentQuarterRevenue: stockMap[key]?.earnings?.['2021']['2'].revenue,
-        lastQuarterRevenue: stockMap[key]?.earnings?.['2020']['2'].revenue,
 
+        currentQuarterRevenue:
+          stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.revenue,
+        lastQuarterRevenue:
+          stockMap[key]?.earnings?.[previousYear]?.[latestQuarter]?.revenue,
         currentQuarterOperatingIncome:
-          stockMap[key]?.earnings?.['2021']['2'].operatingIncome,
+          stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]
+            ?.operatingIncome,
         lastQuarterOperatingIncome:
-          stockMap[key]?.earnings?.['2020']['2'].operatingIncome,
+          stockMap[key]?.earnings?.[previousYear]?.[latestQuarter]
+            ?.operatingIncome,
 
-        current10Q: stockMap[key]?.earnings?.['2021']['2']['10q'],
+        current10Q:
+          stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.['10q'],
+        currentPressRelease:
+          stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.press,
 
         latestQuarterMarketCap:
-          stockMap[key]?.earnings?.['2021']['2'].marketCap,
+          stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.marketCap,
       });
     }
 

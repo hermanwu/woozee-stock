@@ -9,10 +9,15 @@ import { webull } from 'src/app/accounts/ mock-data/jessica-wubu-account';
 import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
 import { AAPL } from '../../mocks/AAPL.mock';
 import { AMZN } from '../../mocks/AMZN.mock';
+import { BABA } from '../../mocks/BABA';
 import { DIS } from '../../mocks/DIS.mock';
 import { GOOGL } from '../../mocks/GOOGL.mock';
 import { HD } from '../../mocks/HD';
+import { HOOD } from '../../mocks/HOOD';
+import { NVDA } from '../../mocks/NVDA';
 import { RBLX } from '../../mocks/RBLX.mock';
+import { SHOP } from '../../mocks/SHOP.mock';
+import { SQ } from '../../mocks/SQ.mock';
 import { U } from '../../mocks/U.mock';
 import { Z } from '../../mocks/Z.mock';
 
@@ -60,6 +65,11 @@ export class StockListPageComponent implements OnInit {
       RBLX,
       DIS,
       HD,
+      SQ,
+      SHOP,
+      HOOD,
+      NVDA,
+      BABA,
     ]);
     this.stocks = this.convertToTableData(stockMap);
   }
@@ -118,10 +128,15 @@ export class StockListPageComponent implements OnInit {
           stockMap[key]?.earnings?.[previousYear]?.[latestQuarter]
             ?.operatingIncome,
 
+        investorWebsite: stockMap[key]?.earnings?.website,
         current10Q:
           stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.['10q'],
         currentPressRelease:
           stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.press,
+        presentation:
+          stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.presentation,
+        webcast:
+          stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.webcast,
 
         latestQuarterMarketCap:
           stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.marketCap,

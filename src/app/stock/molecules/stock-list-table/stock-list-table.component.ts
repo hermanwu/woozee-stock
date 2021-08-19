@@ -36,12 +36,17 @@ export class StockListTableComponent
 
     'latestQuarterMarketCap',
 
-    'salesPrice',
+    'salesOverMarketCap',
     'sales-score',
+
+    'profitOverMarketCap',
     'profit-score',
 
+    'webcast',
+    'presentation',
     'pressRelease',
     'form10Q',
+    'website',
   ];
 
   dataSource = new MatTableDataSource<any>();

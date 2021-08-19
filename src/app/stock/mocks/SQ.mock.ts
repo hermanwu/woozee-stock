@@ -1,6 +1,6 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const sq: StockAnalysis = {
+export const SQ: StockAnalysis = {
   logo:
     'https://lh3.googleusercontent.com/pw/ACtC-3dVUwpnglNTwsN6ZkweBVX9VgZhM9aJL6oQ0Cn9Ofk62gCDq1R8DwwkrzUb-HBxX9B3FA_C5ZqbfYT9UIKdPFLqpxeBLj4Dis4Z1DZ6oakHj-YOZqNdUclAkdW9Q8XkXOoz-nkQfOYeEFRK0eatm9bc=w614-h548-no?authuser=3',
   name: {
@@ -8,7 +8,29 @@ export const sq: StockAnalysis = {
     Chinese: undefined,
   },
   ticker: 'SQ',
-  earnings: {},
+  // Earnings Report:
+  earnings: {
+    website: 'https://investors.squareup.com/overview/default.aspx',
+    latestReportQuarter: ['2021', '2'],
+    2021: {
+      2: {
+        '10q':
+          'https://s27.q4cdn.com/311240100/files/doc_financials/2021/q2/Square-10Q-2Q21.pdf',
+        press:
+          'https://s27.q4cdn.com/311240100/files/doc_financials/2021/q2/Q2-2021-Shareholder-Letter.pdf',
+        webcast: '',
+        marketCap: 119.93 * 1e9,
+        revenue: (4680672 - 2724296) * 1e3, // Minus Bitcoin Revenue.
+        operatingIncome: 124994 * 1e3,
+      },
+    },
+    2020: {
+      2: {
+        revenue: (1923625 - 875456) * 1e3, // Minus Bitcoin Revenue.
+        operatingIncome: -23052 * 1e3,
+      },
+    },
+  },
   marketCap: {},
   description: [
     'Square, Inc. creates tools that empower businesses and individuals to participate in the economy.',

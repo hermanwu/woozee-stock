@@ -10,10 +10,12 @@ import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account
 import { AAPL } from '../../mocks/AAPL.mock';
 import { AMZN } from '../../mocks/AMZN.mock';
 import { BABA } from '../../mocks/BABA';
+import { bili } from '../../mocks/BILI.mock';
 import { DIS } from '../../mocks/DIS.mock';
 import { GOOGL } from '../../mocks/GOOGL.mock';
 import { HD } from '../../mocks/HD';
 import { HOOD } from '../../mocks/HOOD';
+import { NFLX } from '../../mocks/NFLX';
 import { NVDA } from '../../mocks/NVDA';
 import { RBLX } from '../../mocks/RBLX.mock';
 import { SHOP } from '../../mocks/SHOP.mock';
@@ -58,18 +60,20 @@ export class StockListPageComponent implements OnInit {
     // const equitySummaryMap = this.generateEquitySummaryMap(this.equities);
     const stockMap = this.generateStockMap([
       AMZN,
-      Z,
-      U,
+      BABA,
+      SHOP,
+      HD,
       GOOGL,
       AAPL,
-      RBLX,
-      DIS,
-      HD,
-      SQ,
-      SHOP,
-      HOOD,
       NVDA,
-      BABA,
+      Z,
+      U,
+      RBLX,
+      SQ,
+      HOOD,
+      DIS,
+      bili,
+      NFLX,
     ]);
     this.stocks = this.convertToTableData(stockMap);
   }

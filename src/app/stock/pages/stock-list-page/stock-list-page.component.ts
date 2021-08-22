@@ -8,18 +8,29 @@ import { jessicaPaypal } from 'src/app/accounts/ mock-data/jessica-paypal-accoun
 import { webull } from 'src/app/accounts/ mock-data/jessica-wubu-account';
 import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
 import { AAPL } from '../../mocks/AAPL.mock';
+import { ABNB } from '../../mocks/ABNB';
+import { ADBE } from '../../mocks/ADBE';
+import { AFRM } from '../../mocks/AFRM';
+import { AMD } from '../../mocks/AMD';
 import { AMZN } from '../../mocks/AMZN.mock';
 import { BABA } from '../../mocks/BABA';
 import { bili } from '../../mocks/BILI.mock';
+import { CLOV } from '../../mocks/CLOV';
+import { COIN } from '../../mocks/COIN';
+import { DDOG } from '../../mocks/DDOG';
 import { DIS } from '../../mocks/DIS.mock';
 import { GOOGL } from '../../mocks/GOOGL.mock';
 import { HD } from '../../mocks/HD';
 import { HOOD } from '../../mocks/HOOD';
 import { NFLX } from '../../mocks/NFLX';
 import { NVDA } from '../../mocks/NVDA';
+import { OPEN } from '../../mocks/OPEN';
+import { PYPL } from '../../mocks/PYPL';
 import { RBLX } from '../../mocks/RBLX.mock';
 import { SHOP } from '../../mocks/SHOP.mock';
+import { SNAP } from '../../mocks/SNAP';
 import { SQ } from '../../mocks/SQ.mock';
+import { tsla } from '../../mocks/TSLA.mock';
 import { U } from '../../mocks/U.mock';
 import { Z } from '../../mocks/Z.mock';
 
@@ -59,18 +70,34 @@ export class StockListPageComponent implements OnInit {
   ngOnInit(): void {
     // const equitySummaryMap = this.generateEquitySummaryMap(this.equities);
     const stockMap = this.generateStockMap([
+      tsla,
+      AAPL,
+      NVDA,
+      AMD,
+
+      HD,
       AMZN,
       BABA,
       SHOP,
-      HD,
+
       GOOGL,
-      AAPL,
-      NVDA,
-      Z,
-      U,
+      ADBE,
+      DDOG,
+
+      SNAP,
+      ABNB,
       RBLX,
+      U,
+      Z,
+      OPEN,
+
+      PYPL,
+      AFRM,
+      COIN,
       SQ,
       HOOD,
+      CLOV,
+
       DIS,
       bili,
       NFLX,

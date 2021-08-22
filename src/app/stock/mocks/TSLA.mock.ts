@@ -6,9 +6,32 @@ export const tsla: StockAnalysis = {
     English: 'Tesla',
     Chinese: '特斯拉',
   },
+  ticker: 'TSLA',
   description: [''],
   marketCap: {},
-  earnings: {},
+  earnings: {
+    website: 'https://ir.tesla.com/',
+    latestReportQuarter: ['2021', '2'],
+    2021: {
+      2: {
+        '10q':
+          'https://ir.tesla.com/_flysystem/s3/sec/000095017021000524/tsla-20210630-gen.pdf',
+        press:
+          'https://ir.tesla.com/press-release/tesla-q2-2021-vehicle-production-deliveries',
+        webcast: '',
+        marketCap: 655.31 * 1e9,
+        revenue: 11958 * 1e6,
+        operatingIncome: 1312 * 1e6,
+        date: undefined,
+      },
+    },
+    2020: {
+      2: {
+        revenue: 6036 * 1e6,
+        operatingIncome: 327 * 1e6,
+      },
+    },
+  },
   trend: [],
   painPoint: ['消除世界对于不可再生能源的依赖（由石油转向太阳能)', ''],
   advantage: [

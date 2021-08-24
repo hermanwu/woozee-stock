@@ -17,8 +17,11 @@ import { BABA } from '../../mocks/BABA';
 import { bili } from '../../mocks/BILI.mock';
 import { CLOV } from '../../mocks/CLOV';
 import { COIN } from '../../mocks/COIN';
+import { CRM } from '../../mocks/CRM';
 import { DDOG } from '../../mocks/DDOG';
 import { DIS } from '../../mocks/DIS.mock';
+import { ETSY } from '../../mocks/ETSY';
+import { FB } from '../../mocks/FB';
 import { GOOGL } from '../../mocks/GOOGL.mock';
 import { HD } from '../../mocks/HD';
 import { HOOD } from '../../mocks/HOOD';
@@ -31,6 +34,7 @@ import { SHOP } from '../../mocks/SHOP.mock';
 import { SNAP } from '../../mocks/SNAP';
 import { SQ } from '../../mocks/SQ.mock';
 import { tsla } from '../../mocks/TSLA.mock';
+import { TWLO } from '../../mocks/TWLO';
 import { U } from '../../mocks/U.mock';
 import { Z } from '../../mocks/Z.mock';
 
@@ -79,11 +83,15 @@ export class StockListPageComponent implements OnInit {
       AMZN,
       BABA,
       SHOP,
+      ETSY,
 
       GOOGL,
       ADBE,
+      CRM,
       DDOG,
+      TWLO,
 
+      FB,
       SNAP,
       ABNB,
       RBLX,

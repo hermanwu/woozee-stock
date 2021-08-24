@@ -15,7 +15,28 @@ export const pdd: StockAnalysis = {
     '我们有意识地构建了一个类似于“虚拟市集”的平台，在该平台中，买家在相互交互的同时浏览并浏览了平台上的各种产品。',
     '买家可以使用拼多多在流行的社交网络上分享产品信息，并邀请他们的朋友，家人和社交联系人一起购买，享受发现和购物的乐趣和兴奋，全面选择具有价值的产品。',
   ],
-  earnings: {},
+  earnings: {
+    website: 'https://investor.pinduoduo.com/',
+    latestReportQuarter: ['2021', '2'],
+    2021: {
+      2: {
+        '10q':
+          'https://investor.pinduoduo.com/static-files/f446ffd5-7ddd-4ea3-9579-f28defb04b94',
+        presentation: '',
+        press: '',
+        webcast: '',
+        marketCap: 101.51 * 1e9,
+        revenue: 1185386 * 1e3,
+        operatingIncome: -152753 * 1e3,
+      },
+    },
+    2020: {
+      2: {
+        revenue: 739827 * 1e3,
+        operatingIncome: -38852 * 1e3,
+      },
+    },
+  },
   vision: [
     'Costco + Disney',
     'Fun and interactive shopping experiences - discovery shopping.',

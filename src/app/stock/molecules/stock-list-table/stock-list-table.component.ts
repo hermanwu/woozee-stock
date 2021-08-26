@@ -23,15 +23,15 @@ export class StockListTableComponent
   readonly columnsToDisplay = [
     'ticker',
     'name',
-    'chinese-name',
+    'chineseName',
     // 'shares',
     // 'categories',
-    'lastYearQuarterRevenue',
+    'lastQuarterRevenue',
     'currentQuarterRevenue',
     'revenue-increase',
 
-    '2020SecondOperatingIncome',
-    '2021SecondOperatingIncome',
+    'lastQuarterOperatingIncome',
+    'currentQuarterOperatingIncome',
     'operatingIncomeIncrease',
 
     'latestQuarterMarketCap',

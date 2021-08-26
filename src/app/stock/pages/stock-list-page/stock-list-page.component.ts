@@ -25,18 +25,25 @@ import { FB } from '../../mocks/FB';
 import { GOOGL } from '../../mocks/GOOGL.mock';
 import { HD } from '../../mocks/HD';
 import { HOOD } from '../../mocks/HOOD';
+import { INTU } from '../../mocks/INTU';
+import { JD } from '../../mocks/JD';
 import { NFLX } from '../../mocks/NFLX';
 import { NVDA } from '../../mocks/NVDA';
+import { OKTA } from '../../mocks/OKTA';
 import { OPEN } from '../../mocks/OPEN';
 import { PYPL } from '../../mocks/PYPL';
 import { RBLX } from '../../mocks/RBLX.mock';
 import { SHOP } from '../../mocks/SHOP.mock';
 import { SNAP } from '../../mocks/SNAP';
+import { SNOW } from '../../mocks/SNOW';
+import { SOFI } from '../../mocks/SOFI';
+import { SPLK } from '../../mocks/SPLK';
 import { SQ } from '../../mocks/SQ.mock';
 import { tsla } from '../../mocks/TSLA.mock';
 import { TWLO } from '../../mocks/TWLO';
 import { U } from '../../mocks/U.mock';
 import { Z } from '../../mocks/Z.mock';
+import { ZS } from '../../mocks/ZS';
 
 export interface Equity {
   ticker: string;
@@ -82,6 +89,7 @@ export class StockListPageComponent implements OnInit {
       HD,
       AMZN,
       BABA,
+      JD,
       SHOP,
       ETSY,
 
@@ -90,6 +98,10 @@ export class StockListPageComponent implements OnInit {
       CRM,
       DDOG,
       TWLO,
+      SNOW,
+      OKTA,
+      SPLK,
+      ZS,
 
       FB,
       SNAP,
@@ -99,11 +111,14 @@ export class StockListPageComponent implements OnInit {
       Z,
       OPEN,
 
+      INTU,
       PYPL,
       AFRM,
       COIN,
       SQ,
       HOOD,
+      SOFI,
+
       CLOV,
 
       DIS,

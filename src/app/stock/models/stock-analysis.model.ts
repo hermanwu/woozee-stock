@@ -1,6 +1,7 @@
 import { News } from '../mocks/news.model';
 import { MyScore } from './herman-score.model';
 import { Note } from './note.model';
+import { Rating } from './rating.model';
 import { StockStats } from './stock-stats.model';
 import { Trend } from './trend.enum';
 
@@ -51,4 +52,5 @@ export interface StockAnalysis {
   companyOfficialDocs?: Note[];
   usefulVideos?: Note[];
   news?: News[];
+  myRating?: Rating;
 }

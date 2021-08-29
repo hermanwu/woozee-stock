@@ -17,7 +17,7 @@ export const GOOGL: StockAnalysis = {
     2021: {
       2: {
         revenue: 61880e6,
-        marketCap: 1.84 * 1e12,
+        marketCap: 1.93 * 1e12,
         operatingIncome: 18525e6,
       },
     },

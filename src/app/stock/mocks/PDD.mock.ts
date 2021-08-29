@@ -20,20 +20,20 @@ export const pdd: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
-          'https://investor.pinduoduo.com/static-files/f446ffd5-7ddd-4ea3-9579-f28defb04b94',
+        '10q': '',
         presentation: '',
-        press: '',
+        press:
+          'https://investor.pinduoduo.com/static-files/e3f3e699-b979-4310-8534-d70ff1c38e6e',
         webcast: '',
-        marketCap: 101.51 * 1e9,
-        revenue: 1185386 * 1e3,
-        operatingIncome: -152753 * 1e3,
+        marketCap: 120.14 * 1e9,
+        revenue: 45213319 * 1e3 * 0.15,
+        operatingIncome: -28718860 * 1e3 * 0.15,
       },
     },
     2020: {
       2: {
-        revenue: 739827 * 1e3,
-        operatingIncome: -38852 * 1e3,
+        revenue: 18734374 * 1e3 * 0.15,
+        operatingIncome: -20278827 * 1e3 * 0.15,
       },
     },
   },

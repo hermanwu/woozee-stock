@@ -18,6 +18,7 @@ import { bili } from '../../mocks/BILI.mock';
 import { CLOV } from '../../mocks/CLOV';
 import { COIN } from '../../mocks/COIN';
 import { CRM } from '../../mocks/CRM';
+import { DASH } from '../../mocks/DASH';
 import { DDOG } from '../../mocks/DDOG';
 import { DIS } from '../../mocks/DIS.mock';
 import { ETSY } from '../../mocks/ETSY';
@@ -27,21 +28,30 @@ import { HD } from '../../mocks/HD';
 import { HOOD } from '../../mocks/HOOD';
 import { INTU } from '../../mocks/INTU';
 import { JD } from '../../mocks/JD';
+import { JMIA } from '../../mocks/JMIA';
 import { NFLX } from '../../mocks/NFLX';
+import { NOW } from '../../mocks/NOW';
 import { NVDA } from '../../mocks/NVDA';
 import { OKTA } from '../../mocks/OKTA';
 import { OPEN } from '../../mocks/OPEN';
+import { pdd } from '../../mocks/PDD.mock';
+import { PINS } from '../../mocks/PINs';
+import { PTON } from '../../mocks/PTON';
 import { PYPL } from '../../mocks/PYPL';
 import { RBLX } from '../../mocks/RBLX.mock';
+import { RDFN } from '../../mocks/RDFN';
 import { SHOP } from '../../mocks/SHOP.mock';
 import { SNAP } from '../../mocks/SNAP';
 import { SNOW } from '../../mocks/SNOW';
 import { SOFI } from '../../mocks/SOFI';
 import { SPLK } from '../../mocks/SPLK';
 import { SQ } from '../../mocks/SQ.mock';
+import { STEM } from '../../mocks/STEM';
+import { TDOC } from '../../mocks/TDOC';
 import { tsla } from '../../mocks/TSLA.mock';
 import { TWLO } from '../../mocks/TWLO';
 import { U } from '../../mocks/U.mock';
+import { UBER } from '../../mocks/UBER';
 import { Z } from '../../mocks/Z.mock';
 import { ZS } from '../../mocks/ZS';
 
@@ -90,27 +100,38 @@ export class StockListPageComponent implements OnInit {
       AMZN,
       BABA,
       JD,
+      pdd,
       SHOP,
       ETSY,
+      JMIA,
 
-      GOOGL,
       ADBE,
       CRM,
+      NOW,
       DDOG,
       TWLO,
       SNOW,
       OKTA,
       SPLK,
       ZS,
+      CLOV,
+      STEM,
+      TDOC,
 
+      GOOGL,
       FB,
+      PINS,
       SNAP,
-      ABNB,
       RBLX,
       U,
       Z,
       OPEN,
+      RDFN,
 
+      ABNB,
+      UBER,
+      DASH,
+      PTON,
       INTU,
       PYPL,
       AFRM,
@@ -118,9 +139,6 @@ export class StockListPageComponent implements OnInit {
       SQ,
       HOOD,
       SOFI,
-
-      CLOV,
-
       DIS,
       bili,
       NFLX,
@@ -166,6 +184,7 @@ export class StockListPageComponent implements OnInit {
       const previousYear = parseInt(latestYear, 10) - 1 + '';
 
       result.push({
+        myRating: stockMap[key]?.myRating,
         ticker: key,
         name: stockMap[key]?.name.English,
         chineseName: stockMap[key]?.name.Chinese,

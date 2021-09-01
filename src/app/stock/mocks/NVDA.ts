@@ -5,6 +5,7 @@ export const NVDA: StockAnalysis = {
   name: { English: 'Nvidia' },
   description: [],
   ticker: 'NVDA',
+  optionCrazy: true,
 
   // Earnings Report:
   earnings: {

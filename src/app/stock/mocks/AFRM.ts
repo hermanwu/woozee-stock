@@ -17,7 +17,7 @@ export const AFRM: StockAnalysis = {
         presentation: '',
         press: '',
         webcast: '',
-        marketCap: 17.23 * 1e9,
+        marketCap: 24.824 * 1e9,
         revenue: 230665 * 1e3,
         operatingIncome: -169456 * 1e3,
         date: '05-17-2021',

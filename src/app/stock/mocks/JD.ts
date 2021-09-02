@@ -18,7 +18,7 @@ export const JD: StockAnalysis = {
 
         press: 'https://ir.jd.com/node/9561/pdf',
         webcast: '',
-        marketCap: 118.6 * 1e9,
+        marketCap: 122.58 * 1e9,
         revenue: (253800470 * 1e3) / 6.45,
         operatingIncome: (300756 * 1e3) / 6.45,
         date: new Date('2021-08-06'),

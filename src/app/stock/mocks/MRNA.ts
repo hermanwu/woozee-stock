@@ -12,7 +12,7 @@ export const MRNA: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://investors.modernatx.com/static-files/6df1980f-ded2-4a57-a525-42b5d717d383',
         presentation: null,
         press: null,

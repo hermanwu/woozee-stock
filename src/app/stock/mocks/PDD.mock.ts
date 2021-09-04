@@ -20,12 +20,12 @@ export const pdd: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q': '',
+        '10q10k': '',
         presentation: '',
         press:
           'https://investor.pinduoduo.com/static-files/e3f3e699-b979-4310-8534-d70ff1c38e6e',
         webcast: '',
-        marketCap: 120.14 * 1e9,
+        marketCap: 130.14 * 1e9,
         revenue: 45213319 * 1e3 * 0.15,
         operatingIncome: -28718860 * 1e3 * 0.15,
       },

@@ -13,7 +13,7 @@ export const PYPL: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001633917/305aa206-319d-4543-af10-0359a0b491c8.pdf',
         presentation: '',
         press: '',

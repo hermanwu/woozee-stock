@@ -12,7 +12,7 @@ export const JMIA: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q': '',
+        '10q10k': '',
         presentation: '',
         press: '',
         webcast: '',

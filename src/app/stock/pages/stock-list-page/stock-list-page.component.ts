@@ -11,36 +11,51 @@ import { AAPL } from '../../mocks/AAPL.mock';
 import { ABNB } from '../../mocks/ABNB';
 import { ADBE } from '../../mocks/ADBE';
 import { AFRM } from '../../mocks/AFRM';
+import { AMC } from '../../mocks/AMC';
 import { AMD } from '../../mocks/AMD';
 import { AMZN } from '../../mocks/AMZN.mock';
+import { AXP } from '../../mocks/AXP';
 import { BABA } from '../../mocks/BABA';
 import { bili } from '../../mocks/BILI.mock';
+import { BYND } from '../../mocks/BYND';
 import { CLOV } from '../../mocks/CLOV';
 import { COIN } from '../../mocks/COIN';
 import { CRM } from '../../mocks/CRM';
 import { DASH } from '../../mocks/DASH';
 import { DDOG } from '../../mocks/DDOG';
 import { DIS } from '../../mocks/DIS.mock';
+import { DOCU } from '../../mocks/DOCU';
+import { DUOL } from '../../mocks/DUOL';
+import { ESTC } from '../../mocks/ESTC';
 import { ETSY } from '../../mocks/ETSY';
 import { FB } from '../../mocks/FB';
+import { GME } from '../../mocks/GME';
 import { GOOGL } from '../../mocks/GOOGL.mock';
 import { HD } from '../../mocks/HD';
 import { HOOD } from '../../mocks/HOOD';
+import { IAC } from '../../mocks/IAC';
 import { INTU } from '../../mocks/INTU';
+import { ISRG } from '../../mocks/ISRG';
 import { JD } from '../../mocks/JD';
 import { JMIA } from '../../mocks/JMIA';
+import { JPM } from '../../mocks/JPM';
+import { LZ } from '../../mocks/LZ';
+import { MRNA } from '../../mocks/MRNA';
 import { NFLX } from '../../mocks/NFLX';
 import { NOW } from '../../mocks/NOW';
 import { NVDA } from '../../mocks/NVDA';
 import { OKTA } from '../../mocks/OKTA';
 import { OPEN } from '../../mocks/OPEN';
 import { pdd } from '../../mocks/PDD.mock';
+import { PENN } from '../../mocks/PENN';
 import { PINS } from '../../mocks/PINs';
 import { PTON } from '../../mocks/PTON';
 import { PYPL } from '../../mocks/PYPL';
 import { RBLX } from '../../mocks/RBLX.mock';
 import { RDFN } from '../../mocks/RDFN';
+import { RH } from '../../mocks/RH';
 import { SHOP } from '../../mocks/SHOP.mock';
+import { SKLZ } from '../../mocks/SKLZ';
 import { SNAP } from '../../mocks/SNAP';
 import { SNOW } from '../../mocks/SNOW';
 import { SOFI } from '../../mocks/SOFI';
@@ -49,10 +64,12 @@ import { SQ } from '../../mocks/SQ.mock';
 import { STEM } from '../../mocks/STEM';
 import { TDOC } from '../../mocks/TDOC';
 import { tsla } from '../../mocks/TSLA.mock';
+import { TTD } from '../../mocks/TTD';
 import { TWLO } from '../../mocks/TWLO';
 import { U } from '../../mocks/U.mock';
 import { UBER } from '../../mocks/UBER';
 import { Z } from '../../mocks/Z.mock';
+import { ZM } from '../../mocks/ZM';
 import { ZS } from '../../mocks/ZS';
 
 export interface Equity {
@@ -97,6 +114,7 @@ export class StockListPageComponent implements OnInit {
       AMD,
 
       HD,
+      RH,
       AMZN,
       BABA,
       JD,
@@ -114,8 +132,17 @@ export class StockListPageComponent implements OnInit {
       OKTA,
       SPLK,
       ZS,
-      CLOV,
+      ZM,
+      DOCU,
+      ESTC,
+      TTD,
+
+      LZ,
       STEM,
+
+      ISRG,
+      MRNA,
+      CLOV,
       TDOC,
 
       GOOGL,
@@ -133,6 +160,12 @@ export class StockListPageComponent implements OnInit {
       DASH,
       PTON,
       INTU,
+      DUOL,
+      IAC,
+      SKLZ,
+
+      JPM,
+      AXP,
       PYPL,
       AFRM,
       COIN,
@@ -142,6 +175,13 @@ export class StockListPageComponent implements OnInit {
       DIS,
       bili,
       NFLX,
+
+      PENN,
+
+      AMC,
+      GME,
+
+      BYND,
     ]);
     this.stocks = this.convertToTableData(stockMap);
   }
@@ -189,6 +229,7 @@ export class StockListPageComponent implements OnInit {
         name: stockMap[key]?.name.English,
         chineseName: stockMap[key]?.name.Chinese,
         categories: stockMap[key]?.trends,
+        optionCrazy: stockMap[key]?.optionCrazy,
 
         currentQuarterRevenue:
           stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.revenue,
@@ -203,7 +244,7 @@ export class StockListPageComponent implements OnInit {
 
         investorWebsite: stockMap[key]?.earnings?.website,
         current10Q:
-          stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.['10q'],
+          stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.['10q10k'],
         currentPressRelease:
           stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.press,
         presentation:

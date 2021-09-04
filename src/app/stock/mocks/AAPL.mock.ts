@@ -22,7 +22,7 @@ export const AAPL: StockAnalysis = {
     latestReportQuarter: ['2021', '3'],
     2021: {
       3: {
-        '10q':
+        '10q10k':
           'https://s2.q4cdn.com/470004039/files/doc_financials/2021/q3/_10-Q-Q3-2021-(As-Filed).pdf',
         marketCap: 2.46 * 1e12,
         revenue: 81434e6,

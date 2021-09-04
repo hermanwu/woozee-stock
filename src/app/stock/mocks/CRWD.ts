@@ -12,7 +12,7 @@ export const CRWD: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q': '',
+        '10q10k': '',
         presentation: '',
         webcast: '',
         marketCap: 41.05 * 1e9,

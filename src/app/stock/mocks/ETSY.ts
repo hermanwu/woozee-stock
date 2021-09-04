@@ -13,7 +13,7 @@ export const ETSY: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001370637/673e5ce5-839c-48a3-911a-a9e68e855677.pdf',
         presentation: '',
         press: '',

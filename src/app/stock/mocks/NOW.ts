@@ -12,7 +12,7 @@ export const NOW: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://servicenow.gcs-web.com/static-files/4aeb11bc-1575-4bbf-84b2-21bbe5bd0d42',
         presentation:
           'https://www.servicenow.com/content/dam/servicenow/other-documents/investor-relations/investor-presentations/servicenow-q2-2021-investor-presentation.pdf',

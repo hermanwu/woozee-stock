@@ -21,6 +21,7 @@ export interface StockAnalysis {
     marketCap: [string, string];
   };
   stats?: StockStats;
+  optionCrazy?: boolean;
 
   // Demand:
   vision?: string[];

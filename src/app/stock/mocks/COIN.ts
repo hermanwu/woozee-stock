@@ -12,7 +12,7 @@ export const COIN: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001679788/dcec079b-3237-4ae0-a54d-479ded972ab8.pdf',
         presentation: '',
         press:

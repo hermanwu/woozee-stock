@@ -12,7 +12,7 @@ export const DDOG: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://investors.datadoghq.com/static-files/69c6fd93-3308-491b-be81-9b642728a091',
         presentation: '',
         press:

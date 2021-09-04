@@ -12,7 +12,7 @@ export const OKTA: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q': '',
+        '10q10k': '',
         presentation: '',
         press:
           'https://investor.okta.com/news-releases/news-release-details/okta-announces-strong-first-quarter-results-0',

@@ -12,7 +12,7 @@ export const empty: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q': null,
+        '10q10k': null,
         presentation: null,
         press: null,
         webcast: null,

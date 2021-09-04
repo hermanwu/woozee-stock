@@ -12,7 +12,7 @@ export const ADBE: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://www.adobe.com/content/dam/cc/en/investor-relations/pdfs/ADBE-10Q-Q221-FINAL.pdf',
         presentation: '',
         press: '',

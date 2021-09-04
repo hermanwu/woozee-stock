@@ -13,7 +13,7 @@ export const NVDA: StockAnalysis = {
     latestReportQuarter: ['2022', '2'],
     2022: {
       2: {
-        '10q': '',
+        '10q10k': '',
         presentation:
           'https://s22.q4cdn.com/364334381/files/doc_financials/2022/q1/NVDA-F1Q22-Investor-Presentation-FINAL.pdf',
         press:

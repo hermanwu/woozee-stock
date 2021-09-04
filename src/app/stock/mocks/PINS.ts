@@ -12,7 +12,7 @@ export const PINS: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://s23.q4cdn.com/958601754/files/doc_financials/2021/q2/Q2-21-Form-10-Q-Filed-(1).pdf',
         presentation: null,
         press: null,

@@ -12,7 +12,7 @@ export const HOOD: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://s28.q4cdn.com/948876185/files/doc_financials/2021/q2/fed1afc9-fc82-4a7a-8735-caed2497fbd3.pdf',
         presentation:
           'https://s28.q4cdn.com/948876185/files/doc_financials/2021/q2/Q2-2021-Investor-Presentation-(3).pdf',

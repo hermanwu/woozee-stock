@@ -13,7 +13,7 @@ export const OPEN: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://investor.opendoor.com/static-files/e1fbd4d1-be43-4492-a392-d95bd2769656',
         presentation: '',
         press: '',

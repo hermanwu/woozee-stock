@@ -22,7 +22,7 @@ export const RBLX: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001315098/b80ee630-5ce5-4b4c-8b84-d0141f383f25.pdf',
         press:
           "https://s27.q4cdn.com/984876518/files/doc_financials/2021/q2/Q2-'21-Earnings-Release-FULL-FINAL.pdf",

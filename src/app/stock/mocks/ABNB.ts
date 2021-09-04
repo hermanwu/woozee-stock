@@ -12,7 +12,7 @@ export const ABNB: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://s26.q4cdn.com/656283129/files/doc_financials/2021/q2/06c6fc2e-50f9-48aa-abc9-5b879014a2b4.pdf',
         presentation: '',
         press: '',

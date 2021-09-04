@@ -14,7 +14,7 @@ export const bili: StockAnalysis = {
     2021: {
       3: {},
       2: {
-        '10q': 'https://ir.bilibili.com/node/7836/html',
+        '10q10k': 'https://ir.bilibili.com/node/7836/html',
         presentation:
           'https://ir.bilibili.com/system/files-encrypted/nasdaq_kms/assets/2021/08/19/4-28-36/2Q21%20PPT.pdf',
         press:

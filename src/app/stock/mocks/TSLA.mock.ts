@@ -14,7 +14,7 @@ export const tsla: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://ir.tesla.com/_flysystem/s3/sec/000095017021000524/tsla-20210630-gen.pdf',
         press:
           'https://ir.tesla.com/press-release/tesla-q2-2021-vehicle-production-deliveries',

@@ -20,7 +20,7 @@ export const Z: StockAnalysis = {
         marketCap: 24e9,
         revenue: 1309980e3,
         operatingIncome: 61725e3,
-        '10q':
+        '10q10k':
           'https://abc.xyz/investor/static/pdf/20210728_alphabet_10Q.pdf?cache=28df405',
         transcript:
           'https://abc.xyz/investor/static/pdf/2021_Q2_Earnings_Transcript.pdf?cache=1fcb27b',

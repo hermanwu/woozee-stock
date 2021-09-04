@@ -12,7 +12,7 @@ export const ZM: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://investors.zoom.us/static-files/fed57f87-c16b-4a7f-a03d-9fbb894f2a5a',
         presentation: null,
         press: null,

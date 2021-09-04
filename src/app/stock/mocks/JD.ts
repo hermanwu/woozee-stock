@@ -12,7 +12,7 @@ export const JD: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q': '',
+        '10q10k': '',
         presentation:
           'https://ir.jd.com/system/files-encrypted/nasdaq_kms/assets/2021/08/23/8-01-31/JD.com%20Inc%202Q2021%20Financial%20and%20Operational%20Highlights.pdf',
 

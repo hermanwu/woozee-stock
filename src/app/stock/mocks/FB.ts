@@ -13,7 +13,7 @@ export const FB: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001326801/dcf20641-cba6-4b5c-b60e-4b40b52811a4.pdf',
         presentation: '',
         press: '',

@@ -12,7 +12,7 @@ export const NFLX: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001065280/743c309d-666a-4933-8183-eb43fb8a461b.pdf',
         presentation: '',
         press: '',

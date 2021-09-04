@@ -12,7 +12,7 @@ export const BABA: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://otp.investis.com/clients/us/alibaba/SEC/sec-show.aspx?FilingId=15132205&Cik=0001577552&Type=PDF&hasPdf=1',
         presentation: '',
         press: '',

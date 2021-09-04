@@ -14,7 +14,7 @@ export const SQ: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://s27.q4cdn.com/311240100/files/doc_financials/2021/q2/Square-10Q-2Q21.pdf',
         press:
           'https://s27.q4cdn.com/311240100/files/doc_financials/2021/q2/Q2-2021-Shareholder-Letter.pdf',

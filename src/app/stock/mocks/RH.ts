@@ -12,7 +12,7 @@ export const RH: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://ir.restorationhardware.com/static-files/a0a51f7a-f49a-4266-b061-9a2e609276f3',
         presentation: null,
         press: null,

@@ -13,7 +13,7 @@ export const CRM: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q': '',
+        '10q10k': '',
         presentation: '',
         press:
           'https://s23.q4cdn.com/574569502/files/doc_financials/2022/q2/CRM-Q2-FY22-Earnings-Press-Release-w-financials.pdf',
@@ -23,7 +23,7 @@ export const CRM: StockAnalysis = {
         operatingIncome: 332 * 1e6,
       },
       1: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001108524/75070e05-dc5e-4b40-99dc-7602eb560ce5.pdf',
         presentation: '',
         press: '',

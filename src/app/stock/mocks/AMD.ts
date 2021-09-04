@@ -13,7 +13,7 @@ export const AMD: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://ir.amd.com/sec-filings/filter/quarterly-filings/content/0000002488-21-000116/0000002488-21-000116.pdf',
         presentation: '',
         press: '',

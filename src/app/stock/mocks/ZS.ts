@@ -12,7 +12,7 @@ export const ZS: StockAnalysis = {
     latestReportQuarter: ['2021', '1'],
     2021: {
       1: {
-        '10q':
+        '10q10k':
           'https://ir.zscaler.com/static-files/787a652d-599b-4b2f-a010-ffd90234f0d3',
         presentation: '',
         webcast: '',

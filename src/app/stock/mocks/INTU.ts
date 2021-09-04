@@ -1,3 +1,4 @@
+import { Rating } from '../models/rating.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const INTU: StockAnalysis = {
@@ -5,6 +6,7 @@ export const INTU: StockAnalysis = {
   name: { English: 'Intuit' },
   description: [],
   ticker: 'INTU',
+  myRating: Rating.Buy,
 
   // Earnings Report:
   earnings: {
@@ -12,7 +14,7 @@ export const INTU: StockAnalysis = {
     latestReportQuarter: ['2021', '1'],
     2021: {
       1: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0000896878/0a2bbb52-8b13-46fc-a681-63fae6bdf982.pdf',
         presentation: '',
         press: '',

@@ -16,7 +16,7 @@ export const SNAP: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001564408/551465a0-093c-47a1-ad2f-21aa85f68ca1.pdf',
         press:
           'https://s25.q4cdn.com/442043304/files/doc_financials/2021/q2/Q2%E2%80%9921-Earnings-Release-Final_7.22.21.pdf',

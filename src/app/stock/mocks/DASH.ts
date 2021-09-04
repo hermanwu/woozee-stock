@@ -12,7 +12,7 @@ export const DASH: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001792789/efccd043-c8de-45f0-b1cd-2c10d83dadf5.pdf',
         presentation: null,
         press: null,

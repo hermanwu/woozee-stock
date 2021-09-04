@@ -1,33 +1,33 @@
 import { Rating } from '../models/rating.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const PTON: StockAnalysis = {
+export const DUOL: StockAnalysis = {
   logo: '',
-  name: { English: 'Peloton' },
+  name: { English: 'Duolingo, Inc.' },
   description: [],
-  ticker: 'PTON',
+  ticker: 'DUOL',
   myRating: Rating.Sell,
 
   // Earnings Report:
   earnings: {
-    website: 'https://investor.onepeloton.com/',
+    website: 'https://investors.duolingo.com/',
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
         '10q10k':
-          'https://investor.onepeloton.com/static-files/d84f3085-8c04-45d0-b6ab-0550de50c7ad',
+          'https://investors.duolingo.com/static-files/27cffd31-ae44-4663-a49d-3ed98419ea50',
         presentation: null,
         press: null,
         webcast: null,
-        marketCap: 31.12 * 1e9,
-        revenue: 936.9 * 1e6,
-        operatingIncome: -301.7 * 1e6,
+        marketCap: 6.1 * 1e9,
+        revenue: 58.803 * 1e6,
+        operatingIncome: -478 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 607.1 * 1e6,
-        operatingIncome: 90 * 1e6,
+        revenue: 40.011 * 1e6,
+        operatingIncome: 82 * 1e6,
       },
     },
   },

@@ -12,7 +12,7 @@ export const AMC: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001411579/50f0292e-e586-4e2a-82ae-4fb14dcda240.pdf',
         presentation: null,
         press: null,

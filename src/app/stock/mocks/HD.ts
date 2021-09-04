@@ -22,7 +22,7 @@ export const HD: StockAnalysis = {
     latestReportQuarter: ['2021', '3'],
     2021: {
       3: {
-        '10q': '',
+        '10q10k': '',
         press:
           'https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/reports-and-presentations/quarterly-earnings/2021/q2-2021-press-release.pdf',
         webcast: '',

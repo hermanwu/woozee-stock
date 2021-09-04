@@ -13,7 +13,7 @@ export const TWLO: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001447669/58fb24a6-da6d-40aa-bd56-2b4fd16ecb9e.pdf',
         presentation: '',
         press: '',

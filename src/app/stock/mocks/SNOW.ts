@@ -12,7 +12,7 @@ export const SNOW: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q': '',
+        '10q10k': '',
         presentation:
           'https://s26.q4cdn.com/463892824/files/doc_financials/2022/q2/Q2-FY22-Snowflake-Investor-Presentation_Final-(2).pdf',
         press: '',

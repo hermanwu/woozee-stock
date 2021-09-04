@@ -22,7 +22,7 @@ export const DIS: StockAnalysis = {
     latestReportQuarter: ['2021', '3'],
     2021: {
       3: {
-        '10q':
+        '10q10k':
           'https://thewaltdisneycompany.com/app/uploads/2021/08/q3-fy21-earnings.pdf',
         press:
           'https://thewaltdisneycompany.com/app/uploads/2021/08/reconciliation_q3_fy21.pdf',

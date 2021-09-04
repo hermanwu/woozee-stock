@@ -12,7 +12,7 @@ export const AFRM: StockAnalysis = {
     latestReportQuarter: ['2021', '3'],
     2021: {
       3: {
-        '10q':
+        '10q10k':
           'https://investors.affirm.com/static-files/4210c60b-e256-4d7b-808d-ea90329e657a',
         presentation: '',
         press: '',

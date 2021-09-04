@@ -14,7 +14,7 @@ export const TDOC: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://s21.q4cdn.com/672268105/files/doc_financials/2021/q2/TDOC-2Q-21-10-Q.pdf',
         presentation: null,
         press: null,

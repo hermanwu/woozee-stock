@@ -12,7 +12,7 @@ export const ISRG: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://isrg.intuitive.com/static-files/fb21705e-3b2c-4af8-8585-705454290dda',
         presentation: null,
         press: null,

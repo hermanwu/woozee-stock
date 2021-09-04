@@ -15,7 +15,7 @@ export const RDFN: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://investors.redfin.com/static-files/cb2ec57b-cff8-4ed9-8eac-48a9b3a8961c',
         presentation: null,
         press: null,

@@ -12,7 +12,7 @@ export const UBER: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001543151/bdaa01ec-4802-424c-87d6-17ab51d3fec9.pdf',
         presentation: '',
         press:

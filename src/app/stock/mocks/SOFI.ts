@@ -12,7 +12,7 @@ export const SOFI: StockAnalysis = {
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q':
+        '10q10k':
           'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001818874/1dcc94cc-37c2-4e6a-b885-96ee37575a6e.pdf',
         presentation: '',
         press: '',

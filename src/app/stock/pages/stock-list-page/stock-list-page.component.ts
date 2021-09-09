@@ -10,10 +10,12 @@ import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account
 import { AAPL } from '../../mocks/AAPL.mock';
 import { ABNB } from '../../mocks/ABNB';
 import { ADBE } from '../../mocks/ADBE';
+import { ADSK } from '../../mocks/ADSK';
 import { AFRM } from '../../mocks/AFRM';
 import { AMC } from '../../mocks/AMC';
 import { AMD } from '../../mocks/AMD';
 import { AMZN } from '../../mocks/AMZN.mock';
+import { asml } from '../../mocks/ASML';
 import { AXP } from '../../mocks/AXP';
 import { BABA } from '../../mocks/BABA';
 import { bili } from '../../mocks/BILI.mock';
@@ -24,6 +26,7 @@ import { CRM } from '../../mocks/CRM';
 import { DASH } from '../../mocks/DASH';
 import { DDOG } from '../../mocks/DDOG';
 import { DIS } from '../../mocks/DIS.mock';
+import { DKNG } from '../../mocks/DKNG';
 import { DOCU } from '../../mocks/DOCU';
 import { DUOL } from '../../mocks/DUOL';
 import { ESTC } from '../../mocks/ESTC';
@@ -31,6 +34,7 @@ import { ETSY } from '../../mocks/ETSY';
 import { FB } from '../../mocks/FB';
 import { GME } from '../../mocks/GME';
 import { GOOGL } from '../../mocks/GOOGL.mock';
+import { GS } from '../../mocks/GS';
 import { HD } from '../../mocks/HD';
 import { HOOD } from '../../mocks/HOOD';
 import { IAC } from '../../mocks/IAC';
@@ -41,6 +45,7 @@ import { JMIA } from '../../mocks/JMIA';
 import { JPM } from '../../mocks/JPM';
 import { LZ } from '../../mocks/LZ';
 import { MRNA } from '../../mocks/MRNA';
+import { NET } from '../../mocks/NET';
 import { NFLX } from '../../mocks/NFLX';
 import { NOW } from '../../mocks/NOW';
 import { NVDA } from '../../mocks/NVDA';
@@ -54,18 +59,24 @@ import { PYPL } from '../../mocks/PYPL';
 import { RBLX } from '../../mocks/RBLX.mock';
 import { RDFN } from '../../mocks/RDFN';
 import { RH } from '../../mocks/RH';
+import { SE } from '../../mocks/SE';
 import { SHOP } from '../../mocks/SHOP.mock';
 import { SKLZ } from '../../mocks/SKLZ';
 import { SNAP } from '../../mocks/SNAP';
 import { SNOW } from '../../mocks/SNOW';
 import { SOFI } from '../../mocks/SOFI';
 import { SPLK } from '../../mocks/SPLK';
+import { SPOT } from '../../mocks/SPOT';
 import { SQ } from '../../mocks/SQ.mock';
 import { STEM } from '../../mocks/STEM';
 import { TDOC } from '../../mocks/TDOC';
+import { TEAM } from '../../mocks/TEAM';
+import { TRMB } from '../../mocks/TRMB';
 import { tsla } from '../../mocks/TSLA.mock';
+import { TSM } from '../../mocks/TSM';
 import { TTD } from '../../mocks/TTD';
 import { TWLO } from '../../mocks/TWLO';
+import { TWTR } from '../../mocks/TWTR';
 import { U } from '../../mocks/U.mock';
 import { UBER } from '../../mocks/UBER';
 import { Z } from '../../mocks/Z.mock';
@@ -108,10 +119,13 @@ export class StockListPageComponent implements OnInit {
   ngOnInit(): void {
     // const equitySummaryMap = this.generateEquitySummaryMap(this.equities);
     const stockMap = this.generateStockMap([
+      TRMB,
       tsla,
       AAPL,
       NVDA,
       AMD,
+      TSM,
+      asml,
 
       HD,
       RH,
@@ -124,10 +138,12 @@ export class StockListPageComponent implements OnInit {
       JMIA,
 
       ADBE,
+      ADSK,
       CRM,
       NOW,
       DDOG,
       TWLO,
+      TEAM,
       SNOW,
       OKTA,
       SPLK,
@@ -136,6 +152,7 @@ export class StockListPageComponent implements OnInit {
       DOCU,
       ESTC,
       TTD,
+      NET,
 
       LZ,
       STEM,
@@ -148,6 +165,7 @@ export class StockListPageComponent implements OnInit {
       GOOGL,
       FB,
       PINS,
+      TWTR,
       SNAP,
       RBLX,
       U,
@@ -155,6 +173,7 @@ export class StockListPageComponent implements OnInit {
       OPEN,
       RDFN,
 
+      SE,
       ABNB,
       UBER,
       DASH,
@@ -163,7 +182,9 @@ export class StockListPageComponent implements OnInit {
       DUOL,
       IAC,
       SKLZ,
+      SPOT,
 
+      GS,
       JPM,
       AXP,
       PYPL,
@@ -176,6 +197,7 @@ export class StockListPageComponent implements OnInit {
       bili,
       NFLX,
 
+      DKNG,
       PENN,
 
       AMC,

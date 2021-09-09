@@ -18,7 +18,7 @@ export const FB: StockAnalysis = {
         presentation: '',
         press: '',
         webcast: '',
-        marketCap: 1.02 * 1e12,
+        marketCap: 1.074 * 1e12,
         revenue: 29077 * 1e6,
         operatingIncome: 12367 * 1e6,
       },

@@ -1,3 +1,4 @@
+import { Rating } from '../models/rating.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const AFRM: StockAnalysis = {
@@ -5,12 +6,19 @@ export const AFRM: StockAnalysis = {
   name: { English: 'Affirm' },
   description: [],
   ticker: 'AFRM',
+  myRating: Rating.Hold,
 
   // Earnings Report:
   earnings: {
     website: 'https://investors.affirm.com/',
-    latestReportQuarter: ['2021', '3'],
+    latestReportQuarter: ['2021', '4'],
     2021: {
+      4: {
+        marketCap: 30 * 1e9,
+        revenue: 261780 * 1e3,
+        operatingIncome: -124690 * 1e3,
+        date: '09-09-2021',
+      },
       3: {
         '10q10k':
           'https://investors.affirm.com/static-files/4210c60b-e256-4d7b-808d-ea90329e657a',
@@ -24,6 +32,10 @@ export const AFRM: StockAnalysis = {
       },
     },
     2020: {
+      4: {
+        revenue: 153332 * 1e3,
+        operatingIncome: 39320 * 1e3,
+      },
       3: {
         revenue: 138273 * 1e3,
         operatingIncome: -81505 * 1e3,

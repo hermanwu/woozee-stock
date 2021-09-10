@@ -28,7 +28,7 @@ export class StockListTableComponent
     // 'categories',
     'lastQuarterRevenue',
     'currentQuarterRevenue',
-    'revenue-increase',
+    'revenueIncrease',
 
     'lastQuarterOperatingIncome',
     'currentQuarterOperatingIncome',

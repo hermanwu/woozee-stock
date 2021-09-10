@@ -49,15 +49,12 @@
         {{ stock.currentQuarterRevenue | unit: 2 }}
       </td>
     </ng-container>
-    <ng-container matColumnDef="revenue-increase">
+    <ng-container matColumnDef="revenueIncrease">
       <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
         收入增幅
       </th>
       <td mat-cell class="align-right" *matCellDef="let stock">
-        <strong>{{
-          (stock.currentQuarterRevenue - stock.lastQuarterRevenue) /
-            stock.lastQuarterRevenue | percent
-        }}</strong>
+        <strong>{{ stock.revenueIncrease | percent }}</strong>
       </td>
     </ng-container>
 

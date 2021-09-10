@@ -1,3 +1,4 @@
+import { Rating } from '../models/rating.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const RBLX: StockAnalysis = {
@@ -12,6 +13,7 @@ export const RBLX: StockAnalysis = {
   ceoQuote: [],
   advantage: [],
   risk: [],
+  myRating: Rating.Buy,
   // POTENTIALS:
 
   // Demand:

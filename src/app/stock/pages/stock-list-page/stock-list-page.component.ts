@@ -47,6 +47,7 @@ import { LZ } from '../../mocks/LZ';
 import { MRNA } from '../../mocks/MRNA';
 import { NET } from '../../mocks/NET';
 import { NFLX } from '../../mocks/NFLX';
+import { NIO } from '../../mocks/NIO_mock';
 import { NOW } from '../../mocks/NOW';
 import { NVDA } from '../../mocks/NVDA';
 import { OKTA } from '../../mocks/OKTA';
@@ -121,6 +122,7 @@ export class StockListPageComponent implements OnInit {
     const stockMap = this.generateStockMap([
       TRMB,
       tsla,
+      NIO,
       AAPL,
       NVDA,
       AMD,
@@ -245,6 +247,11 @@ export class StockListPageComponent implements OnInit {
       const latestQuarter = stockMap[key]?.earnings?.latestReportQuarter?.[1];
       const previousYear = parseInt(latestYear, 10) - 1 + '';
 
+      const currentQuarterRevenue =
+        stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.revenue || 0;
+      const lastQuarterRevenue =
+        stockMap[key]?.earnings?.[previousYear]?.[latestQuarter]?.revenue || 0;
+
       result.push({
         myRating: stockMap[key]?.myRating,
         ticker: key,
@@ -253,10 +260,11 @@ export class StockListPageComponent implements OnInit {
         categories: stockMap[key]?.trends,
         optionCrazy: stockMap[key]?.optionCrazy,
 
-        currentQuarterRevenue:
-          stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.revenue,
-        lastQuarterRevenue:
-          stockMap[key]?.earnings?.[previousYear]?.[latestQuarter]?.revenue,
+        currentQuarterRevenue,
+        lastQuarterRevenue,
+        revenueIncrease:
+          (currentQuarterRevenue - lastQuarterRevenue) / lastQuarterRevenue,
+
         currentQuarterOperatingIncome:
           stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]
             ?.operatingIncome,

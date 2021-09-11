@@ -241,16 +241,39 @@ export class StockListPageComponent implements OnInit {
    */
   private convertToTableData(stockMap: any): any[] {
     const result = [];
+    let revenueIncreaseRanks = [];
 
     for (let key of Object.keys(stockMap)) {
       const latestYear = stockMap[key]?.earnings?.latestReportQuarter?.[0];
       const latestQuarter = stockMap[key]?.earnings?.latestReportQuarter?.[1];
       const previousYear = parseInt(latestYear, 10) - 1 + '';
 
+      const marketCap =
+        stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.marketCap;
+
       const currentQuarterRevenue =
         stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.revenue || 0;
       const lastQuarterRevenue =
         stockMap[key]?.earnings?.[previousYear]?.[latestQuarter]?.revenue || 0;
+
+      const revenueIncrease =
+        (currentQuarterRevenue - lastQuarterRevenue) / lastQuarterRevenue;
+      revenueIncreaseRanks.push(revenueIncrease);
+
+      const salesOverMarketCap = currentQuarterRevenue / marketCap;
+      const salesIncreaseOverMarketCap =
+        (currentQuarterRevenue - lastQuarterRevenue) / marketCap;
+
+      const currentQuarterOperatingIncome =
+        stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]
+          ?.operatingIncome || 0;
+      const lastQuarterOperatingIncome =
+        stockMap[key]?.earnings?.[previousYear]?.[latestQuarter]
+          ?.operatingIncome || 0;
+      const operatingIncomeIncrease =
+        currentQuarterOperatingIncome - lastQuarterOperatingIncome;
+      const profitOverMarketCap = currentQuarterOperatingIncome / marketCap;
+      const profileIncreaseOverMarketCap = operatingIncomeIncrease / marketCap;
 
       result.push({
         myRating: stockMap[key]?.myRating,
@@ -262,15 +285,15 @@ export class StockListPageComponent implements OnInit {
 
         currentQuarterRevenue,
         lastQuarterRevenue,
-        revenueIncrease:
-          (currentQuarterRevenue - lastQuarterRevenue) / lastQuarterRevenue,
+        revenueIncrease,
+        salesOverMarketCap,
+        salesIncreaseOverMarketCap,
 
-        currentQuarterOperatingIncome:
-          stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]
-            ?.operatingIncome,
-        lastQuarterOperatingIncome:
-          stockMap[key]?.earnings?.[previousYear]?.[latestQuarter]
-            ?.operatingIncome,
+        currentQuarterOperatingIncome,
+        lastQuarterOperatingIncome,
+        operatingIncomeIncrease,
+        profitOverMarketCap,
+        profileIncreaseOverMarketCap,
 
         investorWebsite: stockMap[key]?.earnings?.website,
         current10Q:
@@ -282,9 +305,18 @@ export class StockListPageComponent implements OnInit {
         webcast:
           stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.webcast,
 
-        latestQuarterMarketCap:
-          stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.marketCap,
+        latestQuarterMarketCap: marketCap,
       });
+    }
+
+    // calculate the rank of revenue increase.
+    revenueIncreaseRanks.sort((a, b) => b - a);
+    for (let stockData of result) {
+      stockData.revenueIncreaseRank =
+        revenueIncreaseRanks.indexOf(stockData.revenueIncrease) +
+        1 +
+        '/' +
+        revenueIncreaseRanks.length;
     }
 
     return result;

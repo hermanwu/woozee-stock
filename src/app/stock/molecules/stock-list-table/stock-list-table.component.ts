@@ -26,21 +26,20 @@ export class StockListTableComponent
     'chineseName',
     // 'shares',
     // 'categories',
+    'latestQuarterMarketCap',
+
     'lastQuarterRevenue',
     'currentQuarterRevenue',
     'revenueIncrease',
 
+    'salesOverMarketCap',
+    'salesIncreaseOverMarketCap',
+
     'lastQuarterOperatingIncome',
     'currentQuarterOperatingIncome',
     'operatingIncomeIncrease',
-
-    'latestQuarterMarketCap',
-
-    'salesOverMarketCap',
-    'sales-score',
-
     'profitOverMarketCap',
-    'profit-score',
+    'profileIncreaseOverMarketCap',
 
     'webcast',
     'presentation',

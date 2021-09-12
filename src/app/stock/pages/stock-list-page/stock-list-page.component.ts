@@ -15,11 +15,15 @@ import { AFRM } from '../../mocks/AFRM';
 import { AMC } from '../../mocks/AMC';
 import { AMD } from '../../mocks/AMD';
 import { AMZN } from '../../mocks/AMZN.mock';
+import { API } from '../../mocks/API';
 import { asml } from '../../mocks/ASML';
+import { ATVI } from '../../mocks/ATVI';
+import { AVGO } from '../../mocks/AVGO';
 import { AXP } from '../../mocks/AXP';
 import { BABA } from '../../mocks/BABA';
 import { bili } from '../../mocks/BILI.mock';
 import { BYND } from '../../mocks/BYND';
+import { CHWY } from '../../mocks/CHWY';
 import { CLOV } from '../../mocks/CLOV';
 import { COIN } from '../../mocks/COIN';
 import { CRM } from '../../mocks/CRM';
@@ -29,6 +33,8 @@ import { DIS } from '../../mocks/DIS.mock';
 import { DKNG } from '../../mocks/DKNG';
 import { DOCU } from '../../mocks/DOCU';
 import { DUOL } from '../../mocks/DUOL';
+import { EA } from '../../mocks/EA';
+import { EDIT } from '../../mocks/EDIT';
 import { ESTC } from '../../mocks/ESTC';
 import { ETSY } from '../../mocks/ETSY';
 import { FB } from '../../mocks/FB';
@@ -126,6 +132,7 @@ export class StockListPageComponent implements OnInit {
       AAPL,
       NVDA,
       AMD,
+      AVGO,
       TSM,
       asml,
 
@@ -137,6 +144,7 @@ export class StockListPageComponent implements OnInit {
       pdd,
       SHOP,
       ETSY,
+      CHWY,
       JMIA,
 
       ADBE,
@@ -155,6 +163,7 @@ export class StockListPageComponent implements OnInit {
       ESTC,
       TTD,
       NET,
+      API,
 
       LZ,
       STEM,
@@ -163,17 +172,20 @@ export class StockListPageComponent implements OnInit {
       MRNA,
       CLOV,
       TDOC,
+      EDIT,
 
       GOOGL,
       FB,
       PINS,
       TWTR,
       SNAP,
-      RBLX,
       U,
       Z,
       OPEN,
       RDFN,
+      RBLX,
+      ATVI,
+      EA,
 
       SE,
       ABNB,

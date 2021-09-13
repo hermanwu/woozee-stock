@@ -51,6 +51,7 @@ import { JMIA } from '../../mocks/JMIA';
 import { JPM } from '../../mocks/JPM';
 import { LZ } from '../../mocks/LZ';
 import { MRNA } from '../../mocks/MRNA';
+import { MSFT } from '../../mocks/MSFT';
 import { NET } from '../../mocks/NET';
 import { NFLX } from '../../mocks/NFLX';
 import { NIO } from '../../mocks/NIO_mock';
@@ -76,6 +77,7 @@ import { SPLK } from '../../mocks/SPLK';
 import { SPOT } from '../../mocks/SPOT';
 import { SQ } from '../../mocks/SQ.mock';
 import { STEM } from '../../mocks/STEM';
+import { techy } from '../../mocks/TCEHY';
 import { TDOC } from '../../mocks/TDOC';
 import { TEAM } from '../../mocks/TEAM';
 import { TRMB } from '../../mocks/TRMB';
@@ -147,6 +149,7 @@ export class StockListPageComponent implements OnInit {
       CHWY,
       JMIA,
 
+      MSFT,
       ADBE,
       ADSK,
       CRM,
@@ -176,6 +179,7 @@ export class StockListPageComponent implements OnInit {
 
       GOOGL,
       FB,
+      techy,
       PINS,
       TWTR,
       SNAP,

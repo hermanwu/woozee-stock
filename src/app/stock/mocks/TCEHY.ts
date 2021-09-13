@@ -3,9 +3,9 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const techy: StockAnalysis = {
   logo: '',
-  name: { English: null },
+  name: { English: 'Tencent Holding' },
   description: [],
-  ticker: null,
+  ticker: 'TCEHY',
 
   // Earnings Report:
   earnings: {

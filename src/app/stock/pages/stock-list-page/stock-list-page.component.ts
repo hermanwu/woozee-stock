@@ -89,6 +89,7 @@ import { TWLO } from '../../mocks/TWLO';
 import { TWTR } from '../../mocks/TWTR';
 import { U } from '../../mocks/U.mock';
 import { UBER } from '../../mocks/UBER';
+import { wish } from '../../mocks/wish';
 import { Z } from '../../mocks/Z.mock';
 import { ZM } from '../../mocks/ZM';
 import { ZS } from '../../mocks/ZS';
@@ -149,6 +150,7 @@ export class StockListPageComponent implements OnInit {
       ETSY,
       CHWY,
       JMIA,
+      wish,
 
       MSFT,
       ADBE,

@@ -89,6 +89,7 @@ import { TWLO } from '../../mocks/TWLO';
 import { TWTR } from '../../mocks/TWTR';
 import { U } from '../../mocks/U.mock';
 import { UBER } from '../../mocks/UBER';
+import { VMEO } from '../../mocks/vmeo';
 import { wish } from '../../mocks/wish';
 import { Z } from '../../mocks/Z.mock';
 import { ZM } from '../../mocks/ZM';
@@ -205,6 +206,7 @@ export class StockListPageComponent implements OnInit {
       IAC,
       SKLZ,
       SPOT,
+      VMEO,
 
       GS,
       JPM,
@@ -262,6 +264,8 @@ export class StockListPageComponent implements OnInit {
   private convertToTableData(stockMap: any): any[] {
     const result = [];
     let revenueIncreaseRanks = [];
+    let currentQuarterOperatingIncomeRanks = [];
+    let profitOverMarketCapRanks = [];
 
     for (let key of Object.keys(stockMap)) {
       const latestYear = stockMap[key]?.earnings?.latestReportQuarter?.[0];
@@ -287,12 +291,16 @@ export class StockListPageComponent implements OnInit {
       const currentQuarterOperatingIncome =
         stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]
           ?.operatingIncome || 0;
+      currentQuarterOperatingIncomeRanks.push(currentQuarterOperatingIncome);
+
       const lastQuarterOperatingIncome =
         stockMap[key]?.earnings?.[previousYear]?.[latestQuarter]
           ?.operatingIncome || 0;
+
       const operatingIncomeIncrease =
         currentQuarterOperatingIncome - lastQuarterOperatingIncome;
       const profitOverMarketCap = currentQuarterOperatingIncome / marketCap;
+      profitOverMarketCapRanks.push(profitOverMarketCap);
       const profileIncreaseOverMarketCap = operatingIncomeIncrease / marketCap;
 
       result.push({
@@ -331,12 +339,33 @@ export class StockListPageComponent implements OnInit {
 
     // calculate the rank of revenue increase.
     revenueIncreaseRanks.sort((a, b) => b - a);
+    currentQuarterOperatingIncomeRanks.sort((a, b) => b - a);
+    profitOverMarketCapRanks.sort((a, b) => b - a);
+
     for (let stockData of result) {
+      const revenueIncreaseRank =
+        revenueIncreaseRanks.indexOf(stockData.revenueIncrease) + 1;
       stockData.revenueIncreaseRank =
-        revenueIncreaseRanks.indexOf(stockData.revenueIncrease) +
-        1 +
+        revenueIncreaseRank + '/' + revenueIncreaseRanks.length;
+
+      const currentQuarterOperatingIncomeRank =
+        currentQuarterOperatingIncomeRanks.indexOf(
+          stockData.currentQuarterOperatingIncome
+        ) + 1;
+      stockData.currentQuarterOperatingIncomeRank =
+        currentQuarterOperatingIncomeRank +
         '/' +
-        revenueIncreaseRanks.length;
+        currentQuarterOperatingIncomeRanks.length;
+
+      const profitOverMarketCapRank =
+        profitOverMarketCapRanks.indexOf(stockData.profitOverMarketCap) + 1;
+      stockData.profitOverMarketCapRank =
+        profitOverMarketCapRank + '/' + profitOverMarketCapRanks.length;
+
+      stockData.myScore =
+        currentQuarterOperatingIncomeRanks.length * 2 -
+        revenueIncreaseRank -
+        profitOverMarketCapRank;
     }
 
     return result;

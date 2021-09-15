@@ -47,6 +47,7 @@ export class StockListTableComponent
     'form10Q',
     'website',
     'myRating',
+    'myScore',
   ];
 
   dataSource = new MatTableDataSource<any>();

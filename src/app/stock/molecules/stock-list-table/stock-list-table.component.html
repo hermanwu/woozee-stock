@@ -15,6 +15,8 @@
       <td mat-cell *matCellDef="let stock">
         <ng-container *ngIf="stock.myScore">
           {{ stock.myScore }}
+
+          <mat-chip disableRipple>{{ stock.myScoreRank }}</mat-chip>
         </ng-container>
       </td>
     </ng-container>
@@ -66,7 +68,7 @@
       <td mat-cell class="align-right" *matCellDef="let stock">
         <strong>{{ stock.revenueIncrease | percent }}</strong>
         <span
-          ><mat-chip>{{ stock.revenueIncreaseRank }}</mat-chip>
+          ><mat-chip disableRipple>{{ stock.revenueIncreaseRank }}</mat-chip>
         </span>
       </td>
     </ng-container>
@@ -84,11 +86,7 @@
         最新季度营业利润
       </th>
       <td mat-cell class="align-right" *matCellDef="let stock">
-        {{ stock.currentQuarterOperatingIncome | unit: 2 }}
-
-        <span
-          ><mat-chip>{{ stock.currentQuarterOperatingIncomeRank }}</mat-chip>
-        </span>
+        <strong>{{ stock.currentQuarterOperatingIncome | unit: 2 }}</strong>
       </td>
     </ng-container>
     <ng-container matColumnDef="operatingIncomeIncrease">
@@ -96,7 +94,7 @@
         利润增长
       </th>
       <td mat-cell class="align-right" *matCellDef="let stock">
-        <strong>{{ stock.operatingIncomeIncrease | unit: 2 }}</strong>
+        {{ stock.operatingIncomeIncrease | unit: 2 }}
       </td>
     </ng-container>
 
@@ -183,7 +181,9 @@
       <td mat-cell class="align-right" *matCellDef="let stock">
         <strong>{{ stock.profitOverMarketCap | percent: "0.3-3" }}</strong>
         <span
-          ><mat-chip>{{ stock.profitOverMarketCapRank }}</mat-chip>
+          ><mat-chip disableRipple>{{
+            stock.profitOverMarketCapRank
+          }}</mat-chip>
         </span>
       </td>
     </ng-container>

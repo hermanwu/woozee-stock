@@ -22,6 +22,7 @@ import { AVGO } from '../../mocks/AVGO';
 import { AXP } from '../../mocks/AXP';
 import { BABA } from '../../mocks/BABA';
 import { bili } from '../../mocks/BILI.mock';
+import { blde } from '../../mocks/blde';
 import { BYND } from '../../mocks/BYND';
 import { CHWY } from '../../mocks/CHWY';
 import { CLOV } from '../../mocks/CLOV';
@@ -89,6 +90,8 @@ import { TWLO } from '../../mocks/TWLO';
 import { TWTR } from '../../mocks/TWTR';
 import { U } from '../../mocks/U.mock';
 import { UBER } from '../../mocks/UBER';
+import { ulta } from '../../mocks/ULTA';
+import { up } from '../../mocks/UP';
 import { VMEO } from '../../mocks/vmeo';
 import { wish } from '../../mocks/wish';
 import { Z } from '../../mocks/Z.mock';
@@ -142,6 +145,7 @@ export class StockListPageComponent implements OnInit {
       asml,
 
       HD,
+      ulta,
       RH,
       AMZN,
       BABA,
@@ -228,6 +232,8 @@ export class StockListPageComponent implements OnInit {
       GME,
 
       BYND,
+      up,
+      blde,
     ]);
     this.stocks = this.convertToTableData(stockMap);
   }
@@ -342,6 +348,7 @@ export class StockListPageComponent implements OnInit {
     currentQuarterOperatingIncomeRanks.sort((a, b) => b - a);
     profitOverMarketCapRanks.sort((a, b) => b - a);
 
+    const myScoreRanks = [];
     for (let stockData of result) {
       const revenueIncreaseRank =
         revenueIncreaseRanks.indexOf(stockData.revenueIncrease) + 1;
@@ -366,6 +373,15 @@ export class StockListPageComponent implements OnInit {
         currentQuarterOperatingIncomeRanks.length * 2 -
         revenueIncreaseRank -
         profitOverMarketCapRank;
+
+      myScoreRanks.push(stockData.myScore);
+    }
+
+    myScoreRanks.sort((a, b) => b - a);
+
+    for (let stockData of result) {
+      const myScoreRank = myScoreRanks.indexOf(stockData.myScore) + 1;
+      stockData.myScoreRank = myScoreRank + '/' + myScoreRanks.length;
     }
 
     return result;

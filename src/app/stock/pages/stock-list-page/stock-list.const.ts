@@ -12,6 +12,7 @@ import { ATVI } from '../../mocks/ATVI';
 import { AVGO } from '../../mocks/AVGO';
 import { AXP } from '../../mocks/AXP';
 import { BABA } from '../../mocks/BABA';
+import { bidu } from '../../mocks/bidu';
 import { bili } from '../../mocks/BILI.mock';
 import { blde } from '../../mocks/blde';
 import { BYND } from '../../mocks/BYND';
@@ -19,6 +20,7 @@ import { CHWY } from '../../mocks/CHWY';
 import { CLOV } from '../../mocks/CLOV';
 import { COIN } from '../../mocks/COIN';
 import { CRM } from '../../mocks/CRM';
+import { CRWD } from '../../mocks/CRWD';
 import { DASH } from '../../mocks/DASH';
 import { DDOG } from '../../mocks/DDOG';
 import { DIS } from '../../mocks/DIS.mock';
@@ -30,6 +32,7 @@ import { EDIT } from '../../mocks/EDIT';
 import { ESTC } from '../../mocks/ESTC';
 import { ETSY } from '../../mocks/ETSY';
 import { FB } from '../../mocks/FB';
+import { fvrr } from '../../mocks/fvrr';
 import { GME } from '../../mocks/GME';
 import { GOOGL } from '../../mocks/GOOGL.mock';
 import { GS } from '../../mocks/GS';
@@ -52,8 +55,12 @@ import { MSFT } from '../../mocks/MSFT';
 import { NET } from '../../mocks/NET';
 import { NFLX } from '../../mocks/NFLX';
 import { NIO } from '../../mocks/NIO_mock';
+import { noc } from '../../mocks/noc';
 import { NOW } from '../../mocks/NOW';
+import { ntdoy } from '../../mocks/ntdoy';
+import { nvax } from '../../mocks/nvax';
 import { NVDA } from '../../mocks/NVDA';
+import { ob } from '../../mocks/ob';
 import { OKTA } from '../../mocks/OKTA';
 import { OPEN } from '../../mocks/OPEN';
 import { orcl } from '../../mocks/orcl';
@@ -66,6 +73,7 @@ import { RBLX } from '../../mocks/RBLX.mock';
 import { RDFN } from '../../mocks/RDFN';
 import { RH } from '../../mocks/RH';
 import { roku } from '../../mocks/ROKU';
+import { rskd } from '../../mocks/rskd';
 import { sbux } from '../../mocks/sbux';
 import { SE } from '../../mocks/SE';
 import { SHOP } from '../../mocks/SHOP.mock';
@@ -77,9 +85,11 @@ import { SPLK } from '../../mocks/SPLK';
 import { SPOT } from '../../mocks/SPOT';
 import { SQ } from '../../mocks/SQ.mock';
 import { STEM } from '../../mocks/STEM';
+import { swks } from '../../mocks/swks';
 import { techy } from '../../mocks/TCEHY';
 import { TDOC } from '../../mocks/TDOC';
 import { TEAM } from '../../mocks/TEAM';
+import { tgt } from '../../mocks/tgt';
 import { TRMB } from '../../mocks/TRMB';
 import { tsla } from '../../mocks/TSLA.mock';
 import { TSM } from '../../mocks/TSM';
@@ -92,9 +102,7 @@ import { ulta } from '../../mocks/ULTA';
 import { unh } from '../../mocks/unh';
 import { up } from '../../mocks/UP';
 import { VMEO } from '../../mocks/vmeo';
-import { wish } from '../../mocks/wish';
 import { xpev } from '../../mocks/XPEV';
-import { you } from '../../mocks/you';
 import { Z } from '../../mocks/Z.mock';
 import { ZM } from '../../mocks/ZM';
 import { ZS } from '../../mocks/ZS';
@@ -106,6 +114,7 @@ export const stockList = [
   logi,
 
   lmt,
+  noc,
   TRMB,
   tsla,
   NIO,
@@ -114,11 +123,13 @@ export const stockList = [
   NVDA,
   AMD,
   AVGO,
+  swks,
   TSM,
   asml,
 
   sbux,
   HD,
+  tgt,
   ulta,
   AMZN,
   BABA,
@@ -128,7 +139,7 @@ export const stockList = [
   ETSY,
   CHWY,
   JMIA,
-  wish,
+  // wish,
   meli,
 
   MSFT,
@@ -150,13 +161,17 @@ export const stockList = [
   TTD,
   NET,
   API,
+  CRWD,
+  ob,
+  rskd,
 
   LZ,
   STEM,
-  you,
+  // you,
 
   ISRG,
   MRNA,
+  nvax,
   CLOV,
   unh,
   TDOC,
@@ -165,6 +180,7 @@ export const stockList = [
   GOOGL,
   FB,
   techy,
+  bidu,
   PINS,
   TWTR,
   SNAP,
@@ -176,6 +192,7 @@ export const stockList = [
   RBLX,
   ATVI,
   EA,
+  ntdoy,
 
   SE,
   ABNB,
@@ -198,6 +215,7 @@ export const stockList = [
   SQ,
   HOOD,
   SOFI,
+  fvrr,
   DIS,
   bili,
   NFLX,

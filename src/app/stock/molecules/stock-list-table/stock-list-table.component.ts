@@ -18,7 +18,7 @@ export class StockListTableComponent
   implements OnInit, OnChanges, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
 
-  @Input() stocks: any[];
+  @Input() dataSource: MatTableDataSource<any>;
 
   readonly columnsToDisplay = [
     'ticker',
@@ -50,17 +50,11 @@ export class StockListTableComponent
     'myScore',
   ];
 
-  dataSource = new MatTableDataSource<any>();
-
   constructor() {}
 
   ngOnInit(): void {}
 
-  ngOnChanges(): void {
-    if (this.stocks?.length > 0) {
-      this.dataSource.data = this.stocks;
-    }
-  }
+  ngOnChanges(): void {}
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;

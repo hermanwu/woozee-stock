@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { BOA } from 'src/app/accounts/ mock-data/herman-boa-account';
 import { citi } from 'src/app/accounts/ mock-data/herman-citi-account';
 import { hermanFutu } from 'src/app/accounts/ mock-data/herman-futu';
@@ -38,14 +39,19 @@ export class StockListPageComponent implements OnInit {
     ...meilongIbAccount,
   ];
   equitySummaryMap = this.generateEquitySummaryMap(this.equities);
-  stocks = [];
+  dataSource = new MatTableDataSource<any>();
 
   constructor() {}
 
   ngOnInit(): void {
     // const equitySummaryMap = this.generateEquitySummaryMap(this.equities);
     const stockMap = this.generateStockMap(stockList);
-    this.stocks = this.convertToTableData(stockMap);
+    this.dataSource.data = this.convertToTableData(stockMap);
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   private generateEquitySummaryMap(equities: Equity[]): any {

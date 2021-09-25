@@ -2,4 +2,9 @@
   <mat-toolbar-row><h1>股票</h1></mat-toolbar-row>
 </mat-toolbar>
 
-<app-stock-list-table [stocks]="stocks"></app-stock-list-table>
+<mat-form-field appearance="standard">
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input />
+</mat-form-field>
+
+<app-stock-list-table [dataSource]="dataSource"></app-stock-list-table>

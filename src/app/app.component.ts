@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = '投资品';
 
+  showFiller = false;
+
   routes = [
     {
       name: '股票',

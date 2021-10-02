@@ -1,30 +1,31 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const empty: StockAnalysis = {
+export const upwk: StockAnalysis = {
   logo: '',
-  name: { English: null },
+  name: { English: 'Upwork Inc' },
   description: [],
-  ticker: null,
+  ticker: 'UPWK',
 
   // Earnings Report:
   earnings: {
-    website: null,
+    website: 'https://investors.upwork.com/',
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
-        '10q10k': null,
+        '10q10k':
+          'https://investors.upwork.com/static-files/d69761e7-64c7-4184-855b-de216c7bdf30',
         presentation: null,
         press: null,
         webcast: null,
-        marketCap: 1 * 1e9,
-        revenue: 1 * 1e6,
-        operatingIncome: 1 * 1e6,
+        marketCap: 6.12 * 1e9,
+        revenue: 124.181 * 1e6,
+        operatingIncome: -16.395 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 1 * 1e6,
-        operatingIncome: 1 * 1e6,
+        revenue: 87.531 * 1e6,
+        operatingIncome: -10.984 * 1e6,
       },
     },
   },

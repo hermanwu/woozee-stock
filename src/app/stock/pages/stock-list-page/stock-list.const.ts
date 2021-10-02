@@ -38,6 +38,7 @@ import { GOOGL } from '../../mocks/GOOGL.mock';
 import { GS } from '../../mocks/GS';
 import { HD } from '../../mocks/HD';
 import { HOOD } from '../../mocks/HOOD';
+import { huya } from '../../mocks/huya';
 import { IAC } from '../../mocks/IAC';
 import { INTU } from '../../mocks/INTU';
 import { ISRG } from '../../mocks/ISRG';
@@ -47,9 +48,12 @@ import { jnj } from '../../mocks/jnj';
 import { JPM } from '../../mocks/JPM';
 import { lmt } from '../../mocks/lmt';
 import { logi } from '../../mocks/LOGI';
+import { lrcx } from '../../mocks/lrcx';
 import { luv } from '../../mocks/luv';
 import { LZ } from '../../mocks/LZ';
+import { mdb } from '../../mocks/MDB';
 import { meli } from '../../mocks/MELI';
+import { mrk } from '../../mocks/mrk';
 import { MRNA } from '../../mocks/MRNA';
 import { MSFT } from '../../mocks/MSFT';
 import { NET } from '../../mocks/NET';
@@ -69,6 +73,7 @@ import { PENN } from '../../mocks/PENN';
 import { PINS } from '../../mocks/PINs';
 import { PTON } from '../../mocks/PTON';
 import { PYPL } from '../../mocks/PYPL';
+import { qs } from '../../mocks/qs';
 import { RBLX } from '../../mocks/RBLX.mock';
 import { RDFN } from '../../mocks/RDFN';
 import { RH } from '../../mocks/RH';
@@ -123,6 +128,7 @@ export const stockList = [
   NVDA,
   AMD,
   AVGO,
+  lrcx,
   swks,
   TSM,
   asml,
@@ -164,11 +170,13 @@ export const stockList = [
   CRWD,
   ob,
   rskd,
+  mdb,
 
   LZ,
   STEM,
   // you,
 
+  mrk,
   ISRG,
   MRNA,
   nvax,
@@ -193,6 +201,7 @@ export const stockList = [
   ATVI,
   EA,
   ntdoy,
+  huya,
 
   SE,
   ABNB,
@@ -225,6 +234,7 @@ export const stockList = [
 
   AMC,
   GME,
+  qs,
 
   BYND,
   up,

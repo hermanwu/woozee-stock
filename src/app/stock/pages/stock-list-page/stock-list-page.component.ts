@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { BOA } from 'src/app/accounts/ mock-data/herman-boa-account';
 import { citi } from 'src/app/accounts/ mock-data/herman-citi-account';
@@ -8,6 +9,9 @@ import { schwab } from 'src/app/accounts/ mock-data/herman-schwab-account';
 import { jessicaPaypal } from 'src/app/accounts/ mock-data/jessica-paypal-account';
 import { webull } from 'src/app/accounts/ mock-data/jessica-wubu-account';
 import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
+import { industry } from 'src/app/shared/industry.enum';
+import { Trend } from 'src/app/shared/trend.enum';
+import { stockListColumns } from './stock-list-columns.const';
 import { stockList } from './stock-list.const';
 
 export interface Equity {
@@ -21,7 +25,10 @@ export interface Equity {
   styleUrls: ['./stock-list-page.component.scss'],
 })
 export class StockListPageComponent implements OnInit {
-  // readonly stockInfo = myStockList;
+  columnsToDisplay = new FormControl(stockListColumns);
+  stockListColumns: string[] = stockListColumns;
+  industries = Object.values(industry);
+  trends = Object.values(Trend);
 
   equities: Equity[] = [
     // My account

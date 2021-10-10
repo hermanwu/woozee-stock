@@ -79,6 +79,7 @@ import { RDFN } from '../../mocks/RDFN';
 import { RH } from '../../mocks/RH';
 import { roku } from '../../mocks/ROKU';
 import { rskd } from '../../mocks/rskd';
+import { rtx } from '../../mocks/rtx';
 import { sbux } from '../../mocks/sbux';
 import { SE } from '../../mocks/SE';
 import { SHOP } from '../../mocks/SHOP.mock';
@@ -106,7 +107,11 @@ import { UBER } from '../../mocks/UBER';
 import { ulta } from '../../mocks/ULTA';
 import { unh } from '../../mocks/unh';
 import { up } from '../../mocks/UP';
+import { upst } from '../../mocks/upst';
+import { upwk } from '../../mocks/UPWK';
 import { VMEO } from '../../mocks/vmeo';
+import { vmw } from '../../mocks/vmw';
+import { wix } from '../../mocks/wix';
 import { xpev } from '../../mocks/XPEV';
 import { Z } from '../../mocks/Z.mock';
 import { ZM } from '../../mocks/ZM';
@@ -120,6 +125,7 @@ export const stockList = [
 
   lmt,
   noc,
+  rtx,
   TRMB,
   tsla,
   NIO,
@@ -171,6 +177,10 @@ export const stockList = [
   ob,
   rskd,
   mdb,
+  upst,
+  upwk,
+  wix,
+  vmw,
 
   LZ,
   STEM,

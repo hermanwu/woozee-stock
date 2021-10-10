@@ -18,37 +18,8 @@ export class StockListTableComponent
   implements OnInit, OnChanges, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
 
+  @Input() columnsToDisplay: string[];
   @Input() dataSource: MatTableDataSource<any>;
-
-  readonly columnsToDisplay = [
-    'ticker',
-    'name',
-    'chineseName',
-    // 'shares',
-    // 'categories',
-    'latestQuarterMarketCap',
-
-    'lastQuarterRevenue',
-    'currentQuarterRevenue',
-    'revenueIncrease',
-
-    'salesOverMarketCap',
-    'salesIncreaseOverMarketCap',
-
-    'lastQuarterOperatingIncome',
-    'currentQuarterOperatingIncome',
-    'operatingIncomeIncrease',
-    'profitOverMarketCap',
-    'profileIncreaseOverMarketCap',
-
-    'webcast',
-    'presentation',
-    'pressRelease',
-    'form10Q',
-    'website',
-    'myRating',
-    'myScore',
-  ];
 
   constructor() {}
 

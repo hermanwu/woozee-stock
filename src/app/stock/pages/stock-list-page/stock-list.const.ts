@@ -71,6 +71,7 @@ import { orcl } from '../../mocks/orcl';
 import { pdd } from '../../mocks/PDD.mock';
 import { PENN } from '../../mocks/PENN';
 import { PINS } from '../../mocks/PINs';
+import { pltr } from '../../mocks/pltr';
 import { PTON } from '../../mocks/PTON';
 import { PYPL } from '../../mocks/PYPL';
 import { qs } from '../../mocks/qs';
@@ -181,6 +182,7 @@ export const stockList = [
   upwk,
   wix,
   vmw,
+  pltr,
 
   LZ,
   STEM,

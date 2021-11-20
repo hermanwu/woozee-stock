@@ -1,18 +1,25 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const SQ: StockAnalysis = {
-  logo:
-    'https://lh3.googleusercontent.com/pw/ACtC-3dVUwpnglNTwsN6ZkweBVX9VgZhM9aJL6oQ0Cn9Ofk62gCDq1R8DwwkrzUb-HBxX9B3FA_C5ZqbfYT9UIKdPFLqpxeBLj4Dis4Z1DZ6oakHj-YOZqNdUclAkdW9Q8XkXOoz-nkQfOYeEFRK0eatm9bc=w614-h548-no?authuser=3',
+  logo: 'https://lh3.googleusercontent.com/pw/ACtC-3dVUwpnglNTwsN6ZkweBVX9VgZhM9aJL6oQ0Cn9Ofk62gCDq1R8DwwkrzUb-HBxX9B3FA_C5ZqbfYT9UIKdPFLqpxeBLj4Dis4Z1DZ6oakHj-YOZqNdUclAkdW9Q8XkXOoz-nkQfOYeEFRK0eatm9bc=w614-h548-no?authuser=3',
   name: {
     English: 'Square',
     Chinese: undefined,
   },
   ticker: 'SQ',
+  propertiesPageEnabled: true,
   // Earnings Report:
   earnings: {
     website: 'https://investors.squareup.com/overview/default.aspx',
-    latestReportQuarter: ['2021', '2'],
+    latestReportQuarter: ['2021', '3'],
     2021: {
+      3: {
+        '10q10k':
+          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001512673/99e3d3aa-cf5e-4b30-a351-52003798a67b.pdf',
+        marketCap: 114.33 * 1e9,
+        revenue: (3844727 - 1815662) * 1e3, // Minus Bitcoin Revenue.
+        operatingIncome: 22996 * 1e3,
+      },
       2: {
         '10q10k':
           'https://s27.q4cdn.com/311240100/files/doc_financials/2021/q2/Square-10Q-2Q21.pdf',
@@ -25,6 +32,13 @@ export const SQ: StockAnalysis = {
       },
     },
     2020: {
+      3: {
+        '10q10k':
+          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001512673/99e3d3aa-cf5e-4b30-a351-52003798a67b.pdf',
+        marketCap: 119.93 * 1e9,
+        revenue: (3033874 - 1633764) * 1e3, // Minus Bitcoin Revenue.
+        operatingIncome: 49342 * 1e3,
+      },
       2: {
         revenue: (1923625 - 875456) * 1e3, // Minus Bitcoin Revenue.
         operatingIncome: -23052 * 1e3,

@@ -1,7 +1,5 @@
 export const stockListColumns = [
   'ticker',
-  'name',
-  'chineseName',
   // 'shares',
   // 'categories',
   'latestQuarterMarketCap',

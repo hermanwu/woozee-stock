@@ -1,13 +1,13 @@
-:host {
-  display: block;
-  margin: 20px auto;
-}
+// :host {
+//   display: block;
+//   margin: 20px auto;
+// }
 
-.header {
-  display: grid;
-  grid-template-columns: 1fr 10fr 1fr;
-  column-gap: 20px;
-}
+// .header {
+//   display: grid;
+//   grid-template-columns: 1fr 10fr 1fr;
+//   column-gap: 20px;
+// }
 
 img {
   width: 150px;
@@ -15,8 +15,8 @@ img {
   object-fit: contain;
 }
 
-.score-line {
-  display: flex;
-  justify-content: flex-end;
-  font-size: large;
-}
+// .score-line {
+//   display: flex;
+//   justify-content: flex-end;
+//   font-size: large;
+// }

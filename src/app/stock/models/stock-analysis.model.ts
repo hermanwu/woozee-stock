@@ -22,6 +22,7 @@ export interface StockAnalysis {
   };
   stats?: StockStats;
   optionCrazy?: boolean;
+  propertiesPageEnabled?: boolean;
 
   // Demand:
   vision?: string[];

@@ -1,23 +1,19 @@
 <div class="header">
   <div class="image-container">
-    <img src="{{ stockAnalysis.logo }}" alt="logo" />
+    <img src="{{ stockAnalysis?.logo }}" alt="logo" />
   </div>
 
   <div>
     <h1>{{ stockAnalysis?.name?.English }}</h1>
     <h2>{{ stockAnalysis?.name?.Chinese }}</h2>
-    <div>Ticker: {{ stockAnalysis.ticker }}</div>
-  </div>
-
-  <div>
-    <button type="button" mat-button (click)="openAll()">Open All</button>
+    <div>Ticker: {{ stockAnalysis?.ticker }}</div>
   </div>
 </div>
 
 <div>
   简介
   <ul>
-    <li *ngFor="let sentence of stockAnalysis.description">
+    <li *ngFor="let sentence of stockAnalysis?.description">
       {{ sentence }}
     </li>
   </ul>
@@ -34,7 +30,7 @@
       <mat-panel-description> </mat-panel-description>
     </mat-expansion-panel-header>
     <app-stock-products-list
-      [products]="stockAnalysis.products"
+      [products]="stockAnalysis?.products"
     ></app-stock-products-list>
   </mat-expansion-panel>
 </div>
@@ -49,7 +45,7 @@
       <mat-panel-title> 用户 Customers </mat-panel-title>
     </mat-expansion-panel-header>
     <ul>
-      <li *ngFor="let sentence of stockAnalysis.customers">
+      <li *ngFor="let sentence of stockAnalysis?.customers">
         {{ sentence }}
       </li>
     </ul>
@@ -66,7 +62,7 @@
       <mat-panel-title> 竞争对手 Competitors </mat-panel-title>
     </mat-expansion-panel-header>
     <ul>
-      <li *ngFor="let sentence of stockAnalysis.competitor">
+      <li *ngFor="let sentence of stockAnalysis?.competitor">
         {{ sentence }}
       </li>
     </ul>
@@ -83,7 +79,7 @@
       <mat-panel-title> 价值,愿景,和解决的痛点 Vision</mat-panel-title>
     </mat-expansion-panel-header>
     <ul>
-      <li *ngFor="let sentence of stockAnalysis.vision">
+      <li *ngFor="let sentence of stockAnalysis?.vision">
         {{ sentence }}
       </li>
     </ul>
@@ -100,7 +96,7 @@
       <mat-panel-title>商业模式和长期壁垒 Moat </mat-panel-title>
     </mat-expansion-panel-header>
     <ul>
-      <li *ngFor="let sentence of stockAnalysis.businessModel">
+      <li *ngFor="let sentence of stockAnalysis?.businessModel">
         {{ sentence }}
       </li>
     </ul>
@@ -117,7 +113,7 @@
       <mat-panel-title>与竞争者的区别和优势 Differeniator </mat-panel-title>
     </mat-expansion-panel-header>
     <ul>
-      <li *ngFor="let sentence of stockAnalysis.advantage">
+      <li *ngFor="let sentence of stockAnalysis?.advantage">
         {{ sentence }}
       </li>
     </ul>

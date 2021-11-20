@@ -1,5 +1,6 @@
 import { bili } from './BILI.mock';
 import { pdd } from './PDD.mock';
+import { RBLX } from './RBLX.mock';
 import { SQ } from './SQ.mock';
 import { tsla } from './TSLA.mock';
 
@@ -9,6 +10,7 @@ export enum stockTickerEnum {
 
 export const stockAnalysisMap = {
   SQ,
+  RBLX,
   pdd,
   bili,
   tsla,

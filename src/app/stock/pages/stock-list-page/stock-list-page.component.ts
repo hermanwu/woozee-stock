@@ -163,6 +163,8 @@ export class StockListPageComponent implements OnInit {
           stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.webcast,
 
         latestQuarterMarketCap: marketCap,
+
+        propertiesPageEnabled: stockMap[key]?.propertiesPageEnabled,
       });
     }
 

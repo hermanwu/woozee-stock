@@ -10,6 +10,7 @@ import { StockAnalysis } from '../../models/stock-analysis.model';
   styleUrls: ['./stock-properties-page.component.scss'],
 })
 export class StockPropertiesPageComponent implements OnInit, OnDestroy {
+  panelOpenState = false;
   private routeSub: Subscription;
 
   isAllCardOpen = false;

@@ -1,6 +1,24 @@
 <!-- <woozee-top-bar></woozee-top-bar>
 
 <woozee-side-nav [routeList]="routes"></woozee-side-nav> -->
+<mat-toolbar>
+  <span>
+    Woozee Investment
+  </span>
+
+  <span class="spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item><a  [routerLink]="['/test']">Stock</a>
+    </button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+
+</mat-toolbar>
 
 <router-outlet></router-outlet>
 <!-- <mat-drawer-container class="example-container" autosize>

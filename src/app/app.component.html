@@ -2,22 +2,34 @@
 
 <woozee-side-nav [routeList]="routes"></woozee-side-nav> -->
 <mat-toolbar>
-  <span>
-    Woozee Investment
-  </span>
+  <span> Woozee Investment </span>
 
   <span class="spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="accountMenu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <mat-menu #accountMenu="matMenu">
+    <!-- <button mat-menu-item disabled>
+      <a [routerLink]="['/stocks']">Stocks</a>
+    </button> -->
+    <button mat-menu-item disabled>Login</button>
+    <button mat-menu-item disabled>Signup</button>
+  </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
   </button>
 
   <mat-menu #menu="matMenu">
-    <button mat-menu-item><a  [routerLink]="['/test']">Stock</a>
-    </button>
-    <button mat-menu-item>Item 2</button>
+    <!-- <button mat-menu-item disabled>
+      <a [routerLink]="['/stocks']">Stocks</a>
+    </button> -->
+    <button mat-menu-item>Risks</button>
+    <button mat-menu-item disabled>Stocks</button>
+    <button mat-menu-item disabled>Trends</button>
   </mat-menu>
-
 </mat-toolbar>
 
 <router-outlet></router-outlet>

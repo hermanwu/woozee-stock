@@ -9,8 +9,11 @@ import { MistakesComponent } from './blog/mistakes/mistakes.component';
 import { FomoStocksComponent } from './fomo-stocks/fomo-stocks.component';
 import { ForeverOwnStocksPanelComponent } from './forever-own-stocks-panel/forever-own-stocks-panel.component';
 import { HighGrowthIndustryComponent } from './high-growth-industry/high-growth-industry.component';
+import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { IopsPipeModule } from './shared/pipes/iops/iops-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
+import { SlideDemoComponent } from './slide/slide-demo/slide-demo.component';
+import { SlideComponent } from './slide/slide/slide.component';
 import { StockDisplayComponent } from './stock-display/stock-display.component';
 import { FundamentalStatsDisplayComponent } from './stock/molecules/fundamental-stats-display/fundamental-stats-display.component';
 import { NewsDisplayComponent } from './stock/molecules/news-display/news-display.component';
@@ -39,6 +42,9 @@ import { TrendComponent } from './trend/trend.component';
     FomoStocksComponent,
     ForeverOwnStocksPanelComponent,
     StockListTableComponent,
+    SlideDemoComponent,
+    SlideComponent,
+    RiskListPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -54,4 +54,8 @@ export enum Trend {
   CellAndGeneTherapy = '细胞基因疗法',
   CancerDetection = '癌症发现',
   DnaSequencing = '基因编辑',
+
+  OutdoorAndCamping = '野营',
+  Beauty = '医美',
+  Pets = '宠物',
 }

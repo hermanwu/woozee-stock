@@ -1,0 +1,12 @@
+.slide {
+  padding: 1vw;
+  border-radius: 1vw;
+  box-shadow: 1vw 1vw 1vw rgb(0, 0, 0, 0.1);
+  // Keep the ratio of slides fits
+  height: calc((100vw - 2vw) / 16 * 9);
+
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+}

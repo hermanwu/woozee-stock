@@ -1,1 +1,16 @@
-<p>risk works!</p>
+<h1>{{ risk.name }}</h1>
+<ul>
+  <li *ngFor="let argument of risk.arguments">
+    <app-note [note]="argument"></app-note>
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let argument of risk.counterArguments">
+    <app-note [note]="argument"></app-note>
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let argument of risk.solutions">
+    <app-note [note]="argument"></app-note>
+  </li>
+</ul>

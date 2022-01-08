@@ -1,1 +1,9 @@
-<p>risk-list-page works!</p>
+<div class="grid">
+  <div>
+    <h1>US market risks</h1>
+    <div>Check before you invest</div>
+  </div>
+  <div *ngFor="let risk of risks">
+    <app-risk [risk]="risk"></app-risk>
+  </div>
+</div>

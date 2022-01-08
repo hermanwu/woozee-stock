@@ -1,0 +1,9 @@
+<div *ngIf="note.source; else noteSection">
+  <mat-chip>{{ note.source }}</mat-chip>
+  <blockquote>
+    {{ note.content }}
+  </blockquote>
+</div>
+<ng-template #noteSection>
+  {{ note.content }}
+</ng-template>

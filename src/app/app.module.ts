@@ -9,8 +9,9 @@ import { MistakesComponent } from './ideas/blog/mistakes/mistakes.component';
 import { FomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
 import { RiskComponent } from './risks/components/risk/risk.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
-import { SlideFooterComponent } from './shared/components/slide-footer/slide-footer.component';
+import { NoteComponent } from './shared/components/note/note.component';
 import { SlideDemoComponent } from './shared/components/slide/slide-demo/slide-demo.component';
+import { SlideFooterComponent } from './shared/components/slide/slide-footer/slide-footer.component';
 import { SlideComponent } from './shared/components/slide/slide/slide.component';
 import { IopsPipeModule } from './shared/pipes/iops/iops-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
@@ -49,6 +50,7 @@ import { TrendComponent } from './trend/trend.component';
     RiskListPageComponent,
     SlideFooterComponent,
     RiskComponent,
+    NoteComponent,
   ],
   imports: [
     BrowserModule,

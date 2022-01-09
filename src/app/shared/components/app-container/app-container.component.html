@@ -1,0 +1,50 @@
+<!-- <woozee-top-bar></woozee-top-bar>
+
+<woozee-side-nav [routeList]="routes"></woozee-side-nav> -->
+<mat-toolbar>
+  <span> Woozee Stocks</span>
+
+  <span class="spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="accountMenu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <mat-menu #accountMenu="matMenu">
+    <!-- <button mat-menu-item disabled>
+      <a [routerLink]="['/stocks']">Stocks</a>
+    </button> -->
+    <button mat-menu-item disabled>Login</button>
+    <button mat-menu-item disabled>Signup</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <!-- <button mat-menu-item disabled>
+      <a [routerLink]="['/stocks']">Stocks</a>
+    </button> -->
+    <button mat-menu-item>Risks</button>
+    <button mat-menu-item disabled>Stocks</button>
+    <button mat-menu-item disabled>Trends</button>
+  </mat-menu>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+<!-- <mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Toggle sidenav
+    </button>
+  </div>
+</mat-drawer-container> -->

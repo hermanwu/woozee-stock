@@ -4,6 +4,8 @@
     <div>Check before you invest</div>
   </div>
   <div *ngFor="let risk of risks">
-    <app-risk [risk]="risk"></app-risk>
+    <app-card>
+      <app-risk [risk]="risk"></app-risk>
+    </app-card>
   </div>
 </div>

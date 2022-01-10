@@ -1,0 +1,22 @@
+:host {
+  font-size: 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.icon-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  > * {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    justify-items: center;
+  }
+}

@@ -1,4 +1,12 @@
 .grid {
   display: grid;
+  grid-gap: 0.5rem;
+}
+
+.grid-dynamic {
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.grid-one {
+  grid-template-columns: 1fr;
 }

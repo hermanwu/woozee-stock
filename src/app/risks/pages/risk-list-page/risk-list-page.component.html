@@ -1,8 +1,6 @@
-<div class="grid">
-  <div>
-    <h1>US market risks</h1>
-    <div>Check before you invest</div>
-  </div>
+<h1>US market risks</h1>
+
+<div class="grid grid-one">
   <div *ngFor="let risk of risks">
     <app-card>
       <app-risk [risk]="risk"></app-risk>

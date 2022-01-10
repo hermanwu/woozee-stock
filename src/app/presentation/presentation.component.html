@@ -1,13 +1,23 @@
-<div class="slide">
-  <div>
+<div class="container">
+  <div class="header">
     <app-presentation-header></app-presentation-header>
   </div>
 
-  <div>
-    <iframe src="https://woozee-stock.web.app/stocks"> </iframe>
+  <div class="content" [ngClass]="{ 'dynamic-columns': showApp === true }">
+    <div class="iframe-section">
+      <iframe
+        src="https://docs.google.com/presentation/d/1Tc5_tR3u30ePL_ZZ9LuAfhUYg2UeFwEmS-EHZBAudeg/edit?usp=sharing"
+      ></iframe>
+    </div>
+
+    <div class="app-section" *ngIf="showApp === true">
+      <app-risk-list-page></app-risk-list-page>
+    </div>
   </div>
 
-  <div>
+  <div class="footer">
     <app-slide-footer></app-slide-footer>
+
+    <button type="button" (click)="updateShowApp()">Show App</button>
   </div>
 </div>

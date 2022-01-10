@@ -1,11 +1,42 @@
-iframe {
-  width: 100vw;
-  height: 80vh;
+$headerHeight: 10vh;
+$contentHeight: 80vh;
+$footerHeight: 10vh;
+
+.container {
+  display: grid;
+  grid-template-columns: 100%;
+
+  > div {
+    border: 3px solid lightgray;
+  }
+
+  .header {
+    height: $headerHeight;
+  }
+
+  .content {
+    height: $contentHeight;
+  }
+
+  .footer {
+    height: $footerHeight;
+  }
 }
 
-.slide {
-  min-height: 100%;
+.content {
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
+
+  &.dynamic-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .app-section {
+    height: $contentHeight;
+    overflow: scroll;
+  }
+}
+
+iframe {
+  height: $contentHeight;
+  width: 100%;
 }

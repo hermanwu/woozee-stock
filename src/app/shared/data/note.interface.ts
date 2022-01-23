@@ -8,7 +8,8 @@ export interface Note {
   // Determine whether it is a question.
   isQuestion?: boolean;
   source?: Source;
+  link?: string;
 
-  imageLinks?: string[];
+  imageLink?: string;
   notes?: Note[];
 }

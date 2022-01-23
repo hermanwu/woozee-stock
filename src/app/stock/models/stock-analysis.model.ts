@@ -1,6 +1,7 @@
+import { Risk } from 'src/app/risks/models/risk.model';
+import { Note } from 'src/app/shared/data/note.interface';
 import { News } from '../mocks/news.model';
 import { MyScore } from './herman-score.model';
-import { Note } from './note.model';
 import { Rating } from './rating.model';
 import { StockStats } from './stock-stats.model';
 import { Trend } from './trend.enum';
@@ -12,7 +13,7 @@ export interface StockAnalysis {
   ticker?: string;
   ceoQuote?: string[];
   advantage?: string[];
-  risk?: string[];
+  risks?: Risk[];
   marketCap?: any;
   // POTENTIALS:
   revenueGrowth?: number;
@@ -55,4 +56,5 @@ export interface StockAnalysis {
   usefulVideos?: Note[];
   news?: News[];
   myRating?: Rating;
+  note?: Note;
 }

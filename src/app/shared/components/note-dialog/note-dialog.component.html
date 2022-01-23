@@ -1,0 +1,21 @@
+<h1 mat-dialog-title i18n>
+  {{ dialogData.title ? dialogData.title : "Details" }}
+</h1>
+
+<mat-dialog-content>
+  <ul>
+    <li *ngFor="let item of dialogData.notes">
+      <app-note
+        [note]="item"
+        [isExpanded]="expanded"
+        [isActionButtonsHidden]="true"
+      >
+      </app-note>
+    </li>
+  </ul>
+</mat-dialog-content>
+
+<!-- Action Buttons -->
+<mat-dialog-actions align="end">
+  <button mat-stroked-button type="button" mat-dialog-close i18n>Close</button>
+</mat-dialog-actions>

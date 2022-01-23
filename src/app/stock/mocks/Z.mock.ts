@@ -6,7 +6,6 @@ export const Z: StockAnalysis = {
   ticker: 'Z',
   ceoQuote: [],
   advantage: [],
-  risk: [],
   marketCap: 25.33 * 1e9,
   // POTENTIALS:
 

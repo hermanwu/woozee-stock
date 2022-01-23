@@ -11,7 +11,6 @@ export const HD: StockAnalysis = {
   ticker: 'HD',
   ceoQuote: [],
   advantage: [],
-  risk: [],
   // POTENTIALS:
 
   // Demand:

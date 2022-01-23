@@ -1,9 +1,51 @@
-<div *ngIf="note.source; else noteSection">
-  <mat-chip>{{ note.source }}</mat-chip>
-  <blockquote>
-    {{ note.content }}
-  </blockquote>
+<div
+  class="grid"
+  [ngClass]="{
+    'grid-with-buttons': !isActionButtonsHidden
+  }"
+>
+  <div
+    class="flex"
+    [ngClass]="{
+      highlight: isRoot === true
+    }"
+  >
+    <div *ngIf="note.source; else noteSection">
+      "{{ note.content }}" <mat-chip> - ({{ note.source }})</mat-chip>
+    </div>
+
+    <ng-template #noteSection>
+      <div>{{ note.content }}</div>
+    </ng-template>
+
+    <a *ngIf="note.link" href="{{ note.link }}" target="_blank">
+      <mat-icon>open_in_new</mat-icon>
+    </a>
+  </div>
+
+  <div class="action-buttons" *ngIf="!isActionButtonsHidden">
+    <button
+      mat-icon-button
+      type="button"
+      [disabled]="!note || !note.notes || note.notes.length === 0"
+      (click)="openDialog(note)"
+    >
+      <mat-icon>info</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      type="button"
+      [disabled]="!note || !note.notes || note.notes.length === 0"
+      (click)="expanded = !expanded"
+    >
+      <mat-icon *ngIf="expanded">expand_less</mat-icon>
+      <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+    </button>
+  </div>
 </div>
-<ng-template #noteSection>
-  {{ note.content }}
-</ng-template>
+
+<ul *ngIf="expanded">
+  <li *ngFor="let note of note.notes">
+    <app-note [note]="note" [isExpanded]="isExpanded"></app-note>
+  </li>
+</ul>

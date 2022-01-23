@@ -135,8 +135,8 @@
       <mat-panel-title> 风险 Risks </mat-panel-title>
     </mat-expansion-panel-header>
     <ul>
-      <li *ngFor="let sentence of stockAnalysis.risk">
-        {{ sentence }}
+      <li *ngFor="let risk of stockAnalysis.risks">
+        {{ risk.name }}
       </li>
     </ul>
   </mat-expansion-panel>

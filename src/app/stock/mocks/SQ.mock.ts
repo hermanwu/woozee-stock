@@ -92,10 +92,13 @@ export const SQ: StockAnalysis = {
     'Visionary founder and CEO',
     'Growing network effect',
   ],
-  risk: [
-    'Less focus: a lot of products to manage and founder is managing 2 companies.',
-    'Low engagement or weak network effect.',
-    'Most product is in a competitive market.',
+  risks: [
+    {
+      name: 'Low engagement or weak network effect',
+    },
+    {
+      name: 'competitive market',
+    },
   ],
 
   competitor: [

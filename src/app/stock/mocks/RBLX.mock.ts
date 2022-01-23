@@ -12,7 +12,6 @@ export const RBLX: StockAnalysis = {
   ticker: 'RBLX',
   ceoQuote: [],
   advantage: [],
-  risk: [],
   myRating: Rating.Buy,
   propertiesPageEnabled: true,
   // POTENTIALS:

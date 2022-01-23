@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import {
+  MAT_RIPPLE_GLOBAL_OPTIONS,
+  RippleGlobalOptions,
+} from '@angular/material/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WoozeeLibModule } from 'woozee-lib';
@@ -16,6 +20,7 @@ import { RiskComponent } from './risks/components/risk/risk.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
 import { CardComponent } from './shared/components/card/card.component';
+import { NoteDialogComponent } from './shared/components/note-dialog/note-dialog.component';
 import { NoteComponent } from './shared/components/note/note.component';
 import { IopsPipeModule } from './shared/pipes/iops/iops-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
@@ -32,6 +37,8 @@ import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-g
 import { TrendIndustriesComponent } from './trend/trend-industries/trend-industries.component';
 import { TrendComponent } from './trend/trend.component';
 
+// Use this when you want to disable Material ripple animations for all components
+const globalRippleConfig: RippleGlobalOptions = { disabled: true };
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +66,7 @@ import { TrendComponent } from './trend/trend.component';
     AppContainerComponent,
     PresentationComponent,
     PresentationHeaderComponent,
+    NoteDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +77,9 @@ import { TrendComponent } from './trend/trend.component';
     WoozeeLibModule,
     IopsPipeModule,
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

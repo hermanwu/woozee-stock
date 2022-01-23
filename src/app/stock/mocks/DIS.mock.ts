@@ -11,7 +11,6 @@ export const DIS: StockAnalysis = {
   ticker: 'DIS',
   ceoQuote: [],
   advantage: [],
-  risk: [],
   // POTENTIALS:
 
   // Demand:

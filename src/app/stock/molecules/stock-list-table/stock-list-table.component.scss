@@ -1,12 +1,6 @@
-table {
-  width: 100%;
-}
-
-.container {
-  height: 800px;
-  overflow: auto;
-}
-
-.align-right {
-  text-align: right !important;
+.stock-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+  grid-gap: 0.25rem;
+  align-items: center;
 }

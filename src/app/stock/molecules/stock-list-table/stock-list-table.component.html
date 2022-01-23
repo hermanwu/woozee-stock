@@ -1,212 +1,212 @@
 <div class="container">
-  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-    <ng-container matColumnDef="myRating">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>我的评级</th>
-      <td mat-cell *matCellDef="let stock">
-        <ng-container *ngIf="stock.myRating">
-          {{ stock.myRating }}
-        </ng-container>
-      </td>
-    </ng-container>
+  <div class="stock-row">
+    <div>#</div>
 
-    <ng-container matColumnDef="myScore">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>我的分数</th>
-      <td mat-cell *matCellDef="let stock">
-        <ng-container *ngIf="stock.myScore">
+    <div>Ticker</div>
+
+    <div>Investor Relations Site</div>
+  </div>
+  <div *ngFor="let stock of stocks; let i = index" class="stock-row">
+    <!-- <th mat-header-cell *matHeaderCellDef mat-sort-header>我的评级</th> -->
+    <!-- <div>
+      <ng-container *ngIf="stock.myRating">
+        {{ stock.myRating }}
+      </ng-container>
+    </div> -->
+
+    <div>{{ i + 1 }}</div>
+
+    <div matColumnDef="ticker" sticky>
+      <div>
+        <div *ngIf="stock.propertiesPageEnabled === true; else disabledLink">
+          <a
+            [routerLink]="['/stocks', stock.ticker]"
+            class="margin-left-20"
+            matTooltip="{{ stock.name }}{{ stock.chineseName }}"
+          >
+            {{ stock.ticker }}
+          </a>
+        </div>
+        <ng-template #disabledLink>
+          <span matTooltip="{{ stock.name }}{{ stock.chineseName }}">
+            {{ stock.ticker }}
+          </span>
+        </ng-template>
+      </div>
+    </div>
+
+    <div matColumnDef="website">
+      <div>
+        <span *ngIf="stock.investorWebsite">
+          <a target="_blank" href="{{ stock.investorWebsite }}"
+            ><mat-icon>newspaper</mat-icon></a
+          >
+        </span>
+      </div>
+    </div>
+
+    <!-- <div matColumnDef="myScore">
+      <div>
+        <div *ngIf="stock.myScore">
           {{ stock.myScore }}
 
           <mat-chip disableRipple>{{ stock.myScoreRank }}</mat-chip>
-        </ng-container>
-      </td>
-    </ng-container>
+        </div>
+      </div>
+    </div> -->
 
-    <ng-container matColumnDef="ticker" sticky>
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ticker</th>
-      <td mat-cell *matCellDef="let stock">
-        <ng-container
-          *ngIf="stock.propertiesPageEnabled === true; else disabledLink"
-        >
-          <a [routerLink]="['/stocks', stock.ticker]" class="margin-left-20">
-            {{ stock.ticker }}
-          </a>
-        </ng-container>
-        <ng-template #disabledLink>
-          {{ stock.ticker }}
-        </ng-template>
-        <mat-icon
-          color="grey"
-          matTooltip="{{ stock.name }}{{ stock.chineseName }}"
-          >info</mat-icon
-        >
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="lastQuarterRevenue">
+    <!-- <div matColumnDef="lastQuarterRevenue">
       <th mat-header-cell *matHeaderCellDef mat-sort-header class="align-right">
         去年同季度收入
       </th>
-      <td mat-cell class="align-right" *matCellDef="let stock">
+      <div mat-cell class="align-right" *matCellDef="let stock">
         {{ stock.lastQuarterRevenue | unit: 2 }}
-      </td>
-    </ng-container>
-    <ng-container matColumnDef="currentQuarterRevenue">
+      </div>
+    </div>
+    <div matColumnDef="currentQuarterRevenue">
       <th mat-header-cell *matHeaderCellDef class="align-right" mat-sort-header>
         最新季度收入
       </th>
-      <td mat-cell class="align-right" *matCellDef="let stock">
+      <div mat-cell class="align-right" *matCellDef="let stock">
         {{ stock.currentQuarterRevenue | unit: 2 }}
-      </td>
-    </ng-container>
-    <ng-container matColumnDef="revenueIncrease">
+      </div>
+    </div>
+    <div matColumnDef="revenueIncrease">
       <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
         收入增幅
       </th>
-      <td mat-cell class="align-right" *matCellDef="let stock">
+      <div mat-cell class="align-right" *matCellDef="let stock">
         <strong>{{ stock.revenueIncrease | percent }}</strong>
         <span
           ><mat-chip disableRipple>{{ stock.revenueIncreaseRank }}</mat-chip>
         </span>
-      </td>
-    </ng-container>
+      </div>
+    </div> -->
 
-    <ng-container matColumnDef="lastQuarterOperatingIncome">
+    <!-- <div matColumnDef="lastQuarterOperatingIncome">
       <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
         去年同季度营业利润
       </th>
-      <td mat-cell class="align-right" *matCellDef="let stock">
+      <div mat-cell class="align-right" *matCellDef="let stock">
         {{ stock.lastQuarterOperatingIncome | unit: 2 }}
-      </td>
-    </ng-container>
-    <ng-container matColumnDef="currentQuarterOperatingIncome">
+      </div>
+    </div>
+    <div matColumnDef="currentQuarterOperatingIncome">
       <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
         最新季度营业利润
       </th>
-      <td mat-cell class="align-right" *matCellDef="let stock">
+      <div mat-cell class="align-right" *matCellDef="let stock">
         <strong>{{ stock.currentQuarterOperatingIncome | unit: 2 }}</strong>
-      </td>
-    </ng-container>
-    <ng-container matColumnDef="operatingIncomeIncrease">
+      </div>
+    </div>
+    <div matColumnDef="operatingIncomeIncrease">
       <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
         利润增长
       </th>
-      <td mat-cell class="align-right" *matCellDef="let stock">
+      <div mat-cell class="align-right" *matCellDef="let stock">
         {{ stock.operatingIncomeIncrease | unit: 2 }}
-      </td>
-    </ng-container>
+      </div>
+    </div> -->
 
-    <ng-container matColumnDef="latestQuarterMarketCap">
+    <!-- <div matColumnDef="latestQuarterMarketCap">
       <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
         最新季度估值
       </th>
-      <td mat-cell class="align-right" *matCellDef="let stock">
+      <div mat-cell class="align-right" *matCellDef="let stock">
         {{ stock.latestQuarterMarketCap | unit: 2 }}
-      </td>
-    </ng-container>
+      </div>
+    </div> -->
 
-    <ng-container matColumnDef="form10Q">
+    <!-- <div matColumnDef="form10Q">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>10-Q</th>
-      <td mat-cell *matCellDef="let stock">
+      <div>
         <a target="_blank" href="{{ stock.current10Q }}"> 10-Q </a>
-      </td>
-    </ng-container>
+      </div>
+    </div> -->
 
-    <ng-container matColumnDef="website">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Investor Site</th>
-      <td mat-cell *matCellDef="let stock">
-        <span *ngIf="stock.investorWebsite">
-          <a target="_blank" href="{{ stock.investorWebsite }}"
-            >Investor Site</a
-          >
-        </span>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="pressRelease">
+    <!-- <div matColumnDef="pressRelease">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Press Release</th>
-      <td mat-cell *matCellDef="let stock">
+      <div>
         <span *ngIf="stock.currentPressRelease">
           <a target="_blank" href="{{ stock.currentPressRelease }}"
             ><mat-icon>sticky_note_2</mat-icon></a
           >
         </span>
-      </td>
-    </ng-container>
+      </div>
+    </div> -->
 
-    <ng-container matColumnDef="presentation">
+    <!-- <div matColumnDef="presentation">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Presentation</th>
-      <td mat-cell *matCellDef="let stock">
+      <div>
         <span *ngIf="stock.presentation">
           <a target="_blank" href="{{ stock.presentation }}">Presentation</a>
         </span>
-      </td>
-    </ng-container>
+      </div>
+    </div> -->
 
-    <ng-container matColumnDef="webcast">
+    <!-- <div matColumnDef="webcast">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Webcast</th>
-      <td mat-cell *matCellDef="let stock">
+      <div>
         <span *ngIf="stock.webcast">
           <a target="_blank" href="{{ stock.webcast }}">Webcast</a>
         </span>
-      </td>
-    </ng-container>
+      </div>
+    </div> -->
 
-    <ng-container matColumnDef="salesOverMarketCap">
+    <!-- <div matColumnDef="salesOverMarketCap">
       <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
         季度营收 / 市值
       </th>
-      <td mat-cell class="align-right" *matCellDef="let stock">
+      <div mat-cell class="align-right" *matCellDef="let stock">
         <strong>{{ stock.salesOverMarketCap | percent: "0.3-3" }}</strong>
-      </td>
-    </ng-container>
+      </div>
+    </div> -->
 
-    <ng-container matColumnDef="salesIncreaseOverMarketCap">
+    <!-- <div matColumnDef="salesIncreaseOverMarketCap">
       <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
         营收增长 / 市值
       </th>
-      <td mat-cell class="align-right" *matCellDef="let stock">
+      <div mat-cell class="align-right" *matCellDef="let stock">
         <strong>{{
           stock.salesIncreaseOverMarketCap | percent: "0.3-3"
         }}</strong>
-      </td>
-    </ng-container>
+      </div>
+    </div> -->
 
-    <ng-container matColumnDef="profitOverMarketCap">
+    <!-- <div matColumnDef="profitOverMarketCap">
       <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
         营业利润 / 市值
       </th>
-      <td mat-cell class="align-right" *matCellDef="let stock">
+      <div mat-cell class="align-right" *matCellDef="let stock">
         <strong>{{ stock.profitOverMarketCap | percent: "0.3-3" }}</strong>
         <span
           ><mat-chip disableRipple>{{
             stock.profitOverMarketCapRank
           }}</mat-chip>
         </span>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="profileIncreaseOverMarketCap">
+      </div>
+    </div> -->
+    <!--
+    <div matColumnDef="profileIncreaseOverMarketCap">
       <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
         营业利润增长 / 市值
       </th>
 
-      <td mat-cell class="align-right" *matCellDef="let stock">
+      <div mat-cell class="align-right" *matCellDef="let stock">
         <strong>{{
           stock.profileIncreaseOverMarketCap | percent: "0.3-3"
         }}</strong>
-      </td>
-    </ng-container>
+      </div>
+    </div> -->
 
-    <ng-container matColumnDef="shares">
+    <!-- <div matColumnDef="shares">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>持有股数</th>
-      <td mat-cell *matCellDef="let stock">{{ stock.shares }}</td>
-    </ng-container>
+      <div>{{ stock.shares }}</div>
+    </div>
 
-    <ng-container matColumnDef="categories">
+    <div matColumnDef="categories">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>类别</th>
-      <td mat-cell *matCellDef="let stock">{{ stock.categories }}</td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
-    <tr mat-row *matRowDef="let stock; columns: columnsToDisplay"></tr>
-  </table>
+      <div>{{ stock.categories }}</div>
+    </div> -->
+  </div>
 </div>

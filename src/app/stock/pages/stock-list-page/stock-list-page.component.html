@@ -1,36 +1,7 @@
-<mat-form-field appearance="standard">
-  <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input />
-</mat-form-field>
+<div class="title">
+  <h1>Top 100 picks</h1>
+</div>
 
-<mat-form-field appearance="fill">
-  <mat-label>Columns</mat-label>
-  <mat-select multiple [formControl]="columnsToDisplay">
-    <mat-option *ngFor="let column of stockListColumns" [value]="column">{{
-      column
-    }}</mat-option>
-  </mat-select>
-</mat-form-field>
-
-<mat-form-field appearance="fill">
-  <mat-label>Industries</mat-label>
-  <mat-select multiple>
-    <mat-option *ngFor="let industry of industries" [value]="industry">{{
-      industry
-    }}</mat-option>
-  </mat-select>
-</mat-form-field>
-
-<mat-form-field appearance="fill">
-  <mat-label>Trends</mat-label>
-  <mat-select multiple>
-    <mat-option *ngFor="let trend of trends" [value]="trend">{{
-      trend
-    }}</mat-option>
-  </mat-select>
-</mat-form-field>
-
-<app-stock-list-table
-  [dataSource]="dataSource"
-  [columnsToDisplay]="columnsToDisplay.value"
-></app-stock-list-table>
+<div class="stock-list-table">
+  <app-stock-list-table [stocks]="dataSource.data"></app-stock-list-table>
+</div>

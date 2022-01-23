@@ -6,7 +6,6 @@ export const U: StockAnalysis = {
   ticker: 'U',
   ceoQuote: [],
   advantage: [],
-  risk: [],
   // POTENTIALS:
 
   // Demand:

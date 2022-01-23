@@ -1,8 +1,7 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const pdd: StockAnalysis = {
-  logo:
-    'https://lh3.googleusercontent.com/pw/ACtC-3dmSbeD7O0Szd7qbdYHlCQ5G7J8WKR8DYGgAsbUxS5m_-Db-wTMdDVnzwd3Uqx0AxZjJqpX_NcuOZFDQlKZlYKQNnPh0ozR8AXVMHaUkbkZ8iFBnJzziuNiUoWaVxJ-8tyTjnwymFJ73ithN67jsHxV=w882-h736-no?authuser=3',
+  logo: 'https://lh3.googleusercontent.com/pw/ACtC-3dmSbeD7O0Szd7qbdYHlCQ5G7J8WKR8DYGgAsbUxS5m_-Db-wTMdDVnzwd3Uqx0AxZjJqpX_NcuOZFDQlKZlYKQNnPh0ozR8AXVMHaUkbkZ8iFBnJzziuNiUoWaVxJ-8tyTjnwymFJ73ithN67jsHxV=w882-h736-no?authuser=3',
   name: {
     English: 'Pinduoduo',
     Chinese: '拼多多',
@@ -75,10 +74,13 @@ export const pdd: StockAnalysis = {
     'Technology driven',
     'Strategic investors',
   ],
-  risk: [
-    'Extremely competitive e-commerce market.',
-    'User loyalty',
-    'Partnership with Tencent',
+  risks: [
+    {
+      name: 'strong competitors',
+    },
+    {
+      name: 'low user loyalty',
+    },
   ],
   competitor: ['Alibaba - Tmall, Taobao - 750B', 'JD.com - 150B'],
   trend: ['COVID', 'E-commerce'],
@@ -109,20 +111,16 @@ export const pdd: StockAnalysis = {
 
   companyOfficialDocs: [
     {
-      text: '投资者关系',
-      links: ['https://investor.pinduoduo.com/investor-relations'],
+      content: '投资者关系',
+      link: 'https://investor.pinduoduo.com/investor-relations',
     },
     {
-      text: '简介',
-      links: [
-        'https://pinduoduo.gcs-web.com/static-files/468b2c9f-9112-410d-84b3-2b22e07c7ee0',
-      ],
+      content: '简介',
+      link: 'https://pinduoduo.gcs-web.com/static-files/468b2c9f-9112-410d-84b3-2b22e07c7ee0',
     },
     {
-      text: '更多信息',
-      links: [
-        'https://pinduoduo.gcs-web.com/static-files/afa5ca3e-247c-44a9-b05d-8e9e191f3119',
-      ],
+      content: '更多信息',
+      link: 'https://pinduoduo.gcs-web.com/static-files/afa5ca3e-247c-44a9-b05d-8e9e191f3119',
     },
   ],
   usefulVideos: [],

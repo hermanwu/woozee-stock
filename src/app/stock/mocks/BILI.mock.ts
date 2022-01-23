@@ -1,8 +1,7 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const bili: StockAnalysis = {
-  logo:
-    'https://lh3.googleusercontent.com/pw/ACtC-3e9AoltCnmSTNXb44UMaYhVOVfeVGD0_rM7wOvceClSFwu_b3_NPLwMXGxITQwqZ1gPu-GMU-T9fhIWYRiqMmicuQTHiJpTZgar7N1AyxoaIhv0nsyFZBe959Es1OgCMoM44TRT9v1vFblgZ-TEyEPA=w870-h412-no?authuser=3',
+  logo: 'https://lh3.googleusercontent.com/pw/ACtC-3e9AoltCnmSTNXb44UMaYhVOVfeVGD0_rM7wOvceClSFwu_b3_NPLwMXGxITQwqZ1gPu-GMU-T9fhIWYRiqMmicuQTHiJpTZgar7N1AyxoaIhv0nsyFZBe959Es1OgCMoM44TRT9v1vFblgZ-TEyEPA=w870-h412-no?authuser=3',
   name: {
     English: 'Bilibili',
     Chinese: '哔哩哔哩',
@@ -85,15 +84,28 @@ export const bili: StockAnalysis = {
     '和央视合作，有政府加持',
     '阿里腾讯同时投资',
   ],
-  risk: [
-    '单一社区种类，用户收入偏低',
-    '承诺无贴片，变现能力差',
-    '用户收入低，变现能力差',
-    '游戏收入难以预计',
-    '国内视频竞争激烈，特别是Tikok的西瓜视频',
-    '政治因素而导致的各种限制及无法预计的变化',
-    '质量没油管高，难拓展国际市场',
-    '技术力量比竞争对手弱',
+  risks: [
+    {
+      name: '单一社区种类，用户收入偏低',
+    },
+    {
+      name: '承诺无贴片，变现能力差',
+    },
+    {
+      name: '游戏收入难以预计',
+    },
+    {
+      name: '国内视频竞争激烈，特别是Tikok的西瓜视频',
+    },
+    {
+      name: '政治因素而导致的各种限制及无法预计的变化',
+    },
+    {
+      name: '质量没油管高，难拓展国际市场',
+    },
+    {
+      name: '技术力量比竞争对手弱',
+    },
   ],
   competitor: [
     '爱奇艺 - 13B',
@@ -129,8 +141,8 @@ export const bili: StockAnalysis = {
   source: ['https://www.youtube.com/watch?v=EZv-a0fneuQ'],
   companyOfficialDocs: [
     {
-      text: '股东网站',
-      links: ['https://ir.bilibili.com/investor-overview'],
+      content: '股东网站',
+      link: 'https://ir.bilibili.com/investor-overview',
     },
   ],
   ceoQuote: [

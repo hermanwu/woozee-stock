@@ -29,4 +29,6 @@ export const NFLX: StockAnalysis = {
       },
     },
   },
+
+  risks: [],
 };

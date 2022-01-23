@@ -6,7 +6,6 @@ export const GOOGL: StockAnalysis = {
   ticker: 'GOOGL',
   ceoQuote: [],
   advantage: [],
-  risk: [],
   // POTENTIALS:
 
   // Demand:

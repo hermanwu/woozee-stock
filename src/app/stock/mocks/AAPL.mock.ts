@@ -11,7 +11,6 @@ export const AAPL: StockAnalysis = {
   ticker: 'AAPL',
   ceoQuote: [],
   advantage: [],
-  risk: [],
   // POTENTIALS:
 
   // Demand:

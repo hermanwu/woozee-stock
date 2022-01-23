@@ -1,0 +1,17 @@
+.grid {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.action-buttons {
+  justify-self: flex-end;
+}
+
+.highlight {
+  font-size: 1.1rem;
+}

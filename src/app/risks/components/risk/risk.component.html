@@ -1,16 +1,21 @@
-<h1>{{ risk.name }}</h1>
-<ul>
-  <li *ngFor="let argument of risk.arguments">
-    <app-note [note]="argument"></app-note>
-  </li>
-</ul>
-<ul>
-  <li *ngFor="let argument of risk.counterArguments">
-    <app-note [note]="argument"></app-note>
-  </li>
-</ul>
-<ul>
-  <li *ngFor="let argument of risk.solutions">
-    <app-note [note]="argument"></app-note>
+<div class="grid">
+  <div class="flex highlight">
+    {{ risk.name }}
+  </div>
+
+  <div class="action-buttons">
+    <button mat-icon-button type="button" (click)="openDialog()">
+      <mat-icon>shield</mat-icon>
+    </button>
+    <button mat-icon-button type="button" (click)="expanded = !expanded">
+      <mat-icon *ngIf="expanded">expand_less</mat-icon>
+      <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+    </button>
+  </div>
+</div>
+
+<ul *ngIf="expanded">
+  <li *ngFor="let item of risk.notes">
+    <app-note [note]="item" [isExpanded]="false"> </app-note>
   </li>
 </ul>

@@ -6,7 +6,7 @@ export const HD: StockAnalysis = {
     Chinese: '',
   },
   description: [''],
-  trend: [],
+  trends: [],
   logo: '',
   ticker: 'HD',
   ceoQuote: [],

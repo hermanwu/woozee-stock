@@ -16,33 +16,20 @@
 
     <div>{{ i + 1 }}</div>
 
-    <div matColumnDef="ticker" sticky>
-      <div>
-        <div *ngIf="stock.propertiesPageEnabled === true; else disabledLink">
-          <a
-            [routerLink]="['/stocks', stock.ticker]"
-            class="margin-left-20"
-            matTooltip="{{ stock.name }}{{ stock.chineseName }}"
-          >
-            {{ stock.ticker }}
-          </a>
-        </div>
-        <ng-template #disabledLink>
-          <span matTooltip="{{ stock.name }}{{ stock.chineseName }}">
-            {{ stock.ticker }}
-          </span>
-        </ng-template>
-      </div>
+    <div>
+      <a
+        [routerLink]="['/woozee/stocks', stock.ticker]"
+        class="margin-left-20"
+        matTooltip="{{ stock.name }}{{ stock.chineseName }}"
+      >
+        {{ stock.ticker | uppercase }}
+      </a>
     </div>
 
-    <div matColumnDef="website">
-      <div>
-        <span *ngIf="stock.investorWebsite">
-          <a target="_blank" href="{{ stock.investorWebsite }}"
-            ><mat-icon>newspaper</mat-icon></a
-          >
-        </span>
-      </div>
+    <div>
+      <a target="_blank" href="{{ stock.investorWebsite }}">
+        <mat-icon>newspaper</mat-icon>
+      </a>
     </div>
 
     <!-- <div matColumnDef="myScore">

@@ -2,7 +2,7 @@
 
 <woozee-side-nav [routeList]="routes"></woozee-side-nav> -->
 <mat-toolbar>
-  <span> Woozee Stocks</span>
+  <span>美股避雷指南</span>
 
   <span class="spacer"></span>
 
@@ -26,8 +26,12 @@
     <!-- <button mat-menu-item disabled>
       <a [routerLink]="['/stocks']">Stocks</a>
     </button> -->
-    <button mat-menu-item>Risks</button>
-    <button mat-menu-item disabled>Stocks</button>
+    <button mat-menu-item>
+      <a [routerLink]="['/woozee/risk']">Risks</a>
+    </button>
+    <button mat-menu-item>
+      <a [routerLink]="['/woozee/stocks']">Stocks</a>
+    </button>
     <button mat-menu-item disabled>Trends</button>
   </mat-menu>
 </mat-toolbar>

@@ -23,6 +23,7 @@ import { CardComponent } from './shared/components/card/card.component';
 import { NoteDialogComponent } from './shared/components/note-dialog/note-dialog.component';
 import { NoteComponent } from './shared/components/note/note.component';
 import { IopsPipeModule } from './shared/pipes/iops/iops-pipe.module';
+import { SafePipe } from './shared/pipes/safe.pipe';
 import { AppMaterialModule } from './shared/styles/app-material.module';
 import { ForeverOwnStocksPanelComponent } from './stock/forever-own-stocks-panel/forever-own-stocks-panel.component';
 import { FundamentalStatsDisplayComponent } from './stock/molecules/fundamental-stats-display/fundamental-stats-display.component';
@@ -67,6 +68,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     PresentationComponent,
     PresentationHeaderComponent,
     NoteDialogComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,

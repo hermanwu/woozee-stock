@@ -1,11 +1,11 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const rtx: StockAnalysis = {
+export const cof: StockAnalysis = {
   logo: '',
-  name: { English: 'Raytheon Technologies Corp' },
+  name: { English: 'Capital One Financial Corp.' },
   description: [],
-  ticker: 'RTX',
-  irAddress: 'http://investors.rtx.com/',
+  ticker: 'COF',
+  irAddress: 'https://investor.capitalone.com/',
 
   // Earnings Report:
   earnings: {

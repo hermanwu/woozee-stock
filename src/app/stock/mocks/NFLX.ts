@@ -1,6 +1,6 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const NFLX: StockAnalysis = {
+export const nflx: StockAnalysis = {
   logo: '',
   name: { English: 'Netflix' },
   description: [],
@@ -30,5 +30,15 @@ export const NFLX: StockAnalysis = {
     },
   },
 
-  risks: [],
+  risks: [
+    {
+      name: 'slow revenue growth',
+    },
+    {
+      name: 'slow paid user growth',
+    },
+    {
+      name: 'margin decrease',
+    },
+  ],
 };

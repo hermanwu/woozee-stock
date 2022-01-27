@@ -83,7 +83,7 @@ export const pdd: StockAnalysis = {
     },
   ],
   competitor: ['Alibaba - Tmall, Taobao - 750B', 'JD.com - 150B'],
-  trend: ['COVID', 'E-commerce'],
+  trends: ['COVID', 'E-commerce'],
   predication: {
     marketCap: ['200B', '750B / 2 => 375B'],
   },

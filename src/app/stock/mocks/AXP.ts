@@ -5,10 +5,10 @@ export const AXP: StockAnalysis = {
   name: { English: 'American Express Company' },
   description: [],
   ticker: 'AXP',
+  irAddress: 'https://ir.americanexpress.com/investor-relations/default.aspx',
 
   // Earnings Report:
   earnings: {
-    website: 'https://ir.americanexpress.com/investor-relations/default.aspx',
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {
@@ -29,4 +29,9 @@ export const AXP: StockAnalysis = {
       },
     },
   },
+  risks: [
+    {
+      name: 'Relatively high RSI',
+    },
+  ],
 };

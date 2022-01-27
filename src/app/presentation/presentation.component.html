@@ -5,9 +5,7 @@
 
   <div class="content" [ngClass]="{ 'dynamic-columns': showApp === true }">
     <div class="iframe-section">
-      <iframe
-        src="https://docs.google.com/presentation/d/1Tc5_tR3u30ePL_ZZ9LuAfhUYg2UeFwEmS-EHZBAudeg/edit?usp=sharing"
-      ></iframe>
+      <iframe [src]="iframeSource | safe"></iframe>
     </div>
 
     <div class="app-section" *ngIf="showApp === true">

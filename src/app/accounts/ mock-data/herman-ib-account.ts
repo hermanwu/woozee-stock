@@ -182,7 +182,7 @@ export const hermanIbAccount: Equity[] = [
     shares: 26,
   },
   {
-    ticker: 'MSFT',
+    ticker: 'msft',
     shares: 24,
   },
   {

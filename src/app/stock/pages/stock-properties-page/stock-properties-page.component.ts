@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { stockAnalysisMap } from '../../mocks/mock.data';
+import { ownedStockMap } from '../../mocks/stock-list.const';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 
 @Component({
@@ -22,8 +22,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
-      this.stockTicker = params[this.stockId];
-      this.stockAnalysis = stockAnalysisMap[this.stockTicker];
+      this.stockTicker = params[this.stockId].toLowerCase();
+      this.stockAnalysis = ownedStockMap[this.stockTicker];
     });
   }
 

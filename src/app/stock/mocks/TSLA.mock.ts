@@ -32,7 +32,7 @@ export const tsla: StockAnalysis = {
       },
     },
   },
-  trend: [],
+  trends: [],
   painPoint: ['消除世界对于不可再生能源的依赖（由石油转向太阳能)', ''],
   advantage: [
     '掌握整条供应链。从电池生产，汽车组装，到自动驾驶芯片及软件都是特斯拉自己制造和控制的。',
@@ -49,6 +49,12 @@ export const tsla: StockAnalysis = {
     '收集大量用户数据及反馈，发展自动驾驶',
   ],
   risks: [
+    {
+      name: 'Margin',
+    },
+    {
+      name: 'Cash usage',
+    },
     {
       name: '马斯克有太多的明星效应.在我看来唯一的风险是CEO出现问题。但CEO马斯克事实上已经身经百战（创立过很多公司），所以这个风险也不是特别大。',
     },

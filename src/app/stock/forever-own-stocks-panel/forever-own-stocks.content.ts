@@ -11,7 +11,7 @@ export const foreverOwnStocks = {
   GOOGL: {
     position: 86,
   },
-  MSFT: {
+  msft: {
     position: 251,
   },
   BABA: {

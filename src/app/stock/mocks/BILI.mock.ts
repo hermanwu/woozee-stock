@@ -113,7 +113,7 @@ export const bili: StockAnalysis = {
     'Netflix - 240B',
     '网易 - 66B',
   ],
-  trend: ['COVID', 'Video Entertainments'],
+  trends: ['COVID', 'Video Entertainments'],
   predication: {
     marketCap: ['200B', '750B / 2 => 375B'],
   },

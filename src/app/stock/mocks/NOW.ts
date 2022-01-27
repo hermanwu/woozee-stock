@@ -30,4 +30,9 @@ export const NOW: StockAnalysis = {
       },
     },
   },
+  risks: [
+    {
+      name: 'PE is high (482)',
+    },
+  ],
 };

@@ -108,7 +108,7 @@ export const SQ: StockAnalysis = {
     'Banks such as JP Morgan',
   ],
 
-  trend: ['COVID', 'Cashless'],
+  trends: ['COVID', 'Cashless'],
 
   predication: {
     marketCap: ['97B', '(50B + 10B + 250B + 350B) = 660B+'],

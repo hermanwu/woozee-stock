@@ -18,7 +18,7 @@ export const citi: Equity[] = [
     shares: 53,
   },
   {
-    ticker: 'MSFT',
+    ticker: 'msft',
     shares: 130,
   },
 ];

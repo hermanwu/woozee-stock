@@ -1,32 +1,24 @@
-<mat-expansion-panel
-  [expanded]="isAllCardOpen"
-  (opened)="(true)"
-  (closed)="(false)"
->
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      <h1>{{ stockAnalysis?.name?.English }}</h1>
-      <h2>{{ stockAnalysis?.name?.Chinese }}</h2>
-      <div>Ticker: {{ stockAnalysis?.ticker }}</div>
-    </mat-panel-title>
-    <mat-panel-description> </mat-panel-description>
-  </mat-expansion-panel-header>
-
-  <div class="image-container">
-    <img src="{{ stockAnalysis?.logo }}" alt="logo" />
-  </div>
-
+<div class="title-display">
   <div>
-    简介
-    <ul>
-      <li *ngFor="let sentence of stockAnalysis?.description">
-        {{ sentence }}
-      </li>
-    </ul>
+    ({{ stockAnalysis?.ticker | uppercase }}) {{ stockAnalysis?.name?.English }}
   </div>
-</mat-expansion-panel>
+</div>
 
-<mat-expansion-panel
+<div>
+  <a target="_blank" href="{{ stockAnalysis.irAddress }}">
+    <span></span>Investor Relations
+  </a>
+</div>
+
+<div class="grid grid-one">
+  <div *ngFor="let risk of stockAnalysis.risks">
+    <app-card>
+      <app-risk [risk]="risk"></app-risk>
+    </app-card>
+  </div>
+</div>
+
+<!-- <mat-expansion-panel
   [expanded]="isAllCardOpen"
   (opened)="(true)"
   (closed)="(false)"
@@ -38,9 +30,9 @@
   <app-stock-products-list
     [products]="stockAnalysis?.products"
   ></app-stock-products-list>
-</mat-expansion-panel>
+</mat-expansion-panel> -->
 
-<div class="margin-top-20">
+<!-- <div class="margin-top-20">
   <mat-expansion-panel
     [expanded]="isAllCardOpen"
     (opened)="(true)"
@@ -55,9 +47,9 @@
       </li>
     </ul>
   </mat-expansion-panel>
-</div>
+</div> -->
 
-<div class="margin-top-20">
+<!-- <div class="margin-top-20">
   <mat-expansion-panel
     [expanded]="isAllCardOpen"
     (opened)="(true)"
@@ -72,9 +64,9 @@
       </li>
     </ul>
   </mat-expansion-panel>
-</div>
+</div> -->
 
-<div class="margin-top-20">
+<!-- <div class="margin-top-20">
   <mat-expansion-panel
     [expanded]="isAllCardOpen"
     (opened)="(true)"
@@ -89,9 +81,9 @@
       </li>
     </ul>
   </mat-expansion-panel>
-</div>
+</div> -->
 
-<div class="margin-top-20">
+<!-- <div class="margin-top-20">
   <mat-expansion-panel
     [expanded]="isAllCardOpen"
     (opened)="(true)"
@@ -106,9 +98,9 @@
       </li>
     </ul>
   </mat-expansion-panel>
-</div>
+</div> -->
 
-<div class="margin-top-20">
+<!-- <div class="margin-top-20">
   <mat-expansion-panel
     [expanded]="isAllCardOpen"
     (opened)="(true)"
@@ -123,8 +115,8 @@
       </li>
     </ul>
   </mat-expansion-panel>
-</div>
-
+</div> -->
+<!--
 <div class="margin-top-20">
   <mat-expansion-panel
     [expanded]="isAllCardOpen"
@@ -140,9 +132,9 @@
       </li>
     </ul>
   </mat-expansion-panel>
-</div>
+</div> -->
 
-<div class="margin-top-20">
+<!-- <div class="margin-top-20">
   <mat-expansion-panel
     [expanded]="isAllCardOpen"
     (opened)="(true)"
@@ -154,9 +146,9 @@
     <div>Current: {{ stockAnalysis.predication?.marketCap[0] }}</div>
     <div>Potential: {{ stockAnalysis.predication?.marketCap[1] }}</div>
   </mat-expansion-panel>
-</div>
+</div> -->
 
-<div class="margin-top-20">
+<!-- <div class="margin-top-20">
   <mat-expansion-panel
     [expanded]="isAllCardOpen"
     (opened)="(true)"
@@ -171,9 +163,9 @@
       </li>
     </ul>
   </mat-expansion-panel>
-</div>
+</div> -->
 
-<div class="margin-top-20">
+<!-- <div class="margin-top-20">
   <mat-expansion-panel
     [expanded]="isAllCardOpen"
     (opened)="(true)"
@@ -184,9 +176,9 @@
     </mat-expansion-panel-header>
     <div class="score-line">Score: {{ stockAnalysis.score?.total }} / 100</div>
   </mat-expansion-panel>
-</div>
+</div> -->
 
-<div *ngIf="stockAnalysis.companyOfficialDocs?.length">
+<!-- <div *ngIf="stockAnalysis.companyOfficialDocs?.length">
   官方文件链接
   <ul>
     <li *ngFor="let docs of stockAnalysis.companyOfficialDocs">
@@ -206,4 +198,4 @@
       </div>
     </li>
   </ul>
-</div>
+</div> -->

@@ -10,7 +10,7 @@ import { webull } from 'src/app/accounts/ mock-data/jessica-wubu-account';
 import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
 import { industry } from 'src/app/shared/industry.enum';
 import { Trend } from 'src/app/shared/trend.enum';
-import { stockList } from './stock-list.const';
+import { ownedStockMap, watchListMap } from '../../mocks/stock-list.const';
 
 export interface Equity {
   ticker: string;
@@ -43,13 +43,14 @@ export class StockListPageComponent implements OnInit {
   ];
   equitySummaryMap = this.generateEquitySummaryMap(this.equities);
   dataSource = new MatTableDataSource<any>();
+  watchList: any[];
 
   constructor() {}
 
   ngOnInit(): void {
     // const equitySummaryMap = this.generateEquitySummaryMap(this.equities);
-    const stockMap = this.generateStockMap(stockList);
-    this.dataSource.data = this.convertToTableData(stockMap);
+    this.dataSource.data = this.convertToTableData(ownedStockMap);
+    this.watchList = this.convertToTableData(watchListMap);
   }
 
   applyFilter(event: Event) {
@@ -66,18 +67,6 @@ export class StockListPageComponent implements OnInit {
       } else {
         result[equity.ticker] = equity.shares;
       }
-    }
-
-    return result;
-  }
-
-  private generateStockMap(stockInfo: any[]) {
-    const result = {};
-
-    for (let stock of stockInfo) {
-      result[stock.ticker] = {
-        ...stock,
-      };
     }
 
     return result;
@@ -148,7 +137,8 @@ export class StockListPageComponent implements OnInit {
         profitOverMarketCap,
         profileIncreaseOverMarketCap,
 
-        investorWebsite: stockMap[key]?.earnings?.website,
+        investorWebsite:
+          stockMap[key]?.irAddress || stockMap[key]?.earnings?.website,
         current10Q:
           stockMap[key]?.earnings?.[latestYear]?.[latestQuarter]?.['10q10k'],
         currentPressRelease:

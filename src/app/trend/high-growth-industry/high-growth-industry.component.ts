@@ -65,7 +65,7 @@ export class HighGrowthIndustryComponent implements OnInit {
     },
     // Productivity
     {
-      ticker: 'MSFT',
+      ticker: 'msft',
       name: 'Microsoft Corporation',
       chinese: '微软',
       reason: '云端办公第一生产力',

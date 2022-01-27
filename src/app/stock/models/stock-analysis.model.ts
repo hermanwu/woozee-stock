@@ -24,6 +24,8 @@ export interface StockAnalysis {
   stats?: StockStats;
   optionCrazy?: boolean;
   propertiesPageEnabled?: boolean;
+  irAddress?: string;
+  secFilings?: string;
 
   // Demand:
   vision?: string[];
@@ -32,7 +34,7 @@ export interface StockAnalysis {
   painPoint?: string[]; // for market.
   customers?: string[];
   market?: string[]; // China, US, ETC
-  trend?: string[] | Trend[];
+  trends?: string[] | Trend[];
 
   // Supply:
   competitor?: string[];

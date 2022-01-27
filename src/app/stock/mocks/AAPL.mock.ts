@@ -6,7 +6,7 @@ export const AAPL: StockAnalysis = {
     Chinese: '苹果',
   },
   description: [''],
-  trend: [],
+  trends: [],
   logo: '',
   ticker: 'AAPL',
   ceoQuote: [],

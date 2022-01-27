@@ -1,15 +1,22 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const MSFT: StockAnalysis = {
+export const msft: StockAnalysis = {
   logo: '',
   name: { English: 'MICROSOFT CORPORATION' },
   description: [],
-  ticker: 'MSFT',
+  ticker: 'msft',
+  irAddress: 'https://www.microsoft.com/en-us/investor',
 
   // Earnings Report:
   earnings: {
     website: 'https://www.microsoft.com/en-us/investor',
-    latestReportQuarter: ['2021', '2'],
+    latestReportQuarter: ['2022', '2'],
+    2022: {
+      2: {
+        presentation:
+          'https://view.officeapps.live.com/op/view.aspx?src=https://c.s-microsoft.com/en-us/CMSFiles/SlidesFY22Q2.pptx?version=4a9117e1-04ff-5143-12a0-1ecfc041aa59',
+      },
+    },
     2021: {
       2: {
         '10q10k':
@@ -30,4 +37,10 @@ export const MSFT: StockAnalysis = {
       },
     },
   },
+
+  risks: [
+    {
+      name: 'Cloud services decelerate',
+    },
+  ],
 };

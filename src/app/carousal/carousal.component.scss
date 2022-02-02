@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+
+  grid-template-columns: 1fr 5fr 1fr;
+  justify-items: center;
+}
+
+.content {
+  width: 100%;
+}

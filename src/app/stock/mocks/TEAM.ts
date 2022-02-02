@@ -1,10 +1,37 @@
+import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { RiskType } from 'src/app/risks/models/risk-type.enum';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const TEAM: StockAnalysis = {
+export const team: StockAnalysis = {
   logo: '',
-  name: { English: 'Atlassian Corporation Plc' },
+  name: 'Atlassian Corporation Plc',
   description: [],
-  ticker: 'TEAM',
+  ticker: 'team',
+
+  risks: [
+    {
+      name: RiskType.noIncome,
+      level: RiskLevel.medium,
+    },
+    {
+      name: 'High price to sales ratio: 33.73',
+      level: RiskLevel.medium,
+      notes: [
+        {
+          content: 'ServiceNow: 19.29, Salesforce: 8.88',
+        },
+      ],
+    },
+    {
+      name: 'Marketing and sales, General and administrative cost increases (+74% & +73%)',
+      level: RiskLevel.low,
+      notes: [
+        {
+          content: 'Sales only increases 36%',
+        },
+      ],
+    },
+  ],
 
   // Earnings Report:
   earnings: {
@@ -13,7 +40,7 @@ export const TEAM: StockAnalysis = {
     2021: {
       2: {
         '10q10k':
-          'https://s2.q4cdn.com/141359120/files/doc_financials/2021/q4/TEAM-Q4-2021-Earnings-Release.pdf',
+          'https://s2.q4cdn.com/141359120/files/doc_financials/2021/q4/team-Q4-2021-Earnings-Release.pdf',
         presentation: null,
         press: null,
         webcast: null,

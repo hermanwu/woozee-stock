@@ -1,4 +1,4 @@
-import { AAPL } from './AAPL.mock';
+import { aapl } from './aapl.mock';
 import { ABNB } from './ABNB';
 import { ADBE } from './ADBE';
 import { ADSK } from './ADSK';
@@ -18,7 +18,7 @@ import { blde } from './blde';
 import { BYND } from './BYND';
 import { CHWY } from './CHWY';
 import { CLOV } from './CLOV';
-import { COIN } from './COIN';
+import { coin } from './coin';
 import { CRM } from './CRM';
 import { CRWD } from './CRWD';
 import { DASH } from './DASH';
@@ -37,7 +37,7 @@ import { GME } from './GME';
 import { GOOGL } from './GOOGL.mock';
 import { GS } from './GS';
 import { HD } from './HD';
-import { HOOD } from './HOOD';
+import { hood } from './hood';
 import { huya } from './huya';
 import { IAC } from './IAC';
 import { INTU } from './INTU';
@@ -95,7 +95,7 @@ import { STEM } from './STEM';
 import { swks } from './swks';
 import { techy } from './TCEHY';
 import { TDOC } from './TDOC';
-import { TEAM } from './TEAM';
+import { team } from './team';
 import { tgt } from './tgt';
 import { TRMB } from './TRMB';
 import { tsla } from './TSLA.mock';
@@ -110,6 +110,7 @@ import { unh } from './unh';
 import { up } from './UP';
 import { upst } from './upst';
 import { upwk } from './UPWK';
+import { v } from './v';
 import { VMEO } from './vmeo';
 import { vmw } from './vmw';
 import { wish } from './wish';
@@ -121,7 +122,7 @@ import { ZM } from './ZM';
 import { ZS } from './ZS';
 
 export const ownedStockMap = {
-  AAPL,
+  aapl,
   ABNB,
   ADBE,
   ADSK,
@@ -138,7 +139,7 @@ export const ownedStockMap = {
   BYND,
   CHWY,
   CLOV,
-  COIN,
+  coin,
   CRM,
   CRWD,
   DASH,
@@ -155,7 +156,7 @@ export const ownedStockMap = {
   GOOGL,
   GS,
   HD,
-  HOOD,
+  hood,
   IAC,
   INTU,
   ISRG,
@@ -204,7 +205,7 @@ export const ownedStockMap = {
   SQ,
   swks,
   TDOC,
-  TEAM,
+  team,
   techy,
   tgt,
   tsla,
@@ -220,6 +221,7 @@ export const ownedStockMap = {
   Z,
   ZM,
   ZS,
+  v,
 };
 
 export const watchListMap = {

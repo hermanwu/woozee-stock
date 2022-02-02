@@ -1,20 +1,72 @@
-<div class="title-display">
-  <div>
-    ({{ stockAnalysis?.ticker | uppercase }}) {{ stockAnalysis?.name?.English }}
+<div class="padding-1rem">
+  <div class="title-display">
+    <h1>
+      {{ stockAnalysis.name }}
+      ({{ stockAnalysis?.ticker | uppercase }})
+    </h1>
+
+    <button
+      class="buttons"
+      mat-icon-button
+      type="button"
+      (click)="showDetails = !showDetails"
+    >
+      <mat-icon *ngIf="expanded">expand_less</mat-icon>
+      <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+    </button>
+  </div>
+
+  <div *ngIf="showDetails">
+    <label>Links</label>
+    <a target="_blank" href="{{ stockAnalysis.irAddress }}">
+      Investor Relations
+    </a>
   </div>
 </div>
 
-<div>
-  <a target="_blank" href="{{ stockAnalysis.irAddress }}">
-    <span></span>Investor Relations
-  </a>
-</div>
+<div class="padding-1rem">
+  <div>
+    <app-title-menu>
+      <h2>Risks</h2>
 
-<div class="grid grid-one">
-  <div *ngFor="let risk of stockAnalysis.risks">
-    <app-card>
-      <app-risk [risk]="risk"></app-risk>
-    </app-card>
+      <div buttons>
+        <button
+          mat-icon-button
+          type="button"
+          (click)="setDisplayMode(displayModeEnum.list)"
+        >
+          <mat-icon>list</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          type="button"
+          (click)="setDisplayMode(displayModeEnum.slide)"
+        >
+          <mat-icon>view_array</mat-icon>
+        </button>
+      </div>
+    </app-title-menu>
+  </div>
+
+  <div class="grid grid-list" *ngIf="displayMode === displayModeEnum.list">
+    <div *ngFor="let risk of stockAnalysis.risks">
+      <app-card>
+        <app-risk [risk]="risk"></app-risk>
+      </app-card>
+    </div>
+  </div>
+
+  <div *ngIf="displayMode === displayModeEnum.slide">
+    <app-carousal
+      [items]="stockAnalysis.risks"
+      (indexOfSelected)="updateDisplayItem($event)"
+    >
+      <div *ngFor="let risk of stockAnalysis.risks; let i = index">
+        <app-card *ngIf="i === carousalDisplayItemIndex">
+          <app-risk [risk]="risk"></app-risk>
+        </app-card>
+      </div>
+    </app-carousal>
   </div>
 </div>
 

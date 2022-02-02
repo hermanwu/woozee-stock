@@ -1,13 +1,11 @@
+import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const tsla: StockAnalysis = {
   logo: 'https://www.carlogos.org/car-logos/tesla-logo-2200x2800.png',
-  name: {
-    English: 'Tesla',
-    Chinese: '特斯拉',
-  },
+  name: 'Tesla',
   ticker: 'TSLA',
-  description: [''],
+  irAddress: 'https://ir.tesla.com/',
   marketCap: {},
   earnings: {
     website: 'https://ir.tesla.com/',
@@ -50,15 +48,126 @@ export const tsla: StockAnalysis = {
   ],
   risks: [
     {
-      name: 'Margin',
+      name: 'Financial Health',
+      level: RiskLevel.noRisk,
+      notes: [
+        {
+          content: 'Has more cash than its total debt.',
+        },
+        {
+          content:
+            'Debt to equity ratio has reduced from 137.7% to 21.6% over the past 5 years.',
+        },
+        {
+          content: 'Debt is well covered by operating cash flow (145.3%).',
+        },
+      ],
     },
     {
-      name: 'Cash usage',
+      name: 'Value',
+      level: RiskLevel.medium,
+      notes: [
+        {
+          content:
+            'PE Ratio 180+ (US market: 16.3, Auto industry: 12.8, Tech industry: 25.1)',
+        },
+        {
+          content: 'PEG Ratio is 8.82 (Apple: 2.1)',
+        },
+      ],
     },
     {
-      name: '马斯克有太多的明星效应.在我看来唯一的风险是CEO出现问题。但CEO马斯克事实上已经身经百战（创立过很多公司），所以这个风险也不是特别大。',
+      name: 'Company Growth',
+      level: RiskLevel.low,
+      notes: [
+        {
+          content:
+            'Vehicle deliveries would comfortably grow by more than 50% year-over-year in 2022 despite persistent supply chain issues ',
+        },
+        {
+          content: 'Tesla current demand is much bigger than supply',
+        },
+        {
+          content: 'Berlin and Texas factories will be opening soon.',
+        },
+        {
+          content: 'Rising raw material, commodity, logistics costs.',
+        },
+        {
+          content: 'Solar panel related sales decreases (-1%).',
+        },
+      ],
     },
-    { name: '中国的巨大市场，但中国和美国将会处于一种长期敌对状态' },
+    {
+      name: 'Management',
+      level: RiskLevel.low,
+      notes: [
+        {
+          content: "Elon Musk's health and focus",
+        },
+        {
+          content: 'Overpromise',
+          notes: [
+            { content: 'However, he would achieve the goal eventually.' },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Investors Sentiment',
+      level: RiskLevel.low,
+      notes: [
+        {
+          content:
+            'Elon musk has many fans. General public owns 36.1% of the stocks (GM 12.8%)',
+        },
+        {
+          content:
+            'Institution do not like the factor Tesla will not be focusing on auto production in 2022.',
+          notes: [
+            {
+              content:
+                'Elon was talking mainly about FSD and robot during earning call',
+            },
+          ],
+        },
+        {
+          content: '17 out of 31 analysts on Wall Street give a BUY rating.',
+          notes: [
+            {
+              content: '7 with HOLD rating and 7 with SELL rating.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Market Competitions',
+      level: RiskLevel.noRisk,
+      notes: [
+        {
+          content:
+            'Not at the competing stages since EV market is huge (6% market share)',
+        },
+      ],
+    },
+    {
+      name: 'Technical Chart',
+      level: RiskLevel.low,
+      notes: [
+        {
+          content: 'RSI is below average',
+        },
+        {
+          content: 'Did not break 200 SMA',
+        },
+      ],
+    },
+    {
+      name: 'Macroeconomics',
+      level: RiskLevel.medium,
+      notes: [],
+    },
   ],
 
   products: [],

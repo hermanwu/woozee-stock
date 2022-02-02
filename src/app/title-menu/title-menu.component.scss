@@ -1,0 +1,10 @@
+.title-menu {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 5fr 2fr;
+
+  .buttons {
+    align-self: center;
+    justify-self: right;
+  }
+}

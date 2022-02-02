@@ -1,7 +1,9 @@
 import { Source } from 'src/app/shared/data/source.enum';
+import { RiskLevel } from '../../models/risk-level.model';
 
 export const inflation = {
   name: 'Inflation',
+  level: RiskLevel.high,
   notes: [
     {
       content: 'Facts',

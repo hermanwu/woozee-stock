@@ -1,7 +1,9 @@
 import { Source } from 'src/app/shared/data/source.enum';
+import { RiskLevel } from '../../models/risk-level.model';
 
 export const fedRate = {
-  name: 'Fed Rate',
+  name: 'Fed Rate Increases',
+  level: RiskLevel.high,
   notes: [
     {
       content: 'facts',
@@ -46,7 +48,7 @@ export const fedRate = {
     },
     {
       content: 'pessimism',
-      notes: [],
+      notes: ['During '],
     },
   ],
   startTime: new Date('2022-01-01'),

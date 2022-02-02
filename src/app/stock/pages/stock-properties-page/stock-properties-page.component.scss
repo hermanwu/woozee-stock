@@ -1,7 +1,17 @@
 .title-display {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+  .buttons {
+    justify-self: flex-end;
+  }
 }
 
+.padding-1rem {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 // .header {
 //   display: grid;
 //   grid-template-columns: 1fr 10fr 1fr;

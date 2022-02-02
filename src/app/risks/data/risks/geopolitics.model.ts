@@ -1,5 +1,8 @@
+import { RiskLevel } from '../../models/risk-level.model';
+
 export const geopolitics = {
   name: 'Geopolitics',
+  level: RiskLevel.medium,
   notes: [
     {
       content: 'facts',

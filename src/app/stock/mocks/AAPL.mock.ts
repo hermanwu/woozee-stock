@@ -1,16 +1,15 @@
+import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const AAPL: StockAnalysis = {
-  name: {
-    English: 'Apple',
-    Chinese: '苹果',
-  },
+export const aapl: StockAnalysis = {
+  name: 'Apple',
   description: [''],
   trends: [],
   logo: '',
-  ticker: 'AAPL',
+  ticker: 'aapl',
   ceoQuote: [],
   advantage: [],
+  irAddress: 'https://investor.apple.com/investor-relations/default.aspx',
   // POTENTIALS:
 
   // Demand:
@@ -35,4 +34,49 @@ export const AAPL: StockAnalysis = {
       },
     },
   },
+
+  risks: [
+    {
+      name: 'iPad sales decreases',
+      level: RiskLevel.low,
+      notes: [
+        {
+          content:
+            'iPad sales decreased by 14% year over year in the first quarter of 2021. Apple says that the drop in sales performance is due to supply constraints',
+        },
+        {
+          content:
+            'could be related to demand decreases (like Microsoft surface',
+        },
+        {
+          content: '~5% of total sale',
+        },
+      ],
+    },
+    {
+      name: 'Supply chain constraint',
+      level: RiskLevel.low,
+      notes: [
+        {
+          content:
+            'Based on the earning result, apple was not affected severely',
+        },
+        {
+          content: 'Hard to predict',
+        },
+      ],
+    },
+    {
+      name: 'High valuation with slow down revenue growth',
+      level: RiskLevel.medium,
+      notes: [
+        {
+          content: 'PEG ratio: 3.35',
+        },
+        {
+          content: 'Microsoft: 2.53, Google: 0.65, Amazon: 1.65',
+        },
+      ],
+    },
+  ],
 };

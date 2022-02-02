@@ -21,7 +21,6 @@ export class RiskComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   openDialog() {
-    console.log(this.risk);
     this.dialogService.open<NoteDialogComponent>(NoteDialogComponent, {
       data: {
         title: 'Risk Mitigation',

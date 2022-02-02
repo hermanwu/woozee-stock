@@ -1,7 +1,9 @@
 import { Source } from 'src/app/shared/data/source.enum';
+import { RiskLevel } from '../../models/risk-level.model';
 
 export const covid = {
   name: 'COVID',
+  level: RiskLevel.low,
   notes: [
     {
       content: 'facts',

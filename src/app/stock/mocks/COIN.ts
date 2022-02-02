@@ -1,11 +1,22 @@
+import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const COIN: StockAnalysis = {
+export const coin: StockAnalysis = {
   logo: '',
   name: { English: 'Coinbase' },
   description: [],
-  ticker: 'COIN',
+  ticker: 'coin',
 
+  risks: [
+    {
+      name: 'New user or revenue growth slows down',
+      level: RiskLevel.medium,
+    },
+    {
+      name: 'Crypto transaction related revenue decreases',
+      level: RiskLevel.medium,
+    },
+  ],
   // Earnings Report:
   earnings: {
     website: 'https://investor.coinbase.com/home/default.aspx',

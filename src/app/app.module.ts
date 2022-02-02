@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WoozeeLibModule } from 'woozee-lib';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CarousalComponent } from './carousal/carousal.component';
 import { MistakesComponent } from './ideas/blog/mistakes/mistakes.component';
 import { FomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
 import { PresentationHeaderComponent } from './presentation/presentation-header/presentation-header.component';
@@ -16,6 +17,7 @@ import { PresentationComponent } from './presentation/presentation.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
 import { SlideFooterComponent } from './presentation/slide/slide-footer/slide-footer.component';
 import { SlideComponent } from './presentation/slide/slide/slide.component';
+import { RiskLevelDisplayComponent } from './risks/components/risk-level-display/risk-level-display.component';
 import { RiskComponent } from './risks/components/risk/risk.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
@@ -34,6 +36,7 @@ import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/tho
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
 import { StockDisplayComponent } from './stock/stock-display/stock-display.component';
+import { TitleMenuComponent } from './title-menu/title-menu.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendIndustriesComponent } from './trend/trend-industries/trend-industries.component';
 import { TrendComponent } from './trend/trend.component';
@@ -69,6 +72,9 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     PresentationHeaderComponent,
     NoteDialogComponent,
     SafePipe,
+    RiskLevelDisplayComponent,
+    CarousalComponent,
+    TitleMenuComponent,
   ],
   imports: [
     BrowserModule,

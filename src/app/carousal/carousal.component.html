@@ -1,0 +1,17 @@
+<div class="container">
+  <div>
+    <button mat-icon-button type="button" (click)="emitNext(-1)">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+  </div>
+
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+
+  <div>
+    <button mat-icon-button type="button" (click)="emitNext(1)">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>

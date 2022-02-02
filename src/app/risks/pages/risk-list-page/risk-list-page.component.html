@@ -1,11 +1,13 @@
 <mat-toolbar>
-  <h1>US market risks</h1>
+  <h1>US stock market risks</h1>
 </mat-toolbar>
 
-<div class="grid grid-one">
+<div class="grid grid-list">
   <div *ngFor="let risk of risks">
     <app-card>
       <app-risk [risk]="risk"></app-risk>
     </app-card>
   </div>
 </div>
+
+<div></div>

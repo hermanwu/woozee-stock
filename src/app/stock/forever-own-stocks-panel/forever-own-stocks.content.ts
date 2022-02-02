@@ -5,7 +5,7 @@ export const foreverOwnStocks = {
   ADBE: {
     position: 123,
   },
-  AAPL: {
+  aapl: {
     position: 16,
   },
   GOOGL: {

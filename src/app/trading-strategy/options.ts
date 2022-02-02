@@ -1,4 +1,40 @@
 import { Risk } from '../risks/models/risk.model';
+import { Note } from '../shared/data/note.interface';
+
+export const action: Note = [
+  {
+    content: 'sell a call',
+    isQuestion: true,
+    notes: [
+      {
+        content: 'Is it stock covered?',
+        notes: [
+          {
+            content: 'Yes',
+            notes: [
+              {
+                content: 'Go Head',
+              },
+            ],
+          },
+          {
+            content: 'No',
+            notes: [
+              {
+                content: 'What is the winning rate?',
+                notes: [
+                  {
+                    content: 'Is the target price lower than target price?',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];
 
 export const optionRiskManagementStrategy: Risk[] = [
   {

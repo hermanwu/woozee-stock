@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { ownedStockMap } from '../../mocks/stock-list.const';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 
@@ -10,8 +11,15 @@ import { StockAnalysis } from '../../models/stock-analysis.model';
   styleUrls: ['./stock-properties-page.component.scss'],
 })
 export class StockPropertiesPageComponent implements OnInit, OnDestroy {
+  readonly displayModeEnum = DisplayMode;
+
+  showDetails: boolean;
+  expanded: boolean;
   panelOpenState = false;
-  private routeSub: Subscription;
+  displayMode = DisplayMode.slide;
+  carousalDisplayItemIndex: number;
+  // Determine what state to be displayed;
+  routeSub: Subscription;
 
   isAllCardOpen = false;
   stockTicker: string;
@@ -33,5 +41,13 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
 
   openAll(): void {
     this.isAllCardOpen = true;
+  }
+
+  setDisplayMode(displayMode: DisplayMode) {
+    this.displayMode = displayMode;
+  }
+
+  updateDisplayItem(index: number) {
+    this.carousalDisplayItemIndex = index;
   }
 }

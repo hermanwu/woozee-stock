@@ -1,10 +1,36 @@
+import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const HOOD: StockAnalysis = {
+export const hood: StockAnalysis = {
   logo: '',
-  name: { English: 'Robinhood' },
+  name: 'Robinhood',
   description: [],
-  ticker: 'HOOD',
+  ticker: 'hood',
+
+  risks: [
+    {
+      name: 'Almost no new user growth in the past three quarters',
+      level: RiskLevel.high,
+      notes: [
+        {
+          content: 'last three quarters: 22.5, 22.4, 22.7 (millions)',
+        },
+      ],
+    },
+    {
+      name: 'New quarter revenue guidance decreases 35%',
+      level: RiskLevel.high,
+    },
+    {
+      name: 'Decreased average revenue per user',
+      level: RiskLevel.low,
+      notes: [
+        {
+          content: 'from $106 decreases to $64',
+        },
+      ],
+    },
+  ],
 
   // Earnings Report:
   earnings: {

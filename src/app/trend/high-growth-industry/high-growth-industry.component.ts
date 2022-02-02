@@ -42,7 +42,7 @@ export class HighGrowthIndustryComponent implements OnInit {
   stockArry = [
     // Hardware
     {
-      ticker: 'AAPL',
+      ticker: 'aapl',
       name: 'Apple',
       chinese: '苹果',
       reason: '巴菲特也投资的电子产品',

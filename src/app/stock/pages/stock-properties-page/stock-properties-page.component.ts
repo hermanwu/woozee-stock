@@ -1,6 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { companyRisks } from 'src/app/risks/data/risks/component-risks-defination';
+import { NoteDialogComponent } from 'src/app/shared/components/note-dialog/note-dialog.component';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { ownedStockMap } from '../../mocks/stock-list.const';
 import { StockAnalysis } from '../../models/stock-analysis.model';
@@ -26,7 +29,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   stockAnalysis: StockAnalysis;
   private stockId = 'stockId';
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
@@ -41,6 +44,17 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
 
   openAll(): void {
     this.isAllCardOpen = true;
+  }
+
+  openRiskInfoDialog(): void {
+    this.dialog.open<NoteDialogComponent>(NoteDialogComponent, {
+      data: {
+        title: 'Company Risk Definitions',
+        notes: companyRisks,
+        isExpanded: true,
+      },
+      panelClass: 'medium-modal-panel',
+    });
   }
 
   setDisplayMode(displayMode: DisplayMode) {

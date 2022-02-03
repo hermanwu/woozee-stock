@@ -7,7 +7,7 @@
     <li *ngFor="let item of dialogData.notes">
       <app-note
         [note]="item"
-        [isExpanded]="expanded"
+        [isExpanded]="dialogData.isExpanded"
         [isActionButtonsHidden]="true"
       >
       </app-note>

@@ -11,7 +11,7 @@ export const fedRate = {
         {
           content:
             'forecast showed 12 out of 18 FOMC members expect at least three rate raises next year.',
-          source: Source.cnbc,
+          source: Source['www.cnbc.com'],
         },
       ],
     },

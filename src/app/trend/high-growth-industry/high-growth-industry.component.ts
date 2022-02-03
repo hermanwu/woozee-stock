@@ -177,7 +177,7 @@ export class HighGrowthIndustryComponent implements OnInit {
       category: GrowthType.AD_PLATFORM,
     },
     {
-      ticker: 'FB',
+      ticker: 'fb',
       name: 'Facebook',
       chinese: '脸书',
       reason: '比国家还大的社交网络',

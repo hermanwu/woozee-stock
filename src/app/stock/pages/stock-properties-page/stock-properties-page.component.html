@@ -27,7 +27,12 @@
 <div class="padding-1rem">
   <div>
     <app-title-menu>
-      <h2>Risks</h2>
+      <div title>
+        Risks
+        <button mat-icon-button (click)="openRiskInfoDialog()">
+          <mat-icon> info </mat-icon>
+        </button>
+      </div>
 
       <div buttons>
         <button

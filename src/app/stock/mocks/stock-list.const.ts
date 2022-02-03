@@ -31,7 +31,7 @@ import { EA } from './EA';
 import { EDIT } from './EDIT';
 import { ESTC } from './ESTC';
 import { ETSY } from './ETSY';
-import { FB } from './FB';
+import { fb } from './fb';
 import { fvrr } from './fvrr';
 import { GME } from './GME';
 import { GOOGL } from './GOOGL.mock';
@@ -151,7 +151,7 @@ export const ownedStockMap = {
   EDIT,
   ESTC,
   ETSY,
-  FB,
+  fb,
   GME,
   GOOGL,
   GS,

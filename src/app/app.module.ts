@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { CarousalComponent } from './carousal/carousal.component';
 import { MistakesComponent } from './ideas/blog/mistakes/mistakes.component';
 import { FomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
+import { MediaLinkComponent } from './media/component/media-link/media-link.component';
 import { PresentationHeaderComponent } from './presentation/presentation-header/presentation-header.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
@@ -75,6 +76,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     RiskLevelDisplayComponent,
     CarousalComponent,
     TitleMenuComponent,
+    MediaLinkComponent,
   ],
   imports: [
     BrowserModule,

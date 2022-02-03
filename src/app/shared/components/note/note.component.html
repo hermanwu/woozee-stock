@@ -10,17 +10,21 @@
       highlight: isRoot === true
     }"
   >
-    <div *ngIf="note.source; else noteSection">
-      "{{ note.content }}" <mat-chip> - ({{ note.source }})</mat-chip>
+    <div>
+      <span *ngIf="note.source; else noteSection">"{{ note.content }}"</span>
+
+      <ng-template #noteSection>
+        <span>{{ note.content }}</span>
+      </ng-template>
+
+      <span *ngIf="note.date" class="note-date">{{ note.date | date }}</span>
+
+      <app-media-link
+        *ngIf="note.link"
+        [link]="note.link"
+        [source]="note.source"
+      ></app-media-link>
     </div>
-
-    <ng-template #noteSection>
-      <div>{{ note.content }}</div>
-    </ng-template>
-
-    <a *ngIf="note.link" href="{{ note.link }}" target="_blank">
-      <mat-icon>open_in_new</mat-icon>
-    </a>
   </div>
 
   <div class="action-buttons" *ngIf="!isActionButtonsHidden">

@@ -15,7 +15,7 @@ export const inflation = {
         {
           content:
             'December CPI data shows inflation rose 0.47 percent monthly, but a seven percent year-over-year increase, the highest level since 1982.',
-          source: Source.cnbc,
+          source: Source['www.cnbc.com'],
         },
         {
           content:
@@ -76,12 +76,12 @@ export const inflation = {
         {
           content:
             'The surge in euro-area inflation that surprised policy makers in recent months is close to its peak, according to European Central Bank Governing Council member Francois Villeroy de Galhau. ',
-          source: Source.Bloomberg,
+          source: Source.bloomberg,
         },
         {
           content:
             'Energy prices fell last month for the first time since April, and food prices -- while still rising -- moderated somewhat as the cost of meat fell.',
-          source: Source.Bloomberg,
+          source: Source.bloomberg,
         },
         {
           content: 'Rent sector of CPI has not been increasing dramatically',
@@ -94,12 +94,12 @@ export const inflation = {
         {
           content:
             'The fastest inflation in four decades has reached an “excessive” level, in part because of stimulative monetary policy used to counter the economic consequences of the pandemic, said Howard Marks, co-founder of Oaktree Capital Management. ',
-          source: Source.Bloomberg,
+          source: Source.bloomberg,
         },
         {
           content:
             'Though many economists anticipate inflation to moderate to around 3% over the course of 2022, consumers are likely months away from a meaningful respite, especially as the omicron variant of the coronavirus worsens labor shortages and prevents goods from reaching store shelves.',
-          source: Source.Bloomberg,
+          source: Source.bloomberg,
         },
       ],
     },

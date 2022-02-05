@@ -4,4 +4,5 @@ export interface NoteDialogInput {
   notes: Note[];
   title: string;
   isExpanded: boolean;
+  isActionButtonsHidden: boolean;
 }

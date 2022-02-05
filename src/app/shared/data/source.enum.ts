@@ -6,4 +6,5 @@ export enum Source {
   Link = 'Link',
   Morningbrew = 'morningbrew.com',
   bloomberg = 'Bloomberg',
+  earningReport = 'Earnings Report',
 }

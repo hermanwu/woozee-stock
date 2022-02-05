@@ -10,11 +10,11 @@ export const citi: Equity[] = [
     shares: 1140,
   },
   {
-    ticker: 'GOOGL',
+    ticker: 'googl',
     shares: 48,
   },
   {
-    ticker: 'AMZN',
+    ticker: 'amzn',
     shares: 53,
   },
   {

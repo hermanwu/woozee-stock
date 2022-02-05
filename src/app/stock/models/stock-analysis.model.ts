@@ -1,6 +1,7 @@
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Note } from 'src/app/shared/data/note.interface';
 import { News } from '../mocks/news.model';
+import { EarningsReport } from './earnings.model';
 import { MyScore } from './herman-score.model';
 import { Rating } from './rating.model';
 import { StockStats } from './stock-stats.model';
@@ -50,13 +51,15 @@ export interface StockAnalysis {
   thoughts?: {
     hermanScore: number;
   };
-  earnings: {};
+  earnings: {}; // TODO: retire this.
+  earningsReports?: EarningsReport[];
+
   score?: MyScore;
   lastUpdated?: Date;
   source?: any;
   companyOfficialDocs?: Note[];
   usefulVideos?: Note[];
-  news?: News[];
+  news?: News[] | Note[];
   myRating?: Rating;
   note?: Note;
 }

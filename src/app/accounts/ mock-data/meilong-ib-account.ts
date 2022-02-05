@@ -6,7 +6,7 @@ export const meilongIbAccount: Equity[] = [
     shares: 40,
   },
   {
-    ticker: 'AMZN',
+    ticker: 'amzn',
     shares: 7,
   },
   {

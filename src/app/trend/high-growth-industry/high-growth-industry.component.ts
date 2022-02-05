@@ -127,7 +127,7 @@ export class HighGrowthIndustryComponent implements OnInit {
     },
     // E commerce
     {
-      ticker: 'AMZN',
+      ticker: 'amzn',
       name: 'Amazon',
       chinese: '亚马逊',
       reason: '电子购物的代名词',
@@ -170,7 +170,7 @@ export class HighGrowthIndustryComponent implements OnInit {
     },
     // AD_PLATFORM.
     {
-      ticker: 'GOOGL',
+      ticker: 'googl',
       name: 'Alphabet / Google',
       chinese: '谷歌',
       reason: '最常用的最好用的搜索引擎',
@@ -184,7 +184,7 @@ export class HighGrowthIndustryComponent implements OnInit {
       category: GrowthType.AD_PLATFORM,
     },
     {
-      ticker: 'SNAP',
+      ticker: 'snap',
       chinese: 'Snapchat',
       reason: '年轻富有有创造力的社交公司',
       category: GrowthType.AD_PLATFORM,

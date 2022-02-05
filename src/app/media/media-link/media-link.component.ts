@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Source } from 'src/app/shared/data/source.enum';
 
 @Component({
@@ -6,7 +6,7 @@ import { Source } from 'src/app/shared/data/source.enum';
   templateUrl: './media-link.component.html',
   styleUrls: ['./media-link.component.scss'],
 })
-export class MediaLinkComponent implements OnInit, OnChanges {
+export class MediaLinkComponent implements OnInit {
   @Input() link: string;
   @Input() source: Source | string;
 
@@ -15,9 +15,4 @@ export class MediaLinkComponent implements OnInit, OnChanges {
   constructor() {}
 
   ngOnInit(): void {}
-
-  /**
-   * Update source based on link
-   */
-  ngOnChanges(): void {}
 }

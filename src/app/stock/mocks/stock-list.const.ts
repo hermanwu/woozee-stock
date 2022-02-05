@@ -5,7 +5,7 @@ import { ADSK } from './ADSK';
 import { AFRM } from './AFRM';
 import { AMC } from './AMC';
 import { AMD } from './AMD';
-import { AMZN } from './AMZN.mock';
+import { amzn } from './amzn.mock';
 import { API } from './API';
 import { asml } from './ASML';
 import { ATVI } from './ATVI';
@@ -34,7 +34,7 @@ import { ETSY } from './ETSY';
 import { fb } from './fb';
 import { fvrr } from './fvrr';
 import { GME } from './GME';
-import { GOOGL } from './GOOGL.mock';
+import { googl } from './googl.mock';
 import { GS } from './GS';
 import { HD } from './HD';
 import { hood } from './hood';
@@ -85,7 +85,7 @@ import { sbux } from './sbux';
 import { SE } from './SE';
 import { SHOP } from './SHOP.mock';
 import { SKLZ } from './SKLZ';
-import { SNAP } from './SNAP';
+import { snap } from './snap';
 import { SNOW } from './SNOW';
 import { SOFI } from './SOFI';
 import { SPLK } from './SPLK';
@@ -129,7 +129,7 @@ export const ownedStockMap = {
   AFRM,
   AMC,
   AMD,
-  AMZN,
+  amzn,
   asml,
   ATVI,
   AVGO,
@@ -153,7 +153,7 @@ export const ownedStockMap = {
   ETSY,
   fb,
   GME,
-  GOOGL,
+  googl,
   GS,
   HD,
   hood,
@@ -197,7 +197,7 @@ export const ownedStockMap = {
   sbux,
   SE,
   SHOP,
-  SNAP,
+  snap,
   SNOW,
   SOFI,
   SPLK,

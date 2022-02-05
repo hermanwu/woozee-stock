@@ -1,9 +1,9 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const GOOGL: StockAnalysis = {
+export const googl: StockAnalysis = {
   logo: '',
-  name: { English: 'Google' },
-  ticker: 'GOOGL',
+  name: 'Google',
+  ticker: 'googl',
   ceoQuote: [],
   advantage: [],
   // POTENTIALS:
@@ -12,7 +12,14 @@ export const GOOGL: StockAnalysis = {
 
   // Earnings Report:
   earnings: {
-    latestReportQuarter: ['2021', '2'],
+    latestReportQuarter: ['2022', '2'],
+    2022: {
+      4: {
+        revenue: 61880e6,
+        marketCap: 1.93 * 1e12,
+        operatingIncome: 18525e6,
+      },
+    },
     2021: {
       2: {
         revenue: 61880e6,

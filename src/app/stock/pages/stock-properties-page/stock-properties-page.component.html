@@ -1,26 +1,74 @@
-<div class="padding-1rem">
-  <div class="title-display">
-    <h1>
-      {{ stockAnalysis.name }}
-      ({{ stockAnalysis?.ticker | uppercase }})
-    </h1>
+<div class="title-display padding-1rem">
+  <h1>
+    {{ stockAnalysis.name }}
+    ({{ stockAnalysis?.ticker | uppercase }})
+  </h1>
 
-    <button
-      class="buttons"
-      mat-icon-button
-      type="button"
-      (click)="showDetails = !showDetails"
-    >
-      <mat-icon *ngIf="expanded">expand_less</mat-icon>
-      <mat-icon *ngIf="!expanded">expand_more</mat-icon>
-    </button>
+  <button
+    class="buttons"
+    mat-icon-button
+    type="button"
+    (click)="showDetails = !showDetails"
+  >
+    <mat-icon *ngIf="expanded">expand_less</mat-icon>
+    <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+  </button>
+</div>
+
+<div *ngIf="showDetails" class="details-panel">
+  <div class="logo-container">
+    <div class="logo-image">
+      <img
+        src="{{ stockAnalysis.logo }}"
+        alt="{{ stockAnalysis.name + ' Logo' }}"
+      />
+
+      <div class="video-title">
+        <app-thumbnail></app-thumbnail>
+      </div>
+    </div>
   </div>
 
-  <div *ngIf="showDetails">
-    <label>Links</label>
-    <a target="_blank" href="{{ stockAnalysis.irAddress }}">
-      Investor Relations
-    </a>
+  <div class="padding-1rem">
+    <div>
+      <app-title-menu>
+        <div title>News</div>
+      </app-title-menu>
+    </div>
+
+    <ng-container *ngFor="let item of stockAnalysis.news">
+      <app-note [note]="item" class="news-font"></app-note>
+    </ng-container>
+  </div>
+
+  <div class="padding-1rem">
+    <div>
+      <app-title-menu>
+        <div title>Resources</div>
+      </app-title-menu>
+    </div>
+
+    <div>
+      <a target="_blank" href="{{ stockAnalysis?.irAddress }}">
+        Investor Relations
+      </a>
+    </div>
+
+    <div>
+      <a target="_blank" href="{{ earningsReport?.reportLink }}">
+        Earnings Report
+      </a>
+    </div>
+
+    <div>
+      <a target="_blank" href="{{ earningsReport?.pressReleaseLink }}">
+        Press Release
+      </a>
+    </div>
+
+    <div>
+      <a target="_blank" href="{{ earningsReport?.slidesLink }}"> Slides </a>
+    </div>
   </div>
 </div>
 
@@ -66,6 +114,21 @@
       [items]="stockAnalysis.risks"
       (indexOfSelected)="updateDisplayItem($event)"
     >
+      <div class="risk-slides-overview">
+        <ng-container *ngFor="let risk of stockAnalysis.risks; let i = index">
+          <span
+            [ngClass]="{
+              'current-risk-slide': i === carousalDisplayItemIndex
+            }"
+          >
+            {{ risk.name }}
+          </span>
+          <span>-></span>
+        </ng-container>
+
+        <span>Conclusion</span>
+      </div>
+
       <div *ngFor="let risk of stockAnalysis.risks; let i = index">
         <app-card *ngIf="i === carousalDisplayItemIndex">
           <app-risk [risk]="risk"></app-risk>
@@ -73,6 +136,8 @@
       </div>
     </app-carousal>
   </div>
+
+  <div></div>
 </div>
 
 <!-- <mat-expansion-panel

@@ -2,11 +2,11 @@ import { Equity } from 'src/app/stock/pages/stock-list-page/stock-list-page.comp
 
 export const BOA: Equity[] = [
   {
-    ticker: 'GOOGL',
+    ticker: 'googl',
     shares: 3,
   },
   {
-    ticker: 'AMZN',
+    ticker: 'amzn',
     shares: 7,
   },
   {

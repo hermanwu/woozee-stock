@@ -6,6 +6,7 @@ import { companyRisks } from 'src/app/risks/data/risks/component-risks-definatio
 import { NoteDialogComponent } from 'src/app/shared/components/note-dialog/note-dialog.component';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { ownedStockMap } from '../../mocks/stock-list.const';
+import { EarningsReport } from '../../models/earnings.model';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 
 @Component({
@@ -16,18 +17,20 @@ import { StockAnalysis } from '../../models/stock-analysis.model';
 export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   readonly displayModeEnum = DisplayMode;
 
+  private stockId = 'stockId';
+  private readonly earningsReportYear = 2021;
+  private readonly earningsReportQuarter = 4;
   showDetails: boolean;
-  expanded: boolean;
-  panelOpenState = false;
-  displayMode = DisplayMode.slide;
   carousalDisplayItemIndex: number;
+  displayMode = DisplayMode.slide;
+  earningsReport: EarningsReport;
+  expanded: boolean;
+  isAllCardOpen = false;
+  panelOpenState = false;
   // Determine what state to be displayed;
   routeSub: Subscription;
-
-  isAllCardOpen = false;
-  stockTicker: string;
   stockAnalysis: StockAnalysis;
-  private stockId = 'stockId';
+  stockTicker: string;
 
   constructor(private route: ActivatedRoute, private dialog: MatDialog) {}
 
@@ -35,6 +38,11 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
     this.routeSub = this.route.params.subscribe((params) => {
       this.stockTicker = params[this.stockId].toLowerCase();
       this.stockAnalysis = ownedStockMap[this.stockTicker];
+      this.earningsReport = this.stockAnalysis.earningsReports?.find(
+        (report) =>
+          report.year === this.earningsReportYear &&
+          report.quarter === this.earningsReportQuarter
+      );
     });
   }
 
@@ -51,7 +59,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
       data: {
         title: 'Company Risk Definitions',
         notes: companyRisks,
-        isExpanded: true,
+        isExpanded: false,
+        isActionButtonsHidden: false,
       },
       panelClass: 'medium-modal-panel',
     });

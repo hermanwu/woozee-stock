@@ -16,7 +16,7 @@ export const fb: StockAnalysis = {
       level: RiskLevel.low,
       notes: [
         {
-          content: 'Earning report: No debt, very health cash flow',
+          content: 'Earning report: No debt, health cash flow',
           link: 'https://s21.q4cdn.com/399680738/files/doc_financials/2021/q4/FB-12.31.2021-Exhibit-99.1-Final.pdf',
         },
         {

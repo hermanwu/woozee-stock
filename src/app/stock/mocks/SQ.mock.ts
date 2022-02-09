@@ -47,10 +47,19 @@ export const SQ: StockAnalysis = {
   },
   marketCap: {},
   description: [
-    'Square, Inc. creates tools that empower businesses and individuals to participate in the economy.',
-    'Enables business to accept card payments and provides reporting and analytics, next-day settlement',
-    'Help business manage inventory, locations, and employees; access financing; engage buyers; build a website or online store; and grow sales. ',
-    'Provide an easy way to send, spend, and store money.',
+    {
+      content:
+        'Square, Inc. creates tools that empower businesses and individuals to participate in the economy.',
+    },
+    {
+      content:
+        'Enables business to accept card payments and provides reporting and analytics, next-day settlement',
+    },
+    {
+      content:
+        'Help business manage inventory, locations, and employees; access financing; engage buyers; build a website or online store; and grow sales. ',
+    },
+    { content: 'Provide an easy way to send, spend, and store money.' },
   ],
   vision: [
     'Helping all kinds of people succeed and grow in the economy.',

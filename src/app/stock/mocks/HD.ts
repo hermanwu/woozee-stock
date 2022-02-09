@@ -5,7 +5,7 @@ export const HD: StockAnalysis = {
     English: 'Home Depot',
     Chinese: '',
   },
-  description: [''],
+  description: [],
   trends: [],
   logo: '',
   ticker: 'HD',

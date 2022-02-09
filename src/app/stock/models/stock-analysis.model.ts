@@ -10,7 +10,7 @@ import { Trend } from './trend.enum';
 export interface StockAnalysis {
   logo?: string;
   name?: any;
-  description?: string[];
+  description?: Note[];
   ticker?: string;
   ceoQuote?: string[];
   advantage?: string[];
@@ -23,7 +23,6 @@ export interface StockAnalysis {
     marketCap: [string, string];
   };
   stats?: StockStats;
-  optionCrazy?: boolean;
   propertiesPageEnabled?: boolean;
   irAddress?: string;
   secFilings?: string;
@@ -51,7 +50,7 @@ export interface StockAnalysis {
   thoughts?: {
     hermanScore: number;
   };
-  earnings: {}; // TODO: retire this.
+  earnings?: {}; // TODO: retire this.
   earningsReports?: EarningsReport[];
 
   score?: MyScore;

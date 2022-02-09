@@ -5,7 +5,7 @@ export const DIS: StockAnalysis = {
     English: 'Disney',
     Chinese: '迪士尼',
   },
-  description: [''],
+  description: [],
   trends: [],
   logo: '',
   ticker: 'DIS',

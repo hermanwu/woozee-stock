@@ -6,7 +6,7 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 export const amzn: StockAnalysis = {
   ticker: 'amzn',
   name: 'Amazon',
-  description: ['美国最大电商'],
+  description: [],
   logo: 'http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
 

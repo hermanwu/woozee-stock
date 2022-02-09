@@ -28,12 +28,15 @@ import { NoteDialogComponent } from './shared/components/note-dialog/note-dialog
 import { NoteComponent } from './shared/components/note/note.component';
 import { IopsPipeModule } from './shared/pipes/iops/iops-pipe.module';
 import { SafePipe } from './shared/pipes/safe.pipe';
+import { SiUnitPipeModule } from './shared/pipes/si-unit/si-unit-pipe.module';
+import { UndefinedPipeModule } from './shared/pipes/undefined-pipe/undefined-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
 import { ForeverOwnStocksPanelComponent } from './stock/forever-own-stocks-panel/forever-own-stocks-panel.component';
 import { FundamentalStatsDisplayComponent } from './stock/molecules/fundamental-stats-display/fundamental-stats-display.component';
 import { NewsDisplayComponent } from './stock/molecules/news-display/news-display.component';
 import { StockListTableComponent } from './stock/molecules/stock-list-table/stock-list-table.component';
 import { StockProductsListComponent } from './stock/molecules/stock-products-list/stock-products-list.component';
+import { StockStatsComponent } from './stock/molecules/stock-stats/stock-stats.component';
 import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/thoughts-display.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
@@ -79,6 +82,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     TitleMenuComponent,
     MediaLinkComponent,
     ThumbnailComponent,
+    StockStatsComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,6 +92,8 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     BrowserAnimationsModule,
     WoozeeLibModule,
     IopsPipeModule,
+    UndefinedPipeModule,
+    SiUnitPipeModule,
   ],
   providers: [
     { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig },

@@ -3,7 +3,7 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const aapl: StockAnalysis = {
   name: 'Apple',
-  description: [''],
+  description: [],
   trends: [],
   logo: '',
   ticker: 'aapl',

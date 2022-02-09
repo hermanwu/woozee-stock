@@ -16,7 +16,20 @@
 </div>
 
 <div *ngIf="showDetails" class="details-panel">
-  <div class="logo-container">
+  <div class="padding-1rem">
+    <app-card>
+      <app-note
+        [note]="{ content: 'description', notes: stockAnalysis.description }"
+      ></app-note>
+    </app-card>
+  </div>
+
+  <div class="padding-1rem">
+    <app-card>
+      <app-stock-stats [stock]="stockAnalysis"></app-stock-stats>
+    </app-card>
+  </div>
+  <!-- <div class="logo-container">
     <div class="logo-image">
       <img
         src="{{ stockAnalysis.logo }}"
@@ -27,9 +40,9 @@
         <app-thumbnail></app-thumbnail>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="padding-1rem">
+  <!-- <div class="padding-1rem">
     <div>
       <app-title-menu>
         <div title>News</div>
@@ -39,36 +52,32 @@
     <ng-container *ngFor="let item of stockAnalysis.news">
       <app-note [note]="item" class="news-font"></app-note>
     </ng-container>
-  </div>
+  </div> -->
 
   <div class="padding-1rem">
-    <div>
-      <app-title-menu>
-        <div title>Resources</div>
-      </app-title-menu>
-    </div>
+    <app-card>
+      <div>
+        <a target="_blank" href="{{ stockAnalysis?.irAddress }}">
+          Investor Relations
+        </a>
+      </div>
 
-    <div>
-      <a target="_blank" href="{{ stockAnalysis?.irAddress }}">
-        Investor Relations
-      </a>
-    </div>
+      <div>
+        <a target="_blank" href="{{ earningsReport?.reportLink }}">
+          Earnings Report
+        </a>
+      </div>
 
-    <div>
-      <a target="_blank" href="{{ earningsReport?.reportLink }}">
-        Earnings Report
-      </a>
-    </div>
+      <div>
+        <a target="_blank" href="{{ earningsReport?.pressReleaseLink }}">
+          Press Release
+        </a>
+      </div>
 
-    <div>
-      <a target="_blank" href="{{ earningsReport?.pressReleaseLink }}">
-        Press Release
-      </a>
-    </div>
-
-    <div>
-      <a target="_blank" href="{{ earningsReport?.slidesLink }}"> Slides </a>
-    </div>
+      <div>
+        <a target="_blank" href="{{ earningsReport?.slidesLink }}"> Slides </a>
+      </div>
+    </app-card>
   </div>
 </div>
 

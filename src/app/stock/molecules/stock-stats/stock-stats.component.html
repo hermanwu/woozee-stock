@@ -1,0 +1,54 @@
+<div>
+  <div>
+    <div>Market Cap</div>
+    <div>{{ stock.marketCap | siUnit: 2 | undefined }}</div>
+  </div>
+
+  <div>
+    <div>Earnings Period</div>
+    <div>
+      {{ earningsResult?.year + ", " + earningsResult?.quarter }}
+    </div>
+  </div>
+
+  <div>
+    <div>Revenue</div>
+    <div>{{ earningsResult?.revenue | siUnit: 2 | undefined }}</div>
+  </div>
+
+  <div>
+    <div>Revenue Growth</div>
+    <div>
+      {{ earningsResult?.revenueGrowth | siUnit: 2 | percent | undefined }}
+    </div>
+  </div>
+
+  <div>
+    <div>Operating Income</div>
+    <div>{{ earningsResult?.operatingIncome | siUnit: 2 | undefined }}</div>
+  </div>
+
+  <div>
+    <div>Operating Margin</div>
+    <div>{{ earningsResult?.operatingMargin | siUnit: 2 | undefined }}</div>
+  </div>
+
+  <div>
+    <div>User Count (DAU)</div>
+    <div>{{ earningsResult?.dailyActiveUser | siUnit: 2 | undefined }}</div>
+  </div>
+
+  <div>
+    <div>User Growth</div>
+    <div>
+      {{
+        earningsResult?.dailyActiveUserGrowth | siUnit: 2 | percent | undefined
+      }}
+    </div>
+  </div>
+
+  <div>
+    <div>Market Cap</div>
+    <div>{{ stock.marketCap | siUnit: 2 | undefined }}</div>
+  </div>
+</div>

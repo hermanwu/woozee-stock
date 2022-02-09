@@ -1,5 +1,4 @@
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
-import { RiskType } from 'src/app/risks/models/risk-type.enum';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const team: StockAnalysis = {
@@ -10,7 +9,7 @@ export const team: StockAnalysis = {
 
   risks: [
     {
-      name: RiskType.noIncome,
+      name: 'no income',
       level: RiskLevel.medium,
     },
     {

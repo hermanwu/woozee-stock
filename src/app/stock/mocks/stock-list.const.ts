@@ -2,7 +2,7 @@ import { aapl } from './aapl.mock';
 import { ABNB } from './ABNB';
 import { ADBE } from './ADBE';
 import { ADSK } from './ADSK';
-import { AFRM } from './AFRM';
+import { afrm } from './afrm';
 import { AMC } from './AMC';
 import { AMD } from './AMD';
 import { amzn } from './amzn.mock';
@@ -126,7 +126,7 @@ export const ownedStockMap = {
   ABNB,
   ADBE,
   ADSK,
-  AFRM,
+  afrm,
   AMC,
   AMD,
   amzn,

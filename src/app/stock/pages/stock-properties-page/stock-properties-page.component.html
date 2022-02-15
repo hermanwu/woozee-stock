@@ -10,23 +10,175 @@
     type="button"
     (click)="showDetails = !showDetails"
   >
-    <mat-icon *ngIf="expanded">expand_less</mat-icon>
-    <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+    <mat-icon *ngIf="showDetails">expand_less</mat-icon>
+    <mat-icon *ngIf="!showDetails">expand_more</mat-icon>
   </button>
 </div>
 
 <div *ngIf="showDetails" class="details-panel">
   <div class="padding-1rem">
-    <app-card>
+    <app-fact [factType]="factType.business">
+      <div>
+        <span>Business Areas: </span>
+        <span *ngFor="let item of stockAnalysis?.business?.areas"
+          >{{ item }},
+        </span>
+      </div>
+
+      <div>
+        <span>Revenue Sources: </span>
+        <span *ngFor="let item of stockAnalysis?.business?.revenues"
+          >{{ item }},
+        </span>
+      </div>
+
+      <div>
+        <span>Long Term Strategies: </span>
+        <span *ngFor="let item of stockAnalysis?.business?.strategies"
+          >{{ item }},
+        </span>
+      </div>
+
       <app-note
-        [note]="{ content: 'description', notes: stockAnalysis.description }"
+        [note]="{
+          content: 'More descriptions',
+          notes: stockAnalysis.description
+        }"
       ></app-note>
+    </app-fact>
+  </div>
+
+  <div class="padding-1rem">
+    <app-fact [factType]="factType.growth">
+      <div>
+        <div>Revenue Growth</div>
+        <div>
+          <span>
+            {{
+              earningsService?.calculateRevenueGrowth(
+                earningsService?.fourPreviousQuarterEr,
+                earningsService?.currentQuarterEr
+              )
+                | siUnit: 2
+                | percent
+                | undefined
+            }}
+          </span>
+          <span>
+            ({{
+              earningsService?.fourPreviousQuarterEr?.revenue
+                | siUnit: 2
+                | undefined
+            }}
+            ->
+            {{
+              earningsService?.currentQuarterEr?.revenue
+                | siUnit: 2
+                | undefined
+            }})
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <div>Next Quarter Forecast Growth</div>
+        <div>
+          <span>
+            {{
+              earningsService?.calculateRevenueGrowth(
+                earningsService?.threePreviousQuarterEr,
+                earningsService?.nextQuarterEr
+              )
+                | siUnit: 2
+                | percent
+                | undefined
+            }}
+          </span>
+          <span>
+            ({{
+              earningsService?.threePreviousQuarterEr?.revenue
+                | siUnit: 0
+                | undefined
+            }}
+            ->
+            {{
+              earningsService?.nextQuarterEr?.revenue | siUnit: 0 | undefined
+            }})
+          </span>
+        </div>
+      </div>
+    </app-fact>
+  </div>
+
+  <div class="padding-1rem">
+    <app-fact [factType]="factType.profit">
+      <div>
+        <div>Operating Income Growth</div>
+        <div>
+          <span>
+            {{
+              earningsService?.calculateOperatingIncomeGrowth(
+                earningsService?.fourPreviousQuarterEr,
+                earningsService?.currentQuarterEr
+              )
+                | siUnit: 2
+                | percent
+                | undefined
+            }}
+          </span>
+          <span>
+            ({{
+              earningsService?.fourPreviousQuarterEr?.operatingIncome
+                | siUnit: 0
+                | undefined
+            }}
+            ->
+            {{
+              earningsService?.currentQuarterEr?.operatingIncome
+                | siUnit: 0
+                | undefined
+            }})
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <div>Operating Margin</div>
+        <div>
+          {{
+            earningsService?.calculateOperatingMargin(
+              earningsService?.currentQuarterEr
+            )
+              | siUnit: 2
+              | percent
+              | undefined
+          }}
+        </div>
+      </div>
+    </app-fact>
+  </div>
+
+  <div class="padding-1rem">
+    <app-fact [factType]="factType.valuation">
+      <app-valuation [stock]="stockAnalysis"></app-valuation>
+    </app-fact>
+  </div>
+
+  <div class="padding-1rem">
+    <app-card>
+      <h2>Sentiments</h2>
     </app-card>
   </div>
 
   <div class="padding-1rem">
     <app-card>
-      <app-stock-stats [stock]="stockAnalysis"></app-stock-stats>
+      <h2>Technical</h2>
+    </app-card>
+  </div>
+
+  <div class="padding-1rem">
+    <app-card>
+      <h2>Macro</h2>
     </app-card>
   </div>
   <!-- <div class="logo-container">
@@ -63,19 +215,30 @@
       </div>
 
       <div>
-        <a target="_blank" href="{{ earningsReport?.reportLink }}">
+        <a
+          target="_blank"
+          href="{{ earningsService?.currentQuarterEr?.reportLink }}"
+        >
           Earnings Report
         </a>
       </div>
 
       <div>
-        <a target="_blank" href="{{ earningsReport?.pressReleaseLink }}">
+        <a
+          target="_blank"
+          href="{{ earningsService?.currentQuarterEr?.pressReleaseLink }}"
+        >
           Press Release
         </a>
       </div>
 
       <div>
-        <a target="_blank" href="{{ earningsReport?.slidesLink }}"> Slides </a>
+        <a
+          target="_blank"
+          href="{{ earningsService?.currentQuarterEr?.slidesLink }}"
+        >
+          Slides
+        </a>
       </div>
     </app-card>
   </div>

@@ -74,13 +74,15 @@ export const pdd: StockAnalysis = {
     'Customers who are more sensitive to price.',
     'Customers who are interested in discovery shopping',
   ],
-  businessModel: [
-    'Create a team purchase model that initiated by user with more detailed customer information.',
-    'Focus on less-developed cities/market with consumers that are more sensitive to price, where Alibaba and JD were not focused',
-    'Work with Tencent as a strategic partner.',
-    'Use psychology to drive more discovery shopping',
-    'C2M model: Use data to create accurate demand for manufacturer and lower the cost.',
-  ],
+  business: {
+    notes: [
+      'Create a team purchase model that initiated by user with more detailed customer information.',
+      'Focus on less-developed cities/market with consumers that are more sensitive to price, where Alibaba and JD were not focused',
+      'Work with Tencent as a strategic partner.',
+      'Use psychology to drive more discovery shopping',
+      'C2M model: Use data to create accurate demand for manufacturer and lower the cost.',
+    ],
+  },
   advantage: [
     'Visionary founder and chairman',
     'Technology driven',

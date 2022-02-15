@@ -3,11 +3,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { companyRisks } from 'src/app/risks/data/risks/component-risks-defination';
+import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { NoteDialogComponent } from 'src/app/shared/components/note-dialog/note-dialog.component';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { ownedStockMap } from '../../mocks/stock-list.const';
-import { EarningsReport } from '../../models/earnings.model';
 import { StockAnalysis } from '../../models/stock-analysis.model';
+import { FundamentalCalculationService } from '../../services/fundemental-calculation.service';
 
 @Component({
   selector: 'app-stock-properties-page',
@@ -18,19 +19,19 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   readonly displayModeEnum = DisplayMode;
 
   private stockId = 'stockId';
-  private readonly earningsReportYear = 2021;
-  private readonly earningsReportQuarter = 4;
-  showDetails: boolean;
+
+  factType = FactType;
+  showDetails: boolean = true;
   carousalDisplayItemIndex: number;
   displayMode = DisplayMode.slide;
-  earningsReport: EarningsReport;
   expanded: boolean;
   isAllCardOpen = false;
-  panelOpenState = false;
+  panelOpenState = true;
   // Determine what state to be displayed;
   routeSub: Subscription;
   stockAnalysis: StockAnalysis;
   stockTicker: string;
+  earningsService: FundamentalCalculationService;
 
   constructor(private route: ActivatedRoute, private dialog: MatDialog) {}
 
@@ -38,10 +39,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
     this.routeSub = this.route.params.subscribe((params) => {
       this.stockTicker = params[this.stockId].toLowerCase();
       this.stockAnalysis = ownedStockMap[this.stockTicker];
-      this.earningsReport = this.stockAnalysis.earningsReports?.find(
-        (report) =>
-          report.year === this.earningsReportYear &&
-          report.quarter === this.earningsReportQuarter
+      this.earningsService = new FundamentalCalculationService(
+        this.stockAnalysis
       );
     });
   }

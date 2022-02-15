@@ -2,42 +2,67 @@ import { EarningsReport } from '../models/earnings.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export class FundamentalCalculationService {
-  static calculateGrowth(previous: number, current: number): number {
-    return (current - previous) / previous;
-  }
+  currentQuarterEr: EarningsReport;
+  fourPreviousQuarterEr: EarningsReport;
+  nextQuarterEr: EarningsReport;
+  threePreviousQuarterEr: EarningsReport;
+  stock: StockAnalysis;
 
-  static generateLatestEarningReport(stock: StockAnalysis): EarningsReport {
-    const earningsReports = stock.earningsReports.sort(
-      (a, b) => b.year - a.year
+  constructor(stock: StockAnalysis) {
+    this.stock = stock;
+    const earningsReports = stock.earningsReports
+      .filter((earnings) => !earnings.isForecast)
+      .sort((a, b) => b.year - a.year);
+    this.currentQuarterEr = earningsReports[0];
+    this.fourPreviousQuarterEr = earningsReports.find(
+      (report) =>
+        report.year === this.currentQuarterEr.year - 1 &&
+        report.quarter === this.currentQuarterEr.quarter
     );
-    const earningsReport = earningsReports[0];
-    const year = earningsReport.year;
-    const quarter = earningsReport.quarter;
-    earningsReport.operatingMargin =
-      earningsReport.operatingIncome / earningsReport.revenue >= 0
-        ? earningsReport.operatingIncome / earningsReport.revenue
-        : undefined;
-
-    const lastYearReport = earningsReports.find(
-      (report) => report.year === year - 1 && report.quarter === quarter
+    this.nextQuarterEr = stock.earningsReports.find(
+      (earnings) => earnings.isForecast === true
     );
-    if (lastYearReport) {
-      earningsReport.revenueGrowth = this.calculateGrowth(
-        lastYearReport.revenue,
-        earningsReport.revenue
-      );
 
-      earningsReport.operatingIncomeGrowth = this.calculateGrowth(
-        lastYearReport.operatingIncome,
-        earningsReport.operatingIncome
-      );
-
-      earningsReport.dailyActiveUserGrowth = this.calculateGrowth(
-        lastYearReport.dailyActiveUser,
-        earningsReport.dailyActiveUser
+    if (this.nextQuarterEr) {
+      this.threePreviousQuarterEr = earningsReports.find(
+        (report) =>
+          report.year === this.nextQuarterEr.year - 1 &&
+          report.quarter === this.nextQuarterEr.quarter
       );
     }
+  }
 
-    return earningsReport;
+  calculatePercentage(part: number, whole: number): number {
+    if (part && whole) {
+      return part / whole;
+    }
+  }
+
+  calculateGrowth(previous: number, current: number): number {
+    if (current && previous) {
+      if (current > previous) {
+        return (current - previous) / previous;
+      } else {
+        return -(current - previous) / previous;
+      }
+    }
+  }
+
+  calculateRevenueGrowth(previous: EarningsReport, current: EarningsReport) {
+    return this.calculateGrowth(previous?.revenue, current?.revenue);
+  }
+
+  calculateOperatingIncomeGrowth(
+    previous: EarningsReport,
+    current: EarningsReport
+  ) {
+    return this.calculateGrowth(
+      previous?.operatingIncome,
+      current?.operatingIncome
+    );
+  }
+
+  calculateOperatingMargin(earningReport: EarningsReport) {
+    return earningReport.operatingIncome / earningReport.revenue;
   }
 }

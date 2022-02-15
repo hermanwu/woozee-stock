@@ -91,11 +91,6 @@ export const SQ: StockAnalysis = {
     'Banking and financial services for individuals that enjoy managing their wealth.',
   ],
   market: ['Banking and financial services'],
-  businessModel: [
-    'Help small business to bootstrap with a bundle of productivity software.',
-    'Encourage individual to use cash app for all financial related activities.',
-    'Keep money within one ecosystem to reduce cost and improve efficiency.',
-  ],
   advantage: [
     'Startup / Tech DNA',
     'Visionary founder and CEO',

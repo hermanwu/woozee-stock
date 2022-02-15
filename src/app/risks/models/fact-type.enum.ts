@@ -1,7 +1,8 @@
-export enum RiskType {
-  revenue = 'Revenue',
+export enum FactType {
+  business = 'Business',
+  growth = 'Growth',
   user = 'Customer Count',
-  profit = 'Profit',
+  profit = 'Profitability',
   valuation = 'Valuation',
   management = 'management',
   sentiment = 'sentiment',

@@ -1,3 +1,6 @@
+import { BusinessArea } from 'src/app/facts/data/area.enum';
+import { RevenueModel } from 'src/app/facts/data/revenue-model.enum';
+import { Strategy } from 'src/app/facts/data/stratgies.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Note } from 'src/app/shared/data/note.interface';
 import { News } from '../mocks/news.model';
@@ -25,7 +28,13 @@ export interface StockAnalysis {
   stats?: StockStats;
   propertiesPageEnabled?: boolean;
   irAddress?: string;
-  secFilings?: string;
+  links?: any[];
+  business?: {
+    notes?: any[];
+    areas?: BusinessArea[];
+    revenues?: RevenueModel[];
+    strategies?: Strategy[];
+  };
 
   // Demand:
   vision?: string[];
@@ -40,7 +49,6 @@ export interface StockAnalysis {
   competitor?: string[];
   moat?: string[]; // As company grows, what moat
   differentiator?: string[];
-  businessModel?: string[]; // how to earn money.
   companyCulture?: {
     isCeoLed: boolean;
   };

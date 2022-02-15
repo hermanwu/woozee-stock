@@ -1,6 +1,7 @@
 export interface EarningsReport {
   year: number;
   quarter: number;
+  isForecast?: boolean;
 
   reportLink?: string;
   pressReleaseLink?: string;
@@ -8,12 +9,15 @@ export interface EarningsReport {
 
   revenue?: number;
   operatingIncome?: number;
-  dailyActiveUser?: number;
+  netIncome?: number;
 
   // Calculated results:
   operatingMargin?: number;
 
   revenueGrowth?: number;
   operatingIncomeGrowth?: number;
-  dailyActiveUserGrowth?: number;
+
+  // Additional Stats
+  dailyActiveUser?: number;
+  dailyActiveBusinesses?: number;
 }

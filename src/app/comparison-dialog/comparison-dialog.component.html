@@ -1,0 +1,10 @@
+<div class="container">
+  <div *ngFor="let stock of stocks">
+    <h2>{{ stock.ticker | uppercase }}</h2>
+    <ng-container [ngSwitch]="dialogData.factType">
+      <ng-container *ngSwitchCase="factType.valuation">
+        <app-valuation [stock]="stock"></app-valuation>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

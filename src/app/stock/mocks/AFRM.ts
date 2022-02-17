@@ -42,11 +42,7 @@ export const afrm: StockAnalysis = {
   business: {
     areas: [BusinessArea.fintech_lending],
     revenues: [RevenueModel.loanInterest, RevenueModel.salesCommission],
-    strategies: [
-      Strategy.platform,
-      Strategy.predicationModel,
-      Strategy.userData,
-    ],
+    strategies: [Strategy.platform, Strategy.userData],
   },
   // Earnings Report:
   earningsReports: [

@@ -46,7 +46,7 @@ export interface StockAnalysis {
   trends?: string[] | Trend[];
 
   // Supply:
-  competitor?: string[];
+  competitors?: string[];
   moat?: string[]; // As company grows, what moat
   differentiator?: string[];
   companyCulture?: {

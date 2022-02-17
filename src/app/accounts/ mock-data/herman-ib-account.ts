@@ -122,7 +122,7 @@ export const hermanIbAccount: Equity[] = [
     shares: 93,
   },
   {
-    ticker: 'TWLO',
+    ticker: 'twlo',
     shares: 91,
   },
   {
@@ -134,7 +134,7 @@ export const hermanIbAccount: Equity[] = [
     shares: 90,
   },
   {
-    ticker: 'AMD',
+    ticker: 'amd',
     shares: 90,
   },
   {
@@ -166,7 +166,7 @@ export const hermanIbAccount: Equity[] = [
     shares: 67,
   },
   {
-    ticker: 'ABNB',
+    ticker: 'abnb',
     shares: 44,
   },
   {
@@ -190,7 +190,7 @@ export const hermanIbAccount: Equity[] = [
     shares: 20,
   },
   {
-    ticker: 'NVDA',
+    ticker: 'nvda',
     shares: 18,
   },
   {

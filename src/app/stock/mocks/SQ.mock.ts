@@ -105,7 +105,7 @@ export const SQ: StockAnalysis = {
     },
   ],
 
-  competitor: [
+  competitors: [
     'Stripe',
     'Robinhood',
     'Paypal/Venmo',

@@ -26,7 +26,7 @@ export const BOA: Equity[] = [
     shares: 40,
   },
   {
-    ticker: 'NVDA',
+    ticker: 'nvda',
     shares: 15,
   },
   {

@@ -66,7 +66,7 @@ export const webull: Equity[] = [
     shares: 200,
   },
   {
-    ticker: 'NVDA',
+    ticker: 'nvda',
     shares: 8,
   },
   {
@@ -74,7 +74,7 @@ export const webull: Equity[] = [
     shares: 15,
   },
   {
-    ticker: 'TWLO',
+    ticker: 'twlo',
     shares: 5,
   },
   {

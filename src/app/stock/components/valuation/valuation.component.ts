@@ -17,14 +17,14 @@ export class ValuationComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   ngOnChanges(): void {
-    this.earningReports = this.stock.earningsReports
-      .filter((earnings) => !earnings.isForecast)
-      .sort((a, b) => b.year - a.year)
-      .slice(0, 4);
+    if (this.stock) {
+      this.earningReports = this.stock.earningsReports
+        .filter((report) => !report.isForecast)
+        .sort((a, b) => b.year - a.year || b.quarter - a.quarter);
 
-    this.trailing12MonthsSales = this.earningReports.reduce(
-      (previous, current) => previous + current.revenue,
-      0
-    );
+      this.trailing12MonthsSales = this.earningReports
+        .slice(0, 4)
+        .reduce((previous, current) => previous + current.revenue, 0);
+    }
   }
 }

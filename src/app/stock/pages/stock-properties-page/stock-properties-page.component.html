@@ -97,12 +97,12 @@
           <span>
             ({{
               earningsService?.threePreviousQuarterEr?.revenue
-                | siUnit: 0
+                | siUnit: 2
                 | undefined
             }}
             ->
             {{
-              earningsService?.nextQuarterEr?.revenue | siUnit: 0 | undefined
+              earningsService?.nextQuarterEr?.revenue | siUnit: 2 | undefined
             }})
           </span>
         </div>
@@ -129,13 +129,13 @@
           <span>
             ({{
               earningsService?.fourPreviousQuarterEr?.operatingIncome
-                | siUnit: 0
+                | siUnit: 2
                 | undefined
             }}
             ->
             {{
               earningsService?.currentQuarterEr?.operatingIncome
-                | siUnit: 0
+                | siUnit: 2
                 | undefined
             }})
           </span>
@@ -159,12 +159,12 @@
   </div>
 
   <div class="padding-1rem">
-    <app-fact [factType]="factType.valuation">
+    <app-fact [factType]="factType.valuation" [stock]="stockAnalysis">
       <app-valuation [stock]="stockAnalysis"></app-valuation>
     </app-fact>
   </div>
 
-  <div class="padding-1rem">
+  <!-- <div class="padding-1rem">
     <app-card>
       <h2>Sentiments</h2>
     </app-card>
@@ -180,7 +180,7 @@
     <app-card>
       <h2>Macro</h2>
     </app-card>
-  </div>
+  </div> -->
   <!-- <div class="logo-container">
     <div class="logo-image">
       <img
@@ -214,7 +214,7 @@
         </a>
       </div>
 
-      <div>
+      <div *ngIf="earningsService?.currentQuarterEr?.reportLink">
         <a
           target="_blank"
           href="{{ earningsService?.currentQuarterEr?.reportLink }}"
@@ -223,7 +223,7 @@
         </a>
       </div>
 
-      <div>
+      <div *ngIf="earningsService?.currentQuarterEr?.pressReleaseLink">
         <a
           target="_blank"
           href="{{ earningsService?.currentQuarterEr?.pressReleaseLink }}"
@@ -232,7 +232,7 @@
         </a>
       </div>
 
-      <div>
+      <div *ngIf="earningsService?.currentQuarterEr?.slidesLink">
         <a
           target="_blank"
           href="{{ earningsService?.currentQuarterEr?.slidesLink }}"

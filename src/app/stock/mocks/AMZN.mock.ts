@@ -209,6 +209,7 @@ export const amzn: StockAnalysis = {
     quickRatio: 1.1,
     currentRatio: 1.2,
   },
+  earningsReports: [],
   earnings: {
     latestReportQuarter: ['2021', '2'],
     2021: {

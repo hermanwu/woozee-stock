@@ -40,11 +40,7 @@ export class FundamentalCalculationService {
 
   calculateGrowth(previous: number, current: number): number {
     if (current && previous) {
-      if (current > previous) {
-        return (current - previous) / previous;
-      } else {
-        return -(current - previous) / previous;
-      }
+      return (current - previous) / Math.abs(previous);
     }
   }
 

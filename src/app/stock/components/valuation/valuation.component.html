@@ -1,20 +1,33 @@
-<div>Market Cap</div>
-<div>
-  {{ stock.marketCap | siUnit: 2 | undefined }}
-</div>
+<div *ngIf="stock">
+  <div class="label">Market Cap</div>
+  <div>
+    {{ stock.marketCap | siUnit: 2 | undefined }}
+  </div>
 
-<div>Revenue (Trailing 12 months)</div>
-<div>
-  <span>{{ earningReports[0].revenue | siUnit: 0 | undefined }} + </span>
-  <span>{{ earningReports[1].revenue | siUnit: 0 | undefined }} + </span>
-  <span>{{ earningReports[2].revenue | siUnit: 0 | undefined }} + </span>
-  <span>{{ earningReports[3].revenue | siUnit: 0 | undefined }} = </span>
-  <span>{{ trailing12MonthsSales | siUnit: 2 | undefined }}</span>
-</div>
+  <div class="label">Revenue (4 quarters)</div>
+  <div>
+    <span>{{ trailing12MonthsSales | siUnit: 2 | undefined }}</span>
+    <span> ({{ earningReports[0].revenue | siUnit: 2 | undefined }} + </span>
+    <span>{{ earningReports[1].revenue | siUnit: 2 | undefined }} + </span>
+    <span>{{ earningReports[2].revenue | siUnit: 2 | undefined }} + </span>
+    <span>{{ earningReports[3].revenue | siUnit: 2 | undefined }}) </span>
+  </div>
 
-<div>P / S</div>
-<div>
-  {{ stock.marketCap / trailing12MonthsSales | siUnit: 2 | undefined }}
+  <div class="label">P / S</div>
+  <div>
+    {{ stock.marketCap / trailing12MonthsSales | siUnit: 2 | undefined }}
+  </div>
+
+  <div class="label">Sales Growth</div>
+  <div>
+    {{
+      (earningReports[0].revenue - earningReports[4].revenue) /
+        earningReports[4].revenue
+        | siUnit: 2
+        | percent
+        | undefined
+    }}
+  </div>
 </div>
 <!-- <div>
   {{ stockAnalysis.marketCap | siUnit: 2 | undefined }}

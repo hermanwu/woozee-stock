@@ -1,11 +1,12 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const TWLO: StockAnalysis = {
+export const twlo: StockAnalysis = {
   logo: '',
-  name: { English: 'Twilio' },
+  name: 'Twilio',
   description: [],
-  ticker: 'TWLO',
+  ticker: 'twlo',
   lastUpdated: new Date('2021-08-23'),
+  irAddress: '',
 
   // Earnings Report:
   earnings: {

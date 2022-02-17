@@ -1,3 +1,5 @@
+import { Note } from 'src/app/shared/data/note.interface';
+
 export interface EarningsReport {
   year: number;
   quarter: number;
@@ -8,6 +10,8 @@ export interface EarningsReport {
   slidesLink?: string;
 
   revenue?: number;
+  revenueDetails?: any;
+
   operatingIncome?: number;
   netIncome?: number;
 
@@ -20,4 +24,6 @@ export interface EarningsReport {
   // Additional Stats
   dailyActiveUser?: number;
   dailyActiveBusinesses?: number;
+
+  notes?: Note[];
 }

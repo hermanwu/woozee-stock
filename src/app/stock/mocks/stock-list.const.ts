@@ -1,10 +1,10 @@
 import { aapl } from './aapl.mock';
-import { ABNB } from './ABNB';
+import { abnb } from './abnb';
 import { ADBE } from './ADBE';
 import { ADSK } from './ADSK';
 import { afrm } from './afrm';
 import { AMC } from './AMC';
-import { AMD } from './AMD';
+import { amd } from './amd';
 import { amzn } from './amzn.mock';
 import { API } from './API';
 import { asml } from './ASML';
@@ -63,7 +63,7 @@ import { noc } from './noc';
 import { NOW } from './NOW';
 import { ntdoy } from './ntdoy';
 import { nvax } from './nvax';
-import { NVDA } from './NVDA';
+import { nvda } from './nvda';
 import { ob } from './ob';
 import { OKTA } from './OKTA';
 import { OPEN } from './OPEN';
@@ -83,7 +83,7 @@ import { rskd } from './rskd';
 import { rtx } from './rtx';
 import { sbux } from './sbux';
 import { SE } from './SE';
-import { SHOP } from './SHOP.mock';
+import { shop } from './shop.mock';
 import { SKLZ } from './SKLZ';
 import { snap } from './snap';
 import { SNOW } from './SNOW';
@@ -101,7 +101,7 @@ import { TRMB } from './TRMB';
 import { tsla } from './TSLA.mock';
 import { TSM } from './TSM';
 import { TTD } from './TTD';
-import { TWLO } from './TWLO';
+import { twlo } from './twlo';
 import { TWTR } from './TWTR';
 import { U } from './U.mock';
 import { UBER } from './UBER';
@@ -123,12 +123,12 @@ import { ZS } from './ZS';
 
 export const ownedStockMap = {
   aapl,
-  ABNB,
+  abnb,
   ADBE,
   ADSK,
   afrm,
   AMC,
-  AMD,
+  amd,
   amzn,
   asml,
   ATVI,
@@ -178,7 +178,7 @@ export const ownedStockMap = {
   NIO,
   noc,
   NOW,
-  NVDA,
+  nvda,
   ob,
   OKTA,
   OPEN,
@@ -196,7 +196,7 @@ export const ownedStockMap = {
   rtx,
   sbux,
   SE,
-  SHOP,
+  shop,
   snap,
   SNOW,
   SOFI,
@@ -211,7 +211,7 @@ export const ownedStockMap = {
   tsla,
   TSM,
   TTD,
-  TWLO,
+  twlo,
   TWTR,
   U,
   UBER,

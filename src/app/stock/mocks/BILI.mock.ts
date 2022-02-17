@@ -118,7 +118,7 @@ export const bili: StockAnalysis = {
       name: '技术力量比竞争对手弱',
     },
   ],
-  competitor: [
+  competitors: [
     '爱奇艺 - 13B',
     'Youtube - 180B ~ 300B',
     'Netflix - 240B',

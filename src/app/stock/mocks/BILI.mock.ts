@@ -1,52 +1,12 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const bili: StockAnalysis = {
+  earningsReports: [],
   logo: 'https://lh3.googleusercontent.com/pw/ACtC-3e9AoltCnmSTNXb44UMaYhVOVfeVGD0_rM7wOvceClSFwu_b3_NPLwMXGxITQwqZ1gPu-GMU-T9fhIWYRiqMmicuQTHiJpTZgar7N1AyxoaIhv0nsyFZBe959Es1OgCMoM44TRT9v1vFblgZ-TEyEPA=w870-h412-no?authuser=3',
-  name: {
-    English: 'Bilibili',
-    Chinese: '哔哩哔哩',
-  },
-  ticker: 'BILI',
-  earnings: {
-    website: 'https://ir.bilibili.com/',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      3: {},
-      2: {
-        '10q10k': 'https://ir.bilibili.com/node/7836/html',
-        presentation:
-          'https://ir.bilibili.com/system/files-encrypted/nasdaq_kms/assets/2021/08/19/4-28-36/2Q21%20PPT.pdf',
-        press:
-          'https://ir.bilibili.com/system/files-encrypted/nasdaq_kms/assets/2021/08/19/4-25-16/Bilibili%20Inc.%20Announces%20Second%20Quarter%202021%20Financial%20Results.pdf',
-        webcast: '',
-        marketCap: 24.73 * 1e9,
-        revenue: 4495254 * 1e3 * 0.15,
-        operatingIncome: -1520562 * 1e3 * 0.15, //RMB to dollar value.S
-      },
-    },
-    2020: {
-      4: {
-        notes: [
-          '平均每月活跃用户（MAU）达到1.972亿，移动MAU达到1.835亿，分别比2019年同期增长54％和61％。',
-          '平均每日活跃用户（DAU）达到5330万，比2019年同期增长42％。',
-          '平均每月付费用户（MPU 1）达到1500万，比2019年同期增长89％。',
-          '净收入总额为人民币32.257亿元（4.751亿美元），较2019年同期增长74％',
-          '手机游戏收入为人民币12.751亿元（1.878亿美元），较2019年同期增长37％。',
-          '增值服务收入为人民币9.796亿元（1.443亿美元），比2019年同期增长116％',
-          '广告收入为人民币5.575亿元（8,210万美元），较2019年同期增长126％。',
-          '电子商务及其他业务的收入为人民币4.134亿元（6,090万美元），较2019年同期增长83％',
-          '毛利润为7.616亿元人民币（1.122亿美元），比2019年同期增长117％，这主要是由于净收入的增',
-          '销售和市场营销费用为人民币11.904亿元（1.753亿美元），同比增长227％。',
-          '净亏损为人民币11.009亿元（1.621亿美元），而2019年同期为人民币4.057亿元。',
-        ],
-      },
-      2: {
-        revenue: 2617601 * 1e3 * 0.15,
-        operatingIncome: -610118 * 1e3 * 0.15,
-      },
-    },
-  },
-  marketCap: {},
+  name: 'Bilibili',
+  ticker: 'bili',
+  irAddress: 'https://ir.bilibili.com/',
+  secFilings: 'https://ir.bilibili.com/financial-information/sec-filings',
   description: [
     { content: '丰富年轻一代生活的线上娱乐网站' },
     {
@@ -125,9 +85,6 @@ export const bili: StockAnalysis = {
     '网易 - 66B',
   ],
   trends: ['COVID', 'Video Entertainments'],
-  predication: {
-    marketCap: ['200B', '750B / 2 => 375B'],
-  },
   thoughts: {
     hermanScore: 1,
   },

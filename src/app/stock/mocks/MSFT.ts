@@ -6,7 +6,7 @@ export const msft: StockAnalysis = {
   description: [],
   ticker: 'msft',
   irAddress: 'https://www.microsoft.com/en-us/investor',
-  marketCap: 2301.17 * 1e9,
+  marketCap: 2.18 * 1e12,
   earningsReports: [
     {
       year: 2021,

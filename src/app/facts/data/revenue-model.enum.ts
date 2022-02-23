@@ -7,5 +7,8 @@ export enum RevenueModel {
   utilityTransaction = 'Utility Transaction',
   hardwareSelling = 'Hardware Infrastructure',
   softwareSelling = 'Software Services',
-  b2b = 'Business to Business',
+  b2b = 'Enterprise',
+  subscription = 'Subscription',
+  saas = 'SaaS',
+  consumptionBased = 'Consumption Based',
 }

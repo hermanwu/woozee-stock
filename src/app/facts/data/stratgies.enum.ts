@@ -1,8 +1,9 @@
 export enum Strategy {
-  platform = 'Create a platform',
-  tool = 'Becoming a standard tool',
-  ecoSystem = 'Create a closed Ecosystem',
-  technology = 'Build advanced technology with IP',
-  feature = 'Add more Features and Services',
-  userData = 'Collect more accurate user data',
+  platform = 'Universal Platform',
+  tool = 'Standard Tool',
+  ecoSystem = 'Ecosystem',
+  technology = 'Technology and IP',
+  feature = 'More Features',
+  userData = 'User Data',
+  networkEffect = 'Network Effect',
 }

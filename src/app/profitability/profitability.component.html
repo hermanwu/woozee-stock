@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="!hideLabel">Operating Income</div>
+    <div class="stats">
+      <span>
+        {{ operatingIncome | siUnit: 2 | undefined }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="!hideLabel">Operating Income Improvement Q/Q</div>
+    <div class="stats">
+      <span>
+        {{ operatingIncomeImprovement | siUnit: 2 | percent | undefined }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="!hideLabel">Operating Margin</div>
+    <div class="stats">
+      <span>
+        {{
+          earningsService?.calculateOperatingMargin(
+            earningsService?.currentQuarterEr
+          )
+            | siUnit: 2
+            | percent
+            | undefined
+        }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="!hideLabel">Sales and Marketing</div>
+    <div class="stats">
+      <span>
+        {{ salesAndMarketing | siUnit: 2 | undefined }}
+      </span>
+    </div>
+  </div>
+</div>

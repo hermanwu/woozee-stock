@@ -13,16 +13,16 @@ import { AVGO } from './AVGO';
 import { AXP } from './AXP';
 import { BABA } from './BABA';
 import { bidu } from './bidu';
-import { bili } from './BILI.mock';
+import { bili } from './bili.mock';
 import { blde } from './blde';
 import { BYND } from './BYND';
 import { CHWY } from './CHWY';
 import { CLOV } from './CLOV';
 import { coin } from './coin';
-import { CRM } from './CRM';
-import { CRWD } from './CRWD';
+import { crm } from './crm';
+import { crwd } from './crwd';
 import { DASH } from './DASH';
-import { DDOG } from './DDOG';
+import { ddog } from './DDOG';
 import { DIS } from './DIS.mock';
 import { DKNG } from './DKNG';
 import { DOCU } from './DOCU';
@@ -30,7 +30,7 @@ import { DUOL } from './DUOL';
 import { EA } from './EA';
 import { EDIT } from './EDIT';
 import { ESTC } from './ESTC';
-import { ETSY } from './ETSY';
+import { etsy } from './etsy';
 import { fb } from './fb';
 import { fvrr } from './fvrr';
 import { GME } from './GME';
@@ -86,11 +86,11 @@ import { SE } from './SE';
 import { shop } from './shop.mock';
 import { SKLZ } from './SKLZ';
 import { snap } from './snap';
-import { SNOW } from './SNOW';
+import { snow } from './snow';
 import { SOFI } from './SOFI';
 import { SPLK } from './SPLK';
 import { SPOT } from './SPOT';
-import { SQ } from './SQ.mock';
+import { sq } from './sq.mock';
 import { STEM } from './STEM';
 import { swks } from './swks';
 import { techy } from './TCEHY';
@@ -121,6 +121,15 @@ import { Z } from './Z.mock';
 import { ZM } from './ZM';
 import { ZS } from './ZS';
 
+export const foreverOwnedStock = {
+  // Ecosystem
+  aapl,
+  // Much more advanced features.
+  tsla,
+  // Monopoly on seach and ads
+  googl,
+};
+
 export const ownedStockMap = {
   aapl,
   abnb,
@@ -140,17 +149,17 @@ export const ownedStockMap = {
   CHWY,
   CLOV,
   coin,
-  CRM,
-  CRWD,
+  crm,
+  crwd,
   DASH,
-  DDOG,
+  ddog,
   DIS,
   DKNG,
   DOCU,
   EA,
   EDIT,
   ESTC,
-  ETSY,
+  etsy,
   fb,
   GME,
   googl,
@@ -198,11 +207,11 @@ export const ownedStockMap = {
   SE,
   shop,
   snap,
-  SNOW,
+  snow,
   SOFI,
   SPLK,
   SPOT,
-  SQ,
+  sq,
   swks,
   TDOC,
   team,
@@ -247,4 +256,129 @@ export const watchListMap = {
   qs,
   nvax,
   fvrr,
+};
+
+export const stocksMap = {
+  aapl,
+  abnb,
+  ADBE,
+  ADSK,
+  afrm,
+  AMC,
+  amd,
+  amzn,
+  API,
+  asml,
+  ATVI,
+  AVGO,
+  AXP,
+  BABA,
+  bidu,
+  bili,
+  blde,
+  BYND,
+  CHWY,
+  CLOV,
+  coin,
+  crm,
+  crwd,
+  DASH,
+  ddog,
+  DIS,
+  DKNG,
+  DOCU,
+  DUOL,
+  EA,
+  EDIT,
+  ESTC,
+  etsy,
+  fb,
+  fvrr,
+  GME,
+  googl,
+  GS,
+  HD,
+  hood,
+  huya,
+  IAC,
+  INTU,
+  ISRG,
+  JD,
+  JMIA,
+  jnj,
+  JPM,
+  lmt,
+  logi,
+  lrcx,
+  luv,
+  LZ,
+  mdb,
+  meli,
+  mrk,
+  MRNA,
+  msft,
+  NET,
+  nflx,
+  NIO,
+  noc,
+  NOW,
+  ntdoy,
+  nvax,
+  nvda,
+  ob,
+  OKTA,
+  OPEN,
+  orcl,
+  pdd,
+  PENN,
+  PINS,
+  pltr,
+  PTON,
+  PYPL,
+  qs,
+  RBLX,
+  RDFN,
+  RH,
+  roku,
+  rskd,
+  rtx,
+  sbux,
+  SE,
+  shop,
+  SKLZ,
+  snap,
+  snow,
+  SOFI,
+  SPLK,
+  SPOT,
+  sq,
+  STEM,
+  swks,
+  TDOC,
+  team,
+  techy,
+  tgt,
+  TRMB,
+  tsla,
+  TSM,
+  TTD,
+  twlo,
+  TWTR,
+  U,
+  UBER,
+  ulta,
+  unh,
+  up,
+  upst,
+  upwk,
+  v,
+  VMEO,
+  vmw,
+  wish,
+  wix,
+  xpev,
+  you,
+  Z,
+  ZM,
+  ZS,
 };

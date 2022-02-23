@@ -1,0 +1,47 @@
+<div>
+  <a target="_blank" href="{{ stock?.irAddress }}"> Investor Relations </a>
+</div>
+
+<div *ngIf="stock?.secFilings">
+  <a target="_blank" href="{{ stock?.secFilings }}"> SEC Filings </a>
+</div>
+
+<div *ngIf="annualReportLink">
+  <a target="_blank" href="{{ annualReportLink }}"> Annual Report </a>
+</div>
+
+<div *ngIf="earningReport?.reportLink">
+  <a target="_blank" href="{{ earningReport?.reportLink }}">
+    Earnings Report
+  </a>
+</div>
+
+<div *ngIf="earningReport?.pressReleaseLink">
+  <a target="_blank" href="{{ earningReport?.pressReleaseLink }}">
+    Press Release
+  </a>
+</div>
+
+<div *ngIf="earningReport?.slidesLink">
+  <a target="_blank" href="{{ earningReport?.slidesLink }}"> Slides </a>
+</div>
+
+<div *ngIf="stock">
+  <a
+    target="_blank"
+    href="{{ 'https://elite.finviz.com/quote.ashx?t=' + stock.ticker }}"
+  >
+    Finviz
+  </a>
+</div>
+
+<div *ngIf="stock">
+  <a
+    target="_blank"
+    href="{{
+      'https://www.google.com/finance/quote/' + stock.ticker + ':NYSE'
+    }}"
+  >
+    Google Stock
+  </a>
+</div>

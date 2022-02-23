@@ -1,11 +1,10 @@
-import { BusinessArea } from 'src/app/facts/data/area.enum';
-import { RevenueModel } from 'src/app/facts/data/revenue-model.enum';
-import { Strategy } from 'src/app/facts/data/stratgies.enum';
+import { Business } from 'src/app/business-overview/business.model';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Note } from 'src/app/shared/data/note.interface';
 import { News } from '../mocks/news.model';
 import { EarningsReport } from './earnings.model';
 import { MyScore } from './herman-score.model';
+import { Predication } from './predication.model';
 import { Rating } from './rating.model';
 import { StockStats } from './stock-stats.model';
 import { Trend } from './trend.enum';
@@ -13,6 +12,7 @@ import { Trend } from './trend.enum';
 export interface StockAnalysis {
   logo?: string;
   name?: any;
+  shortName?: string;
   description?: Note[];
   ticker?: string;
   ceoQuote?: string[];
@@ -22,19 +22,14 @@ export interface StockAnalysis {
   // POTENTIALS:
   revenueGrowth?: number;
   PS?: any;
-  predication?: {
-    marketCap: [string, string];
-  };
+  predications?: Predication[];
   stats?: StockStats;
   propertiesPageEnabled?: boolean;
   irAddress?: string;
-  links?: any[];
-  business?: {
-    notes?: any[];
-    areas?: BusinessArea[];
-    revenues?: RevenueModel[];
-    strategies?: Strategy[];
-  };
+  secFilings?: string;
+  tenK?: string;
+  business?: Business;
+  foundedYear?: number;
 
   // Demand:
   vision?: string[];

@@ -16,28 +16,21 @@
 </div>
 
 <div *ngIf="showDetails" class="details-panel">
+  <div class="padding-1rem" *ngIf="stockAnalysis.predications">
+    Stock Price Forecast: {{ stockAnalysis.predications[0]?.price }}
+  </div>
+
+  <div class="padding-1rem">
+    <app-card>
+      <app-links [stock]="stockAnalysis"></app-links>
+    </app-card>
+  </div>
+
   <div class="padding-1rem">
     <app-fact [factType]="factType.business">
-      <div>
-        <span>Business Areas: </span>
-        <span *ngFor="let item of stockAnalysis?.business?.areas"
-          >{{ item }},
-        </span>
-      </div>
-
-      <div>
-        <span>Revenue Sources: </span>
-        <span *ngFor="let item of stockAnalysis?.business?.revenues"
-          >{{ item }},
-        </span>
-      </div>
-
-      <div>
-        <span>Long Term Strategies: </span>
-        <span *ngFor="let item of stockAnalysis?.business?.strategies"
-          >{{ item }},
-        </span>
-      </div>
+      <app-business-overview
+        [business]="stockAnalysis.business"
+      ></app-business-overview>
 
       <app-note
         [note]="{
@@ -49,112 +42,14 @@
   </div>
 
   <div class="padding-1rem">
-    <app-fact [factType]="factType.growth">
-      <div>
-        <div>Revenue Growth</div>
-        <div>
-          <span>
-            {{
-              earningsService?.calculateRevenueGrowth(
-                earningsService?.fourPreviousQuarterEr,
-                earningsService?.currentQuarterEr
-              )
-                | siUnit: 2
-                | percent
-                | undefined
-            }}
-          </span>
-          <span>
-            ({{
-              earningsService?.fourPreviousQuarterEr?.revenue
-                | siUnit: 2
-                | undefined
-            }}
-            ->
-            {{
-              earningsService?.currentQuarterEr?.revenue
-                | siUnit: 2
-                | undefined
-            }})
-          </span>
-        </div>
-      </div>
-
-      <div>
-        <div>Next Quarter Forecast Growth</div>
-        <div>
-          <span>
-            {{
-              earningsService?.calculateRevenueGrowth(
-                earningsService?.threePreviousQuarterEr,
-                earningsService?.nextQuarterEr
-              )
-                | siUnit: 2
-                | percent
-                | undefined
-            }}
-          </span>
-          <span>
-            ({{
-              earningsService?.threePreviousQuarterEr?.revenue
-                | siUnit: 2
-                | undefined
-            }}
-            ->
-            {{
-              earningsService?.nextQuarterEr?.revenue | siUnit: 2 | undefined
-            }})
-          </span>
-        </div>
-      </div>
+    <app-fact [factType]="factType.growth" [stock]="stockAnalysis">
+      <app-growth [stock]="stockAnalysis"></app-growth>
     </app-fact>
   </div>
 
   <div class="padding-1rem">
-    <app-fact [factType]="factType.profit">
-      <div>
-        <div>Operating Income Growth</div>
-        <div>
-          <span>
-            {{
-              earningsService?.calculateOperatingIncomeGrowth(
-                earningsService?.fourPreviousQuarterEr,
-                earningsService?.currentQuarterEr
-              )
-                | siUnit: 2
-                | percent
-                | undefined
-            }}
-          </span>
-          <span>
-            ({{
-              earningsService?.fourPreviousQuarterEr?.operatingIncome
-                | siUnit: 2
-                | undefined
-            }}
-            ->
-            {{
-              earningsService?.currentQuarterEr?.operatingIncome
-                | siUnit: 2
-                | undefined
-            }})
-          </span>
-        </div>
-      </div>
-
-      <div>
-        <div>Operating Margin</div>
-        <div>
-          {{
-            earningsService?.calculateOperatingMargin(
-              earningsService?.currentQuarterEr
-            )
-              | siUnit: 2
-              | percent
-              | undefined
-          }}
-        </div>
-      </div>
+    <app-fact [factType]="factType.profit" [stock]="stockAnalysis">
+      <app-profitability [stock]="stockAnalysis"></app-profitability>
     </app-fact>
   </div>
 
@@ -205,46 +100,9 @@
       <app-note [note]="item" class="news-font"></app-note>
     </ng-container>
   </div> -->
-
-  <div class="padding-1rem">
-    <app-card>
-      <div>
-        <a target="_blank" href="{{ stockAnalysis?.irAddress }}">
-          Investor Relations
-        </a>
-      </div>
-
-      <div *ngIf="earningsService?.currentQuarterEr?.reportLink">
-        <a
-          target="_blank"
-          href="{{ earningsService?.currentQuarterEr?.reportLink }}"
-        >
-          Earnings Report
-        </a>
-      </div>
-
-      <div *ngIf="earningsService?.currentQuarterEr?.pressReleaseLink">
-        <a
-          target="_blank"
-          href="{{ earningsService?.currentQuarterEr?.pressReleaseLink }}"
-        >
-          Press Release
-        </a>
-      </div>
-
-      <div *ngIf="earningsService?.currentQuarterEr?.slidesLink">
-        <a
-          target="_blank"
-          href="{{ earningsService?.currentQuarterEr?.slidesLink }}"
-        >
-          Slides
-        </a>
-      </div>
-    </app-card>
-  </div>
 </div>
 
-<div class="padding-1rem">
+<div class="padding-1rem padding-bottom-10rem">
   <div>
     <app-title-menu>
       <div title>
@@ -293,7 +151,7 @@
               'current-risk-slide': i === carousalDisplayItemIndex
             }"
           >
-            {{ risk.name }}
+            {{ risk.type }}
           </span>
           <span>-></span>
         </ng-container>

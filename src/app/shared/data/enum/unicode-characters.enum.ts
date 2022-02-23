@@ -7,4 +7,5 @@ export enum UnicodeCharacters {
   EmDash = '\u2014',
   NonBreakingSpace = '\u00A0',
   VerticalBar = '\u007C',
+  NextLine = '\u23AF',
 }

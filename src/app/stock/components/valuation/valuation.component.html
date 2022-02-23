@@ -1,28 +1,30 @@
 <div *ngIf="stock">
-  <div class="label">Market Cap</div>
-  <div>
+  <div>Market Cap</div>
+  <div class="label">
     {{ stock.marketCap | siUnit: 2 | undefined }}
   </div>
 
-  <div class="label">Revenue (4 quarters)</div>
-  <div>
+  <div>Revenue <span class="gray-font">(4 quarters)</span></div>
+  <div class="label">
     <span>{{ trailing12MonthsSales | siUnit: 2 | undefined }}</span>
+  </div>
+  <!-- <div>
     <span> ({{ earningReports[0].revenue | siUnit: 2 | undefined }} + </span>
     <span>{{ earningReports[1].revenue | siUnit: 2 | undefined }} + </span>
     <span>{{ earningReports[2].revenue | siUnit: 2 | undefined }} + </span>
     <span>{{ earningReports[3].revenue | siUnit: 2 | undefined }}) </span>
-  </div>
+  </div> -->
 
-  <div class="label">P / S</div>
-  <div>
+  <div>P / S <span class="gray-font">(Market Cap / Revenue)</span></div>
+  <div class="label">
     {{ stock.marketCap / trailing12MonthsSales | siUnit: 2 | undefined }}
   </div>
 
-  <div class="label">Sales Growth</div>
-  <div>
+  <div>Sales Growth <span class="gray-font">(Latest Quarter)</span></div>
+  <div class="label">
     {{
-      (earningReports[0].revenue - earningReports[4].revenue) /
-        earningReports[4].revenue
+      (earningReports[0]?.revenue - earningReports[4]?.revenue) /
+        earningReports[4]?.revenue
         | siUnit: 2
         | percent
         | undefined

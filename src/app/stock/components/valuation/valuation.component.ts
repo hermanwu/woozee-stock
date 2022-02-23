@@ -17,7 +17,7 @@ export class ValuationComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   ngOnChanges(): void {
-    if (this.stock) {
+    if (this.stock && this.stock.earningsReports) {
       this.earningReports = this.stock.earningsReports
         .filter((report) => !report.isForecast)
         .sort((a, b) => b.year - a.year || b.quarter - a.quarter);

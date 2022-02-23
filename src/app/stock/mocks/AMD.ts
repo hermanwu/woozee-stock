@@ -5,7 +5,7 @@ export const amd: StockAnalysis = {
   name: 'AMD',
   description: [],
   ticker: 'amd',
-  marketCap: 156 * 1e9,
+  marketCap: 182 * 1e9,
 
   // Earnings Report:
   earningsReports: [

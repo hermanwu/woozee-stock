@@ -9,7 +9,7 @@ export const amzn: StockAnalysis = {
   description: [],
   logo: 'http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
-
+  marketCap: 1.61 * 1e12,
   risks: [
     {
       name: 'Financial Health',
@@ -200,34 +200,38 @@ export const amzn: StockAnalysis = {
     },
   ],
 
-  stats: {
-    price: 3280.71,
-    marketCap: 1658.45,
-    revenue: '1.42B',
-    PE: 0,
-    PS: 16.6,
-    quickRatio: 1.1,
-    currentRatio: 1.2,
-  },
-  earningsReports: [],
-  earnings: {
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        marketCap: 1.67e12,
-        revenue: 113080e6,
-        operatingIncome: 7702e6,
-        unit: 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 137.412 * 1e9,
+      operatingIncome: 3460 * 1e6,
     },
-    2020: {
-      2: {
-        revenue: 88912e6,
-        operatingIncome: 5843e6,
-        unit: 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 110812 * 1e6,
+      operatingIncome: 4852 * 1e6,
     },
-  },
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 113080 * 1e6,
+      operatingIncome: 7702 * 1e6,
+    },
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 108518 * 1e6,
+      operatingIncome: 8865 * 1e6,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 125555 * 1e6,
+      operatingIncome: 6873 * 1e6,
+    },
+  ],
   products: [
     {
       name: 'Overview',

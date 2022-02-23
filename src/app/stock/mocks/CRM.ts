@@ -1,47 +1,54 @@
+import { BusinessArea } from 'src/app/facts/data/area.enum';
+import { BILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const CRM: StockAnalysis = {
-  logo: '',
-  name: { English: 'Salesforce' },
-  description: [],
-  ticker: 'CRM',
-  lastUpdated: new Date('2021-08-25'),
+export const crm: StockAnalysis = {
+  marketCap: 194 * BILLION,
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 6863 * 1e6,
+      operatingIncome: 27 * 1e6,
+    },
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 6340 * 1e6,
+      operatingIncome: 312 * 1e6,
+    },
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 5963 * 1e6,
+      operatingIncome: 340 * 1e6,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 5817 * 1e6,
+      operatingIncome: 193 * 1e6,
+    },
+    {
+      year: 2020,
+      quarter: 3,
+      revenue: 5419 * 1e6,
+      operatingIncome: 224 * 1e6,
+    },
+  ],
 
-  // Earnings Report:
-  earnings: {
-    website: 'https://investor.salesforce.com/overview/default.aspx',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k': '',
-        presentation: '',
-        press:
-          'https://s23.q4cdn.com/574569502/files/doc_financials/2022/q2/CRM-Q2-FY22-Earnings-Press-Release-w-financials.pdf',
-        webcast: '',
-        marketCap: 238.66 * 1e9,
-        revenue: 6340 * 1e6,
-        operatingIncome: 332 * 1e6,
-      },
-      1: {
-        '10q10k':
-          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001108524/75070e05-dc5e-4b40-99dc-7602eb560ce5.pdf',
-        presentation: '',
-        press: '',
-        webcast: '',
-        marketCap: 241.24 * 1e9,
-        revenue: 5963 * 1e6,
-        operatingIncome: 354 * 1e6,
-      },
-    },
-    2020: {
-      2: {
-        revenue: 5151 * 1e6,
-        operatingIncome: 178 * 1e6,
-      },
-      1: {
-        revenue: 4865 * 1e6,
-        operatingIncome: -140 * 1e6,
-      },
-    },
+  logo: '',
+  name: 'Salesforce',
+  description: [],
+  ticker: 'crm',
+  lastUpdated: new Date('2021-08-25'),
+  irAddress: 'https://investor.salesforce.com/overview/default.aspx',
+  secFilings: 'https://investor.salesforce.com/financials/default.aspx',
+  business: {
+    areas: [BusinessArea.customerOperatingManagement],
+    overview: [
+      'customer relationship management (“CRM”) technology that brings companies and their customers together.',
+      'connect with their customers through digital channels.',
+    ],
   },
 };

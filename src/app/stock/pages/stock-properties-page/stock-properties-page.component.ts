@@ -1,12 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { companyRisks } from 'src/app/risks/data/risks/component-risks-defination';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { NoteDialogComponent } from 'src/app/shared/components/note-dialog/note-dialog.component';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
-import { ownedStockMap } from '../../mocks/stock-list.const';
+import { stocksMap } from '../../mocks/stock-list.const';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 import { FundamentalCalculationService } from '../../services/fundemental-calculation.service';
 
@@ -33,15 +34,21 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   stockTicker: string;
   earningsService: FundamentalCalculationService;
 
-  constructor(private route: ActivatedRoute, private dialog: MatDialog) {}
+  constructor(
+    private route: ActivatedRoute,
+    private dialog: MatDialog,
+    private titleService: Title
+  ) {}
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
       this.stockTicker = params[this.stockId].toLowerCase();
-      this.stockAnalysis = ownedStockMap[this.stockTicker];
+      this.stockAnalysis = stocksMap[this.stockTicker];
       this.earningsService = new FundamentalCalculationService(
         this.stockAnalysis
       );
+
+      this.titleService.setTitle(this.stockAnalysis.name);
     });
   }
 

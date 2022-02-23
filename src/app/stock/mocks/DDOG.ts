@@ -1,34 +1,57 @@
+import { BILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const DDOG: StockAnalysis = {
+export const ddog: StockAnalysis = {
+  marketCap: 49.65 * BILLION,
+  risks: [
+    {
+      name: 'Market size might be too small',
+    },
+  ],
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 326.2 * 1e6,
+      operatingIncome: 8.46 * 1e6,
+    },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 270.49 * 1e6,
+      operatingIncome: -4.89 * 1e6,
+    },
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 233.55 * 1e6,
+      operatingIncome: -9.89 * 1e6,
+    },
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 198.55 * 1e6,
+      operatingIncome: -12.83 * 1e6,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 177.53 * 1e6,
+      operatingIncome: -8.94 * 1e6,
+    },
+  ],
   logo: '',
-  name: { English: 'Datadog' },
+  name: 'Datadog',
   description: [],
-  ticker: 'DDOG',
+  ticker: 'data',
+  irAddress: 'https://investors.datadoghq.com/',
+  secFilings:
+    'https://investors.datadoghq.com/financial-information/sec-filings',
 
-  // Earnings Report:
-  earnings: {
-    website: 'https://investors.datadoghq.com/',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://investors.datadoghq.com/static-files/69c6fd93-3308-491b-be81-9b642728a091',
-        presentation: '',
-        press:
-          'https://investors.datadoghq.com/news-releases/news-release-details/datadog-announces-second-quarter-2021-financial-results',
-        webcast: '',
-        marketCap: 41.05 * 1e9,
-        revenue: 233549 * 1e3,
-        operatingIncome: -9886 * 1e3,
-        date: new Date('2021-08-06'),
-      },
-    },
-    2020: {
-      2: {
-        revenue: 140012 * 1e3,
-        operatingIncome: 654 * 1e3,
-      },
-    },
+  business: {
+    marketSize: 44 * BILLION,
+    overview: [
+      'Datadog is the monitoring and analytics platform for developers, IT operations teams and business users in the cloud age.',
+    ],
   },
 };

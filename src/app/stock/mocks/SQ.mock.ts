@@ -1,51 +1,46 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const SQ: StockAnalysis = {
+export const sq: StockAnalysis = {
   logo: 'https://lh3.googleusercontent.com/pw/ACtC-3dVUwpnglNTwsN6ZkweBVX9VgZhM9aJL6oQ0Cn9Ofk62gCDq1R8DwwkrzUb-HBxX9B3FA_C5ZqbfYT9UIKdPFLqpxeBLj4Dis4Z1DZ6oakHj-YOZqNdUclAkdW9Q8XkXOoz-nkQfOYeEFRK0eatm9bc=w614-h548-no?authuser=3',
-  name: {
-    English: 'Square',
-    Chinese: undefined,
-  },
-  ticker: 'SQ',
+  name: 'Square, Inc.',
+  ticker: 'sq',
   propertiesPageEnabled: true,
+  marketCap: 59.78 * 1e9,
+  irAddress: 'https://investors.block.xyz/overview/default.aspx',
+  secFilings: 'https://investors.block.xyz/financials/sec-filings/default.aspx',
   // Earnings Report:
-  earnings: {
-    website: 'https://investors.squareup.com/overview/default.aspx',
-    latestReportQuarter: ['2021', '3'],
-    2021: {
-      3: {
-        '10q10k':
-          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001512673/99e3d3aa-cf5e-4b30-a351-52003798a67b.pdf',
-        marketCap: 114.33 * 1e9,
-        revenue: (3844727 - 1815662) * 1e3, // Minus Bitcoin Revenue.
-        operatingIncome: 22996 * 1e3,
-      },
-      2: {
-        '10q10k':
-          'https://s27.q4cdn.com/311240100/files/doc_financials/2021/q2/Square-10Q-2Q21.pdf',
-        press:
-          'https://s27.q4cdn.com/311240100/files/doc_financials/2021/q2/Q2-2021-Shareholder-Letter.pdf',
-        webcast: '',
-        marketCap: 119.93 * 1e9,
-        revenue: (4680672 - 2724296) * 1e3, // Minus Bitcoin Revenue.
-        operatingIncome: 124994 * 1e3,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 3844 * 1e6,
+      operatingIncome: 23 * 1e6,
     },
-    2020: {
-      3: {
-        '10q10k':
-          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001512673/99e3d3aa-cf5e-4b30-a351-52003798a67b.pdf',
-        marketCap: 119.93 * 1e9,
-        revenue: (3033874 - 1633764) * 1e3, // Minus Bitcoin Revenue.
-        operatingIncome: 49342 * 1e3,
-      },
-      2: {
-        revenue: (1923625 - 875456) * 1e3, // Minus Bitcoin Revenue.
-        operatingIncome: -23052 * 1e3,
-      },
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 4680 * 1e6,
+      operatingIncome: 125 * 1e6,
     },
-  },
-  marketCap: {},
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 5057.27 * 1e6,
+      operatingIncome: 67.74 * 1e6,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 3158.97 * 1e6,
+      operatingIncome: 45.18 * 1e6,
+    },
+    {
+      year: 2020,
+      quarter: 3,
+      revenue: 3033.87 * 1e6,
+      operatingIncome: 49.34 * 1e6,
+    },
+  ],
   description: [
     {
       content:
@@ -114,9 +109,6 @@ export const SQ: StockAnalysis = {
 
   trends: ['COVID', 'Cashless'],
 
-  predication: {
-    marketCap: ['97B', '(50B + 10B + 250B + 350B) = 660B+'],
-  },
   thoughts: {
     hermanScore: 1,
   },

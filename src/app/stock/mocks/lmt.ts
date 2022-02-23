@@ -6,9 +6,8 @@ export const lmt: StockAnalysis = {
   description: [],
   ticker: 'LMT',
   irAddress: 'https://investors.lockheedmartin.com/',
-  links: [
+  secFilings:
     'https://investors.lockheedmartin.com/financial-information/sec-filings',
-  ],
   // Earnings Report:
   earnings: {
     website: 'https://investors.lockheedmartin.com/',

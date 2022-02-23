@@ -10,25 +10,27 @@ export class FundamentalCalculationService {
 
   constructor(stock: StockAnalysis) {
     this.stock = stock;
-    const earningsReports = stock.earningsReports
-      .filter((earnings) => !earnings.isForecast)
-      .sort((a, b) => b.year - a.year);
-    this.currentQuarterEr = earningsReports[0];
-    this.fourPreviousQuarterEr = earningsReports.find(
-      (report) =>
-        report.year === this.currentQuarterEr.year - 1 &&
-        report.quarter === this.currentQuarterEr.quarter
-    );
-    this.nextQuarterEr = stock.earningsReports.find(
-      (earnings) => earnings.isForecast === true
-    );
-
-    if (this.nextQuarterEr) {
-      this.threePreviousQuarterEr = earningsReports.find(
+    if (stock && stock.earningsReports) {
+      const earningsReports = stock.earningsReports
+        .filter((earnings) => !earnings.isForecast)
+        .sort((a, b) => b.year - a.year);
+      this.currentQuarterEr = earningsReports[0];
+      this.fourPreviousQuarterEr = earningsReports.find(
         (report) =>
-          report.year === this.nextQuarterEr.year - 1 &&
-          report.quarter === this.nextQuarterEr.quarter
+          report.year === this.currentQuarterEr.year - 1 &&
+          report.quarter === this.currentQuarterEr.quarter
       );
+      this.nextQuarterEr = stock.earningsReports.find(
+        (earnings) => earnings.isForecast === true
+      );
+
+      if (this.nextQuarterEr) {
+        this.threePreviousQuarterEr = earningsReports.find(
+          (report) =>
+            report.year === this.nextQuarterEr.year - 1 &&
+            report.quarter === this.nextQuarterEr.quarter
+        );
+      }
     }
   }
 
@@ -59,6 +61,12 @@ export class FundamentalCalculationService {
   }
 
   calculateOperatingMargin(earningReport: EarningsReport) {
-    return earningReport.operatingIncome / earningReport.revenue;
+    if (
+      earningReport &&
+      earningReport.operatingIncome &&
+      earningReport.revenue
+    ) {
+      return earningReport.operatingIncome / earningReport.revenue;
+    }
   }
 }

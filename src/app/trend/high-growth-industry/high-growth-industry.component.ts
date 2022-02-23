@@ -78,7 +78,7 @@ export class HighGrowthIndustryComponent implements OnInit {
       category: GrowthType.PRODUCTIVITY,
     },
     {
-      ticker: 'CRM',
+      ticker: 'crm',
       reason: '客户关系管理工具的代名词',
       name: 'Salesforce',
       category: GrowthType.PRODUCTIVITY,
@@ -113,7 +113,7 @@ export class HighGrowthIndustryComponent implements OnInit {
       category: GrowthType.FINTECH,
     },
     {
-      ticker: 'SQ',
+      ticker: 'sq',
       reason: '最具创新力的金融公司',
       name: 'Square',
       category: GrowthType.FINTECH,
@@ -156,7 +156,7 @@ export class HighGrowthIndustryComponent implements OnInit {
       category: GrowthType.ENTERTAINMENT,
     },
     {
-      ticker: 'BILI',
+      ticker: 'bili',
       name: 'BiliBili',
       chinese: '哔哩哔哩',
       reason: '中国油管',

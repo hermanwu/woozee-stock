@@ -6,7 +6,7 @@ export const tsla: StockAnalysis = {
   name: 'Tesla',
   ticker: 'TSLA',
   irAddress: 'https://ir.tesla.com/',
-  marketCap: 927.32 * 1e9,
+  marketCap: 905 * 1e9,
 
   earningsReports: [
     {

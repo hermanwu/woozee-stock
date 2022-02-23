@@ -9,11 +9,16 @@ export interface EarningsReport {
   pressReleaseLink?: string;
   slidesLink?: string;
 
+  // Growth
   revenue?: number;
   revenueDetails?: any;
+  userCount?: number;
 
+  // Profitablity
+  revenueRetention?: number;
   operatingIncome?: number;
   netIncome?: number;
+  salesAndMarketingCost?: number;
 
   // Calculated results:
   operatingMargin?: number;
@@ -23,7 +28,8 @@ export interface EarningsReport {
 
   // Additional Stats
   dailyActiveUser?: number;
-  dailyActiveBusinesses?: number;
+
+  isAnnual?: boolean;
 
   notes?: Note[];
 }

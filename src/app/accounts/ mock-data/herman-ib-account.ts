@@ -2,7 +2,7 @@ import { Equity } from 'src/app/stock/pages/stock-list-page/stock-list-page.comp
 
 export const hermanIbAccount: Equity[] = [
   {
-    ticker: 'BILI',
+    ticker: 'bili',
     shares: 545,
   },
   {
@@ -42,7 +42,7 @@ export const hermanIbAccount: Equity[] = [
     shares: 156,
   },
   {
-    ticker: 'DDOG',
+    ticker: 'ddog',
     shares: 150,
   },
   {
@@ -54,11 +54,11 @@ export const hermanIbAccount: Equity[] = [
     shares: 150,
   },
   {
-    ticker: 'ETSY',
+    ticker: 'etsy',
     shares: 145,
   },
   {
-    ticker: 'SQ',
+    ticker: 'sq',
     shares: 138,
   },
   {
@@ -114,7 +114,7 @@ export const hermanIbAccount: Equity[] = [
     shares: 100,
   },
   {
-    ticker: 'CRM',
+    ticker: 'crm',
     shares: 100,
   },
   {

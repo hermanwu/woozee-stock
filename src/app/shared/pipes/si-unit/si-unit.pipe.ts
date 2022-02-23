@@ -104,18 +104,21 @@ export class SiUnitPipe implements PipeTransform {
 
     // Check for bad input value
     if (!SiUnitPipe.isValueParameterValid(parsedValue)) {
-      throw invalidPipeArgumentError(
-        SiUnitPipe,
-        `Invalid input value: ${value}`
+      console.error(
+        invalidPipeArgumentError(SiUnitPipe, `Invalid input value: ${value}`)
       );
+      return value;
     }
 
     // Check for bad input decimalPlaces
     if (!SiUnitPipe.isDecimalPlacesParameterValid(decimalPlaces)) {
-      throw invalidPipeArgumentError(
-        SiUnitPipe,
-        `Invalid input decimalPlaces: ${decimalPlaces}`
+      console.error(
+        invalidPipeArgumentError(
+          SiUnitPipe,
+          `Invalid input decimalPlaces: ${decimalPlaces}`
+        )
       );
+      return value;
     }
 
     let outputValue: number;

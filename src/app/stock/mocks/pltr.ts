@@ -1,11 +1,12 @@
-import { BusinessArea } from 'src/app/facts/data/area.enum';
-import { RevenueModel } from 'src/app/facts/data/revenue-model.enum';
+import { MarketType } from 'src/app/facts/data/area.enum';
+import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { Strategy } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const pltr: StockAnalysis = {
+  marketCap: 23.71 * BILLION,
   risks: [
     {
       type: FactType.business,
@@ -21,7 +22,6 @@ export const pltr: StockAnalysis = {
     },
   ],
 
-  marketCap: 22.08 * 1e9,
   earningsReports: [
     {
       year: 2022,
@@ -35,8 +35,8 @@ export const pltr: StockAnalysis = {
       revenue: 432.87 * 1e6,
       revenueRetention: 1.31,
       operatingIncome: -58.94 * 1e6,
-      salesAndMarketingCost: -162.593 * MILLION,
-      userCount: 237,
+      salesAndMarketingCost: 162.593 * MILLION,
+      activeUserCount: 237,
       notes: [
         { content: 'Commercial revenue grew 47% year-over-year' },
         { content: 'US commercial revenue grew 132% year-over-year' },
@@ -71,7 +71,7 @@ export const pltr: StockAnalysis = {
       quarter: 4,
       revenue: 322.09 * 1e6,
       operatingIncome: -156.57 * 1e6,
-      userCount: 139,
+      activeUserCount: 139,
     },
   ],
 
@@ -160,12 +160,16 @@ export const pltr: StockAnalysis = {
       'Transform massive amounts of information into an integrated data asset that reflects their operations.',
       'We do not sell features, tools, or one-off custom applications.',
       'Our forward deployed engineers (“FDEs”) have travelled to bases in Afghanistan and factories in the industrial Midwest to deploy our platforms.',
+      ' its ability to construct a model of the real world from countless data points',
+      ' We build software platforms that become part of the institutions we serve. ',
     ],
-    areas: [BusinessArea.dataAnalytics],
-    revenues: [RevenueModel.softwareSelling, RevenueModel.b2b],
-    strategies: [Strategy.userData, Strategy.technology],
-    marketSize: 119 * BILLION,
-    users: ['Any Employee'],
+    revenues: [
+      { type: RevenueType.softwareSelling },
+      { type: RevenueType.b2b },
+    ],
+    competitiveAdvantages: [Strategy.userData, Strategy.technology],
+    markets: [{ type: MarketType.dataAnalytics, size: 119 * BILLION }],
+    users: [{ type: 'Any Employee' }],
   },
   competitors: ['snow'], //'ai', 'crwd', 'CRM', 'DATA'
 };

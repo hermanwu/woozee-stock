@@ -1,6 +1,6 @@
 <div class="title-display padding-1rem">
   <h1>
-    {{ stockAnalysis.name }}
+    {{ stockAnalysis.shortName || stockAnalysis.name }}
     ({{ stockAnalysis?.ticker | uppercase }})
   </h1>
 

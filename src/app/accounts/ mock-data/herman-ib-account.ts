@@ -118,7 +118,7 @@ export const hermanIbAccount: Equity[] = [
     shares: 100,
   },
   {
-    ticker: 'ADBE',
+    ticker: 'adbe',
     shares: 93,
   },
   {

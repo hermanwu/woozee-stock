@@ -7,3 +7,16 @@
   font-weight: 100;
   color: gray;
 }
+
+.container {
+  display: grid;
+}
+
+.row {
+  display: flex;
+  gap: 2rem;
+}
+
+.stats {
+  margin-left: auto;
+}

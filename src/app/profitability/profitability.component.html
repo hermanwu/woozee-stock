@@ -33,11 +33,17 @@
     </div>
   </div>
 
+  <div class="stats">{{ unicode.NextLine }}</div>
+
   <div class="row">
-    <div *ngIf="!hideLabel">Sales and Marketing</div>
+    <div *ngIf="!hideLabel">Sales and Marketing Cost / Revenue</div>
     <div class="stats">
+      <span *ngIf="previousSalesAndMarketingPercent">
+        {{ previousSalesAndMarketingPercent | siUnit: 2 | percent | undefined }}
+        ->
+      </span>
       <span>
-        {{ salesAndMarketing | siUnit: 2 | undefined }}
+        {{ salesAndMarketing / revenue | siUnit: 2 | percent | undefined }}
       </span>
     </div>
   </div>

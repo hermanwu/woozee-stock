@@ -1,5 +1,5 @@
-import { BusinessArea } from 'src/app/facts/data/area.enum';
-import { RevenueModel } from 'src/app/facts/data/revenue-model.enum';
+import { MarketType } from 'src/app/facts/data/area.enum';
+import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { Strategy } from 'src/app/facts/data/stratgies.enum';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -28,9 +28,13 @@ export const abnb: StockAnalysis = {
   marketCap: 114.41 * 1e9,
   competitors: ['abnb', 'uber', 'bkng'],
   business: {
-    areas: [BusinessArea.shared_economy, BusinessArea.travel],
-    revenues: [RevenueModel.salesCommission],
-    strategies: [Strategy.platform, Strategy.userData, Strategy.feature],
+    markets: [{ type: MarketType.shared_economy }, { type: MarketType.travel }],
+    revenues: [{ type: RevenueType.salesCommission }],
+    competitiveAdvantages: [
+      Strategy.platform,
+      Strategy.userData,
+      Strategy.feature,
+    ],
   },
   // Earnings Report:
   earningsReports: [

@@ -1,3 +1,4 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { BILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -49,7 +50,12 @@ export const ddog: StockAnalysis = {
     'https://investors.datadoghq.com/financial-information/sec-filings',
 
   business: {
-    marketSize: 44 * BILLION,
+    markets: [
+      {
+        size: 44 * BILLION,
+        type: MarketType.dataAnalytics,
+      },
+    ],
     overview: [
       'Datadog is the monitoring and analytics platform for developers, IT operations teams and business users in the cloud age.',
     ],

@@ -1,10 +1,33 @@
-import { BusinessArea } from 'src/app/facts/data/area.enum';
-import { BILLION } from 'src/app/shared/numbers/number.model';
+import { MarketType } from 'src/app/facts/data/area.enum';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const crm: StockAnalysis = {
-  marketCap: 194 * BILLION,
+  predications: [
+    {
+      start: new Date('2022-3-1'),
+      days: 60,
+      price: 150,
+    },
+  ],
+  marketCap: 203.45 * BILLION,
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 1,
+      revenue: 7.375 * BILLION,
+      isForecast: true,
+    },
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 7.33 * BILLION,
+      operatingIncome: -176 * MILLION,
+      salesAndMarketingCost: 3.464 * BILLION,
+      revenueRetention: 0.9,
+      pressReleaseLink:
+        'https://s23.q4cdn.com/574569502/files/doc_financials/2022/q4/CRM-Q4-FY22-Earnings-Press-Release-w-financials.pdf',
+    },
     {
       year: 2021,
       quarter: 3,
@@ -28,6 +51,7 @@ export const crm: StockAnalysis = {
       quarter: 4,
       revenue: 5817 * 1e6,
       operatingIncome: 193 * 1e6,
+      salesAndMarketingCost: 2.632 * BILLION,
     },
     {
       year: 2020,
@@ -45,10 +69,16 @@ export const crm: StockAnalysis = {
   irAddress: 'https://investor.salesforce.com/overview/default.aspx',
   secFilings: 'https://investor.salesforce.com/financials/default.aspx',
   business: {
-    areas: [BusinessArea.customerOperatingManagement],
+    mission: ['We build bridges between companies and customers.'],
+    markets: [
+      { type: MarketType.customerRelationManagement, size: 57.9 * BILLION },
+    ],
     overview: [
       'customer relationship management (“CRM”) technology that brings companies and their customers together.',
       'connect with their customers through digital channels.',
+    ],
+    notes: [
+      'm, we deliver a single source of truth, connecting customer data across systems, apps and devices to help companies sell, service, market andconduct commerce from anywhere.',
     ],
   },
 };

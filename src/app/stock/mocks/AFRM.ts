@@ -1,5 +1,5 @@
-import { BusinessArea } from 'src/app/facts/data/area.enum';
-import { RevenueModel } from 'src/app/facts/data/revenue-model.enum';
+import { MarketType } from 'src/app/facts/data/area.enum';
+import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { Strategy } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -40,9 +40,12 @@ export const afrm: StockAnalysis = {
   irAddress: 'https://investors.affirm.com/',
   marketCap: 12.28 * 1e9,
   business: {
-    areas: [BusinessArea.fintech_lending],
-    revenues: [RevenueModel.loanInterest, RevenueModel.salesCommission],
-    strategies: [Strategy.platform, Strategy.userData],
+    markets: [{ type: MarketType.fintech_lending }],
+    revenues: [
+      { type: RevenueType.loanInterest },
+      { type: RevenueType.salesCommission },
+    ],
+    competitiveAdvantages: [Strategy.platform, Strategy.userData],
   },
   // Earnings Report:
   earningsReports: [

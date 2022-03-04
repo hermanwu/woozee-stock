@@ -1,34 +1,46 @@
-<div *ngIf="stock">
-  <div>Market Cap</div>
-  <div class="label">
-    {{ stock.marketCap | siUnit: 2 | undefined }}
+<div *ngIf="stock" class="container">
+  <div class="row">
+    <div *ngIf="!hideLabel">Market Cap</div>
+    <div class="stats">
+      <span>
+        {{ stock.marketCap | siUnit: 2 | undefined }}
+      </span>
+    </div>
   </div>
 
-  <div>Revenue <span class="gray-font">(4 quarters)</span></div>
-  <div class="label">
-    <span>{{ trailing12MonthsSales | siUnit: 2 | undefined }}</span>
-  </div>
-  <!-- <div>
-    <span> ({{ earningReports[0].revenue | siUnit: 2 | undefined }} + </span>
-    <span>{{ earningReports[1].revenue | siUnit: 2 | undefined }} + </span>
-    <span>{{ earningReports[2].revenue | siUnit: 2 | undefined }} + </span>
-    <span>{{ earningReports[3].revenue | siUnit: 2 | undefined }}) </span>
-  </div> -->
-
-  <div>P / S <span class="gray-font">(Market Cap / Revenue)</span></div>
-  <div class="label">
-    {{ stock.marketCap / trailing12MonthsSales | siUnit: 2 | undefined }}
+  <div class="row">
+    <div *ngIf="!hideLabel">
+      Revenue <span class="gray-font">(4 quarters)</span>
+    </div>
+    <div class="stats">
+      <span>{{ trailing12MonthsSales | siUnit: 2 | undefined }}</span>
+    </div>
   </div>
 
-  <div>Sales Growth <span class="gray-font">(Latest Quarter)</span></div>
-  <div class="label">
-    {{
-      (earningReports[0]?.revenue - earningReports[4]?.revenue) /
-        earningReports[4]?.revenue
-        | siUnit: 2
-        | percent
-        | undefined
-    }}
+  <div class="row">
+    <div *ngIf="!hideLabel">
+      P / S <span class="gray-font">(Market Cap / Revenue)</span>
+    </div>
+    <div class="stats">
+      {{ stock.marketCap / trailing12MonthsSales | siUnit: 2 | undefined }}
+    </div>
+  </div>
+
+  <div class="stats">{{ unicode.NextLine }}</div>
+
+  <div class="row">
+    <div *ngIf="!hideLabel">
+      Sales Growth <span class="gray-font">(Latest Quarter)</span>
+    </div>
+    <div class="stats">
+      {{
+        (earningReports[0]?.revenue - earningReports[4]?.revenue) /
+          earningReports[4]?.revenue
+          | siUnit: 2
+          | percent
+          | undefined
+      }}
+    </div>
   </div>
 </div>
 <!-- <div>

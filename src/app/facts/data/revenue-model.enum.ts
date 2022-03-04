@@ -1,7 +1,9 @@
+import { Note } from 'src/app/shared/data/note.interface';
+
 /**
  * How revenue is from
  */
-export enum RevenueModel {
+export enum RevenueType {
   loanInterest = 'Loan Interest Charge',
   salesCommission = 'Sales Commission',
   utilityTransaction = 'Utility Transaction',
@@ -11,4 +13,13 @@ export enum RevenueModel {
   subscription = 'Subscription',
   saas = 'SaaS',
   consumptionBased = 'Consumption Based',
+  b2c = 'Customer Facing',
+}
+
+export interface Revenue {
+  name?: string;
+  amount?: number;
+  type: RevenueType;
+  note?: Note;
+  children?: Revenue[];
 }

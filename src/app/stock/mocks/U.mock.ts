@@ -2,8 +2,8 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const U: StockAnalysis = {
   logo: '',
-  name: { English: 'Unity' },
-  ticker: 'U',
+  name: 'Unity',
+  ticker: 'u',
   ceoQuote: [],
   advantage: [],
   // POTENTIALS:

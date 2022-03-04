@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { UnicodeCharacters } from '../shared/data/enum/unicode-characters.enum';
-import { StockAnalysis } from '../stock/models/stock-analysis.model';
+import { UnicodeCharacters } from 'src/app/shared/data/enum/unicode-characters.enum';
+import { StockAnalysis } from '../../models/stock-analysis.model';
 
 @Component({
   selector: 'app-growth',
@@ -14,10 +14,11 @@ export class GrowthComponent implements OnInit, OnChanges {
   unicode = UnicodeCharacters;
   quarterlyRevenue: number;
   quarterlyRevenueGrowth: number;
-  userCount: number;
+  activeUserCount: number;
   userCountGrowth: number;
   forecastRevenue: number;
   nextQuarterForecastGrowth: number;
+  revenueRetention: number;
 
   constructor() {}
 
@@ -33,7 +34,8 @@ export class GrowthComponent implements OnInit, OnChanges {
       const previousReport = reports[4];
 
       this.quarterlyRevenue = currentReport.revenue;
-      this.userCount = currentReport.userCount;
+      this.activeUserCount = currentReport.activeUserCount;
+      this.revenueRetention = currentReport?.revenueRetention;
 
       if (currentReport && previousReport) {
         this.quarterlyRevenueGrowth =
@@ -41,8 +43,8 @@ export class GrowthComponent implements OnInit, OnChanges {
           previousReport.revenue;
 
         this.userCountGrowth =
-          (currentReport.userCount - previousReport.userCount) /
-          previousReport.userCount;
+          (currentReport.activeUserCount - previousReport.activeUserCount) /
+          previousReport.activeUserCount;
       }
 
       const forecastReport = this.stock.earningsReports.filter(

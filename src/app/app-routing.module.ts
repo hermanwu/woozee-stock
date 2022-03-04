@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
 import { FomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
@@ -31,6 +32,11 @@ const routes: Routes = [
       {
         path: 'fomo',
         component: FomoStocksComponent,
+      },
+      {
+        path: 'about',
+        component: AboutComponent,
+        pathMatch: 'full',
       },
       {
         path: 'industries',

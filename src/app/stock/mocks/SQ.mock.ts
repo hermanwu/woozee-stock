@@ -1,3 +1,4 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const sq: StockAnalysis = {
@@ -10,6 +11,17 @@ export const sq: StockAnalysis = {
   secFilings: 'https://investors.block.xyz/financials/sec-filings/default.aspx',
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      isAnnual: true,
+      revenue: 4.078 * BILLION,
+      operatingIncome: -54.614 * MILLION,
+      pressReleaseLink:
+        'https://s29.q4cdn.com/628966176/files/doc_financials/2021/q4/4Q21-Shareholder-Letter_Block.pdf',
+      reportLink:
+        'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001512673/13386837-50ba-466f-b8ff-81824f066c1e.pdf',
+    },
     {
       year: 2021,
       quarter: 3,

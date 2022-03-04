@@ -10,7 +10,7 @@ import { webull } from 'src/app/accounts/ mock-data/jessica-wubu-account';
 import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
 import { industry } from 'src/app/shared/industry.enum';
 import { Trend } from 'src/app/shared/trend.enum';
-import { ownedStockMap, watchListMap } from '../../mocks/stock-list.const';
+import { stocksMap } from '../../mocks/stock-list.const';
 
 export interface Equity {
   ticker: string;
@@ -49,8 +49,7 @@ export class StockListPageComponent implements OnInit {
 
   ngOnInit(): void {
     // const equitySummaryMap = this.generateEquitySummaryMap(this.equities);
-    this.dataSource.data = this.convertToTableData(ownedStockMap);
-    this.watchList = this.convertToTableData(watchListMap);
+    this.dataSource.data = this.convertToTableData(stocksMap);
   }
 
   applyFilter(event: Event) {

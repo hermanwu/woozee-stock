@@ -27,7 +27,6 @@ export interface StockAnalysis {
   propertiesPageEnabled?: boolean;
   irAddress?: string;
   secFilings?: string;
-  tenK?: string;
   business?: Business;
   foundedYear?: number;
 

@@ -6,6 +6,10 @@
   <a target="_blank" href="{{ stock?.secFilings }}"> SEC Filings </a>
 </div>
 
+<div>
+  {{ earningReport?.year }} - {{ earningReport?.quarter }} Quarter Results:
+</div>
+
 <div *ngIf="annualReportLink">
   <a target="_blank" href="{{ annualReportLink }}"> Annual Report </a>
 </div>
@@ -24,6 +28,17 @@
 
 <div *ngIf="earningReport?.slidesLink">
   <a target="_blank" href="{{ earningReport?.slidesLink }}"> Slides </a>
+</div>
+
+<div>Other links:</div>
+
+<div *ngIf="stock">
+  <a
+    target="_blank"
+    href="{{ 'https://seekingalpha.com/symbol/' + stock.ticker }}"
+  >
+    Seeking Alpha
+  </a>
 </div>
 
 <div *ngIf="stock">

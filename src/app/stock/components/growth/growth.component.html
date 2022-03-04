@@ -17,7 +17,19 @@
     </div>
   </div>
 
-  <div>{{ unicode.NextLine }}</div>
+  <div class="row">
+    <div *ngIf="!hideLabel">Revenue Retention</div>
+    <div class="stats">
+      <span>
+        {{ revenueRetention | siUnit: 2 | percent | undefined }}
+      </span>
+      <span>
+        {{ revenueRetention | siUnit: 2 | percent | undefined }}
+      </span>
+    </div>
+  </div>
+
+  <div class="stats">{{ unicode.NextLine }}</div>
 
   <div class="row">
     <div *ngIf="!hideLabel">Forecast next Q</div>
@@ -37,13 +49,13 @@
     </div>
   </div>
 
-  <div>{{ unicode.NextLine }}</div>
+  <div class="stats">{{ unicode.NextLine }}</div>
 
   <div class="row">
-    <div *ngIf="!hideLabel">User Count</div>
+    <div *ngIf="!hideLabel">Active User</div>
     <div class="stats">
       <span>
-        {{ userCount | siUnit: 2 | undefined }}
+        {{ activeUserCount | siUnit: 2 | undefined }}
       </span>
     </div>
   </div>
@@ -53,6 +65,15 @@
     <div class="stats">
       <span>
         {{ userCountGrowth | siUnit: 2 | percent | undefined }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="!hideLabel">Average Revenue / User</div>
+    <div class="stats">
+      <span>
+        {{ quarterlyRevenue / activeUserCount | siUnit: 2 | undefined }}
       </span>
     </div>
   </div>

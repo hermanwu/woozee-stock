@@ -1,4 +1,5 @@
 import { Note } from 'src/app/shared/data/note.interface';
+import { Composition } from './composition.model';
 
 export interface EarningsReport {
   year: number;
@@ -11,11 +12,11 @@ export interface EarningsReport {
 
   // Growth
   revenue?: number;
-  revenueDetails?: any;
-  userCount?: number;
+  revenueDetails?: Composition[];
+  activeUserCount?: number;
+  revenueRetention?: number;
 
   // Profitablity
-  revenueRetention?: number;
   operatingIncome?: number;
   netIncome?: number;
   salesAndMarketingCost?: number;

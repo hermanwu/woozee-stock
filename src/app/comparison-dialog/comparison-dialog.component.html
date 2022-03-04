@@ -7,7 +7,7 @@
 
     <ng-container [ngSwitch]="dialogData.factType">
       <ng-container *ngSwitchCase="factType.valuation">
-        <app-valuation [stock]="stock"></app-valuation>
+        <app-valuation [stock]="stock" [hideLabel]="i >= 1"></app-valuation>
       </ng-container>
 
       <ng-container *ngSwitchCase="factType.profit">

@@ -1,6 +1,6 @@
 import { aapl } from './aapl.mock';
 import { abnb } from './abnb';
-import { ADBE } from './ADBE';
+import { adbe } from './adbe';
 import { ADSK } from './ADSK';
 import { afrm } from './afrm';
 import { AMC } from './AMC';
@@ -133,7 +133,7 @@ export const foreverOwnedStock = {
 export const ownedStockMap = {
   aapl,
   abnb,
-  ADBE,
+  adbe,
   ADSK,
   afrm,
   AMC,
@@ -261,7 +261,7 @@ export const watchListMap = {
 export const stocksMap = {
   aapl,
   abnb,
-  ADBE,
+  adbe,
   ADSK,
   afrm,
   AMC,

@@ -1,7 +1,8 @@
-export enum BusinessArea {
+export enum MarketType {
   fintech_lending = 'Fintech Lending',
   shared_economy = 'Shared Economy',
   travel = 'Travel Booking',
+  crypto = 'Cryptocurrency',
 
   gaming = 'Gaming',
   datacenter = 'Datacenter',
@@ -14,4 +15,6 @@ export enum BusinessArea {
   itOperatingManagement = 'IT Operating Management',
   customerOperatingManagement = 'Customer Relation Management',
   cybersecurity = 'Cybersecurity',
+
+  customerRelationManagement = 'Customer Relation Management',
 }

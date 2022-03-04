@@ -1,6 +1,13 @@
-<div>
+<div *ngIf="business.markets">
   <span>Business Areas: </span>
-  <span class="badge" *ngFor="let item of business?.areas">{{ item }} </span>
+  <span class="badge" *ngFor="let item of business?.markets"
+    >{{ item.type }}
+  </span>
+</div>
+
+<div *ngIf="business.markets">
+  <span>Market Estimated Size: </span>
+  <span>{{ business?.markets[0]?.size | siUnit: 2 | undefined }}</span>
 </div>
 
 <div>
@@ -9,20 +16,15 @@
 </div>
 
 <div>
-  <span>Users: </span>
-  <span class="badge" *ngFor="let item of business?.users">{{ item }} </span>
+  <div>Users:</div>
+  <div *ngFor="let item of business?.users">- {{ item }}</div>
 </div>
 
 <div>
-  <span>Long Term Strategies: </span>
-  <span class="badge" *ngFor="let item of business?.strategies"
+  <span>Long Term competitiveAdvantages: </span>
+  <span class="badge" *ngFor="let item of business?.competitiveAdvantages"
     >{{ item }}
   </span>
-</div>
-
-<div>
-  <span>Market Estimated Size: </span>
-  <span>{{ business?.marketSize | siUnit: 2 | undefined }}</span>
 </div>
 
 <div *ngIf="business?.overview">

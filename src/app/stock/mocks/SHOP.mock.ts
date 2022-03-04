@@ -1,5 +1,5 @@
-import { BusinessArea } from 'src/app/facts/data/area.enum';
-import { RevenueModel } from 'src/app/facts/data/revenue-model.enum';
+import { MarketType } from 'src/app/facts/data/area.enum';
+import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { Strategy } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -91,13 +91,13 @@ export const shop: StockAnalysis = {
     },
   ],
   business: {
-    areas: [BusinessArea.ecommerceTools],
+    markets: [{ type: MarketType.ecommerceTools }],
     revenues: [
-      RevenueModel.softwareSelling,
-      RevenueModel.b2b,
-      RevenueModel.subscription,
+      { type: RevenueType.softwareSelling },
+      { type: RevenueType.b2b },
+      { type: RevenueType.subscription },
     ],
-    strategies: [
+    competitiveAdvantages: [
       Strategy.platform,
       Strategy.tool,
       Strategy.feature,

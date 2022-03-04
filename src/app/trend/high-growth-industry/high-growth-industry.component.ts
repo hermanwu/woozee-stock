@@ -72,7 +72,7 @@ export class HighGrowthIndustryComponent implements OnInit {
       category: GrowthType.PRODUCTIVITY,
     },
     {
-      ticker: 'ADBE',
+      ticker: 'adbe',
       name: 'Adobe',
       reason: '音影产业人人都知道的软件',
       category: GrowthType.PRODUCTIVITY,
@@ -163,7 +163,7 @@ export class HighGrowthIndustryComponent implements OnInit {
       category: GrowthType.ENTERTAINMENT,
     },
     {
-      ticker: 'U',
+      ticker: 'u',
       name: 'Unity',
       reason: '打造虚拟世界的必备工具',
       category: GrowthType.ENTERTAINMENT,

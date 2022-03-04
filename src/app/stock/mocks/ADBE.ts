@@ -1,10 +1,10 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const ADBE: StockAnalysis = {
+export const adbe: StockAnalysis = {
   logo: '',
-  name: { English: 'Adobe' },
+  name: 'Adobe',
   description: [],
-  ticker: 'ADBE',
+  ticker: 'adbe',
 
   // Earnings Report:
   earnings: {
@@ -13,7 +13,7 @@ export const ADBE: StockAnalysis = {
     2021: {
       2: {
         '10q10k':
-          'https://www.adobe.com/content/dam/cc/en/investor-relations/pdfs/ADBE-10Q-Q221-FINAL.pdf',
+          'https://www.adobe.com/content/dam/cc/en/investor-relations/pdfs/adbe-10Q-Q221-FINAL.pdf',
         presentation: '',
         press: '',
         webcast: '',

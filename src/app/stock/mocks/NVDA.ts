@@ -1,5 +1,5 @@
-import { BusinessArea } from 'src/app/facts/data/area.enum';
-import { RevenueModel } from 'src/app/facts/data/revenue-model.enum';
+import { MarketType } from 'src/app/facts/data/area.enum';
+import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { Strategy } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
@@ -128,18 +128,22 @@ export const nvda: StockAnalysis = {
     },
   ],
   business: {
-    areas: [
-      BusinessArea.datacenter,
-      BusinessArea.gaming,
-      BusinessArea.virtualSpace,
-      BusinessArea.autoRobotics,
+    markets: [
+      { type: MarketType.datacenter },
+      { type: MarketType.gaming },
+      { type: MarketType.virtualSpace },
+      { type: MarketType.autoRobotics },
     ],
     revenues: [
-      RevenueModel.hardwareSelling,
-      RevenueModel.softwareSelling,
-      RevenueModel.b2b,
+      { type: RevenueType.hardwareSelling },
+      { type: RevenueType.softwareSelling },
+      { type: RevenueType.b2b },
     ],
-    strategies: [Strategy.platform, Strategy.tool, Strategy.technology],
+    competitiveAdvantages: [
+      Strategy.platform,
+      Strategy.tool,
+      Strategy.technology,
+    ],
   },
   ticker: 'nvda',
   irAddress: 'https://investor.nvidia.com/home/default.aspx',

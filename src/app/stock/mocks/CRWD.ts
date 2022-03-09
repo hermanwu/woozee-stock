@@ -2,7 +2,7 @@ import { BILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const crwd: StockAnalysis = {
-  marketCap: 37.82 * BILLION,
+  marketCap: 37 * BILLION,
   earningsReports: [
     {
       year: 2021,

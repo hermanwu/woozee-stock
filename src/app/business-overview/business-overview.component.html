@@ -1,33 +1,52 @@
-<div *ngIf="business.markets">
-  <span>Business Areas: </span>
-  <span class="badge" *ngFor="let item of business?.markets"
-    >{{ item.type }}
-  </span>
-</div>
-
-<div *ngIf="business.markets">
-  <span>Market Estimated Size: </span>
-  <span>{{ business?.markets[0]?.size | siUnit: 2 | undefined }}</span>
-</div>
-
-<div>
-  <span>Revenue Sources: </span>
-  <span class="badge" *ngFor="let item of business?.revenues">{{ item }} </span>
-</div>
-
-<div>
-  <div>Users:</div>
-  <div *ngFor="let item of business?.users">- {{ item }}</div>
-</div>
-
-<div>
-  <span>Long Term competitiveAdvantages: </span>
-  <span class="badge" *ngFor="let item of business?.competitiveAdvantages"
-    >{{ item }}
-  </span>
-</div>
-
 <div *ngIf="business?.overview">
-  <div>Overview:</div>
+  <div class="label">Overview</div>
   <div *ngFor="let item of business?.overview">{{ item }}</div>
+</div>
+
+<div *ngIf="business?.missions">
+  <div class="label">Mission</div>
+  <div *ngFor="let item of business?.missions">{{ item }}</div>
+</div>
+
+<div *ngIf="business.markets">
+  <div class="label">Markets - Size - Growth Rate:</div>
+  <div *ngFor="let item of business?.markets">
+    <span class="badge">{{ item.type }}</span> -
+    {{ item.size | siUnit: 2 | undefined }}
+    <span *ngIf="item.growthRate">- {{ item.growthRate | percent }}</span>
+  </div>
+</div>
+
+<div>
+  <div class="label">Users</div>
+  <div *ngFor="let item of business?.users">
+    <span class="badge">{{ item.type }}</span>
+  </div>
+</div>
+
+<div>
+  <div class="label">Revenue Sources</div>
+  <div *ngFor="let item of business?.revenues">
+    <span class="badge">{{ item.type }}</span>
+  </div>
+</div>
+
+<div *ngIf="business.productBenefits">
+  <div class="label">Problems Solved</div>
+  <div *ngFor="let item of business?.productBenefits">
+    <span class="badge">{{ item.type }}</span>
+    <span *ngIf="item.note"> - {{ item.note }}</span>
+  </div>
+</div>
+
+<div>
+  <div class="label">Competitive Advantages</div>
+  <div *ngFor="let item of business?.competitiveAdvantages">
+    <span class="badge">{{ item.type }}</span>
+  </div>
+</div>
+
+<div>
+  <div class="label">Growth Strategies</div>
+  <div *ngFor="let item of business?.growthStrategy">- {{ item }}</div>
 </div>

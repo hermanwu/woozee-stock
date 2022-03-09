@@ -2,7 +2,7 @@ import { Equity } from 'src/app/stock/pages/stock-list-page/stock-list-page.comp
 
 export const citi: Equity[] = [
   {
-    ticker: 'BABA',
+    ticker: 'baba',
     shares: 95,
   },
   {

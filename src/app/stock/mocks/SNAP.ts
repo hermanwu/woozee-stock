@@ -1,5 +1,6 @@
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { Source } from 'src/app/shared/data/source.enum';
+import { BILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const snap: StockAnalysis = {
@@ -22,7 +23,7 @@ export const snap: StockAnalysis = {
   ticker: 'snap',
   lastUpdated: new Date('2021-08-22'),
   irAddress: 'https://investor.snap.com/overview/default.aspx',
-  marketCap: 38.07 * 1e9,
+  marketCap: 54 * BILLION,
 
   // Demand
   painPoint: [''],

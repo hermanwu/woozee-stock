@@ -3,7 +3,6 @@
     {{ stockAnalysis.shortName || stockAnalysis.name }}
     ({{ stockAnalysis?.ticker | uppercase }})
   </h1>
-
   <button
     class="buttons"
     mat-icon-button
@@ -17,7 +16,10 @@
 
 <div *ngIf="showDetails" class="details-panel">
   <div class="padding-1rem" *ngIf="stockAnalysis.predications">
-    Stock Price Forecast: {{ stockAnalysis.predications[0]?.price }}
+    <app-card>
+      <div>My Forecast</div>
+      Price: {{ stockAnalysis.predications[0]?.price }}
+    </app-card>
   </div>
 
   <div class="padding-1rem">
@@ -26,7 +28,7 @@
     </app-card>
   </div>
 
-  <div class="padding-1rem">
+  <div class="padding-1rem" *ngIf="stockAnalysis.business">
     <app-fact [factType]="factType.business">
       <app-business-overview
         [business]="stockAnalysis.business"

@@ -1,37 +1,45 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const Z: StockAnalysis = {
+export const z: StockAnalysis = {
+  marketCap: 9 * BILLION,
   logo: '',
   name: 'Zillow',
-  ticker: 'Z',
+  ticker: 'z',
   ceoQuote: [],
-  advantage: [],
-  marketCap: 25.33 * 1e9,
-  // POTENTIALS:
 
-  // Demand:
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 3882.31 * MILLION,
+      operatingIncome: -195.36 * MILLION,
+    },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 1736.64 * MILLION,
+      operatingIncome: -296.41 * MILLION,
+    },
 
-  // Earnings Report:
-  earnings: {
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        marketCap: 24e9,
-        revenue: 1309980e3,
-        operatingIncome: 61725e3,
-        '10q10k':
-          'https://abc.xyz/investor/static/pdf/20210728_alphabet_10Q.pdf?cache=28df405',
-        transcript:
-          'https://abc.xyz/investor/static/pdf/2021_Q2_Earnings_Transcript.pdf?cache=1fcb27b',
-        record: 'https://www.youtube.com/watch?v=4ku-6h3vuNw',
-      },
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 1309.98 * MILLION,
+      operatingIncome: 60.79 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 768352e3,
-        operatingIncome: -62685e3,
-        unit: 1e3,
-      },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 1218.44 * MILLION,
+      operatingIncome: 86.19 * MILLION,
     },
-  },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 788.95 * MILLION,
+      operatingIncome: 84.41 * MILLION,
+    },
+  ],
 };

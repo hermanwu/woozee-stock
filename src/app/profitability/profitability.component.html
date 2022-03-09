@@ -1,18 +1,9 @@
 <div class="container">
   <div class="row">
-    <div *ngIf="!hideLabel">Operating Income</div>
+    <div *ngIf="!hideLabel">Operating Income (OI)</div>
     <div class="stats">
       <span>
         {{ operatingIncome | siUnit: 2 | undefined }}
-      </span>
-    </div>
-  </div>
-
-  <div class="row">
-    <div *ngIf="!hideLabel">Operating Income Improvement Q/Q</div>
-    <div class="stats">
-      <span>
-        {{ operatingIncomeImprovement | siUnit: 2 | percent | undefined }}
       </span>
     </div>
   </div>
@@ -33,18 +24,50 @@
     </div>
   </div>
 
-  <div class="stats">{{ unicode.NextLine }}</div>
-
   <div class="row">
-    <div *ngIf="!hideLabel">Sales and Marketing Cost / Revenue</div>
+    <div *ngIf="!hideLabel">OI growth Q/Q</div>
     <div class="stats">
-      <span *ngIf="previousSalesAndMarketingPercent">
-        {{ previousSalesAndMarketingPercent | siUnit: 2 | percent | undefined }}
-        ->
-      </span>
       <span>
-        {{ salesAndMarketing / revenue | siUnit: 2 | percent | undefined }}
+        {{ operatingIncomeImprovement | siUnit: 2 | percent | undefined }}
       </span>
     </div>
   </div>
+
+  <ng-container
+    *ngIf="previousSalesAndMarketingPercent || previousSellingGaPercent"
+  >
+    <div class="stats">{{ unicode.NextLine }}</div>
+  </ng-container>
+
+  <ng-container *ngIf="previousSalesAndMarketingPercent">
+    <div class="row">
+      <div *ngIf="!hideLabel">S&M Cost / Revenue</div>
+      <div class="stats">
+        <span *ngIf="previousSalesAndMarketingPercent">
+          {{
+            previousSalesAndMarketingPercent | siUnit: 2 | percent | undefined
+          }}
+          ->
+        </span>
+        <span>
+          {{ salesAndMarketing / revenue | siUnit: 2 | percent | undefined }}
+        </span>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="previousSellingGaPercent">
+    <div class="row">
+      <div *ngIf="!hideLabel">SG&A Cost / Revenue</div>
+      <div class="stats">
+        <span *ngIf="previousSellingGaPercent">
+          {{ previousSellingGaPercent | siUnit: 2 | percent | undefined }}
+          ->
+        </span>
+        <span>
+          {{ sellingGa / revenue | siUnit: 2 | percent | undefined }}
+        </span>
+      </div>
+    </div>
+  </ng-container>
 </div>

@@ -1,16 +1,25 @@
+import { BILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const etsy: StockAnalysis = {
   logo: '',
-  name: { English: 'etsy' },
+  name: 'Etsy',
   description: [],
   ticker: 'etsy',
   lastUpdated: new Date('2021-08-23'),
   irAddress: 'https://investors.etsy.com/home/default.aspx',
-  marketCap: 16.76 * 1e9,
+  marketCap: 18 * BILLION,
+
+  competitors: ['amzn'],
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 717.14 * 1e6,
+      operatingIncome: 142.25 * 1e6,
+    },
     {
       year: 2021,
       quarter: 3,
@@ -34,12 +43,6 @@ export const etsy: StockAnalysis = {
       quarter: 4,
       revenue: 617.36 * 1e6,
       operatingIncome: 161.34 * 1e6,
-    },
-    {
-      year: 2020,
-      quarter: 3,
-      revenue: 451.48 * 1e6,
-      operatingIncome: 101.31 * 1e6,
     },
   ],
 };

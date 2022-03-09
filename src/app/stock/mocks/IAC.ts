@@ -1,34 +1,52 @@
-import { Rating } from '../models/rating.model';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const IAC: StockAnalysis = {
+export const iac: StockAnalysis = {
   logo: '',
-  name: { English: 'IAC/INTERACTIVECORP' },
+  name: 'IAC/INTERACTIVECORP',
   description: [],
-  ticker: 'IAC',
-  myRating: Rating.Buy,
+  ticker: 'iac',
+  shortName: 'IAC',
+  irAddress: 'https://ir.iac.com/',
+  marketCap: 9.62 * BILLION,
 
   // Earnings Report:
-  earnings: {
-    website: 'https://ir.iac.com/',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://ir.iac.com/static-files/acb86483-2c55-4874-b171-8a04d5d5d7a7',
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 11.65 * 1e9,
-        revenue: 829.547 * 1e6,
-        operatingIncome: -28.42 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 1159.44 * MILLION,
+      operatingIncome: -66.25 * MILLION,
+      sellingGeneraAdministrative: 636.82 * MILLION,
+      notes: [],
     },
-    2020: {
-      2: {
-        revenue: 659.027 * 1e6,
-        operatingIncome: -97.445 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 924.07 * MILLION,
+      operatingIncome: -32.07 * MILLION,
+      sellingGeneraAdministrative: 531.49 * MILLION,
     },
-  },
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 829.55 * MILLION,
+      operatingIncome: -29.53 * MILLION,
+      sellingGeneraAdministrative: 515.75 * MILLION,
+    },
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 786.57 * MILLION,
+      operatingIncome: -7.23 * MILLION,
+      sellingGeneraAdministrative: 475.7 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 765.04 * MILLION,
+      operatingIncome: -81.1 * MILLION,
+      sellingGeneraAdministrative: 477.95 * MILLION,
+    },
+  ],
 };

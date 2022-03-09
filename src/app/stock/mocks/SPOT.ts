@@ -1,33 +1,53 @@
-import { euroToDollar } from 'src/app/shared/currency';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const SPOT: StockAnalysis = {
+export const spot: StockAnalysis = {
+  marketCap: 26 * BILLION,
   logo: '',
-  name: { English: 'Spotify Technology S.A.' },
+  name: 'Spotify Technology S.A.',
   description: [],
-  ticker: 'SPOT',
+  ticker: 'spot',
+  shortName: 'Spotify',
+  irAddress: 'https://investors.spotify.com/home/default.aspx',
 
   // Earnings Report:
-  earnings: {
-    website: 'https://investors.spotify.com/home/default.aspx',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://s22.q4cdn.com/540910603/files/doc_financials/2021/q2/0473c6fe-728a-4bb5-a7c2-36556a5bbf09.pdf',
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 47.37 * 1e9,
-        revenue: 2331 * 1e6 * euroToDollar,
-        operatingIncome: 8 * 1e6 * euroToDollar,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 2689.0 * MILLION,
+      operatingIncome: -7.0 * MILLION,
+      sellingGeneraAdministrative: 463.0 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 1889 * 1e6 * euroToDollar,
-        operatingIncome: -455 * 1e6 * euroToDollar,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 2501.0 * MILLION,
+      operatingIncome: 75.0 * MILLION,
+      sellingGeneraAdministrative: 385.0 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 2331.0 * MILLION,
+      operatingIncome: 12.0 * MILLION,
+      sellingGeneraAdministrative: 396.0 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 2147.0 * MILLION,
+      operatingIncome: 14.0 * MILLION,
+      sellingGeneraAdministrative: 338.0 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 2168.0 * MILLION,
+      operatingIncome: -69.0 * MILLION,
+      sellingGeneraAdministrative: 410.0 * MILLION,
+    },
+  ],
 };

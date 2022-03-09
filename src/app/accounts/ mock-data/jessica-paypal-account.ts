@@ -2,7 +2,7 @@ import { Equity } from 'src/app/stock/pages/stock-list-page/stock-list-page.comp
 
 export const jessicaPaypal: Equity[] = [
   {
-    ticker: 'PYPL',
+    ticker: 'pypl',
     shares: 1000,
   },
 ];

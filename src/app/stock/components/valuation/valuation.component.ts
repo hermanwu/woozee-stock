@@ -15,6 +15,7 @@ export class ValuationComponent implements OnInit, OnChanges {
   readonly unicode = UnicodeCharacters;
   earningReports: EarningsReport[];
   trailing12MonthsSales: number;
+  trailing12MonthsOI: number;
 
   constructor() {}
 
@@ -29,6 +30,10 @@ export class ValuationComponent implements OnInit, OnChanges {
       this.trailing12MonthsSales = this.earningReports
         .slice(0, 4)
         .reduce((previous, current) => previous + current.revenue, 0);
+
+      this.trailing12MonthsOI = this.earningReports
+        .slice(0, 4)
+        .reduce((previous, current) => previous + current.operatingIncome, 0);
     }
   }
 }

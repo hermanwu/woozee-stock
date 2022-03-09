@@ -6,7 +6,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const coin: StockAnalysis = {
-  marketCap: 37.17 * BILLION,
+  marketCap: 35 * BILLION,
 
   risks: [
     {

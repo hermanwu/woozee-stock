@@ -1,11 +1,11 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
 import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
-import { Strategy } from 'src/app/facts/data/stratgies.enum';
+import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const snow: StockAnalysis = {
-  marketCap: 81.2 * BILLION,
+  marketCap: 58.07 * BILLION,
   business: {
     overview: [
       'Enabling customers to consolidate data into a single source of truth to drive meaningful business insights, build data-driven applications, and share data',
@@ -24,13 +24,10 @@ export const snow: StockAnalysis = {
       { type: RevenueType.consumptionBased },
     ],
     competitiveAdvantages: [
-      Strategy.platform,
-      Strategy.tool,
-      Strategy.feature,
-      Strategy.networkEffect,
-    ],
-    competitions: [
-      'public cloud providers that generally compete in all of our markets, including Amazon Web Services (AWS), Microsoft Azure(Azure), and Google Cloud Platform (GCP);',
+      { type: StrategyType.platform },
+      { type: StrategyType.tool },
+      { type: StrategyType.feature },
+      { type: StrategyType.networkEffect },
     ],
   },
   earningsReports: [

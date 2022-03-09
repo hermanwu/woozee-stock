@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ComparisonDialogComponent } from './comparison-dialog.component';
 
 describe('ComparisonDialogComponent', () => {
@@ -8,9 +7,8 @@ describe('ComparisonDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ComparisonDialogComponent ]
-    })
-    .compileComponents();
+      declarations: [ComparisonDialogComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

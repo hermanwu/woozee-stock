@@ -1,10 +1,20 @@
 import { news } from 'src/app/media/news/news.const';
+import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const fb: StockAnalysis = {
+  marketCap: 544.55 * BILLION,
+  predications: [
+    {
+      price: 140,
+      days: 120,
+      start: new Date('2022-3-7'),
+    },
+  ],
   logo: '',
-  name: 'Facebook',
+  name: 'Meta',
   description: [],
   ticker: 'fb',
   lastUpdated: new Date('2021-08-23'),
@@ -14,6 +24,7 @@ export const fb: StockAnalysis = {
     {
       name: 'Financial Health',
       level: RiskLevel.low,
+      type: FactType.profit,
       notes: [
         {
           content: 'Earning report: No debt, health cash flow',
@@ -110,26 +121,41 @@ export const fb: StockAnalysis = {
     },
   ],
   // Earnings Report:
-  earnings: {
-    website: 'https://investor.fb.com/home/default.aspx',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001326801/dcf20641-cba6-4b5c-b60e-4b40b52811a4.pdf',
-        presentation: '',
-        press: '',
-        webcast: '',
-        marketCap: 1.074 * 1e12,
-        revenue: 29077 * 1e6,
-        operatingIncome: 12367 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 33671.0 * MILLION,
+      operatingIncome: 12585 * MILLION,
+      isAnnual: true,
     },
-    2020: {
-      2: {
-        revenue: 18687 * 1e6,
-        operatingIncome: 5963 * 1e6,
-      },
+
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 29010.0 * MILLION,
+      operatingIncome: 21031 * MILLION,
+      netIncome: 10423 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 29077.0 * MILLION,
+      operatingIncome: 12367 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 26171.0 * MILLION,
+      operatingIncome: 11378 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 28072.0 * MILLION,
+      operatingIncome: 12775 * MILLION,
+    },
+  ],
 };

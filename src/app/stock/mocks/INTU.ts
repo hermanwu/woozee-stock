@@ -1,35 +1,47 @@
-import { Rating } from '../models/rating.model';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const INTU: StockAnalysis = {
+export const intu: StockAnalysis = {
+  marketCap: 133.69 * BILLION,
   logo: '',
-  name: { English: 'Intuit' },
+  name: 'Intuit',
   description: [],
-  ticker: 'INTU',
-  myRating: Rating.Buy,
+  ticker: 'intu',
+  shortName: 'Intuit',
+  irAddress: 'https://www.investors.intuit.com',
 
-  // Earnings Report:
-  earnings: {
-    website: 'https://www.investors.intuit.com',
-    latestReportQuarter: ['2021', '1'],
-    2021: {
-      1: {
-        '10q10k':
-          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0000896878/0a2bbb52-8b13-46fc-a681-63fae6bdf982.pdf',
-        presentation: '',
-        press: '',
-        webcast: '',
-        marketCap: 151.31 * 1e9,
-        revenue: 4173 * 1e6,
-        operatingIncome: 1914 * 1e6,
-        date: new Date('2021-04-01'),
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 2673.0 * MILLION,
+      operatingIncome: 56.0 * MILLION,
     },
-    2020: {
-      1: {
-        revenue: 3002 * 1e6,
-        operatingIncome: 1413 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 2007.0 * MILLION,
+      operatingIncome: 195.0 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 2561.0 * MILLION,
+      operatingIncome: 402.0 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 4173.0 * MILLION,
+      operatingIncome: 1914.0 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 1576 * MILLION,
+      operatingIncome: -25 * MILLION,
+    },
+  ],
 };

@@ -1,10 +1,10 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const PINS: StockAnalysis = {
+export const pins: StockAnalysis = {
   logo: '',
-  name: { English: 'Pinterest' },
+  name: 'Pinterest',
   description: [],
-  ticker: 'PINS',
+  ticker: 'pins',
 
   // Earnings Report:
   earnings: {

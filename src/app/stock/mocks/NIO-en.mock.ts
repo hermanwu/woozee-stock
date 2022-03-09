@@ -1,7 +1,6 @@
 export const NIO = {
   images: {
-    logo:
-      'https://lh3.googleusercontent.com/pw/ACtC-3dEyysKrE1fUvRVtEaFZvJPhvsXli4kawy6Pm_gg-KL5fDqPt3oCs4OepM2OFoD1P1awbxwv2dw4lI_R_KXOwQm2HmJmABVMNm1ymbNwhaOtAdB9OCC7qzhUc2LzaK0iVjwG-HZMKWHSwGluSmB84raUg=w678-h336-no?authuser=0',
+    logo: 'https://lh3.googleusercontent.com/pw/ACtC-3dEyysKrE1fUvRVtEaFZvJPhvsXli4kawy6Pm_gg-KL5fDqPt3oCs4OepM2OFoD1P1awbxwv2dw4lI_R_KXOwQm2HmJmABVMNm1ymbNwhaOtAdB9OCC7qzhUc2LzaK0iVjwG-HZMKWHSwGluSmB84raUg=w678-h336-no?authuser=0',
   },
   name: {
     English: 'NIO',
@@ -20,7 +19,7 @@ export const NIO = {
     'Power Express, a 24-hour on-demand pick-up and drop-off charging service.',
     'Further, it provides value-added services',
   ],
-  strategy: {
+  StrategyType: {
     painPoint: {
       做国内的特斯拉: '',
     },

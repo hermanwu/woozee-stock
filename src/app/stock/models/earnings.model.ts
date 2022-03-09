@@ -9,6 +9,7 @@ export interface EarningsReport {
   reportLink?: string;
   pressReleaseLink?: string;
   slidesLink?: string;
+  transcript?: string;
 
   // Growth
   revenue?: number;
@@ -20,6 +21,7 @@ export interface EarningsReport {
   operatingIncome?: number;
   netIncome?: number;
   salesAndMarketingCost?: number;
+  sellingGeneraAdministrative?: number;
 
   // Calculated results:
   operatingMargin?: number;

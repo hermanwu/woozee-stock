@@ -1,32 +1,46 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const DKNG: StockAnalysis = {
+export const dkng: StockAnalysis = {
+  marketCap: 14.62 * BILLION,
   logo: '',
-  name: { English: 'DRAFTKINGS INC' },
+  name: 'DRAFTKINGS INC',
   description: [],
-  ticker: 'DKNG',
+  ticker: 'dkng',
+  shortName: 'DraftKings',
 
-  // Earnings Report:
-  earnings: {
-    website: 'https://draftkings.gcs-web.com/',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://draftkings.gcs-web.com/static-files/96044254-8d7c-4d5d-b98e-256bbdc10684',
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 25.57 * 1e9,
-        revenue: 297.605 * 1e6,
-        operatingIncome: -321.554 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 473.32 * MILLION,
+      operatingIncome: -368.76 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 70.931 * 1e6,
-        operatingIncome: -160.444 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 212.82 * MILLION,
+      operatingIncome: -546.52 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 297.61 * MILLION,
+      operatingIncome: -321.55 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 312.28 * MILLION,
+      operatingIncome: -324.79 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 322.22 * MILLION,
+      operatingIncome: -268.34 * MILLION,
+    },
+  ],
 };

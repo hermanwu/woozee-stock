@@ -1,19 +1,22 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
 import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
-import { Strategy } from 'src/app/facts/data/stratgies.enum';
+import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { BILLION } from 'src/app/shared/numbers/number.model';
+import { PredicationAction } from '../models/predication.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const nvda: StockAnalysis = {
-  marketCap: 612 * 1e9,
+  marketCap: 532 * BILLION,
   competitors: ['amd', 'amzn', 'tsla'],
 
   predications: [
     {
-      price: 200,
+      price: 150,
       days: 90,
       start: new Date('2022-01-18'),
+      action: PredicationAction.Sell,
     },
   ],
 
@@ -140,9 +143,9 @@ export const nvda: StockAnalysis = {
       { type: RevenueType.b2b },
     ],
     competitiveAdvantages: [
-      Strategy.platform,
-      Strategy.tool,
-      Strategy.technology,
+      { type: StrategyType.platform },
+      { type: StrategyType.tool },
+      { type: StrategyType.technology },
     ],
   },
   ticker: 'nvda',

@@ -2,9 +2,9 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const roku: StockAnalysis = {
   logo: '',
-  name: { English: 'ROKU, INC.' },
+  name: { English: 'roku, INC.' },
   description: [],
-  ticker: 'ROKU',
+  ticker: 'roku',
 
   // Earnings Report:
   earnings: {

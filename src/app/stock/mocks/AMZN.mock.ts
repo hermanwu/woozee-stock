@@ -10,6 +10,7 @@ export const amzn: StockAnalysis = {
   logo: 'http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
   marketCap: 1.61 * 1e12,
+
   risks: [
     {
       name: 'Financial Health',
@@ -232,6 +233,7 @@ export const amzn: StockAnalysis = {
       operatingIncome: 6873 * 1e6,
     },
   ],
+
   products: [
     {
       name: 'Overview',

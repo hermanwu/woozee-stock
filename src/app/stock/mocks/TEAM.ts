@@ -1,11 +1,14 @@
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const team: StockAnalysis = {
+  marketCap: 64 * BILLION,
   logo: '',
   name: 'Atlassian Corporation Plc',
   description: [],
   ticker: 'team',
+  shortName: 'Atlassian',
 
   risks: [
     {
@@ -32,27 +35,38 @@ export const team: StockAnalysis = {
     },
   ],
 
-  // Earnings Report:
-  earnings: {
-    website: 'https://investors.atlassian.com/investors-overview/default.aspx',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://s2.q4cdn.com/141359120/files/doc_financials/2021/q4/team-Q4-2021-Earnings-Release.pdf',
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 96.15 * 1e9,
-        revenue: 559.539 * 1e6,
-        operatingIncome: -7.526 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 688.53 * MILLION,
+      operatingIncome: -66.72 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 430.476 * 1e6,
-        operatingIncome: -3.28 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 614.02 * MILLION,
+      operatingIncome: 39.65 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 559.54 * MILLION,
+      operatingIncome: -7.53 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 568.73 * MILLION,
+      operatingIncome: 69.52 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 501.36 * MILLION,
+      operatingIncome: 27.71 * MILLION,
+    },
+  ],
 };

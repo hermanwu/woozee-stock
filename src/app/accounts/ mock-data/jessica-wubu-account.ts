@@ -38,7 +38,7 @@ export const webull: Equity[] = [
     shares: 2,
   },
   {
-    ticker: 'DIS',
+    ticker: 'dis',
     shares: 40,
   },
   {

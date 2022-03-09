@@ -4,9 +4,9 @@ export enum FactType {
   user = 'Customer Count',
   profit = 'Profitability',
   valuation = 'Valuation',
-  management = 'management',
-  sentiment = 'sentiment',
-  technical = 'technical',
+  management = 'Management',
+  sentiment = 'Sentiment',
+  technical = 'Technical',
   moat = 'Business Model',
   macro = 'Macro Market',
 }

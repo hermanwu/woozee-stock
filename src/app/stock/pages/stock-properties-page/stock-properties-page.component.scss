@@ -1,9 +1,8 @@
 .title-display {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  display: flex;
 
   .buttons {
-    justify-self: flex-end;
+    margin-left: auto;
   }
 }
 

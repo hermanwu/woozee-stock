@@ -24,7 +24,7 @@ import { UnicodeCharacters } from '../../data/enum/unicode-characters.enum';
 })
 export class UndefinedPipe implements PipeTransform {
   /**
-   * Transform null and undefined values to '\u2014' (an EM DASH); otherwise
+   * Transform null and undefined values to '\u2014' (an EM dash); otherwise
    * return the original value
    *
    * @param value Transform target

@@ -1,32 +1,54 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const NET: StockAnalysis = {
+export const net: StockAnalysis = {
+  predications: [
+    {
+      price: 30,
+      days: 60,
+      start: new Date('2022-3-7'),
+    },
+  ],
+  marketCap: 33.7 * BILLION,
   logo: '',
-  name: { English: 'Cloudflare, Inc.' },
+  name: 'Cloudflare, Inc.',
   description: [],
-  ticker: 'NET',
+  ticker: 'net',
+  irAddress: 'https://www.cloudflare.net/home/default.aspx',
+  shortName: 'Cloudflare',
 
-  // Earnings Report:
-  earnings: {
-    website: 'https://www.cloudflare.net/home/default.aspx',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001477333/3fdedeee-8816-4eac-a7aa-9d0e45b5290d.pdf',
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 40.05 * 1e9,
-        revenue: 152.428 * 1e6,
-        operatingIncome: -28.872 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 193.6 * MILLION,
+      operatingIncome: -41.06 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 99.721 * 1e6,
-        operatingIncome: -24.704 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 172.35 * MILLION,
+      operatingIncome: -98.73 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 152.43 * MILLION,
+      operatingIncome: -28.87 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 138.06 * MILLION,
+      operatingIncome: -31.25 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 125.93 * MILLION,
+      operatingIncome: -24.74 * MILLION,
+    },
+  ],
 };

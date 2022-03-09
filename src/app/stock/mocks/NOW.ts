@@ -1,38 +1,53 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const NOW: StockAnalysis = {
+export const now: StockAnalysis = {
+  marketCap: 104 * BILLION,
   logo: '',
-  name: { English: 'ServiceNow' },
+  name: 'ServiceNow',
   description: [],
-  ticker: 'NOW',
+  ticker: 'now',
 
   // Earnings Report:
-  earnings: {
-    website: 'https://www.servicenow.com/company/investor-relations.html',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://servicenow.gcs-web.com/static-files/4aeb11bc-1575-4bbf-84b2-21bbe5bd0d42',
-        presentation:
-          'https://www.servicenow.com/content/dam/servicenow/other-documents/investor-relations/investor-presentations/servicenow-q2-2021-investor-presentation.pdf',
-        press: null,
-        webcast: null,
-        marketCap: 125.28 * 1e9,
-        revenue: 1409 * 1e6,
-        operatingIncome: 51 * 1e6,
-      },
-    },
-    2020: {
-      2: {
-        revenue: 1071 * 1e6,
-        operatingIncome: 63 * 1e6,
-      },
-    },
-  },
+
   risks: [
     {
       name: 'PE is high (482)',
+    },
+  ],
+
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 1614.0 * MILLION,
+      operatingIncome: 35.0 * MILLION,
+    },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 1512 * MILLION,
+      operatingIncome: 74.0 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 1409.0 * MILLION,
+      operatingIncome: 51.0 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 1360.0 * MILLION,
+      operatingIncome: 97.0 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 1250.33 * MILLION,
+      operatingIncome: 12.97 * MILLION,
     },
   ],
 };

@@ -1,34 +1,56 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { Rating } from '../models/rating.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const TDOC: StockAnalysis = {
+export const tdoc: StockAnalysis = {
+  marketCap: 10.71 * BILLION,
+  predications: [
+    {
+      price: 90,
+      start: new Date('2022-3-7'),
+      days: 120,
+    },
+  ],
   logo: '',
-  name: { English: 'Teladoc Health' },
+  name: 'Teladoc Health',
   description: [],
-  ticker: 'TDOC',
+  ticker: 'tdoc',
   myRating: Rating.Buy,
+  shortName: 'Teladoc',
+  irAddress: 'https://ir.teladochealth.com/investors/default.aspx',
 
-  // Earnings Report:
-  earnings: {
-    website: 'https://ir.teladochealth.com/investors/default.aspx',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://s21.q4cdn.com/672268105/files/doc_financials/2021/q2/TDOC-2Q-21-10-Q.pdf',
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 22.75 * 1e9,
-        revenue: 503.139 * 1e6,
-        operatingIncome: -78.948 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 554.24 * MILLION,
+      operatingIncome: -41.45 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 241.03 * 1e6,
-        operatingIncome: -7.179 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 521.66 * MILLION,
+      operatingIncome: -61.43 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 503.14 * MILLION,
+      operatingIncome: -110.37 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 453.68 * MILLION,
+      operatingIncome: -96.14 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 383.32 * MILLION,
+      operatingIncome: -458.61 * MILLION,
+    },
+  ],
 };

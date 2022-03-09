@@ -44,6 +44,7 @@ export class StockListPageComponent implements OnInit {
   equitySummaryMap = this.generateEquitySummaryMap(this.equities);
   dataSource = new MatTableDataSource<any>();
   watchList: any[];
+  stocks = Object.values(stocksMap);
 
   constructor() {}
 

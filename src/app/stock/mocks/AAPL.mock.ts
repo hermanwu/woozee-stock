@@ -1,44 +1,23 @@
+import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
+import { capMock } from './market-cap.mock';
 
 export const aapl: StockAnalysis = {
+  marketCap: capMock.aapl,
   name: 'Apple',
   description: [],
   trends: [],
   logo: '',
   ticker: 'aapl',
   ceoQuote: [],
-  advantage: [],
   irAddress: 'https://investor.apple.com/investor-relations/default.aspx',
-  // POTENTIALS:
-
-  // Demand:
-
-  // Earnings Report:
-  earnings: {
-    website: 'https://investor.apple.com/investor-relations/default.aspx',
-    latestReportQuarter: ['2021', '3'],
-    2021: {
-      3: {
-        '10q10k':
-          'https://s2.q4cdn.com/470004039/files/doc_financials/2021/q3/_10-Q-Q3-2021-(As-Filed).pdf',
-        marketCap: 2.46 * 1e12,
-        revenue: 81434e6,
-        operatingIncome: 24126e6,
-      },
-    },
-    2020: {
-      3: {
-        revenue: 59685e6,
-        operatingIncome: 13091e6,
-      },
-    },
-  },
-
   risks: [
     {
       name: 'iPad sales decreases',
       level: RiskLevel.low,
+      type: FactType.growth,
       notes: [
         {
           content:
@@ -56,6 +35,7 @@ export const aapl: StockAnalysis = {
     {
       name: 'Supply chain constraint',
       level: RiskLevel.low,
+      type: FactType.business,
       notes: [
         {
           content:
@@ -69,6 +49,7 @@ export const aapl: StockAnalysis = {
     {
       name: 'High valuation with slow down revenue growth',
       level: RiskLevel.medium,
+      type: FactType.valuation,
       notes: [
         {
           content: 'PEG ratio: 3.35',
@@ -77,6 +58,46 @@ export const aapl: StockAnalysis = {
           content: 'Microsoft: 2.53, Google: 0.65, Amazon: 1.65',
         },
       ],
+    },
+  ],
+
+  // Earnings Report:
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 123945 * MILLION,
+      operatingIncome: 41488 * MILLION,
+    },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 83360 * MILLION,
+      operatingIncome: 24126 * MILLION,
+    },
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 81434 * MILLION,
+      operatingIncome: 24126 * MILLION,
+    },
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 89584 * MILLION,
+      operatingIncome: 27503 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 111439 * MILLION,
+      operatingIncome: 33534 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 3,
+      revenue: 64698 * MILLION,
+      operatingIncome: 14775 * MILLION,
     },
   ],
 };

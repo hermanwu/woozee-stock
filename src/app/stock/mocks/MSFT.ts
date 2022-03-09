@@ -1,12 +1,14 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
+import { capMock } from './market-cap.mock';
 
 export const msft: StockAnalysis = {
+  marketCap: capMock.msft,
   logo: '',
-  name: { English: 'MICROSOFT CORPORATION' },
+  name: 'MICROSOFT CORPORATION',
   description: [],
   ticker: 'msft',
   irAddress: 'https://www.microsoft.com/en-us/investor',
-  marketCap: 2.18 * 1e12,
+  shortName: 'Microsoft',
   earningsReports: [
     {
       year: 2021,
@@ -66,7 +68,6 @@ export const msft: StockAnalysis = {
       },
     },
   },
-
   risks: [
     {
       name: 'Cloud services decelerate',

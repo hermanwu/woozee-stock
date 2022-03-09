@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { foreverOwnStocks } from './forever-own-stocks.content';
+import { foreverOwnStocks } from './forever-own-stocks.model';
 
 @Component({
   selector: 'app-forever-own-stocks-panel',

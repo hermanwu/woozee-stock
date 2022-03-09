@@ -1,4 +1,4 @@
-export enum Strategy {
+export enum StrategyType {
   platform = 'Universal Platform',
   tool = 'Standard Tool',
   ecoSystem = 'Ecosystem',
@@ -6,4 +6,8 @@ export enum Strategy {
   feature = 'More Features',
   userData = 'User Data',
   networkEffect = 'Network Effect',
+}
+
+export interface Strategy {
+  type: StrategyType;
 }

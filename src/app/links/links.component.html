@@ -10,15 +10,17 @@
   {{ earningReport?.year }} - {{ earningReport?.quarter }} Quarter Results:
 </div>
 
-<div *ngIf="annualReportLink">
+<div *ngIf="annualReportLink; else quarterReport">
   <a target="_blank" href="{{ annualReportLink }}"> Annual Report </a>
 </div>
 
-<div *ngIf="earningReport?.reportLink">
-  <a target="_blank" href="{{ earningReport?.reportLink }}">
-    Earnings Report
-  </a>
-</div>
+<ng-template #quarterReport>
+  <div *ngIf="earningReport?.reportLink">
+    <a target="_blank" href="{{ earningReport?.reportLink }}">
+      Earnings Report
+    </a>
+  </div>
+</ng-template>
 
 <div *ngIf="earningReport?.pressReleaseLink">
   <a target="_blank" href="{{ earningReport?.pressReleaseLink }}">

@@ -1,14 +1,23 @@
+import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { BILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
+import { capMock } from './market-cap.mock';
 
 export const tsla: StockAnalysis = {
   logo: 'https://www.carlogos.org/car-logos/tesla-logo-2200x2800.png',
   name: 'Tesla',
   ticker: 'TSLA',
   irAddress: 'https://ir.tesla.com/',
-  marketCap: 905 * 1e9,
+  marketCap: capMock.tsla,
 
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 1,
+      revenue: 10.389 * 1.5 * BILLION,
+      isForecast: true,
+    },
     {
       year: 2021,
       quarter: 4,
@@ -52,24 +61,9 @@ export const tsla: StockAnalysis = {
   ],
   risks: [
     {
-      name: 'Financial Health',
-      level: RiskLevel.noRisk,
-      notes: [
-        {
-          content: 'Has more cash than its total debt.',
-        },
-        {
-          content:
-            'Debt to equity ratio has reduced from 137.7% to 21.6% over the past 5 years.',
-        },
-        {
-          content: 'Debt is well covered by operating cash flow (145.3%).',
-        },
-      ],
-    },
-    {
       name: 'Value',
       level: RiskLevel.medium,
+      type: FactType.valuation,
       notes: [
         {
           content:
@@ -83,6 +77,7 @@ export const tsla: StockAnalysis = {
     {
       name: 'Company Growth',
       level: RiskLevel.low,
+      type: FactType.growth,
       notes: [
         {
           content:
@@ -101,76 +96,6 @@ export const tsla: StockAnalysis = {
           content: 'Solar panel related sales decreases (-1%).',
         },
       ],
-    },
-    {
-      name: 'Management',
-      level: RiskLevel.low,
-      notes: [
-        {
-          content: "Elon Musk's health and focus",
-        },
-        {
-          content: 'Overpromise',
-          notes: [
-            { content: 'However, he would achieve the goal eventually.' },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'Investors Sentiment',
-      level: RiskLevel.low,
-      notes: [
-        {
-          content:
-            'Elon musk has many fans. General public owns 36.1% of the stocks (GM 12.8%)',
-        },
-        {
-          content:
-            'Institution do not like the factor Tesla will not be focusing on auto production in 2022.',
-          notes: [
-            {
-              content:
-                'Elon was talking mainly about FSD and robot during earning call',
-            },
-          ],
-        },
-        {
-          content: '17 out of 31 analysts on Wall Street give a BUY rating.',
-          notes: [
-            {
-              content: '7 with HOLD rating and 7 with SELL rating.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'Market Competitions',
-      level: RiskLevel.noRisk,
-      notes: [
-        {
-          content:
-            'Not at the competing stages since EV market is huge (6% market share)',
-        },
-      ],
-    },
-    {
-      name: 'Technical Chart',
-      level: RiskLevel.low,
-      notes: [
-        {
-          content: 'RSI is below average',
-        },
-        {
-          content: 'Did not break 200 SMA',
-        },
-      ],
-    },
-    {
-      name: 'Macroeconomics',
-      level: RiskLevel.medium,
-      notes: [],
     },
   ],
 

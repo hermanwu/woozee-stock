@@ -1,10 +1,10 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const AVGO: StockAnalysis = {
+export const avgo: StockAnalysis = {
   logo: '',
   name: { English: 'BROADCOM INC.' },
   description: [],
-  ticker: 'AVGO',
+  ticker: 'avgo',
 
   // Earnings Report:
   earnings: {

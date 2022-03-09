@@ -3,45 +3,46 @@ import { abnb } from './abnb';
 import { adbe } from './adbe';
 import { ADSK } from './ADSK';
 import { afrm } from './afrm';
-import { AMC } from './AMC';
+import { amc } from './amc';
 import { amd } from './amd';
 import { amzn } from './amzn.mock';
 import { API } from './API';
-import { asml } from './ASML';
+import { asml } from './asml';
 import { ATVI } from './ATVI';
-import { AVGO } from './AVGO';
+import { avgo } from './avgo';
 import { AXP } from './AXP';
-import { BABA } from './BABA';
+import { baba } from './baba';
 import { bidu } from './bidu';
 import { bili } from './bili.mock';
 import { blde } from './blde';
-import { BYND } from './BYND';
+import { bynd } from './bynd';
 import { CHWY } from './CHWY';
 import { CLOV } from './CLOV';
 import { coin } from './coin';
 import { crm } from './crm';
 import { crwd } from './crwd';
-import { DASH } from './DASH';
+import { dash } from './dash';
 import { ddog } from './DDOG';
-import { DIS } from './DIS.mock';
-import { DKNG } from './DKNG';
-import { DOCU } from './DOCU';
+import { dis } from './dis.mock';
+import { dkng } from './dkng';
+import { docu } from './docu';
 import { DUOL } from './DUOL';
 import { EA } from './EA';
 import { EDIT } from './EDIT';
-import { ESTC } from './ESTC';
+import { estc } from './estc';
 import { etsy } from './etsy';
 import { fb } from './fb';
+import { ftnt } from './ftnt';
 import { fvrr } from './fvrr';
-import { GME } from './GME';
+import { gme } from './gme';
 import { googl } from './googl.mock';
-import { GS } from './GS';
+import { gs } from './gs';
 import { HD } from './HD';
 import { hood } from './hood';
 import { huya } from './huya';
-import { IAC } from './IAC';
-import { INTU } from './INTU';
-import { ISRG } from './ISRG';
+import { iac } from './iac';
+import { intu } from './intu';
+import { isrg } from './isrg';
 import { JD } from './JD';
 import { JMIA } from './JMIA';
 import { jnj } from './jnj';
@@ -51,16 +52,16 @@ import { logi } from './LOGI';
 import { lrcx } from './lrcx';
 import { luv } from './luv';
 import { LZ } from './LZ';
-import { mdb } from './MDB';
+import { mdb } from './mdb';
 import { meli } from './MELI';
 import { mrk } from './mrk';
-import { MRNA } from './MRNA';
+import { mrna } from './mrna';
 import { msft } from './msft';
-import { NET } from './NET';
+import { net } from './net';
 import { nflx } from './NFLX';
 import { NIO } from './NIO_mock';
 import { noc } from './noc';
-import { NOW } from './NOW';
+import { now } from './now';
 import { ntdoy } from './ntdoy';
 import { nvax } from './nvax';
 import { nvda } from './nvda';
@@ -70,15 +71,15 @@ import { OPEN } from './OPEN';
 import { orcl } from './orcl';
 import { pdd } from './PDD.mock';
 import { PENN } from './PENN';
-import { PINS } from './PINs';
+import { pins } from './PINs';
 import { pltr } from './pltr';
 import { PTON } from './PTON';
-import { PYPL } from './PYPL';
+import { pypl } from './pypl';
 import { qs } from './qs';
-import { RBLX } from './RBLX.mock';
+import { rblx } from './rblx.mock';
 import { RDFN } from './RDFN';
 import { RH } from './RH';
-import { roku } from './ROKU';
+import { roku } from './roku';
 import { rskd } from './rskd';
 import { rtx } from './rtx';
 import { sbux } from './sbux';
@@ -89,22 +90,23 @@ import { snap } from './snap';
 import { snow } from './snow';
 import { SOFI } from './SOFI';
 import { SPLK } from './SPLK';
-import { SPOT } from './SPOT';
+import { spot } from './spot';
 import { sq } from './sq.mock';
 import { STEM } from './STEM';
 import { swks } from './swks';
 import { techy } from './TCEHY';
-import { TDOC } from './TDOC';
+import { tdoc } from './tdoc';
 import { team } from './team';
 import { tgt } from './tgt';
 import { TRMB } from './TRMB';
 import { tsla } from './TSLA.mock';
 import { TSM } from './TSM';
 import { TTD } from './TTD';
+import { ttwo } from './TTWO';
 import { twlo } from './twlo';
-import { TWTR } from './TWTR';
-import { U } from './U.mock';
-import { UBER } from './UBER';
+import { twtr } from './twtr';
+import { u } from './U.mock';
+import { uber } from './uber';
 import { ulta } from './ULTA';
 import { unh } from './unh';
 import { up } from './UP';
@@ -117,8 +119,8 @@ import { wish } from './wish';
 import { wix } from './wix';
 import { xpev } from './XPEV';
 import { you } from './you';
-import { Z } from './Z.mock';
-import { ZM } from './ZM';
+import { z } from './Z.mock';
+import { zm } from './zm';
 import { ZS } from './ZS';
 
 export const foreverOwnedStock = {
@@ -136,39 +138,39 @@ export const ownedStockMap = {
   adbe,
   ADSK,
   afrm,
-  AMC,
+  amc,
   amd,
   amzn,
   asml,
   ATVI,
-  AVGO,
+  avgo,
   AXP,
-  BABA,
+  baba,
   bili,
-  BYND,
+  bynd,
   CHWY,
   CLOV,
   coin,
   crm,
   crwd,
-  DASH,
+  dash,
   ddog,
-  DIS,
-  DKNG,
-  DOCU,
+  dis,
+  dkng,
+  docu,
   EA,
   EDIT,
-  ESTC,
+  estc,
   etsy,
   fb,
-  GME,
+  gme,
   googl,
-  GS,
+  gs,
   HD,
   hood,
-  IAC,
-  INTU,
-  ISRG,
+  iac,
+  intu,
+  isrg,
   JD,
   JMIA,
   jnj,
@@ -180,13 +182,13 @@ export const ownedStockMap = {
   mdb,
   meli,
   mrk,
-  MRNA,
+  mrna,
   msft,
-  NET,
+  net,
   nflx,
   NIO,
   noc,
-  NOW,
+  now,
   nvda,
   ob,
   OKTA,
@@ -194,11 +196,11 @@ export const ownedStockMap = {
   orcl,
   pdd,
   PENN,
-  PINS,
+  pins,
   pltr,
   PTON,
-  PYPL,
-  RBLX,
+  pypl,
+  rblx,
   RDFN,
   RH,
   roku,
@@ -210,10 +212,10 @@ export const ownedStockMap = {
   snow,
   SOFI,
   SPLK,
-  SPOT,
+  spot,
   sq,
   swks,
-  TDOC,
+  tdoc,
   team,
   techy,
   tgt,
@@ -221,14 +223,14 @@ export const ownedStockMap = {
   TSM,
   TTD,
   twlo,
-  TWTR,
-  U,
-  UBER,
+  twtr,
+  u,
+  uber,
   unh,
   upwk,
   xpev,
-  Z,
-  ZM,
+  z,
+  zm,
   ZS,
   v,
 };
@@ -264,45 +266,45 @@ export const stocksMap = {
   adbe,
   ADSK,
   afrm,
-  AMC,
+  amc,
   amd,
   amzn,
   API,
   asml,
   ATVI,
-  AVGO,
+  avgo,
   AXP,
-  BABA,
+  baba,
   bidu,
   bili,
   blde,
-  BYND,
+  bynd,
   CHWY,
   CLOV,
   coin,
   crm,
   crwd,
-  DASH,
+  dash,
   ddog,
-  DIS,
-  DKNG,
-  DOCU,
+  dis,
+  dkng,
+  docu,
   DUOL,
   EA,
   EDIT,
-  ESTC,
+  estc,
   etsy,
   fb,
   fvrr,
-  GME,
+  gme,
   googl,
-  GS,
+  gs,
   HD,
   hood,
   huya,
-  IAC,
-  INTU,
-  ISRG,
+  iac,
+  intu,
+  isrg,
   JD,
   JMIA,
   jnj,
@@ -315,13 +317,13 @@ export const stocksMap = {
   mdb,
   meli,
   mrk,
-  MRNA,
+  mrna,
   msft,
-  NET,
+  net,
   nflx,
   NIO,
   noc,
-  NOW,
+  now,
   ntdoy,
   nvax,
   nvda,
@@ -331,12 +333,12 @@ export const stocksMap = {
   orcl,
   pdd,
   PENN,
-  PINS,
+  pins,
   pltr,
   PTON,
-  PYPL,
+  pypl,
   qs,
-  RBLX,
+  rblx,
   RDFN,
   RH,
   roku,
@@ -350,22 +352,23 @@ export const stocksMap = {
   snow,
   SOFI,
   SPLK,
-  SPOT,
+  spot,
   sq,
   STEM,
   swks,
-  TDOC,
+  tdoc,
   team,
   techy,
   tgt,
+  ttwo,
   TRMB,
   tsla,
   TSM,
   TTD,
   twlo,
-  TWTR,
-  U,
-  UBER,
+  twtr,
+  u,
+  uber,
   ulta,
   unh,
   up,
@@ -378,7 +381,8 @@ export const stocksMap = {
   wix,
   xpev,
   you,
-  Z,
-  ZM,
+  z,
+  zm,
   ZS,
+  ftnt,
 };

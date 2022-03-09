@@ -1,10 +1,13 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
 import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
-import { Strategy } from 'src/app/facts/data/stratgies.enum';
+import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const afrm: StockAnalysis = {
+  marketCap: 10 * BILLION,
+
   logo: '',
   name: 'Affirm',
   description: [
@@ -38,14 +41,16 @@ export const afrm: StockAnalysis = {
   ],
   ticker: 'afrm',
   irAddress: 'https://investors.affirm.com/',
-  marketCap: 12.28 * 1e9,
   business: {
     markets: [{ type: MarketType.fintech_lending }],
     revenues: [
       { type: RevenueType.loanInterest },
       { type: RevenueType.salesCommission },
     ],
-    competitiveAdvantages: [Strategy.platform, Strategy.userData],
+    competitiveAdvantages: [
+      { type: StrategyType.platform },
+      { type: StrategyType.userData },
+    ],
   },
   // Earnings Report:
   earningsReports: [
@@ -68,6 +73,7 @@ export const afrm: StockAnalysis = {
       revenue: 361 * 1e6,
       operatingIncome: -196200 * 1e3,
       dailyActiveUser: 319 * 1e6,
+      salesAndMarketingCost: 143.476 * MILLION,
     },
     {
       year: 2021,
@@ -92,6 +98,7 @@ export const afrm: StockAnalysis = {
       quarter: 4,
       revenue: 204041 * 1e3,
       operatingIncome: -26772 * 1e3,
+      salesAndMarketingCost: 39.112 * MILLION,
     },
   ],
 

@@ -31,7 +31,12 @@ export class GrowthComponent implements OnInit, OnChanges {
         .sort((a, b) => b.year - a.year || b.quarter - a.quarter);
 
       const currentReport = reports[0];
-      const previousReport = reports[4];
+
+      const previousReport = reports.filter(
+        (report) =>
+          report.year === currentReport.year - 1 &&
+          report.quarter === currentReport.quarter
+      )[0];
 
       this.quarterlyRevenue = currentReport.revenue;
       this.activeUserCount = currentReport.activeUserCount;

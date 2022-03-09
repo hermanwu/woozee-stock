@@ -1,33 +1,46 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const PYPL: StockAnalysis = {
+export const pypl: StockAnalysis = {
+  marketCap: 118.06 * BILLION,
   logo: '',
-  name: { English: 'Paypal' },
+  name: 'Paypal',
   description: [],
-  ticker: 'PYPL',
+  ticker: 'pypl',
   lastUpdated: new Date('2021-08-22'),
 
-  // Earnings Report:
-  earnings: {
-    website: 'https://investor.pypl.com/home/default.aspx',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001633917/305aa206-319d-4543-af10-0359a0b491c8.pdf',
-        presentation: '',
-        press: '',
-        webcast: '',
-        marketCap: 317.94 * 1e9,
-        revenue: 6238 * 1e6,
-        operatingIncome: 1127 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 6918.0 * MILLION,
+      operatingIncome: 1050.0 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 5261 * 1e6,
-        operatingIncome: 951 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 6182.0 * MILLION,
+      operatingIncome: 1043.0 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 6238.0 * MILLION,
+      operatingIncome: 1127 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 6033.0 * MILLION,
+      operatingIncome: 1042.0 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 6116.0 * MILLION,
+      operatingIncome: 963.0 * MILLION,
+    },
+  ],
 };

@@ -1,32 +1,49 @@
+import { rmbToDollar } from 'src/app/shared/currency';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const BABA: StockAnalysis = {
+export const baba: StockAnalysis = {
+  marketCap: 277.39 * BILLION,
   logo: '',
-  name: { English: 'Alibaba' },
+  name: 'Alibaba',
   description: [],
-  ticker: 'BABA',
+  ticker: 'baba',
+  irAddress: 'https://www.alibabagroup.com/en/ir/home',
 
-  // Earnings Report:
-  earnings: {
-    website: 'https://www.alibabagroup.com/en/ir/home',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://otp.investis.com/clients/us/alibaba/SEC/sec-show.aspx?FilingId=15132205&Cik=0001577552&Type=PDF&hasPdf=1',
-        presentation: '',
-        press: '',
-        webcast: '',
-        marketCap: 468.48 * 1e9,
-        revenue: 31865 * 1e6,
-        operatingIncome: 4778 * 1e6,
-      },
+  competitors: ['amzn'],
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 242580 * MILLION * rmbToDollar,
+      operatingIncome: 7068.0 * MILLION * rmbToDollar,
+      isAnnual: true,
     },
-    2020: {
-      2: {
-        revenue: 23812 * 1e6,
-        operatingIncome: 5375 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 200690.0 * MILLION * rmbToDollar,
+      operatingIncome: 15006.0 * MILLION * rmbToDollar,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 205740.0,
+      operatingIncome: 30847.0 * MILLION * rmbToDollar,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 187395.0 * MILLION * rmbToDollar,
+      operatingIncome: -7663.0 * MILLION * rmbToDollar,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 221084.0 * MILLION * rmbToDollar,
+      operatingIncome: 49002.0 * MILLION * rmbToDollar,
+    },
+  ],
 };

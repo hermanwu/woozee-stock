@@ -1,32 +1,52 @@
+import { MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const AMC: StockAnalysis = {
-  logo: 'AMC',
-  name: { English: 'AMC ENTERTAINMENT HOLDINGS, INC.' },
+export const amc: StockAnalysis = {
+  logo: 'amc',
+  name: 'AMC ENTERTAINMENT HOLDINGS, INC.',
   description: [],
-  ticker: 'AMC',
-
+  ticker: 'amc',
+  shortName: 'AMC',
+  irAddress: 'https://investor.amctheatres.com/corporate-overview/default.aspx',
   // Earnings Report:
-  earnings: {
-    website: 'https://investor.amctheatres.com/corporate-overview/default.aspx',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001411579/50f0292e-e586-4e2a-82ae-4fb14dcda240.pdf',
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 23.88 * 1e9,
-        revenue: 444.7 * 1e6,
-        operatingIncome: -296.6 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2022,
+      quarter: 1,
+      revenue: 860 * MILLION,
+      isForecast: true,
     },
-    2020: {
-      2: {
-        revenue: 18.9 * 1e6,
-        operatingIncome: -471.6 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 842.74 * MILLION,
+      operatingIncome: -283.63 * MILLION,
     },
-  },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 740.18 * MILLION,
+      operatingIncome: -232.34 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 668.93 * MILLION,
+      operatingIncome: -202.27 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 589.99 * MILLION,
+      operatingIncome: -197.34 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 548.09 * MILLION,
+      operatingIncome: -185.29 * MILLION,
+    },
+  ],
 };

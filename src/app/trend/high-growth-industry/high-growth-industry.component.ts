@@ -57,8 +57,8 @@ export class HighGrowthIndustryComponent implements OnInit {
       category: GrowthType.HARDWARE,
     },
     {
-      ticker: 'ASML',
-      name: 'ASML Holding',
+      ticker: 'asml',
+      name: 'asml Holding',
       reason: '芯片制造的必需品',
       chinese: '阿斯麦',
       category: GrowthType.HARDWARE,
@@ -98,7 +98,7 @@ export class HighGrowthIndustryComponent implements OnInit {
       category: GrowthType.LOGISTIC,
     },
     {
-      ticker: 'UBER',
+      ticker: 'uber',
       reason: '美国老百姓的日常物流',
       chinese: '优步',
 
@@ -106,7 +106,7 @@ export class HighGrowthIndustryComponent implements OnInit {
     },
     // Fin tech
     {
-      ticker: 'BABA',
+      ticker: 'baba',
       name: 'Alibaba',
       reason: '逼国家出手的金融公司',
       chinese: '阿里巴巴',
@@ -119,7 +119,7 @@ export class HighGrowthIndustryComponent implements OnInit {
       category: GrowthType.FINTECH,
     },
     {
-      ticker: 'PYPL',
+      ticker: 'pypl',
       name: 'Paypal',
       reason: '网上支付的世界品牌',
       chinese: '贝宝',

@@ -1,32 +1,50 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const fvrr: StockAnalysis = {
+  marketCap: 2.71 * BILLION,
   logo: '',
-  name: { English: 'Fiverr International Ltd' },
+  name: 'Fiverr International Ltd',
   description: [],
-  ticker: 'FVRR',
+  ticker: 'fvrr',
+  shortName: 'Fiverr',
+  irAddress: 'https://investors.fiverr.com/investor-overview/default.aspx',
 
-  // Earnings Report:
-  earnings: {
-    website: 'https://investors.fiverr.com/investor-overview/default.aspx',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k': null,
-        presentation: null,
-        press:
-          'https://investors.fiverr.com/press-releases/press-releases-details/2021/Fiverr-Announces-Second-Quarter-2021-Results/default.aspx',
-        webcast: null,
-        marketCap: 7.42 * 1e9,
-        revenue: 75.263 * 1e6,
-        operatingIncome: -8.344 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 79.75 * MILLION,
+      operatingIncome: -13.88 * MILLION,
+      sellingGeneraAdministrative: 56.59 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 47.13 * 1e6,
-        operatingIncome: -0.598 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 74.32 * MILLION,
+      operatingIncome: -9.29 * MILLION,
+      sellingGeneraAdministrative: 49.88 * MILLION,
     },
-  },
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 75.26 * MILLION,
+      operatingIncome: -8.34 * MILLION,
+      sellingGeneraAdministrative: 49.03 * MILLION,
+    },
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 68.32 * MILLION,
+      operatingIncome: -13.82 * MILLION,
+      sellingGeneraAdministrative: 51.71 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 55.88 * MILLION,
+      operatingIncome: -3.77 * MILLION,
+      sellingGeneraAdministrative: 36.39 * MILLION,
+    },
+  ],
 };

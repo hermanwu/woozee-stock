@@ -5,15 +5,10 @@
     <div>Ticker</div>
 
     <div>Investor Relations Site</div>
+
+    <div>Target Price</div>
   </div>
   <div *ngFor="let stock of stocks; let i = index" class="stock-row">
-    <!-- <th mat-header-cell *matHeaderCellDef mat-sort-header>我的评级</th> -->
-    <!-- <div>
-      <ng-container *ngIf="stock.myRating">
-        {{ stock.myRating }}
-      </ng-container>
-    </div> -->
-
     <div>{{ i + 1 }}</div>
 
     <div>
@@ -32,168 +27,10 @@
       </a>
     </div>
 
-    <!-- <div matColumnDef="myScore">
-      <div>
-        <div *ngIf="stock.myScore">
-          {{ stock.myScore }}
-
-          <mat-chip disableRipple>{{ stock.myScoreRank }}</mat-chip>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- <div matColumnDef="lastQuarterRevenue">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="align-right">
-        去年同季度收入
-      </th>
-      <div mat-cell class="align-right" *matCellDef="let stock">
-        {{ stock.lastQuarterRevenue | unit: 2 }}
-      </div>
+    <div>
+      <span *ngIf="stock.predications">
+        {{ stock.predications[0].price }}
+      </span>
     </div>
-    <div matColumnDef="currentQuarterRevenue">
-      <th mat-header-cell *matHeaderCellDef class="align-right" mat-sort-header>
-        最新季度收入
-      </th>
-      <div mat-cell class="align-right" *matCellDef="let stock">
-        {{ stock.currentQuarterRevenue | unit: 2 }}
-      </div>
-    </div>
-    <div matColumnDef="revenueIncrease">
-      <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
-        收入增幅
-      </th>
-      <div mat-cell class="align-right" *matCellDef="let stock">
-        <strong>{{ stock.revenueIncrease | percent }}</strong>
-        <span
-          ><mat-chip disableRipple>{{ stock.revenueIncreaseRank }}</mat-chip>
-        </span>
-      </div>
-    </div> -->
-
-    <!-- <div matColumnDef="lastQuarterOperatingIncome">
-      <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
-        去年同季度营业利润
-      </th>
-      <div mat-cell class="align-right" *matCellDef="let stock">
-        {{ stock.lastQuarterOperatingIncome | unit: 2 }}
-      </div>
-    </div>
-    <div matColumnDef="currentQuarterOperatingIncome">
-      <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
-        最新季度营业利润
-      </th>
-      <div mat-cell class="align-right" *matCellDef="let stock">
-        <strong>{{ stock.currentQuarterOperatingIncome | unit: 2 }}</strong>
-      </div>
-    </div>
-    <div matColumnDef="operatingIncomeIncrease">
-      <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
-        利润增长
-      </th>
-      <div mat-cell class="align-right" *matCellDef="let stock">
-        {{ stock.operatingIncomeIncrease | unit: 2 }}
-      </div>
-    </div> -->
-
-    <!-- <div matColumnDef="latestQuarterMarketCap">
-      <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
-        最新季度估值
-      </th>
-      <div mat-cell class="align-right" *matCellDef="let stock">
-        {{ stock.latestQuarterMarketCap | unit: 2 }}
-      </div>
-    </div> -->
-
-    <!-- <div matColumnDef="form10Q">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>10-Q</th>
-      <div>
-        <a target="_blank" href="{{ stock.current10Q }}"> 10-Q </a>
-      </div>
-    </div> -->
-
-    <!-- <div matColumnDef="pressRelease">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Press Release</th>
-      <div>
-        <span *ngIf="stock.currentPressRelease">
-          <a target="_blank" href="{{ stock.currentPressRelease }}"
-            ><mat-icon>sticky_note_2</mat-icon></a
-          >
-        </span>
-      </div>
-    </div> -->
-
-    <!-- <div matColumnDef="presentation">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Presentation</th>
-      <div>
-        <span *ngIf="stock.presentation">
-          <a target="_blank" href="{{ stock.presentation }}">Presentation</a>
-        </span>
-      </div>
-    </div> -->
-
-    <!-- <div matColumnDef="webcast">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Webcast</th>
-      <div>
-        <span *ngIf="stock.webcast">
-          <a target="_blank" href="{{ stock.webcast }}">Webcast</a>
-        </span>
-      </div>
-    </div> -->
-
-    <!-- <div matColumnDef="salesOverMarketCap">
-      <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
-        季度营收 / 市值
-      </th>
-      <div mat-cell class="align-right" *matCellDef="let stock">
-        <strong>{{ stock.salesOverMarketCap | percent: "0.3-3" }}</strong>
-      </div>
-    </div> -->
-
-    <!-- <div matColumnDef="salesIncreaseOverMarketCap">
-      <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
-        营收增长 / 市值
-      </th>
-      <div mat-cell class="align-right" *matCellDef="let stock">
-        <strong>{{
-          stock.salesIncreaseOverMarketCap | percent: "0.3-3"
-        }}</strong>
-      </div>
-    </div> -->
-
-    <!-- <div matColumnDef="profitOverMarketCap">
-      <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
-        营业利润 / 市值
-      </th>
-      <div mat-cell class="align-right" *matCellDef="let stock">
-        <strong>{{ stock.profitOverMarketCap | percent: "0.3-3" }}</strong>
-        <span
-          ><mat-chip disableRipple>{{
-            stock.profitOverMarketCapRank
-          }}</mat-chip>
-        </span>
-      </div>
-    </div> -->
-    <!--
-    <div matColumnDef="profileIncreaseOverMarketCap">
-      <th mat-header-cell class="align-right" *matHeaderCellDef mat-sort-header>
-        营业利润增长 / 市值
-      </th>
-
-      <div mat-cell class="align-right" *matCellDef="let stock">
-        <strong>{{
-          stock.profileIncreaseOverMarketCap | percent: "0.3-3"
-        }}</strong>
-      </div>
-    </div> -->
-
-    <!-- <div matColumnDef="shares">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>持有股数</th>
-      <div>{{ stock.shares }}</div>
-    </div>
-
-    <div matColumnDef="categories">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>类别</th>
-      <div>{{ stock.categories }}</div>
-    </div> -->
   </div>
 </div>

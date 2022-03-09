@@ -1,45 +1,49 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const GME: StockAnalysis = {
+export const gme: StockAnalysis = {
+  marketCap: 9.04 * BILLION,
   logo: '',
-  name: { English: 'GameStop Corp.' },
+  name: 'GameStop Corp.',
   description: [],
-  ticker: 'GME',
+  ticker: 'gme',
+  shortName: 'GameStop',
+  irAddress: 'https://investor.gamestop.com/home',
 
   // Earnings Report:
-  earnings: {
-    website: 'https://investor.gamestop.com/home',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'docs.google.com/presentation/d/1Tc5_tR3u30ePL_ZZ9LuAfhUYg2UeFwEmS-EHZBAudeg/edit#slide=id.gdd8abde420_0_0',
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 14.29 * 1e9,
-        revenue: 1183.4 * 1e6,
-        operatingIncome: -58.8 * 1e6,
-      },
-      1: {
-        '10q10k': null,
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 15.29 * 1e9,
-        revenue: 1276.8 * 1e6,
-        operatingIncome: -40.8 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 1296.6 * MILLION,
+      operatingIncome: -102.9 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 942 * 1e6,
-        operatingIncome: -85.6 * 1e6,
-      },
-      1: {
-        revenue: 1021 * 1e6,
-        operatingIncome: -108 * 1e6,
-      },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 1183.4 * MILLION,
+      operatingIncome: -58.0 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 1276.8 * MILLION,
+      operatingIncome: -40.8 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 2122.1 * MILLION,
+      operatingIncome: 18.8 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 3,
+      revenue: 1004.7 * MILLION,
+      operatingIncome: -63.0 * MILLION,
+    },
+  ],
+  competitors: ['amzn', 'baba'],
 };

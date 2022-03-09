@@ -1,12 +1,49 @@
+import { rmbToDollar } from 'src/app/shared/currency';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const bili: StockAnalysis = {
-  earningsReports: [],
+  marketCap: 9.82 * BILLION,
   logo: 'https://lh3.googleusercontent.com/pw/ACtC-3e9AoltCnmSTNXb44UMaYhVOVfeVGD0_rM7wOvceClSFwu_b3_NPLwMXGxITQwqZ1gPu-GMU-T9fhIWYRiqMmicuQTHiJpTZgar7N1AyxoaIhv0nsyFZBe959Es1OgCMoM44TRT9v1vFblgZ-TEyEPA=w870-h412-no?authuser=3',
   name: 'Bilibili',
   ticker: 'bili',
   irAddress: 'https://ir.bilibili.com/',
   secFilings: 'https://ir.bilibili.com/financial-information/sec-filings',
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 5780.78 * MILLION * rmbToDollar,
+      operatingIncome: -1999.54 * MILLION * rmbToDollar,
+    },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 5206.57 * MILLION * rmbToDollar,
+      operatingIncome: -1878.0 * MILLION * rmbToDollar,
+    },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 4495.25 * MILLION * rmbToDollar,
+      operatingIncome: -1520.56 * MILLION * rmbToDollar,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 3901.07 * MILLION * rmbToDollar,
+      operatingIncome: -1030.97 * MILLION * rmbToDollar,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 3840.13 * MILLION * rmbToDollar,
+      operatingIncome: -903.36 * MILLION * rmbToDollar,
+    },
+  ],
+
   description: [
     { content: '丰富年轻一代生活的线上娱乐网站' },
     {
@@ -39,7 +76,7 @@ export const bili: StockAnalysis = {
     'Z代，即1990年至2009年在中国出生的个人。他们通常接受高质量的教育，并且精通技术，对文化产品的需求旺盛，并具有自我表达和社会互动的途径',
   ],
   business: {
-    notes: [
+    growthStrategy: [
       '开创了“子弹聊天”功能，营造高度交互性和令人愉悦的观看体验，用户能够有很强的社区感。',
       '社区感刺激创作者生成跟多内容。',
       '通过播放广告',
@@ -77,12 +114,6 @@ export const bili: StockAnalysis = {
     {
       name: '技术力量比竞争对手弱',
     },
-  ],
-  competitors: [
-    '爱奇艺 - 13B',
-    'Youtube - 180B ~ 300B',
-    'Netflix - 240B',
-    '网易 - 66B',
   ],
   trends: ['COVID', 'Video Entertainments'],
   thoughts: {

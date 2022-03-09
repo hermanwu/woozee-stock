@@ -1,11 +1,72 @@
-<h2>{{ dialogData.factType }}</h2>
+<div class="header">
+  <div class="select-field">
+    <mat-form-field appearance="fill">
+      <mat-label>Compare Property</mat-label>
+
+      <select matNativeControl (change)="selectFact($event)">
+        <option
+          *ngFor="let type of factTypeArray"
+          [value]="type"
+          [selected]="selectedFact === type"
+        >
+          {{ type }}
+        </option>
+      </select>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="select-field">
+  <mat-form-field appearance="fill">
+    <mat-label>Compare Market</mat-label>
+
+    <select matNativeControl (change)="selectMarket($event)">
+      <option></option>
+      <option
+        *ngFor="let type of competitorTypeArray"
+        [value]="type"
+        [selected]="selectedCompetitorType === type"
+      >
+        {{ type }}
+      </option>
+    </select>
+  </mat-form-field>
+</div>
+
 <div class="container">
   <div *ngFor="let stock of stocks; index as i">
-    <div class="sub-label">{{ stock.name }}</div>
+    <div class="sub-label">{{ stock.shortName || stock.name }}</div>
 
     <div class="label">{{ stock.ticker | uppercase }}</div>
 
-    <ng-container [ngSwitch]="dialogData.factType">
+    <ng-container [ngSwitch]="selectedFact">
+      <ng-container *ngSwitchCase="factType.valuation">
+        <app-valuation [stock]="stock" [hideLabel]="i >= 1"></app-valuation>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="factType.profit">
+        <app-profitability
+          [stock]="stock"
+          [hideLabel]="i >= 1"
+        ></app-profitability>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="factType.growth">
+        <!-- Only display data after second stock-->
+        <app-growth [stock]="stock" [hideLabel]="i >= 1"></app-growth>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+<div class="margin-up">Favorites</div>
+<div class="container">
+  <div *ngFor="let stock of favorites; index as i">
+    <div class="sub-label">{{ stock.shortName || stock.name }}</div>
+
+    <div class="label">{{ stock.ticker | uppercase }}</div>
+
+    <ng-container [ngSwitch]="selectedFact">
       <ng-container *ngSwitchCase="factType.valuation">
         <app-valuation [stock]="stock" [hideLabel]="i >= 1"></app-valuation>
       </ng-container>

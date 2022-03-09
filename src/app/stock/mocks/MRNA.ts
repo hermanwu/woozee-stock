@@ -1,32 +1,48 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const MRNA: StockAnalysis = {
+export const mrna: StockAnalysis = {
+  marketCap: 52 * BILLION,
   logo: '',
-  name: { English: 'Moderna, Inc.' },
+  name: 'Moderna, Inc.',
   description: [],
-  ticker: 'MRNA',
+  ticker: 'mrna',
+  shortName: 'Moderna',
+  irAddress: 'https://investors.modernatx.com/',
 
   // Earnings Report:
-  earnings: {
-    website: 'https://investors.modernatx.com/',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://investors.modernatx.com/static-files/6df1980f-ded2-4a57-a525-42b5d717d383',
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 157.04 * 1e9,
-        revenue: 4354 * 1e6,
-        operatingIncome: 3062 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 7211.0 * MILLION,
+      operatingIncome: 5410.0 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 67 * 1e6,
-        operatingIncome: -122 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 4969.0 * MILLION,
+      operatingIncome: 3558.0 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 4354.0 * MILLION,
+      operatingIncome: 3062.0 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 1937.0 * MILLION,
+      operatingIncome: 1266.0 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 570.75 * MILLION,
+      operatingIncome: -275.04 * MILLION,
+    },
+  ],
 };

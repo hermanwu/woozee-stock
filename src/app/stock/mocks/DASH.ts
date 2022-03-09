@@ -1,32 +1,45 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const DASH: StockAnalysis = {
+export const dash: StockAnalysis = {
+  marketCap: 31 * BILLION,
   logo: '',
-  name: { English: 'Doordash' },
+  name: 'Doordash',
   description: [],
-  ticker: 'DASH',
+  ticker: 'dash',
 
-  // Earnings Report:
-  earnings: {
-    website: null,
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001792789/efccd043-c8de-45f0-b1cd-2c10d83dadf5.pdf',
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 63.51 * 1e9,
-        revenue: 1236 * 1e6,
-        operatingIncome: -99 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 1300.0 * MILLION,
+      operatingIncome: -195.36 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 675 * 1e6,
-        operatingIncome: 27 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 1275.0 * MILLION,
+      operatingIncome: -154.0 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 1236.0 * MILLION,
+      operatingIncome: -99.0 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 1077.0 * MILLION,
+      operatingIncome: -99.0 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 970.0 * MILLION,
+      operatingIncome: -305.0 * MILLION,
+    },
+  ],
 };

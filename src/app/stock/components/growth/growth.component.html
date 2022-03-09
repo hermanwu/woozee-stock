@@ -23,9 +23,6 @@
       <span>
         {{ revenueRetention | siUnit: 2 | percent | undefined }}
       </span>
-      <span>
-        {{ revenueRetention | siUnit: 2 | percent | undefined }}
-      </span>
     </div>
   </div>
 
@@ -60,7 +57,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" *ngIf="userCountGrowth">
     <div *ngIf="!hideLabel">User Growth Q/Q</div>
     <div class="stats">
       <span>
@@ -69,7 +66,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" *ngIf="quarterlyRevenue && activeUserCount">
     <div *ngIf="!hideLabel">Average Revenue / User</div>
     <div class="stats">
       <span>

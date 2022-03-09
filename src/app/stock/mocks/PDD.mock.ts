@@ -75,7 +75,7 @@ export const pdd: StockAnalysis = {
     'Customers who are interested in discovery shopping',
   ],
   business: {
-    notes: [
+    growthStrategy: [
       'Create a team purchase model that initiated by user with more detailed customer information.',
       'Focus on less-developed cities/market with consumers that are more sensitive to price, where Alibaba and JD were not focused',
       'Work with Tencent as a strategic partner.',

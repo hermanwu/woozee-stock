@@ -3,6 +3,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const hood: StockAnalysis = {
+  marketCap: 10 * BILLION,
   logo: '',
   name: 'Robinhood',
   description: [],
@@ -23,7 +24,7 @@ export const hood: StockAnalysis = {
       quarter: 4,
       revenue: 362.71 * MILLION,
       operatingIncome: -420.44 * MILLION,
-      salesAndMarketingCost: 0 * MILLION,
+      sellingGeneraAdministrative: 473.23 * MILLION,
       notes: [],
     },
     {
@@ -31,25 +32,28 @@ export const hood: StockAnalysis = {
       quarter: 3,
       revenue: 364.92 * MILLION,
       operatingIncome: -1343.56 * MILLION,
+      sellingGeneraAdministrative: 985.29 * MILLION,
     },
     {
       year: 2021,
       quarter: 2,
       revenue: 565.33 * MILLION,
       operatingIncome: 64.6 * MILLION,
+      sellingGeneraAdministrative: 306.57 * MILLION,
     },
     {
       year: 2021,
       quarter: 1,
       revenue: 522.17 * MILLION,
       operatingIncome: 58.39 * MILLION,
+      sellingGeneraAdministrative: 305.93 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
       revenue: 317.54 * MILLION,
       operatingIncome: 19.16 * MILLION,
-      salesAndMarketingCost: 23.501 * MILLION,
+      sellingGeneraAdministrative: 185.8 * MILLION,
     },
     {
       year: 2020,

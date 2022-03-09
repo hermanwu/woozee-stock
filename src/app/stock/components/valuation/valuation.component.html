@@ -30,6 +30,24 @@
 
   <div class="row">
     <div *ngIf="!hideLabel">
+      Operating Income <span class="gray-font">(4 quarters)</span>
+    </div>
+    <div class="stats">
+      <span>{{ trailing12MonthsOI | siUnit: 2 | undefined }}</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="!hideLabel">P / OI</div>
+    <div class="stats">
+      {{ stock.marketCap / trailing12MonthsOI | siUnit: 2 | undefined }}
+    </div>
+  </div>
+
+  <div class="stats">{{ unicode.NextLine }}</div>
+
+  <div class="row">
+    <div *ngIf="!hideLabel">
       Sales Growth <span class="gray-font">(Latest Quarter)</span>
     </div>
     <div class="stats">

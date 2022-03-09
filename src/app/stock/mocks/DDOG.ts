@@ -3,7 +3,7 @@ import { BILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const ddog: StockAnalysis = {
-  marketCap: 49.65 * BILLION,
+  marketCap: 39 * BILLION,
   risks: [
     {
       name: 'Market size might be too small',
@@ -44,7 +44,7 @@ export const ddog: StockAnalysis = {
   logo: '',
   name: 'Datadog',
   description: [],
-  ticker: 'data',
+  ticker: 'ddog',
   irAddress: 'https://investors.datadoghq.com/',
   secFilings:
     'https://investors.datadoghq.com/financial-information/sec-filings',
@@ -60,4 +60,5 @@ export const ddog: StockAnalysis = {
       'Datadog is the monitoring and analytics platform for developers, IT operations teams and business users in the cloud age.',
     ],
   },
+  competitors: ['pltr', 'snow'],
 };

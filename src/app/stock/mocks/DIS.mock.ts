@@ -1,14 +1,13 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const DIS: StockAnalysis = {
-  name: {
-    English: 'Disney',
-    Chinese: '迪士尼',
-  },
+export const dis: StockAnalysis = {
+  marketCap: 265 * BILLION,
+  name: 'Disney',
   description: [],
   trends: [],
   logo: '',
-  ticker: 'DIS',
+  ticker: 'dis',
   ceoQuote: [],
   advantage: [],
   // POTENTIALS:
@@ -16,27 +15,38 @@ export const DIS: StockAnalysis = {
   // Demand:
 
   // Earnings Report:
-  earnings: {
-    website: 'https://thewaltdisneycompany.com/investor-relations/',
-    latestReportQuarter: ['2021', '3'],
-    2021: {
-      3: {
-        '10q10k':
-          'https://thewaltdisneycompany.com/app/uploads/2021/08/q3-fy21-earnings.pdf',
-        press:
-          'https://thewaltdisneycompany.com/app/uploads/2021/08/reconciliation_q3_fy21.pdf',
-        webcast:
-          'https://thewaltdisneycompany.com/app/uploads/2021/08/q3-fy21-earnings.mp3',
-        marketCap: 319.51 * 1e9,
-        revenue: 17022e6,
-        operatingIncome: 995e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 21819 * MILLION,
+      operatingIncome: 2192.0 * MILLION,
     },
-    2020: {
-      3: {
-        revenue: 11779e6,
-        operatingIncome: -4840e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 18534.0 * MILLION,
+      operatingIncome: 607.0 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 17022.0 * MILLION,
+      operatingIncome: 1446.0 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 15613.0 * MILLION,
+      operatingIncome: 1032.0 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 16249.0 * MILLION,
+      operatingIncome: 146.0 * MILLION,
+    },
+  ],
 };

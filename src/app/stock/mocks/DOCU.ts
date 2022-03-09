@@ -1,32 +1,47 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const DOCU: StockAnalysis = {
+export const docu: StockAnalysis = {
+  marketCap: 19.51 * BILLION,
   logo: '',
-  name: { English: 'DOCUSIGN, INC.' },
+  name: 'DOCUSIGN, INC.',
   description: [],
-  ticker: 'DOCU',
+  ticker: 'docu',
+  irAddress: 'https://investor.docusign.com/investors/home/default.aspx',
+  shortName: 'Docusign',
 
-  // Earnings Report:
-  earnings: {
-    website: 'https://investor.docusign.com/investors/home/default.aspx',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001261333/f488efae-41c0-422a-8c71-22f903c4b67f.pdf',
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 59.28 * 1e9,
-        revenue: 511.844 * 1e6,
-        operatingIncome: -22.611 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 545.46 * MILLION,
+      operatingIncome: -3.36 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 342.209 * 1e6,
-        operatingIncome: -58.635 * 1e6,
-      },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 511.84 * MILLION,
+      operatingIncome: -22.61 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 469.08 * MILLION,
+      operatingIncome: -10.74 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 430.9 * MILLION,
+      operatingIncome: -58.65 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 3,
+      revenue: 382.92 * MILLION,
+      operatingIncome: -48.47 * MILLION,
+    },
+  ],
 };

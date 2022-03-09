@@ -1,34 +1,54 @@
-import { Rating } from '../models/rating.model';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const ESTC: StockAnalysis = {
+export const estc: StockAnalysis = {
+  marketCap: 7.18 * BILLION,
   logo: '',
-  name: { English: 'Elastic N.V.' },
+  name: 'Elastic N.V.',
   description: [],
-  ticker: 'ESTC',
+  ticker: 'estc',
+  irAddress: 'https://ir.elastic.co/home/default.aspx',
 
-  // Earnings Report:
-  earnings: {
-    website: 'https://ir.elastic.co/home/default.aspx',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001707753/5d1c5a3e-ce52-4e62-ae8b-86461962d989.pdf',
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 15.52 * 1e9,
-        revenue: 193.095 * 1e6,
-        operatingIncome: -31.034 * 1e6,
-      },
+  shortName: 'Elastic',
+
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 223.94 * MILLION,
+      operatingIncome: -45.85 * MILLION,
+      sellingGeneraAdministrative: 135.51 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 128.87 * 1e6,
-        operatingIncome: -29.519 * 1e6,
-      },
+
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 205.98 * MILLION,
+      operatingIncome: -37.17 * MILLION,
+      sellingGeneraAdministrative: 108.33 * MILLION,
     },
-  },
-  myRating: Rating.Buy,
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 193.09 * MILLION,
+      operatingIncome: -31.03 * MILLION,
+      sellingGeneraAdministrative: 99.55 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 177.61 * MILLION,
+      operatingIncome: -37.08 * MILLION,
+      sellingGeneraAdministrative: 99.48 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 157.12 * MILLION,
+      operatingIncome: -34.46 * MILLION,
+      sellingGeneraAdministrative: 86.5 * MILLION,
+    },
+  ],
 };

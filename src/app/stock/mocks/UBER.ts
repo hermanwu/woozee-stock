@@ -1,33 +1,46 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const UBER: StockAnalysis = {
+export const uber: StockAnalysis = {
+  marketCap: 59.38 * BILLION,
   logo: '',
-  name: { English: 'Uber' },
+  name: 'Uber',
   description: [],
-  ticker: 'UBER',
+  ticker: 'uber',
 
   // Earnings Report:
-  earnings: {
-    website: 'https://investor.uber.com/home/default.aspx',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001543151/bdaa01ec-4802-424c-87d6-17ab51d3fec9.pdf',
-        presentation: '',
-        press:
-          'https://investor.uber.com/news-events/news/press-release-details/2021/Uber-Announces-Results-for-Second-Quarter-2021/',
-        webcast: '',
-        marketCap: 76.67 * 1e9,
-        revenue: 3929 * 1e6,
-        operatingIncome: 640 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 842.74 * MILLION,
+      operatingIncome: -283.63 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 1913 * 1e6,
-        operatingIncome: -1761 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 740.18 * MILLION,
+      operatingIncome: -232.34 * MILLION,
     },
-  },
+
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 668.93 * MILLION,
+      operatingIncome: -202.27 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 589.99 * MILLION,
+      operatingIncome: -197.34 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 548.09 * MILLION,
+      operatingIncome: -185.29 * MILLION,
+    },
+  ],
 };

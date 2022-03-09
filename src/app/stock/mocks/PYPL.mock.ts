@@ -1,7 +1,6 @@
-export const PYPL: any = {
+export const pypl: any = {
   images: {
-    logo:
-      'https://www.paypalobjects.com/webstatic/mktg/logo-center/PP_Acceptance_Marks_for_LogoCenter_266x142.png',
+    logo: 'https://www.paypalobjects.com/webstatic/mktg/logo-center/PP_Acceptance_Marks_for_LogoCenter_266x142.png',
   },
   name: {
     English: 'Paypal',
@@ -9,7 +8,7 @@ export const PYPL: any = {
   },
   description: [''],
   trend: [],
-  strategy: {
+  StrategyType: {
     painPoint: {
       新能源: '消除世界对于不可再生能源的依赖（由石油转向太阳能)',
       自动驾驶: '',
@@ -21,8 +20,7 @@ export const PYPL: any = {
       科技驱动:
         '马斯克是科技公司的创始人，在硅谷，知道如何快速迭代，如何做好软件.',
       自研芯片: '',
-      CEO:
-        'CEO有远见和能力。特斯拉是一个科技驱动的公司。这点和其他车企很不一样。CEO马斯克是这个世界少有的工程师天才，所以特斯拉的产品一直有很多黑科技受年轻人追捧。电池技术，芯片技术全球领先。汽车行业中没有任何竞争对手',
+      CEO: 'CEO有远见和能力。特斯拉是一个科技驱动的公司。这点和其他车企很不一样。CEO马斯克是这个世界少有的工程师天才，所以特斯拉的产品一直有很多黑科技受年轻人追捧。电池技术，芯片技术全球领先。汽车行业中没有任何竞争对手',
       用户体验: '用户体验好。我见到的车主都对特斯拉很满意（包括我自己）',
     },
     businessModel: [
@@ -34,8 +32,7 @@ export const PYPL: any = {
     ],
   },
   risk: {
-    CEO:
-      '马斯克有太多的明星效应.在我看来唯一的风险是CEO出现问题。但CEO马斯克事实上已经身经百战（创立过很多公司），所以这个风险也不是特别大。',
+    CEO: '马斯克有太多的明星效应.在我看来唯一的风险是CEO出现问题。但CEO马斯克事实上已经身经百战（创立过很多公司），所以这个风险也不是特别大。',
     中国: '中国的巨大市场，但中国和美国将会处于一种长期敌对状态',
   },
   products: {

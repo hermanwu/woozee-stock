@@ -1,13 +1,18 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { BenefitType } from 'src/app/business-overview/business.model';
+import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
+import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
+import { PredicationAction } from '../models/predication.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
+import { crmMarket, saas } from './markets';
 
 export const crm: StockAnalysis = {
   predications: [
     {
       start: new Date('2022-3-1'),
       days: 60,
-      price: 150,
+      price: 130,
+      action: PredicationAction.Sell,
     },
   ],
   marketCap: 203.45 * BILLION,
@@ -69,16 +74,42 @@ export const crm: StockAnalysis = {
   irAddress: 'https://investor.salesforce.com/overview/default.aspx',
   secFilings: 'https://investor.salesforce.com/financials/default.aspx',
   business: {
-    mission: ['We build bridges between companies and customers.'],
-    markets: [
-      { type: MarketType.customerRelationManagement, size: 57.9 * BILLION },
+    missions: ['We build bridges between companies and customers.'],
+    markets: [saas, crmMarket],
+    users: [
+      {
+        type: 'Sales',
+      },
     ],
     overview: [
       'customer relationship management (“CRM”) technology that brings companies and their customers together.',
       'connect with their customers through digital channels.',
     ],
-    notes: [
-      'm, we deliver a single source of truth, connecting customer data across systems, apps and devices to help companies sell, service, market andconduct commerce from anywhere.',
+    revenues: [
+      {
+        type: RevenueType.subscription,
+      },
+    ],
+    productBenefits: [
+      {
+        type: BenefitType.accessibility,
+        note: 'Improve accessibility of customer data by delivering a single source of truth, connecting customer data across systems, apps and devices.',
+      },
+      {
+        type: BenefitType.efficiency,
+      },
+    ],
+    growthStrategy: [
+      'Expand in the growing addressable markets',
+      'Expand relationships with existing customers',
+      'Extend go-to-market capabilities globally',
+      'Expand into new categories and verticals',
+      'Expand and strengthening our partner ecosystem',
+    ],
+    competitiveAdvantages: [
+      {
+        type: StrategyType.networkEffect,
+      },
     ],
   },
 };

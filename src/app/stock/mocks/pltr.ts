@@ -1,6 +1,6 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
 import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
-import { Strategy } from 'src/app/facts/data/stratgies.enum';
+import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -167,7 +167,10 @@ export const pltr: StockAnalysis = {
       { type: RevenueType.softwareSelling },
       { type: RevenueType.b2b },
     ],
-    competitiveAdvantages: [Strategy.userData, Strategy.technology],
+    competitiveAdvantages: [
+      { type: StrategyType.userData },
+      { type: StrategyType.technology },
+    ],
     markets: [{ type: MarketType.dataAnalytics, size: 119 * BILLION }],
     users: [{ type: 'Any Employee' }],
   },

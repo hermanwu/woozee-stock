@@ -1,32 +1,52 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const TWTR: StockAnalysis = {
+export const twtr: StockAnalysis = {
+  marketCap: 26.24 * BILLION,
   logo: '',
-  name: { English: 'Twitter, Inc.' },
+  name: 'Twitter, Inc.',
   description: [],
-  ticker: 'TWTR',
+  ticker: 'twtr',
+  shortName: 'Twitter',
+  irAddress: 'https://investor.twitterinc.com/home/default.aspx',
 
   // Earnings Report:
-  earnings: {
-    website: 'https://investor.twitterinc.com/home/default.aspx',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001418091/a5875e90-7427-43dd-b0b4-eca71642f595.pdf',
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 51.6 * 1e9,
-        revenue: 1190.427 * 1e6,
-        operatingIncome: 30.252 * 1e6,
-      },
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 1567.22 * MILLION,
+      operatingIncome: 191.18 * MILLION,
+      sellingGeneraAdministrative: 512.87 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 683.438 * 1e6,
-        operatingIncome: -273.93 * 1e6,
-      },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 1283.82 * MILLION,
+      operatingIncome: -717.65 * MILLION,
+      sellingGeneraAdministrative: 451.93 * MILLION,
     },
-  },
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 1190.43 * MILLION,
+      operatingIncome: 82.15 * MILLION,
+      sellingGeneraAdministrative: 443.38 * MILLION,
+    },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 1036.02 * MILLION,
+      operatingIncome: 52.18 * MILLION,
+      sellingGeneraAdministrative: 352.12 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 1289.04 * MILLION,
+      operatingIncome: 251.92 * MILLION,
+      sellingGeneraAdministrative: 356.25 * MILLION,
+    },
+  ],
 };

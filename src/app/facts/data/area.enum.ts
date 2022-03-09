@@ -17,4 +17,6 @@ export enum MarketType {
   cybersecurity = 'Cybersecurity',
 
   customerRelationManagement = 'Customer Relation Management',
+
+  saas = 'Software as a Service',
 }

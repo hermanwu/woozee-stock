@@ -16,6 +16,10 @@ export class ProfitabilityComponent implements OnInit, OnChanges {
   operatingIncome: number;
   salesAndMarketing: number;
   previousSalesAndMarketingPercent: number;
+
+  sellingGa: number;
+  previousSellingGaPercent: number;
+
   operatingIncomeImprovement: number;
   revenue: number;
   revenueRetention: number;
@@ -33,9 +37,16 @@ export class ProfitabilityComponent implements OnInit, OnChanges {
         .sort((a, b) => b.year - a.year || b.quarter - a.quarter);
 
       const currentReport = reports[0];
-      const previousReport = reports[4];
+      const previousReport = reports.filter(
+        (report) =>
+          report.year === currentReport.year - 1 &&
+          report.quarter === currentReport.quarter
+      )[0];
+
       this.operatingIncome = currentReport?.operatingIncome;
       this.salesAndMarketing = currentReport?.salesAndMarketingCost;
+      this.sellingGa = currentReport?.sellingGeneraAdministrative;
+
       this.revenue = currentReport?.revenue;
       if (currentReport && previousReport) {
         this.operatingIncomeImprovement =
@@ -46,6 +57,11 @@ export class ProfitabilityComponent implements OnInit, OnChanges {
       if (previousReport && previousReport.salesAndMarketingCost) {
         this.previousSalesAndMarketingPercent =
           previousReport.salesAndMarketingCost / previousReport.revenue;
+      }
+
+      if (previousReport && previousReport.sellingGeneraAdministrative) {
+        this.previousSellingGaPercent =
+          previousReport.sellingGeneraAdministrative / previousReport.revenue;
       }
     }
   }

@@ -11,24 +11,12 @@
   <div class="row">
     <div *ngIf="!hideLabel">Operating Margin</div>
     <div class="stats">
-      <span>
-        {{
-          earningsService?.calculateOperatingMargin(
-            earningsService?.currentQuarterEr
-          )
-            | siUnit: 2
-            | percent
-            | undefined
-        }}
+      <span *ngIf="previousOperatingMarginPercent">
+        {{ previousOperatingMarginPercent | siUnit: 2 | percent | undefined }}
+        ->
       </span>
-    </div>
-  </div>
-
-  <div class="row">
-    <div *ngIf="!hideLabel">OI growth Q/Q</div>
-    <div class="stats">
       <span>
-        {{ operatingIncomeImprovement | siUnit: 2 | percent | undefined }}
+        {{ operatingIncome / revenue | siUnit: 2 | percent | undefined }}
       </span>
     </div>
   </div>

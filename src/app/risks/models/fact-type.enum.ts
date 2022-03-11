@@ -1,5 +1,6 @@
 export enum FactType {
   business = 'Business',
+
   growth = 'Growth',
   user = 'Customer Count',
   profit = 'Profitability',

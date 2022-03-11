@@ -2,7 +2,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const twtr: StockAnalysis = {
-  marketCap: 26.24 * BILLION,
+  marketCap: 26.71 * BILLION,
   logo: '',
   name: 'Twitter, Inc.',
   description: [],

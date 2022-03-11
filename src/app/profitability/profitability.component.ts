@@ -16,11 +16,11 @@ export class ProfitabilityComponent implements OnInit, OnChanges {
   operatingIncome: number;
   salesAndMarketing: number;
   previousSalesAndMarketingPercent: number;
+  previousOperatingMarginPercent: number;
 
   sellingGa: number;
   previousSellingGaPercent: number;
 
-  operatingIncomeImprovement: number;
   revenue: number;
   revenueRetention: number;
 
@@ -48,10 +48,10 @@ export class ProfitabilityComponent implements OnInit, OnChanges {
       this.sellingGa = currentReport?.sellingGeneraAdministrative;
 
       this.revenue = currentReport?.revenue;
-      if (currentReport && previousReport) {
-        this.operatingIncomeImprovement =
-          (currentReport.operatingIncome - previousReport.operatingIncome) /
-          Math.abs(previousReport.operatingIncome);
+
+      if (previousReport && previousReport.revenue) {
+        this.previousOperatingMarginPercent =
+          previousReport.operatingIncome / previousReport.revenue;
       }
 
       if (previousReport && previousReport.salesAndMarketingCost) {

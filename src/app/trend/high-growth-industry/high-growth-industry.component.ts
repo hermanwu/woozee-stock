@@ -141,7 +141,7 @@ export class HighGrowthIndustryComponent implements OnInit {
       category: GrowthType.ECOMMERCE,
     },
     {
-      ticker: 'PDD',
+      ticker: 'pdd',
       name: 'Pinduoduo, Inc',
       chinese: '拼多多',
       reason: '初生牛犊不怕虎的电商',

@@ -1,8 +1,9 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const intu: StockAnalysis = {
-  marketCap: 133.69 * BILLION,
+  marketCap: 126 * BILLION,
   logo: '',
   name: 'Intuit',
   description: [],
@@ -44,4 +45,12 @@ export const intu: StockAnalysis = {
       operatingIncome: -25 * MILLION,
     },
   ],
+
+  business: {
+    markets: [
+      {
+        type: MarketType.saas,
+      },
+    ],
+  },
 };

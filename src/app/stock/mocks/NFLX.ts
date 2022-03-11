@@ -9,7 +9,7 @@ export const nflx: StockAnalysis = {
   ticker: 'NFLX',
   shortName: 'Netflix',
   irAddress: 'https://ir.netflix.net/ir-overview/profile/default.aspx',
-
+  competitors: ['dis'],
   // Earnings Report:
   earningsReports: [
     {

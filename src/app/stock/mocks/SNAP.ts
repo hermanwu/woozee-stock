@@ -4,6 +4,8 @@ import { BILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const snap: StockAnalysis = {
+  marketCap: 51 * BILLION,
+
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Snapchat--Logo.png/1024px-Snapchat--Logo.png',
   name: 'Snap Inc.',
   description: [
@@ -23,7 +25,6 @@ export const snap: StockAnalysis = {
   ticker: 'snap',
   lastUpdated: new Date('2021-08-22'),
   irAddress: 'https://investor.snap.com/overview/default.aspx',
-  marketCap: 54 * BILLION,
 
   // Demand
   painPoint: [''],

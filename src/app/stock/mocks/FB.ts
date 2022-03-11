@@ -5,7 +5,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const fb: StockAnalysis = {
-  marketCap: 544.55 * BILLION,
+  marketCap: 518.55 * BILLION,
   predications: [
     {
       price: 140,

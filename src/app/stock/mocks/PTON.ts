@@ -1,16 +1,14 @@
-import { Rating } from '../models/rating.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const PTON: StockAnalysis = {
+export const pton: StockAnalysis = {
   logo: '',
-  name: { English: 'Peloton' },
+  name: 'Peloton',
   description: [],
-  ticker: 'PTON',
-  myRating: Rating.Sell,
+  ticker: 'pton',
+  irAddress: 'https://investor.onepeloton.com/',
 
   // Earnings Report:
   earnings: {
-    website: 'https://investor.onepeloton.com/',
     latestReportQuarter: ['2021', '2'],
     2021: {
       2: {

@@ -7,6 +7,7 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 import { crmMarket, saas } from './markets';
 
 export const crm: StockAnalysis = {
+  marketCap: 203.45 * BILLION,
   predications: [
     {
       start: new Date('2022-3-1'),
@@ -15,7 +16,6 @@ export const crm: StockAnalysis = {
       action: PredicationAction.Sell,
     },
   ],
-  marketCap: 203.45 * BILLION,
   earningsReports: [
     {
       year: 2022,

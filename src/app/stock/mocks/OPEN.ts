@@ -1,33 +1,46 @@
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const OPEN: StockAnalysis = {
+export const open: StockAnalysis = {
+  marketCap: 5.36 * BILLION,
   logo: '',
-  name: { English: 'Opendoor' },
+  name: 'Opendoor',
   description: [],
-  ticker: 'OPEN',
+  ticker: 'open',
   lastUpdated: new Date('2021-08-22'),
+  irAddress: 'https://investor.opendoor.com/',
+  earningsReports: [
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 3821.99 * MILLION,
+      operatingIncome: -102.14 * MILLION,
+    },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 2266.35 * MILLION,
+      operatingIncome: -68.41 * MILLION,
+    },
 
-  // Earnings Report:
-  earnings: {
-    website: 'https://investor.opendoor.com/',
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k':
-          'https://investor.opendoor.com/static-files/e1fbd4d1-be43-4492-a392-d95bd2769656',
-        presentation: '',
-        press: '',
-        webcast: '',
-        marketCap: 9.02 * 1e9,
-        revenue: 1185386 * 1e3,
-        operatingIncome: -152753 * 1e3,
-      },
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 1185.39 * MILLION,
+      operatingIncome: -152.75 * MILLION,
     },
-    2020: {
-      2: {
-        revenue: 739827 * 1e3,
-        operatingIncome: -38852 * 1e3,
-      },
+
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 747.27 * MILLION,
+      operatingIncome: -244.69 * MILLION,
     },
-  },
+    {
+      year: 2020,
+      quarter: 4,
+      revenue: 248.76 * MILLION,
+      operatingIncome: -77.26 * MILLION,
+    },
+  ],
 };

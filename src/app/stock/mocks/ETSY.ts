@@ -8,7 +8,7 @@ export const etsy: StockAnalysis = {
   ticker: 'etsy',
   lastUpdated: new Date('2021-08-23'),
   irAddress: 'https://investors.etsy.com/home/default.aspx',
-  marketCap: 18 * BILLION,
+  marketCap: 15.725 * BILLION,
 
   competitors: ['amzn'],
 

@@ -67,13 +67,13 @@ import { nvax } from './nvax';
 import { nvda } from './nvda';
 import { ob } from './ob';
 import { OKTA } from './OKTA';
-import { OPEN } from './OPEN';
+import { open } from './open';
 import { orcl } from './orcl';
-import { pdd } from './PDD.mock';
+import { pdd } from './pdd.mock';
 import { PENN } from './PENN';
 import { pins } from './PINs';
 import { pltr } from './pltr';
-import { PTON } from './PTON';
+import { pton } from './pton';
 import { pypl } from './pypl';
 import { qs } from './qs';
 import { rblx } from './rblx.mock';
@@ -83,7 +83,7 @@ import { roku } from './roku';
 import { rskd } from './rskd';
 import { rtx } from './rtx';
 import { sbux } from './sbux';
-import { SE } from './SE';
+import { se } from './se';
 import { shop } from './shop.mock';
 import { SKLZ } from './SKLZ';
 import { snap } from './snap';
@@ -192,13 +192,13 @@ export const ownedStockMap = {
   nvda,
   ob,
   OKTA,
-  OPEN,
+  open,
   orcl,
   pdd,
   PENN,
   pins,
   pltr,
-  PTON,
+  pton,
   pypl,
   rblx,
   RDFN,
@@ -206,7 +206,7 @@ export const ownedStockMap = {
   roku,
   rtx,
   sbux,
-  SE,
+  se,
   shop,
   snap,
   snow,
@@ -329,13 +329,13 @@ export const stocksMap = {
   nvda,
   ob,
   OKTA,
-  OPEN,
+  open,
   orcl,
   pdd,
   PENN,
   pins,
   pltr,
-  PTON,
+  pton,
   pypl,
   qs,
   rblx,
@@ -345,7 +345,7 @@ export const stocksMap = {
   rskd,
   rtx,
   sbux,
-  SE,
+  se,
   shop,
   SKLZ,
   snap,

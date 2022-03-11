@@ -28,6 +28,7 @@ export class ValuationComponent implements OnInit, OnChanges {
         .sort((a, b) => b.year - a.year || b.quarter - a.quarter);
 
       this.trailing12MonthsSales = this.earningReports
+        .filter((report) => !report.isForecast)
         .slice(0, 4)
         .reduce((previous, current) => previous + current.revenue, 0);
 

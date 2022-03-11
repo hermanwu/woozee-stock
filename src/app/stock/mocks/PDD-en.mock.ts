@@ -1,11 +1,10 @@
 export const pddEnglish: StockAnalysis = {
-  logo:
-    'https://lh3.googleusercontent.com/pw/ACtC-3dmSbeD7O0Szd7qbdYHlCQ5G7J8WKR8DYGgAsbUxS5m_-Db-wTMdDVnzwd3Uqx0AxZjJqpX_NcuOZFDQlKZlYKQNnPh0ozR8AXVMHaUkbkZ8iFBnJzziuNiUoWaVxJ-8tyTjnwymFJ73ithN67jsHxV=w882-h736-no?authuser=3',
+  logo: 'https://lh3.googleusercontent.com/pw/ACtC-3dmSbeD7O0Szd7qbdYHlCQ5G7J8WKR8DYGgAsbUxS5m_-Db-wTMdDVnzwd3Uqx0AxZjJqpX_NcuOZFDQlKZlYKQNnPh0ozR8AXVMHaUkbkZ8iFBnJzziuNiUoWaVxJ-8tyTjnwymFJ73ithN67jsHxV=w882-h736-no?authuser=3',
   name: {
     English: 'Pinduoduo',
     Chinese: '拼多多',
   },
-  ticker: 'PDD',
+  ticker: 'pdd',
   description: [
     'Share product information on social networks and invite their friends, family and social contacts to purchase together',
     'Infrastructure that seamlessly connects our platform with buyers and merchants and supports our business growth. ',

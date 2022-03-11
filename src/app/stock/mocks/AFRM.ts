@@ -6,7 +6,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const afrm: StockAnalysis = {
-  marketCap: 10 * BILLION,
+  marketCap: 9 * BILLION,
 
   logo: '',
   name: 'Affirm',

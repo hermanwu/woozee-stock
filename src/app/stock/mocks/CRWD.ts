@@ -1,9 +1,28 @@
-import { BILLION } from 'src/app/shared/numbers/number.model';
+import { MarketType } from 'src/app/facts/data/area.enum';
+import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const crwd: StockAnalysis = {
-  marketCap: 37 * BILLION,
+  marketCap: 39 * BILLION,
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 1,
+      revenue: 462 * MILLION,
+      isForecast: true,
+    },
+    {
+      year: 2021,
+      quarter: 4,
+      revenue: 431 * MILLION,
+      operatingIncome: -23.5 * MILLION,
+      activeUserCount: 16325,
+      salesAndMarketingCost: 162.594 * MILLION,
+      sellingGeneraAdministrative: 237 * MILLION,
+      pressReleaseLink:
+        'https://ir.crowdstrike.com/static-files/df3bb483-e089-4e1c-af9b-f47ec57cdf03',
+    },
     {
       year: 2021,
       quarter: 3,
@@ -27,6 +46,9 @@ export const crwd: StockAnalysis = {
       quarter: 4,
       revenue: 264.93 * 1e6,
       operatingIncome: -15.8 * 1e6,
+      sellingGeneraAdministrative: 148 * MILLION,
+      salesAndMarketingCost: 112.449 * MILLION,
+
       reportLink:
         'https://ir.crowdstrike.com/static-files/e51971cb-2889-42a1-92be-83982fdbb68f',
       isAnnual: true,
@@ -45,6 +67,11 @@ export const crwd: StockAnalysis = {
   irAddress: 'https://ir.crowdstrike.com/',
   secFilings: 'https://ir.crowdstrike.com/financial-information/sec-filings',
   business: {
+    markets: [{ type: MarketType.saas }],
+    revenues: [
+      { type: RevenueType.subscription },
+      { type: RevenueType.professionService },
+    ],
     overview: [
       'We founded CrowdStrike in 2011 to reinvent security for the cloud era.',
       'leverages the network effects of crowdsourced data applied to modern technologies such as AI, cloud computing, and graph databases.',

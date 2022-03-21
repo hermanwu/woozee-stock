@@ -1,59 +1,81 @@
 <div class="container">
+  <div class="row sub-title">
+    <span *ngIf="!hideLabel">
+      {{ stock.latestReport.year }} - Q{{ stock.latestReport.quarter }}
+    </span>
+  </div>
+
   <div class="row">
-    <div *ngIf="!hideLabel">Operating Income (OI)</div>
+    <div *ngIf="!hideLabel">Gross Profit</div>
     <div class="stats">
       <span>
-        {{ operatingIncome | siUnit: 2 | undefined }}
+        {{ stock?.latestReport?.grossProfit | siUnit: 2 | undefined }}
       </span>
     </div>
   </div>
 
   <div class="row">
-    <div *ngIf="!hideLabel">Operating Margin</div>
+    <div *ngIf="!hideLabel">Operating Income</div>
     <div class="stats">
-      <span *ngIf="previousOperatingMarginPercent">
-        {{ previousOperatingMarginPercent | siUnit: 2 | percent | undefined }}
-        ->
-      </span>
       <span>
-        {{ operatingIncome / revenue | siUnit: 2 | percent | undefined }}
+        {{ stock?.latestReport?.operatingIncome | siUnit: 2 | undefined }}
       </span>
     </div>
   </div>
 
-  <ng-container
-    *ngIf="previousSalesAndMarketingPercent || previousSellingGaPercent"
-  >
-    <div class="stats">{{ unicode.NextLine }}</div>
-  </ng-container>
+  <div class="row">
+    <div *ngIf="!hideLabel">Operating Cost / Gross Profit</div>
+    <div class="stats">
+      <span>
+        {{
+          stock.quarterOperatingCostOverGrossProfit
+            | siUnit: 2
+            | percent
+            | undefined
+        }}
+      </span>
+    </div>
+  </div>
 
-  <ng-container *ngIf="previousSalesAndMarketingPercent">
+  <ng-container *ngIf="stock?.latestReport?.revenueRetention">
     <div class="row">
-      <div *ngIf="!hideLabel">S&M Cost / Revenue</div>
+      <div *ngIf="!hideLabel">Revenue Retention</div>
       <div class="stats">
-        <span *ngIf="previousSalesAndMarketingPercent">
-          {{
-            previousSalesAndMarketingPercent | siUnit: 2 | percent | undefined
-          }}
-          ->
-        </span>
         <span>
-          {{ salesAndMarketing / revenue | siUnit: 2 | percent | undefined }}
+          {{
+            stock?.latestReport?.revenueRetention
+              | siUnit: 2
+              | percent
+              | undefined
+          }}
         </span>
       </div>
     </div>
   </ng-container>
 
-  <ng-container *ngIf="previousSellingGaPercent">
+  <ng-container *ngIf="stock?.latestReport?.salesAndMarketingCost">
     <div class="row">
-      <div *ngIf="!hideLabel">SG&A Cost / Revenue</div>
+      <div *ngIf="!hideLabel">Sales & Marketing Cost</div>
       <div class="stats">
-        <span *ngIf="previousSellingGaPercent">
-          {{ previousSellingGaPercent | siUnit: 2 | percent | undefined }}
-          ->
+        <span *ngIf="stock?.latestReport?.salesAndMarketingCost">
+          {{
+            stock?.latestReport?.salesAndMarketingCost | siUnit: 2 | undefined
+          }}
         </span>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="stock?.latestReport?.sellingGeneralAdministrative">
+    <div class="row">
+      <div *ngIf="!hideLabel">Selling, General and Administrative Cost</div>
+      <div class="stats">
         <span>
-          {{ sellingGa / revenue | siUnit: 2 | percent | undefined }}
+          {{
+            stock?.latestReport?.sellingGeneralAdministrative
+              | siUnit: 2
+              | undefined
+          }}
         </span>
       </div>
     </div>

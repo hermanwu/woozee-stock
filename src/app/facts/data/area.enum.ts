@@ -2,7 +2,7 @@ export enum MarketType {
   fintech_lending = 'Fintech Lending',
   shared_economy = 'Shared Economy',
   travel = 'Travel Booking',
-  crypto = 'Cryptocurrency',
+  crypto = 'Crypto',
 
   gaming = 'Gaming',
   datacenter = 'Datacenter',
@@ -10,6 +10,7 @@ export enum MarketType {
   autoRobotics = 'Auto and Robotics',
   dataAnalytics = 'Data Analytics',
 
+  ecommerce = 'Ecommerce',
   ecommerceTools = 'Ecommerce Tools',
 
   itOperatingManagement = 'IT Operating Management',

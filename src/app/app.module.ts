@@ -44,7 +44,6 @@ import { FundamentalStatsDisplayComponent } from './stock/molecules/fundamental-
 import { NewsDisplayComponent } from './stock/molecules/news-display/news-display.component';
 import { StockListTableComponent } from './stock/molecules/stock-list-table/stock-list-table.component';
 import { StockProductsListComponent } from './stock/molecules/stock-products-list/stock-products-list.component';
-import { StockStatsComponent } from './stock/molecules/stock-stats/stock-stats.component';
 import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/thoughts-display.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
@@ -90,7 +89,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     TitleMenuComponent,
     MediaLinkComponent,
     ThumbnailComponent,
-    StockStatsComponent,
     FactComponent,
     ValuationComponent,
     ComparisonDialogComponent,

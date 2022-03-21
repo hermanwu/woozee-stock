@@ -1,6 +1,14 @@
 .stock-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
-  grid-gap: 0.25rem;
+  grid-gap: 0.5rem;
   align-items: center;
+}
+
+.number-display {
+  justify-self: right;
+}
+
+.low-gray {
+  color: lightgray;
 }

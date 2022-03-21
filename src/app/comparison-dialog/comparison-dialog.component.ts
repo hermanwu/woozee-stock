@@ -51,6 +51,7 @@ export class ComparisonDialogComponent {
    * @param event
    */
   selectMarket(event: Event) {
+    debugger;
     this.selectedMarketType = (event.target as HTMLSelectElement).value as
       | MarketType
       | string;
@@ -70,8 +71,8 @@ export class ComparisonDialogComponent {
 
           if (
             stock.ticker !== this.dialogData.stock.ticker &&
-            markets.filter((market) => market.type === MarketType.saas).length >
-              0
+            markets.filter((market) => market.type === this.selectedMarketType)
+              .length > 0
           ) {
             return true;
           }

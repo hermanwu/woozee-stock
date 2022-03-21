@@ -1,6 +1,8 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { news } from 'src/app/media/news/news.const';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { Source } from 'src/app/shared/data/source.enum';
+import { BILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const amzn: StockAnalysis = {
@@ -205,25 +207,29 @@ export const amzn: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      revenue: 137.412 * 1e9,
+      revenue: 137.412 * BILLION,
+      grossProfit: 54.577 * BILLION,
       operatingIncome: 3460 * 1e6,
     },
     {
       year: 2021,
       quarter: 3,
-      revenue: 110812 * 1e6,
+      revenue: 110.812 * BILLION,
+      grossProfit: 47.882 * BILLION,
       operatingIncome: 4852 * 1e6,
     },
     {
       year: 2021,
       quarter: 2,
-      revenue: 113080 * 1e6,
+      revenue: 113.08 * BILLION,
+      grossProfit: 48.904 * BILLION,
       operatingIncome: 7702 * 1e6,
     },
     {
       year: 2021,
       quarter: 1,
-      revenue: 108518 * 1e6,
+      revenue: 108.518 * BILLION,
+      grossProfit: 46.115 * BILLION,
       operatingIncome: 8865 * 1e6,
     },
     {
@@ -231,6 +237,27 @@ export const amzn: StockAnalysis = {
       quarter: 4,
       revenue: 125555 * 1e6,
       operatingIncome: 6873 * 1e6,
+    },
+    {
+      year: 2021,
+      quarter: 3,
+      revenue: 110.812 * BILLION,
+      grossProfit: 47.882 * BILLION,
+      operatingIncome: 4852 * 1e6,
+    },
+    {
+      year: 2021,
+      quarter: 2,
+      revenue: 113.08 * BILLION,
+      grossProfit: 48.904 * BILLION,
+      operatingIncome: 7702 * 1e6,
+    },
+    {
+      year: 2021,
+      quarter: 1,
+      revenue: 108.518 * BILLION,
+      grossProfit: 46.115 * BILLION,
+      operatingIncome: 8865 * 1e6,
     },
   ],
 
@@ -248,4 +275,12 @@ export const amzn: StockAnalysis = {
   ],
 
   news: [news['4']],
+
+  business: {
+    markets: [
+      {
+        type: MarketType.ecommerce,
+      },
+    ],
+  },
 };

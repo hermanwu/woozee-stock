@@ -2,6 +2,8 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const net: StockAnalysis = {
+  marketCap: 33.7 * BILLION,
+
   predications: [
     {
       price: 30,
@@ -9,7 +11,6 @@ export const net: StockAnalysis = {
       start: new Date('2022-3-7'),
     },
   ],
-  marketCap: 33.7 * BILLION,
   logo: '',
   name: 'Cloudflare, Inc.',
   description: [],

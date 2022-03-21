@@ -16,6 +16,7 @@ export const tsla: StockAnalysis = {
       year: 2022,
       quarter: 1,
       revenue: 10.389 * 1.5 * BILLION,
+      grossProfit: 13.606 * BILLION,
       isForecast: true,
     },
     {

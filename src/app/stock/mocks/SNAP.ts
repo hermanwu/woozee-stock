@@ -251,7 +251,7 @@ export const snap: StockAnalysis = {
         "https://s25.q4cdn.com/442043304/files/doc_financials/2021/q4/Q4'21-Earnings-Slides.pdf",
       revenue: 1297885 * 1e3,
       operatingIncome: -25127 * 1e3,
-      dailyActiveUser: 319 * 1e6,
+      activeUserCount: 319 * 1e6,
     },
     {
       year: 2021,
@@ -265,7 +265,7 @@ export const snap: StockAnalysis = {
       quarter: 4,
       revenue: 911322 * 1e3,
       operatingIncome: -97236 * 1e3,
-      dailyActiveUser: 265 * 1e6,
+      activeUserCount: 265 * 1e6,
     },
     {
       year: 2020,

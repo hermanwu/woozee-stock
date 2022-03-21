@@ -28,6 +28,13 @@ export const adbe: StockAnalysis = {
   // Earnings Report:
   earningsReports: [
     {
+      year: 2022,
+      quarter: 1,
+      revenue: 4.23 * BILLION,
+      isForecast: true,
+      fullyYearForecastRevenue: 17.9 * BILLION,
+    },
+    {
       year: 2021,
       quarter: 4,
       revenue: 4110.0 * MILLION,

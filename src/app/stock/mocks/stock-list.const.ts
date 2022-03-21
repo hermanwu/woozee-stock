@@ -22,6 +22,7 @@ import { coin } from './coin';
 import { crm } from './crm';
 import { crwd } from './crwd';
 import { dash } from './dash';
+import { dbx } from './dbx';
 import { ddog } from './DDOG';
 import { dis } from './dis.mock';
 import { dkng } from './dkng';
@@ -385,4 +386,5 @@ export const stocksMap = {
   zm,
   ZS,
   ftnt,
+  dbx,
 };

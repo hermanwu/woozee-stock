@@ -15,6 +15,8 @@ export const msft: StockAnalysis = {
       quarter: 4,
       revenue: 51.728 * 1e9,
       operatingIncome: 22242 * 1e6,
+      pressReleaseLink:
+        'https://www.microsoft.com/en-us/investor/earnings/fy-2022-q2/press-release-webcast',
     },
     {
       year: 2021,
@@ -41,36 +43,13 @@ export const msft: StockAnalysis = {
       operatingIncome: 17895 * 1e6,
     },
   ],
-  // Earnings Report:
-  earnings: {
-    website: 'https://www.microsoft.com/en-us/investor',
-    latestReportQuarter: ['2022', '2'],
-    2022: {
-      2: {},
-    },
-    2021: {
-      2: {
-        '10q10k':
-          'https://view.officeapps.live.com/op/view.aspx?src=https://c.s-microsoft.com/en-us/CMSFiles/MSFT_FY21Q4_10K.docx?version=01062c71-0508-22e2-9fb8-9ecf51bb6378',
-        presentation: null,
-        press:
-          'https://view.officeapps.live.com/op/view.aspx?src=https://c.s-microsoft.com/en-us/CMSFiles/PressReleaseFY21Q4.docx?version=9b030b7b-e98c-6098-249c-b985a4164421',
-        webcast: null,
-        marketCap: 2.22 * 1e12,
-        revenue: 46152 * 1e6,
-        operatingIncome: 19095 * 1e6,
-      },
-    },
-    2020: {
-      2: {
-        revenue: 38033 * 1e6,
-        operatingIncome: 13407 * 1e6,
-      },
-    },
-  },
+
   risks: [
     {
       name: 'Cloud services decelerate',
     },
   ],
+  business: {
+    markets: [],
+  },
 };

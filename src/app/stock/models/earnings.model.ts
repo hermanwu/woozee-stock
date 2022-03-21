@@ -5,6 +5,7 @@ export interface EarningsReport {
   year: number;
   quarter: number;
   isForecast?: boolean;
+  fullyYearForecastRevenue?: number;
 
   reportLink?: string;
   pressReleaseLink?: string;
@@ -18,21 +19,16 @@ export interface EarningsReport {
   revenueRetention?: number;
 
   // Profitablity
+  grossProfit?: number;
   operatingIncome?: number;
   netIncome?: number;
   salesAndMarketingCost?: number;
-  sellingGeneraAdministrative?: number;
-
-  // Calculated results:
-  operatingMargin?: number;
-
-  revenueGrowth?: number;
-  operatingIncomeGrowth?: number;
-
+  sellingGeneralAdministrative?: number;
   // Additional Stats
-  dailyActiveUser?: number;
-
   isAnnual?: boolean;
-
   notes?: Note[];
+
+  // notes
+  quarterHighlights?: string[];
+  annualHighlights?: string[];
 }

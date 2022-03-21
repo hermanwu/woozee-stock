@@ -52,7 +52,6 @@ export const ddog: StockAnalysis = {
   business: {
     markets: [
       {
-        size: 44 * BILLION,
         type: MarketType.dataAnalytics,
       },
     ],

@@ -48,7 +48,6 @@ export const ttwo: StockAnalysis = {
   business: {
     markets: [
       {
-        size: 44 * BILLION,
         type: MarketType.dataAnalytics,
       },
     ],

@@ -14,23 +14,23 @@
       </select>
     </mat-form-field>
   </div>
-</div>
 
-<div class="select-field">
-  <mat-form-field appearance="fill">
-    <mat-label>Compare Market</mat-label>
+  <div class="select-field">
+    <mat-form-field appearance="fill">
+      <mat-label>Compare Market</mat-label>
 
-    <select matNativeControl (change)="selectMarket($event)">
-      <option></option>
-      <option
-        *ngFor="let type of competitorTypeArray"
-        [value]="type"
-        [selected]="selectedMarketType === type"
-      >
-        {{ type }}
-      </option>
-    </select>
-  </mat-form-field>
+      <select matNativeControl (change)="selectMarket($event)">
+        <option></option>
+        <option
+          *ngFor="let type of competitorTypeArray"
+          [value]="type"
+          [selected]="selectedMarketType === type"
+        >
+          {{ type }}
+        </option>
+      </select>
+    </mat-form-field>
+  </div>
 </div>
 
 <div class="container">
@@ -53,7 +53,11 @@
 
       <ng-container *ngSwitchCase="factType.growth">
         <!-- Only display data after second stock-->
-        <app-growth [stock]="stock" [hideLabel]="i >= 1"></app-growth>
+        <app-growth
+          [stock]="stock"
+          [hideLabel]="i >= 1"
+          [compareDisplay]="'true'"
+        ></app-growth>
       </ng-container>
     </ng-container>
   </div>
@@ -80,7 +84,11 @@
 
       <ng-container *ngSwitchCase="factType.growth">
         <!-- Only display data after second stock-->
-        <app-growth [stock]="stock" [hideLabel]="i >= 1"></app-growth>
+        <app-growth
+          [stock]="stock"
+          [hideLabel]="i >= 1"
+          [compareDisplay]="'true'"
+        ></app-growth>
       </ng-container>
     </ng-container>
   </div>

@@ -33,6 +33,8 @@ export const nvda: StockAnalysis = {
       quarter: 4,
       revenue: 7.64 * 1e9,
       operatingIncome: 2970 * 1e6,
+      reportLink:
+        'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/0ec16816-55e2-4812-8f77-75cab5909247.pdf',
       pressReleaseLink:
         'https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2022',
       notes: [

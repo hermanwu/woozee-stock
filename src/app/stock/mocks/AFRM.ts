@@ -72,7 +72,7 @@ export const afrm: StockAnalysis = {
         'https://investors.affirm.com/static-files/887da555-3305-4b39-a53c-b3fb44ee0026',
       revenue: 361 * 1e6,
       operatingIncome: -196200 * 1e3,
-      dailyActiveUser: 319 * 1e6,
+      activeUserCount: 319 * 1e6,
       salesAndMarketingCost: 143.476 * MILLION,
     },
     {

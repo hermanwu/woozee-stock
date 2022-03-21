@@ -16,14 +16,14 @@ export const se: StockAnalysis = {
       quarter: 4,
       revenue: 3222.11 * MILLION,
       operatingIncome: 631.77 * MILLION,
-      sellingGeneraAdministrative: 1190.5 * MILLION,
+      sellingGeneralAdministrative: 1190.5 * MILLION,
     },
     {
       year: 2021,
       quarter: 3,
       revenue: 2688.88 * MILLION,
       operatingIncome: 1755.25 * MILLION,
-      sellingGeneraAdministrative: 957.74 * MILLION,
+      sellingGeneralAdministrative: 957.74 * MILLION,
     },
 
     {
@@ -31,7 +31,7 @@ export const se: StockAnalysis = {
       quarter: 2,
       revenue: 2280.55 * MILLION,
       operatingIncome: 1847.63 * MILLION,
-      sellingGeneraAdministrative: 938.82 * MILLION,
+      sellingGeneralAdministrative: 938.82 * MILLION,
     },
 
     {
@@ -39,14 +39,14 @@ export const se: StockAnalysis = {
       quarter: 1,
       revenue: 1763.64 * MILLION,
       operatingIncome: 1959.86 * MILLION,
-      sellingGeneraAdministrative: 809.71 * MILLION,
+      sellingGeneralAdministrative: 809.71 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
       revenue: 1566.55 * MILLION,
       operatingIncome: 954.24 * MILLION,
-      sellingGeneraAdministrative: 1038.1 * MILLION,
+      sellingGeneralAdministrative: 1038.1 * MILLION,
     },
   ],
 };

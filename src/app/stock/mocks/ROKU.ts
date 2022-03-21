@@ -2,7 +2,8 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const roku: StockAnalysis = {
-  marketCap: 16.74 * BILLION,
+  marketCap: 13 * BILLION,
+  competitors: ['docu'],
   logo: '',
   name: 'roku, INC.',
   description: [],
@@ -17,6 +18,12 @@ export const roku: StockAnalysis = {
       quarter: 4,
       revenue: 865.33 * MILLION,
       operatingIncome: 21.36 * MILLION,
+      isAnnual: true,
+      activeUserCount: 60.1 * MILLION,
+      pressReleaseLink:
+        'https://image.roku.com/c3VwcG9ydC1B/4Q21ShareholderFinal.pdf',
+      reportLink:
+        'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001428439/11c5daec-ccaf-4308-8159-59dc6efcd8cc.pdf',
     },
     {
       year: 2021,

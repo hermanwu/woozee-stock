@@ -1,7 +1,7 @@
 import { Note } from 'woozee-lib';
 import { Revenue } from '../facts/data/revenue-model.enum';
 import { Strategy } from '../facts/data/stratgies.enum';
-import { Market } from '../stock/models/market.models';
+import { BusinessMarket } from '../stock/models/market.models';
 
 export enum BenefitType {
   accessibility = 'Accessibility',
@@ -15,6 +15,7 @@ export interface Benefit {
 
 export enum UserType {
   developer = 'Developer',
+  gamer = 'gamer',
 }
 export interface User {
   type: UserType | string;
@@ -25,7 +26,7 @@ export interface Business {
   overview?: string[];
   missions?: string[];
   revenues?: Revenue[];
-  markets?: Market[];
+  markets?: BusinessMarket[];
   competitiveAdvantages?: Strategy[];
   users?: User[];
   growthStrategy?: string[];

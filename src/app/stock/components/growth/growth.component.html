@@ -1,7 +1,20 @@
 <div class="container">
-  <div class="row">
-    <div *ngIf="!hideLabel">Quarterly Revenue</div>
+  <div class="row sub-title">
+    <div *ngIf="!hideLabel">Latest Quarter Earnings</div>
     <div class="stats">
+      <span>
+        {{ stock.latestReport.year }} - Q{{ stock.latestReport.quarter }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="!compareDisplay">
+    <div *ngIf="!hideLabel">Revenue</div>
+    <div class="stats">
+      <!-- <span class="gray" *ngIf="!compareDisplay">
+        {{ stock.previousQuarterRevenue | siUnit: 2 | undefined }}
+        ->
+      </span> -->
       <span>
         {{ quarterlyRevenue | siUnit: 2 | undefined }}
       </span>
@@ -9,69 +22,88 @@
   </div>
 
   <div class="row">
-    <div *ngIf="!hideLabel">Growth Q/Q</div>
+    <div *ngIf="!hideLabel">Revenue Growth Q/Q</div>
     <div class="stats">
       <span>
-        {{ quarterlyRevenueGrowth | siUnit: 2 | percent | undefined }}
+        {{ stock.quarterRevenueGrowth | siUnit: 2 | percent | undefined }}
       </span>
+    </div>
+  </div>
+
+  <div class="row sub-title">
+    <span *ngIf="!hideLabel"> Past Year (Trailing 12 months)</span>
+  </div>
+
+  <div class="row" *ngIf="!compareDisplay">
+    <div *ngIf="!hideLabel">Revenue</div>
+    <div class="stats">
+      <!-- <span class="gray" *ngIf="!compareDisplay">
+        {{ stock.previousTtmRevenue | siUnit: 2 | undefined }}
+        ->
+      </span> -->
+      <span> {{ stock.ttmRevenue | siUnit: 2 | undefined }} </span>
     </div>
   </div>
 
   <div class="row">
-    <div *ngIf="!hideLabel">Revenue Retention</div>
+    <div *ngIf="!hideLabel">Revenue Growth Y/Y</div>
     <div class="stats">
       <span>
-        {{ revenueRetention | siUnit: 2 | percent | undefined }}
+        {{ stock.yearOverYearRevenueGrowth | siUnit: 2 | percent | undefined }}
       </span>
     </div>
   </div>
 
-  <div class="stats">{{ unicode.NextLine }}</div>
+  <ng-container *ngIf="forecastRevenue">
+    <div class="stats">{{ unicode.NextLine }}</div>
 
-  <div class="row">
-    <div *ngIf="!hideLabel">Forecast next Q</div>
-    <div class="stats">
-      <span>
-        {{ forecastRevenue | siUnit: 2 | undefined }}
-      </span>
+    <div class="row">
+      <div *ngIf="!hideLabel">Forecast next Q</div>
+      <div class="stats">
+        <span>
+          {{ forecastRevenue | siUnit: 2 | undefined }}
+        </span>
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div *ngIf="!hideLabel">Forecast Growth Q/Q</div>
-    <div class="stats">
-      <span>
-        {{ nextQuarterForecastGrowth | siUnit: 2 | percent | undefined }}
-      </span>
+    <div class="row">
+      <div *ngIf="!hideLabel">Forecast Growth Q/Q</div>
+      <div class="stats">
+        <span>
+          {{ nextQuarterForecastGrowth | siUnit: 2 | percent | undefined }}
+        </span>
+      </div>
     </div>
-  </div>
+  </ng-container>
 
-  <div class="stats">{{ unicode.NextLine }}</div>
+  <ng-container *ngIf="activeUserCount">
+    <div class="stats">{{ unicode.NextLine }}</div>
 
-  <div class="row">
-    <div *ngIf="!hideLabel">Active User</div>
-    <div class="stats">
-      <span>
-        {{ activeUserCount | siUnit: 2 | undefined }}
-      </span>
+    <div class="row">
+      <div *ngIf="!hideLabel">Active User</div>
+      <div class="stats">
+        <span>
+          {{ activeUserCount | siUnit: 2 | undefined }}
+        </span>
+      </div>
     </div>
-  </div>
 
-  <div class="row" *ngIf="userCountGrowth">
-    <div *ngIf="!hideLabel">User Growth Q/Q</div>
-    <div class="stats">
-      <span>
-        {{ userCountGrowth | siUnit: 2 | percent | undefined }}
-      </span>
+    <div class="row" *ngIf="userCountGrowth">
+      <div *ngIf="!hideLabel">User Growth Q/Q</div>
+      <div class="stats">
+        <span>
+          {{ userCountGrowth | siUnit: 2 | percent | undefined }}
+        </span>
+      </div>
     </div>
-  </div>
 
-  <div class="row" *ngIf="quarterlyRevenue && activeUserCount">
-    <div *ngIf="!hideLabel">Average Revenue / User</div>
-    <div class="stats">
-      <span>
-        {{ quarterlyRevenue / activeUserCount | siUnit: 2 | undefined }}
-      </span>
+    <div class="row" *ngIf="quarterlyRevenue && activeUserCount">
+      <div *ngIf="!hideLabel">Average Revenue / User</div>
+      <div class="stats">
+        <span>
+          {{ quarterlyRevenue / activeUserCount | siUnit: 2 | undefined }}
+        </span>
+      </div>
     </div>
-  </div>
+  </ng-container>
 </div>

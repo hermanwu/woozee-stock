@@ -7,9 +7,8 @@ import { companyRisks } from 'src/app/risks/data/risks/component-risks-definatio
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { NoteDialogComponent } from 'src/app/shared/components/note-dialog/note-dialog.component';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
-import { stocksMap } from '../../mocks/stock-list.const';
 import { StockAnalysis } from '../../models/stock-analysis.model';
-import { FundamentalCalculationService } from '../../services/fundemental-calculation.service';
+import { StockDataService } from '../../services/stock-data.service';
 
 @Component({
   selector: 'app-stock-properties-page',
@@ -32,22 +31,20 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   routeSub: Subscription;
   stockAnalysis: StockAnalysis;
   stockTicker: string;
-  earningsService: FundamentalCalculationService;
 
   constructor(
     private route: ActivatedRoute,
     private dialog: MatDialog,
-    private titleService: Title
+    private titleService: Title,
+    private stockDataService: StockDataService
   ) {}
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
       this.stockTicker = params[this.stockId].toLowerCase();
-      this.stockAnalysis = stocksMap[this.stockTicker];
-      this.earningsService = new FundamentalCalculationService(
-        this.stockAnalysis
-      );
-
+      this.stockAnalysis = this.stockDataService
+        .getDataMap()
+        .get(this.stockTicker);
       this.titleService.setTitle(this.stockAnalysis.name);
     });
   }

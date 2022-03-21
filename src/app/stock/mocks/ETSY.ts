@@ -1,3 +1,4 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { BILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -45,4 +46,12 @@ export const etsy: StockAnalysis = {
       operatingIncome: 161.34 * 1e6,
     },
   ],
+
+  business: {
+    markets: [
+      {
+        type: MarketType.ecommerce,
+      },
+    ],
+  },
 };

@@ -15,10 +15,20 @@
 </div>
 
 <div *ngIf="showDetails" class="details-panel">
-  <div class="padding-1rem" *ngIf="stockAnalysis.predications">
+  <div class="padding-1rem">
     <app-card>
-      <div>My Forecast</div>
-      Price: {{ stockAnalysis.predications[0]?.price }}
+      <h2>My Forecast</h2>
+
+      <div *ngIf="stockAnalysis?.predications">
+        <div>
+          Price:
+          {{ stockAnalysis.predications[0]?.price | undefined }}
+        </div>
+        <div>
+          Predication Date:
+          {{ stockAnalysis.predications[0]?.start | date }}
+        </div>
+      </div>
     </app-card>
   </div>
 

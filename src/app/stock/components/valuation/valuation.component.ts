@@ -21,20 +21,5 @@ export class ValuationComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {}
 
-  ngOnChanges(): void {
-    if (this.stock && this.stock.earningsReports) {
-      this.earningReports = this.stock.earningsReports
-        .filter((report) => !report.isForecast)
-        .sort((a, b) => b.year - a.year || b.quarter - a.quarter);
-
-      this.trailing12MonthsSales = this.earningReports
-        .filter((report) => !report.isForecast)
-        .slice(0, 4)
-        .reduce((previous, current) => previous + current.revenue, 0);
-
-      this.trailing12MonthsOI = this.earningReports
-        .slice(0, 4)
-        .reduce((previous, current) => previous + current.operatingIncome, 0);
-    }
-  }
+  ngOnChanges(): void {}
 }

@@ -19,7 +19,7 @@ export const crwd: StockAnalysis = {
       operatingIncome: -23.5 * MILLION,
       activeUserCount: 16325,
       salesAndMarketingCost: 162.594 * MILLION,
-      sellingGeneraAdministrative: 237 * MILLION,
+      sellingGeneralAdministrative: 237 * MILLION,
       pressReleaseLink:
         'https://ir.crowdstrike.com/static-files/df3bb483-e089-4e1c-af9b-f47ec57cdf03',
     },
@@ -46,7 +46,7 @@ export const crwd: StockAnalysis = {
       quarter: 4,
       revenue: 264.93 * 1e6,
       operatingIncome: -15.8 * 1e6,
-      sellingGeneraAdministrative: 148 * MILLION,
+      sellingGeneralAdministrative: 148 * MILLION,
       salesAndMarketingCost: 112.449 * MILLION,
 
       reportLink:

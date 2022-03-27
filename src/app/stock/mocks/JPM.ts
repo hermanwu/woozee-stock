@@ -18,13 +18,13 @@ export const JPM: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 472.78 * 1e9,
-        revenue: 30479 * 1e6,
+        totalRevenue: 30479 * 1e6,
         operatingIncome: 15097 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 33075 * 1e6,
+        totalRevenue: 33075 * 1e6,
         operatingIncome: 5660 * 1e6,
       },
     },

@@ -36,7 +36,7 @@ export const coin: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      revenue: 8.1 * BILLION,
+      totalRevenue: 8.1 * BILLION,
       operatingIncome: 2970 * MILLION,
       activeUserCount: 10 * MILLION,
       isForecast: true,
@@ -44,7 +44,7 @@ export const coin: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      revenue: 2.498 * BILLION,
+      totalRevenue: 2.498 * BILLION,
       operatingIncome: 922 * MILLION,
       salesAndMarketingCost: 244.572 * MILLION,
       activeUserCount: 11.4 * MILLION,
@@ -62,25 +62,25 @@ export const coin: StockAnalysis = {
     {
       year: 2021,
       quarter: 3,
-      revenue: 1311 * MILLION,
+      totalRevenue: 1311 * MILLION,
       operatingIncome: 291.81 * MILLION,
     },
     {
       year: 2021,
       quarter: 2,
-      revenue: 2228 * MILLION,
+      totalRevenue: 2228 * MILLION,
       operatingIncome: 874.73 * MILLION,
     },
     {
       year: 2021,
       quarter: 1,
-      revenue: 1801 * MILLION,
+      totalRevenue: 1801 * MILLION,
       operatingIncome: 987.71 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 585 * MILLION,
+      totalRevenue: 585 * MILLION,
       operatingIncome: 226.59 * MILLION,
       salesAndMarketingCost: 23.501 * MILLION,
       activeUserCount: 2.8 * MILLION,
@@ -88,7 +88,7 @@ export const coin: StockAnalysis = {
     {
       year: 2020,
       quarter: 3,
-      revenue: 315 * MILLION,
+      totalRevenue: 315 * MILLION,
       operatingIncome: 101.5 * MILLION,
     },
   ],
@@ -108,7 +108,7 @@ export const coin: StockAnalysis = {
     'https://investor.coinbase.com/financials/sec-filings/default.aspx',
   business: {
     markets: [{ type: MarketType.crypto }],
-    revenues: [{ type: RevenueType.consumptionBased }],
+    revenues: [{ name: '', type: RevenueType.consumptionBased }],
     users: [
       { type: 'Retail users: We serve as the users’ primary crypto account' },
       {

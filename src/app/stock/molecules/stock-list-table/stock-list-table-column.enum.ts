@@ -9,11 +9,8 @@ export enum StockListTableColumn {
   // Profit
   quarterOiGrowth = 'quarterOiGrowth',
   ttmOI = 'ttmOI',
-  quarterOperatingMargin = 'quarterOperatingMargin',
-  ttmOperatingMargin = 'ttmOperatingMargin',
 
   // Valuation
   psRatio = 'psRatio',
-  revenueToMarketCapRatio = 'revenueToMarketCapRatio',
-  oiToMarketCapRatio = 'oiToMarketCapRatio',
+  marketCapToOiRatio = 'marketCapToOiRatio',
 }

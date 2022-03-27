@@ -18,13 +18,13 @@ export const VMEO: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 6.24 * 1e9,
-        revenue: 96.046 * 1e6,
+        totalRevenue: 96.046 * 1e6,
         operatingIncome: -20.312 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 67.334 * 1e6,
+        totalRevenue: 67.334 * 1e6,
         operatingIncome: -12.346 * 1e6,
       },
     },

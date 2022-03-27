@@ -18,13 +18,13 @@ export const ATVI: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 61.98 * 1e9,
-        revenue: 2296 * 1e6,
+        totalRevenue: 2296 * 1e6,
         operatingIncome: 959 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 1932 * 1e6,
+        totalRevenue: 1932 * 1e6,
         operatingIncome: 749 * 1e6,
       },
     },

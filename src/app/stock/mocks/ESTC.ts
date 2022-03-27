@@ -15,40 +15,40 @@ export const estc: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      revenue: 223.94 * MILLION,
+      totalRevenue: 223.94 * MILLION,
       operatingIncome: -45.85 * MILLION,
-      sellingGeneralAdministrative: 135.51 * MILLION,
+      sellingGeneralAndAdministrative: 135.51 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 3,
-      revenue: 205.98 * MILLION,
+      totalRevenue: 205.98 * MILLION,
       operatingIncome: -37.17 * MILLION,
-      sellingGeneralAdministrative: 108.33 * MILLION,
+      sellingGeneralAndAdministrative: 108.33 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 2,
-      revenue: 193.09 * MILLION,
+      totalRevenue: 193.09 * MILLION,
       operatingIncome: -31.03 * MILLION,
-      sellingGeneralAdministrative: 99.55 * MILLION,
+      sellingGeneralAndAdministrative: 99.55 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 1,
-      revenue: 177.61 * MILLION,
+      totalRevenue: 177.61 * MILLION,
       operatingIncome: -37.08 * MILLION,
-      sellingGeneralAdministrative: 99.48 * MILLION,
+      sellingGeneralAndAdministrative: 99.48 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 157.12 * MILLION,
+      totalRevenue: 157.12 * MILLION,
       operatingIncome: -34.46 * MILLION,
-      sellingGeneralAdministrative: 86.5 * MILLION,
+      sellingGeneralAndAdministrative: 86.5 * MILLION,
     },
   ],
 };

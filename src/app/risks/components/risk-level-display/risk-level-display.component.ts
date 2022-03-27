@@ -9,7 +9,7 @@ import { RiskLevel } from '../../models/risk-level.model';
 export class RiskLevelDisplayComponent implements OnInit {
   @Input() riskLevel: RiskLevel;
 
-  readonly riskLevelEnum = RiskLevel;
+  readonly impactLevelEnum = RiskLevel;
 
   constructor() {}
 

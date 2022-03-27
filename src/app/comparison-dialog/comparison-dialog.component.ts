@@ -30,7 +30,10 @@ export class ComparisonDialogComponent {
   ) {
     this.selectedFact = dialogData.factType;
     this.stocks.push(dialogData.stock);
+    console.log(this.stocks);
+
     this.setDefaultCompetitors(dialogData.stock);
+    console.log(this.stocks);
 
     this.competitorTypeArray.push('Default');
 

@@ -18,13 +18,13 @@ export const wish: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 1 * 1e9,
-        revenue: 656 * 1e6,
+        totalRevenue: 656 * 1e6,
         operatingIncome: -114 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 701 * 1e6,
+        totalRevenue: 701 * 1e6,
         operatingIncome: 12 * 1e6,
       },
     },

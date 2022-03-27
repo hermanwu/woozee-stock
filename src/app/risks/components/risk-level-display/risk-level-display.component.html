@@ -1,17 +1,13 @@
 <ng-container [ngSwitch]="riskLevel">
-  <ng-container *ngSwitchCase="riskLevelEnum.high" i18n>
-    <span class="badge red-background">High Risk</span>
+  <ng-container *ngSwitchCase="impactLevelEnum.high" i18n>
+    <span class="badge red-background">High</span>
   </ng-container>
 
-  <ng-container *ngSwitchCase="riskLevelEnum.medium" i18n>
-    <span class="badge orange-background">Medium Risk</span>
-  </ng-container>
-
-  <ng-container *ngSwitchCase="riskLevelEnum.low" i18n>
-    <span class="badge yellow-background">Low Risk</span>
+  <ng-container *ngSwitchCase="impactLevelEnum.medium" i18n>
+    <span class="badge orange-background">Medium</span>
   </ng-container>
 
   <ng-container *ngSwitchDefault i18n>
-    <span class="badge green-background">No Risk</span>
+    <span class="badge yellow-background">Low</span>
   </ng-container>
 </ng-container>

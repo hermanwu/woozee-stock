@@ -23,7 +23,7 @@ export const rblx: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      revenue: 568.77 * MILLION,
+      totalRevenue: 568.77 * MILLION,
       operatingIncome: -139.65 * MILLION,
       isAnnual: true,
     },
@@ -31,28 +31,28 @@ export const rblx: StockAnalysis = {
     {
       year: 2021,
       quarter: 3,
-      revenue: 509.34 * MILLION,
+      totalRevenue: 509.34 * MILLION,
       operatingIncome: -77.45 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 2,
-      revenue: 454.1 * MILLION,
+      totalRevenue: 454.1 * MILLION,
       operatingIncome: -142.95 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 1,
-      revenue: 386.98 * MILLION,
+      totalRevenue: 386.98 * MILLION,
       operatingIncome: -135.06 * MILLION,
     },
 
     {
       year: 2020,
       quarter: 4,
-      revenue: 310.01 * MILLION,
+      totalRevenue: 310.01 * MILLION,
       operatingIncome: -68.61 * MILLION,
     },
   ],

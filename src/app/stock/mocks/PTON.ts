@@ -18,13 +18,13 @@ export const pton: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 31.12 * 1e9,
-        revenue: 936.9 * 1e6,
+        totalRevenue: 936.9 * 1e6,
         operatingIncome: -301.7 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 607.1 * 1e6,
+        totalRevenue: 607.1 * 1e6,
         operatingIncome: 90 * 1e6,
       },
     },

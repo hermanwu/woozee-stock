@@ -19,13 +19,13 @@ export const techy: StockAnalysis = {
           'https://static.www.tencent.com/uploads/2021/08/31/7276c2279348d70e0b0f74f6c470f92e.pdf',
         webcast: null,
         marketCap: 596.927 * 1e9,
-        revenue: 138259 * 1e6 * rmbToDollar,
+        totalRevenue: 138259 * 1e6 * rmbToDollar,
         operatingIncome: 52487 * 1e6 * rmbToDollar,
       },
     },
     2020: {
       2: {
-        revenue: 114883 * 1e6 * rmbToDollar,
+        totalRevenue: 114883 * 1e6 * rmbToDollar,
         operatingIncome: 39311 * 1e6 * rmbToDollar,
       },
     },

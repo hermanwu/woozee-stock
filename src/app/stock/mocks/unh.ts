@@ -18,13 +18,13 @@ export const unh: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 396.18 * 1e9,
-        revenue: 71321 * 1e6,
+        totalRevenue: 71321 * 1e6,
         operatingIncome: 5978 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 62138 * 1e6,
+        totalRevenue: 62138 * 1e6,
         operatingIncome: 9241 * 1e6,
       },
     },

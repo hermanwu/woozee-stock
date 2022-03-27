@@ -17,14 +17,14 @@ export interface StockData extends StockAnalysis {
   // Profit
   quarterGrossProfit?: number;
   quarterOperatingIncome?: number;
-  quarterOperatingMargin?: number;
   quarterOiGrowth?: number;
   quarterOperatingCostOverGrossProfit?: number;
   ttmOI?: number;
-  ttmOperatingMargin?: number;
+  ttmGrossProfit?: number;
+  ttmNetIncome?: number;
+  previousTtmOI?: number;
+  previousTtmGrossProfit?: number;
 
   // Value
-  psRatio?: number;
-  revenueToMarketCapRatio?: number;
-  oiToMarketCapRatio?: number;
+  marketCapToOiRatio?: number;
 }

@@ -21,9 +21,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   private stockId = 'stockId';
 
   factType = FactType;
-  showDetails: boolean = true;
   carousalDisplayItemIndex: number;
-  displayMode = DisplayMode.slide;
+  displayMode = DisplayMode.list;
   expanded: boolean;
   isAllCardOpen = false;
   panelOpenState = true;

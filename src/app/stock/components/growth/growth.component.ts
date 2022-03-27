@@ -38,7 +38,7 @@ export class GrowthComponent implements OnInit, OnChanges {
           report.quarter === currentReport.quarter
       )[0];
 
-      this.quarterlyRevenue = currentReport.revenue;
+      this.quarterlyRevenue = currentReport.totalRevenue;
       this.activeUserCount = currentReport.activeUserCount;
 
       if (currentReport && previousReport) {
@@ -52,7 +52,7 @@ export class GrowthComponent implements OnInit, OnChanges {
       )[0];
 
       if (forecastReport) {
-        this.forecastRevenue = forecastReport.revenue;
+        this.forecastRevenue = forecastReport.totalRevenue;
 
         const previous = reports.filter(
           (a) =>
@@ -62,7 +62,8 @@ export class GrowthComponent implements OnInit, OnChanges {
 
         if (previous) {
           this.nextQuarterForecastGrowth =
-            (this.forecastRevenue - previous.revenue) / previous.revenue;
+            (this.forecastRevenue - previous.totalRevenue) /
+            previous.totalRevenue;
         }
       }
     }

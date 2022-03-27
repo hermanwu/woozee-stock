@@ -23,33 +23,33 @@ export const tdoc: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      revenue: 554.24 * MILLION,
+      totalRevenue: 554.24 * MILLION,
       operatingIncome: -41.45 * MILLION,
     },
     {
       year: 2021,
       quarter: 3,
-      revenue: 521.66 * MILLION,
+      totalRevenue: 521.66 * MILLION,
       operatingIncome: -61.43 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 2,
-      revenue: 503.14 * MILLION,
+      totalRevenue: 503.14 * MILLION,
       operatingIncome: -110.37 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 1,
-      revenue: 453.68 * MILLION,
+      totalRevenue: 453.68 * MILLION,
       operatingIncome: -96.14 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 383.32 * MILLION,
+      totalRevenue: 383.32 * MILLION,
       operatingIncome: -458.61 * MILLION,
     },
   ],

@@ -10,6 +10,7 @@ import { StockData } from '../stock/services/stock-data.model';
 export class ProfitabilityComponent implements OnInit, OnChanges {
   @Input() stock: StockData;
   @Input() hideLabel: boolean;
+  @Input() compareDisplay: boolean;
 
   readonly unicode = UnicodeCharacters;
 

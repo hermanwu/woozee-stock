@@ -18,13 +18,13 @@ export const OKTA: StockAnalysis = {
           'https://investor.okta.com/news-releases/news-release-details/okta-announces-strong-first-quarter-results-0',
         webcast: '',
         marketCap: 34.56 * 1e9,
-        revenue: 251006 * 1e3,
+        totalRevenue: 251006 * 1e3,
         operatingIncome: -90681 * 1e3,
       },
     },
     2020: {
       2: {
-        revenue: 182859 * 1e3,
+        totalRevenue: 182859 * 1e3,
         operatingIncome: -52199 * 1e3,
       },
     },

@@ -16,7 +16,7 @@ export const roku: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      revenue: 865.33 * MILLION,
+      totalRevenue: 865.33 * MILLION,
       operatingIncome: 21.36 * MILLION,
       isAnnual: true,
       activeUserCount: 60.1 * MILLION,
@@ -28,25 +28,25 @@ export const roku: StockAnalysis = {
     {
       year: 2021,
       quarter: 3,
-      revenue: 679.95 * MILLION,
+      totalRevenue: 679.95 * MILLION,
       operatingIncome: 68.85 * MILLION,
     },
     {
       year: 2021,
       quarter: 2,
-      revenue: 645.12 * MILLION,
+      totalRevenue: 645.12 * MILLION,
       operatingIncome: 69.08 * MILLION,
     },
     {
       year: 2021,
       quarter: 1,
-      revenue: 574.18 * MILLION,
+      totalRevenue: 574.18 * MILLION,
       operatingIncome: 75.81 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 649.89 * MILLION,
+      totalRevenue: 649.89 * MILLION,
       operatingIncome: 65.15 * MILLION,
     },
   ],

@@ -33,13 +33,13 @@ export const upst: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 23.23 * 1e9,
-        revenue: 193.946 * 1e6,
+        totalRevenue: 193.946 * 1e6,
         operatingIncome: 36.294 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 17.353 * 1e6,
+        totalRevenue: 17.353 * 1e6,
         operatingIncome: -11.388 * 1e6,
       },
     },

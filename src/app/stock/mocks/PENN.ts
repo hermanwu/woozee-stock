@@ -20,13 +20,13 @@ export const PENN: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 12.39 * 1e9,
-        revenue: 1545.8 * 1e6,
+        totalRevenue: 1545.8 * 1e6,
         operatingIncome: 377.9 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 305.5 * 1e6,
+        totalRevenue: 305.5 * 1e6,
         operatingIncome: -165.4 * 1e6,
       },
     },

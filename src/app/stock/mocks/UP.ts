@@ -19,13 +19,13 @@ export const up: StockAnalysis = {
           'https://s27.q4cdn.com/682800059/files/doc_financials/2021/q2/UP-2Q-2021-Earnings-Release-FINAL.pdf',
         webcast: null,
         marketCap: 1.86 * 1e9,
-        revenue: 285.58 * 1e6,
+        totalRevenue: 285.58 * 1e6,
         operatingIncome: -28.954 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 134.331 * 1e6,
+        totalRevenue: 134.331 * 1e6,
         operatingIncome: -27.366 * 1e6,
       },
     },

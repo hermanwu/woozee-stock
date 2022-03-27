@@ -18,14 +18,14 @@ export const SOFI: StockAnalysis = {
         press: '',
         webcast: '',
         marketCap: 11.62 * 1e9,
-        revenue: 231274 * 1e3,
+        totalRevenue: 231274 * 1e3,
         operatingIncome: -165392 * 1e3,
         date: new Date('2021-08-06'),
       },
     },
     2020: {
       2: {
-        revenue: 114952 * 1e3,
+        totalRevenue: 114952 * 1e3,
         operatingIncome: -91960 * 1e3,
       },
     },

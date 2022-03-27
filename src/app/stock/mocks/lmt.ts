@@ -20,13 +20,13 @@ export const lmt: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 94.42 * 1e9,
-        revenue: 17029 * 1e6,
+        totalRevenue: 17029 * 1e6,
         operatingIncome: 2192 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 16220 * 1e6,
+        totalRevenue: 16220 * 1e6,
         operatingIncome: 2213 * 1e6,
       },
     },

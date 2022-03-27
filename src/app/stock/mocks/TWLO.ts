@@ -23,39 +23,39 @@ export const twlo: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      revenue: 860 * MILLION,
+      totalRevenue: 860 * MILLION,
       isForecast: true,
     },
     {
       year: 2021,
       quarter: 4,
-      revenue: 842.74 * MILLION,
+      totalRevenue: 842.74 * MILLION,
       operatingIncome: -283.63 * MILLION,
     },
     {
       year: 2021,
       quarter: 3,
-      revenue: 740.18 * MILLION,
+      totalRevenue: 740.18 * MILLION,
       operatingIncome: -232.34 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 2,
-      revenue: 668.93 * MILLION,
+      totalRevenue: 668.93 * MILLION,
       operatingIncome: -202.27 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 1,
-      revenue: 589.99 * MILLION,
+      totalRevenue: 589.99 * MILLION,
       operatingIncome: -197.34 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 548.09 * MILLION,
+      totalRevenue: 548.09 * MILLION,
       operatingIncome: -185.29 * MILLION,
     },
   ],

@@ -20,13 +20,13 @@ export const logi: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 16.39 * 1e9,
-        revenue: 1312.058 * 1e6,
+        totalRevenue: 1312.058 * 1e6,
         operatingIncome: 203.081 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 791.894 * 1e6,
+        totalRevenue: 791.894 * 1e6,
         operatingIncome: 83.427 * 1e6,
       },
     },

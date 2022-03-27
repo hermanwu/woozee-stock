@@ -39,20 +39,79 @@ export class StockDataService {
       const reports = stock.earningsReports
         .filter((report) => !report.isForecast)
         .sort((a, b) => b.year - a.year || b.quarter - a.quarter);
-      stock.ttmRevenue = reports
-        .slice(0, 4)
-        .reduce((previous, current) => previous + current.revenue, 0);
-      stock.previousTtmRevenue = reports
-        .slice(4, 8)
-        .reduce((previous, current) => previous + current.revenue, 0);
-      stock.ttmOI = reports
-        .slice(0, 4)
-        .reduce((previous, current) => previous + current.operatingIncome, 0);
-      stock.ttmOperatingMargin = stock.ttmOI / stock.ttmRevenue;
 
-      stock.psRatio = stock.marketCap / stock.ttmRevenue;
-      stock.revenueToMarketCapRatio = stock.ttmRevenue / stock.marketCap;
-      stock.oiToMarketCapRatio = stock.ttmOI / stock.marketCap;
+      // Calculate current year stats.
+      const currentYearReports = reports.slice(0, 4);
+
+      let ttmRevenue = 0;
+      let ttmOI = 0;
+      let ttmGrossProfit = 0;
+      let ttmNetIncome = 0;
+
+      for (let report of currentYearReports) {
+        if (ttmRevenue !== undefined) {
+          ttmRevenue = report.totalRevenue
+            ? ttmRevenue + report.totalRevenue
+            : undefined;
+        }
+
+        if (ttmOI !== undefined) {
+          ttmOI = report.operatingIncome
+            ? ttmOI + report.operatingIncome
+            : undefined;
+        }
+
+        if (ttmGrossProfit !== undefined) {
+          ttmGrossProfit = report.grossProfit
+            ? ttmGrossProfit + report.grossProfit
+            : undefined;
+        }
+
+        if (ttmNetIncome !== undefined) {
+          ttmNetIncome = report.netIncome
+            ? ttmNetIncome + report.netIncome
+            : undefined;
+        }
+      }
+
+      stock.ttmRevenue = ttmRevenue;
+      stock.ttmOI = ttmOI;
+      stock.ttmGrossProfit = ttmGrossProfit;
+      stock.ttmNetIncome = ttmNetIncome;
+
+      // Calculate previous year stats.
+      const previousYearReport = reports.slice(4, 8);
+      let previousTtmRevenue = 0;
+      let previousTtmOI = 0;
+      let previousTtmGrossProfit = 0;
+
+      for (let report of previousYearReport) {
+        if (previousTtmRevenue !== undefined) {
+          previousTtmRevenue = report.totalRevenue
+            ? previousTtmRevenue + report.totalRevenue
+            : undefined;
+        }
+
+        if (previousTtmOI !== undefined) {
+          previousTtmOI = report.operatingIncome
+            ? previousTtmOI + report.operatingIncome
+            : undefined;
+        }
+
+        if (previousTtmGrossProfit !== undefined) {
+          previousTtmGrossProfit = report.grossProfit
+            ? previousTtmGrossProfit + report.grossProfit
+            : undefined;
+        }
+      }
+
+      stock.previousTtmRevenue = previousTtmRevenue;
+      stock.previousTtmOI = previousTtmOI;
+      stock.previousTtmGrossProfit = previousTtmGrossProfit;
+
+      //
+      stock.marketCapToOiRatio =
+        stock.ttmOI > 0 ? stock.marketCap / stock.ttmOI : undefined;
       stock.yearOverYearRevenueGrowth =
         (stock.ttmRevenue - stock.previousTtmRevenue) /
         stock.previousTtmRevenue;
@@ -75,14 +134,11 @@ export class StockDataService {
           (currentReport.grossProfit - currentReport.operatingIncome) /
           currentReport.grossProfit;
 
-        stock.quarterOperatingMargin =
-          currentReport.operatingIncome / currentReport.revenue;
-
-        stock.previousQuarterRevenue = previousReport.revenue;
-        stock.quarterRevenue = currentReport.revenue;
+        stock.previousQuarterRevenue = previousReport.totalRevenue;
+        stock.quarterRevenue = currentReport.totalRevenue;
         stock.quarterRevenueGrowth =
-          (currentReport.revenue - previousReport.revenue) /
-          previousReport.revenue;
+          (currentReport.totalRevenue - previousReport.totalRevenue) /
+          previousReport.totalRevenue;
 
         stock.quarterOiGrowth =
           (currentReport.operatingIncome - previousReport.operatingIncome) /
@@ -108,7 +164,7 @@ export class StockDataService {
   }
 
   calculateRevenueGrowth(previous: EarningsReport, current: EarningsReport) {
-    return this.calculateGrowth(previous?.revenue, current?.revenue);
+    return this.calculateGrowth(previous?.totalRevenue, current?.totalRevenue);
   }
 
   calculateOperatingIncomeGrowth(
@@ -125,9 +181,9 @@ export class StockDataService {
     if (
       earningReport &&
       earningReport.operatingIncome &&
-      earningReport.revenue
+      earningReport.totalRevenue
     ) {
-      return earningReport.operatingIncome / earningReport.revenue;
+      return earningReport.operatingIncome / earningReport.totalRevenue;
     }
   }
 }

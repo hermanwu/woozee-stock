@@ -20,33 +20,33 @@ export const asml: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      revenue: 4985.6 * MILLION,
+      totalRevenue: 4985.6 * MILLION,
       operatingIncome: 2031.2 * MILLION,
     },
     {
       year: 2021,
       quarter: 3,
-      revenue: 5241.3 * MILLION,
+      totalRevenue: 5241.3 * MILLION,
       operatingIncome: 1919.3 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 2,
-      revenue: 4020.2,
+      totalRevenue: 4020.2,
       operatingIncome: 1239.0 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 1,
-      revenue: 4363.9 * MILLION,
+      totalRevenue: 4363.9 * MILLION,
       operatingIncome: 1560.6 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 4254.2 * MILLION,
+      totalRevenue: 4254.2 * MILLION,
       operatingIncome: 1503.8 * MILLION,
     },
   ],

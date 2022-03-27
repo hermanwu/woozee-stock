@@ -9,44 +9,44 @@ export const crwd: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      revenue: 462 * MILLION,
+      totalRevenue: 462 * MILLION,
       isForecast: true,
     },
     {
       year: 2021,
       quarter: 4,
-      revenue: 431 * MILLION,
+      totalRevenue: 431 * MILLION,
       operatingIncome: -23.5 * MILLION,
       activeUserCount: 16325,
       salesAndMarketingCost: 162.594 * MILLION,
-      sellingGeneralAdministrative: 237 * MILLION,
+      sellingGeneralAndAdministrative: 237 * MILLION,
       pressReleaseLink:
         'https://ir.crowdstrike.com/static-files/df3bb483-e089-4e1c-af9b-f47ec57cdf03',
     },
     {
       year: 2021,
       quarter: 3,
-      revenue: 380.05 * 1e6,
+      totalRevenue: 380.05 * 1e6,
       operatingIncome: -40.26 * 1e6,
     },
     {
       year: 2021,
       quarter: 2,
-      revenue: 337.69 * 1e6,
+      totalRevenue: 337.69 * 1e6,
       operatingIncome: -47.4 * 1e6,
     },
     {
       year: 2021,
       quarter: 1,
-      revenue: 302.84 * 1e6,
+      totalRevenue: 302.84 * 1e6,
       operatingIncome: -31.35 * 1e6,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 264.93 * 1e6,
+      totalRevenue: 264.93 * 1e6,
       operatingIncome: -15.8 * 1e6,
-      sellingGeneralAdministrative: 148 * MILLION,
+      sellingGeneralAndAdministrative: 148 * MILLION,
       salesAndMarketingCost: 112.449 * MILLION,
 
       reportLink:
@@ -56,7 +56,7 @@ export const crwd: StockAnalysis = {
     {
       year: 2020,
       quarter: 3,
-      revenue: 232.46 * 1e6,
+      totalRevenue: 232.46 * 1e6,
       operatingIncome: -24.16 * 1e6,
     },
   ],
@@ -69,8 +69,8 @@ export const crwd: StockAnalysis = {
   business: {
     markets: [{ type: MarketType.saas }],
     revenues: [
-      { type: RevenueType.subscription },
-      { type: RevenueType.professionService },
+      { name: '', type: RevenueType.subscription },
+      { name: '', type: RevenueType.professionService },
     ],
     overview: [
       'We founded CrowdStrike in 2011 to reinvent security for the cloud era.',

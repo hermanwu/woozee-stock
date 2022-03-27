@@ -18,13 +18,13 @@ export const EDIT: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 4.51 * 1e9,
-        revenue: 0.379 * 1e6,
+        totalRevenue: 0.379 * 1e6,
         operatingIncome: -55.401 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 10.749 * 1e6,
+        totalRevenue: 10.749 * 1e6,
         operatingIncome: -31.339 * 1e6,
       },
     },

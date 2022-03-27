@@ -18,13 +18,13 @@ export const meli: StockAnalysis = {
           'https://investor.mercadolibre.com/static-files/f7df2670-1296-4dfa-bff3-980c37ad79a6',
         webcast: null,
         marketCap: 90.51 * 1e9,
-        revenue: 3081 * 1e6,
+        totalRevenue: 3081 * 1e6,
         operatingIncome: 257 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 1530 * 1e6,
+        totalRevenue: 1530 * 1e6,
         operatingIncome: 69.744 * 1e6,
       },
     },

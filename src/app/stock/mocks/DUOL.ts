@@ -20,13 +20,13 @@ export const DUOL: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 6.1 * 1e9,
-        revenue: 58.803 * 1e6,
+        totalRevenue: 58.803 * 1e6,
         operatingIncome: -478 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 40.011 * 1e6,
+        totalRevenue: 40.011 * 1e6,
         operatingIncome: 82 * 1e6,
       },
     },

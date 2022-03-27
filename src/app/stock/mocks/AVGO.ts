@@ -18,13 +18,13 @@ export const avgo: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 204.37 * 1e9,
-        revenue: 6778 * 1e6,
+        totalRevenue: 6778 * 1e6,
         operatingIncome: 2126 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 5821 * 1e6,
+        totalRevenue: 5821 * 1e6,
         operatingIncome: 1008 * 1e6,
       },
     },

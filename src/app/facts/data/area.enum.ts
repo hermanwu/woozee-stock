@@ -4,6 +4,7 @@ export enum MarketType {
   travel = 'Travel Booking',
   crypto = 'Crypto',
 
+  ai = 'AI',
   gaming = 'Gaming',
   datacenter = 'Datacenter',
   virtualSpace = 'Virtualization',

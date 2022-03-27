@@ -18,13 +18,13 @@ export const AXP: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 124.2 * 1e9,
-        revenue: 10243 * 1e6,
+        totalRevenue: 10243 * 1e6,
         operatingIncome: 2940 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 7675 * 1e6,
+        totalRevenue: 7675 * 1e6,
         operatingIncome: 622 * 1e6,
       },
     },

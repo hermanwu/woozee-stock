@@ -13,33 +13,33 @@ export const dkng: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      revenue: 473.32 * MILLION,
+      totalRevenue: 473.32 * MILLION,
       operatingIncome: -368.76 * MILLION,
     },
     {
       year: 2021,
       quarter: 3,
-      revenue: 212.82 * MILLION,
+      totalRevenue: 212.82 * MILLION,
       operatingIncome: -546.52 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 2,
-      revenue: 297.61 * MILLION,
+      totalRevenue: 297.61 * MILLION,
       operatingIncome: -321.55 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 1,
-      revenue: 312.28 * MILLION,
+      totalRevenue: 312.28 * MILLION,
       operatingIncome: -324.79 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 322.22 * MILLION,
+      totalRevenue: 322.22 * MILLION,
       operatingIncome: -268.34 * MILLION,
     },
   ],

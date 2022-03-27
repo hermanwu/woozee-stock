@@ -18,13 +18,13 @@ export const jnj: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 433.7 * 1e9,
-        revenue: 23312 * 1e6,
+        totalRevenue: 23312 * 1e6,
         operatingIncome: 6278 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 18336 * 1e6,
+        totalRevenue: 18336 * 1e6,
         operatingIncome: 3626 * 1e6,
       },
     },

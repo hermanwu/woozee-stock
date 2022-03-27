@@ -15,7 +15,7 @@ export const mdb: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      revenue: 226.893 * MILLION,
+      totalRevenue: 226.893 * MILLION,
       operatingIncome: -76.77 * MILLION,
       reportLink:
         'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001441816/01f4de89-fbb5-4313-8c9d-a61af15139ec.pdf',
@@ -25,28 +25,28 @@ export const mdb: StockAnalysis = {
     {
       year: 2021,
       quarter: 3,
-      revenue: 198.75 * MILLION,
+      totalRevenue: 198.75 * MILLION,
       operatingIncome: -72.53 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 2,
-      revenue: 181.65 * MILLION,
+      totalRevenue: 181.65 * MILLION,
       operatingIncome: -61.45 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 1,
-      revenue: 171.0 * MILLION,
+      totalRevenue: 171.0 * MILLION,
       operatingIncome: -59.39 * MILLION,
     },
 
     {
       year: 2020,
       quarter: 4,
-      revenue: 150.77 * MILLION,
+      totalRevenue: 150.77 * MILLION,
       operatingIncome: -58.09 * MILLION,
     },
   ],

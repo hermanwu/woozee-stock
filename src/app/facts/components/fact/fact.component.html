@@ -1,14 +1,26 @@
 <app-card>
-  <div class="header">
-    <h2>{{ factType }}</h2>
-    <!-- <button type="button" mat-icon-button><mat-icon>edit</mat-icon></button> -->
+  <app-title-menu>
+    <div title>
+      {{ factType }}
+    </div>
 
-    <button mat-icon-button type="button" (click)="onCompareClick()">
-      <mat-icon>compare</mat-icon>
-    </button>
-  </div>
+    <div buttons>
+      <button mat-icon-button type="button" (click)="onCompareClick()">
+        <mat-icon>compare</mat-icon>
+      </button>
 
-  <div>
+      <button
+        mat-icon-button
+        type="button"
+        (click)="showDetails = !showDetails"
+      >
+        <mat-icon *ngIf="showDetails">expand_less</mat-icon>
+        <mat-icon *ngIf="!showDetails">expand_more</mat-icon>
+      </button>
+    </div>
+  </app-title-menu>
+
+  <div *ngIf="showDetails">
     <ng-content></ng-content>
   </div>
 </app-card>

@@ -249,28 +249,28 @@ export const snap: StockAnalysis = {
         "https://s25.q4cdn.com/442043304/files/doc_financials/2021/q4/Q4'21-Earnings-Release.pdf",
       slidesLink:
         "https://s25.q4cdn.com/442043304/files/doc_financials/2021/q4/Q4'21-Earnings-Slides.pdf",
-      revenue: 1297885 * 1e3,
+      totalRevenue: 1297885 * 1e3,
       operatingIncome: -25127 * 1e3,
       activeUserCount: 319 * 1e6,
     },
     {
       year: 2021,
       quarter: 2,
-      revenue: 982108 * 1e3,
+      totalRevenue: 982108 * 1e3,
       operatingIncome: -192512 * 1e3,
     },
 
     {
       year: 2020,
       quarter: 4,
-      revenue: 911322 * 1e3,
+      totalRevenue: 911322 * 1e3,
       operatingIncome: -97236 * 1e3,
       activeUserCount: 265 * 1e6,
     },
     {
       year: 2020,
       quarter: 2,
-      revenue: 454158 * 1e3,
+      totalRevenue: 454158 * 1e3,
       operatingIncome: -310608 * 1e3,
     },
   ],

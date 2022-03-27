@@ -18,13 +18,13 @@ export const EA: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 41.3 * 1e9,
-        revenue: 1551 * 1e6,
+        totalRevenue: 1551 * 1e6,
         operatingIncome: 322 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 1459 * 1e6,
+        totalRevenue: 1459 * 1e6,
         operatingIncome: 471 * 1e6,
       },
     },

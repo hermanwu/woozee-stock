@@ -18,13 +18,13 @@ export const TSM: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 591.61 * 1e9,
-        revenue: 372145 * 1e6 * 0.036,
+        totalRevenue: 372145 * 1e6 * 0.036,
         operatingIncome: 145667 * 1e6 * 0.036,
       },
     },
     2020: {
       2: {
-        revenue: 310699 * 1e6 * 0.036,
+        totalRevenue: 310699 * 1e6 * 0.036,
         operatingIncome: 131094 * 1e6 * 0.036,
       },
     },

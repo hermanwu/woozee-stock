@@ -58,7 +58,7 @@ export const pypl: any = {
   stats: {
     marketCap: '417.2B',
     price: 2213.4,
-    revenue: '25.71B',
+    totalRevenue: '25.71B',
     PE: 1139.17,
     PS: 16.23,
     quickRatio: 0.9,

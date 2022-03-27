@@ -18,13 +18,13 @@ export const lrcx: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 80.14 * 1e9,
-        revenue: 14626 * 1e6,
+        totalRevenue: 14626 * 1e6,
         operatingIncome: 4370.804 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 10044 * 1e6,
+        totalRevenue: 10044 * 1e6,
         operatingIncome: 2574.978 * 1e6,
       },
     },

@@ -17,13 +17,13 @@ export const tost: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 27.85 * 1e9,
-        revenue: 1 * 1e6,
+        totalRevenue: 1 * 1e6,
         operatingIncome: 1 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 1 * 1e6,
+        totalRevenue: 1 * 1e6,
         operatingIncome: 1 * 1e6,
       },
     },

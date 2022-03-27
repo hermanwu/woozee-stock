@@ -18,13 +18,13 @@ export const luv: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 29.04 * 1e9,
-        revenue: 4008 * 1e6,
+        totalRevenue: 4008 * 1e6,
         operatingIncome: 594 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 1008 * 1e6,
+        totalRevenue: 1008 * 1e6,
         operatingIncome: -1127 * 1e6,
       },
     },

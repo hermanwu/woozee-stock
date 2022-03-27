@@ -18,13 +18,13 @@ export const TTD: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 36.43 * 1e9,
-        revenue: 279.967 * 1e6,
+        totalRevenue: 279.967 * 1e6,
         operatingIncome: 61.948 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 139.355 * 1e6,
+        totalRevenue: 139.355 * 1e6,
         operatingIncome: -15.772 * 1e6,
       },
     },

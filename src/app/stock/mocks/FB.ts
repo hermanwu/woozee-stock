@@ -125,7 +125,7 @@ export const fb: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      revenue: 33671.0 * MILLION,
+      totalRevenue: 33671.0 * MILLION,
       operatingIncome: 12585 * MILLION,
       isAnnual: true,
     },
@@ -133,7 +133,7 @@ export const fb: StockAnalysis = {
     {
       year: 2021,
       quarter: 3,
-      revenue: 29010.0 * MILLION,
+      totalRevenue: 29010.0 * MILLION,
       operatingIncome: 21031 * MILLION,
       netIncome: 10423 * MILLION,
     },
@@ -141,20 +141,20 @@ export const fb: StockAnalysis = {
     {
       year: 2021,
       quarter: 2,
-      revenue: 29077.0 * MILLION,
+      totalRevenue: 29077.0 * MILLION,
       operatingIncome: 12367 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 1,
-      revenue: 26171.0 * MILLION,
+      totalRevenue: 26171.0 * MILLION,
       operatingIncome: 11378 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 28072.0 * MILLION,
+      totalRevenue: 28072.0 * MILLION,
       operatingIncome: 12775 * MILLION,
     },
   ],

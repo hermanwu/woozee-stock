@@ -15,33 +15,33 @@ export const mrna: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      revenue: 7211.0 * MILLION,
+      totalRevenue: 7211.0 * MILLION,
       operatingIncome: 5410.0 * MILLION,
     },
     {
       year: 2021,
       quarter: 3,
-      revenue: 4969.0 * MILLION,
+      totalRevenue: 4969.0 * MILLION,
       operatingIncome: 3558.0 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 2,
-      revenue: 4354.0 * MILLION,
+      totalRevenue: 4354.0 * MILLION,
       operatingIncome: 3062.0 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 1,
-      revenue: 1937.0 * MILLION,
+      totalRevenue: 1937.0 * MILLION,
       operatingIncome: 1266.0 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 570.75 * MILLION,
+      totalRevenue: 570.75 * MILLION,
       operatingIncome: -275.04 * MILLION,
     },
   ],

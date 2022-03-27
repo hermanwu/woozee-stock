@@ -18,13 +18,13 @@ export const ntdoy: StockAnalysis = {
         press: 'https://www.nintendo.co.jp/ir/pdf/2021/210805e.pdf',
         webcast: null,
         marketCap: 6.99 * 1e12 * yenToDollar,
-        revenue: 322647 * 1e6 * yenToDollar,
+        totalRevenue: 322647 * 1e6 * yenToDollar,
         operatingIncome: 119752 * 1e6 * yenToDollar,
       },
     },
     2020: {
       2: {
-        revenue: 358106 * 1e6 * yenToDollar,
+        totalRevenue: 358106 * 1e6 * yenToDollar,
         operatingIncome: 144737 * 1e6 * yenToDollar,
       },
     },

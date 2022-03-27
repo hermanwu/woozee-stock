@@ -18,13 +18,13 @@ export const CHWY: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 31.33 * 1e9,
-        revenue: 2155.036 * 1e6,
+        totalRevenue: 2155.036 * 1e6,
         operatingIncome: -16.186 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 1699.859 * 1e6,
+        totalRevenue: 1699.859 * 1e6,
         operatingIncome: -32.271 * 1e6,
       },
     },

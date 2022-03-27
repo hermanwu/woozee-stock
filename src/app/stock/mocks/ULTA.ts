@@ -18,13 +18,13 @@ export const ulta: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 20.43 * 1e9,
-        revenue: 1967.207 * 1e6,
+        totalRevenue: 1967.207 * 1e6,
         operatingIncome: 250.893 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 1228.009 * 1e6,
+        totalRevenue: 1228.009 * 1e6,
         operatingIncome: 8.052 * 1e6,
       },
     },

@@ -39,14 +39,14 @@ export const docu: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      revenue: 581 * MILLION,
+      totalRevenue: 581 * MILLION,
       fullyYearForecastRevenue: 2476 * MILLION,
       isForecast: true,
     },
     {
       year: 2021,
       quarter: 4,
-      revenue: 580.8 * MILLION,
+      totalRevenue: 580.8 * MILLION,
       operatingIncome: -25.178 * MILLION,
       activeUserCount: 1.17 * MILLION,
       salesAndMarketingCost: 299.417 * MILLION,
@@ -61,56 +61,58 @@ export const docu: StockAnalysis = {
       year: 2021,
       quarter: 3,
       activeUserCount: 1.11 * MILLION,
-      revenue: 545.46 * MILLION,
+      totalRevenue: 545.46 * MILLION,
       operatingIncome: -3.36 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 2,
-      revenue: 511.84 * MILLION,
+      totalRevenue: 511.84 * MILLION,
       operatingIncome: -22.61 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 1,
-      revenue: 469.08 * MILLION,
+      totalRevenue: 469.08 * MILLION,
       operatingIncome: -10.74 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 430.9 * MILLION,
+      totalRevenue: 430.9 * MILLION,
       operatingIncome: -24.897 * MILLION,
       salesAndMarketingCost: 221.896 * MILLION,
     },
     {
       year: 2020,
       quarter: 3,
-      revenue: 382.92 * MILLION,
+      totalRevenue: 382.92 * MILLION,
       operatingIncome: -48.47 * MILLION,
     },
     {
       year: 2020,
       quarter: 2,
-      revenue: 342.21 * MILLION,
+      totalRevenue: 342.21 * MILLION,
       operatingIncome: -58.63 * MILLION,
     },
     {
       year: 2020,
       quarter: 1,
-      revenue: 297.02 * MILLION,
+      totalRevenue: 297.02 * MILLION,
       operatingIncome: -41.85 * MILLION,
     },
   ],
   business: {
     revenues: [
       {
+        name: 'Subscription',
         type: RevenueType.subscription,
         amount: 564 * MILLION,
       },
       {
+        name: 'Professional Services',
         type: RevenueType.professionService,
         amount: 16.8 * MILLION,
       },

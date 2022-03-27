@@ -18,13 +18,13 @@ export const you: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 6.08 * 1e9,
-        revenue: 55.178 * 1e6,
+        totalRevenue: 55.178 * 1e6,
         operatingIncome: -37.746 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 59.978 * 1e6,
+        totalRevenue: 59.978 * 1e6,
         operatingIncome: 22.277 * 1e6,
       },
     },

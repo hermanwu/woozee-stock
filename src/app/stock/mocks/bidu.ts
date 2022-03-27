@@ -19,13 +19,13 @@ export const bidu: StockAnalysis = {
           'https://ir.baidu.com/static-files/042ba909-c13c-4b61-89cc-17def3b02501',
         webcast: null,
         marketCap: 54.5 * 1e9,
-        revenue: 31359 * 1e6 * rmbToDollar,
+        totalRevenue: 31359 * 1e6 * rmbToDollar,
         operatingIncome: 3463 * 1e6 * rmbToDollar,
       },
     },
     2020: {
       2: {
-        revenue: 26034 * 1e6 * rmbToDollar,
+        totalRevenue: 26034 * 1e6 * rmbToDollar,
         operatingIncome: 3644 * 1e6 * rmbToDollar,
       },
     },

@@ -12,33 +12,33 @@ export const z: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      revenue: 3882.31 * MILLION,
+      totalRevenue: 3882.31 * MILLION,
       operatingIncome: -195.36 * MILLION,
     },
     {
       year: 2021,
       quarter: 3,
-      revenue: 1736.64 * MILLION,
+      totalRevenue: 1736.64 * MILLION,
       operatingIncome: -296.41 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 2,
-      revenue: 1309.98 * MILLION,
+      totalRevenue: 1309.98 * MILLION,
       operatingIncome: 60.79 * MILLION,
     },
 
     {
       year: 2021,
       quarter: 1,
-      revenue: 1218.44 * MILLION,
+      totalRevenue: 1218.44 * MILLION,
       operatingIncome: 86.19 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 788.95 * MILLION,
+      totalRevenue: 788.95 * MILLION,
       operatingIncome: 84.41 * MILLION,
     },
   ],

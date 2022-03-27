@@ -18,13 +18,13 @@ export const orcl: StockAnalysis = {
           'https://s23.q4cdn.com/440135859/files/doc_financials/2022/q1/1q22-pressrelease-September.pdf',
         webcast: null,
         marketCap: 250.39 * 1e9,
-        revenue: 9728 * 1e6,
+        totalRevenue: 9728 * 1e6,
         operatingIncome: 3427 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 9367 * 1e6,
+        totalRevenue: 9367 * 1e6,
         operatingIncome: 3211 * 1e6,
       },
     },

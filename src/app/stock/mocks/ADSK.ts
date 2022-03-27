@@ -20,13 +20,13 @@ export const ADSK: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 63.25 * 1e9,
-        revenue: 1059.7 * 1e6,
+        totalRevenue: 1059.7 * 1e6,
         operatingIncome: 148.1 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 913.1 * 1e6,
+        totalRevenue: 913.1 * 1e6,
         operatingIncome: 146.1 * 1e6,
       },
     },

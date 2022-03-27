@@ -19,13 +19,13 @@ export const STEM: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 3.32 * 1e9,
-        revenue: 19.337 * 1e6,
+        totalRevenue: 19.337 * 1e6,
         operatingIncome: -23.881 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 4.379 * 1e6,
+        totalRevenue: 4.379 * 1e6,
         operatingIncome: -12.01 * 1e6,
       },
     },

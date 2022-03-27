@@ -13,6 +13,8 @@ export class FactComponent implements OnInit {
   @Input() factType: FactType;
   @Input() stock: StockAnalysis;
 
+  showDetails: boolean = true;
+
   constructor(private dialogService: MatDialog) {}
 
   ngOnInit(): void {}

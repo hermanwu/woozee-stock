@@ -1,5 +1,5 @@
 <div *ngIf="stock" class="container">
-  <div class="row">
+  <div class="row" *ngIf="!compareDisplay">
     <div *ngIf="!hideLabel">Market Cap</div>
     <div class="stats">
       <span>
@@ -8,22 +8,46 @@
     </div>
   </div>
 
+  <div class="row sub-title">
+    <div *ngIf="!hideLabel">Year (TTM)</div>
+  </div>
+
   <div class="row">
-    <div *ngIf="!hideLabel">Gross Profit / Market Cap</div>
+    <div *ngIf="!hideLabel">P / S</div>
+    <div class="stats">
+      {{ stock.marketCap / stock.ttmRevenue | siUnit: 2 | undefined }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="!hideLabel">P / Gross Profit</div>
+    <div class="stats">
+      {{ stock.marketCap / stock.ttmGrossProfit | siUnit: 2 | undefined }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="!hideLabel">P / Operating Income</div>
     <div class="stats">
       {{
-        stock.quarterGrossProfit / stock.marketCap
+        (stock.marketCapToOiRatio > 0 ? stock.marketCapToOiRatio : undefined)
           | siUnit: 2
-          | percent
           | undefined
       }}
     </div>
   </div>
 
   <div class="row">
-    <div *ngIf="!hideLabel">Operating Income / Market Cap</div>
+    <div *ngIf="!hideLabel">P / Net Income</div>
     <div class="stats">
-      {{ stock.oiToMarketCapRatio | siUnit: 4 | percent: "1.0-2" | undefined }}
+      {{
+        (stock.marketCap / stock.ttmNetIncome > 0
+          ? stock.marketCap / stock.ttmNetIncome
+          : undefined
+        )
+          | siUnit: 2
+          | undefined
+      }}
     </div>
   </div>
 </div>

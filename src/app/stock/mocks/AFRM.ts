@@ -44,8 +44,8 @@ export const afrm: StockAnalysis = {
   business: {
     markets: [{ type: MarketType.fintech_lending }],
     revenues: [
-      { type: RevenueType.loanInterest },
-      { type: RevenueType.salesCommission },
+      { name: '', type: RevenueType.loanInterest },
+      { name: '', type: RevenueType.salesCommission },
     ],
     competitiveAdvantages: [
       { type: StrategyType.platform },
@@ -57,7 +57,7 @@ export const afrm: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      revenue: 330 * 1e6,
+      totalRevenue: 330 * 1e6,
       operatingIncome: -60 * 1e6,
       isForecast: true,
     },
@@ -70,7 +70,7 @@ export const afrm: StockAnalysis = {
         'https://investors.affirm.com/static-files/61176b0c-9cdf-481b-bfbc-5e844f33b9f6',
       slidesLink:
         'https://investors.affirm.com/static-files/887da555-3305-4b39-a53c-b3fb44ee0026',
-      revenue: 361 * 1e6,
+      totalRevenue: 361 * 1e6,
       operatingIncome: -196200 * 1e3,
       activeUserCount: 319 * 1e6,
       salesAndMarketingCost: 143.476 * MILLION,
@@ -78,25 +78,25 @@ export const afrm: StockAnalysis = {
     {
       year: 2021,
       quarter: 3,
-      revenue: 269385 * 1e3,
+      totalRevenue: 269385 * 1e3,
       operatingIncome: -166071 * 1e3,
     },
     {
       year: 2021,
       quarter: 2,
-      revenue: 261780 * 1e3,
+      totalRevenue: 261780 * 1e3,
       operatingIncome: -124690 * 1e3,
     },
     {
       year: 2021,
       quarter: 1,
-      revenue: 230665 * 1e3,
+      totalRevenue: 230665 * 1e3,
       operatingIncome: -194437 * 1e3,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 204041 * 1e3,
+      totalRevenue: 204041 * 1e3,
       operatingIncome: -26772 * 1e3,
       salesAndMarketingCost: 39.112 * MILLION,
     },

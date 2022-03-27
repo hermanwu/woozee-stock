@@ -15,14 +15,14 @@ export const cvx: StockAnalysis = {
         presentation: '',
         webcast: '',
         marketCap: 41.05 * 1e9,
-        revenue: 233549 * 1e3,
+        totalRevenue: 233549 * 1e3,
         operatingIncome: -9886 * 1e3,
         date: new Date('2021-08-06'),
       },
     },
     2020: {
       2: {
-        revenue: 140012 * 1e3,
+        totalRevenue: 140012 * 1e3,
         operatingIncome: 654 * 1e3,
       },
     },

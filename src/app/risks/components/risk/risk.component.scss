@@ -1,17 +1,17 @@
-.grid {
-  display: grid;
-  grid-template-columns: 8fr 2fr;
-}
-
 .flex {
   display: flex;
   align-items: center;
 }
 
 .action-buttons {
-  justify-self: flex-end;
+  margin-left: auto;
 }
 
 .highlight {
   font-size: 1.1rem;
+}
+
+ul {
+  padding-left: 1rem;
+  list-style-type: none;
 }

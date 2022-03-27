@@ -18,13 +18,13 @@ export const TRMB: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 23.87 * 1e9,
-        revenue: 945.2 * 1e6,
+        totalRevenue: 945.2 * 1e6,
         operatingIncome: 144.8 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 733.6 * 1e6,
+        totalRevenue: 733.6 * 1e6,
         operatingIncome: 97.6 * 1e6,
       },
     },

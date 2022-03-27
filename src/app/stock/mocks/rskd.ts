@@ -18,13 +18,13 @@ export const rskd: StockAnalysis = {
           'https://ir.riskified.com/news-releases/news-release-details/riskified-reports-strong-q2-revenue-growth-47-heels-nyse-debut',
         webcast: null,
         marketCap: 4.11 * 1e9,
-        revenue: 55.692 * 1e6,
+        totalRevenue: 55.692 * 1e6,
         operatingIncome: -1.65 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 37.807 * 1e6,
+        totalRevenue: 37.807 * 1e6,
         operatingIncome: -7.671 * 1e6,
       },
     },

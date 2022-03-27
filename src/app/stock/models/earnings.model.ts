@@ -13,17 +13,25 @@ export interface EarningsReport {
   transcript?: string;
 
   // Growth
-  revenue?: number;
+  totalRevenue?: number;
+  costOfRevenue?: number;
+  researchAndDevelopment?: number;
+  unusualExpenseIncome?: number;
+  totalOperatingExpense?: number;
+  operatingIncome?: number;
+  interestIncomeNet?: number;
+  otherIncomeNet?: number;
+  netIncomeBeforeTaxes?: number;
+  provisionForIncomeTaxes?: number;
+  netIncome?: number;
   revenueDetails?: Composition[];
   activeUserCount?: number;
   revenueRetention?: number;
 
   // Profitablity
   grossProfit?: number;
-  operatingIncome?: number;
-  netIncome?: number;
   salesAndMarketingCost?: number;
-  sellingGeneralAdministrative?: number;
+  sellingGeneralAndAdministrative?: number;
   // Additional Stats
   isAnnual?: boolean;
   notes?: Note[];

@@ -8,33 +8,33 @@ export const pdd: StockAnalysis = {
     {
       year: 2021,
       quarter: 3,
-      revenue: 21505.76 * MILLION * rmbToDollar,
+      totalRevenue: 21505.76 * MILLION * rmbToDollar,
       operatingIncome: 2139.27 * MILLION * rmbToDollar,
     },
 
     {
       year: 2021,
       quarter: 2,
-      revenue: 23046.22 * MILLION * rmbToDollar,
+      totalRevenue: 23046.22 * MILLION * rmbToDollar,
       operatingIncome: 1997.48 * MILLION * rmbToDollar,
     },
 
     {
       year: 2021,
       quarter: 1,
-      revenue: 22167.1 * MILLION * rmbToDollar,
+      totalRevenue: 22167.1 * MILLION * rmbToDollar,
       operatingIncome: -4146.96 * MILLION * rmbToDollar,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 26547.71 * MILLION * rmbToDollar,
+      totalRevenue: 26547.71 * MILLION * rmbToDollar,
       operatingIncome: -2047.77 * MILLION * rmbToDollar,
     },
     {
       year: 2020,
       quarter: 3,
-      revenue: 14209.78 * MILLION * rmbToDollar,
+      totalRevenue: 14209.78 * MILLION * rmbToDollar,
       operatingIncome: -1295.74 * MILLION * rmbToDollar,
     },
   ],

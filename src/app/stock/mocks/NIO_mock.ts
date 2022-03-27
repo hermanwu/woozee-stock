@@ -25,13 +25,13 @@ export const NIO: StockAnalysis = {
           'https://ir.nio.com/static-files/4fe3fe59-3eb1-4b0a-a945-65d4fbbcfe4b',
         webcast: null,
         marketCap: 62.88 * 1e9,
-        revenue: 7982.333 * 1e6 * rmbToDollar,
+        totalRevenue: 7982.333 * 1e6 * rmbToDollar,
         operatingIncome: -295.924 * 1e6 * rmbToDollar,
       },
     },
     2020: {
       2: {
-        revenue: 3718.93 * 1e6 * rmbToDollar,
+        totalRevenue: 3718.93 * 1e6 * rmbToDollar,
         operatingIncome: -1160.003 * 1e6 * rmbToDollar,
       },
     },

@@ -2,12 +2,12 @@ import { MarketType } from 'src/app/facts/data/area.enum';
 import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { BILLION } from 'src/app/shared/numbers/number.model';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { PredicationAction } from '../models/predication.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const shop: StockAnalysis = {
-  marketCap: 80 * BILLION,
+  marketCap: 87 * BILLION,
 
   predications: [
     {
@@ -45,38 +45,64 @@ export const shop: StockAnalysis = {
 
   // Earnings Report:
   earningsReports: [
-    { year: 2022, quarter: 1, isForecast: true, revenue: 1300 * 1e6 },
+    { year: 2022, quarter: 1, isForecast: true, totalRevenue: 1300 * MILLION },
     {
       year: 2021,
       quarter: 4,
-      revenue: 1380.024 * 1e6,
-      operatingIncome: 14.404 * 1e6,
+      totalRevenue: 1380.024 * MILLION,
+      grossProfit: 692.66 * MILLION,
+      operatingIncome: 14.404 * MILLION,
       pressReleaseLink:
         'https://news.shopify.com/shopify-announces-fourth-quarter-and-full-year-2021-financial-results',
     },
     {
       year: 2021,
       quarter: 3,
-      revenue: 1123.74 * 1e6,
-      operatingIncome: -4.1 * 1e6,
+      totalRevenue: 1123.74 * MILLION,
+      grossProfit: 608.91 * MILLION,
+      operatingIncome: -4.1 * MILLION,
     },
     {
       year: 2021,
       quarter: 2,
-      revenue: 1119.44 * 1e6,
-      operatingIncome: 139.44 * 1e6,
+      totalRevenue: 1119.44 * MILLION,
+      grossProfit: 620.86 * MILLION,
+      operatingIncome: 139.44 * MILLION,
     },
     {
       year: 2021,
       quarter: 1,
-      revenue: 988.66 * 1e6,
-      operatingIncome: 118.9 * 1e6,
+      totalRevenue: 988.66 * MILLION,
+      grossProfit: 558.72 * MILLION,
+      operatingIncome: 118.9 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 977.744 * 1e6,
-      operatingIncome: 112.541 * 1e6,
+      totalRevenue: 977.744 * MILLION,
+      grossProfit: 504.39 * MILLION,
+      operatingIncome: 112.541 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 3,
+      totalRevenue: 767.4 * MILLION,
+      grossProfit: 405.15 * MILLION,
+      operatingIncome: 50.56 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 2,
+      totalRevenue: 714.34 * MILLION,
+      grossProfit: 375.03 * MILLION,
+      operatingIncome: 0.28 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 1,
+      totalRevenue: 470.0 * MILLION,
+      grossProfit: 256.95 * MILLION,
+      operatingIncome: -73.23 * MILLION,
     },
   ],
 
@@ -97,9 +123,9 @@ export const shop: StockAnalysis = {
   business: {
     markets: [{ type: MarketType.ecommerceTools }],
     revenues: [
-      { type: RevenueType.softwareSelling },
-      { type: RevenueType.b2b },
-      { type: RevenueType.subscription },
+      { name: '', type: RevenueType.softwareSelling },
+      { name: '', type: RevenueType.b2b },
+      { name: '', type: RevenueType.subscription },
     ],
     competitiveAdvantages: [
       { type: StrategyType.platform },

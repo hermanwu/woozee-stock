@@ -1,82 +1,61 @@
 <div class="container">
   <div class="row sub-title">
-    <div *ngIf="!hideLabel">Latest Quarter Earnings</div>
+    <div *ngIf="!hideLabel">Quarter</div>
     <div class="stats">
       <span>
-        {{ stock.latestReport.year }} - Q{{ stock.latestReport.quarter }}
-      </span>
-    </div>
-  </div>
-
-  <div class="row" *ngIf="!compareDisplay">
-    <div *ngIf="!hideLabel">Revenue</div>
-    <div class="stats">
-      <!-- <span class="gray" *ngIf="!compareDisplay">
-        {{ stock.previousQuarterRevenue | siUnit: 2 | undefined }}
-        ->
-      </span> -->
-      <span>
-        {{ quarterlyRevenue | siUnit: 2 | undefined }}
+        {{ stock.latestReport.year }}Q{{ stock.latestReport.quarter }}
       </span>
     </div>
   </div>
 
   <div class="row">
-    <div *ngIf="!hideLabel">Revenue Growth Q/Q</div>
+    <div *ngIf="!hideLabel">Revenue Q/Q</div>
     <div class="stats">
+      <span class="gray" *ngIf="!compareDisplay">
+        ({{ stock.previousYearReport?.totalRevenue | siUnit: 2 | undefined }} ->
+        {{ stock.quarterRevenue | siUnit: 2 | undefined }})
+      </span>
       <span>
-        {{ stock.quarterRevenueGrowth | siUnit: 2 | percent | undefined }}
+        <span *ngIf="stock.quarterRevenueGrowth > 0">+</span
+        >{{ stock.quarterRevenueGrowth | siUnit: 2 | percent | undefined }}
+      </span>
+    </div>
+  </div>
+
+  <!-- <div class="stats">{{ unicode.NextLine }}</div> -->
+
+  <div class="row">
+    <div *ngIf="!hideLabel">Forecast Next Q/Q</div>
+    <div class="stats">
+      <span class="gray" *ngIf="!compareDisplay">
+        ({{ forecastRevenue | siUnit: 2 | undefined }})
+      </span>
+      <span>
+        <span *ngIf="nextQuarterForecastGrowth > 0">+</span
+        >{{ nextQuarterForecastGrowth | siUnit: 2 | percent | undefined }}
       </span>
     </div>
   </div>
 
   <div class="row sub-title">
-    <span *ngIf="!hideLabel"> Past Year (Trailing 12 months)</span>
-  </div>
-
-  <div class="row" *ngIf="!compareDisplay">
-    <div *ngIf="!hideLabel">Revenue</div>
-    <div class="stats">
-      <!-- <span class="gray" *ngIf="!compareDisplay">
-        {{ stock.previousTtmRevenue | siUnit: 2 | undefined }}
-        ->
-      </span> -->
-      <span> {{ stock.ttmRevenue | siUnit: 2 | undefined }} </span>
-    </div>
+    <span *ngIf="!hideLabel"> Year (TTM)</span>
   </div>
 
   <div class="row">
-    <div *ngIf="!hideLabel">Revenue Growth Y/Y</div>
+    <div *ngIf="!hideLabel">Revenue Y/Y</div>
     <div class="stats">
+      <span class="gray" *ngIf="!compareDisplay">
+        ({{ stock.previousTtmRevenue | siUnit: 2 | undefined }} ->
+        {{ stock.ttmRevenue | siUnit: 2 | undefined }})
+      </span>
       <span>
-        {{ stock.yearOverYearRevenueGrowth | siUnit: 2 | percent | undefined }}
+        <span *ngIf="stock.yearOverYearRevenueGrowth > 0">+</span
+        >{{ stock.yearOverYearRevenueGrowth | siUnit: 2 | percent | undefined }}
       </span>
     </div>
   </div>
 
-  <ng-container *ngIf="forecastRevenue">
-    <div class="stats">{{ unicode.NextLine }}</div>
-
-    <div class="row">
-      <div *ngIf="!hideLabel">Forecast next Q</div>
-      <div class="stats">
-        <span>
-          {{ forecastRevenue | siUnit: 2 | undefined }}
-        </span>
-      </div>
-    </div>
-
-    <div class="row">
-      <div *ngIf="!hideLabel">Forecast Growth Q/Q</div>
-      <div class="stats">
-        <span>
-          {{ nextQuarterForecastGrowth | siUnit: 2 | percent | undefined }}
-        </span>
-      </div>
-    </div>
-  </ng-container>
-
-  <ng-container *ngIf="activeUserCount">
+  <ng-container *ngIf="activeUserCount && !compareDisplay">
     <div class="stats">{{ unicode.NextLine }}</div>
 
     <div class="row">
@@ -88,7 +67,7 @@
       </div>
     </div>
 
-    <div class="row" *ngIf="userCountGrowth">
+    <div class="row" *ngIf="userCountGrowth && !compareDisplay">
       <div *ngIf="!hideLabel">User Growth Q/Q</div>
       <div class="stats">
         <span>
@@ -97,7 +76,10 @@
       </div>
     </div>
 
-    <div class="row" *ngIf="quarterlyRevenue && activeUserCount">
+    <div
+      class="row"
+      *ngIf="quarterlyRevenue && activeUserCount && !compareDisplay"
+    >
       <div *ngIf="!hideLabel">Average Revenue / User</div>
       <div class="stats">
         <span>

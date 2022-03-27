@@ -18,13 +18,13 @@ export const noc: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 56.95 * 1e9,
-        revenue: 9151 * 1e6,
+        totalRevenue: 9151 * 1e6,
         operatingIncome: 1037 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 8884 * 1e6,
+        totalRevenue: 8884 * 1e6,
         operatingIncome: 1005 * 1e6,
       },
     },

@@ -17,13 +17,13 @@ export const JMIA: StockAnalysis = {
         press: '',
         webcast: '',
         marketCap: 1.78 * 1e9,
-        revenue: 223.5 * 1e6,
+        totalRevenue: 223.5 * 1e6,
         operatingIncome: -51.6 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 251 * 1e6,
+        totalRevenue: 251 * 1e6,
         operatingIncome: -41.3 * 1e6,
       },
     },

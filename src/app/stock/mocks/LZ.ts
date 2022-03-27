@@ -18,13 +18,13 @@ export const LZ: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 7.02 * 1e9,
-        revenue: 150.432 * 1e6,
+        totalRevenue: 150.432 * 1e6,
         operatingIncome: -27.508 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 111.007 * 1e6,
+        totalRevenue: 111.007 * 1e6,
         operatingIncome: 10.534 * 1e6,
       },
     },

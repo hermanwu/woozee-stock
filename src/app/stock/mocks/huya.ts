@@ -18,13 +18,13 @@ export const huya: StockAnalysis = {
         press: 'http://ir.huya.com/index.php?s=121',
         webcast: null,
         marketCap: 1.88 * 1e9,
-        revenue: 2962 * 1e6 * rmbToDollar,
+        totalRevenue: 2962 * 1e6 * rmbToDollar,
         operatingIncome: 181.9 * 1e6 * rmbToDollar,
       },
     },
     2020: {
       2: {
-        revenue: 2697 * 1e6 * rmbToDollar,
+        totalRevenue: 2697 * 1e6 * rmbToDollar,
         operatingIncome: 181.4 * 1e6 * rmbToDollar,
       },
     },

@@ -18,13 +18,13 @@ export const sbux: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 135.21 * 1e9,
-        revenue: 7496.5 * 1e6,
+        totalRevenue: 7496.5 * 1e6,
         operatingIncome: 1488.7 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 4222.1 * 1e6,
+        totalRevenue: 4222.1 * 1e6,
         operatingIncome: -703.9 * 1e6,
       },
     },

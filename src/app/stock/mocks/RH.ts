@@ -18,13 +18,13 @@ export const RH: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 14.74 * 1e9,
-        revenue: 860.792 * 1e6,
+        totalRevenue: 860.792 * 1e6,
         operatingIncome: 174.475 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 482.895 * 1e6,
+        totalRevenue: 482.895 * 1e6,
         operatingIncome: -4.635 * 1e6,
       },
     },

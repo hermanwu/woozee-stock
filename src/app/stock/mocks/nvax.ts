@@ -18,13 +18,13 @@ export const nvax: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 18.48 * 1e9,
-        revenue: 298.017 * 1e6,
+        totalRevenue: 298.017 * 1e6,
         operatingIncome: -345.829 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 35.538 * 1e6,
+        totalRevenue: 35.538 * 1e6,
         operatingIncome: -17.027 * 1e6,
       },
     },

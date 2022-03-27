@@ -18,13 +18,13 @@ export const qs: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 10.16 * 1e9,
-        revenue: 0 * 1e6,
+        totalRevenue: 0 * 1e6,
         operatingIncome: -49.622 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 0 * 1e6,
+        totalRevenue: 0 * 1e6,
         operatingIncome: -14.227 * 1e6,
       },
     },

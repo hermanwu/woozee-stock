@@ -18,13 +18,13 @@ export const upwk: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 6.12 * 1e9,
-        revenue: 124.181 * 1e6,
+        totalRevenue: 124.181 * 1e6,
         operatingIncome: -16.395 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 87.531 * 1e6,
+        totalRevenue: 87.531 * 1e6,
         operatingIncome: -10.984 * 1e6,
       },
     },

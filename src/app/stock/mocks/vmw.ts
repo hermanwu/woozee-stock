@@ -18,13 +18,13 @@ export const vmw: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 63.61 * 1e9,
-        revenue: 3138 * 1e6,
+        totalRevenue: 3138 * 1e6,
         operatingIncome: 525 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 2875 * 1e6,
+        totalRevenue: 2875 * 1e6,
         operatingIncome: 534 * 1e6,
       },
     },

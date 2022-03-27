@@ -18,13 +18,13 @@ export const SKLZ: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 4.7 * 1e9,
-        revenue: 89.491 * 1e6,
+        totalRevenue: 89.491 * 1e6,
         operatingIncome: -49.99 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 58.878 * 1e6,
+        totalRevenue: 58.878 * 1e6,
         operatingIncome: -12.588 * 1e6,
       },
     },

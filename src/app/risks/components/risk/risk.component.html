@@ -1,26 +1,30 @@
-<div class="grid">
-  <div class="flex highlight">
-    <span>
-      <app-risk-level-display [riskLevel]="risk.level"></app-risk-level-display>
-    </span>
-    <span>
-      {{ risk.name }}
-    </span>
-  </div>
+<div class="flex">
+  <span>
+    <app-risk-level-display [riskLevel]="risk.level"></app-risk-level-display>
+  </span>
 
-  <div class="action-buttons">
-    <button mat-icon-button type="button" (click)="openDialog()">
-      <mat-icon>shield</mat-icon>
-    </button>
-    <button mat-icon-button type="button" (click)="expanded = !expanded">
-      <mat-icon *ngIf="expanded">expand_less</mat-icon>
-      <mat-icon *ngIf="!expanded">expand_more</mat-icon>
-    </button>
-  </div>
+  <span>
+    {{ risk.name }}
+  </span>
+
+  <button
+    mat-icon-button
+    class="action-buttons"
+    type="button"
+    (click)="openDialog()"
+  >
+    <mat-icon>shield</mat-icon>
+  </button>
+  <button mat-icon-button type="button" (click)="expanded = !expanded">
+    <mat-icon *ngIf="expanded">expand_less</mat-icon>
+    <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+  </button>
 </div>
 
-<ul *ngIf="expanded">
-  <li *ngFor="let item of risk.notes">
-    <app-note [note]="item" [isExpanded]="false"> </app-note>
-  </li>
-</ul>
+<div *ngIf="expanded">
+  <ul>
+    <li *ngFor="let item of risk.notes">
+      <app-note [note]="item" [isExpanded]="false"> </app-note>
+    </li>
+  </ul>
+</div>

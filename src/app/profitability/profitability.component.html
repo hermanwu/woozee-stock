@@ -1,31 +1,99 @@
 <div class="container">
   <div class="row sub-title">
-    <span *ngIf="!hideLabel">
-      {{ stock.latestReport.year }} - Q{{ stock.latestReport.quarter }}
-    </span>
-  </div>
-
-  <div class="row">
-    <div *ngIf="!hideLabel">Gross Profit</div>
+    <div *ngIf="!hideLabel">Quarter</div>
     <div class="stats">
       <span>
-        {{ stock?.latestReport?.grossProfit | siUnit: 2 | undefined }}
+        {{ stock.latestReport.year }}Q{{ stock.latestReport.quarter }}
       </span>
     </div>
   </div>
 
   <div class="row">
-    <div *ngIf="!hideLabel">Operating Income</div>
+    <div *ngIf="!hideLabel">Gross Profit Q/Q</div>
+
     <div class="stats">
+      <span class="gray-font" *ngIf="!compareDisplay">
+        ({{ stock?.previousYearReport?.grossProfit | siUnit: 2 | undefined }} ->
+        {{ stock?.latestReport?.grossProfit | siUnit: 2 | undefined }})
+      </span>
+
       <span>
-        {{ stock?.latestReport?.operatingIncome | siUnit: 2 | undefined }}
+        <span
+          *ngIf="
+            stock?.latestReport?.grossProfit -
+              stock?.previousYearReport?.grossProfit >
+            0
+          "
+          >+</span
+        >{{
+          (stock?.latestReport?.grossProfit -
+            stock?.previousYearReport?.grossProfit) /
+            stock?.previousYearReport?.grossProfit
+            | siUnit: 2
+            | percent
+            | undefined
+        }}
       </span>
     </div>
   </div>
 
   <div class="row">
-    <div *ngIf="!hideLabel">Operating Cost / Gross Profit</div>
+    <div *ngIf="!hideLabel">Operating Expenses Q/Q</div>
+
     <div class="stats">
+      <span class="gray-font" *ngIf="!compareDisplay">
+        ({{
+          stock?.previousYearReport?.grossProfit -
+            stock?.previousYearReport?.operatingIncome
+            | siUnit: 2
+            | undefined
+        }}
+        ->
+        {{
+          stock?.latestReport?.grossProfit -
+            stock?.latestReport?.operatingIncome
+            | siUnit: 2
+            | undefined
+        }})
+      </span>
+
+      <span>
+        <span
+          *ngIf="
+            stock?.latestReport?.grossProfit -
+              stock?.latestReport?.operatingIncome -
+              (stock?.previousYearReport?.grossProfit -
+                stock?.previousYearReport?.operatingIncome) >
+            0
+          "
+          >+</span
+        >{{
+          (stock?.latestReport?.grossProfit -
+            stock?.latestReport?.operatingIncome -
+            (stock?.previousYearReport?.grossProfit -
+              stock?.previousYearReport?.operatingIncome)) /
+            (stock?.previousYearReport?.grossProfit -
+              stock?.previousYearReport?.operatingIncome)
+            | siUnit: 2
+            | percent
+            | undefined
+        }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="!hideLabel">Operating Expenses / Gross Profit</div>
+    <div class="stats">
+      <span class="gray-font" *ngIf="!compareDisplay">
+        ({{
+          stock?.latestReport?.grossProfit -
+            stock?.latestReport?.operatingIncome
+            | siUnit: 2
+            | undefined
+        }}
+        / {{ stock?.latestReport?.grossProfit | siUnit: 2 | undefined }})
+      </span>
       <span>
         {{
           stock.quarterOperatingCostOverGrossProfit
@@ -37,7 +105,9 @@
     </div>
   </div>
 
-  <ng-container *ngIf="stock?.latestReport?.revenueRetention">
+  <ng-container
+    *ngIf="stock?.latestReport?.revenueRetention && !compareDisplay"
+  >
     <div class="row">
       <div *ngIf="!hideLabel">Revenue Retention</div>
       <div class="stats">
@@ -53,7 +123,9 @@
     </div>
   </ng-container>
 
-  <ng-container *ngIf="stock?.latestReport?.salesAndMarketingCost">
+  <ng-container
+    *ngIf="stock?.latestReport?.salesAndMarketingCost && !compareDisplay"
+  >
     <div class="row">
       <div *ngIf="!hideLabel">Sales & Marketing Cost</div>
       <div class="stats">
@@ -66,13 +138,17 @@
     </div>
   </ng-container>
 
-  <ng-container *ngIf="stock?.latestReport?.sellingGeneralAdministrative">
+  <ng-container
+    *ngIf="
+      stock?.latestReport?.sellingGeneralAndAdministrative && !compareDisplay
+    "
+  >
     <div class="row">
       <div *ngIf="!hideLabel">Selling, General and Administrative Cost</div>
       <div class="stats">
         <span>
           {{
-            stock?.latestReport?.sellingGeneralAdministrative
+            stock?.latestReport?.sellingGeneralAndAdministrative
               | siUnit: 2
               | undefined
           }}
@@ -80,4 +156,48 @@
       </div>
     </div>
   </ng-container>
+
+  <div class="row sub-title">
+    <span *ngIf="!hideLabel"> Year (TTM)</span>
+  </div>
+
+  <div class="row" *ngIf="!compareDisplay">
+    <div *ngIf="!hideLabel">Gross Profit Y/Y</div>
+    <div class="stats">
+      <span class="gray-font" *ngIf="!compareDisplay">
+        ({{ stock?.previousTtmGrossProfit | siUnit: 2 | undefined }} ->
+        {{ stock?.ttmGrossProfit | siUnit: 2 | undefined }})
+      </span>
+
+      <span>
+        <span *ngIf="stock?.ttmGrossProfit - stock?.previousTtmGrossProfit > 0"
+          >+</span
+        >{{
+          (stock?.ttmGrossProfit - stock?.previousTtmGrossProfit) /
+            stock?.previousTtmGrossProfit
+            | siUnit: 2
+            | percent
+            | undefined
+        }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="!hideLabel">Operating Expenses / Gross Profit</div>
+    <div class="stats">
+      <span class="gray-font" *ngIf="!compareDisplay">
+        ({{ stock?.ttmGrossProfit - stock?.ttmOI | siUnit: 2 | undefined }} /
+        {{ stock?.ttmGrossProfit | siUnit: 2 | undefined }})
+      </span>
+      <span>
+        {{
+          (stock?.ttmGrossProfit - stock?.ttmOI) / stock?.ttmGrossProfit
+            | siUnit: 2
+            | percent
+            | undefined
+        }}
+      </span>
+    </div>
+  </div>
 </div>

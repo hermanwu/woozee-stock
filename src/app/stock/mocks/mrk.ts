@@ -18,13 +18,13 @@ export const mrk: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 206 * 1e9,
-        revenue: 11402 * 1e6,
+        totalRevenue: 11402 * 1e6,
         operatingIncome: 1717 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 9353 * 1e6,
+        totalRevenue: 9353 * 1e6,
         operatingIncome: 2741 * 1e6,
       },
     },

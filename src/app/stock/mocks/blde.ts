@@ -18,13 +18,13 @@ export const blde: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 0.66998 * 1e9,
-        revenue: 12.951 * 1e6,
+        totalRevenue: 12.951 * 1e6,
         operatingIncome: -7.771 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 3.438 * 1e6,
+        totalRevenue: 3.438 * 1e6,
         operatingIncome: -1.476 * 1e6,
       },
     },

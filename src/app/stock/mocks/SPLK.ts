@@ -18,14 +18,14 @@ export const SPLK: StockAnalysis = {
         press: '',
         webcast: '',
         marketCap: 24.87 * 1e9,
-        revenue: 502051 * 1e3,
+        totalRevenue: 502051 * 1e3,
         operatingIncome: -435347 * 1e3,
         date: new Date('2021-08-06'),
       },
     },
     2020: {
       1: {
-        revenue: 434077 * 1e3,
+        totalRevenue: 434077 * 1e3,
         operatingIncome: -288612 * 1e3,
       },
     },

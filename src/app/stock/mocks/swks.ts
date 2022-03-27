@@ -18,13 +18,13 @@ export const swks: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 28.56 * 1e9,
-        revenue: 1116.4 * 1e6,
+        totalRevenue: 1116.4 * 1e6,
         operatingIncome: 339.8 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 736.8 * 1e6,
+        totalRevenue: 736.8 * 1e6,
         operatingIncome: 147.5 * 1e6,
       },
     },

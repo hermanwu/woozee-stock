@@ -18,9 +18,10 @@ export enum RevenueType {
 }
 
 export interface Revenue {
-  name?: string;
+  name: string;
   amount?: number;
-  type: RevenueType;
+  growth?: number;
+  type?: RevenueType;
   note?: Note;
   children?: Revenue[];
 }

@@ -46,7 +46,7 @@ export const NIO = {
   stats: {
     marketCap: '23.55B',
     price: 18.5,
-    revenue: '1.42B',
+    totalRevenue: '1.42B',
     PE: 0,
     PS: 16.6,
     quickRatio: 1.1,

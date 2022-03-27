@@ -18,7 +18,7 @@ export const ZS: StockAnalysis = {
           'https://ir.zscaler.com/static-files/a2010b38-31e9-47bc-960b-d9b712d061e5',
 
         marketCap: 38.39 * 1e9,
-        revenue: 197074 * 1e3,
+        totalRevenue: 197074 * 1e3,
         operatingIncome: -67397 * 1e3,
       },
       1: {
@@ -27,17 +27,17 @@ export const ZS: StockAnalysis = {
         presentation: '',
         webcast: '',
         marketCap: 35.81 * 1e9,
-        revenue: 176404 * 1e3,
+        totalRevenue: 176404 * 1e3,
         operatingIncome: -43850 * 1e3,
       },
     },
     2020: {
       2: {
-        revenue: 125887 * 1e3,
+        totalRevenue: 125887 * 1e3,
         operatingIncome: -44887 * 1e3,
       },
       1: {
-        revenue: 110524 * 1e3,
+        totalRevenue: 110524 * 1e3,
         operatingIncome: -20514 * 1e3,
       },
     },

@@ -1,26 +1,54 @@
 import { UserType } from 'src/app/business-overview/business.model';
 import { MarketType } from 'src/app/facts/data/area.enum';
+import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const gme: StockAnalysis = {
-  marketCap: 9.04 * BILLION,
+  marketCap: 9.4 * BILLION,
   logo: '',
   name: 'GameStop Corp.',
   description: [],
   ticker: 'gme',
   shortName: 'GameStop',
   irAddress: 'https://investor.gamestop.com/home',
+  risks: [],
+  catalysts: [
+    {
+      name: 'Partnership with Immutable X to support the development of GameStop’s NFT marketplace',
+      type: FactType.business,
+    },
+    {
+      name: 'Hired talents with experience in areas such as blockchain gaming, ecommerce and technology, product refurbishment and operations.',
+      type: FactType.business,
+    },
+    {
+      name: 'Raised more than $1.67 billion in capital and eliminated all of the Company’s long-term debt',
+      type: FactType.business,
+    },
+    {
+      name: 'Established/expanded brand relationships with PC gaming companies such as Alienware, Corsair and Lenovo',
+      type: FactType.growth,
+    },
+    {
+      name: 'Expanded the product catalog to include a broader set of consumer electronics, PC gaming equipment and refurbished hardware.',
+      type: FactType.growth,
+    },
+    {
+      name: 'Grew PowerUp Rewards Pro members by 32% on a year-over-year basis, taking total membership to approximately 5.8 million.',
+      type: FactType.growth,
+    },
+  ],
 
   // Earnings Report:
   earningsReports: [
     {
       year: 2021,
       quarter: 4,
-      revenue: 2.254 * BILLION,
+      totalRevenue: 2.254 * BILLION,
       operatingIncome: -166.8 * MILLION,
       grossProfit: 378.2 * MILLION,
-      sellingGeneralAdministrative: 538.9 * MILLION,
+      sellingGeneralAndAdministrative: 538.9 * MILLION,
       pressReleaseLink:
         'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-fourth-quarter-and-fiscal-year-2021-results',
       quarterHighlights: [
@@ -43,7 +71,7 @@ export const gme: StockAnalysis = {
     {
       year: 2021,
       quarter: 3,
-      revenue: 1296.6 * MILLION,
+      totalRevenue: 1296.6 * MILLION,
       grossProfit: 318.6 * MILLION,
       operatingIncome: -102.9 * MILLION,
     },
@@ -51,7 +79,7 @@ export const gme: StockAnalysis = {
     {
       year: 2021,
       quarter: 2,
-      revenue: 1183.4 * MILLION,
+      totalRevenue: 1183.4 * MILLION,
       grossProfit: 320.9 * MILLION,
       operatingIncome: -58.0 * MILLION,
     },
@@ -59,42 +87,41 @@ export const gme: StockAnalysis = {
     {
       year: 2021,
       quarter: 1,
-      revenue: 1276.8 * MILLION,
+      totalRevenue: 1276.8 * MILLION,
       grossProfit: 330.1 * MILLION,
       operatingIncome: -40.8 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 2122.1 * MILLION,
+      totalRevenue: 2122.1 * MILLION,
       grossProfit: 448.6 * MILLION,
       operatingIncome: 18.8 * MILLION,
-      sellingGeneralAdministrative: 419.1 * MILLION,
+      sellingGeneralAndAdministrative: 419.1 * MILLION,
     },
     {
       year: 2020,
       quarter: 3,
-      revenue: 1004.7 * MILLION,
+      totalRevenue: 1004.7 * MILLION,
       grossProfit: 276.3 * MILLION,
       operatingIncome: -63.0 * MILLION,
     },
     {
       year: 2020,
       quarter: 2,
-      revenue: 942.0 * MILLION,
+      totalRevenue: 942.0 * MILLION,
       grossProfit: 252.2 * MILLION,
-
       operatingIncome: -63.0 * MILLION,
     },
     {
       year: 2020,
       quarter: 1,
-      revenue: 1021 * MILLION,
+      totalRevenue: 1021 * MILLION,
       grossProfit: 282.4 * MILLION,
       operatingIncome: -63.0 * MILLION,
     },
   ],
-  competitors: ['amzn', 'baba', 'etsy'],
+  competitors: ['amzn', 'etsy', 'baba'],
 
   business: {
     markets: [

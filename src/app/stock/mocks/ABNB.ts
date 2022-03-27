@@ -31,7 +31,7 @@ export const abnb: StockAnalysis = {
   competitors: ['uber'],
   business: {
     markets: [{ type: MarketType.shared_economy }, { type: MarketType.travel }],
-    revenues: [{ type: RevenueType.salesCommission }],
+    revenues: [{ name: '', type: RevenueType.salesCommission }],
     competitiveAdvantages: [
       { type: StrategyType.platform },
       { type: StrategyType.userData },
@@ -43,7 +43,7 @@ export const abnb: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      revenue: 1445 * 1e6,
+      totalRevenue: 1445 * 1e6,
       isForecast: true,
     },
     {
@@ -51,32 +51,32 @@ export const abnb: StockAnalysis = {
         'https://s26.q4cdn.com/656283129/files/doc_financials/2021/q4/Airbnb_Q4-2021-Shareholder-Letter_Final.pdf',
       year: 2021,
       quarter: 4,
-      revenue: 1532 * 1e6,
+      totalRevenue: 1532 * 1e6,
       operatingIncome: 75.567 * 1e6,
     },
     {
-      revenue: 2237 * 1e6,
+      totalRevenue: 2237 * 1e6,
       year: 2021,
       quarter: 3,
     },
     {
-      revenue: 1335 * 1e6,
+      totalRevenue: 1335 * 1e6,
       year: 2021,
       quarter: 2,
     },
     {
-      revenue: 887 * 1e6,
+      totalRevenue: 887 * 1e6,
       year: 2021,
       quarter: 1,
     },
     {
-      revenue: 859.264 * 1e6,
+      totalRevenue: 859.264 * 1e6,
       operatingIncome: -3100.18 * 1e6,
       year: 2020,
       quarter: 4,
     },
     {
-      revenue: 334774 * 1e3,
+      totalRevenue: 334774 * 1e3,
       operatingIncome: -51278 * 1e3,
       year: 2020,
       quarter: 2,

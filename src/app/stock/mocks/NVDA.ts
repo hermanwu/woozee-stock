@@ -24,14 +24,14 @@ export const nvda: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      revenue: 8.1 * 1e9,
+      totalRevenue: 8.1 * 1e9,
       operatingIncome: 2970 * 1e6,
       isForecast: true,
     },
     {
       year: 2021,
       quarter: 4,
-      revenue: 7.64 * 1e9,
+      totalRevenue: 7.64 * 1e9,
       operatingIncome: 2970 * 1e6,
       reportLink:
         'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/0ec16816-55e2-4812-8f77-75cab5909247.pdf',
@@ -47,31 +47,31 @@ export const nvda: StockAnalysis = {
     {
       year: 2021,
       quarter: 3,
-      revenue: 7103 * 1e6,
+      totalRevenue: 7103 * 1e6,
       operatingIncome: 2671 * 1e6,
     },
     {
       year: 2021,
       quarter: 2,
-      revenue: 6507 * 1e6,
+      totalRevenue: 6507 * 1e6,
       operatingIncome: 2444 * 1e6,
     },
     {
       year: 2021,
       quarter: 1,
-      revenue: 5661 * 1e6,
+      totalRevenue: 5661 * 1e6,
       operatingIncome: 1956 * 1e6,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 5003 * 1e6,
+      totalRevenue: 5003 * 1e6,
       operatingIncome: 1507 * 1e6,
     },
     {
       year: 2020,
       quarter: 3,
-      revenue: 4726 * 1e6,
+      totalRevenue: 4726 * 1e6,
       operatingIncome: 1398 * 1e6,
     },
   ],
@@ -140,9 +140,9 @@ export const nvda: StockAnalysis = {
       { type: MarketType.autoRobotics },
     ],
     revenues: [
-      { type: RevenueType.hardwareSelling },
-      { type: RevenueType.softwareSelling },
-      { type: RevenueType.b2b },
+      { name: '', type: RevenueType.hardwareSelling },
+      { name: '', type: RevenueType.softwareSelling },
+      { name: '', type: RevenueType.b2b },
     ],
     competitiveAdvantages: [
       { type: StrategyType.platform },

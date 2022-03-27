@@ -2,7 +2,7 @@ import { MarketType } from 'src/app/facts/data/area.enum';
 import { news } from 'src/app/media/news/news.const';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { Source } from 'src/app/shared/data/source.enum';
-import { BILLION } from 'src/app/shared/numbers/number.model';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const amzn: StockAnalysis = {
@@ -11,7 +11,7 @@ export const amzn: StockAnalysis = {
   description: [],
   logo: 'http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
-  marketCap: 1.61 * 1e12,
+  marketCap: 1.68 * 1e12,
 
   risks: [
     {
@@ -207,57 +207,58 @@ export const amzn: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      revenue: 137.412 * BILLION,
+      totalRevenue: 137.412 * BILLION,
       grossProfit: 54.577 * BILLION,
-      operatingIncome: 3460 * 1e6,
+      operatingIncome: 3460 * MILLION,
     },
     {
       year: 2021,
       quarter: 3,
-      revenue: 110.812 * BILLION,
+      totalRevenue: 110.812 * BILLION,
       grossProfit: 47.882 * BILLION,
-      operatingIncome: 4852 * 1e6,
+      operatingIncome: 4852 * MILLION,
     },
     {
       year: 2021,
       quarter: 2,
-      revenue: 113.08 * BILLION,
+      totalRevenue: 113.08 * BILLION,
       grossProfit: 48.904 * BILLION,
-      operatingIncome: 7702 * 1e6,
+      operatingIncome: 7702 * MILLION,
     },
     {
       year: 2021,
       quarter: 1,
-      revenue: 108.518 * BILLION,
+      totalRevenue: 108.518 * BILLION,
       grossProfit: 46.115 * BILLION,
-      operatingIncome: 8865 * 1e6,
+      operatingIncome: 8865 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      revenue: 125555 * 1e6,
-      operatingIncome: 6873 * 1e6,
+      totalRevenue: 125555 * MILLION,
+      grossProfit: 46.271 * BILLION,
+      operatingIncome: 6873 * MILLION,
     },
     {
-      year: 2021,
+      year: 2020,
       quarter: 3,
-      revenue: 110.812 * BILLION,
-      grossProfit: 47.882 * BILLION,
-      operatingIncome: 4852 * 1e6,
+      totalRevenue: 96.145 * BILLION,
+      grossProfit: 39.039 * BILLION,
+      operatingIncome: 4852 * MILLION,
     },
     {
-      year: 2021,
+      year: 2020,
       quarter: 2,
-      revenue: 113.08 * BILLION,
-      grossProfit: 48.904 * BILLION,
-      operatingIncome: 7702 * 1e6,
+      totalRevenue: 88.912 * BILLION,
+      grossProfit: 36.252 * BILLION,
+      operatingIncome: 7702 * MILLION,
     },
     {
-      year: 2021,
+      year: 2020,
       quarter: 1,
-      revenue: 108.518 * BILLION,
-      grossProfit: 46.115 * BILLION,
-      operatingIncome: 8865 * 1e6,
+      totalRevenue: 75.452 * BILLION,
+      grossProfit: 31.195 * BILLION,
+      operatingIncome: 8865 * MILLION,
     },
   ],
 

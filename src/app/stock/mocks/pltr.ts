@@ -26,13 +26,13 @@ export const pltr: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      revenue: 443 * 1e6,
+      totalRevenue: 443 * 1e6,
       isForecast: true,
     },
     {
       year: 2021,
       quarter: 4,
-      revenue: 432.87 * 1e6,
+      totalRevenue: 432.87 * 1e6,
       revenueRetention: 1.31,
       operatingIncome: -58.94 * 1e6,
       salesAndMarketingCost: 162.593 * MILLION,
@@ -48,19 +48,19 @@ export const pltr: StockAnalysis = {
     {
       year: 2021,
       quarter: 3,
-      revenue: 392.15 * 1e6,
+      totalRevenue: 392.15 * 1e6,
       operatingIncome: -91.94 * 1e6,
     },
     {
       year: 2021,
       quarter: 2,
-      revenue: 375.64 * 1e6,
+      totalRevenue: 375.64 * 1e6,
       operatingIncome: -146.15 * 1e6,
     },
     {
       year: 2021,
       quarter: 1,
-      revenue: 341.23 * 1e6,
+      totalRevenue: 341.23 * 1e6,
       operatingIncome: -114.01 * 1e6,
       isAnnual: true,
       reportLink:
@@ -69,7 +69,7 @@ export const pltr: StockAnalysis = {
     {
       year: 2020,
       quarter: 4,
-      revenue: 322.09 * 1e6,
+      totalRevenue: 322.09 * 1e6,
       operatingIncome: -156.57 * 1e6,
       activeUserCount: 139,
     },
@@ -164,8 +164,8 @@ export const pltr: StockAnalysis = {
       ' We build software platforms that become part of the institutions we serve. ',
     ],
     revenues: [
-      { type: RevenueType.softwareSelling },
-      { type: RevenueType.b2b },
+      { name: '', type: RevenueType.softwareSelling },
+      { name: '', type: RevenueType.b2b },
     ],
     competitiveAdvantages: [
       { type: StrategyType.userData },

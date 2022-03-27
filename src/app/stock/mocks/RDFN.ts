@@ -21,13 +21,13 @@ export const RDFN: StockAnalysis = {
         press: null,
         webcast: null,
         marketCap: 5.28 * 1e9,
-        revenue: 471.315 * 1e6,
+        totalRevenue: 471.315 * 1e6,
         operatingIncome: -30.317 * 1e6,
       },
     },
     2020: {
       2: {
-        revenue: 213.665 * 1e6,
+        totalRevenue: 213.665 * 1e6,
         operatingIncome: -4.426 * 1e6,
       },
     },

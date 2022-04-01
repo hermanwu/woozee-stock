@@ -5,7 +5,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const snow: StockAnalysis = {
-  marketCap: 60 * BILLION,
+  marketCap: 75 * BILLION,
   business: {
     overview: [
       'Enabling customers to consolidate data into a single source of truth to drive meaningful business insights, build data-driven applications, and share data',

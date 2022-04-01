@@ -6,6 +6,15 @@
   }
 }
 
+.grid {
+  display: grid;
+  grid-gap: 0.5rem;
+}
+
+.grid-dynamic {
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
+
 .padding-1rem {
   padding-top: 1rem;
   padding-left: 1rem;

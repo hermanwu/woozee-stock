@@ -3,22 +3,18 @@
     <app-risk-level-display [riskLevel]="risk.level"></app-risk-level-display>
   </span>
 
+  <app-fact-type-display [factType]="risk.type"> </app-fact-type-display>
+
   <span>
     {{ risk.name }}
   </span>
 
-  <button
-    mat-icon-button
-    class="action-buttons"
-    type="button"
-    (click)="openDialog()"
-  >
-    <mat-icon>shield</mat-icon>
-  </button>
-  <button mat-icon-button type="button" (click)="expanded = !expanded">
-    <mat-icon *ngIf="expanded">expand_less</mat-icon>
-    <mat-icon *ngIf="!expanded">expand_more</mat-icon>
-  </button>
+  <span class="action-buttons">
+    <button mat-icon-button type="button" (click)="expanded = !expanded">
+      <mat-icon *ngIf="expanded">expand_less</mat-icon>
+      <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+    </button>
+  </span>
 </div>
 
 <div *ngIf="expanded">
@@ -27,4 +23,27 @@
       <app-note [note]="item" [isExpanded]="false"> </app-note>
     </li>
   </ul>
+
+  <div>
+    <button type="button" mat-icon-button>
+      <mat-icon>trending_up</mat-icon>
+    </button>
+    <span>{{ risk?.vote || 0 }}</span>
+    <button type="button" mat-icon-button>
+      <mat-icon>trending_down</mat-icon>
+    </button>
+
+    <button type="button" mat-icon-button>
+      <mat-icon>share</mat-icon>
+    </button>
+
+    <button mat-icon-button type="button" (click)="openDialog()">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
+
+  <div>
+    <div>comment</div>
+    <textarea></textarea>
+  </div>
 </div>

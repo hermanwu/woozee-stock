@@ -10,7 +10,7 @@ import { Risk } from '../../models/risk.model';
   styleUrls: ['./risk.component.scss'],
 })
 export class RiskComponent implements OnInit, OnChanges {
-  expanded = true;
+  expanded = false;
   @Input() risk: Risk;
   note: Note;
 

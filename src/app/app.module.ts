@@ -11,6 +11,9 @@ import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BusinessOverviewComponent } from './business-overview/business-overview.component';
+import { BoosterComponent } from './catalyst/booster/booster.component';
+import { CatalystLevelDisplayComponent } from './catalyst/catalyst-level-display/catalyst-level-display.component';
+import { CatalystComponent } from './catalyst/catalyst.component';
 import { ComparisonDialogComponent } from './comparison-dialog/comparison-dialog.component';
 import { FactComponent } from './facts/components/fact/fact.component';
 import { MistakesComponent } from './ideas/blog/mistakes/mistakes.component';
@@ -30,6 +33,7 @@ import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-pa
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
 import { CardComponent } from './shared/components/card/card.component';
 import { CarousalComponent } from './shared/components/carousal/carousal.component';
+import { FactTypeDisplayComponent } from './shared/components/fact-type-display/fact-type-display.component';
 import { NoteDialogComponent } from './shared/components/note-dialog/note-dialog.component';
 import { NoteComponent } from './shared/components/note/note.component';
 import { IopsPipeModule } from './shared/pipes/iops/iops-pipe.module';
@@ -52,7 +56,6 @@ import { TitleMenuComponent } from './title-menu/title-menu.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendIndustriesComponent } from './trend/trend-industries/trend-industries.component';
 import { TrendComponent } from './trend/trend.component';
-import { BoosterComponent } from './booster/booster.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -99,6 +102,9 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     GrowthComponent,
     AboutComponent,
     BoosterComponent,
+    CatalystComponent,
+    CatalystLevelDisplayComponent,
+    FactTypeDisplayComponent,
   ],
   imports: [
     BrowserModule,

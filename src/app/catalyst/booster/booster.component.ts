@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Booster } from '../shared/models/booster.interface';
+import { Booster } from '../../shared/models/booster.interface';
 
 @Component({
   selector: 'app-booster',

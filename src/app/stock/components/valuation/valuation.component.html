@@ -15,14 +15,14 @@
   <div class="row">
     <div *ngIf="!hideLabel">P / S</div>
     <div class="stats">
-      {{ stock.marketCap / stock.ttmRevenue | siUnit: 2 | undefined }}
+      {{ stock.marketCap / stock.ttmRevenue | siUnit: 0 | undefined }}
     </div>
   </div>
 
   <div class="row">
     <div *ngIf="!hideLabel">P / Gross Profit</div>
     <div class="stats">
-      {{ stock.marketCap / stock.ttmGrossProfit | siUnit: 2 | undefined }}
+      {{ stock.marketCap / stock.ttmGrossProfit | siUnit: 0 | undefined }}
     </div>
   </div>
 
@@ -31,7 +31,7 @@
     <div class="stats">
       {{
         (stock.marketCapToOiRatio > 0 ? stock.marketCapToOiRatio : undefined)
-          | siUnit: 2
+          | siUnit: 0
           | undefined
       }}
     </div>
@@ -45,7 +45,7 @@
           ? stock.marketCap / stock.ttmNetIncome
           : undefined
         )
-          | siUnit: 2
+          | siUnit: 0
           | undefined
       }}
     </div>

@@ -37,6 +37,6 @@ export interface EarningsReport {
   notes?: Note[];
 
   // notes
-  quarterHighlights?: string[];
+  quarterHighlights?: Note[] | string[];
   annualHighlights?: string[];
 }

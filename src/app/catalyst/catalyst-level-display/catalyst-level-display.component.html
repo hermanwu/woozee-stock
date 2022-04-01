@@ -1,0 +1,13 @@
+<ng-container [ngSwitch]="catalystLevel">
+  <ng-container *ngSwitchCase="catalystLevelEnum.strong" i18n>
+    <span class="material-icons light-green"> sentiment_very_satisfied </span>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="catalystLevelEnum.moderate" i18n>
+    <span class="material-icons green"> sentiment_satisfied_alt </span>
+  </ng-container>
+
+  <ng-container *ngSwitchDefault i18n>
+    <span class="material-icons dark-green"> sentiment_neutral </span>
+  </ng-container>
+</ng-container>

@@ -1,0 +1,25 @@
+<div class="flex">
+  <app-catalyst-level-display
+    [catalystLevel]="catalyst.level"
+  ></app-catalyst-level-display>
+  <app-fact-type-display [factType]="catalyst.type"> </app-fact-type-display>
+
+  <span>
+    {{ catalyst.name }}
+  </span>
+
+  <span class="action-buttons"> </span>
+
+  <button mat-icon-button type="button" (click)="expanded = !expanded">
+    <mat-icon *ngIf="expanded">expand_less</mat-icon>
+    <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+  </button>
+</div>
+
+<div *ngIf="expanded">
+  <ul>
+    <li *ngFor="let item of catalyst.notes">
+      <app-note [note]="item" [isExpanded]="false"> </app-note>
+    </li>
+  </ul>
+</div>

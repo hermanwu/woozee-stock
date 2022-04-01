@@ -3,7 +3,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const intu: StockAnalysis = {
-  marketCap: 126 * BILLION,
+  marketCap: 133 * BILLION,
   logo: '',
   name: 'Intuit',
   description: [],

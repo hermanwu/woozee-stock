@@ -1,3 +1,4 @@
+import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { MarketType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -21,100 +22,25 @@ export const adbe: StockAnalysis = {
 
   catalysts: [
     {
-      name: 'Creative Cloud Express',
+      name: 'Document Cloud 2B yearly revenue with 29% Y/Y growth ',
       type: FactType.business,
-      notes: [
-        {
-          content:
-            'Newly launched Creative Cloud Express seeing strong traffic, millions of monthly active users with high customer satisfaction',
-        },
-      ],
+      level: CatalystLevel.weak,
     },
     {
-      name: 'AI Innovation',
+      name: 'Experience Cloud has 1B revenue in Q1 with 22% Y/Y growth ',
       type: FactType.business,
-      notes: [
-        {
-          content:
-            'AI-powered innovations in Premiere Pro that help merge music into video sequences and accelerate transcription',
-        },
-      ],
-    },
-    {
-      name: 'Frame.io',
-      type: FactType.business,
-      notes: [
-        {
-          content:
-            'Extend leadership in video collaboration and bring collaboration capabilities to all creative categories',
-        },
-        {
-          content:
-            'Frame had its best Page 6 of 21 quarter ever, closing more deals than in any prior quarter while increasing deal sizes to record level',
-        },
-      ],
-    },
-    {
-      name: 'Substance 3D',
-      type: FactType.business,
-      notes: [
-        {
-          content:
-            'Tremendous interest for Substance 3D and new 3D Modeler beta as brands become “metaverse ready”',
-        },
-        {
-          content:
-            'Substance is already being adopted by global brands like Coca-Cola, NASCAR and NVIDIA for marketing and e-commerce;',
-        },
-      ],
-    },
-    {
-      name: 'Document Cloud',
-      type: FactType.business,
-      notes: [
-        {
-          content:
-            'Strong growth in Adobe Sign, driven by unifying e-signature functionality in Acrobat and new Sign integrations with Adobe Commerce and Workfront',
-        },
-        {
-          content: '29% growth year over year (Q1 ~500 million revenue)',
-        },
-      ],
-    },
-    {
-      name: 'Experience Cloud',
-      type: FactType.business,
-      notes: [
-        {
-          content: '',
-        },
-        {
-          content: '22% growth year over year (Q1 ~1 billion revenue)',
-        },
-      ],
+      level: CatalystLevel.weak,
     },
   ],
 
   risks: [
     {
-      name: 'Impact of War in Ukraine',
+      name: 'War in Ukraine would cause 75M revenue reduction',
       type: FactType.business,
       notes: [
         {
           content:
-            ' Halt of all new sales of Adobe products and services in Russia and Belarus. This results in a total ARR reduction of $87 million and an expected revenue impact of $75 million for fiscal year 2022.',
-        },
-        {
-          content:
-            'The general availability of Adobe Experience Cloud for Healthcare to deliver personalized healthcare experiences; ',
-        },
-        {
-          content:
-            'An expanding partner ecosystem, including a partnership with OneTrust to simplify consent management, the next phase of e-commerce integrations with FedEx, Walmart and PayPal, as well as a collaboration with The Weather Company; and',
-        },
-        {
-          content:
-            'Key customer wins, including CrowdStrike, Deutsche Telekom, IBM, Jaguar Land Rover, JPMorgan Chase, McDonald’s and UnitedHealth.',
+            'Halt of all new sales of Adobe products and services in Russia and Belarus. This results in a total ARR reduction of $87 million and an expected revenue impact of $75 million for fiscal year 2022.',
         },
       ],
     },
@@ -160,6 +86,79 @@ export const adbe: StockAnalysis = {
       isForecast: true,
     },
     {
+      quarterHighlights: [
+        {
+          content: 'Creative Cloud',
+          notes: [
+            {
+              content:
+                'Newly launched Creative Cloud Express seeing strong traffic, millions of monthly active users with high customer satisfaction',
+            },
+            {
+              content:
+                'AI-powered innovations in Premiere Pro that help merge music into video sequences and accelerate transcription',
+            },
+            {
+              content: 'Frame.io',
+              notes: [
+                {
+                  content:
+                    'Extend leadership in video collaboration and bring collaboration capabilities to all creative categories',
+                },
+                {
+                  content:
+                    'Frame had its best quarter ever, closing more deals than in any prior quarter while increasing deal sizes to record level',
+                },
+              ],
+            },
+            {
+              content: 'Substance 3D',
+              notes: [
+                {
+                  content:
+                    'Tremendous interest for Substance 3D and new 3D Modeler beta as brands become “metaverse ready”',
+                },
+                {
+                  content:
+                    'Substance is already being adopted by global brands like Coca-Cola, NASCAR and NVIDIA for marketing and e-commerce;',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          content: 'Document Cloud',
+          notes: [
+            {
+              content:
+                'Strong growth in Adobe Sign, driven by unifying e-signature functionality in Acrobat and new Sign integrations with Adobe Commerce and Workfront',
+            },
+            {
+              content: '29% growth year over year (Q1 ~500 million revenue)',
+            },
+          ],
+        },
+        {
+          content: 'Experience Cloud',
+          notes: [
+            {
+              content: '22% growth year over year (Q1 ~1 billion revenue)',
+            },
+            {
+              content:
+                'The general availability of Adobe Experience Cloud for Healthcare to deliver personalized healthcare experiences; ',
+            },
+            {
+              content:
+                'An expanding partner ecosystem, including a partnership with OneTrust to simplify consent management, the next phase of e-commerce integrations with FedEx, Walmart and PayPal, as well as a collaboration with The Weather Company; and',
+            },
+            {
+              content:
+                'Key customer wins, including CrowdStrike, Deutsche Telekom, IBM, Jaguar Land Rover, JPMorgan Chase, McDonald’s and UnitedHealth.',
+            },
+          ],
+        },
+      ],
       year: 2022,
       quarter: 1,
       totalRevenue: 4.26 * BILLION,

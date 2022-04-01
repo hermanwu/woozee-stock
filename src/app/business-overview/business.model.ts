@@ -16,6 +16,8 @@ export interface Benefit {
 export enum UserType {
   developer = 'Developer',
   gamer = 'gamer',
+
+  retailInvestor = 'Retail Investor',
 }
 export interface User {
   type: UserType | string;

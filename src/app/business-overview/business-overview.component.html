@@ -8,27 +8,11 @@
   <div *ngFor="let item of business?.missions">{{ item }}</div>
 </div>
 
-<div *ngIf="business.markets">
-  <div class="label">Markets - Size - Growth Rate:</div>
-  <div *ngFor="let item of business?.markets">
-    <span class="badge">{{ item.type }}</span> -
-    {{ item.size | siUnit: 2 | undefined }}
-    <span *ngIf="item.growthRate">- {{ item.growthRate | percent }}</span>
-  </div>
-</div>
-
-<div>
-  <div class="label">Users</div>
-  <div *ngFor="let item of business?.users">
-    <span class="badge">{{ item.type }}</span>
-  </div>
-</div>
-
 <div>
   <div class="label">Revenue Sources</div>
-  <div *ngFor="let item of business?.revenues">
+  <span *ngFor="let item of business?.revenues">
     <span class="badge">{{ item.name }}</span>
-  </div>
+  </span>
 </div>
 
 <div *ngIf="business.productBenefits">
@@ -41,9 +25,9 @@
 
 <div>
   <div class="label">Competitive Advantages</div>
-  <div *ngFor="let item of business?.competitiveAdvantages">
+  <span *ngFor="let item of business?.competitiveAdvantages">
     <span class="badge">{{ item.type }}</span>
-  </div>
+  </span>
 </div>
 
 <div>

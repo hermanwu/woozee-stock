@@ -1,5 +1,8 @@
+import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { MarketType } from 'src/app/facts/data/area.enum';
+import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { news } from 'src/app/media/news/news.const';
+import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { Source } from 'src/app/shared/data/source.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -12,20 +15,29 @@ export const amzn: StockAnalysis = {
   logo: 'http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
   marketCap: 1.68 * 1e12,
+  competitors: ['tgt'],
 
   risks: [
     {
-      name: 'Financial Health',
-      level: RiskLevel.noRisk,
+      name: 'Slow revenue growth last quarter',
+      type: FactType.growth,
+      level: RiskLevel.high,
       notes: [
         {
           content:
             'Net sales increased 9% to $137.4 billion in the fourth quarter, compared with $125.6 billion in fourth quarter 2020.',
           source: Source.earningReport,
         },
+      ],
+    },
+    {
+      name: 'Operating expense increases faster than gross profit',
+      type: FactType.profit,
+      level: RiskLevel.medium,
+      notes: [
         {
           content:
-            'Operating income decreased to $3.5 billion in the fourth quarter, compared with $6.9 billion in fourth quarter 2020',
+            'Operating expense increases 30% last quarter while gross profit only increases 18%',
           source: Source.earningReport,
         },
         {
@@ -33,31 +45,12 @@ export const amzn: StockAnalysis = {
             'Net income increased to $14.3 billion in the fourth quarter ($11.8 billion included in non-operating income from our common stock investment in Rivian Automotive, Inc)',
           source: Source.earningReport,
         },
-        {
-          content:
-            'Stockholders equity increases 48% (93 million -> 138 million)',
-        },
       ],
     },
     {
-      name: 'Value Estimation',
-      level: RiskLevel.medium,
-      notes: [
-        {
-          content: 'Market Cap: 1.53T (Apple 2.83T, Google 1.9T, Tesla 0.9T)',
-        },
-        {
-          content:
-            'Operating Income: 3.5B (Apple 41B, Google 22B, Tesla: 0.6B)',
-        },
-        {
-          content: 'P/E: 54.3 (Apple 28.71, Google 25.43)',
-        },
-      ],
-    },
-    {
-      name: 'Future Growth',
-      level: RiskLevel.low,
+      name: 'Future growth slows',
+      level: RiskLevel.high,
+      type: FactType.growth,
       notes: [
         {
           content:
@@ -89,39 +82,24 @@ export const amzn: StockAnalysis = {
       ],
     },
     {
-      name: 'Management and Execution',
-      level: RiskLevel.noRisk,
-      notes: [
-        {
-          content: '3.8 out of 5 stars on website Glassdoor',
-        },
-        {
-          content:
-            'Historically, Amazon has been growing quickly despite having the worst reputation among all the big Tech firms',
-        },
-        {
-          content:
-            'New CEO is an Amazon veteran who is used to be in charge of AWS',
-        },
-        {
-          content:
-            'New CEO might create a better working environment and reputation for Amazon',
-        },
-      ],
+      name: 'United States labor shortage and supply chain constraints',
+      level: RiskLevel.medium,
+      type: FactType.macro,
+    },
+  ],
+
+  catalysts: [
+    {
+      name: 'Stock will be 20-to-1 split on June 3',
+      level: CatalystLevel.moderate,
+      type: FactType.sentiment,
     },
 
     {
-      name: 'Competitor',
-      level: RiskLevel.medium,
+      name: 'Cloud business still keep 40% growth rate.',
+      level: CatalystLevel.strong,
+      type: FactType.growth,
       notes: [
-        {
-          content: 'Shopping business: Walmart, Target',
-          notes: [
-            {
-              content: '1% Online store growth is too slow',
-            },
-          ],
-        },
         {
           content: 'Cloud business: Google, Microsoft',
           notes: [
@@ -136,6 +114,14 @@ export const amzn: StockAnalysis = {
             },
           ],
         },
+      ],
+    },
+
+    {
+      name: 'Advertising business is booming.',
+      level: CatalystLevel.moderate,
+      type: FactType.growth,
+      notes: [
         {
           content: 'Advertising business: Google, Facebook, Tiktok',
           notes: [
@@ -152,52 +138,6 @@ export const amzn: StockAnalysis = {
               content: 'Facebook Advertising 32.639B -> 15.5% growth',
             },
           ],
-        },
-      ],
-    },
-    {
-      name: 'Analysts Sentiment',
-      level: RiskLevel.noRisk,
-      notes: [
-        {
-          content: '96% of 51 analysts gives a Buy ratings',
-          source: 'Morningstar.com',
-        },
-        {
-          content:
-            'Analysts give average price target 4190 (Min 3600, Max 4550)',
-          source: 'TipRank.com',
-        },
-      ],
-    },
-    {
-      name: 'Technical Chart',
-      level: RiskLevel.low,
-      notes: [
-        {
-          content: 'RSI is below average currently (was oversold in past week)',
-        },
-        {
-          content: 'Still below 200 day moving average after rebound',
-        },
-        {
-          content: 'Has stagnated since Jun 2020',
-        },
-      ],
-    },
-    {
-      name: 'Macro Market',
-      level: RiskLevel.medium,
-      notes: [
-        {
-          content: 'Inflation could decrease consumer spending',
-        },
-        {
-          content: 'Post COVID reopening might reduce online shopping demand',
-        },
-        {
-          content:
-            'Labor shortage would increase cost and affect Amazon front worker',
         },
       ],
     },
@@ -282,6 +222,34 @@ export const amzn: StockAnalysis = {
       {
         type: MarketType.ecommerce,
       },
+      {
+        type: MarketType.datacenter,
+      },
+    ],
+
+    revenues: [
+      {
+        name: 'Datacenter',
+        amount: 5 * BILLION,
+      },
+      {
+        name: 'Ecommerce',
+        amount: 5 * BILLION,
+      },
+      {
+        name: 'Advertising',
+        amount: 5 * BILLION,
+      },
+    ],
+
+    competitiveAdvantages: [
+      { type: StrategyType.efficientScale },
+      { type: StrategyType.userData },
+    ],
+
+    growthStrategy: [
+      'Continue grow AWS',
+      'Continue invest in entertainment industry',
     ],
   },
 };

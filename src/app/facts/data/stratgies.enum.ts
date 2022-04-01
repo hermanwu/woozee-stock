@@ -6,6 +6,7 @@ export enum StrategyType {
   feature = 'More Features',
   userData = 'User Data',
   networkEffect = 'Network Effect',
+  efficientScale = 'Efficient Scale',
 }
 
 export interface Strategy {

@@ -5,7 +5,12 @@
   </h1>
 
   <div class="buttons">
-    <button class="buttons" mat-icon-button aria-label="sort sections">
+    <button
+      class="buttons"
+      mat-icon-button
+      aria-label="Organize widgets"
+      matTooltip="Organize Widgets"
+    >
       <mat-icon>sort</mat-icon>
     </button>
 
@@ -14,33 +19,22 @@
       mat-icon-button
       [matMenuTriggerFor]="menu"
       aria-label="navigate to sections"
+      matTooltip="Navigator"
     >
       <mat-icon>link</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item disabled>Business</button>
       <button mat-menu-item disabled>Growth</button>
-      <button mat-menu-item disabled>Growth</button>
+      <button mat-menu-item disabled>Profit</button>
     </mat-menu>
   </div>
 </div>
 
-<div class="padding-1rem">
-  <app-card>
-    <app-title-menu>
-      <div title>Catalysts</div>
-    </app-title-menu>
-
-    <div *ngFor="let catalyst of stockAnalysis.catalysts">
-      {{ catalyst.name }}
-    </div>
-  </app-card>
-</div>
-
 <!-- Risks -->
-<div class="padding-1rem">
-  <app-card>
-    <div>
+<div class="grid grid-dynamic">
+  <div class="padding-1rem">
+    <app-card>
       <app-title-menu>
         <div title>
           Risks
@@ -64,102 +58,126 @@
           >
             <mat-icon>view_array</mat-icon>
           </button>
+
+          <button mat-icon-button type="button" matTooltip="Add Risk">
+            <mat-icon>add_circle</mat-icon>
+          </button>
         </div>
       </app-title-menu>
-    </div>
 
-    <div class="grid grid-list" *ngIf="displayMode === displayModeEnum.list">
-      <div *ngFor="let risk of stockAnalysis.risks">
-        <app-risk [risk]="risk"></app-risk>
+      <div class="grid grid-list" *ngIf="displayMode === displayModeEnum.list">
+        <div *ngFor="let risk of stockAnalysis.risks">
+          <app-risk [risk]="risk"></app-risk>
+        </div>
       </div>
-    </div>
 
-    <div *ngIf="displayMode === displayModeEnum.slide">
-      <app-carousal
-        [items]="stockAnalysis.risks"
-        (indexOfSelected)="updateDisplayItem($event)"
-      >
-        <div class="risk-slides-overview">
-          <ng-container *ngFor="let risk of stockAnalysis.risks; let i = index">
-            <span
-              [ngClass]="{
-                'current-risk-slide': i === carousalDisplayItemIndex
-              }"
+      <div *ngIf="displayMode === displayModeEnum.slide">
+        <app-carousal
+          [items]="stockAnalysis.risks"
+          (indexOfSelected)="updateDisplayItem($event)"
+        >
+          <div class="risk-slides-overview">
+            <ng-container
+              *ngFor="let risk of stockAnalysis.risks; let i = index"
             >
-              {{ risk.type }}
-            </span>
-            <span>-></span>
-          </ng-container>
+              <span
+                [ngClass]="{
+                  'current-risk-slide': i === carousalDisplayItemIndex
+                }"
+              >
+                {{ risk.type }}
+              </span>
+              <span>-></span>
+            </ng-container>
 
-          <span>Conclusion</span>
-        </div>
+            <span>Conclusion</span>
+          </div>
 
-        <div *ngFor="let risk of stockAnalysis.risks; let i = index">
-          <app-card *ngIf="i === carousalDisplayItemIndex">
-            <app-risk [risk]="risk"></app-risk>
-          </app-card>
-        </div>
-      </app-carousal>
-    </div>
-  </app-card>
-</div>
-
-<div class="padding-1rem">
-  <app-card>
-    <h2>My Forecast</h2>
-
-    <div *ngIf="stockAnalysis?.predications">
-      <div>
-        Price:
-        {{ stockAnalysis.predications[0]?.price | undefined }}
+          <div *ngFor="let risk of stockAnalysis.risks; let i = index">
+            <app-card *ngIf="i === carousalDisplayItemIndex">
+              <app-risk [risk]="risk"></app-risk>
+            </app-card>
+          </div>
+        </app-carousal>
       </div>
-      <div>
-        Predication Date:
-        {{ stockAnalysis.predications[0]?.start | date }}
+    </app-card>
+  </div>
+
+  <div class="padding-1rem">
+    <app-card>
+      <app-title-menu>
+        <div title>Catalysts</div>
+
+        <div buttons>
+          <button mat-icon-button type="button" matTooltip="Add Risk">
+            <mat-icon>add_circle</mat-icon>
+          </button>
+        </div>
+      </app-title-menu>
+
+      <div *ngFor="let catalyst of stockAnalysis.catalysts">
+        <app-catalyst [catalyst]="catalyst"></app-catalyst>
       </div>
-    </div>
-  </app-card>
-</div>
+    </app-card>
+  </div>
 
-<div class="padding-1rem">
-  <app-card>
-    <app-links [stock]="stockAnalysis"></app-links>
-  </app-card>
-</div>
+  <div class="padding-1rem" *ngIf="stockAnalysis.business">
+    <app-fact [factType]="factType.business">
+      <app-business-overview
+        [business]="stockAnalysis.business"
+      ></app-business-overview>
 
-<div class="padding-1rem" *ngIf="stockAnalysis.business">
-  <app-fact [factType]="factType.business">
-    <app-business-overview
-      [business]="stockAnalysis.business"
-    ></app-business-overview>
+      <app-note
+        [note]="{
+          content: 'More descriptions',
+          notes: stockAnalysis.description
+        }"
+      ></app-note>
+    </app-fact>
+  </div>
 
-    <app-note
-      [note]="{
-        content: 'More descriptions',
-        notes: stockAnalysis.description
-      }"
-    ></app-note>
-  </app-fact>
-</div>
+  <div class="padding-1rem">
+    <app-fact [factType]="factType.growth" [stock]="stockAnalysis">
+      <app-growth [stock]="stockAnalysis"></app-growth>
 
-<div class="padding-1rem">
-  <app-fact [factType]="factType.growth" [stock]="stockAnalysis">
-    <app-growth [stock]="stockAnalysis"></app-growth>
+      <!-- <app-booster></app-booster> -->
+    </app-fact>
+  </div>
 
-    <!-- <app-booster></app-booster> -->
-  </app-fact>
-</div>
+  <div class="padding-1rem">
+    <app-fact [factType]="factType.profit" [stock]="stockAnalysis">
+      <app-profitability [stock]="stockAnalysis"></app-profitability>
+    </app-fact>
+  </div>
 
-<div class="padding-1rem">
-  <app-fact [factType]="factType.profit" [stock]="stockAnalysis">
-    <app-profitability [stock]="stockAnalysis"></app-profitability>
-  </app-fact>
-</div>
+  <div class="padding-1rem">
+    <app-fact [factType]="factType.valuation" [stock]="stockAnalysis">
+      <app-valuation [stock]="stockAnalysis"></app-valuation>
+    </app-fact>
+  </div>
 
-<div class="padding-1rem">
-  <app-fact [factType]="factType.valuation" [stock]="stockAnalysis">
-    <app-valuation [stock]="stockAnalysis"></app-valuation>
-  </app-fact>
+  <div class="padding-1rem">
+    <app-card>
+      <h2>My Forecast</h2>
+
+      <div *ngIf="stockAnalysis?.predications">
+        <div>
+          Price:
+          {{ stockAnalysis.predications[0]?.price | undefined }}
+        </div>
+        <div>
+          Predication Date:
+          {{ stockAnalysis.predications[0]?.start | date }}
+        </div>
+      </div>
+    </app-card>
+  </div>
+
+  <div class="padding-1rem">
+    <app-card>
+      <app-links [stock]="stockAnalysis"></app-links>
+    </app-card>
+  </div>
 </div>
 
 <!-- <div class="padding-1rem">

@@ -2,6 +2,7 @@
   display: grid;
   align-items: center;
   grid-template-columns: 5fr 2fr;
+  min-height: 40px;
 
   .buttons {
     justify-self: right;

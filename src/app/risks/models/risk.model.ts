@@ -11,4 +11,5 @@ export interface Risk {
   actions?: Note[];
   level?: RiskLevel;
   type?: FactType;
+  vote?: number;
 }

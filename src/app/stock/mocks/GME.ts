@@ -5,7 +5,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const gme: StockAnalysis = {
-  marketCap: 9.4 * BILLION,
+  marketCap: 13.73 * BILLION,
   logo: '',
   name: 'GameStop Corp.',
   description: [],

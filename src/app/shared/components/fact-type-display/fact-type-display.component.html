@@ -1,0 +1,25 @@
+<ng-container [ngSwitch]="factType">
+  <ng-container *ngSwitchCase="factTypeEnum.business" i18n>
+    <span class="badge">Business</span>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="factTypeEnum.growth" i18n>
+    <span class="badge">Growth</span>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="factTypeEnum.profit" i18n>
+    <span class="badge">Profitability</span>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="factTypeEnum.sentiment" i18n>
+    <span class="badge">Sentiment</span>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="factTypeEnum.macro" i18n>
+    <span class="badge">Macro</span>
+  </ng-container>
+
+  <ng-container *ngSwitchDefault i18n>
+    <span class="badge">Other</span>
+  </ng-container>
+</ng-container>

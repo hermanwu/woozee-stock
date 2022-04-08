@@ -223,13 +223,13 @@ export const amzn: StockAnalysis = {
         type: MarketType.ecommerce,
       },
       {
-        type: MarketType.datacenter,
+        type: MarketType.cloudService,
       },
     ],
 
     revenues: [
       {
-        name: 'Datacenter',
+        name: 'cloudService',
         amount: 5 * BILLION,
       },
       {

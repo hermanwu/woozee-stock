@@ -89,7 +89,7 @@ import { shop } from './shop.mock';
 import { SKLZ } from './SKLZ';
 import { snap } from './snap';
 import { snow } from './snow';
-import { SOFI } from './SOFI';
+import { sofi } from './sofi';
 import { SPLK } from './SPLK';
 import { spot } from './spot';
 import { sq } from './sq.mock';
@@ -211,7 +211,7 @@ export const ownedStockMap = {
   shop,
   snap,
   snow,
-  SOFI,
+  sofi,
   SPLK,
   spot,
   sq,
@@ -351,7 +351,7 @@ export const stocksMap = {
   SKLZ,
   snap,
   snow,
-  SOFI,
+  sofi,
   SPLK,
   spot,
   sq,

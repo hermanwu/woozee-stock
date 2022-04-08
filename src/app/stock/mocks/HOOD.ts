@@ -6,21 +6,28 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const hood: StockAnalysis = {
-  marketCap: 14.45 * BILLION,
+  marketCap: 11.72 * BILLION,
   logo: '',
   name: 'Robinhood',
   description: [],
   ticker: 'hood',
   irAddress: 'https://investors.robinhood.com/overview/default.aspx',
+  competitors: ['sq', 'coin'],
 
   catalysts: [
     {
-      name: 'Crypto trading continue to grow',
+      name: 'Meme stocks (i.e. GME) trading becomes popular among retail investors.',
+      type: FactType.growth,
+      level: CatalystLevel.moderate,
+      notes: [],
+    },
+    {
+      name: 'Crypto trading market continues to grow',
       type: FactType.growth,
       level: CatalystLevel.moderate,
       notes: [
         {
-          content: 'Cryptocurrencies for the quarter increased 304%',
+          content: 'Cryptocurrencies transaction revenue increased 304% Q/Q',
         },
       ],
     },
@@ -28,27 +35,37 @@ export const hood: StockAnalysis = {
 
   risks: [
     {
+      name: 'Revenues only increased 14% this quarter',
+      level: RiskLevel.medium,
+      type: FactType.growth,
+      notes: [
+        {
+          content:
+            'This is lower than mega tech firm like Google (32%) or Microsoft (20%)',
+        },
+        {
+          content: 'Equities transaction revenue for the quarter decreased 35%',
+        },
+      ],
+    },
+    {
+      name: 'User growth is stagnating',
+      level: RiskLevel.high,
+      type: FactType.growth,
+      notes: [
+        {
+          content:
+            'Nearly no user growth in the past three quarters. Last three quarters: 22.5M, 22.4M, 22.7M',
+        },
+      ],
+    },
+    {
       name: 'Revenue is declining in next quarter forecast',
       level: RiskLevel.high,
       type: FactType.growth,
       notes: [
         {
-          content: 'Next quarter revenue guidance decreases 35%',
-        },
-        {
-          content: 'Revenue only increases 14% Q/Q',
-        },
-        {
-          content: 'Equities for the quarter decreased 35%',
-        },
-        {
-          content:
-            'No user growth in the past three quarters. Last three quarters: 22.5, 22.4, 22.7 (millions)',
-        },
-
-        {
-          content:
-            'Decreased average revenue per user from $106 decreases to $64',
+          content: 'Next quarter revenue decreases 35% in the guidance',
         },
       ],
     },

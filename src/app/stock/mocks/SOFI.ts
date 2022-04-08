@@ -1,10 +1,11 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const SOFI: StockAnalysis = {
+export const sofi: StockAnalysis = {
   logo: '',
-  name: { English: 'SoFi' },
+  name: 'SoFi',
   description: [],
-  ticker: 'SOFI',
+  ticker: 'sofi',
+  shortName: 'SoFi',
 
   // Earnings Report:
   earnings: {
@@ -20,7 +21,7 @@ export const SOFI: StockAnalysis = {
         marketCap: 11.62 * 1e9,
         totalRevenue: 231274 * 1e3,
         operatingIncome: -165392 * 1e3,
-        date: new Date('2021-08-06'),
+        createdDate: new Date('2021-08-06'),
       },
     },
     2020: {

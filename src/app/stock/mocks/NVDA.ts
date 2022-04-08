@@ -134,7 +134,7 @@ export const nvda: StockAnalysis = {
   ],
   business: {
     markets: [
-      { type: MarketType.datacenter },
+      { type: MarketType.cloudService },
       { type: MarketType.gaming },
       { type: MarketType.virtualSpace },
       { type: MarketType.autoRobotics },

@@ -2,5 +2,7 @@
   <div class="red-text">{{ titles[titles.length - 1].firstLine }}</div>
   <div class="orange-text">{{ titles[titles.length - 1].secondLine }}</div>
   <div class="green-text">{{ titles[titles.length - 1].thirdLine }}</div>
-  <div>{{ titles[titles.length - 1].date | date: "shortDate":"GMT" }}</div>
+  <div>
+    {{ titles[titles.length - 1].createdDate | date: "shortDate":"GMT" }}
+  </div>
 </div>

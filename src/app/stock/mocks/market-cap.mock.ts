@@ -1,8 +1,8 @@
-import { BILLION } from 'src/app/shared/numbers/number.model';
+import { TRILLION } from 'src/app/shared/numbers/number.model';
 
 export const capMock = {
-  aapl: 2918 * BILLION,
-  googl: 1896 * BILLION,
-  msft: 2360 * BILLION,
-  tsla: 1137 * BILLION,
+  aapl: 2.91 * TRILLION,
+  googl: 1.89 * TRILLION,
+  msft: 2.36 * TRILLION,
+  tsla: 1.12 * TRILLION,
 };

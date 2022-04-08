@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { NoteDialogComponent } from '../shared/components/note-dialog/note-dialog.component';
-import { Booster } from '../shared/models/booster.interface';
+import { NoteDialogComponent } from 'src/app/shared/components/note-dialog/note-dialog.component';
+import { Catalyst } from 'src/app/shared/models/booster.interface';
 
 @Component({
   selector: 'app-catalyst',
@@ -10,7 +10,7 @@ import { Booster } from '../shared/models/booster.interface';
 })
 export class CatalystComponent implements OnInit {
   expanded = false;
-  @Input() catalyst: Booster;
+  @Input() catalyst: Catalyst;
 
   constructor(private dialogService: MatDialog) {}
 

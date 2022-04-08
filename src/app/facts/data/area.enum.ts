@@ -1,12 +1,16 @@
 export enum MarketType {
-  fintech_lending = 'Fintech Lending',
+  global = 'Global',
+  us = 'US Macro',
+
+  fintech = 'Fintech',
   shared_economy = 'Shared Economy',
   travel = 'Travel Booking',
   crypto = 'Crypto',
+  nft = 'NFT',
 
   ai = 'AI',
   gaming = 'Gaming',
-  datacenter = 'Datacenter',
+  cloudService = 'Cloud Service',
   virtualSpace = 'Virtualization',
   autoRobotics = 'Auto and Robotics',
   dataAnalytics = 'Data Analytics',
@@ -20,5 +24,15 @@ export enum MarketType {
 
   customerRelationManagement = 'Customer Relation Management',
 
-  saas = 'Software as a Service',
+  saas = 'SaaS',
+
+  adTech = 'Ad Tech',
+
+  industrial = 'Industrial',
+
+  bigData = 'Big Data',
+
+  consumer = 'Consumer',
+
+  ev = 'EV',
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { catalysts } from 'src/app/catalyst/data/catalyst.mock';
 import { risks } from '../../data/global-risk.const';
 
 @Component({
@@ -7,6 +8,7 @@ import { risks } from '../../data/global-risk.const';
   styleUrls: ['./risk-list-page.component.scss'],
 })
 export class RiskListPageComponent implements OnInit {
+  catalysts = catalysts;
   risks = risks;
 
   constructor() {}

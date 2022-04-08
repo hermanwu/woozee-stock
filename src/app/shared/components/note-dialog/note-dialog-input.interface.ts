@@ -1,4 +1,4 @@
-import { Note } from 'src/app/stock/models/note.model';
+import { Note } from '../../data/note.interface';
 
 export interface NoteDialogInput {
   notes: Note[];

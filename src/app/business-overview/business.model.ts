@@ -1,6 +1,6 @@
-import { Note } from 'woozee-lib';
 import { Revenue } from '../facts/data/revenue-model.enum';
 import { Strategy } from '../facts/data/stratgies.enum';
+import { Note } from '../shared/data/note.interface';
 import { BusinessMarket } from '../stock/models/market.models';
 
 export enum BenefitType {
@@ -18,6 +18,8 @@ export enum UserType {
   gamer = 'gamer',
 
   retailInvestor = 'Retail Investor',
+
+  dau = 'Daily Active User',
 }
 export interface User {
   type: UserType | string;

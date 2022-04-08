@@ -1,5 +1,4 @@
 import { rmbToDollar } from 'src/app/shared/currency';
-import { newsSource } from '../models/news-source.enum';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const NIO: StockAnalysis = {
@@ -36,36 +35,4 @@ export const NIO: StockAnalysis = {
       },
     },
   },
-
-  news: [
-    // {
-
-    // },
-    {
-      source: newsSource.OFFICIAL,
-      title: '特斯拉2020年第四季度汽车生产和交付更新。',
-      date: new Date('2021-01-02T00:00:00'),
-      comments: [
-        {
-          text: '第四季度交付180,570, 全年交付499,550',
-          comments: [
-            {
-              text: '击败了华尔街预期174,000辆，但没有超过50万整数大关，所以不能算重大利好。',
-            },
-            { text: '季度同比增长61.2%(112,000), 年同比增长77.6%(281,520).' },
-          ],
-        },
-        {
-          text: 'Y型车已在上海开始生产，预计不久将开始交付.',
-          comments: [
-            {
-              text: '大陆特斯拉Y型车降价到30万以下，Tesla继续全球扩张，继续挤压燃油车市场。',
-            },
-          ],
-        },
-      ],
-      sourceLink:
-        'https://ir.tesla.com/press-release/tesla-q4-2020-vehicle-production-deliveries',
-    },
-  ],
 };

@@ -38,7 +38,7 @@ export enum Trend {
   SelfDrivingCars = '自动驾驶汽车',
   ConsumerAd = '广告平台',
 
-  ReInventionOfDatacenter = '数据中心',
+  ReInventionOfcloudService = '数据中心',
 
   VirtualWorld = '虚拟世界',
 

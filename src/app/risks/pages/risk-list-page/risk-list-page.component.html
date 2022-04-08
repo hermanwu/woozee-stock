@@ -1,13 +1,15 @@
-<mat-toolbar>
-  <h1>Market Risks and Catalysts</h1>
-</mat-toolbar>
+<app-title-menu>
+  <div title>Risks</div>
+</app-title-menu>
 
-<div class="grid grid-list">
-  <div *ngFor="let risk of risks">
-    <app-card>
-      <app-risk [risk]="risk"></app-risk>
-    </app-card>
-  </div>
-</div>
+<app-card>
+  <app-risk-list [risks]="risks"></app-risk-list>
+</app-card>
 
-<div></div>
+<app-title-menu>
+  <div title>Catalysts</div>
+</app-title-menu>
+
+<app-card>
+  <app-catalyst-list [catalysts]="catalysts"></app-catalyst-list>
+</app-card>

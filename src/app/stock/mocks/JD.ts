@@ -21,7 +21,7 @@ export const JD: StockAnalysis = {
         marketCap: 122.58 * 1e9,
         totalRevenue: (253800470 * 1e3) / 6.45,
         operatingIncome: (300756 * 1e3) / 6.45,
-        date: new Date('2021-08-06'),
+        createdDate: new Date('2021-08-06'),
       },
     },
     2020: {

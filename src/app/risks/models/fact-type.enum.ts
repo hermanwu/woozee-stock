@@ -4,6 +4,7 @@ export enum FactType {
   profit = 'Profitability',
   valuation = 'Valuation',
   technical = 'Technical',
-  macro = 'Macro Market',
   sentiment = 'Sentiment',
+  macro = 'Macro',
+  event = 'Event',
 }

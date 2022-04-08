@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Booster } from '../../shared/models/booster.interface';
+import { Catalyst } from '../../shared/models/booster.interface';
 
 @Component({
   selector: 'app-booster',
@@ -7,7 +7,7 @@ import { Booster } from '../../shared/models/booster.interface';
   styleUrls: ['./booster.component.scss'],
 })
 export class BoosterComponent implements OnInit {
-  @Input() catalysts: Booster[];
+  @Input() catalysts: Catalyst[];
 
   constructor() {}
 

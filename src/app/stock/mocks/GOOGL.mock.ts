@@ -1,3 +1,4 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { capMock } from './market-cap.mock';
@@ -160,4 +161,12 @@ export const googl: StockAnalysis = {
       netIncome: 6836 * MILLION,
     },
   ],
+
+  business: {
+    markets: [
+      {
+        type: MarketType.adTech,
+      },
+    ],
+  },
 };

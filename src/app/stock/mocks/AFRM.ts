@@ -42,7 +42,7 @@ export const afrm: StockAnalysis = {
   ticker: 'afrm',
   irAddress: 'https://investors.affirm.com/',
   business: {
-    markets: [{ type: MarketType.fintech_lending }],
+    markets: [{ type: MarketType.fintech }],
     revenues: [
       { name: '', type: RevenueType.loanInterest },
       { name: '', type: RevenueType.salesCommission },

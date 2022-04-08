@@ -17,7 +17,7 @@ export const news: News = {
     content:
       'Facebook’s user growth faltered in the latest quarter, the first stagnation in the social network’s history.',
     link: 'https://www.bloomberg.com/news/articles/2022-02-02/facebook-shares-plunge-as-users-stall-forecast-falls-short?srnd=premium',
-    date: new Date('2022-02-03'),
+    createdDate: new Date('2022-02-03'),
     notes: [
       {
         content:
@@ -30,13 +30,13 @@ export const news: News = {
     content:
       'Now young users -- the future consumers of its advertising -- are choosing platforms like TikTok and Google’s YouTube for entertainment and community instead.',
     link: 'https://www.bloomberg.com/news/articles/2022-02-02/facebook-shares-plunge-as-users-stall-forecast-falls-short?srnd=premium',
-    date: new Date('2022-02-03'),
+    createdDate: new Date('2022-02-03'),
     source: Source.bloomberg,
   },
   '4': {
     content:
       'Amazon Shares Jump 15% as Cloud Unit Helps Drive Profit Past Estimates',
-    date: new Date('2022-02-04'),
+    createdDate: new Date('2022-02-04'),
     source: Source.bloomberg,
   },
 };

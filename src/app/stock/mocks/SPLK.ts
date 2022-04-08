@@ -20,7 +20,7 @@ export const SPLK: StockAnalysis = {
         marketCap: 24.87 * 1e9,
         totalRevenue: 502051 * 1e3,
         operatingIncome: -435347 * 1e3,
-        date: new Date('2021-08-06'),
+        createdDate: new Date('2021-08-06'),
       },
     },
     2020: {

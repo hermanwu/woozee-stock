@@ -2,7 +2,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const dash: StockAnalysis = {
-  marketCap: 31 * BILLION,
+  marketCap: 40 * BILLION,
   logo: '',
   name: 'Doordash',
   description: [],

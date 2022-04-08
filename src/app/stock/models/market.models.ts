@@ -1,5 +1,5 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { Note } from 'woozee-lib';
+import { Note } from 'src/app/shared/data/note.interface';
 
 export interface Market {
   type: MarketType;

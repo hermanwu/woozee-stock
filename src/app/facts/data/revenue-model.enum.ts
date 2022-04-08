@@ -1,4 +1,5 @@
 import { Note } from 'src/app/shared/data/note.interface';
+import { MarketType } from './area.enum';
 
 /**
  * How revenue is from
@@ -22,6 +23,7 @@ export interface Revenue {
   amount?: number;
   growth?: number;
   type?: RevenueType;
+  marketTypes?: MarketType[];
   note?: Note;
   children?: Revenue[];
 }

@@ -1,9 +1,12 @@
 import { Source } from 'src/app/shared/data/source.enum';
+import { FactType } from '../../models/fact-type.enum';
 import { RiskLevel } from '../../models/risk-level.model';
 
 export const covid = {
+  updatedTime: new Date('2022-01-01'),
   name: 'COVID',
-  level: RiskLevel.low,
+  level: RiskLevel.medium,
+  type: FactType.event,
   notes: [
     {
       content: 'facts',
@@ -37,6 +40,5 @@ export const covid = {
       ],
     },
   ],
-  startTime: new Date('2022-01-01'),
   endTime: new Date('2022-12-31'),
 };

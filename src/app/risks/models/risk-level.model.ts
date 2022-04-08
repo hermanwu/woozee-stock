@@ -1,10 +1,10 @@
 export enum RiskLevel {
   // Cause stock to stop grow
-  low = 'Low',
+  low = 'Little Unknown',
   // Cause stock to drop.
-  medium = 'Medium',
+  medium = 'Half Unknown',
   // Cause stock to be out of business.
-  high = 'High',
+  high = 'Mostly Unknown',
   // Stock won't drop much.
-  noRisk = 'No Risk',
+  noRisk = 'All known',
 }

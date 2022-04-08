@@ -17,7 +17,7 @@ export const cvx: StockAnalysis = {
         marketCap: 41.05 * 1e9,
         totalRevenue: 233549 * 1e3,
         operatingIncome: -9886 * 1e3,
-        date: new Date('2021-08-06'),
+        createdDate: new Date('2021-08-06'),
       },
     },
     2020: {

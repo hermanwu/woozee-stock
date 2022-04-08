@@ -13,5 +13,5 @@ export interface Note {
   imageLink?: string;
   notes?: Note[];
 
-  date?: Date;
+  createdDate?: Date;
 }

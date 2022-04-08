@@ -17,7 +17,7 @@
         <span>{{ note.content }}</span>
       </ng-template>
 
-      <span *ngIf="note.date" class="note-date">{{
+      <span *ngIf="note.createdDate" class="note-date">{{
         note.date | date: "shortDate":"GMT"
       }}</span>
 

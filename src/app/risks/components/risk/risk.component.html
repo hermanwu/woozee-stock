@@ -9,6 +9,10 @@
     {{ risk.name }}
   </span>
 
+  <span class="gray-text" *ngIf="risk.updatedTime">{{
+    risk.updatedTime | date: shortDate
+  }}</span>
+
   <span class="action-buttons">
     <button mat-icon-button type="button" (click)="expanded = !expanded">
       <mat-icon *ngIf="expanded">expand_less</mat-icon>
@@ -42,8 +46,8 @@
     </button>
   </div>
 
-  <div>
+  <!-- <div>
     <div>comment</div>
     <textarea></textarea>
-  </div>
+  </div> -->
 </div>

@@ -6,18 +6,18 @@ import {
 } from '@angular/material/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { WoozeeLibModule } from 'woozee-lib';
 import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BusinessOverviewComponent } from './business-overview/business-overview.component';
 import { BoosterComponent } from './catalyst/booster/booster.component';
 import { CatalystLevelDisplayComponent } from './catalyst/catalyst-level-display/catalyst-level-display.component';
-import { CatalystComponent } from './catalyst/catalyst.component';
+import { CatalystListComponent } from './catalyst/components/catalyst-list/catalyst-list.component';
+import { CatalystComponent } from './catalyst/components/catalyst/catalyst.component';
 import { ComparisonDialogComponent } from './comparison-dialog/comparison-dialog.component';
 import { FactComponent } from './facts/components/fact/fact.component';
 import { MistakesComponent } from './ideas/blog/mistakes/mistakes.component';
-import { FomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
+import { FomoStocksComponent as HomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
 import { LinksComponent } from './links/links.component';
 import { MediaLinkComponent } from './media/media-link/media-link.component';
 import { ThumbnailComponent } from './presentation/components/thumbnail/thumbnail.component';
@@ -28,6 +28,7 @@ import { SlideFooterComponent } from './presentation/slide/slide-footer/slide-fo
 import { SlideComponent } from './presentation/slide/slide/slide.component';
 import { ProfitabilityComponent } from './profitability/profitability.component';
 import { RiskLevelDisplayComponent } from './risks/components/risk-level-display/risk-level-display.component';
+import { RiskListComponent } from './risks/components/risk-list/risk-list.component';
 import { RiskComponent } from './risks/components/risk/risk.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
@@ -73,7 +74,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     StockDisplayComponent,
     TrendComponent,
     TrendIndustriesComponent,
-    FomoStocksComponent,
+    HomoStocksComponent,
     ForeverOwnStocksPanelComponent,
     StockListTableComponent,
     SlideDemoComponent,
@@ -102,9 +103,11 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     GrowthComponent,
     AboutComponent,
     BoosterComponent,
-    CatalystComponent,
     CatalystLevelDisplayComponent,
     FactTypeDisplayComponent,
+    RiskListComponent,
+    CatalystListComponent,
+    CatalystComponent,
   ],
   imports: [
     BrowserModule,
@@ -112,7 +115,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     AppRoutingModule,
     AppMaterialModule,
     BrowserAnimationsModule,
-    WoozeeLibModule,
     IopsPipeModule,
     UndefinedPipeModule,
     SiUnitPipeModule,

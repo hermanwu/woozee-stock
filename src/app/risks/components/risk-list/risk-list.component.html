@@ -1,3 +1,11 @@
-<div *ngFor="let risk of risks">
-  <app-risk [risk]="risk"></app-risk>
+<div *ngFor="let item of tagRisksMap | keyvalue">
+  <ng-container *ngIf="item.value?.length > 1; else oneRisk">
+    <div>{{ item.key }}</div>
+    <div *ngFor="let risk of item.value">
+      <app-risk [risk]="risk"></app-risk>
+    </div>
+  </ng-container>
+  <ng-template #oneRisk>
+    <app-risk [risk]="item.value[0]"></app-risk>
+  </ng-template>
 </div>

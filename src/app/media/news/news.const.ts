@@ -1,42 +1,56 @@
-import { Note } from 'src/app/shared/data/note.interface';
-import { Source } from 'src/app/shared/data/source.enum';
+import { Source } from 'src/app/stock/models/news-source.enum';
+import { EventType, News } from 'src/app/stock/models/news.model';
 
-type News = {
-  [key: string]: Note;
-};
-
-export const news: News = {
-  '1': {
+export const news: News[] = [
+  {
+    uuid: '9',
     content:
-      'Facebook shares tumbled more than 20%. Earnings came in below expectations for the fourth quarter, and the company said numerous challenges are ahead in the first quarter. Revenue in the first quarter will be between $27 billion and $29 billion, while analysts were looking for that number to top $30 billion.',
-    link: 'https://www.cnbc.com/2022/02/02/facebook-parent-meta-fb-q4-2021-earnings.html',
-    source: Source.cnbc,
+      'Robinhood Markets Inc. included four new cryptocurrencies on its platform, including the Shiba Inu coin',
+    source: Source.bloomberg,
+    date: new Date('2022-04-12'),
+    type: EventType.stock,
   },
-
-  '2': {
+  {
+    uuid: '8',
     content:
-      'Facebook’s user growth faltered in the latest quarter, the first stagnation in the social network’s history.',
-    link: 'https://www.bloomberg.com/news/articles/2022-02-02/facebook-shares-plunge-as-users-stall-forecast-falls-short?srnd=premium',
-    createdDate: new Date('2022-02-03'),
+      'Ark Fund has been cutting back on Twitter after Jack Dorsey handed over the reins because there will be a lot of management distraction',
+    source: Source.cnbc,
+    date: new Date('2022-04-12'),
+    type: EventType.stock,
+  },
+  {
+    uuid: '7',
+    content:
+      'The consumer price index (CPI) increased 8.5% from a year earlier following a 7.9% annual gain in February',
     notes: [
       {
         content:
-          'Facebook reported 2.91 billion monthly users in the fourth quarter, flat compared with the prior period. The main app’s daily active users in North America -- the company’s most lucrative market -- declined slightly from 196 million to 195 million users.',
+          'Gasoline costs drove half of the monthly increase. Energy prices rose 11% in March from the prior month, the most since 2005, while gasoline prices jumped 18.3%, the largest gain since 2009. ',
+      },
+      {
+        content:
+          'Excluding volatile food and energy components, so-called core prices increased 0.3% from a month earlier and 6.5% from a year ago, due in large part to the biggest drop in used vehicle prices since 1969 and a deceleration in price growth in other merchandise categories.',
       },
     ],
     source: Source.bloomberg,
+    date: new Date('2022-04-12'),
+    type: EventType.macro,
   },
-  '3': {
-    content:
-      'Now young users -- the future consumers of its advertising -- are choosing platforms like TikTok and Google’s YouTube for entertainment and community instead.',
-    link: 'https://www.bloomberg.com/news/articles/2022-02-02/facebook-shares-plunge-as-users-stall-forecast-falls-short?srnd=premium',
-    createdDate: new Date('2022-02-03'),
-    source: Source.bloomberg,
-  },
-  '4': {
-    content:
-      'Amazon Shares Jump 15% as Cloud Unit Helps Drive Profit Past Estimates',
-    createdDate: new Date('2022-02-04'),
-    source: Source.bloomberg,
-  },
-};
+
+  // {
+  //   content: 'NIO halt production in China',
+  //   date: new Date('2022-4-11'),
+  // },
+  // {
+  //   content: 'Tension between Taiwan and China',
+  //   tags: ['Geopolitics'],
+  //   updatedTime: new Date('2022-4-11'),
+  // },
+  // {
+  //   tags: ['inflation'],
+  //   type: FactType.business,
+  //   content: 'Economists Boost Inflation Expectations',
+  //   updatedTime: new Date('2022-4-8'),
+  //   sourceLink: 'https://www.bloomberg.com/news/articles/2022-04-08/economists-boost-inflation-expectations-in-worrying-sign-for-fed?srnd=premium',
+  // },
+];

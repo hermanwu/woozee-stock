@@ -32,11 +32,13 @@ import { RiskListComponent } from './risks/components/risk-list/risk-list.compon
 import { RiskComponent } from './risks/components/risk/risk.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
+import { BadgeComponent } from './shared/components/badge/badge.component';
 import { CardComponent } from './shared/components/card/card.component';
 import { CarousalComponent } from './shared/components/carousal/carousal.component';
 import { FactTypeDisplayComponent } from './shared/components/fact-type-display/fact-type-display.component';
 import { NoteDialogComponent } from './shared/components/note-dialog/note-dialog.component';
 import { NoteComponent } from './shared/components/note/note.component';
+import { SearchComponent } from './shared/components/search/search.component';
 import { IopsPipeModule } from './shared/pipes/iops/iops-pipe.module';
 import { SafePipe } from './shared/pipes/safe.pipe';
 import { SiUnitPipeModule } from './shared/pipes/si-unit/si-unit-pipe.module';
@@ -108,6 +110,8 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     RiskListComponent,
     CatalystListComponent,
     CatalystComponent,
+    BadgeComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

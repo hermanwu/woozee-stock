@@ -1,12 +1,14 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { Source } from 'src/app/shared/data/source.enum';
+import { Source } from 'src/app/stock/models/news-source.enum';
 import { FactType } from '../../models/fact-type.enum';
 import { RiskLevel } from '../../models/risk-level.model';
 
 export const fedRate = {
+  uuid: '5',
   name: 'Fed rate increases',
+  tags: ['Fed Rate'],
   level: RiskLevel.high,
-  type: FactType.macro,
+  type: FactType.business,
   market: MarketType.us,
   notes: [
     {

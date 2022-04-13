@@ -2,11 +2,20 @@
 
 <woozee-side-nav [routeList]="routes"></woozee-side-nav> -->
 <mat-toolbar>
-  <span>Stock Investment Guide</span>
+  <button mat-icon-button (click)="searchIconClicked()">
+    <span class="material-icons"> search </span>
+  </button>
+
+  <span *ngIf="showSearchBar; else appName">
+    <app-search> </app-search>
+  </span>
+  <ng-template #appName>
+    <span>Stock Investment Guide</span>
+  </ng-template>
 
   <span class="spacer"></span>
 
-  <button mat-button [matMenuTriggerFor]="accountMenu">
+  <button mat-icon-button [matMenuTriggerFor]="accountMenu">
     <mat-icon>account_circle</mat-icon>
   </button>
 
@@ -18,7 +27,7 @@
     <button mat-menu-item disabled>Signup</button>
   </mat-menu>
 
-  <button mat-button [matMenuTriggerFor]="menu">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
   </button>
 

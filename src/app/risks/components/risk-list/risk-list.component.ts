@@ -7,15 +7,11 @@ import { Risk } from '../../models/risk.model';
   styleUrls: ['./risk-list.component.scss'],
 })
 export class RiskListComponent implements OnInit, OnChanges {
-  @Input() risks: Risk[];
+  @Input() tagRisksMap: Map<string, Risk[]>;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  ngOnChanges(): void {
-    this.risks.sort(
-      (a, b) => b.updatedTime.getTime() - a.updatedTime.getTime()
-    );
-  }
+  ngOnChanges(): void {}
 }

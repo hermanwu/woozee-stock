@@ -1,3 +1,4 @@
+// TODO: delete
 export enum tag {
   FINTECH = 'Fin Tech',
   IT_INFRASTRUCTURE = 'IT Infrastructure',
@@ -7,5 +8,5 @@ export enum tag {
   ENTERTAINMENT = 'Gaming',
   HARDWARE = 'hardware',
   LOGISTIC = 'Logistic',
-  PRODUCTIVITY = 'Productivity'
+  PRODUCTIVITY = 'Productivity',
 }

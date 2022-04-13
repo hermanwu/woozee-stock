@@ -5,6 +5,5 @@ export enum FactType {
   valuation = 'Valuation',
   technical = 'Technical',
   sentiment = 'Sentiment',
-  macro = 'Macro',
   event = 'Event',
 }

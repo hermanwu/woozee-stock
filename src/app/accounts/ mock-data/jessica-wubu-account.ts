@@ -50,7 +50,7 @@ export const webull: Equity[] = [
     shares: 2,
   },
   {
-    ticker: 'JPM',
+    ticker: 'jpm',
     shares: 20,
   },
   {

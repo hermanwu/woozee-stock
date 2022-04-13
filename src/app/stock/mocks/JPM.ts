@@ -1,10 +1,10 @@
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const JPM: StockAnalysis = {
+export const jpm: StockAnalysis = {
   logo: '',
-  name: { English: 'JPMorgan Chase & Co.' },
+  name: 'JPMorgan Chase & Co.',
   description: [],
-  ticker: 'JPM',
+  ticker: 'jpm',
 
   // Earnings Report:
   earnings: {

@@ -2,6 +2,7 @@ import { FactType } from '../../models/fact-type.enum';
 import { RiskLevel } from '../../models/risk-level.model';
 
 export const geopolitics = {
+  uuid: '4',
   name: 'Russian-Ukraine war',
   type: FactType.event,
   level: RiskLevel.medium,

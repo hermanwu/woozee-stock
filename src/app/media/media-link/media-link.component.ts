@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Source } from 'src/app/shared/data/source.enum';
+import { Source } from 'src/app/stock/models/news-source.enum';
 
 @Component({
   selector: 'app-media-link',

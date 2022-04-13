@@ -108,7 +108,7 @@ export const afrm: StockAnalysis = {
       name: 'Interest Rate Increases',
     },
     {
-      type: FactType.macro,
+      type: FactType.business,
       name: 'Delinquency rate could be affected by high inflation',
     },
   ],

@@ -4,8 +4,8 @@ import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { news } from 'src/app/media/news/news.const';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
-import { Source } from 'src/app/shared/data/source.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
+import { Source } from '../models/news-source.enum';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const amzn: StockAnalysis = {
@@ -80,11 +80,6 @@ export const amzn: StockAnalysis = {
           ],
         },
       ],
-    },
-    {
-      name: 'United States labor shortage and supply chain constraints',
-      level: RiskLevel.medium,
-      type: FactType.macro,
     },
   ],
 

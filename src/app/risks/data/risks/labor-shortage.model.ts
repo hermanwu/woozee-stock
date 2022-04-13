@@ -2,9 +2,10 @@ import { FactType } from '../../models/fact-type.enum';
 import { RiskLevel } from '../../models/risk-level.model';
 
 export const laborShortage = {
+  uuid: '3',
   name: 'Labor Shortage',
   level: RiskLevel.medium,
-  type: FactType.macro,
+  type: FactType.business,
   notes: [
     {
       content: 'facts',

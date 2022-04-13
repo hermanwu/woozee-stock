@@ -1,12 +1,12 @@
-import { Source } from 'src/app/shared/data/source.enum';
-import { FactType } from '../../models/fact-type.enum';
+import { Source } from 'src/app/stock/models/news-source.enum';
 import { RiskLevel } from '../../models/risk-level.model';
 
 export const inflation = {
+  uuid: '1',
   updatedTime: new Date('2022-04-07'),
   name: 'Inflation',
   level: RiskLevel.high,
-  type: FactType.macro,
+  tags: ['inflation'],
   notes: [
     // {
     //   content: 'Facts',
@@ -27,7 +27,7 @@ export const inflation = {
     //     },
     //     {
     //       content: 'Wage increases 4.8% in November',
-    //       link: 'https://www.bls.gov/news.release/eci.htm',
+    //       sourceLink: 'https://www.bls.gov/news.release/eci.htm',
     //     },
     //   ],
     // },

@@ -6,9 +6,9 @@ import { inflation } from './risks/inflation.model';
 import { laborShortage } from './risks/labor-shortage.model';
 
 export const risks: Risk[] = [
-  inflation,
   fedRate,
   geopolitics,
   laborShortage,
   covid,
+  inflation,
 ];

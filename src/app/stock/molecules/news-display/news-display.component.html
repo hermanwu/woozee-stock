@@ -1,1 +1,34 @@
-<p>news-display works!</p>
+<div class="flex">
+  <span>
+    <app-badge *ngIf="news.type">
+      <span>{{ news.type }}</span>
+    </app-badge>
+  </span>
+
+  <span>
+    <app-badge *ngIf="news.source">
+      <span>{{ news.source }}</span>
+    </app-badge>
+
+    <span class="gray-text" *ngIf="news.date">{{
+      news.date | date: shortDate
+    }}</span>
+
+    <span>
+      <button mat-icon-button type="button" (click)="expanded = !expanded">
+        <mat-icon *ngIf="expanded">expand_less</mat-icon>
+        <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+      </button>
+    </span>
+  </span>
+</div>
+
+<div>
+  <span>
+    {{ news.content }}
+  </span>
+</div>
+
+<div *ngIf="expanded">test</div>
+
+<div class="border"></div>

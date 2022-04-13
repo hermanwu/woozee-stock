@@ -3,11 +3,15 @@
     <app-risk-level-display [riskLevel]="risk.level"></app-risk-level-display>
   </span>
 
-  <app-fact-type-display [factType]="risk.type"> </app-fact-type-display>
+  <app-badge *ngIf="risk.tags && risk.tags[0]">
+    <span>{{ risk.tags[0] }}</span>
+  </app-badge>
 
   <span>
-    {{ risk.name }}
+    {{ risk.name || risk.content }}
   </span>
+
+  <app-fact-type-display [factType]="risk.type"> </app-fact-type-display>
 
   <span class="gray-text" *ngIf="risk.updatedTime">{{
     risk.updatedTime | date: shortDate

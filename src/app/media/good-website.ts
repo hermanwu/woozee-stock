@@ -1,5 +1,5 @@
 export const goodSites = [
   {
-    link: 'https://tradingeconomics.com/',
+    sourceLink: 'https://tradingeconomics.com/',
   },
 ];

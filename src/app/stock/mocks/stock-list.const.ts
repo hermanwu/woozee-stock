@@ -47,7 +47,7 @@ import { isrg } from './isrg';
 import { JD } from './JD';
 import { JMIA } from './JMIA';
 import { jnj } from './jnj';
-import { JPM } from './JPM';
+import { jpm } from './jpm';
 import { lmt } from './lmt';
 import { logi } from './LOGI';
 import { lrcx } from './lrcx';
@@ -70,6 +70,7 @@ import { ob } from './ob';
 import { OKTA } from './OKTA';
 import { open } from './open';
 import { orcl } from './orcl';
+import { path } from './PATH';
 import { pdd } from './pdd.mock';
 import { PENN } from './PENN';
 import { pins } from './PINs';
@@ -175,7 +176,7 @@ export const ownedStockMap = {
   JD,
   JMIA,
   jnj,
-  JPM,
+  jpm,
   lmt,
   logi,
   lrcx,
@@ -309,7 +310,7 @@ export const stocksMap = {
   JD,
   JMIA,
   jnj,
-  JPM,
+  jpm,
   lmt,
   logi,
   lrcx,
@@ -387,4 +388,5 @@ export const stocksMap = {
   ZS,
   ftnt,
   dbx,
+  path,
 };

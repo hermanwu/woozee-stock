@@ -1,6 +1,6 @@
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
-import { Source } from 'src/app/shared/data/source.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
+import { Source } from '../models/news-source.enum';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const snap: StockAnalysis = {

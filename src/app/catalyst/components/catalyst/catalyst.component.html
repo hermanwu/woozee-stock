@@ -5,7 +5,7 @@
   <app-fact-type-display [factType]="catalyst.type"> </app-fact-type-display>
 
   <span>
-    {{ catalyst.name }}
+    {{ catalyst.name || catalyst.content }}
   </span>
 
   <span class="action-buttons"> </span>

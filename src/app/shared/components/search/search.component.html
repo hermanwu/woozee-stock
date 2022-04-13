@@ -1,0 +1,20 @@
+<form [formGroup]="searchForm" (ngSubmit)="search()">
+  <mat-form-field appearance="fill">
+    <input
+      matInput
+      placeholder="Stock Name"
+      value=""
+      cdkFocusInitial
+      formControlName="searchText"
+    />
+  </mat-form-field>
+  <button
+    matSuffix
+    mat-icon-button
+    aria-label="Go"
+    type="submit"
+    (click)="search()"
+  >
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</form>

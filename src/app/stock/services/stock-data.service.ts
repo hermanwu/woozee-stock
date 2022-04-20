@@ -7,7 +7,7 @@ import { StockData } from './stock-data.model';
 @Injectable({
   providedIn: 'root',
 })
-export class StockDataService {
+export class ObjectiveDataService {
   dataMap: Map<string, StockData> = new Map();
   currentQuarterEr: EarningsReport;
   fourPreviousQuarterEr: EarningsReport;

@@ -1,5 +1,5 @@
+import { Risk } from 'src/app/risks/models/risk.model';
 import { Note } from 'src/app/shared/data/note.interface';
-import { Comment } from '../models/comment.model';
 import { Source } from '../models/news-source.enum';
 
 export interface News {
@@ -13,11 +13,10 @@ export interface News {
   date: Date;
   title?: string;
   author?: string;
-  keyPoints?: string[];
   relatedStocks?: string[];
   sourceLink?: string;
-  comments?: Comment[];
   notes?: Note[];
+  tickers?: string[];
 }
 
 export enum EventType {
@@ -25,4 +24,8 @@ export enum EventType {
   geopolitics = 'Geopolitics',
   industry = 'Sector',
   stock = 'Stock',
+}
+
+export interface NewsWithDetails extends News {
+  risks: Risk[];
 }

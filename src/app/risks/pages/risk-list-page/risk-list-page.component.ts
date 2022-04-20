@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { catalysts } from 'src/app/catalyst/data/catalyst.mock';
-import { news } from 'src/app/media/news/news.const';
+import { NewsWithDetails } from 'src/app/stock/models/news.model';
 import { risks } from '../../data/global-risk.const';
 import { Risk } from '../../models/risk.model';
-import { RisksDataService } from '../../services/risks-data.service';
+import { SubjectiveDataService } from '../../services/risks-data.service';
 
 @Component({
   selector: 'app-risk-list-page',
@@ -11,14 +11,14 @@ import { RisksDataService } from '../../services/risks-data.service';
   styleUrls: ['./risk-list-page.component.scss'],
 })
 export class RiskListPageComponent implements OnInit {
-  news = news;
+  news: NewsWithDetails[];
   catalysts = catalysts;
   risks = risks;
 
   tagRisksMap: Map<string, Risk[]>;
 
-  constructor(private risksDataService: RisksDataService) {
-    this.tagRisksMap = risksDataService.tagRisksMap;
+  constructor(private risksDataService: SubjectiveDataService) {
+    this.news = risksDataService.getNewsDetails();
   }
 
   ngOnInit(): void {}

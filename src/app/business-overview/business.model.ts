@@ -1,7 +1,7 @@
 import { Revenue } from '../facts/data/revenue-model.enum';
 import { Strategy } from '../facts/data/stratgies.enum';
 import { Note } from '../shared/data/note.interface';
-import { BusinessMarket } from '../stock/models/market.models';
+import { Market } from '../stock/models/market.models';
 
 export enum BenefitType {
   accessibility = 'Accessibility',
@@ -30,7 +30,7 @@ export interface Business {
   overview?: string[];
   missions?: string[];
   revenues?: Revenue[];
-  markets?: BusinessMarket[];
+  markets?: Market[];
   competitiveAdvantages?: Strategy[];
   users?: User[];
   growthStrategy?: string[];

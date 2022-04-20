@@ -4,8 +4,11 @@ import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { Note } from '../data/note.interface';
 
 export interface Catalyst extends Note {
+  uuid?: string;
   name?: string;
   level?: CatalystLevel;
   type?: FactType;
+  stocks?: string[];
   markets?: MarketType[];
+  date: Date;
 }

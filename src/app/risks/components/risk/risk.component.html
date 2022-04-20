@@ -3,21 +3,37 @@
     <app-risk-level-display [riskLevel]="risk.level"></app-risk-level-display>
   </span>
 
-  <app-badge *ngIf="risk.tags && risk.tags[0]">
-    <span>{{ risk.tags[0] }}</span>
-  </app-badge>
-
-  <span>
-    {{ risk.name || risk.content }}
-  </span>
-
-  <app-fact-type-display [factType]="risk.type"> </app-fact-type-display>
-
-  <span class="gray-text" *ngIf="risk.updatedTime">{{
-    risk.updatedTime | date: shortDate
-  }}</span>
+  {{ risk.name || risk.content }}
 
   <span class="action-buttons">
+    <span class="gray-text" *ngIf="risk.updatedTime">{{
+      risk.updatedTime | date: shortDate
+    }}</span>
+
+    <span *ngIf="!showCategory">
+      <button mat-icon-button type="button" (click)="expanded = !expanded">
+        <mat-icon *ngIf="expanded">expand_less</mat-icon>
+        <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+      </button>
+    </span>
+  </span>
+</div>
+
+<div class="flex" *ngIf="showCategory">
+  <span class="material-icons">trending_down</span>:
+
+  <app-badge *ngFor="let item of risk?.tickers">
+    {{ item }}
+  </app-badge>
+
+  <app-badge *ngFor="let item of risk?.markets">
+    {{ item }}
+  </app-badge>
+
+  <app-fact-type-display class="action-buttons" [factType]="risk.type">
+  </app-fact-type-display>
+
+  <span>
     <button mat-icon-button type="button" (click)="expanded = !expanded">
       <mat-icon *ngIf="expanded">expand_less</mat-icon>
       <mat-icon *ngIf="!expanded">expand_more</mat-icon>
@@ -55,3 +71,5 @@
     <textarea></textarea>
   </div> -->
 </div>
+
+<div class="border"></div>

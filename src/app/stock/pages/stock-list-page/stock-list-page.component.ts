@@ -10,7 +10,7 @@ import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account
 import { industry } from 'src/app/shared/industry.enum';
 import { Trend } from 'src/app/shared/trend.enum';
 import { StockData } from '../../services/stock-data.model';
-import { StockDataService } from '../../services/stock-data.service';
+import { ObjectiveDataService } from '../../services/stock-data.service';
 
 export interface Equity {
   ticker: string;
@@ -45,7 +45,7 @@ export class StockListPageComponent implements OnInit {
   watchList: any[];
   stocks: StockData[];
 
-  constructor(private stockDataService: StockDataService) {
+  constructor(private stockDataService: ObjectiveDataService) {
     this.stocks = this.stockDataService.getAllStockData();
   }
 

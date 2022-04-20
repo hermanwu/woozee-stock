@@ -17,26 +17,32 @@ export const gme: StockAnalysis = {
     {
       name: 'Partnership with Immutable X to support the development of GameStop’s NFT marketplace',
       type: FactType.business,
+      date: new Date('2022-04-18'),
     },
     {
       name: 'Hired talents with experience in areas such as blockchain gaming, ecommerce and technology, product refurbishment and operations.',
       type: FactType.business,
+      date: new Date('2022-04-18'),
     },
     {
       name: 'Raised more than $1.67 billion in capital and eliminated all of the Company’s long-term debt',
       type: FactType.business,
+      date: new Date('2022-04-18'),
     },
     {
       name: 'Established/expanded brand relationships with PC gaming companies such as Alienware, Corsair and Lenovo',
       type: FactType.growth,
+      date: new Date('2022-04-18'),
     },
     {
       name: 'Expanded the product catalog to include a broader set of consumer electronics, PC gaming equipment and refurbished hardware.',
       type: FactType.growth,
+      date: new Date('2022-04-18'),
     },
     {
       name: 'Grew PowerUp Rewards Pro members by 32% on a year-over-year basis, taking total membership to approximately 5.8 million.',
       type: FactType.growth,
+      date: new Date('2022-04-18'),
     },
   ],
 

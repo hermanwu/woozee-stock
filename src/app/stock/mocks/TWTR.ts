@@ -20,16 +20,19 @@ export const twtr: StockAnalysis = {
       name: 'Elon Musk became the largest stakeholder of Twitter (9.2%)',
       level: CatalystLevel.strong,
       type: FactType.sentiment,
+      date: new Date('2022-04-18'),
     },
     {
       name: 'P/S and P/Gross Profit are relatively low.',
       level: CatalystLevel.moderate,
       type: FactType.valuation,
+      date: new Date('2022-04-18'),
     },
     {
       name: 'Both operating income and net income are positive this quarter.',
       level: CatalystLevel.weak,
       type: FactType.profit,
+      date: new Date('2022-04-18'),
     },
   ],
 

@@ -1,6 +1,7 @@
 export enum MarketType {
   global = 'Global',
-  us = 'US Macro',
+  us = 'United States',
+  china = 'China',
 
   fintech = 'Fintech',
   shared_economy = 'Shared Economy',
@@ -35,4 +36,18 @@ export enum MarketType {
   consumer = 'Consumer',
 
   ev = 'EV',
+
+  defense = 'Defense',
+
+  semi = 'Semiconductor',
+
+  hospitality = 'Hospitality',
+
+  airline = 'Airline',
+
+  leisure = 'Leisure',
+
+  beauty = 'Beauty',
+
+  streaming = 'Streaming Service',
 }

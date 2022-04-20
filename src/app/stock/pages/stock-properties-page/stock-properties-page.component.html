@@ -66,9 +66,7 @@
       </app-title-menu>
 
       <div class="grid grid-list" *ngIf="displayMode === displayModeEnum.list">
-        <div *ngFor="let risk of stockAnalysis.risks">
-          <app-risk [risk]="risk"></app-risk>
-        </div>
+        <app-risk-list [risks]="stockAnalysis.risks"></app-risk-list>
       </div>
 
       <div *ngIf="displayMode === displayModeEnum.slide">

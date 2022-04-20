@@ -25,11 +25,13 @@ export const adbe: StockAnalysis = {
       name: 'Document Cloud 2B yearly revenue with 29% Y/Y growth ',
       type: FactType.business,
       level: CatalystLevel.weak,
+      date: new Date('2022-03-18'),
     },
     {
       name: 'Experience Cloud has 1B revenue in Q1 with 22% Y/Y growth ',
       type: FactType.business,
       level: CatalystLevel.weak,
+      date: new Date('2022-03-18'),
     },
   ],
 

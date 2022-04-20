@@ -88,6 +88,7 @@ export const amzn: StockAnalysis = {
       name: 'Stock will be 20-to-1 split on June 3',
       level: CatalystLevel.moderate,
       type: FactType.sentiment,
+      date: new Date('2022-03-18'),
     },
 
     {
@@ -110,6 +111,7 @@ export const amzn: StockAnalysis = {
           ],
         },
       ],
+      date: new Date('2022-03-18'),
     },
 
     {
@@ -135,6 +137,7 @@ export const amzn: StockAnalysis = {
           ],
         },
       ],
+      date: new Date('2022-03-18'),
     },
   ],
 

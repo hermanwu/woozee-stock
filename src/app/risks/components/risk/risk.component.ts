@@ -10,8 +10,11 @@ import { Risk } from '../../models/risk.model';
   styleUrls: ['./risk.component.scss'],
 })
 export class RiskComponent implements OnInit, OnChanges {
-  expanded = false;
+  // Whether to display risk's category.
+  @Input() showCategory = false;
   @Input() risk: Risk;
+
+  expanded = false;
   note: Note;
 
   constructor(private dialogService: MatDialog) {}

@@ -3,8 +3,11 @@
 }
 
 .gray-text {
-  color: lightgray;
   font-size: small;
+}
+
+.time {
+  margin-left: 0.5rem;
 }
 
 .border {
@@ -15,4 +18,14 @@
 
 .flex {
   display: flex;
+  align-items: center;
+
+  .news {
+    margin-left: auto;
+  }
+}
+
+.expanded-display {
+  margin-top: 1rem;
+  margin-left: 1rem;
 }

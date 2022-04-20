@@ -17,4 +17,6 @@ export enum Source {
   OFFICIAL = '官方',
   reuters = 'Reuters',
   YAHOO = '雅虎财经',
+  ibd = "Investor's Business Daily",
+  electrek = 'Electrek',
 }

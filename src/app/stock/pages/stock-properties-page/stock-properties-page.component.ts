@@ -5,10 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { companyRisks } from 'src/app/risks/data/risks/component-risks-defination';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
+import { SubjectiveDataService } from 'src/app/risks/services/risks-data.service';
 import { NoteDialogComponent } from 'src/app/shared/components/note-dialog/note-dialog.component';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { StockAnalysis } from '../../models/stock-analysis.model';
-import { StockDataService } from '../../services/stock-data.service';
+import { ObjectiveDataService } from '../../services/stock-data.service';
 
 @Component({
   selector: 'app-stock-properties-page',
@@ -35,7 +36,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private dialog: MatDialog,
     private titleService: Title,
-    private stockDataService: StockDataService
+    private stockDataService: ObjectiveDataService,
+    private subjectiveDataService: SubjectiveDataService
   ) {}
 
   ngOnInit(): void {
@@ -44,6 +46,13 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
       this.stockAnalysis = this.stockDataService
         .getDataMap()
         .get(this.stockTicker);
+      // console.log(
+      //   this.subjectiveDataService.getRisksByTicker(this.stockTicker)
+      // );
+      this.stockAnalysis.risks = this.subjectiveDataService.getRisksByTicker(
+        this.stockTicker
+      );
+
       this.titleService.setTitle(this.stockAnalysis.name);
     });
   }

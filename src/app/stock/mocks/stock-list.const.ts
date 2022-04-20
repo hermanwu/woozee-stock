@@ -58,6 +58,7 @@ import { meli } from './MELI';
 import { mrk } from './mrk';
 import { mrna } from './mrna';
 import { msft } from './msft';
+import { mttr } from './mttr.mock';
 import { net } from './net';
 import { nflx } from './NFLX';
 import { NIO } from './NIO_mock';
@@ -389,4 +390,5 @@ export const stocksMap = {
   ftnt,
   dbx,
   path,
+  mttr,
 };

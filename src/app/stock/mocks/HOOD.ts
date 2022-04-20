@@ -20,11 +20,13 @@ export const hood: StockAnalysis = {
       type: FactType.growth,
       level: CatalystLevel.moderate,
       notes: [],
+      date: new Date('2022-04-18'),
     },
     {
       name: 'Crypto trading market continues to grow',
       type: FactType.growth,
       level: CatalystLevel.moderate,
+      date: new Date('2022-04-18'),
       notes: [
         {
           content: 'Cryptocurrencies transaction revenue increased 304% Q/Q',

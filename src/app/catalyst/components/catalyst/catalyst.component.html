@@ -2,18 +2,26 @@
   <app-catalyst-level-display
     [catalystLevel]="catalyst.level"
   ></app-catalyst-level-display>
-  <app-fact-type-display [factType]="catalyst.type"> </app-fact-type-display>
 
-  <span>
-    {{ catalyst.name || catalyst.content }}
+  {{ catalyst.name || catalyst.content }}
+</div>
+
+<div class="flex">
+  <span class="material-icons">trending_up</span>
+
+  <app-badge *ngFor="let item of catalyst.markets">
+    {{ item }}
+  </app-badge>
+
+  <span class="action-buttons">
+    <app-fact-type-display [factType]="catalyst.type" class="action-buttons">
+    </app-fact-type-display>
+
+    <button mat-icon-button type="button" (click)="expanded = !expanded">
+      <mat-icon *ngIf="expanded">expand_less</mat-icon>
+      <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+    </button>
   </span>
-
-  <span class="action-buttons"> </span>
-
-  <button mat-icon-button type="button" (click)="expanded = !expanded">
-    <mat-icon *ngIf="expanded">expand_less</mat-icon>
-    <mat-icon *ngIf="!expanded">expand_more</mat-icon>
-  </button>
 </div>
 
 <div *ngIf="expanded">

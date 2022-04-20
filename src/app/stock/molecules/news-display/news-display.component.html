@@ -5,22 +5,26 @@
     </app-badge>
   </span>
 
-  <span>
-    <app-badge *ngIf="news.source">
-      <span>{{ news.source }}</span>
+  <span *ngFor="let ticker of news.tickers">
+    <app-badge>
+      <a href [routerLink]="['/woozee/stocks', ticker]">{{ ticker }}</a>
     </app-badge>
-
-    <span class="gray-text" *ngIf="news.date">{{
-      news.date | date: shortDate
-    }}</span>
-
-    <span>
-      <button mat-icon-button type="button" (click)="expanded = !expanded">
-        <mat-icon *ngIf="expanded">expand_less</mat-icon>
-        <mat-icon *ngIf="!expanded">expand_more</mat-icon>
-      </button>
-    </span>
   </span>
+
+  <span class="news">
+    <app-badge *ngIf="news.source">
+      <a [href]="news.sourceLink">{{ news.source }}</a>
+    </app-badge>
+  </span>
+
+  <span class="gray-text time" *ngIf="news.date">{{
+    news.date | date: shortDate
+  }}</span>
+
+  <button mat-icon-button type="button" (click)="expanded = !expanded">
+    <mat-icon *ngIf="expanded">expand_less</mat-icon>
+    <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+  </button>
 </div>
 
 <div>
@@ -29,6 +33,22 @@
   </span>
 </div>
 
-<div *ngIf="expanded">test</div>
+<div *ngIf="expanded" class="expanded-display">
+  <ul>
+    <li *ngFor="let item of news.notes">
+      <app-note [note]="item" [isExpanded]="false"> </app-note>
+    </li>
+  </ul>
+
+  <app-card *ngIf="news.catalysts && news.catalysts.length > 0">
+    <div>Catalysts</div>
+    <app-catalyst-list [catalysts]="news.catalysts"></app-catalyst-list>
+  </app-card>
+
+  <app-card *ngIf="news.risks && news.risks.length > 0">
+    <div>Risks</div>
+    <app-risk-list [risks]="news.risks"></app-risk-list>
+  </app-card>
+</div>
 
 <div class="border"></div>

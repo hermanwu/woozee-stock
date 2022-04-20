@@ -7,7 +7,8 @@ import { Risk } from '../../models/risk.model';
   styleUrls: ['./risk-list.component.scss'],
 })
 export class RiskListComponent implements OnInit, OnChanges {
-  @Input() tagRisksMap: Map<string, Risk[]>;
+  @Input() showCategory: boolean;
+  @Input() risks: Risk[];
 
   constructor() {}
 

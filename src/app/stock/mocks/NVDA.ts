@@ -1,5 +1,4 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
@@ -138,11 +137,7 @@ export const nvda: StockAnalysis = {
       { type: MarketType.gaming },
       { type: MarketType.virtualSpace },
       { type: MarketType.autoRobotics },
-    ],
-    revenues: [
-      { name: '', type: RevenueType.hardwareSelling },
-      { name: '', type: RevenueType.softwareSelling },
-      { name: '', type: RevenueType.b2b },
+      { type: MarketType.semi },
     ],
     competitiveAdvantages: [
       { type: StrategyType.platform },

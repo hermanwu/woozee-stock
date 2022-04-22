@@ -52,29 +52,22 @@ export const adbe: StockAnalysis = {
       {
         type: MarketType.saas,
       },
-    ],
-    revenues: [
       {
-        name: 'Digital Media',
-        amount: 3.11 * BILLION,
-        growth: 0.09,
+        type: MarketType.mediaTool,
+        size: 3.11 * BILLION,
+        growthRate: 0.09,
         children: [
           {
-            name: 'Creative',
-            amount: 2.55 * BILLION,
-            growth: 0.07,
+            type: MarketType.mediaTool,
+            size: 2.55 * BILLION,
+            growthRate: 0.07,
           },
           {
-            name: 'Document Cloud',
-            amount: 562 * MILLION,
-            growth: 0.17,
+            type: MarketType.documentTool,
+            size: 562 * MILLION,
+            growthRate: 0.17,
           },
         ],
-      },
-      {
-        name: 'Digital Experience',
-        amount: 1.06 * BILLION,
-        growth: 0.17,
       },
     ],
   },

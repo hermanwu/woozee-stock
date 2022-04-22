@@ -1,0 +1,44 @@
+<div *ngIf="business?.overview">
+  <div class="label">Overview</div>
+  <div *ngFor="let item of business?.overview">{{ item }}</div>
+</div>
+
+<div>
+  <div class="label">Markets</div>
+  <span *ngFor="let item of business?.markets">
+    <app-market-display [marketType]="item.type"></app-market-display>
+  </span>
+</div>
+
+<div *ngIf="business?.competitiveAdvantages">
+  <div class="label">Competitive Advantages</div>
+  <span *ngFor="let item of business?.competitiveAdvantages">
+    <span class="badge">{{ item.type }}</span>
+  </span>
+</div>
+
+<div *ngIf="business?.missions">
+  <div class="label">Mission</div>
+  <div *ngFor="let item of business?.missions">{{ item }}</div>
+</div>
+
+<div *ngIf="business?.productBenefits">
+  <div class="label">Problems Solved</div>
+  <div *ngFor="let item of business?.productBenefits">
+    <span class="badge">{{ item.type }}</span>
+    <span *ngIf="item.note"> - {{ item.note }}</span>
+  </div>
+</div>
+
+<div *ngFor="business?.growthStrategy">
+  <div class="label">Growth Strategies</div>
+  <div *ngFor="let item of business?.growthStrategy">- {{ item }}</div>
+</div>
+
+<!-- <div *ngIf="expanded">
+  <ul>
+    <li *ngFor="let item of catalyst.notes">
+      <app-note [note]="item" [isExpanded]="false"> </app-note>
+    </li>
+  </ul>
+</div> -->

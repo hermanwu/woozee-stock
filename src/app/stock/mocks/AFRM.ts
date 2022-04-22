@@ -1,5 +1,4 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -42,11 +41,7 @@ export const afrm: StockAnalysis = {
   ticker: 'afrm',
   irAddress: 'https://investors.affirm.com/',
   business: {
-    markets: [{ type: MarketType.fintech }],
-    revenues: [
-      { name: '', type: RevenueType.loanInterest },
-      { name: '', type: RevenueType.salesCommission },
-    ],
+    markets: [{ type: MarketType.fintech }, { type: MarketType.loan }],
     competitiveAdvantages: [
       { type: StrategyType.platform },
       { type: StrategyType.userData },

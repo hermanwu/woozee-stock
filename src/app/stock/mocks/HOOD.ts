@@ -1,8 +1,8 @@
-import { UserType } from 'src/app/business-overview/business.model';
 import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
+import { UserType } from '../components/business-overview/business.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const hood: StockAnalysis = {

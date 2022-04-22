@@ -13,10 +13,8 @@ export interface News {
   date: Date;
   title?: string;
   author?: string;
-  relatedStocks?: string[];
   sourceLink?: string;
   notes?: Note[];
-  tickers?: string[];
 }
 
 export enum EventType {

@@ -1,25 +1,7 @@
 <app-title-menu>
-  <div title>News</div>
-</app-title-menu>
-
-<app-card>
-  <ng-container *ngFor="let item of news">
-    <app-news-display [news]="item"></app-news-display>
-  </ng-container>
-</app-card>
-
-<app-title-menu>
   <div title>Risks</div>
 </app-title-menu>
 
 <app-card>
   <app-risk-list [risks]="risks" [showCategory]="true"></app-risk-list>
-</app-card>
-
-<app-title-menu>
-  <div title>Catalysts</div>
-</app-title-menu>
-
-<app-card>
-  <app-catalyst-list [catalysts]="catalysts"></app-catalyst-list>
 </app-card>

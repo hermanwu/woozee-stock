@@ -5,10 +5,8 @@
     </app-badge>
   </span>
 
-  <span *ngFor="let ticker of news.tickers">
-    <app-badge>
-      <a href [routerLink]="['/woozee/stocks', ticker]">{{ ticker }}</a>
-    </app-badge>
+  <span *ngFor="let ticker of news?.tickers">
+    <app-ticker-display [ticker]="ticker"></app-ticker-display>
   </span>
 
   <span class="news">
@@ -47,7 +45,7 @@
 
   <app-card *ngIf="news.risks && news.risks.length > 0">
     <div>Risks</div>
-    <app-risk-list [risks]="news.risks"></app-risk-list>
+    <app-risk-list [risks]="news.risks" [showCategory]="true"></app-risk-list>
   </app-card>
 </div>
 

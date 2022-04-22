@@ -10,6 +10,23 @@ import { laborShortage } from './risks/labor-shortage.model';
 
 export const risks: Risk[] = [
   {
+    uuid: 'r10',
+    content: 'Investment banking business is not growing',
+    markets: [MarketType.investmentBanking],
+    level: RiskLevel.high,
+    type: FactType.business,
+    updatedTime: new Date('2022-04-20'),
+  },
+  {
+    uuid: 'r9',
+    content:
+      'Users are more interested in watching short videos on Tiktok than long videos on Netflix ',
+    markets: [MarketType.streaming],
+    level: RiskLevel.medium,
+    type: FactType.growth,
+    updatedTime: new Date('2022-04-20'),
+  },
+  {
     name: 'slow revenue growth',
     tickers: ['NFLX'],
   },

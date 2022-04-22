@@ -1,29 +1,20 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const snow: StockAnalysis = {
-  marketCap: 75 * BILLION,
+  marketCap: 55 * BILLION,
   business: {
     overview: [
       'Enabling customers to consolidate data into a single source of truth to drive meaningful business insights, build data-driven applications, and share data',
       'The more customers adopt our platform, the more data can be exchanged with other Snowflake customers, partners, data providers, and data consumers, enhancing the value of our platform for all users.',
     ],
-    markets: [
-      {
-        type: MarketType.dataAnalytics,
-      },
-      {
-        type: MarketType.saas,
-      },
-    ],
     users: [{ type: 'Data Scientist' }, { type: 'Data Analyst' }],
-    revenues: [
-      { name: '', type: RevenueType.b2b },
-      { name: '', type: RevenueType.saas },
-      { name: '', type: RevenueType.consumptionBased },
+    markets: [
+      { type: MarketType.saas },
+      { type: MarketType.b2b },
+      { type: MarketType.dataAnalytics },
     ],
     competitiveAdvantages: [
       { type: StrategyType.platform },

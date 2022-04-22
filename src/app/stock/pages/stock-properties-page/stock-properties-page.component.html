@@ -31,9 +31,8 @@
   </div>
 </div>
 
-<!-- Risks -->
 <div class="grid grid-dynamic">
-  <div class="padding-1rem">
+  <div class="padding-1rem" *ngIf="stockAnalysis?.risks?.length > 0">
     <app-card>
       <app-title-menu>
         <div title>
@@ -101,13 +100,13 @@
     </app-card>
   </div>
 
-  <div class="padding-1rem">
+  <div class="padding-1rem" *ngIf="stockAnalysis?.catalysts?.length > 0">
     <app-card>
       <app-title-menu>
         <div title>Catalysts</div>
 
         <div buttons>
-          <button mat-icon-button type="button" matTooltip="Add Risk">
+          <button mat-icon-button type="button" matTooltip="Add Catalyst">
             <mat-icon>add_circle</mat-icon>
           </button>
         </div>
@@ -124,13 +123,6 @@
       <app-business-overview
         [business]="stockAnalysis.business"
       ></app-business-overview>
-
-      <app-note
-        [note]="{
-          content: 'More descriptions',
-          notes: stockAnalysis.description
-        }"
-      ></app-note>
     </app-fact>
   </div>
 

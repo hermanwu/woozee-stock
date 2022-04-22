@@ -1,0 +1,9 @@
+<app-title-menu>
+  <div title>News</div>
+</app-title-menu>
+
+<app-card>
+  <ng-container *ngFor="let item of news">
+    <app-news-display [news]="item"></app-news-display>
+  </ng-container>
+</app-card>

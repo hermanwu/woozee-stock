@@ -1,5 +1,4 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -190,7 +189,6 @@ export const coin: StockAnalysis = {
     'https://investor.coinbase.com/financials/sec-filings/default.aspx',
   business: {
     markets: [{ type: MarketType.crypto }],
-    revenues: [{ name: '', type: RevenueType.consumptionBased }],
     users: [
       { type: 'Retail users: We serve as the users’ primary crypto account' },
       {

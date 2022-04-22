@@ -4,10 +4,13 @@ export enum MarketType {
   china = 'China',
 
   fintech = 'Fintech',
+  loan = 'Loan',
   shared_economy = 'Shared Economy',
   travel = 'Travel Booking',
   crypto = 'Crypto',
   nft = 'NFT',
+
+  b2b = 'b2b',
 
   ai = 'AI',
   gaming = 'Gaming',
@@ -27,7 +30,8 @@ export enum MarketType {
 
   saas = 'SaaS',
 
-  adTech = 'Ad Tech',
+  adTech = 'Advertising',
+  social = 'Social',
 
   industrial = 'Industrial',
 
@@ -50,4 +54,10 @@ export enum MarketType {
   beauty = 'Beauty',
 
   streaming = 'Streaming Service',
+
+  documentTool = 'Document Tool',
+  mediaTool = 'Media Tool',
+  marketingTool = 'Marketing Tool',
+
+  investmentBanking = 'Investment banking',
 }

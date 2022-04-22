@@ -8,6 +8,15 @@ export const news: News[] = [
   //   source,
   // },
   {
+    uuid: 'n15',
+    content: 'Tesla revenues grow 81% from last year',
+    source: Source.cnbc,
+    date: new Date('2022-04-20'),
+    type: EventType.stock,
+    catalystUuids: [],
+    riskUuids: [],
+  },
+  {
     uuid: '14',
     content: 'Netflix encounters first subscriber loss in a decade.',
     notes: [
@@ -23,7 +32,6 @@ export const news: News[] = [
     type: EventType.stock,
     catalystUuids: [],
     riskUuids: ['r7', 'r8'],
-    tickers: ['NFLX'],
   },
   {
     uuid: '13',

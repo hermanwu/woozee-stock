@@ -1,10 +1,10 @@
 <form [formGroup]="searchForm" (ngSubmit)="search()">
   <mat-form-field appearance="fill">
     <input
+      autoFocus
       matInput
       placeholder="Stock Name"
       value=""
-      cdkFocusInitial
       formControlName="searchText"
     />
   </mat-form-field>

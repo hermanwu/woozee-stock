@@ -223,20 +223,8 @@ export const amzn: StockAnalysis = {
       {
         type: MarketType.cloudService,
       },
-    ],
-
-    revenues: [
       {
-        name: 'cloudService',
-        amount: 5 * BILLION,
-      },
-      {
-        name: 'Ecommerce',
-        amount: 5 * BILLION,
-      },
-      {
-        name: 'Advertising',
-        amount: 5 * BILLION,
+        type: MarketType.adTech,
       },
     ],
 

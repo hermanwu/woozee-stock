@@ -22,13 +22,13 @@
 <div class="flex" *ngIf="showCategory">
   <span class="material-icons">trending_down</span>:
 
-  <app-badge *ngFor="let item of risk?.tickers">
-    {{ item }}
-  </app-badge>
+  <span *ngFor="let item of risk?.tickers">
+    <app-ticker-display [ticker]="item"></app-ticker-display>
+  </span>
 
-  <app-badge *ngFor="let item of risk?.markets">
-    {{ item }}
-  </app-badge>
+  <span *ngFor="let item of risk?.markets">
+    <app-market-display [marketType]="item"></app-market-display>
+  </span>
 
   <app-fact-type-display class="action-buttons" [factType]="risk.type">
   </app-fact-type-display>

@@ -1,5 +1,4 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -31,7 +30,6 @@ export const abnb: StockAnalysis = {
   competitors: ['uber'],
   business: {
     markets: [{ type: MarketType.shared_economy }, { type: MarketType.travel }],
-    revenues: [{ name: '', type: RevenueType.salesCommission }],
     competitiveAdvantages: [
       { type: StrategyType.platform },
       { type: StrategyType.userData },

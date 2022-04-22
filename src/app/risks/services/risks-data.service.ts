@@ -68,4 +68,10 @@ export class SubjectiveDataService {
       risk?.tickers?.find((t) => t.toLowerCase() === ticker.toLowerCase())
     );
   }
+
+  getCatalystsByTicker(ticker: string): Catalyst[] {
+    return this.catalysts.filter((catalyst) =>
+      catalyst?.equities?.find((t) => t.toLowerCase() === ticker.toLowerCase())
+    );
+  }
 }

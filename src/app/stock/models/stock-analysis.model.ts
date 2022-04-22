@@ -1,7 +1,7 @@
-import { Business } from 'src/app/business-overview/business.model';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Note } from 'src/app/shared/data/note.interface';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
+import { Business } from '../components/business-overview/business.model';
 import { EarningsReport } from './earnings.model';
 import { MyScore } from './herman-score.model';
 import { News } from './news.model';

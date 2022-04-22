@@ -13,6 +13,10 @@
     {{ item }}
   </app-badge>
 
+  <span *ngFor="let item of catalyst?.equities">
+    <app-ticker-display [ticker]="item"></app-ticker-display>
+  </span>
+
   <span class="action-buttons">
     <app-fact-type-display [factType]="catalyst.type" class="action-buttons">
     </app-fact-type-display>

@@ -35,16 +35,19 @@
     <!-- <button mat-menu-item disabled>
       <a [routerLink]="['/stocks']">Stocks</a>
     </button> -->
-    <button mat-menu-item>
-      <a [routerLink]="['/woozee/risk']">Risks</a>
+    <button [routerLink]="['/woozee/news']" mat-menu-item i18n>News</button>
+    <button [routerLink]="['/woozee/markets']" mat-menu-item i18n>
+      Markets
     </button>
-    <button mat-menu-item>
+
+    <button mat-menu-item [routerLink]="['/woozee/catalysts']" i18n>
+      Catalysts
+    </button>
+    <button mat-menu-item [routerLink]="['/woozee/risks']" i18n>Risks</button>
+    <!-- <button mat-menu-item>
       <a [routerLink]="['/woozee/stocks']">Stocks</a>
-    </button>
-    <button mat-menu-item disabled>Trends</button>
-    <button mat-menu-item>
-      <a [routerLink]="['/woozee/about']">About</a>
-    </button>
+    </button> -->
+    <button mat-menu-item [routerLink]="['/woozee/about']">About</button>
   </mat-menu>
 </mat-toolbar>
 

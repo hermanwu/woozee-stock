@@ -53,6 +53,9 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         this.stockTicker
       );
 
+      this.stockAnalysis.catalysts =
+        this.subjectiveDataService.getCatalystsByTicker(this.stockTicker);
+
       this.titleService.setTitle(this.stockAnalysis.name);
     });
   }

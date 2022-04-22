@@ -1,5 +1,4 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -185,18 +184,6 @@ export const docu: StockAnalysis = {
     },
   ],
   business: {
-    revenues: [
-      {
-        name: 'Subscription',
-        type: RevenueType.subscription,
-        amount: 564 * MILLION,
-      },
-      {
-        name: 'Professional Services',
-        type: RevenueType.professionService,
-        amount: 16.8 * MILLION,
-      },
-    ],
     markets: [
       {
         type: MarketType.saas,

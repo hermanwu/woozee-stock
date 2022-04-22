@@ -1,7 +1,6 @@
-import { BenefitType } from 'src/app/business-overview/business.model';
-import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
+import { BenefitType } from '../components/business-overview/business.model';
 import { PredicationAction } from '../models/predication.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { crmMarket, saas } from './markets';
@@ -182,12 +181,6 @@ export const crm: StockAnalysis = {
     overview: [
       'customer relationship management (“CRM”) technology that brings companies and their customers together.',
       'connect with their customers through digital channels.',
-    ],
-    revenues: [
-      {
-        name: '',
-        type: RevenueType.subscription,
-      },
     ],
     productBenefits: [
       {

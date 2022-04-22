@@ -1,5 +1,4 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -7,7 +6,7 @@ import { PredicationAction } from '../models/predication.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const shop: StockAnalysis = {
-  marketCap: 87 * BILLION,
+  marketCap: 66 * BILLION,
 
   predications: [
     {
@@ -121,12 +120,7 @@ export const shop: StockAnalysis = {
     },
   ],
   business: {
-    markets: [{ type: MarketType.ecommerceTools }],
-    revenues: [
-      { name: '', type: RevenueType.softwareSelling },
-      { name: '', type: RevenueType.b2b },
-      { name: '', type: RevenueType.subscription },
-    ],
+    markets: [{ type: MarketType.ecommerceTools }, { type: MarketType.saas }],
     competitiveAdvantages: [
       { type: StrategyType.platform },
       { type: StrategyType.tool },

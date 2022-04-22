@@ -1,7 +1,7 @@
-import { UserType } from 'src/app/business-overview/business.model';
 import { MarketType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
+import { UserType } from '../components/business-overview/business.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const gme: StockAnalysis = {

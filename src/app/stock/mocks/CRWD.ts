@@ -1,5 +1,4 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { RevenueType } from 'src/app/facts/data/revenue-model.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -159,10 +158,6 @@ export const crwd: StockAnalysis = {
   secFilings: 'https://ir.crowdstrike.com/financial-information/sec-filings',
   business: {
     markets: [{ type: MarketType.saas }],
-    revenues: [
-      { name: '', type: RevenueType.subscription },
-      { name: '', type: RevenueType.professionService },
-    ],
     overview: [
       'We founded CrowdStrike in 2011 to reinvent security for the cloud era.',
       'leverages the network effects of crowdsourced data applied to modern technologies such as AI, cloud computing, and graph databases.',

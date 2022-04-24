@@ -43,17 +43,6 @@
     </div>
 
     <div>
-      Operating Income Growth (Q/Q)
-      <button
-        mat-icon-button
-        type="button"
-        (click)="sort(stockListTableColumn.quarterOiGrowth)"
-      >
-        <mat-icon>sort</mat-icon>
-      </button>
-    </div>
-
-    <div>
       OI (ttm) / Market Cap
       <span>
         <button
@@ -95,12 +84,6 @@
           ->
         </span>
         {{ stock.quarterRevenueGrowth | siUnit: 2 | percent | undefined }}
-      </span>
-    </div>
-
-    <div class="number-display">
-      <span>
-        {{ stock.quarterOiGrowth | siUnit: 2 | percent | undefined }}
       </span>
     </div>
 

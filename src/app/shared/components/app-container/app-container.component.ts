@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-app-container',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app-container.component.scss'],
 })
 export class AppContainerComponent implements OnInit {
+  environment = environment;
+
   showSearchBar: boolean;
 
   constructor() {}

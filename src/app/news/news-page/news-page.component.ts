@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SubjectiveDataService } from 'src/app/risks/services/risks-data.service';
+import { SubjectiveDataService } from 'src/app/risks/services/subjective-data.service';
 import { NewsWithDetails } from 'src/app/stock/models/news.model';
 
 @Component({

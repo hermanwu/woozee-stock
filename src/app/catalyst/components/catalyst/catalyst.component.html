@@ -4,16 +4,29 @@
   ></app-catalyst-level-display>
 
   {{ catalyst.name || catalyst.content }}
+
+  <span class="action-buttons">
+    <!-- <span class="gray-text" *ngIf="risk.updatedTime">{{
+      risk.updatedTime | date: shortDate
+    }}</span> -->
+
+    <span *ngIf="!showCategory">
+      <button mat-icon-button type="button" (click)="expanded = !expanded">
+        <mat-icon *ngIf="expanded">expand_less</mat-icon>
+        <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+      </button>
+    </span>
+  </span>
 </div>
 
-<div class="flex">
+<div class="flex" *ngIf="showCategory">
   <span class="material-icons">trending_up</span>
 
-  <app-badge *ngFor="let item of catalyst.markets">
-    {{ item }}
-  </app-badge>
+  <ng-container *ngFor="let item of catalyst.markets">
+    <app-market-display [marketType]="item"></app-market-display>
+  </ng-container>
 
-  <span *ngFor="let item of catalyst?.equities">
+  <span *ngFor="let item of catalyst?.tickers">
     <app-ticker-display [ticker]="item"></app-ticker-display>
   </span>
 

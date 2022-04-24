@@ -13,26 +13,13 @@
 
     <div class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">
-        ({{ stock?.previousYearReport?.grossProfit | siUnit: 2 | undefined }} ->
-        {{ stock?.latestReport?.grossProfit | siUnit: 2 | undefined }})
+        ({{ stock?.previousQuarterGrossProfit | siUnit: 2 | undefined }} ->
+        {{ stock?.quarterGrossProfit | siUnit: 2 | undefined }})
       </span>
 
       <span>
-        <span
-          *ngIf="
-            stock?.latestReport?.grossProfit -
-              stock?.previousYearReport?.grossProfit >
-            0
-          "
-          >+</span
-        >{{
-          (stock?.latestReport?.grossProfit -
-            stock?.previousYearReport?.grossProfit) /
-            stock?.previousYearReport?.grossProfit
-            | siUnit: 2
-            | percent
-            | undefined
-        }}
+        <span *ngIf="stock?.quarterGrossProfitGrowth > 0">+</span
+        >{{ stock?.quarterGrossProfitGrowth | siUnit: 2 | percent | undefined }}
       </span>
     </div>
   </div>
@@ -42,42 +29,14 @@
 
     <div class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">
-        ({{
-          stock?.previousYearReport?.grossProfit -
-            stock?.previousYearReport?.operatingIncome
-            | siUnit: 2
-            | undefined
-        }}
+        ({{ stock?.previousQuarterExpenses | siUnit: 2 | undefined }}
         ->
-        {{
-          stock?.latestReport?.grossProfit -
-            stock?.latestReport?.operatingIncome
-            | siUnit: 2
-            | undefined
-        }})
+        {{ stock?.quarterExpenses | siUnit: 2 | undefined }})
       </span>
 
       <span>
-        <span
-          *ngIf="
-            stock?.latestReport?.grossProfit -
-              stock?.latestReport?.operatingIncome -
-              (stock?.previousYearReport?.grossProfit -
-                stock?.previousYearReport?.operatingIncome) >
-            0
-          "
-          >+</span
-        >{{
-          (stock?.latestReport?.grossProfit -
-            stock?.latestReport?.operatingIncome -
-            (stock?.previousYearReport?.grossProfit -
-              stock?.previousYearReport?.operatingIncome)) /
-            (stock?.previousYearReport?.grossProfit -
-              stock?.previousYearReport?.operatingIncome)
-            | siUnit: 2
-            | percent
-            | undefined
-        }}
+        <span *ngIf="stock?.quarterExpensesGrowth > 0">+</span
+        >{{ stock?.quarterExpensesGrowth | siUnit: 2 | percent | undefined }}
       </span>
     </div>
   </div>
@@ -86,13 +45,8 @@
     <div *ngIf="!hideLabel">Operating Expenses / Gross Profit</div>
     <div class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">
-        ({{
-          stock?.latestReport?.grossProfit -
-            stock?.latestReport?.operatingIncome
-            | siUnit: 2
-            | undefined
-        }}
-        / {{ stock?.latestReport?.grossProfit | siUnit: 2 | undefined }})
+        ({{ stock?.quarterExpenses | siUnit: 2 | undefined }} /
+        {{ stock?.quarterGrossProfit | siUnit: 2 | undefined }})
       </span>
       <span>
         {{

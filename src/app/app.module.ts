@@ -40,6 +40,7 @@ import { AppContainerComponent } from './shared/components/app-container/app-con
 import { BadgeComponent } from './shared/components/badge/badge.component';
 import { CardComponent } from './shared/components/card/card.component';
 import { CarousalComponent } from './shared/components/carousal/carousal.component';
+import { DateDisplayComponent } from './shared/components/date-display/date-display.component';
 import { FactTypeDisplayComponent } from './shared/components/fact-type-display/fact-type-display.component';
 import { NoteDialogComponent } from './shared/components/note-dialog/note-dialog.component';
 import { NoteComponent } from './shared/components/note/note.component';
@@ -128,6 +129,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     MarketListComponent,
     MarketDisplayComponent,
     MarketPropertiesPageComponent,
+    DateDisplayComponent,
   ],
   imports: [
     BrowserModule,

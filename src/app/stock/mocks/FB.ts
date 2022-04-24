@@ -7,6 +7,7 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const fb: StockAnalysis = {
   marketCap: 612 * BILLION,
+  shortName: 'Meta',
   predications: [
     {
       price: 140,

@@ -30,10 +30,12 @@
   </div>
 </div>
 
-<div *ngFor="business?.growthStrategy">
-  <div class="label">Growth Strategies</div>
-  <div *ngFor="let item of business?.growthStrategy">- {{ item }}</div>
-</div>
+<ng-container *ngIf="business?.growthStrategy">
+  <div *ngFor="business?.growthStrategy">
+    <div class="label">Growth Strategies</div>
+    <div *ngFor="let item of business?.growthStrategy">- {{ item }}</div>
+  </div>
+</ng-container>
 
 <!-- <div *ngIf="expanded">
   <ul>

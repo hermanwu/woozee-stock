@@ -5,8 +5,12 @@
     </app-badge>
   </span>
 
-  <span *ngFor="let ticker of news?.tickers">
+  <span *ngFor="let ticker of tickers">
     <app-ticker-display [ticker]="ticker"></app-ticker-display>
+  </span>
+
+  <span *ngFor="let marketType of marketTypes">
+    <app-market-display [marketType]="marketType"></app-market-display>
   </span>
 
   <span class="news">
@@ -15,9 +19,7 @@
     </app-badge>
   </span>
 
-  <span class="gray-text time" *ngIf="news.date">{{
-    news.date | date: shortDate
-  }}</span>
+  <app-date-display [date]="news.date"></app-date-display>
 
   <button mat-icon-button type="button" (click)="expanded = !expanded">
     <mat-icon *ngIf="expanded">expand_less</mat-icon>

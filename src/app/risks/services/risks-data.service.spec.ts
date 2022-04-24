@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { SubjectiveDataService } from './risks-data.service';
+import { SubjectiveDataService } from './subjective-data.service';
 
 describe('SubjectiveDataService', () => {
   let service: SubjectiveDataService;

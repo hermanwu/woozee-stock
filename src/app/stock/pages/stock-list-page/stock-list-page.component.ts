@@ -9,8 +9,8 @@ import { webull } from 'src/app/accounts/ mock-data/jessica-wubu-account';
 import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
 import { industry } from 'src/app/shared/industry.enum';
 import { Trend } from 'src/app/shared/trend.enum';
+import { ObjectiveDataService } from '../../services/objective-data.service';
 import { StockData } from '../../services/stock-data.model';
-import { ObjectiveDataService } from '../../services/stock-data.service';
 
 export interface Equity {
   ticker: string;
@@ -26,7 +26,7 @@ export class StockListPageComponent implements OnInit {
   industries = Object.values(industry);
   trends = Object.values(Trend);
 
-  equities: Equity[] = [
+  tickers: Equity[] = [
     // My account
     ...citi,
     ...BOA,
@@ -41,26 +41,26 @@ export class StockListPageComponent implements OnInit {
     // Mei long Account
     ...meilongIbAccount,
   ];
-  equitySummaryMap = this.generateEquitySummaryMap(this.equities);
+  equitySummaryMap = this.generateEquitySummaryMap(this.tickers);
   watchList: any[];
   stocks: StockData[];
 
-  constructor(private stockDataService: ObjectiveDataService) {
-    this.stocks = this.stockDataService.getAllStockData();
+  constructor(private objectiveDataService: ObjectiveDataService) {
+    this.stocks = this.objectiveDataService.getAllStockData();
   }
 
   ngOnInit(): void {
-    // const equitySummaryMap = this.generateEquitySummaryMap(this.equities);
+    // const equitySummaryMap = this.generateEquitySummaryMap(this.tickers);
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
   }
 
-  private generateEquitySummaryMap(equities: Equity[]): any {
+  private generateEquitySummaryMap(tickers: Equity[]): any {
     const result = {};
 
-    for (let equity of equities) {
+    for (let equity of tickers) {
       if (result[equity.ticker]) {
         result[equity.ticker] = result[equity.ticker] + equity.shares ?? 0;
       } else {

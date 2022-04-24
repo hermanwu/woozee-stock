@@ -1,6 +1,3 @@
-<!-- <woozee-top-bar></woozee-top-bar>
-
-<woozee-side-nav [routeList]="routes"></woozee-side-nav> -->
 <mat-toolbar>
   <button mat-icon-button (click)="searchIconClicked()">
     <span class="material-icons"> search </span>
@@ -10,7 +7,7 @@
     <app-search> </app-search>
   </span>
   <ng-template #appName>
-    <span>Stock Investment Guide</span>
+    <span>Woozee Invest</span>
   </ng-template>
 
   <span class="spacer"></span>
@@ -36,7 +33,12 @@
       <a [routerLink]="['/stocks']">Stocks</a>
     </button> -->
     <button [routerLink]="['/woozee/news']" mat-menu-item i18n>News</button>
-    <button [routerLink]="['/woozee/markets']" mat-menu-item i18n>
+    <button
+      [routerLink]="['/woozee/markets']"
+      mat-menu-item
+      i18n
+      [disabled]="environment.production"
+    >
       Markets
     </button>
 

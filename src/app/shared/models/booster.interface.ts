@@ -8,7 +8,7 @@ export interface Catalyst extends Note {
   name?: string;
   level?: CatalystLevel;
   type?: FactType;
-  equities?: string[];
+  tickers?: string[];
   markets?: MarketType[];
   date: Date;
 }

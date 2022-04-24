@@ -7,7 +7,10 @@ import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { Market } from 'src/app/stock/models/market.models';
 import { NewsWithDetails } from 'src/app/stock/models/news.model';
+import { StockData } from 'src/app/stock/services/stock-data.model';
 import { risks } from '../data/global-risk.const';
+import { FactType } from '../models/fact-type.enum';
+import { RiskLevel } from '../models/risk-level.model';
 import { Risk } from '../models/risk.model';
 
 export class Tag {}
@@ -71,7 +74,65 @@ export class SubjectiveDataService {
 
   getCatalystsByTicker(ticker: string): Catalyst[] {
     return this.catalysts.filter((catalyst) =>
-      catalyst?.equities?.find((t) => t.toLowerCase() === ticker.toLowerCase())
+      catalyst?.tickers?.find((t) => t.toLowerCase() === ticker.toLowerCase())
     );
+  }
+
+  /**
+   * Get tickers from a list of risks or catalysts.
+   * @param opinions
+   */
+  getTickersFromOpinions(opinions: (Catalyst | Risk)[]): string[] {
+    const set = new Set<string>();
+
+    for (let opinion of opinions) {
+      if (opinion?.tickers?.length > 0) {
+        console.log(opinion.tickers);
+        for (let ticker of opinion.tickers) {
+          set.add(ticker);
+        }
+      }
+    }
+
+    return Array.from(set.values());
+  }
+
+  /**
+   * Get market types from a list of risks or catalysts.
+   * @param opinions
+   */
+  getMarketsFromOpinions(opinions: (Catalyst | Risk)[]): MarketType[] {
+    const set = new Set<MarketType>();
+
+    for (let opinion of opinions) {
+      if (opinion?.markets?.length) {
+        for (let market of opinion.markets) {
+          set.add(market);
+        }
+      }
+    }
+
+    return Array.from(set.values());
+  }
+
+  getProfitabilityRisks(stock: StockData): Risk[] {
+    const risks: Risk[] = [];
+    if (stock.quarterGrossProfitGrowth < stock.quarterExpensesGrowth) {
+      risks.push({
+        type: FactType.profit,
+        content: `${stock.shortName}'s operating expense grows faster than its gross profit growth`,
+        level: RiskLevel.medium,
+      });
+    }
+
+    if (stock.quarterOperatingCostOverGrossProfit > 1) {
+      risks.push({
+        type: FactType.profit,
+        content: `${stock.shortName} is not able to earn income`,
+        level: RiskLevel.medium,
+      });
+    }
+
+    return risks;
   }
 }

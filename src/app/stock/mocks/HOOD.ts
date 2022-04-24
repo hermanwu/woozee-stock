@@ -46,7 +46,7 @@ export const hood: StockAnalysis = {
             'This is lower than mega tech firm like Google (32%) or Microsoft (20%)',
         },
         {
-          content: 'Equities transaction revenue for the quarter decreased 35%',
+          content: 'tickers transaction revenue for the quarter decreased 35%',
         },
       ],
     },

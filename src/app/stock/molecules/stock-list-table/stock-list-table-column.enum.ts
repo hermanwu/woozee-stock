@@ -7,7 +7,6 @@ export enum StockListTableColumn {
   quarterRevenueGrowth = 'quarterRevenueGrowth',
 
   // Profit
-  quarterOiGrowth = 'quarterOiGrowth',
   ttmOI = 'ttmOI',
 
   // Valuation

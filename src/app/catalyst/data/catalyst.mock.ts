@@ -25,7 +25,7 @@ export const catalysts: Catalyst[] = [
   {
     uuid: 'c-5',
     content: "Tesla's growth is accelerating.",
-    equities: ['TSLA'],
+    tickers: ['TSLA'],
     level: CatalystLevel.moderate,
     type: FactType.growth,
     date: new Date('2022-04-20'),

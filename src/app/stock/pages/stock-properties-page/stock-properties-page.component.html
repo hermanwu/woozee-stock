@@ -31,15 +31,23 @@
   </div>
 </div>
 
+<div class="padding-1rem" *ngIf="stockAnalysis?.business?.markets?.length > 0">
+  <app-fact [factType]="factType.business">
+    <app-business-overview
+      [business]="stockAnalysis.business"
+    ></app-business-overview>
+  </app-fact>
+</div>
+
 <div class="grid grid-dynamic">
   <div class="padding-1rem" *ngIf="stockAnalysis?.risks?.length > 0">
     <app-card>
       <app-title-menu>
         <div title>
           Risks
-          <button mat-icon-button (click)="openRiskInfoDialog()">
+          <!-- <button mat-icon-button (click)="openRiskInfoDialog()">
             <mat-icon> info </mat-icon>
-          </button>
+          </button> -->
         </div>
 
         <div buttons>
@@ -118,14 +126,6 @@
     </app-card>
   </div>
 
-  <div class="padding-1rem" *ngIf="stockAnalysis.business">
-    <app-fact [factType]="factType.business">
-      <app-business-overview
-        [business]="stockAnalysis.business"
-      ></app-business-overview>
-    </app-fact>
-  </div>
-
   <div class="padding-1rem">
     <app-fact [factType]="factType.growth" [stock]="stockAnalysis">
       <app-growth [stock]="stockAnalysis"></app-growth>
@@ -146,7 +146,7 @@
     </app-fact>
   </div>
 
-  <div class="padding-1rem">
+  <div class="padding-1rem" *ngIf="stockAnalysis.predications">
     <app-card>
       <h2>My Forecast</h2>
 

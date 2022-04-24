@@ -9,8 +9,10 @@ import { Catalyst } from 'src/app/shared/models/booster.interface';
   styleUrls: ['./catalyst.component.scss'],
 })
 export class CatalystComponent implements OnInit {
-  expanded = false;
+  @Input() showCategory = false;
   @Input() catalyst: Catalyst;
+
+  expanded = false;
 
   constructor(private dialogService: MatDialog) {}
 

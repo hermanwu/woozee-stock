@@ -8,6 +8,13 @@ export const news: News[] = [
   //   source,
   // },
   {
+    uuid: 'n16',
+    content: 'Robinhood cuts 9% employee.',
+    source: Source.cnbc,
+    date: new Date('2022-04-26'),
+    type: EventType.stock,
+  },
+  {
     uuid: 'n15',
     content: 'Tesla revenues grow 81% from last year',
     source: Source.cnbc,

@@ -7,6 +7,7 @@ import {
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
+import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BoosterComponent } from './catalyst/booster/booster.component';
@@ -41,6 +42,7 @@ import { BadgeComponent } from './shared/components/badge/badge.component';
 import { CardComponent } from './shared/components/card/card.component';
 import { CarousalComponent } from './shared/components/carousal/carousal.component';
 import { DateDisplayComponent } from './shared/components/date-display/date-display.component';
+import { DividerComponent } from './shared/components/divider/divider.component';
 import { FactTypeDisplayComponent } from './shared/components/fact-type-display/fact-type-display.component';
 import { NoteDialogComponent } from './shared/components/note-dialog/note-dialog.component';
 import { NoteComponent } from './shared/components/note/note.component';
@@ -130,6 +132,8 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     MarketDisplayComponent,
     MarketPropertiesPageComponent,
     DateDisplayComponent,
+    PortfolioListComponent,
+    DividerComponent,
   ],
   imports: [
     BrowserModule,

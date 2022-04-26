@@ -20,7 +20,7 @@
 </div>
 
 <div class="flex" *ngIf="showCategory">
-  <span class="material-icons">trending_down</span>:
+  <mat-icon>trending_down</mat-icon>:
 
   <span *ngFor="let item of risk?.tickers">
     <app-ticker-display [ticker]="item"></app-ticker-display>

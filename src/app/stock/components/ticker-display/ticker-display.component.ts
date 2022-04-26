@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-ticker-display',
@@ -7,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TickerDisplayComponent implements OnInit {
   @Input() ticker: string;
+
+  environment = environment;
 
   constructor() {}
 

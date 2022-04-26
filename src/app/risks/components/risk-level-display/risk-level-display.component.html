@@ -1,13 +1,13 @@
 <ng-container [ngSwitch]="riskLevel">
   <ng-container *ngSwitchCase="impactLevelEnum.high" i18n>
-    <span class="material-icons red"> sentiment_very_dissatisfied </span>
+    <mat-icon class="red"> sentiment_very_dissatisfied </mat-icon>
   </ng-container>
 
   <ng-container *ngSwitchCase="impactLevelEnum.medium" i18n>
-    <span class="material-icons dark-red"> sentiment_dissatisfied </span>
+    <mat-icon class="dark-red">sentiment_dissatisfied</mat-icon>
   </ng-container>
 
   <ng-container *ngSwitchDefault i18n>
-    <span class="material-icons gray"> sentiment_neutral </span>
+    <mat-icon class="gray"> sentiment_neutral </mat-icon>
   </ng-container>
 </ng-container>

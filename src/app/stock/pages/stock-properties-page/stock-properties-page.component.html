@@ -1,174 +1,186 @@
-<div class="title-display padding-1rem">
-  <h1>
-    {{ stockAnalysis.shortName || stockAnalysis.name }}
-    ({{ stockAnalysis?.ticker | uppercase }})
-  </h1>
+<ng-container *ngIf="stockAnalysis === null; else hasStock">
+  This stock has not supported yet.
+</ng-container>
 
-  <div class="buttons">
-    <button
-      class="buttons"
-      mat-icon-button
-      aria-label="Organize widgets"
-      matTooltip="Organize Widgets"
-    >
-      <mat-icon>sort</mat-icon>
-    </button>
+<ng-template #hasStock>
+  <div class="title-display padding-1rem">
+    <h1>
+      {{ stockAnalysis.shortName || stockAnalysis.name }}
+      ({{ stockAnalysis?.ticker | uppercase }})
+    </h1>
 
-    <button
-      class="buttons"
-      mat-icon-button
-      [matMenuTriggerFor]="menu"
-      aria-label="navigate to sections"
-      matTooltip="Navigator"
-    >
-      <mat-icon>link</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item disabled>Business</button>
-      <button mat-menu-item disabled>Growth</button>
-      <button mat-menu-item disabled>Profit</button>
-    </mat-menu>
+    <div class="buttons">
+      <button
+        class="buttons"
+        mat-icon-button
+        aria-label="Organize widgets"
+        matTooltip="Organize Widgets"
+      >
+        <mat-icon>sort</mat-icon>
+      </button>
+
+      <button
+        class="buttons"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="navigate to sections"
+        matTooltip="Navigator"
+      >
+        <mat-icon>link</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item disabled>Business</button>
+        <button mat-menu-item disabled>Growth</button>
+        <button mat-menu-item disabled>Profit</button>
+      </mat-menu>
+    </div>
   </div>
-</div>
 
-<div class="padding-1rem" *ngIf="stockAnalysis?.business?.markets?.length > 0">
-  <app-fact [factType]="factType.business">
-    <app-business-overview
-      [business]="stockAnalysis.business"
-    ></app-business-overview>
-  </app-fact>
-</div>
+  <div
+    class="padding-1rem"
+    *ngIf="stockAnalysis?.business?.markets?.length > 0"
+  >
+    <app-fact [factType]="factType.business">
+      <app-business-overview
+        [business]="stockAnalysis.business"
+      ></app-business-overview>
+    </app-fact>
+  </div>
 
-<div class="grid grid-dynamic">
-  <div class="padding-1rem" *ngIf="stockAnalysis?.risks?.length > 0">
-    <app-card>
-      <app-title-menu>
-        <div title>
-          Risks
-          <!-- <button mat-icon-button (click)="openRiskInfoDialog()">
+  <div class="grid grid-dynamic">
+    <div class="padding-1rem" *ngIf="stockAnalysis?.risks?.length > 0">
+      <app-card>
+        <app-title-menu>
+          <div title>
+            Risks
+            <!-- <button mat-icon-button (click)="openRiskInfoDialog()">
             <mat-icon> info </mat-icon>
           </button> -->
-        </div>
+          </div>
 
-        <div buttons>
-          <button
-            mat-icon-button
-            type="button"
-            (click)="setDisplayMode(displayModeEnum.list)"
-          >
-            <mat-icon>list</mat-icon>
-          </button>
-          <button
-            mat-icon-button
-            type="button"
-            (click)="setDisplayMode(displayModeEnum.slide)"
-          >
-            <mat-icon>view_array</mat-icon>
-          </button>
-
-          <button mat-icon-button type="button" matTooltip="Add Risk">
-            <mat-icon>add_circle</mat-icon>
-          </button>
-        </div>
-      </app-title-menu>
-
-      <div class="grid grid-list" *ngIf="displayMode === displayModeEnum.list">
-        <app-risk-list [risks]="stockAnalysis.risks"></app-risk-list>
-      </div>
-
-      <div *ngIf="displayMode === displayModeEnum.slide">
-        <app-carousal
-          [items]="stockAnalysis.risks"
-          (indexOfSelected)="updateDisplayItem($event)"
-        >
-          <div class="risk-slides-overview">
-            <ng-container
-              *ngFor="let risk of stockAnalysis.risks; let i = index"
+          <div buttons>
+            <button
+              mat-icon-button
+              type="button"
+              (click)="setDisplayMode(displayModeEnum.list)"
             >
-              <span
-                [ngClass]="{
-                  'current-risk-slide': i === carousalDisplayItemIndex
-                }"
+              <mat-icon>list</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              type="button"
+              (click)="setDisplayMode(displayModeEnum.slide)"
+            >
+              <mat-icon>view_array</mat-icon>
+            </button>
+
+            <button mat-icon-button type="button" matTooltip="Add Risk">
+              <mat-icon>add_circle</mat-icon>
+            </button>
+          </div>
+        </app-title-menu>
+
+        <div
+          class="grid grid-list"
+          *ngIf="displayMode === displayModeEnum.list"
+        >
+          <app-risk-list [risks]="stockAnalysis.risks"></app-risk-list>
+        </div>
+
+        <div *ngIf="displayMode === displayModeEnum.slide">
+          <app-carousal
+            [items]="stockAnalysis.risks"
+            (indexOfSelected)="updateDisplayItem($event)"
+          >
+            <div class="risk-slides-overview">
+              <ng-container
+                *ngFor="let risk of stockAnalysis.risks; let i = index"
               >
-                {{ risk.type }}
-              </span>
-              <span>-></span>
-            </ng-container>
+                <span
+                  [ngClass]="{
+                    'current-risk-slide': i === carousalDisplayItemIndex
+                  }"
+                >
+                  {{ risk.type }}
+                </span>
+                <span>-></span>
+              </ng-container>
 
-            <span>Conclusion</span>
+              <span>Conclusion</span>
+            </div>
+
+            <div *ngFor="let risk of stockAnalysis.risks; let i = index">
+              <app-card *ngIf="i === carousalDisplayItemIndex">
+                <app-risk [risk]="risk"></app-risk>
+              </app-card>
+            </div>
+          </app-carousal>
+        </div>
+      </app-card>
+    </div>
+
+    <div class="padding-1rem" *ngIf="stockAnalysis?.catalysts?.length > 0">
+      <app-card>
+        <app-title-menu>
+          <div title>Catalysts</div>
+
+          <div buttons>
+            <button mat-icon-button type="button" matTooltip="Add Catalyst">
+              <mat-icon>add_circle</mat-icon>
+            </button>
           </div>
+        </app-title-menu>
 
-          <div *ngFor="let risk of stockAnalysis.risks; let i = index">
-            <app-card *ngIf="i === carousalDisplayItemIndex">
-              <app-risk [risk]="risk"></app-risk>
-            </app-card>
+        <div *ngFor="let catalyst of stockAnalysis.catalysts">
+          <app-catalyst [catalyst]="catalyst"></app-catalyst>
+        </div>
+      </app-card>
+    </div>
+
+    <div class="padding-1rem">
+      <app-fact [factType]="factType.growth" [stock]="stockAnalysis">
+        <app-growth [stock]="stockAnalysis"></app-growth>
+
+        <!-- <app-booster></app-booster> -->
+      </app-fact>
+    </div>
+
+    <div class="padding-1rem">
+      <app-fact [factType]="factType.profit" [stock]="stockAnalysis">
+        <app-profitability [stock]="stockAnalysis"></app-profitability>
+      </app-fact>
+    </div>
+
+    <div class="padding-1rem">
+      <app-fact [factType]="factType.valuation" [stock]="stockAnalysis">
+        <app-valuation [stock]="stockAnalysis"></app-valuation>
+      </app-fact>
+    </div>
+
+    <div class="padding-1rem" *ngIf="stockAnalysis.predications">
+      <app-card>
+        <h2>My Forecast</h2>
+
+        <div *ngIf="stockAnalysis?.predications">
+          <div>
+            Price:
+            {{ stockAnalysis.predications[0]?.price | undefined }}
           </div>
-        </app-carousal>
-      </div>
-    </app-card>
-  </div>
-
-  <div class="padding-1rem" *ngIf="stockAnalysis?.catalysts?.length > 0">
-    <app-card>
-      <app-title-menu>
-        <div title>Catalysts</div>
-
-        <div buttons>
-          <button mat-icon-button type="button" matTooltip="Add Catalyst">
-            <mat-icon>add_circle</mat-icon>
-          </button>
+          <div>
+            Predication Date:
+            {{ stockAnalysis.predications[0]?.start | date }}
+          </div>
         </div>
-      </app-title-menu>
+      </app-card>
+    </div>
 
-      <div *ngFor="let catalyst of stockAnalysis.catalysts">
-        <app-catalyst [catalyst]="catalyst"></app-catalyst>
-      </div>
-    </app-card>
+    <div class="padding-1rem">
+      <app-card>
+        <app-links [stock]="stockAnalysis"></app-links>
+      </app-card>
+    </div>
   </div>
-
-  <div class="padding-1rem">
-    <app-fact [factType]="factType.growth" [stock]="stockAnalysis">
-      <app-growth [stock]="stockAnalysis"></app-growth>
-
-      <!-- <app-booster></app-booster> -->
-    </app-fact>
-  </div>
-
-  <div class="padding-1rem">
-    <app-fact [factType]="factType.profit" [stock]="stockAnalysis">
-      <app-profitability [stock]="stockAnalysis"></app-profitability>
-    </app-fact>
-  </div>
-
-  <div class="padding-1rem">
-    <app-fact [factType]="factType.valuation" [stock]="stockAnalysis">
-      <app-valuation [stock]="stockAnalysis"></app-valuation>
-    </app-fact>
-  </div>
-
-  <div class="padding-1rem" *ngIf="stockAnalysis.predications">
-    <app-card>
-      <h2>My Forecast</h2>
-
-      <div *ngIf="stockAnalysis?.predications">
-        <div>
-          Price:
-          {{ stockAnalysis.predications[0]?.price | undefined }}
-        </div>
-        <div>
-          Predication Date:
-          {{ stockAnalysis.predications[0]?.start | date }}
-        </div>
-      </div>
-    </app-card>
-  </div>
-
-  <div class="padding-1rem">
-    <app-card>
-      <app-links [stock]="stockAnalysis"></app-links>
-    </app-card>
-  </div>
-</div>
+</ng-template>
 
 <!-- <div class="padding-1rem">
     <app-card>

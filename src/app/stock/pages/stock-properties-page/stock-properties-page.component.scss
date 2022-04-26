@@ -15,12 +15,6 @@
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 }
 
-.padding-1rem {
-  padding-top: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
 .details-panel {
   display: grid;
   grid-template-columns: 1fr;

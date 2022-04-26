@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AppContainerComponent implements OnInit {
   environment = environment;
+  aboutPage = 'https://mailchi.mp/5377c7dfbe07/about';
 
   showSearchBar: boolean;
 

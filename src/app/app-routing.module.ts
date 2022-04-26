@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
 import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
 import { FomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
 import { MarketPropertiesPageComponent } from './markets/components/market-properties-page/market-properties-page.component';
 import { NewsPageComponent } from './news/news-page/news-page.component';
-import { PresentationComponent } from './presentation/presentation.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
@@ -17,6 +17,22 @@ import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-g
 import { TrendComponent } from './trend/trend.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: AppContainerComponent,
+    children: [
+      {
+        path: 'news',
+        component: NewsPageComponent,
+        pathMatch: 'full',
+      },
+      {
+        path: 'about',
+        component: AboutComponent,
+        pathMatch: 'full',
+      },
+    ],
+  },
   {
     path: 'woozee',
     component: AppContainerComponent,
@@ -30,8 +46,8 @@ const routes: Routes = [
         component: CatalystPageComponent,
       },
       {
-        path: 'news',
-        component: NewsPageComponent,
+        path: 'portfolios',
+        component: PortfolioListComponent,
       },
       {
         path: 'markets/:marketType',
@@ -55,11 +71,6 @@ const routes: Routes = [
         component: FomoStocksComponent,
       },
       {
-        path: 'about',
-        component: AboutComponent,
-        pathMatch: 'full',
-      },
-      {
         path: 'industries',
         component: HighGrowthIndustryComponent,
       },
@@ -73,11 +84,8 @@ const routes: Routes = [
       { path: '**', redirectTo: 'news', pathMatch: 'full' },
     ],
   },
-  {
-    path: 'presentation',
-    component: PresentationComponent,
-  },
-  { path: '**', redirectTo: 'woozee', pathMatch: 'full' },
+
+  { path: '**', redirectTo: 'news', pathMatch: 'full' },
 ];
 
 @NgModule({

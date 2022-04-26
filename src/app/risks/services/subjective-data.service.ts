@@ -97,6 +97,24 @@ export class SubjectiveDataService {
     return Array.from(set.values());
   }
 
+  getOpinionsByUuids(uuids: string[]): Risk[] | Catalyst[] {
+    if (uuids?.length > 0) {
+      const result = [];
+
+      for (let uuid of uuids) {
+        if (this.catalystMap.has(uuid)) {
+          result.push(this.catalystMap.get(uuid));
+        }
+
+        if (this.riskMap.has(uuid)) {
+          result.push(this.riskMap.get(uuid));
+        }
+      }
+
+      return cloneDeep(result);
+    }
+  }
+
   /**
    * Get market types from a list of risks or catalysts.
    * @param opinions

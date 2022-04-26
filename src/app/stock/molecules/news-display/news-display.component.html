@@ -21,7 +21,16 @@
 
   <app-date-display [date]="news.date"></app-date-display>
 
-  <button mat-icon-button type="button" (click)="expanded = !expanded">
+  <button
+    mat-icon-button
+    type="button"
+    [disabled]="
+      !news.notes &&
+      (!news.catalystUuids || news.catalystUuids.length === 0) &&
+      (!news.riskUuids || news.riskUuids.length === 0)
+    "
+    (click)="expanded = !expanded"
+  >
     <mat-icon *ngIf="expanded">expand_less</mat-icon>
     <mat-icon *ngIf="!expanded">expand_more</mat-icon>
   </button>

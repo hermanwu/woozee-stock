@@ -1,16 +1,16 @@
 <ng-container [ngSwitch]="catalystLevel">
   <ng-container *ngSwitchCase="catalystLevelEnum.strong" i18n>
-    <span class="material-icons light-green"> sentiment_very_satisfied </span>
-    <!-- <span class="dark-green"> > 3 years </span> -->
+    <mat-icon class="light-green"> sentiment_very_satisfied </mat-icon>
+    <!-- <mat-icon class="dark-green"> > 3 years </mat-icon> -->
   </ng-container>
 
   <ng-container *ngSwitchCase="catalystLevelEnum.moderate" i18n>
-    <span class="material-icons green"> sentiment_satisfied_alt </span>
-    <!-- <span class="dark-green"> 1 - 3 years </span> -->
+    <mat-icon class="green"> sentiment_satisfied_alt </mat-icon>
+    <!-- <mat-icon class="dark-green"> 1 - 3 years </mat-icon> -->
   </ng-container>
 
   <ng-container *ngSwitchDefault i18n>
-    <span class="material-icons dark-green"> sentiment_neutral </span>
-    <!-- <span class="dark-green"> < 1 year </span> -->
+    <mat-icon class="dark-green"> sentiment_neutral </mat-icon>
+    <!-- <mat-icon class="dark-green"> < 1 year </mat-icon> -->
   </ng-container>
 </ng-container>

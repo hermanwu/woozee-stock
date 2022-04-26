@@ -50,23 +50,29 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         .getDataMap()
         .get(this.stockTicker);
 
-      this.risks.push(
-        ...this.subjectiveDataService.getRisksByTicker(this.stockTicker)
-      );
+      if (this.stockAnalysis) {
+        this.risks = [
+          ...this.subjectiveDataService.getRisksByTicker(this.stockTicker),
+        ];
 
-      this.risks.push(
-        ...this.subjectiveDataService.getProfitabilityRisks(this.stockAnalysis)
-      );
+        this.risks.push(
+          ...this.subjectiveDataService.getProfitabilityRisks(
+            this.stockAnalysis
+          )
+        );
 
-      this.stockAnalysis.risks = this.risks;
+        this.stockAnalysis.risks = this.risks;
 
-      this.catalysts.push(
-        ...this.subjectiveDataService.getCatalystsByTicker(this.stockTicker)
-      );
+        this.catalysts = [
+          ...this.subjectiveDataService.getCatalystsByTicker(this.stockTicker),
+        ];
 
-      this.stockAnalysis.catalysts = this.catalysts;
+        this.stockAnalysis.catalysts = this.catalysts;
 
-      this.titleService.setTitle(this.stockAnalysis.name);
+        this.titleService.setTitle(this.stockAnalysis.name);
+      } else {
+        this.stockAnalysis = null;
+      }
     });
   }
 

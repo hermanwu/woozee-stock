@@ -1,3 +1,4 @@
+import { portfolioRisks } from 'src/app/accounts/ mock-data/portoflio-risks.const';
 import { MarketType } from 'src/app/facts/data/area.enum';
 import { FactType } from '../models/fact-type.enum';
 import { RiskLevel } from '../models/risk-level.model';
@@ -9,6 +10,15 @@ import { inflation } from './risks/inflation.model';
 import { laborShortage } from './risks/labor-shortage.model';
 
 export const risks: Risk[] = [
+  {
+    uuid: 'r11',
+    content:
+      'COVID lock down causes economy slow down in China and global supply chain issue Globally',
+    markets: [MarketType.global, MarketType.china],
+    level: RiskLevel.high,
+    type: FactType.business,
+    updatedTime: new Date('2022-04-26'),
+  },
   {
     uuid: 'r10',
     content: 'Investment banking business is not growing',
@@ -66,4 +76,5 @@ export const risks: Risk[] = [
   laborShortage,
   covid,
   inflation,
+  ...portfolioRisks,
 ];

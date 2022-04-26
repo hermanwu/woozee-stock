@@ -1,3 +1,6 @@
 <app-badge>
-  <a href [routerLink]="['/woozee/stocks', ticker]">{{ ticker }}</a>
+  <span *ngIf="environment.production; else dev">{{ ticker }}</span>
+  <ng-template #dev>
+    <a href [routerLink]="['/woozee/stocks', ticker]">{{ ticker }}</a>
+  </ng-template>
 </app-badge>

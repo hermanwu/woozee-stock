@@ -1,3 +1,7 @@
 <app-badge>
-  <a href [routerLink]="['/woozee/markets', marketType]">{{ marketType }}</a>
+  <span *ngIf="environment.production; else dev">{{ marketType }}</span>
+
+  <ng-template #dev>
+    <a href [routerLink]="['/woozee/markets', marketType]">{{ marketType }}</a>
+  </ng-template>
 </app-badge>

@@ -6,7 +6,8 @@ import { capMock } from './market-cap.mock';
 export const googl: StockAnalysis = {
   marketCap: capMock.googl,
   logo: '',
-  name: 'Google',
+  name: 'Alphabet',
+  shortName: 'Alphabet',
   ticker: 'googl',
   ceoQuote: [],
   advantage: [],
@@ -17,6 +18,15 @@ export const googl: StockAnalysis = {
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 68011 * MILLION,
+      costOfRevenue: 24103 * MILLION,
+      totalOperatingExpense: 38877 * MILLION,
+      operatingIncome: 16437 * MILLION,
+      netIncome: 17930 * MILLION,
+    },
     {
       pressReleaseLink:
         'https://abc.xyz/investor/static/pdf/2021Q4_alphabet_earnings_release.pdf?cache=d72fc76',
@@ -163,10 +173,6 @@ export const googl: StockAnalysis = {
   ],
 
   business: {
-    markets: [
-      {
-        type: MarketType.adTech,
-      },
-    ],
+    markets: [MarketType.adTech],
   },
 };

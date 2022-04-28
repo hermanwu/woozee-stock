@@ -24,6 +24,31 @@ export const catalysts: Catalyst[] = [
   //   ],
   // },
   {
+    uuid: 'c7',
+    content:
+      'AWS growth remains really strong: revenue +37% & operating income +57%.',
+    tickers: ['AMZN'],
+    level: CatalystLevel.strong,
+    date: new Date('2022-04-27'),
+  },
+  {
+    uuid: 'c8',
+    content: 'Ad business grew 23% year over year',
+    tickers: ['AMZN'],
+    level: CatalystLevel.moderate,
+    date: new Date('2022-04-27'),
+  },
+
+  {
+    uuid: 'c6',
+    content:
+      'The short video format popularized by TikTok has excellent momentum.',
+    markets: [MarketType.digitalMedia],
+    level: CatalystLevel.moderate,
+    type: FactType.growth,
+    date: new Date('2022-04-27'),
+  },
+  {
     uuid: 'c-5',
     content: "Tesla's growth is accelerating.",
     tickers: ['TSLA'],

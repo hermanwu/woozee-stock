@@ -1,9 +1,9 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { BenefitType } from '../components/business-overview/business.model';
 import { PredicationAction } from '../models/predication.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
-import { crmMarket, saas } from './markets';
 
 export const crm: StockAnalysis = {
   marketCap: 212 * BILLION,
@@ -172,7 +172,7 @@ export const crm: StockAnalysis = {
   secFilings: 'https://investor.salesforce.com/financials/default.aspx',
   business: {
     missions: ['We build bridges between companies and customers.'],
-    markets: [saas, crmMarket],
+    markets: [MarketType.saas, MarketType.crm],
     users: [
       {
         type: 'Sales',

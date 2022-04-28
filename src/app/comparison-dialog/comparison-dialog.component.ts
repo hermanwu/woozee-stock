@@ -38,9 +38,7 @@ export class ComparisonDialogComponent {
     this.competitorTypeArray.push('Default');
 
     if (dialogData.stock?.business?.markets) {
-      const markets = dialogData.stock.business.markets.map(
-        (market) => market.type
-      );
+      const markets = dialogData.stock.business.markets;
       this.competitorTypeArray.push(...markets);
     }
   }
@@ -74,7 +72,7 @@ export class ComparisonDialogComponent {
 
           if (
             stock.ticker !== this.dialogData.stock.ticker &&
-            markets.filter((market) => market.type === this.selectedMarketType)
+            markets.filter((market) => market === this.selectedMarketType)
               .length > 0
           ) {
             return true;

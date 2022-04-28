@@ -7,10 +7,7 @@ import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { Market } from 'src/app/stock/models/market.models';
 import { NewsWithDetails } from 'src/app/stock/models/news.model';
-import { StockData } from 'src/app/stock/services/stock-data.model';
 import { risks } from '../data/global-risk.const';
-import { FactType } from '../models/fact-type.enum';
-import { RiskLevel } from '../models/risk-level.model';
 import { Risk } from '../models/risk.model';
 
 export class Tag {}
@@ -72,10 +69,44 @@ export class SubjectiveDataService {
     );
   }
 
+  getRisksByMarkets(marketTypes: MarketType[]): Risk[] {
+    if (marketTypes) {
+      const set = new Set();
+
+      for (let marketType of marketTypes) {
+        const risksWithMarketType = this.risks.filter(
+          (risk) => risk?.markets?.indexOf(marketType) >= 0
+        );
+
+        for (let risk of risksWithMarketType) {
+          set.add(risk);
+        }
+      }
+
+      return Array.from(set.values());
+    }
+  }
+
   getCatalystsByTicker(ticker: string): Catalyst[] {
     return this.catalysts.filter((catalyst) =>
       catalyst?.tickers?.find((t) => t.toLowerCase() === ticker.toLowerCase())
     );
+  }
+
+  getCatalystsByMarkets(marketTypes: MarketType[]): Catalyst[] {
+    const set = new Set<Catalyst>();
+
+    for (let marketType of marketTypes) {
+      const catalystsWithMarketType = this.catalysts.filter(
+        (catalyst) => catalyst?.markets?.indexOf(marketType) >= 0
+      );
+
+      for (let catalyst of catalystsWithMarketType) {
+        set.add(catalyst);
+      }
+    }
+
+    return Array.from(set.values());
   }
 
   /**
@@ -131,26 +162,5 @@ export class SubjectiveDataService {
     }
 
     return Array.from(set.values());
-  }
-
-  getProfitabilityRisks(stock: StockData): Risk[] {
-    const risks: Risk[] = [];
-    if (stock.quarterGrossProfitGrowth < stock.quarterExpensesGrowth) {
-      risks.push({
-        type: FactType.profit,
-        content: `${stock.shortName}'s operating expense grows faster than its gross profit growth`,
-        level: RiskLevel.medium,
-      });
-    }
-
-    if (stock.quarterOperatingCostOverGrossProfit > 1) {
-      risks.push({
-        type: FactType.profit,
-        content: `${stock.shortName} is not able to earn income`,
-        level: RiskLevel.medium,
-      });
-    }
-
-    return risks;
   }
 }

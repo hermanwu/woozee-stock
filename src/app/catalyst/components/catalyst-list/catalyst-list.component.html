@@ -1,3 +1,4 @@
-<div *ngFor="let catalyst of catalysts">
+<div *ngFor="let catalyst of catalysts; last as isLast">
   <app-catalyst [catalyst]="catalyst"></app-catalyst>
+  <app-divider *ngIf="!isLast"></app-divider>
 </div>

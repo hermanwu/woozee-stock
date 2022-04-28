@@ -7,22 +7,16 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 export const snap: StockAnalysis = {
   marketCap: 45 * BILLION,
   business: {
-    markets: [
-      {
-        type: MarketType.adTech,
-      },
-      {
-        type: MarketType.social,
-      },
-    ],
+    markets: [MarketType.adTech, MarketType.social],
   },
 
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Snapchat--Logo.png/1024px-Snapchat--Logo.png',
   name: 'Snap Inc.',
+  shortName: 'Snap',
   description: [
     {
       content:
-        'Snap  Inc.  is a  camera  company.  We believe  that  reinventing  the camera  represents  our  greatest  opportunity  to  improve  the  way that  people  live  and communicate.  We  contribute  to human  progress  by  empowering  people  to  express themselves, live in the moment, learn about the world, and have fun together.',
+        'Snap  Inc. is a  camera  company.  We believe  that  reinventing  the camera  represents  our  greatest  opportunity  to  improve  the  way that  people  live  and communicate.  We  contribute  to human  progress  by  empowering  people  to  express themselves, live in the moment, learn about the world, and have fun together.',
     },
     {
       content:

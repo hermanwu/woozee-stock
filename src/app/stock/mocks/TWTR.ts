@@ -230,10 +230,6 @@ export const twtr: StockAnalysis = {
   ],
 
   business: {
-    markets: [
-      {
-        type: MarketType.adTech,
-      },
-    ],
+    markets: [MarketType.adTech],
   },
 };

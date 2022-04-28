@@ -48,7 +48,8 @@ export const adbe: StockAnalysis = {
     },
   ],
   business: {
-    markets: [
+    markets: [MarketType.saas, MarketType.mediaTool, MarketType.documentTool],
+    revenue: [
       {
         type: MarketType.saas,
       },

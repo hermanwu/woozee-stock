@@ -146,10 +146,6 @@ export const etsy: StockAnalysis = {
   ],
 
   business: {
-    markets: [
-      {
-        type: MarketType.ecommerce,
-      },
-    ],
+    markets: [MarketType.ecommerce],
   },
 };

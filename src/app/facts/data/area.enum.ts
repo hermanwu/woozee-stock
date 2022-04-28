@@ -3,12 +3,18 @@ export enum MarketType {
   us = 'United States',
   china = 'China',
 
+  digitalMedia = 'Digital Media',
+
+  crm = 'CRM',
+
   fintech = 'Fintech',
   loan = 'Loan',
   shared_economy = 'Shared Economy',
   travel = 'Travel Booking',
   crypto = 'Crypto',
   nft = 'NFT',
+
+  energy = 'Energy',
 
   b2b = 'b2b',
 
@@ -31,7 +37,7 @@ export enum MarketType {
   saas = 'SaaS',
 
   adTech = 'Advertising',
-  social = 'Social',
+  social = 'Social Networking',
 
   industrial = 'Industrial',
 
@@ -60,4 +66,6 @@ export enum MarketType {
   marketingTool = 'Marketing Tool',
 
   investmentBanking = 'Investment banking',
+
+  vr = 'Virtual Reality',
 }

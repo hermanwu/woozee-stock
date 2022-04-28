@@ -157,7 +157,7 @@ export const crwd: StockAnalysis = {
   irAddress: 'https://ir.crowdstrike.com/',
   secFilings: 'https://ir.crowdstrike.com/financial-information/sec-filings',
   business: {
-    markets: [{ type: MarketType.saas }],
+    markets: [MarketType.saas],
     overview: [
       'We founded CrowdStrike in 2011 to reinvent security for the cloud era.',
       'leverages the network effects of crowdsourced data applied to modern technologies such as AI, cloud computing, and graph databases.',

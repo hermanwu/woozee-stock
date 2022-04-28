@@ -188,7 +188,7 @@ export const coin: StockAnalysis = {
   secFilings:
     'https://investor.coinbase.com/financials/sec-filings/default.aspx',
   business: {
-    markets: [{ type: MarketType.crypto }],
+    markets: [MarketType.crypto],
     users: [
       { type: 'Retail users: We serve as the users’ primary crypto account' },
       {

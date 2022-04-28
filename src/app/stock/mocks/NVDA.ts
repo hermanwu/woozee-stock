@@ -226,11 +226,11 @@ export const nvda: StockAnalysis = {
   ],
   business: {
     markets: [
-      { type: MarketType.cloudService },
-      { type: MarketType.gaming },
-      { type: MarketType.virtualSpace },
-      { type: MarketType.autoRobotics },
-      { type: MarketType.semi },
+      MarketType.cloudService,
+      MarketType.gaming,
+      MarketType.virtualSpace,
+      MarketType.autoRobotics,
+      MarketType.semi,
     ],
     competitiveAdvantages: [
       { type: StrategyType.platform },

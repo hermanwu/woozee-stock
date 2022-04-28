@@ -1,3 +1,4 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -8,6 +9,10 @@ export const pypl: StockAnalysis = {
   description: [],
   ticker: 'pypl',
   lastUpdated: new Date('2021-08-22'),
+  business: {
+    markets: [MarketType.fintech],
+  }
+
 
   earningsReports: [
     {

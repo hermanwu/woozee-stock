@@ -49,6 +49,8 @@ export class ObjectiveDataService {
       let ttmNetIncome = 0;
 
       for (let report of currentYearReports) {
+        report.grossProfit = report.totalRevenue - report.costOfRevenue;
+
         if (ttmRevenue !== undefined) {
           ttmRevenue = report.totalRevenue
             ? ttmRevenue + report.totalRevenue

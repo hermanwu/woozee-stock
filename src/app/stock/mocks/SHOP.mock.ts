@@ -120,7 +120,7 @@ export const shop: StockAnalysis = {
     },
   ],
   business: {
-    markets: [{ type: MarketType.ecommerceTools }, { type: MarketType.saas }],
+    markets: [MarketType.ecommerceTools, MarketType.saas],
     competitiveAdvantages: [
       { type: StrategyType.platform },
       { type: StrategyType.tool },

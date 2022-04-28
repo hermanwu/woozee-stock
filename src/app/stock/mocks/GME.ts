@@ -130,14 +130,7 @@ export const gme: StockAnalysis = {
   competitors: ['amzn', 'etsy', 'baba'],
 
   business: {
-    markets: [
-      {
-        type: MarketType.crypto,
-      },
-      {
-        type: MarketType.ecommerce,
-      },
-    ],
+    markets: [MarketType.crypto, MarketType.ecommerce],
     users: [
       {
         type: UserType.gamer,

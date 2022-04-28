@@ -52,10 +52,6 @@ export const now: StockAnalysis = {
     },
   ],
   business: {
-    markets: [
-      {
-        type: MarketType.saas,
-      },
-    ],
+    markets: [MarketType.saas],
   },
 };

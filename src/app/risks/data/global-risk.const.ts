@@ -10,6 +10,91 @@ import { inflation } from './risks/inflation.model';
 import { laborShortage } from './risks/labor-shortage.model';
 
 export const risks: Risk[] = [
+  // {
+  //   uuid: 'r12',
+  //   markets: [MarketType.adTech],
+  //   level: RiskLevel.high,
+  //   type: FactType.business,
+  //   updatedTime: new Date('2022-04-26'),
+  // },
+  {
+    content: 'Next quarter forecasts suggests growth could dip even further.',
+    tickers: ['AMZN'],
+    updatedTime: new Date('2022-04-28'),
+    level: RiskLevel.medium,
+  },
+  {
+    uuid: 'r18',
+    content: 'Amazon recorded a $7.6 billion loss on its Rivian investment.',
+    tickers: ['AMZN'],
+    updatedTime: new Date('2022-04-28'),
+    level: RiskLevel.low,
+  },
+  {
+    content:
+      'Q1 revenue growth is the slowest rate since the 2001 dot-com bust.',
+    tickers: ['AMZN'],
+    updatedTime: new Date('2022-04-28'),
+    level: RiskLevel.high,
+  },
+  {
+    uuid: 'r17',
+    content: 'Product sale is decreasing.',
+  },
+  {
+    uuid: 'r16',
+    content:
+      "Meta's DAU will decrease in sequential quarters (largely due to Russia situation).",
+    tickers: ['FB'],
+    updatedTime: new Date('2022-04-27'),
+    level: RiskLevel.medium,
+  },
+  {
+    uuid: 'r15',
+    content:
+      'Virtual reality could be costly to invest in and might not generate any return soon',
+    markets: [MarketType.vr],
+    updatedTime: new Date('2022-04-27'),
+    level: RiskLevel.medium,
+  },
+  {
+    uuid: 'r14',
+    content: 'More regulatory scrutiny towards user data privacy.',
+    markets: [MarketType.social],
+    type: FactType.business,
+    level: RiskLevel.medium,
+    updatedTime: new Date('2022-04-27'),
+  },
+  {
+    uuid: 'r13',
+    content: 'US Consumer spending decreases.',
+    markets: [MarketType.us],
+    type: FactType.growth,
+    updatedTime: new Date('2022-04-27'),
+  },
+  {
+    uuid: 'r12',
+    content: 'Consumer spending decrease will cause Fintech revenue decrease.',
+    markets: [MarketType.fintech],
+    type: FactType.growth,
+    updatedTime: new Date('2022-04-27'),
+  },
+  {
+    uuid: 'r11',
+    content:
+      'Elon may have conflict with China as he is the owner of Twitter now',
+    notes: [
+      {
+        content:
+          'That’s roughly half of the 936,000 electric vehicles delivered by Tesla last year.',
+      },
+    ],
+    markets: [MarketType.china],
+    tickers: ['TSLA'],
+    level: RiskLevel.medium,
+    type: FactType.business,
+    updatedTime: new Date('2022-04-26'),
+  },
   {
     uuid: 'r11',
     content:

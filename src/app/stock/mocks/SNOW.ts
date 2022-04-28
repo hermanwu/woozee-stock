@@ -11,11 +11,7 @@ export const snow: StockAnalysis = {
       'The more customers adopt our platform, the more data can be exchanged with other Snowflake customers, partners, data providers, and data consumers, enhancing the value of our platform for all users.',
     ],
     users: [{ type: 'Data Scientist' }, { type: 'Data Analyst' }],
-    markets: [
-      { type: MarketType.saas },
-      { type: MarketType.b2b },
-      { type: MarketType.dataAnalytics },
-    ],
+    markets: [MarketType.saas, MarketType.b2b, MarketType.dataAnalytics],
     competitiveAdvantages: [
       { type: StrategyType.platform },
       { type: StrategyType.tool },

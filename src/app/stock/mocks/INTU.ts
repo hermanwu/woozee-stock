@@ -150,10 +150,6 @@ export const intu: StockAnalysis = {
   ],
 
   business: {
-    markets: [
-      {
-        type: MarketType.saas,
-      },
-    ],
+    markets: [MarketType.saas],
   },
 };

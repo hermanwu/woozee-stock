@@ -15,7 +15,7 @@ export const tsla: StockAnalysis = {
   secFilings: 'https://ir.tesla.com/sec-filings',
   competitors: ['nvda'],
   business: {
-    markets: [{ type: MarketType.ai }],
+    markets: [MarketType.ai, MarketType.ev, MarketType.energy],
   },
 
   earningsReports: [
@@ -23,6 +23,9 @@ export const tsla: StockAnalysis = {
       year: 2022,
       quarter: 1,
       totalRevenue: 18.756 * BILLION,
+      costOfRevenue: 13296 * MILLION,
+      operatingIncome: 3603 * MILLION,
+      netIncome: 3280 * MILLION,
     },
 
     {

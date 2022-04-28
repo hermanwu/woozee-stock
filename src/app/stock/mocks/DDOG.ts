@@ -148,11 +148,7 @@ export const ddog: StockAnalysis = {
     'https://investors.datadoghq.com/financial-information/sec-filings',
 
   business: {
-    markets: [
-      {
-        type: MarketType.dataAnalytics,
-      },
-    ],
+    markets: [MarketType.dataAnalytics],
     overview: [
       'Datadog is the monitoring and analytics platform for developers, IT operations teams and business users in the cloud age.',
     ],

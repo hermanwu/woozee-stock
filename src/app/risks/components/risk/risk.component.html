@@ -6,9 +6,10 @@
   {{ risk.name || risk.content }}
 
   <span class="action-buttons">
-    <span class="gray-text" *ngIf="risk.updatedTime">{{
-      risk.updatedTime | date: shortDate
-    }}</span>
+    <app-date-display
+      class="gray-text"
+      [date]="risk.updatedTime"
+    ></app-date-display>
 
     <span *ngIf="!showCategory">
       <button mat-icon-button type="button" (click)="expanded = !expanded">
@@ -71,5 +72,3 @@
     <textarea></textarea>
   </div> -->
 </div>
-
-<div class="border"></div>

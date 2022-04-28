@@ -141,10 +141,6 @@ export const pins: StockAnalysis = {
   ],
 
   business: {
-    markets: [
-      {
-        type: MarketType.adTech,
-      },
-    ],
+    markets: [MarketType.adTech],
   },
 };

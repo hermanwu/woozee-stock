@@ -252,7 +252,7 @@ export const pltr: StockAnalysis = {
       { type: StrategyType.userData },
       { type: StrategyType.technology },
     ],
-    markets: [{ type: MarketType.dataAnalytics }, { type: MarketType.defense }],
+    markets: [MarketType.dataAnalytics, MarketType.defense],
     users: [{ type: 'Any Employee' }],
   },
   competitors: ['snow'], //'ai', 'crwd', 'CRM', 'DATA'

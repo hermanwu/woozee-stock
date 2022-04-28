@@ -131,9 +131,9 @@
           </div>
         </app-title-menu>
 
-        <div *ngFor="let catalyst of stockAnalysis.catalysts">
-          <app-catalyst [catalyst]="catalyst"></app-catalyst>
-        </div>
+        <app-catalyst-list
+          [catalysts]="stockAnalysis?.catalysts"
+        ></app-catalyst-list>
       </app-card>
     </div>
 

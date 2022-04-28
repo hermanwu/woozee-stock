@@ -184,10 +184,6 @@ export const docu: StockAnalysis = {
     },
   ],
   business: {
-    markets: [
-      {
-        type: MarketType.saas,
-      },
-    ],
+    markets: [MarketType.saas],
   },
 };

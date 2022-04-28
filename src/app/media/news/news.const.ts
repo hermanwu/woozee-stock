@@ -2,13 +2,132 @@ import { Source } from 'src/app/stock/models/news-source.enum';
 import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const news: News[] = [
-  // {
-  //   uuid: '11',
-  //   content: 'TSMA earings report',
-  //   source,
-  // },
   {
-    uuid: 'n16',
+    uuid: 'n21',
+    content:
+      'Meta jumped about 20% in extended trading on Wednesday on better-than-expected profit.',
+    source: Source.cnbc,
+    type: EventType.stock,
+    sourceLink: 'https://www.cnbc.com/2022/04/27/meta-fb-q1-2022-earnings.html',
+    date: new Date('2022-04-27'),
+    riskUuids: ['r15', 'r16', 'r14'],
+    catalystUuids: ['c6'],
+    notes: [
+      {
+        content:
+          'Facebook’s revenue growth had sunk into the single digits (7%) , the slowest pace of expansion in Facebook’s 10-year history as a public company.',
+      },
+      {
+        content: 'Next quarter forecast revenue could decrease.',
+      },
+      {
+        content:
+          'Like Snap and Google, Facebook is also being hit by Russia’s invasion of Ukraine.',
+      },
+      {
+        content:
+          'Other than the profit number in this report, Facebook provided some good news, as both the daily active user figure and average revenue per user exceeded estimates',
+      },
+    ],
+  },
+  {
+    uuid: 'n20',
+    content:
+      'Boeing posts loss as it grapples with delays on commercial and defense programs',
+    source: Source.cnbc,
+    date: new Date('2022-04-27'),
+    type: EventType.stock,
+    sourceLink:
+      'https://www.cnbc.com/2022/04/27/boeing-ba-1q2022-earnings.html',
+    notes: [
+      {
+        content:
+          'Boeing’s first-quarter sales and revenue missed analysts’ estimates.',
+      },
+      {
+        content:
+          'The manufacturer says it is pausing 777X production and that it doesn’t expect deliveries to start until 2025.',
+      },
+      {
+        content:
+          'Boeing also doesn’t expect deliveries of the plane to start until 2025, more than a year later than it previously forecast. ',
+      },
+      {
+        content:
+          'Revenue of $13.99 billion fell 8% from the first quarter of 2021 and short of analysts’ estimates.',
+      },
+    ],
+  },
+  {
+    uuid: 'n19',
+    content: 'Microsoft earnings beat across the board, stock up on outlook',
+    source: Source.cnbc,
+    date: new Date('2022-04-26'),
+    type: EventType.stock,
+    sourceLink:
+      'https://www.cnbc.com/2022/04/26/microsoft-msft-earnings-q3-2022.html',
+    notes: [
+      {
+        content:
+          'Fourth-quarter revenue guidance for each of the company’s three business segments surpassed the expectations of analysts surveyed by StreetAccount.',
+      },
+      {
+        content:
+          'Microsoft’s revenue increased by 18% year over year in the quarter, which ended on March 31, compared with 20% in the previous quarter, according to a statement.',
+      },
+      {
+        content:
+          'The company’s Intelligent Cloud segment, which contains Microsoft’s Azure public cloud for application hosting, along with SQL Server, Windows Server and enterprise services, generated $19.05 billion in revenue. That’s up 26%',
+      },
+      {
+        content:
+          'Revenue from Azure and other cloud services jumped 46% in the quarter, compared with 46% growth in the prior quarter',
+      },
+      {
+        content:
+          'Productivity and Business Processes segment, containing Office productivity software, LinkedIn and Dynamics, posted $15.79 billion in revenue in the quarter, up about 17%',
+      },
+      {
+        content:
+          'The More Personal Computing Segment, which includes Windows, Xbox, search advertising and Surface, kicked in $14.52 billion in revenue, up 11%',
+      },
+      {
+        content:
+          'Microsoft said in January its security revenue grew nearly 45% in 2021, faster than any other major product category',
+      },
+    ],
+  },
+  {
+    uuid: 'n18',
+    content: 'Alphabet reports weak earnings and revenue on big YouTube miss',
+    source: Source.cnbc,
+    date: new Date('2022-04-26'),
+    type: EventType.stock,
+    notes: [
+      {
+        content:
+          'Google’s revenue came in at $68.01 billion, growth of 23% from the same period last year. That’s a slowdown from 34% growth in the first quarter of 2021, when the economy was reopening from the pandemic.',
+      },
+      {
+        content:
+          'YouTube’s TikTok competitor called Shorts now has 30 billion daily views, which is double the amount of views the prior quarter and four times as many as the year before.',
+      },
+      {
+        content:
+          'Google’s cloud business was a standout in the quarter, growing 44% and beating estimates as more big enterprises shift their workloads away from their own data centers.',
+      },
+      {
+        content:
+          'Revenue growth in the European region, which also includes the Middle East and Africa, slowed to 19% in the first quarter from 33% a year earlier.',
+      },
+      {
+        content:
+          'Alphabet’s Other Bets, which includes its life sciences companies and self-driving car unit Waymo, nearly doubled revenue from the year prior to $440 million from $198 million. The unit’s loss slightly increased to $1.15 billion.',
+      },
+    ],
+  },
+  {
+    uuid: 'n17',
     content: 'Robinhood cuts 9% employee.',
     source: Source.cnbc,
     date: new Date('2022-04-26'),

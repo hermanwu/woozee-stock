@@ -1,8 +1,15 @@
 <app-title-menu>
   <div title>Portfolios</div>
 </app-title-menu>
+
 <div *ngFor="let portfolio of portfolios">
-  {{ portfolio.name }}
+  <app-title-menu>
+    <div title>{{ portfolio.name }}</div>
+  </app-title-menu>
+
+  <div *ngFor="let strategy of portfolio.strategies">
+    {{ strategy }}
+  </div>
 
   <app-title-menu>
     <div title>Risks</div>

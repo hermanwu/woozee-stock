@@ -6,7 +6,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const fb: StockAnalysis = {
-  marketCap: 492 * BILLION,
+  marketCap: 475 * BILLION,
   shortName: 'Meta',
   predications: [
     {
@@ -126,9 +126,20 @@ export const fb: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
-      quarter: 1,
+      quarter: 2,
+      totalRevenue: 29 * BILLION,
       isForecast: true,
-      totalRevenue: 28 * BILLION,
+    },
+    {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 27908 * MILLION,
+      costOfRevenue: 6005 * MILLION,
+      totalOperatingExpense: 19384 * MILLION,
+      netIncome: 7465 * MILLION,
+      operatingIncome: 8524 * MILLION,
+      slidesLink:
+        'https://s21.q4cdn.com/399680738/files/doc_financials/2022/q1/Q1-2022_Earnings-Presentation_Final.pdf',
     },
     {
       year: 2021,
@@ -263,9 +274,10 @@ export const fb: StockAnalysis = {
 
   business: {
     markets: [
-      {
-        type: MarketType.adTech,
-      },
+      MarketType.adTech,
+      MarketType.social,
+      MarketType.vr,
+      MarketType.digitalMedia,
     ],
   },
 };

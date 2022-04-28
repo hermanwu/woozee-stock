@@ -31,6 +31,7 @@ const routes: Routes = [
         component: AboutComponent,
         pathMatch: 'full',
       },
+      { path: '', redirectTo: 'news', pathMatch: 'full' },
     ],
   },
   {
@@ -80,11 +81,8 @@ const routes: Routes = [
       },
       { path: 'stocks', component: StockListPageComponent, pathMatch: 'full' },
       { path: 'slides', component: SlideDemoComponent, pathMatch: 'full' },
-
-      { path: '**', redirectTo: 'news', pathMatch: 'full' },
     ],
   },
-
   { path: '**', redirectTo: 'news', pathMatch: 'full' },
 ];
 

@@ -6,4 +6,9 @@
   <ng-container *ngFor="let item of news">
     <app-news-display [news]="item"></app-news-display>
   </ng-container>
+
+  <button type="button" mat-button disabled>
+    Load More
+    <mat-icon>more_horiz</mat-icon>
+  </button>
 </app-card>

@@ -11,8 +11,7 @@ export const pypl: StockAnalysis = {
   lastUpdated: new Date('2021-08-22'),
   business: {
     markets: [MarketType.fintech],
-  }
-
+  },
 
   earningsReports: [
     {

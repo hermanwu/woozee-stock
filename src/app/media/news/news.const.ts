@@ -3,6 +3,15 @@ import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const news: News[] = [
   {
+    uuid: 'n22',
+    content:
+      'Apple shares dip after company warns of a possible $8 billion hit from supply constraints',
+    source: Source.cnbc,
+    sourceLink: 'cnbc.com/2022/04/28/apple-aapl-earnings-q2-2022.html',
+    date: new Date('2022-04-27'),
+    type: EventType.stock,
+  },
+  {
     uuid: 'n21',
     content:
       'Meta jumped about 20% in extended trading on Wednesday on better-than-expected profit.',

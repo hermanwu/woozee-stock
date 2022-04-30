@@ -68,4 +68,6 @@ export enum MarketType {
   investmentBanking = 'Investment banking',
 
   vr = 'Virtual Reality',
+
+  datacenter = 'Data Center',
 }

@@ -70,9 +70,9 @@ export class SubjectiveDataService {
   }
 
   getRisksByMarkets(marketTypes: MarketType[]): Risk[] {
-    if (marketTypes) {
-      const set = new Set();
+    const set = new Set();
 
+    if (marketTypes) {
       for (let marketType of marketTypes) {
         const risksWithMarketType = this.risks.filter(
           (risk) => risk?.markets?.indexOf(marketType) >= 0
@@ -82,9 +82,8 @@ export class SubjectiveDataService {
           set.add(risk);
         }
       }
-
-      return Array.from(set.values());
     }
+    return Array.from(set.values());
   }
 
   getCatalystsByTicker(ticker: string): Catalyst[] {

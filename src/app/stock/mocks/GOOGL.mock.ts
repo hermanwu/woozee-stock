@@ -173,6 +173,10 @@ export const googl: StockAnalysis = {
   ],
 
   business: {
-    markets: [MarketType.adTech],
+    markets: [
+      MarketType.adTech,
+      MarketType.datacenter,
+      MarketType.digitalMedia,
+    ],
   },
 };

@@ -7,6 +7,7 @@ import { capMock } from './market-cap.mock';
 export const aapl: StockAnalysis = {
   marketCap: capMock.aapl,
   name: 'Apple',
+  shortName: 'Apple',
   description: [],
   trends: [],
   logo: '',
@@ -63,6 +64,14 @@ export const aapl: StockAnalysis = {
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 97278 * MILLION,
+      costOfRevenue: 54719 * MILLION,
+      operatingIncome: 29979 * MILLION,
+      netIncome: 25010 * MILLION,
+    },
     {
       year: 2021,
       quarter: 4,

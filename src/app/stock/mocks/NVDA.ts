@@ -8,7 +8,6 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const nvda: StockAnalysis = {
   marketCap: 532 * BILLION,
-  competitors: ['amd', 'amzn', 'tsla'],
 
   predications: [
     {

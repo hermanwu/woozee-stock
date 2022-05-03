@@ -13,7 +13,6 @@ export const tsla: StockAnalysis = {
   irAddress: 'https://ir.tesla.com/',
   marketCap: capMock.tsla,
   secFilings: 'https://ir.tesla.com/sec-filings',
-  competitors: ['nvda'],
   business: {
     markets: [MarketType.ai, MarketType.ev, MarketType.energy],
   },
@@ -26,6 +25,8 @@ export const tsla: StockAnalysis = {
       costOfRevenue: 13296 * MILLION,
       operatingIncome: 3603 * MILLION,
       netIncome: 3280 * MILLION,
+      pressReleaseLink:
+        'https://ir.tesla.com/press-release/tesla-vehicle-production-deliveries-and-date-financial-results-webcast-first-quarter',
     },
 
     {

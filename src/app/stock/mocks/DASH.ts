@@ -1,3 +1,4 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -7,7 +8,10 @@ export const dash: StockAnalysis = {
   name: 'Doordash',
   description: [],
   ticker: 'dash',
-  competitors: ['uber'],
+
+  business: {
+    markets: [MarketType.foodDelivery],
+  },
 
   earningsReports: [
     {

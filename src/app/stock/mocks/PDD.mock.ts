@@ -1,3 +1,4 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { rmbToDollar } from 'src/app/shared/currency';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -41,7 +42,6 @@ export const pdd: StockAnalysis = {
   logo: 'https://lh3.googleusercontent.com/pw/ACtC-3dmSbeD7O0Szd7qbdYHlCQ5G7J8WKR8DYGgAsbUxS5m_-Db-wTMdDVnzwd3Uqx0AxZjJqpX_NcuOZFDQlKZlYKQNnPh0ozR8AXVMHaUkbkZ8iFBnJzziuNiUoWaVxJ-8tyTjnwymFJ73ithN67jsHxV=w882-h736-no?authuser=3',
   name: 'Pinduoduo',
   ticker: 'pdd',
-  competitors: ['baba', 'amzn', 'etsy'],
   description: [
     {
       content:
@@ -88,6 +88,7 @@ export const pdd: StockAnalysis = {
     'Customers who are interested in discovery shopping',
   ],
   business: {
+    markets: [MarketType.ecommerce],
     growthStrategy: [
       'Create a team purchase model that initiated by user with more detailed customer information.',
       'Focus on less-developed cities/market with consumers that are more sensitive to price, where Alibaba and JD were not focused',

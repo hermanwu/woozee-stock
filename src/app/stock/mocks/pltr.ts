@@ -255,5 +255,4 @@ export const pltr: StockAnalysis = {
     markets: [MarketType.dataAnalytics, MarketType.defense],
     users: [{ type: 'Any Employee' }],
   },
-  competitors: ['snow'], //'ai', 'crwd', 'CRM', 'DATA'
 };

@@ -1,3 +1,4 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -10,7 +11,9 @@ export const u: StockAnalysis = {
   advantage: [],
   shortName: 'Unity',
   irAddress: 'https://investors.unity.com/overview/default.aspx',
-  competitors: ['mdb', 'rblx'],
+  business: {
+    markets: [MarketType.gaming, MarketType.vr],
+  },
   // POTENTIALS:
 
   // Demand:

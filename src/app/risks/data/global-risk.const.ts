@@ -18,10 +18,44 @@ export const risks: Risk[] = [
   //   updatedTime: new Date('2022-04-26'),
   // },
   {
+    uuid: 'r24',
+    content: '',
+  },
+  {
+    uuid: 'r23',
+    content:
+      'Q3 guidance is weak due to COVID headwind in China. Ipad constraints, Subscription up dramatically, Sale in China and Russia, Focus on the supply side instead of inflation caused by demand side. COVID and silicon cause constraints. Does not including Shanghai problem. 4-8 billion affecting sales',
+    tickers: ['aapl'],
+    updatedTime: new Date('2022-05-03'),
+    level: RiskLevel.low,
+  },
+  {
+    uuid: 'r22',
+    content: 'Twitter acquisition process',
+    tickers: ['tsla'],
+    updatedTime: new Date('2022-04-30'),
+    level: RiskLevel.low,
+  },
+  {
+    uuid: 'r21',
+    content: 'Lock down in Shanghai might affect production more.',
+    tickers: ['tsla'],
+    updatedTime: new Date('2022-04-30'),
+    level: RiskLevel.medium,
+  },
+  {
+    uuid: 'r20',
+    content: 'Rising raw material, commodity, logistics and expedite costs',
+    tickers: ['tsla'],
+    updatedTime: new Date('2022-04-30'),
+    level: RiskLevel.low,
+  },
+  {
+    uuid: 'r19',
     content: 'Next quarter forecasts suggests growth could dip even further.',
     tickers: ['AMZN'],
     updatedTime: new Date('2022-04-28'),
-    level: RiskLevel.medium,
+    level: RiskLevel.low,
   },
   {
     uuid: 'r18',
@@ -81,8 +115,7 @@ export const risks: Risk[] = [
   },
   {
     uuid: 'r11',
-    content:
-      'Elon may have conflict with China as he is the owner of Twitter now',
+    content: 'Relationship with China as the owner of twitter.',
     notes: [
       {
         content:

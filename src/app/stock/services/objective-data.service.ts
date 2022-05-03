@@ -131,6 +131,8 @@ export class ObjectiveDataService {
       if (currentReport && previousReport) {
         // Calculate quarterly gross profit.
         stock.quarterGrossProfit = currentReport.grossProfit;
+        stock.quarterGrossProfitMargin =
+          currentReport.grossProfit / currentReport.totalRevenue;
         stock.previousQuarterGrossProfit = previousReport.grossProfit;
         stock.quarterGrossProfitGrowth =
           (stock?.quarterGrossProfit - stock?.previousQuarterGrossProfit) /
@@ -148,6 +150,8 @@ export class ObjectiveDataService {
         // Calculate Operating Cost over
         stock.quarterOperatingCostOverGrossProfit =
           stock?.quarterExpenses / stock?.quarterGrossProfit;
+        stock.quarterOperatingMargin =
+          currentReport.operatingIncome / currentReport.totalRevenue;
 
         stock.previousQuarterRevenue = previousReport.totalRevenue;
         stock.quarterRevenue = currentReport.totalRevenue;

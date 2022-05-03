@@ -3,5 +3,5 @@ import { Market } from 'src/app/stock/models/market.models';
 
 export const hospitalityMarket: Market = {
   type: MarketType.hospitality,
-  tickers: ['MAR', 'ABNB'],
+  tickers: new Set(['MAR', 'ABNB']),
 };

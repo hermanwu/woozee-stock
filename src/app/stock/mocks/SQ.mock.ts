@@ -213,13 +213,6 @@ export const sq: StockAnalysis = {
     },
   ],
 
-  competitors: [
-    'Stripe',
-    'Robinhood',
-    'Paypal/Venmo',
-    'Banks such as JP Morgan',
-  ],
-
   trends: ['COVID', 'Cashless'],
 
   thoughts: {

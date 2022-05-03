@@ -6,5 +6,5 @@ export interface Market {
   size?: number;
   growthRate?: number;
   children?: Market[];
-  tickers?: string[];
+  tickers?: Set<string>;
 }

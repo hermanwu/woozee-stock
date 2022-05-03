@@ -30,6 +30,20 @@ export const coin: StockAnalysis = {
       level: RiskLevel.medium,
     },
   ],
+
+  business: {
+    markets: [MarketType.crypto],
+    users: [
+      { type: 'Retail users: We serve as the users’ primary crypto account' },
+      {
+        type: 'Institutions: We provide a platform solution for safely accessing and transacting in crypto markets to institutions',
+      },
+      {
+        type: 'Ecosystem partners: We provide developers, creators, merchants, and asset issuers a platform with technology and services that enables them to build applications that leverage crypto protocols, actively participate in crypto networks, and securely accept cryptocurrencies as payment.',
+      },
+    ],
+    growthStrategy: ['Coinbase grows as the cryptoeconomy grows.'],
+  },
   // Earnings Report:
   earningsReports: [
     {
@@ -177,7 +191,6 @@ export const coin: StockAnalysis = {
   logo: '',
   name: 'Coinbase',
   shortName: 'Coinbase',
-  competitors: ['hood'],
   description: [
     {
       content: 'Our mission is to increase economic freedom in the world.',
@@ -187,17 +200,4 @@ export const coin: StockAnalysis = {
   irAddress: 'https://investor.coinbase.com/home/default.aspx',
   secFilings:
     'https://investor.coinbase.com/financials/sec-filings/default.aspx',
-  business: {
-    markets: [MarketType.crypto],
-    users: [
-      { type: 'Retail users: We serve as the users’ primary crypto account' },
-      {
-        type: 'Institutions: We provide a platform solution for safely accessing and transacting in crypto markets to institutions',
-      },
-      {
-        type: 'Ecosystem partners: We provide developers, creators, merchants, and asset issuers a platform with technology and services that enables them to build applications that leverage crypto protocols, actively participate in crypto networks, and securely accept cryptocurrencies as payment.',
-      },
-    ],
-    growthStrategy: ['Coinbase grows as the cryptoeconomy grows.'],
-  },
 };

@@ -9,6 +9,26 @@
   </div>
 
   <div class="row">
+    <div *ngIf="!hideLabel">Gross Margin</div>
+
+    <div class="stats">
+      <span>
+        {{ stock?.quarterGrossProfitMargin | siUnit: 2 | percent | undefined }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="!hideLabel">Operating Margin</div>
+
+    <div class="stats">
+      <span>
+        {{ stock?.quarterOperatingMargin | siUnit: 2 | percent | undefined }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
     <div *ngIf="!hideLabel">Gross Profit Q/Q</div>
 
     <div class="stats">

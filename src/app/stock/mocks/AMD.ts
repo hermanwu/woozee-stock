@@ -2,7 +2,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const amd: StockAnalysis = {
-  marketCap: 172 * BILLION,
+  marketCap: 152 * BILLION,
 
   logo: '',
   name: 'AMD',

@@ -3,6 +3,13 @@ import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const news: News[] = [
   {
+    uuid: 'n23',
+    content: 'Mortgage rates just hit their highest level since 2009',
+    source: Source.cnbc,
+    date: new Date('2022-05-02'),
+    type: EventType.macro,
+  },
+  {
     uuid: 'n22',
     content:
       'Apple shares dip after company warns of a possible $8 billion hit from supply constraints',

@@ -3,7 +3,6 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const roku: StockAnalysis = {
   marketCap: 13 * BILLION,
-  competitors: ['docu'],
   logo: '',
   name: 'roku, INC.',
   description: [],

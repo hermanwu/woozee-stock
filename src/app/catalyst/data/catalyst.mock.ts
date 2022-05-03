@@ -24,6 +24,21 @@ export const catalysts: Catalyst[] = [
   //   ],
   // },
   {
+    uuid: 'c9',
+    content: 'Full Self-Driving release.',
+    tickers: ['tsla'],
+    level: CatalystLevel.moderate,
+    date: new Date('2022-04-30'),
+  },
+  {
+    uuid: 'c8',
+    content:
+      'Production and Deliveries started in Gigafactory Berlin and Texas',
+    tickers: ['tsla'],
+    level: CatalystLevel.strong,
+    date: new Date('2022-04-30'),
+  },
+  {
     uuid: 'c7',
     content:
       'AWS growth remains really strong: revenue +37% & operating income +57%.',

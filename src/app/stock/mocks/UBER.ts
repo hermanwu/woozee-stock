@@ -1,3 +1,4 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -7,6 +8,10 @@ export const uber: StockAnalysis = {
   name: 'Uber',
   description: [],
   ticker: 'uber',
+
+  business: {
+    markets: [MarketType.foodDelivery, MarketType.shared_economy],
+  },
 
   // Earnings Report:
   earningsReports: [

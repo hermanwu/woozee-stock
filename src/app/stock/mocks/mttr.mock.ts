@@ -1,14 +1,18 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const mttr: StockAnalysis = {
-  marketCap: 2 * BILLION,
+  marketCap: 1.55 * BILLION,
 
   logo: '',
   name: 'Matterport, Inc.',
   description: [],
   ticker: 'mttr',
   shortName: 'Matterport',
+  business: {
+    markets: [MarketType.vr],
+  },
 
   earningsReports: [
     {

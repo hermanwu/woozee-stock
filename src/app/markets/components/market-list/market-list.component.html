@@ -1,3 +1,5 @@
-<div *ngFor="let market of markets">
+<div *ngFor="let market of markets; last as isLast">
   <app-market-display [marketType]="market.type"></app-market-display>
+
+  <app-divider *ngIf="!isLast"></app-divider>
 </div>

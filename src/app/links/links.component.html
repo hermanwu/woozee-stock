@@ -2,26 +2,15 @@
 
 <div>
   <a target="_blank" href="{{ stock?.irAddress }}">
-    <mat-icon>open_in_new</mat-icon> Investor Relations
+    Investor Relations<mat-icon>open_in_new</mat-icon>
   </a>
-</div>
-
-<div *ngIf="stock?.secFilings">
-  <a target="_blank" href="{{ stock?.secFilings }}"> SEC Filings </a>
-</div>
-
-<div>
-  {{ earningReport?.year }} - {{ earningReport?.quarter }} Quarter Results:
-</div>
-
-<div *ngIf="annualReportLink; else quarterReport">
-  <a target="_blank" href="{{ annualReportLink }}"> Annual Report </a>
 </div>
 
 <ng-template #quarterReport>
   <div *ngIf="earningReport?.reportLink">
     <a target="_blank" href="{{ earningReport?.reportLink }}">
-      Earnings Report
+      {{ earningReport?.year }} - {{ earningReport?.quarter }} Earnings Report
+      <mat-icon>open_in_new</mat-icon>
     </a>
   </div>
 </ng-template>
@@ -29,14 +18,15 @@
 <div *ngIf="earningReport?.pressReleaseLink">
   <a target="_blank" href="{{ earningReport?.pressReleaseLink }}">
     Press Release
+    <mat-icon>open_in_new</mat-icon>
   </a>
 </div>
 
 <div *ngIf="earningReport?.slidesLink">
-  <a target="_blank" href="{{ earningReport?.slidesLink }}"> Slides </a>
+  <a target="_blank" href="{{ earningReport?.slidesLink }}">
+    Slides <mat-icon>open_in_new</mat-icon>
+  </a>
 </div>
-
-<div>Other links:</div>
 
 <div *ngIf="stock">
   <a
@@ -44,6 +34,7 @@
     href="{{ 'https://seekingalpha.com/symbol/' + stock.ticker }}"
   >
     Seeking Alpha
+    <mat-icon>open_in_new</mat-icon>
   </a>
 </div>
 
@@ -53,6 +44,7 @@
     href="{{ 'https://elite.finviz.com/quote.ashx?t=' + stock.ticker }}"
   >
     Finviz
+    <mat-icon>open_in_new</mat-icon>
   </a>
 </div>
 
@@ -63,6 +55,6 @@
       'https://www.google.com/finance/quote/' + stock.ticker + ':NYSE'
     }}"
   >
-    Google Stock
+    Google Stock <mat-icon>open_in_new</mat-icon>
   </a>
 </div>

@@ -4,7 +4,12 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const ttwo: StockAnalysis = {
   marketCap: 18.26 * BILLION,
-  risks: [],
+  business: {
+    markets: [MarketType.dataAnalytics],
+    overview: [
+      'Datadog is the monitoring and analytics platform for developers, IT operations teams and business users in the cloud age.',
+    ],
+  },
   earningsReports: [
     {
       year: 2021,
@@ -44,12 +49,4 @@ export const ttwo: StockAnalysis = {
   irAddress: 'https://investors.datadoghq.com/',
   secFilings:
     'https://investors.datadoghq.com/financial-information/sec-filings',
-
-  business: {
-    markets: [MarketType.dataAnalytics],
-    overview: [
-      'Datadog is the monitoring and analytics platform for developers, IT operations teams and business users in the cloud age.',
-    ],
-  },
-  competitors: ['pltr', 'snow'],
 };

@@ -27,7 +27,6 @@ export const shop: StockAnalysis = {
 
   // Demand
   painPoint: [''],
-  competitors: ['amzn', 'sq', 'etsy'],
   risks: [
     {
       type: FactType.business,

@@ -11,7 +11,6 @@ export const twtr: StockAnalysis = {
   name: 'Twitter, Inc.',
   description: [],
   ticker: 'twtr',
-  competitors: ['googl'],
   shortName: 'Twitter',
   irAddress: 'https://investor.twitterinc.com/home/default.aspx',
 

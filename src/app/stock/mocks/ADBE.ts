@@ -18,7 +18,32 @@ export const adbe: StockAnalysis = {
   name: 'Adobe',
   description: [],
   ticker: 'adbe',
-  competitors: ['crm', 'intu', 'team'],
+
+  business: {
+    markets: [MarketType.saas, MarketType.mediaTool, MarketType.documentTool],
+    revenue: [
+      {
+        type: MarketType.saas,
+      },
+      {
+        type: MarketType.mediaTool,
+        size: 3.11 * BILLION,
+        growthRate: 0.09,
+        children: [
+          {
+            type: MarketType.mediaTool,
+            size: 2.55 * BILLION,
+            growthRate: 0.07,
+          },
+          {
+            type: MarketType.documentTool,
+            size: 562 * MILLION,
+            growthRate: 0.17,
+          },
+        ],
+      },
+    ],
+  },
 
   catalysts: [
     {
@@ -47,31 +72,6 @@ export const adbe: StockAnalysis = {
       ],
     },
   ],
-  business: {
-    markets: [MarketType.saas, MarketType.mediaTool, MarketType.documentTool],
-    revenue: [
-      {
-        type: MarketType.saas,
-      },
-      {
-        type: MarketType.mediaTool,
-        size: 3.11 * BILLION,
-        growthRate: 0.09,
-        children: [
-          {
-            type: MarketType.mediaTool,
-            size: 2.55 * BILLION,
-            growthRate: 0.07,
-          },
-          {
-            type: MarketType.documentTool,
-            size: 562 * MILLION,
-            growthRate: 0.17,
-          },
-        ],
-      },
-    ],
-  },
 
   // Earnings Report:
   earningsReports: [

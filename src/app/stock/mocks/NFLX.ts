@@ -1,3 +1,4 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -9,9 +10,8 @@ export const nflx: StockAnalysis = {
   ticker: 'NFLX',
   shortName: 'Netflix',
   irAddress: 'https://ir.netflix.net/ir-overview/profile/default.aspx',
-  competitors: ['dis'],
   business: {
-    markets: [],
+    markets: [MarketType.streaming],
   },
   // Earnings Report:
   earningsReports: [

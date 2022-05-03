@@ -1,4 +1,5 @@
 import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -12,7 +13,6 @@ export const hood: StockAnalysis = {
   description: [],
   ticker: 'hood',
   irAddress: 'https://investors.robinhood.com/overview/default.aspx',
-  competitors: ['sq', 'coin'],
 
   catalysts: [
     {
@@ -94,6 +94,7 @@ export const hood: StockAnalysis = {
         type: UserType.retailInvestor,
       },
     ],
+    markets: [MarketType.fintech, MarketType.crypto],
   },
 
   // Earnings Report:

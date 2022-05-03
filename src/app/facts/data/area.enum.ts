@@ -5,7 +5,14 @@ export enum MarketType {
 
   digitalMedia = 'Digital Media',
 
+  consumerElectronics = 'Consumer Electronics',
+
+  Retails = 'Retails',
+
   crm = 'CRM',
+
+  foodDelivery = 'Food Delivery',
+  entertainment = 'Entertainment',
 
   fintech = 'Fintech',
   loan = 'Loan',

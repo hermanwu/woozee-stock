@@ -1,5 +1,4 @@
-import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { capMock } from './market-cap.mock';
@@ -14,53 +13,10 @@ export const aapl: StockAnalysis = {
   ticker: 'aapl',
   ceoQuote: [],
   irAddress: 'https://investor.apple.com/investor-relations/default.aspx',
-  risks: [
-    {
-      name: 'iPad sales decreases',
-      level: RiskLevel.low,
-      type: FactType.growth,
-      notes: [
-        {
-          content:
-            'iPad sales decreased by 14% year over year in the first quarter of 2021. Apple says that the drop in sales performance is due to supply constraints',
-        },
-        {
-          content:
-            'could be related to demand decreases (like Microsoft surface',
-        },
-        {
-          content: '~5% of total sale',
-        },
-      ],
-    },
-    {
-      name: 'Supply chain constraint',
-      level: RiskLevel.low,
-      type: FactType.business,
-      notes: [
-        {
-          content:
-            'Based on the earning result, apple was not affected severely',
-        },
-        {
-          content: 'Hard to predict',
-        },
-      ],
-    },
-    {
-      name: 'High valuation with slow down revenue growth',
-      level: RiskLevel.medium,
-      type: FactType.valuation,
-      notes: [
-        {
-          content: 'PEG ratio: 3.35',
-        },
-        {
-          content: 'Microsoft: 2.53, Google: 0.65, Amazon: 1.65',
-        },
-      ],
-    },
-  ],
+
+  business: {
+    markets: [MarketType.us, MarketType.consumerElectronics],
+  },
 
   // Earnings Report:
   earningsReports: [

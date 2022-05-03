@@ -11,7 +11,6 @@ export const docu: StockAnalysis = {
   ticker: 'docu',
   irAddress: 'https://investor.docusign.com/investors/home/default.aspx',
   shortName: 'DocuSign',
-  competitors: ['googl', 'crm', 'intu'],
 
   risks: [
     {

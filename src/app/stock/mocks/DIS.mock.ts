@@ -1,3 +1,4 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -10,6 +11,9 @@ export const dis: StockAnalysis = {
   ticker: 'dis',
   ceoQuote: [],
   advantage: [],
+  business: {
+    markets: [MarketType.streaming, MarketType.entertainment],
+  },
   // POTENTIALS:
 
   // Demand:

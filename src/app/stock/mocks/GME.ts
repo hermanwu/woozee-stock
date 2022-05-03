@@ -127,7 +127,6 @@ export const gme: StockAnalysis = {
       operatingIncome: -63.0 * MILLION,
     },
   ],
-  competitors: ['amzn', 'etsy', 'baba'],
 
   business: {
     markets: [MarketType.crypto, MarketType.ecommerce],

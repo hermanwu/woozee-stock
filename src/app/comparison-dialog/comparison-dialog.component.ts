@@ -17,7 +17,7 @@ export class ComparisonDialogComponent {
   favorites = foreverOwnStocks;
   factType = FactType;
   selectedFact: FactType;
-  selectedMarketType: string | MarketType = 'Default';
+  selectedMarketType: string | MarketType = 'Favorites';
   factTypeArray = Object.values(FactType);
   allStocks = Object.values(stocksMap);
 
@@ -30,12 +30,10 @@ export class ComparisonDialogComponent {
   ) {
     this.selectedFact = dialogData.factType;
     this.stocks.push(dialogData.stock);
-    console.log(this.stocks);
 
-    this.setDefaultCompetitors(dialogData.stock);
-    console.log(this.stocks);
+    this.setFavoriteStocks();
 
-    this.competitorTypeArray.push('Default');
+    this.competitorTypeArray.push('Favorites');
 
     if (dialogData.stock?.business?.markets) {
       const markets = dialogData.stock.business.markets;
@@ -57,8 +55,8 @@ export class ComparisonDialogComponent {
       | MarketType
       | string;
 
-    if (this.selectedMarketType === 'Default') {
-      return this.setDefaultCompetitors(this.dialogData.stock);
+    if (this.selectedMarketType === 'Favorites') {
+      return this.setFavoriteStocks();
     }
 
     this.selectedMarketType = (event.target as HTMLSelectElement)
@@ -92,12 +90,12 @@ export class ComparisonDialogComponent {
    * Populate competitors information to stocks array.
    * @param stock
    */
-  setDefaultCompetitors(stock) {
+  setFavoriteStocks() {
     this.stocks = [this.dialogData.stock];
-    if (stock.competitors) {
-      for (let ticker of stock.competitors) {
-        this.stocks.push(stocksMap[ticker]);
-      }
-    }
+    this.stocks.push(
+      ...this.favorites.filter(
+        (stock) => this.dialogData.stock.ticker !== stock.ticker
+      )
+    );
   }
 }

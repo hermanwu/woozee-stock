@@ -11,8 +11,6 @@ export const etsy: StockAnalysis = {
   irAddress: 'https://investors.etsy.com/home/default.aspx',
   marketCap: 15.725 * BILLION,
 
-  competitors: ['amzn'],
-
   // Earnings Report:
   earningsReports: [
     {

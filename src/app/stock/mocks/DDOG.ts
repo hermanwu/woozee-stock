@@ -4,6 +4,12 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const ddog: StockAnalysis = {
   marketCap: 45 * BILLION,
+  business: {
+    markets: [MarketType.dataAnalytics],
+    overview: [
+      'Datadog is the monitoring and analytics platform for developers, IT operations teams and business users in the cloud age.',
+    ],
+  },
   risks: [
     {
       name: 'Market size might be too small',
@@ -146,12 +152,4 @@ export const ddog: StockAnalysis = {
   irAddress: 'https://investors.datadoghq.com/',
   secFilings:
     'https://investors.datadoghq.com/financial-information/sec-filings',
-
-  business: {
-    markets: [MarketType.dataAnalytics],
-    overview: [
-      'Datadog is the monitoring and analytics platform for developers, IT operations teams and business users in the cloud age.',
-    ],
-  },
-  competitors: ['pltr', 'snow'],
 };

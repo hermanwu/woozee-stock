@@ -8,8 +8,6 @@ export const ftnt: StockAnalysis = {
   ticker: 'ftnt',
   marketCap: 44.64 * BILLION,
 
-  competitors: [],
-
   // Earnings Report:
   earningsReports: [
     {

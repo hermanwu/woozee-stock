@@ -117,7 +117,6 @@ export class SubjectiveDataService {
 
     for (let opinion of opinions) {
       if (opinion?.tickers?.length > 0) {
-        console.log(opinion.tickers);
         for (let ticker of opinion.tickers) {
           set.add(ticker);
         }

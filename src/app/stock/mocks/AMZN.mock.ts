@@ -15,8 +15,26 @@ export const amzn: StockAnalysis = {
   logo: 'http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
   marketCap: 1.47 * 1e12,
-  competitors: ['tgt'],
   shortName: 'Amazon',
+
+  business: {
+    markets: [
+      MarketType.ecommerce,
+      MarketType.cloudService,
+      MarketType.adTech,
+      MarketType.Retails,
+    ],
+
+    competitiveAdvantages: [
+      { type: StrategyType.efficientScale },
+      { type: StrategyType.userData },
+    ],
+
+    growthStrategy: [
+      'Continue grow AWS',
+      'Continue invest in entertainment industry',
+    ],
+  },
 
   risks: [
     {
@@ -303,18 +321,4 @@ export const amzn: StockAnalysis = {
   ],
 
   news: [news['4']],
-
-  business: {
-    markets: [MarketType.ecommerce, MarketType.cloudService, MarketType.adTech],
-
-    competitiveAdvantages: [
-      { type: StrategyType.efficientScale },
-      { type: StrategyType.userData },
-    ],
-
-    growthStrategy: [
-      'Continue grow AWS',
-      'Continue invest in entertainment industry',
-    ],
-  },
 };

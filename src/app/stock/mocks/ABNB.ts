@@ -27,7 +27,6 @@ export const abnb: StockAnalysis = {
   ],
   ticker: 'abnb',
   irAddress: 'https://airbnb2020ipo.q4web.com/home/default.aspx',
-  competitors: ['uber'],
   business: {
     markets: [MarketType.shared_economy, MarketType.travel],
     competitiveAdvantages: [

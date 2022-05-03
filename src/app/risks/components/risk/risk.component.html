@@ -5,18 +5,11 @@
 
   {{ risk.name || risk.content }}
 
-  <span class="action-buttons">
-    <app-date-display
-      class="gray-text"
-      [date]="risk.updatedTime"
-    ></app-date-display>
-
-    <span *ngIf="!showCategory">
-      <button mat-icon-button type="button" (click)="expanded = !expanded">
-        <mat-icon *ngIf="expanded">expand_less</mat-icon>
-        <mat-icon *ngIf="!expanded">expand_more</mat-icon>
-      </button>
-    </span>
+  <span *ngIf="!showCategory" class="align-right">
+    <button mat-icon-button type="button" (click)="expanded = !expanded">
+      <mat-icon *ngIf="expanded">expand_less</mat-icon>
+      <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+    </button>
   </span>
 </div>
 
@@ -49,7 +42,7 @@
     </li>
   </ul>
 
-  <div>
+  <div class="flex">
     <button type="button" mat-icon-button>
       <mat-icon>trending_up</mat-icon>
     </button>
@@ -65,6 +58,11 @@
     <button mat-icon-button type="button" (click)="openDialog()">
       <mat-icon>favorite</mat-icon>
     </button>
+
+    <app-date-display
+      class="gray-text align-right"
+      [date]="risk.updatedTime"
+    ></app-date-display>
   </div>
 
   <!-- <div>

@@ -7,4 +7,5 @@ export interface Market {
   growthRate?: number;
   children?: Market[];
   tickers?: Set<string>;
+  riskUuids?: string[];
 }

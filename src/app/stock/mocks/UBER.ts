@@ -1,6 +1,14 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
+import { Risk } from 'src/app/risks/models/risk.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
+
+export const uberRisks: Risk[] = [
+  {
+    uuid: 'risk-uber-1',
+    content: 'Delivery gross booking only increase 12% Y/Y',
+  },
+];
 
 export const uber: StockAnalysis = {
   marketCap: 59.38 * BILLION,
@@ -8,6 +16,8 @@ export const uber: StockAnalysis = {
   name: 'Uber',
   description: [],
   ticker: 'uber',
+  shortName: 'Uber',
+  irAddress: 'https://investor.uber.com/home/default.aspx',
 
   business: {
     markets: [MarketType.foodDelivery, MarketType.shared_economy],
@@ -15,6 +25,15 @@ export const uber: StockAnalysis = {
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 6854 * MILLION,
+      costOfRevenue: 4026 * MILLION,
+      totalOperatingExpense: 7336 * MILLION,
+      operatingIncome: -482 * MILLION,
+      netIncome: -5918 * MILLION,
+    },
     {
       year: 2021,
       quarter: 4,

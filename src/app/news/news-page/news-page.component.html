@@ -1,14 +1,38 @@
 <app-title-menu>
-  <div title>Trends</div>
+  <div title>Trending News</div>
 </app-title-menu>
 
 <app-card>
-  <ng-container *ngFor="let item of news">
+  <ng-container *ngFor="let item of news; last as isLast">
     <app-news-display [news]="item"></app-news-display>
+    <app-divider *ngIf="!isLast"></app-divider>
   </ng-container>
 
-  <button type="button" mat-button disabled>
+  <!-- <button type="button" mat-button disabled>
     Load More
     <mat-icon>more_horiz</mat-icon>
-  </button>
+  </button> -->
+</app-card>
+
+<app-title-menu>
+  <div title>Trending Risks</div>
+</app-title-menu>
+
+<app-card>
+  <ng-container *ngFor="let item of news; last as isLast">
+    <app-news-display [news]="item"></app-news-display>
+    <app-divider *ngIf="!isLast"></app-divider>
+  </ng-container>
+</app-card>
+
+<app-title-menu>
+  <div title>Trending Catalysts</div>
+</app-title-menu>
+
+<app-card>
+  <ng-container *ngFor="let item of news; last as isLast">
+    <app-news-display [news]="item"></app-news-display>
+    <app-divider *ngIf="!isLast"></app-divider>
+  </ng-container>
+  >
 </app-card>

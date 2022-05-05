@@ -1,6 +1,10 @@
 <app-badge>
-  <span *ngIf="environment.production; else dev">{{ ticker }}</span>
+  <span *ngIf="environment.production; else dev">{{
+    ticker.toUpperCase()
+  }}</span>
   <ng-template #dev>
-    <a href [routerLink]="['/woozee/stocks', ticker]">{{ ticker }}</a>
+    <a href [routerLink]="['/woozee/stocks', ticker]">{{
+      ticker.toUpperCase()
+    }}</a>
   </ng-template>
 </app-badge>

@@ -8,4 +8,5 @@ export enum UnicodeCharacters {
   NonBreakingSpace = '\u00A0',
   VerticalBar = '\u007C',
   NextLine = '\u2E3B',
+  Multiply = '\u00D7',
 }

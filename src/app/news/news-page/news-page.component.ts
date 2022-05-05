@@ -11,7 +11,7 @@ export class NewsPageComponent implements OnInit {
   news: NewsWithDetails[];
 
   constructor(private risksDataService: SubjectiveDataService) {
-    this.news = risksDataService.getNewsDetails().slice(0, 10);
+    this.news = risksDataService.getNewsDetails().slice(0, 3);
   }
 
   ngOnInit(): void {}

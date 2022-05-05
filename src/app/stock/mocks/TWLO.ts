@@ -22,6 +22,10 @@ export const twlo: StockAnalysis = {
   // Earnings Report:
   earningsReports: [
     {
+      year: 2022,
+      quarter: 1,
+    },
+    {
       year: 2021,
       quarter: 4,
       totalRevenue: 842 * MILLION,

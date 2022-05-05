@@ -1,7 +1,7 @@
 import { Source } from 'src/app/stock/models/news-source.enum';
 import { EventType, News } from 'src/app/stock/models/news.model';
 
-export const news: News[] = [
+export const allNews: News[] = [
   {
     uuid: 'n23',
     content: 'Mortgage rates just hit their highest level since 2009',

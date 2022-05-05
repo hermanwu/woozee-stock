@@ -37,26 +37,10 @@
   </div>
 
   <div class="grid grid-dynamic">
-    <div
-      class="padding-1rem"
-      *ngIf="stockAnalysis?.business?.markets?.length > 0"
-    >
-      <app-fact [factType]="factType.business">
-        <app-business-overview
-          [business]="stockAnalysis.business"
-        ></app-business-overview>
-      </app-fact>
-    </div>
-
     <div class="padding-1rem" *ngIf="stockAnalysis?.risks?.length > 0">
       <app-card>
         <app-title-menu>
-          <div title>
-            Risks
-            <!-- <button mat-icon-button (click)="openRiskInfoDialog()">
-            <mat-icon> info </mat-icon>
-          </button> -->
-          </div>
+          <div title>Risks</div>
 
           <div buttons>
             <button
@@ -135,6 +119,17 @@
           [catalysts]="stockAnalysis?.catalysts"
         ></app-catalyst-list>
       </app-card>
+    </div>
+
+    <div
+      class="padding-1rem"
+      *ngIf="stockAnalysis?.business?.markets?.length > 0"
+    >
+      <app-fact [factType]="factType.business" [stock]="stockAnalysis">
+        <app-business-overview
+          [business]="stockAnalysis.business"
+        ></app-business-overview>
+      </app-fact>
     </div>
 
     <div class="padding-1rem">

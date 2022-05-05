@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ComparisonDialogComponent } from 'src/app/comparison-dialog/comparison-dialog.component';
+import { RiskCatalystDialogComponent } from 'src/app/risk-catalyst-dialog/risk-catalyst-dialog.component';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
 
@@ -22,6 +23,19 @@ export class FactComponent implements OnInit {
   onCompareClick() {
     this.dialogService.open<ComparisonDialogComponent>(
       ComparisonDialogComponent,
+      {
+        data: {
+          factType: this.factType,
+          stock: this.stock,
+        },
+        panelClass: 'medium-modal-panel',
+      }
+    );
+  }
+
+  onRiskCatalystClick() {
+    this.dialogService.open<RiskCatalystDialogComponent>(
+      RiskCatalystDialogComponent,
       {
         data: {
           factType: this.factType,

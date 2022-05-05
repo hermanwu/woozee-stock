@@ -8,6 +8,7 @@ export const dash: StockAnalysis = {
   name: 'Doordash',
   description: [],
   ticker: 'dash',
+  shortName: 'DoorDash',
 
   business: {
     markets: [MarketType.foodDelivery],

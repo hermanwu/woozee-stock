@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { risks } from '../../data/global-risk.const';
+import { allRisks } from '../../data/global-risk.const';
 import { Risk } from '../../models/risk.model';
 
 @Component({
@@ -8,7 +8,7 @@ import { Risk } from '../../models/risk.model';
   styleUrls: ['./risk-list-page.component.scss'],
 })
 export class RiskListPageComponent implements OnInit {
-  risks = risks;
+  risks = allRisks;
 
   tagRisksMap: Map<string, Risk[]>;
 

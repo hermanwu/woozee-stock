@@ -11,6 +11,7 @@ import { StockStats } from './stock-stats.model';
 import { Trend } from './trend.enum';
 
 export interface StockAnalysis {
+  uuid?: string;
   logo?: string;
   name?: any;
   shortName?: string;

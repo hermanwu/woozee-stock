@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
 import { catalysts } from 'src/app/catalyst/data/catalyst.mock';
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { news } from 'src/app/media/news/news.const';
+import { allNews } from 'src/app/media/news/news.const';
 import { markets } from 'src/app/shared/data/mocks/markets/markets.const';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { Market } from 'src/app/stock/models/market.models';
 import { NewsWithDetails } from 'src/app/stock/models/news.model';
-import { risks } from '../data/global-risk.const';
+import { allRisks } from '../data/global-risk.const';
 import { Risk } from '../models/risk.model';
-
-export class Tag {}
 
 @Injectable({
   providedIn: 'root',
@@ -26,8 +24,8 @@ export class SubjectiveDataService {
   marketMap: Map<MarketType, Market> = new Map();
 
   constructor() {
-    this.risks = cloneDeep(risks);
-    this.newsWithDetails = cloneDeep(news) as NewsWithDetails[];
+    this.risks = cloneDeep(allRisks);
+    this.newsWithDetails = cloneDeep(allNews) as NewsWithDetails[];
     this.catalysts = cloneDeep(catalysts);
     this.markets = cloneDeep(markets);
 
@@ -61,6 +59,12 @@ export class SubjectiveDataService {
 
   getNewsDetails(): NewsWithDetails[] {
     return this.newsWithDetails;
+  }
+
+  getRisksByUuids(uuids: string[]): Risk[] {
+    if (uuids && uuids.length > 0) {
+      return this.risks.filter((risk) => uuids.indexOf(risk.uuid) >= 0);
+    }
   }
 
   getRisksByTicker(ticker: string): Risk[] {

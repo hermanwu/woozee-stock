@@ -6,7 +6,7 @@ import { PredicationAction } from '../models/predication.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const crm: StockAnalysis = {
-  marketCap: 212 * BILLION,
+  marketCap: 170 * BILLION,
   predications: [
     {
       start: new Date('2022-3-1'),

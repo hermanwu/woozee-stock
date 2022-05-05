@@ -3,13 +3,14 @@ import { MarketType } from 'src/app/facts/data/area.enum';
 import { FactType } from '../models/fact-type.enum';
 import { RiskLevel } from '../models/risk-level.model';
 import { Risk } from '../models/risk.model';
+import { marketRisks } from './markets.risks';
 import { covid } from './risks/covid.model';
 import { fedRate } from './risks/fed-rate.model';
 import { geopolitics } from './risks/geopolitics.model';
 import { inflation } from './risks/inflation.model';
 import { laborShortage } from './risks/labor-shortage.model';
 
-export const risks: Risk[] = [
+export const allRisks: Risk[] = [
   // {
   //   uuid: 'r12',
   //   markets: [MarketType.adTech],
@@ -17,10 +18,7 @@ export const risks: Risk[] = [
   //   type: FactType.business,
   //   updatedTime: new Date('2022-04-26'),
   // },
-  {
-    uuid: 'r24',
-    content: '',
-  },
+  ...marketRisks,
   {
     uuid: 'r23',
     content:
@@ -132,7 +130,7 @@ export const risks: Risk[] = [
     uuid: 'r11',
     content:
       'COVID lock down causes economy slow down in China and global supply chain issue Globally',
-    markets: [MarketType.global, MarketType.china],
+    markets: [MarketType.global],
     level: RiskLevel.high,
     type: FactType.business,
     updatedTime: new Date('2022-04-26'),
@@ -181,13 +179,6 @@ export const risks: Risk[] = [
     tickers: ['NFLX'],
     type: FactType.profit,
     updatedTime: new Date('2022-04-19'),
-  },
-  {
-    uuid: 'risk-6',
-    content: "Twitter's future is unknown under current acquisition drama",
-    level: RiskLevel.low,
-    tickers: ['TWTR'],
-    type: FactType.event,
   },
   fedRate,
   geopolitics,

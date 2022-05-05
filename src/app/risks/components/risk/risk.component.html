@@ -5,6 +5,8 @@
 
   {{ risk.name || risk.content }}
 
+  <app-fact-type-display [factType]="risk.type"> </app-fact-type-display>
+
   <span *ngIf="!showCategory" class="align-right">
     <button mat-icon-button type="button" (click)="expanded = !expanded">
       <mat-icon *ngIf="expanded">expand_less</mat-icon>
@@ -23,9 +25,6 @@
   <span *ngFor="let item of risk?.markets">
     <app-market-display [marketType]="item"></app-market-display>
   </span>
-
-  <app-fact-type-display class="action-buttons" [factType]="risk.type">
-  </app-fact-type-display>
 
   <span>
     <button mat-icon-button type="button" (click)="expanded = !expanded">

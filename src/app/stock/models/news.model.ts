@@ -1,5 +1,6 @@
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Note } from 'src/app/shared/data/note.interface';
+import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { Source } from '../models/news-source.enum';
 
 export interface News {
@@ -25,5 +26,6 @@ export enum EventType {
 }
 
 export interface NewsWithDetails extends News {
-  risks: Risk[];
+  risks?: Risk[];
+  catalysts?: Catalyst[];
 }

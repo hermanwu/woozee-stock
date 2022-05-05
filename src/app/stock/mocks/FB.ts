@@ -1,5 +1,5 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { news } from 'src/app/media/news/news.const';
+import { allNews } from 'src/app/media/news/news.const';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -54,7 +54,7 @@ export const fb: StockAnalysis = {
     {
       name: 'Future Growth',
       level: RiskLevel.medium,
-      notes: [news[2]],
+      notes: [allNews[2]],
     },
     {
       name: 'Management',
@@ -102,7 +102,7 @@ export const fb: StockAnalysis = {
     {
       name: 'Competitors',
       level: RiskLevel.medium,
-      notes: [news[3]],
+      notes: [allNews[3]],
     },
     {
       name: 'Technical Chart',

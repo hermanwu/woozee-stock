@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UnicodeCharacters } from 'src/app/shared/data/enum/unicode-characters.enum';
 import { Market } from 'src/app/stock/models/market.models';
 
 @Component({
@@ -7,6 +8,8 @@ import { Market } from 'src/app/stock/models/market.models';
   styleUrls: ['./market-list.component.scss'],
 })
 export class MarketListComponent implements OnInit {
+  readonly multiplySign = UnicodeCharacters.Multiply;
+
   @Input() markets: Market[];
 
   constructor() {}

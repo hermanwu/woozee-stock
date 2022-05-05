@@ -5,6 +5,16 @@ import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const twtrRisks = [
+  {
+    uuid: 'risk-6',
+    content: "Twitter's future is unknown under current acquisition drama",
+    level: RiskLevel.low,
+    tickers: ['TWTR'],
+    type: FactType.event,
+  },
+];
+
 export const twtr: StockAnalysis = {
   marketCap: 31.47 * BILLION,
   logo: '',

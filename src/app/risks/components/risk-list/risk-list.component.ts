@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { Risk } from '../../models/risk.model';
 
 @Component({
@@ -9,10 +10,14 @@ import { Risk } from '../../models/risk.model';
 export class RiskListComponent implements OnInit, OnChanges {
   @Input() showCategory: boolean;
   @Input() risks: Risk[];
+  @Input() market?: MarketType;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  ngOnChanges(): void {}
+  ngOnChanges(): void {
+    if (this.market) {
+    }
+  }
 }

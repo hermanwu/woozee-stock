@@ -1,8 +1,4 @@
 <ng-container [ngSwitch]="factType">
-  <ng-container *ngSwitchCase="factTypeEnum.business" i18n>
-    <span class="badge">Business</span>
-  </ng-container>
-
   <ng-container *ngSwitchCase="factTypeEnum.growth" i18n>
     <span class="badge">Growth</span>
   </ng-container>
@@ -21,9 +17,5 @@
 
   <ng-container *ngSwitchCase="factTypeEnum.event" i18n>
     <span class="badge">Event</span>
-  </ng-container>
-
-  <ng-container *ngSwitchDefault i18n>
-    <span class="badge">Other</span>
   </ng-container>
 </ng-container>

@@ -40,8 +40,11 @@ export const abnb: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      totalRevenue: 1445 * 1e6,
-      isForecast: true,
+      totalRevenue: 1508.937 * MILLION,
+      costOfRevenue: 362.623 * MILLION,
+      totalOperatingExpense: 1514.068 * MILLION,
+      operatingIncome: -5.131 * MILLION,
+      netIncome: -18.792 * MILLION,
     },
     {
       year: 2021,

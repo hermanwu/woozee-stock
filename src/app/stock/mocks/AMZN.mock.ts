@@ -1,7 +1,7 @@
 import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { MarketType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
-import { news } from 'src/app/media/news/news.const';
+import { allNews } from 'src/app/media/news/news.const';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -320,5 +320,5 @@ export const amzn: StockAnalysis = {
     {},
   ],
 
-  news: [news['4']],
+  news: [allNews['4']],
 };

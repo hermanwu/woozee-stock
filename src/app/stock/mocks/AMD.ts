@@ -1,5 +1,10 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
+
+export const amdRisks = [];
+
+export const amdCatalysts = [];
 
 export const amd: StockAnalysis = {
   marketCap: 152 * BILLION,
@@ -8,6 +13,10 @@ export const amd: StockAnalysis = {
   name: 'AMD',
   description: [],
   ticker: 'amd',
+
+  business: {
+    markets: [MarketType.semi, MarketType.datacenter],
+  },
 
   // Earnings Report:
   earningsReports: [

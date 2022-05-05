@@ -2,10 +2,11 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const rtx: StockAnalysis = {
   logo: '',
-  name: { English: 'Raytheon Technologies Corp' },
+  name: 'Raytheon Technologies Corp',
   description: [],
   ticker: 'RTX',
   irAddress: 'http://investors.rtx.com/',
+  shortName: 'Raytheon',
 
   // Earnings Report:
   earnings: {

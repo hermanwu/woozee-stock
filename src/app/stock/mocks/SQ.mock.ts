@@ -1,18 +1,90 @@
+import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
+import { MarketType } from 'src/app/facts/data/area.enum';
+import { StrategyType } from 'src/app/facts/data/stratgies.enum';
+import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Risk } from 'src/app/risks/models/risk.model';
+import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const blockRisks: Risk[] = [
+  {
+    uuid: 'sqr-2',
+    content:
+      'Operating expenses increases faster than growth profit. (+70% vs +34%)',
+  },
+  {
+    uuid: 'sqr-1',
+    content: '2022 Q1 gross profit only grow 25% excluding Afterpay',
+  },
+
+  {
+    uuid: 'sqr-3',
+    name: 'Network effect is relatively weak since it is mainly a tool.',
+  },
+
+  {
+    uuid: 'sqr-4',
+    name: 'Block has many competitors among all of its products',
+  },
+  {
+    uuid: 'sqr-5',
+    name: 'Small sellers (<$125K Annualized GPV) decreases from 16.1B to 13.8, which means less new customers are joining',
+    level: RiskLevel.high,
+  },
+];
+
+export const blockCatalysts: Catalyst[] = [
+  {
+    uuid: 'sqc-1',
+    name: 'Gross profit in markets outside the U.S. is doubled to 78M (from 39M), which is 12% (from 8%) of total gross profit',
+  },
+  {
+    uuid: 'sqc-2',
+    name: 'Excluding bitcoin and Afterpay, revenue was $2.10 billion, up 36% year over year and up 40% on a two-year CAGR basis.',
+  },
+  {
+    uuid: 'sqc-3',
+    level: CatalystLevel.strong,
+    name: 'Block is led by visionary founder, Jack Dorsey, who is intent on making strategic long-term investments.',
+  },
+  {
+    uuid: 'sqc-4',
+    level: CatalystLevel.strong,
+    name: 'A bank charter that can perform all banking services such as loans',
+  },
+];
+
 export const sq: StockAnalysis = {
   marketCap: 71 * BILLION,
+  business: {
+    markets: [MarketType.fintech],
+    competitiveAdvantages: [{ type: StrategyType.ecoSystem }],
+  },
+
+  riskUuids: blockRisks.map((risk) => risk.uuid),
+  catalystUuids: blockCatalysts.map((c) => c.uuid),
 
   logo: 'https://lh3.googleusercontent.com/pw/ACtC-3dVUwpnglNTwsN6ZkweBVX9VgZhM9aJL6oQ0Cn9Ofk62gCDq1R8DwwkrzUb-HBxX9B3FA_C5ZqbfYT9UIKdPFLqpxeBLj4Dis4Z1DZ6oakHj-YOZqNdUclAkdW9Q8XkXOoz-nkQfOYeEFRK0eatm9bc=w614-h548-no?authuser=3',
-  name: 'Square, Inc.',
+  name: 'Block, Inc.',
   ticker: 'sq',
-  shortName: 'Square',
+  shortName: 'Block',
   propertiesPageEnabled: true,
   irAddress: 'https://investors.block.xyz/overview/default.aspx',
   secFilings: 'https://investors.block.xyz/financials/sec-filings/default.aspx',
+
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 3960.645 * MILLION,
+      costOfRevenue: 2665.685 * MILLION,
+      grossProfit: 1294.96 * MILLION,
+      totalOperatingExpense: 1521.749 * MILLION,
+      operatingIncome: -226.789 * MILLION,
+      netIncome: -207.363 * MILLION,
+    },
     {
       pressReleaseLink:
         'https://s29.q4cdn.com/628966176/files/doc_financials/2021/q4/4Q21-Shareholder-Letter_Block.pdf',
@@ -203,14 +275,6 @@ export const sq: StockAnalysis = {
     'Startup / Tech DNA',
     'Visionary founder and CEO',
     'Growing network effect',
-  ],
-  risks: [
-    {
-      name: 'Low engagement or weak network effect',
-    },
-    {
-      name: 'competitive market',
-    },
   ],
 
   trends: ['COVID', 'Cashless'],

@@ -3,6 +3,15 @@ import { rmbToDollar } from 'src/app/shared/currency';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const pddRisks = [
+  {
+    name: 'strong competitors',
+  },
+  {
+    name: 'low user loyalty',
+  },
+];
+
 export const pdd: StockAnalysis = {
   marketCap: 54.96 * BILLION,
   earningsReports: [
@@ -102,14 +111,7 @@ export const pdd: StockAnalysis = {
     'Technology driven',
     'Strategic investors',
   ],
-  risks: [
-    {
-      name: 'strong competitors',
-    },
-    {
-      name: 'low user loyalty',
-    },
-  ],
+
   trends: ['COVID', 'E-commerce'],
   thoughts: {
     hermanScore: 1,

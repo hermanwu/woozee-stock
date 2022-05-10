@@ -6,6 +6,80 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { UserType } from '../components/business-overview/business.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const hoodCatalysts = [
+  {
+    name: 'Meme stocks (i.e. GME) trading becomes popular among retail investors.',
+    type: FactType.growth,
+    level: CatalystLevel.moderate,
+    notes: [],
+    date: new Date('2022-04-18'),
+  },
+  {
+    name: 'Crypto trading market continues to grow',
+    type: FactType.growth,
+    level: CatalystLevel.moderate,
+    date: new Date('2022-04-18'),
+    notes: [
+      {
+        content: 'Cryptocurrencies transaction revenue increased 304% Q/Q',
+      },
+    ],
+  },
+];
+
+export const hoodRisks = [
+  {
+    name: 'Revenues only increased 14% this quarter',
+    level: RiskLevel.medium,
+    type: FactType.growth,
+    notes: [
+      {
+        content:
+          'This is lower than mega tech firm like Google (32%) or Microsoft (20%)',
+      },
+      {
+        content: 'tickers transaction revenue for the quarter decreased 35%',
+      },
+    ],
+  },
+  {
+    name: 'User growth is stagnating',
+    level: RiskLevel.high,
+    type: FactType.growth,
+    notes: [
+      {
+        content:
+          'Nearly no user growth in the past three quarters. Last three quarters: 22.5M, 22.4M, 22.7M',
+      },
+    ],
+  },
+  {
+    name: 'Revenue is declining in next quarter forecast',
+    level: RiskLevel.high,
+    type: FactType.growth,
+    notes: [
+      {
+        content: 'Next quarter revenue decreases 35% in the guidance',
+      },
+    ],
+  },
+  {
+    name: 'Company is losing money much faster than it can earn.',
+    type: FactType.profit,
+    level: RiskLevel.high,
+    notes: [
+      {
+        content:
+          'Operating expense in the quarter is 226% of the gross profit.',
+      },
+      {
+        content:
+          'Yearly operating expense is double the amount of gross profit.',
+      },
+    ],
+  },
+];
+
 export const hood: StockAnalysis = {
   marketCap: 11.72 * BILLION,
   logo: '',
@@ -13,80 +87,6 @@ export const hood: StockAnalysis = {
   description: [],
   ticker: 'hood',
   irAddress: 'https://investors.robinhood.com/overview/default.aspx',
-
-  catalysts: [
-    {
-      name: 'Meme stocks (i.e. GME) trading becomes popular among retail investors.',
-      type: FactType.growth,
-      level: CatalystLevel.moderate,
-      notes: [],
-      date: new Date('2022-04-18'),
-    },
-    {
-      name: 'Crypto trading market continues to grow',
-      type: FactType.growth,
-      level: CatalystLevel.moderate,
-      date: new Date('2022-04-18'),
-      notes: [
-        {
-          content: 'Cryptocurrencies transaction revenue increased 304% Q/Q',
-        },
-      ],
-    },
-  ],
-
-  risks: [
-    {
-      name: 'Revenues only increased 14% this quarter',
-      level: RiskLevel.medium,
-      type: FactType.growth,
-      notes: [
-        {
-          content:
-            'This is lower than mega tech firm like Google (32%) or Microsoft (20%)',
-        },
-        {
-          content: 'tickers transaction revenue for the quarter decreased 35%',
-        },
-      ],
-    },
-    {
-      name: 'User growth is stagnating',
-      level: RiskLevel.high,
-      type: FactType.growth,
-      notes: [
-        {
-          content:
-            'Nearly no user growth in the past three quarters. Last three quarters: 22.5M, 22.4M, 22.7M',
-        },
-      ],
-    },
-    {
-      name: 'Revenue is declining in next quarter forecast',
-      level: RiskLevel.high,
-      type: FactType.growth,
-      notes: [
-        {
-          content: 'Next quarter revenue decreases 35% in the guidance',
-        },
-      ],
-    },
-    {
-      name: 'Company is losing money much faster than it can earn.',
-      type: FactType.profit,
-      level: RiskLevel.high,
-      notes: [
-        {
-          content:
-            'Operating expense in the quarter is 226% of the gross profit.',
-        },
-        {
-          content:
-            'Yearly operating expense is double the amount of gross profit.',
-        },
-      ],
-    },
-  ],
 
   business: {
     users: [

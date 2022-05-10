@@ -10,5 +10,5 @@ export interface Catalyst extends Note {
   type?: FactType;
   tickers?: string[];
   markets?: MarketType[];
-  date: Date;
+  date?: Date;
 }

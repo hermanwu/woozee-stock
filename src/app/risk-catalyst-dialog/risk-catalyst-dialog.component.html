@@ -1,10 +1,32 @@
-<app-title-menu>
-  <div title>Market Risks</div>
-</app-title-menu>
+<ng-container [ngSwitch]="factType">
+  <ng-container *ngSwitchCase="factTypeEnum.profit" i18n>
+    <app-title-menu>
+      <div title>Profitability Risks</div>
+    </app-title-menu>
+    <app-risk-list [risks]="risks"></app-risk-list>
+  </ng-container>
 
-<div *ngFor="let market of markets">
-  <app-market-display [marketType]="market.type"></app-market-display>
+  <ng-container *ngSwitchCase="factTypeEnum.growth" i18n>
+    <app-title-menu>
+      <div title>Growth Risks</div>
+    </app-title-menu>
+    <app-risk-list [risks]="risks"></app-risk-list>
+  </ng-container>
 
-  <app-risk-list [risks]="market.risks"></app-risk-list>
-  <app-catalyst-list [catalysts]="market.catalysts"></app-catalyst-list>
-</div>
+  <ng-container *ngSwitchCase="factTypeEnum.business" i18n>
+    <app-title-menu>
+      <div title>Market Risks</div>
+    </app-title-menu>
+
+    <div *ngFor="let market of markets">
+      <app-market-display [marketType]="market.type"></app-market-display>
+
+      <app-risk-list [risks]="market.risks"></app-risk-list>
+      <app-catalyst-list [catalysts]="market.catalysts"></app-catalyst-list>
+    </div>
+  </ng-container>
+</ng-container>
+
+<mat-dialog-actions align="end">
+  <button mat-stroked-button type="button" mat-dialog-close i18n>Close</button>
+</mat-dialog-actions>

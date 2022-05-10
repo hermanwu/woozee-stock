@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SubjectiveDataService } from 'src/app/risks/services/subjective-data.service';
+import { riskService } from 'src/app/risks/services/subjective-data.service';
 import { NewsWithDetails } from 'src/app/stock/models/news.model';
 
 @Component({
@@ -10,7 +10,7 @@ import { NewsWithDetails } from 'src/app/stock/models/news.model';
 export class NewsPageComponent implements OnInit {
   news: NewsWithDetails[];
 
-  constructor(private risksDataService: SubjectiveDataService) {
+  constructor(private risksDataService: riskService) {
     this.news = risksDataService.getNewsDetails().slice(0, 3);
   }
 

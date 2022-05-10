@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ComparisonDialogComponent } from 'src/app/comparison-dialog/comparison-dialog.component';
 import { RiskCatalystDialogComponent } from 'src/app/risk-catalyst-dialog/risk-catalyst-dialog.component';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
+import { ComparisonDialogComponent } from 'src/app/stock/components/comparison-dialog/comparison-dialog.component';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
 
 @Component({
@@ -29,6 +29,7 @@ export class FactComponent implements OnInit {
           stock: this.stock,
         },
         panelClass: 'medium-modal-panel',
+        autoFocus: false,
       }
     );
   }
@@ -42,6 +43,7 @@ export class FactComponent implements OnInit {
           stock: this.stock,
         },
         panelClass: 'medium-modal-panel',
+        autoFocus: false,
       }
     );
   }

@@ -13,7 +13,7 @@ import { Risk } from '../models/risk.model';
 @Injectable({
   providedIn: 'root',
 })
-export class SubjectiveDataService {
+export class riskService {
   risks: Risk[];
   catalysts: Catalyst[];
   newsWithDetails: NewsWithDetails[];
@@ -68,8 +68,10 @@ export class SubjectiveDataService {
   }
 
   getRisksByTicker(ticker: string): Risk[] {
-    return this.risks.filter((risk) =>
-      risk?.tickers?.find((t) => t.toLowerCase() === ticker.toLowerCase())
+    return cloneDeep(
+      this.risks.filter((risk) =>
+        risk?.tickers?.find((t) => t.toLowerCase() === ticker.toLowerCase())
+      )
     );
   }
 
@@ -97,19 +99,21 @@ export class SubjectiveDataService {
   }
 
   getCatalystsByMarkets(marketTypes: MarketType[]): Catalyst[] {
-    const set = new Set<Catalyst>();
+    if (marketTypes) {
+      const set = new Set<Catalyst>();
 
-    for (let marketType of marketTypes) {
-      const catalystsWithMarketType = this.catalysts.filter(
-        (catalyst) => catalyst?.markets?.indexOf(marketType) >= 0
-      );
+      for (let marketType of marketTypes) {
+        const catalystsWithMarketType = this.catalysts.filter(
+          (catalyst) => catalyst?.markets?.indexOf(marketType) >= 0
+        );
 
-      for (let catalyst of catalystsWithMarketType) {
-        set.add(catalyst);
+        for (let catalyst of catalystsWithMarketType) {
+          set.add(catalyst);
+        }
       }
-    }
 
-    return Array.from(set.values());
+      return Array.from(set.values());
+    }
   }
 
   /**

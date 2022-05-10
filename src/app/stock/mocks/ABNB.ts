@@ -3,6 +3,17 @@ import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const abnbRisks = [
+  {
+    name: 'Has not fully recovered to pre-pandemic level',
+    notes: [
+      {
+        content: 'Q4 2021 Nights and experiences booked -3% Y/2Y',
+      },
+    ],
+  },
+];
+
 export const abnb: StockAnalysis = {
   marketCap: 92 * BILLION,
 
@@ -181,16 +192,6 @@ export const abnb: StockAnalysis = {
       netIncomeBeforeTaxes: -357 * MILLION,
       provisionForIncomeTaxes: -16 * MILLION,
       netIncome: -340 * MILLION,
-    },
-  ],
-  risks: [
-    {
-      name: 'Has not fully recovered to pre-pandemic level',
-      notes: [
-        {
-          content: 'Q4 2021 Nights and experiences booked -3% Y/2Y',
-        },
-      ],
     },
   ],
 };

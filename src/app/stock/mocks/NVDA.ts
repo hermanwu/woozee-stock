@@ -6,6 +6,37 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { PredicationAction } from '../models/predication.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const nvdaRisks = [
+  {
+    type: FactType.growth,
+    level: RiskLevel.medium,
+    name: 'Automotive and Robotic business slows down',
+    notes: [
+      {
+        content:
+          'Fourth-quarter Automotive revenue was $125 million, down 14 percent from a year ago and down 7 percent from the previous quarter. Fiscal-year revenue rose 6 percent to $566 million.',
+      },
+    ],
+  },
+  {
+    type: FactType.valuation,
+    level: RiskLevel.medium,
+    name: 'P/S and P/E are relatively high',
+    notes: [
+      {
+        content:
+          'Revenue growth will slow down and operating margin does not have much space to grow.',
+      },
+      {
+        content: 'More than double of some of its competitors (AMD) ',
+      },
+      {
+        content: 'Even 200 dollars is a reasonable price in short term',
+      },
+    ],
+  },
+];
+
 export const nvda: StockAnalysis = {
   marketCap: 532 * BILLION,
 
@@ -164,37 +195,6 @@ export const nvda: StockAnalysis = {
       netIncomeBeforeTaxes: 981 * MILLION,
       provisionForIncomeTaxes: 64 * MILLION,
       netIncome: 917 * MILLION,
-    },
-  ],
-
-  risks: [
-    {
-      type: FactType.growth,
-      level: RiskLevel.low,
-      name: 'Automotive and Robotic business slows down',
-      notes: [
-        {
-          content:
-            'Fourth-quarter Automotive revenue was $125 million, down 14 percent from a year ago and down 7 percent from the previous quarter. Fiscal-year revenue rose 6 percent to $566 million.',
-        },
-      ],
-    },
-    {
-      type: FactType.valuation,
-      level: RiskLevel.medium,
-      name: 'P/S and P/E are relatively high',
-      notes: [
-        {
-          content:
-            'Revenue growth will slow down and operating margin does not have much space to grow.',
-        },
-        {
-          content: 'More than double of some of its competitors (AMD) ',
-        },
-        {
-          content: 'Even 200 dollars is a reasonable price in short term',
-        },
-      ],
     },
   ],
 

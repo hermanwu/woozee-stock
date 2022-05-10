@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { EarningsReport } from '../stock/models/earnings.model';
-import { StockAnalysis } from '../stock/models/stock-analysis.model';
+import { EarningsReport } from '../../models/earnings.model';
+import { StockAnalysis } from '../../models/stock-analysis.model';
 
 @Component({
   selector: 'app-links',

@@ -4,7 +4,7 @@ import { FactType } from '../../models/fact-type.enum';
 import { RiskLevel } from '../../models/risk-level.model';
 
 export const fedRate = {
-  uuid: '5',
+  uuid: 'usr-5',
   name: 'Fed rate increases could potentially cause recession.',
   level: RiskLevel.high,
   type: FactType.event,

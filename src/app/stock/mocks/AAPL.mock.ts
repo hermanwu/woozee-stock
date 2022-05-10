@@ -4,6 +4,7 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 import { capMock } from './market-cap.mock';
 
 export const aapl: StockAnalysis = {
+  uuid: 'aapl',
   marketCap: capMock.aapl,
   name: 'Apple',
   shortName: 'Apple',

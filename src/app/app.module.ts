@@ -15,11 +15,8 @@ import { CatalystLevelDisplayComponent } from './catalyst/catalyst-level-display
 import { CatalystListComponent } from './catalyst/components/catalyst-list/catalyst-list.component';
 import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
 import { CatalystComponent } from './catalyst/components/catalyst/catalyst.component';
-import { ComparisonDialogComponent } from './comparison-dialog/comparison-dialog.component';
 import { FactComponent } from './facts/components/fact/fact.component';
-import { MistakesComponent } from './ideas/blog/mistakes/mistakes.component';
 import { FomoStocksComponent as HomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
-import { LinksComponent } from './links/links.component';
 import { MarketDisplayComponent } from './markets/components/market-display/market-display.component';
 import { MarketListComponent } from './markets/components/market-list/market-list.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
@@ -33,6 +30,7 @@ import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.c
 import { SlideFooterComponent } from './presentation/slide/slide-footer/slide-footer.component';
 import { SlideComponent } from './presentation/slide/slide/slide.component';
 import { ProfitabilityComponent } from './profitability/profitability.component';
+import { RiskCatalystDialogComponent } from './risk-catalyst-dialog/risk-catalyst-dialog.component';
 import { RiskLevelDisplayComponent } from './risks/components/risk-level-display/risk-level-display.component';
 import { RiskListComponent } from './risks/components/risk-list/risk-list.component';
 import { RiskComponent } from './risks/components/risk/risk.component';
@@ -42,11 +40,13 @@ import { BadgeComponent } from './shared/components/badge/badge.component';
 import { CardComponent } from './shared/components/card/card.component';
 import { CarousalComponent } from './shared/components/carousal/carousal.component';
 import { DateDisplayComponent } from './shared/components/date-display/date-display.component';
+import { DemoPageComponent } from './shared/components/demo-page/demo-page.component';
 import { DividerComponent } from './shared/components/divider/divider.component';
 import { FactTypeDisplayComponent } from './shared/components/fact-type-display/fact-type-display.component';
 import { NoteDialogComponent } from './shared/components/note-dialog/note-dialog.component';
 import { NoteComponent } from './shared/components/note/note.component';
 import { SearchComponent } from './shared/components/search/search.component';
+import { SliderComponent } from './shared/components/slider/slider.component';
 import { AutofocusDirective } from './shared/directives/auto-focus.directive';
 import { IopsPipeModule } from './shared/pipes/iops/iops-pipe.module';
 import { SafePipe } from './shared/pipes/safe.pipe';
@@ -54,7 +54,9 @@ import { SiUnitPipeModule } from './shared/pipes/si-unit/si-unit-pipe.module';
 import { UndefinedPipeModule } from './shared/pipes/undefined-pipe/undefined-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
 import { BusinessOverviewComponent } from './stock/components/business-overview/business-overview.component';
+import { ComparisonDialogComponent } from './stock/components/comparison-dialog/comparison-dialog.component';
 import { GrowthComponent } from './stock/components/growth/growth.component';
+import { LinksComponent } from './stock/components/links/links.component';
 import { TickerDisplayComponent } from './stock/components/ticker-display/ticker-display.component';
 import { ValuationComponent } from './stock/components/valuation/valuation.component';
 import { ForeverOwnStocksPanelComponent } from './stock/forever-own-stocks-panel/forever-own-stocks-panel.component';
@@ -70,7 +72,6 @@ import { TitleMenuComponent } from './title-menu/title-menu.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendIndustriesComponent } from './trend/trend-industries/trend-industries.component';
 import { TrendComponent } from './trend/trend.component';
-import { RiskCatalystDialogComponent } from './risk-catalyst-dialog/risk-catalyst-dialog.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -84,7 +85,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     FundamentalStatsDisplayComponent,
     StockProductsListComponent,
     HighGrowthIndustryComponent,
-    MistakesComponent,
     StockDisplayComponent,
     TrendComponent,
     TrendIndustriesComponent,
@@ -136,6 +136,8 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     PortfolioListComponent,
     DividerComponent,
     RiskCatalystDialogComponent,
+    SliderComponent,
+    DemoPageComponent,
   ],
   imports: [
     BrowserModule,

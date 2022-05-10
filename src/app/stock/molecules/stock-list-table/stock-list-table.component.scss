@@ -1,7 +1,7 @@
 .stock-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
-  grid-gap: 0.5rem;
+  grid-gap: 1rem;
   align-items: center;
 }
 

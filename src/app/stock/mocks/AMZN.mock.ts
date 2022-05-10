@@ -8,6 +8,130 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { Source } from '../models/news-source.enum';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const amznRisks = [
+  {
+    name: 'Slow revenue growth last quarter',
+    type: FactType.growth,
+    level: RiskLevel.high,
+    notes: [
+      {
+        content:
+          'Net sales increased 9% to $137.4 billion in the fourth quarter, compared with $125.6 billion in fourth quarter 2020.',
+        source: Source.earningReport,
+      },
+    ],
+  },
+  {
+    name: 'Operating expense increases faster than gross profit',
+    type: FactType.profit,
+    level: RiskLevel.medium,
+    notes: [
+      {
+        content:
+          'Operating expense increases 30% last quarter while gross profit only increases 18%',
+        source: Source.earningReport,
+      },
+      {
+        content:
+          'Net income increased to $14.3 billion in the fourth quarter ($11.8 billion included in non-operating income from our common stock investment in Rivian Automotive, Inc)',
+        source: Source.earningReport,
+      },
+    ],
+  },
+  {
+    name: 'Future growth slows',
+    level: RiskLevel.high,
+    type: FactType.growth,
+    notes: [
+      {
+        content:
+          'Net sales are expected to be between $112.0 billion and $117.0 billion, or to grow between 3% and 8% compared with first quarter 2021.',
+        notes: [
+          {
+            content: 'Online store 1% growth (total 66B)',
+          },
+          {
+            content:
+              'Advertising 33% growth (total 9B) vs 66% same quarter last year ',
+          },
+          {
+            content:
+              'AWS sales 40% growth (total 17.7B) vs 28% same quarter last year',
+          },
+        ],
+      },
+      {
+        content:
+          'Operating income is expected to be between $3.0 billion and $6.0 billion, compared with $8.9 billion in first quarter 2021.',
+        notes: [
+          {
+            content:
+              'Amazon prime price will increase from 119 to 139 (16.8% increase) => 200m * 20 = 4 billion additional income.',
+          },
+        ],
+      },
+    ],
+  },
+];
+
+export const amznCatalysts = [
+  {
+    name: 'Stock will be 20-to-1 split on June 3',
+    level: CatalystLevel.moderate,
+    type: FactType.sentiment,
+    date: new Date('2022-03-18'),
+  },
+
+  {
+    name: 'Cloud business still keep 40% growth rate.',
+    level: CatalystLevel.strong,
+    type: FactType.growth,
+    notes: [
+      {
+        content: 'Cloud business: Google, Microsoft',
+        notes: [
+          {
+            content: 'AWS: 17.7B -> 40% growth',
+          },
+          {
+            content: 'Google Cloud: 5.54B -> 44.6% growth',
+          },
+          {
+            content: 'Azure -> 46% growth',
+          },
+        ],
+      },
+    ],
+    date: new Date('2022-03-18'),
+  },
+
+  {
+    name: 'Advertising business is booming.',
+    level: CatalystLevel.moderate,
+    type: FactType.growth,
+    notes: [
+      {
+        content: 'Advertising business: Google, Facebook, Tiktok',
+        notes: [
+          {
+            content: 'Amazon: 9.716B -> 33% growth',
+          },
+          {
+            content: 'Youtube Ads: 8.633B -> 25.3% growth',
+          },
+          {
+            content: 'Google Advertising 61.239B -> 32.5% growth',
+          },
+          {
+            content: 'Facebook Advertising 32.639B -> 15.5% growth',
+          },
+        ],
+      },
+    ],
+    date: new Date('2022-03-18'),
+  },
+];
+
 export const amzn: StockAnalysis = {
   ticker: 'amzn',
   name: 'Amazon',
@@ -35,130 +159,6 @@ export const amzn: StockAnalysis = {
       'Continue invest in entertainment industry',
     ],
   },
-
-  risks: [
-    {
-      name: 'Slow revenue growth last quarter',
-      type: FactType.growth,
-      level: RiskLevel.high,
-      notes: [
-        {
-          content:
-            'Net sales increased 9% to $137.4 billion in the fourth quarter, compared with $125.6 billion in fourth quarter 2020.',
-          source: Source.earningReport,
-        },
-      ],
-    },
-    {
-      name: 'Operating expense increases faster than gross profit',
-      type: FactType.profit,
-      level: RiskLevel.medium,
-      notes: [
-        {
-          content:
-            'Operating expense increases 30% last quarter while gross profit only increases 18%',
-          source: Source.earningReport,
-        },
-        {
-          content:
-            'Net income increased to $14.3 billion in the fourth quarter ($11.8 billion included in non-operating income from our common stock investment in Rivian Automotive, Inc)',
-          source: Source.earningReport,
-        },
-      ],
-    },
-    {
-      name: 'Future growth slows',
-      level: RiskLevel.high,
-      type: FactType.growth,
-      notes: [
-        {
-          content:
-            'Net sales are expected to be between $112.0 billion and $117.0 billion, or to grow between 3% and 8% compared with first quarter 2021.',
-          notes: [
-            {
-              content: 'Online store 1% growth (total 66B)',
-            },
-            {
-              content:
-                'Advertising 33% growth (total 9B) vs 66% same quarter last year ',
-            },
-            {
-              content:
-                'AWS sales 40% growth (total 17.7B) vs 28% same quarter last year',
-            },
-          ],
-        },
-        {
-          content:
-            'Operating income is expected to be between $3.0 billion and $6.0 billion, compared with $8.9 billion in first quarter 2021.',
-          notes: [
-            {
-              content:
-                'Amazon prime price will increase from 119 to 139 (16.8% increase) => 200m * 20 = 4 billion additional income.',
-            },
-          ],
-        },
-      ],
-    },
-  ],
-
-  catalysts: [
-    {
-      name: 'Stock will be 20-to-1 split on June 3',
-      level: CatalystLevel.moderate,
-      type: FactType.sentiment,
-      date: new Date('2022-03-18'),
-    },
-
-    {
-      name: 'Cloud business still keep 40% growth rate.',
-      level: CatalystLevel.strong,
-      type: FactType.growth,
-      notes: [
-        {
-          content: 'Cloud business: Google, Microsoft',
-          notes: [
-            {
-              content: 'AWS: 17.7B -> 40% growth',
-            },
-            {
-              content: 'Google Cloud: 5.54B -> 44.6% growth',
-            },
-            {
-              content: 'Azure -> 46% growth',
-            },
-          ],
-        },
-      ],
-      date: new Date('2022-03-18'),
-    },
-
-    {
-      name: 'Advertising business is booming.',
-      level: CatalystLevel.moderate,
-      type: FactType.growth,
-      notes: [
-        {
-          content: 'Advertising business: Google, Facebook, Tiktok',
-          notes: [
-            {
-              content: 'Amazon: 9.716B -> 33% growth',
-            },
-            {
-              content: 'Youtube Ads: 8.633B -> 25.3% growth',
-            },
-            {
-              content: 'Google Advertising 61.239B -> 32.5% growth',
-            },
-            {
-              content: 'Facebook Advertising 32.639B -> 15.5% growth',
-            },
-          ],
-        },
-      ],
-      date: new Date('2022-03-18'),
-    },
-  ],
 
   earningsReports: [
     {

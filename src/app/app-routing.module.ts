@@ -10,6 +10,7 @@ import { NewsPageComponent } from './news/news-page/news-page.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
+import { DemoPageComponent } from './shared/components/demo-page/demo-page.component';
 import { ForeverOwnStocksPanelComponent } from './stock/forever-own-stocks-panel/forever-own-stocks-panel.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
@@ -38,6 +39,11 @@ const routes: Routes = [
     path: 'woozee',
     component: AppContainerComponent,
     children: [
+      {
+        path: 'demo',
+        pathMatch: 'full',
+        component: DemoPageComponent,
+      },
       {
         path: 'risks',
         component: RiskListPageComponent,

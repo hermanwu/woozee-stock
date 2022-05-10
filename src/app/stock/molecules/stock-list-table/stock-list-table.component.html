@@ -30,7 +30,6 @@
       </span>
     </div>
 
-    <!--Column 7-->
     <div>
       Revenue Growth <span class="low-gray">(Y/Y) -> </span>(Q/Q)
       <button
@@ -42,18 +41,9 @@
       </button>
     </div>
 
-    <div>
-      OI (ttm) / Market Cap
-      <span>
-        <button
-          mat-icon-button
-          type="button"
-          (click)="sort(stockListTableColumn.marketCapToOiRatio)"
-        >
-          <mat-icon>sort</mat-icon>
-        </button>
-      </span>
-    </div>
+    <div>Risks</div>
+
+    <div>Catalysts</div>
   </div>
 
   <div *ngFor="let stock of stocks; let i = index" class="stock-row">
@@ -89,12 +79,13 @@
 
     <div class="number-display">
       <span>
-        {{
-          stock.ttmOI / stock.marketCap
-            | siUnit: 4
-            | percent: "1.0-2"
-            | undefined
-        }}
+        {{ stock?.riskUuids?.length || 0 }}
+      </span>
+    </div>
+
+    <div class="number-display">
+      <span>
+        {{ stock?.catalystUuids?.length || 0 }}
       </span>
     </div>
   </div>

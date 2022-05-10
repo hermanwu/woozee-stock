@@ -4,6 +4,17 @@ import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const afrmRisks = [
+  {
+    type: FactType.business,
+    name: 'Interest Rate Increases',
+  },
+  {
+    type: FactType.business,
+    name: 'Delinquency rate could be affected by high inflation',
+  },
+];
+
 export const afrm: StockAnalysis = {
   marketCap: 9 * BILLION,
 
@@ -94,17 +105,6 @@ export const afrm: StockAnalysis = {
       totalRevenue: 204041 * 1e3,
       operatingIncome: -26772 * 1e3,
       salesAndMarketingCost: 39.112 * MILLION,
-    },
-  ],
-
-  risks: [
-    {
-      type: FactType.business,
-      name: 'Interest Rate Increases',
-    },
-    {
-      type: FactType.business,
-      name: 'Delinquency rate could be affected by high inflation',
     },
   ],
 };

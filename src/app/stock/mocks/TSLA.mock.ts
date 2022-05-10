@@ -5,6 +5,51 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { capMock } from './market-cap.mock';
 
+export const tslaCatalysts = [
+  {
+    name: 'Synology between SpaceX, Twitter, etc.',
+  },
+];
+export const tslaRisks = [
+  {
+    name: 'Value',
+    level: RiskLevel.medium,
+    type: FactType.valuation,
+    notes: [
+      {
+        content:
+          'PE Ratio 180+ (US market: 16.3, Auto industry: 12.8, Tech industry: 25.1)',
+      },
+      {
+        content: 'PEG Ratio is 8.82 (Apple: 2.1)',
+      },
+    ],
+  },
+  {
+    name: 'Company Growth',
+    level: RiskLevel.medium,
+    type: FactType.growth,
+    notes: [
+      {
+        content:
+          'Vehicle deliveries would comfortably grow by more than 50% year-over-year in 2022 despite persistent supply chain issues ',
+      },
+      {
+        content: 'Tesla current demand is much bigger than supply',
+      },
+      {
+        content: 'Berlin and Texas factories will be opening soon.',
+      },
+      {
+        content: 'Rising raw material, commodity, logistics costs.',
+      },
+      {
+        content: 'Solar panel related sales decreases (-1%).',
+      },
+    ],
+  },
+];
+
 export const tsla: StockAnalysis = {
   logo: 'https://www.carlogos.org/car-logos/tesla-logo-2200x2800.png',
   name: 'Tesla',
@@ -178,45 +223,6 @@ export const tsla: StockAnalysis = {
     '自研芯片',
     'CEO有远见和能力。特斯拉是一个科技驱动的公司。这点和其他车企很不一样。CEO马斯克是这个世界少有的工程师天才，所以特斯拉的产品一直有很多黑科技受年轻人追捧。电池技术，芯片技术全球领先。汽车行业中没有任何竞争对手',
     '用户体验好。我见到的车主都对特斯拉很满意（包括我自己）',
-  ],
-  risks: [
-    {
-      name: 'Value',
-      level: RiskLevel.medium,
-      type: FactType.valuation,
-      notes: [
-        {
-          content:
-            'PE Ratio 180+ (US market: 16.3, Auto industry: 12.8, Tech industry: 25.1)',
-        },
-        {
-          content: 'PEG Ratio is 8.82 (Apple: 2.1)',
-        },
-      ],
-    },
-    {
-      name: 'Company Growth',
-      level: RiskLevel.low,
-      type: FactType.growth,
-      notes: [
-        {
-          content:
-            'Vehicle deliveries would comfortably grow by more than 50% year-over-year in 2022 despite persistent supply chain issues ',
-        },
-        {
-          content: 'Tesla current demand is much bigger than supply',
-        },
-        {
-          content: 'Berlin and Texas factories will be opening soon.',
-        },
-        {
-          content: 'Rising raw material, commodity, logistics costs.',
-        },
-        {
-          content: 'Solar panel related sales decreases (-1%).',
-        },
-      ],
-    },
   ],
 
   products: [],

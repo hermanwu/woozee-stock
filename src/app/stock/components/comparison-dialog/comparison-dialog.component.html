@@ -66,4 +66,22 @@
       </ng-container>
     </ng-container>
   </div>
+
+  <div *ngIf="selectedMarketType === 'Custom'">
+    <form [formGroup]="newTickerForm" (ngSubmit)="addTicker()">
+      <mat-form-field>
+        <input
+          autoFocus
+          matInput
+          placeholder="Stock Ticker"
+          value=""
+          formControlName="ticker"
+        />
+      </mat-form-field>
+    </form>
+  </div>
 </div>
+
+<mat-dialog-actions align="end">
+  <button mat-stroked-button type="button" mat-dialog-close i18n>Close</button>
+</mat-dialog-actions>

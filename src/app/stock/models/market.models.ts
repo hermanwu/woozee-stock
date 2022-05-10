@@ -8,4 +8,5 @@ export interface Market {
   children?: Market[];
   tickers?: Set<string>;
   riskUuids?: string[];
+  catalystUuids?: string[];
 }

@@ -4,6 +4,34 @@ import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const adbeCatalysts = [
+  {
+    name: 'Document Cloud 2B yearly revenue with 29% Y/Y growth ',
+    type: FactType.business,
+    level: CatalystLevel.moderate,
+    date: new Date('2022-03-18'),
+  },
+  {
+    name: 'Experience Cloud has 1B revenue in Q1 with 22% Y/Y growth ',
+    type: FactType.business,
+    level: CatalystLevel.moderate,
+    date: new Date('2022-03-18'),
+  },
+];
+
+export const adbeRisks = [
+  {
+    name: 'War in Ukraine would cause 75M revenue reduction',
+    type: FactType.business,
+    notes: [
+      {
+        content:
+          'Halt of all new sales of Adobe products and services in Russia and Belarus. This results in a total ARR reduction of $87 million and an expected revenue impact of $75 million for fiscal year 2022.',
+      },
+    ],
+  },
+];
+
 export const adbe: StockAnalysis = {
   marketCap: 216.55 * BILLION,
   predications: [
@@ -44,34 +72,6 @@ export const adbe: StockAnalysis = {
       },
     ],
   },
-
-  catalysts: [
-    {
-      name: 'Document Cloud 2B yearly revenue with 29% Y/Y growth ',
-      type: FactType.business,
-      level: CatalystLevel.weak,
-      date: new Date('2022-03-18'),
-    },
-    {
-      name: 'Experience Cloud has 1B revenue in Q1 with 22% Y/Y growth ',
-      type: FactType.business,
-      level: CatalystLevel.weak,
-      date: new Date('2022-03-18'),
-    },
-  ],
-
-  risks: [
-    {
-      name: 'War in Ukraine would cause 75M revenue reduction',
-      type: FactType.business,
-      notes: [
-        {
-          content:
-            'Halt of all new sales of Adobe products and services in Russia and Belarus. This results in a total ARR reduction of $87 million and an expected revenue impact of $75 million for fiscal year 2022.',
-        },
-      ],
-    },
-  ],
 
   // Earnings Report:
   earningsReports: [

@@ -3,6 +3,27 @@ import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const docuRisks = [
+  {
+    type: FactType.growth,
+    name: 'Profession service revenue decreases 19% (16.8 Million)',
+    notes: [
+      {
+        content: 'Indicate less large customers',
+      },
+    ],
+  },
+  {
+    type: FactType.business,
+    name: 'Small percent are enterprise customers: (170K out of 1.17M)',
+    notes: [
+      {
+        content: 'Indicate less large customers',
+      },
+    ],
+  },
+];
+
 export const docu: StockAnalysis = {
   marketCap: 14.329 * BILLION,
   logo: '',
@@ -11,27 +32,6 @@ export const docu: StockAnalysis = {
   ticker: 'docu',
   irAddress: 'https://investor.docusign.com/investors/home/default.aspx',
   shortName: 'DocuSign',
-
-  risks: [
-    {
-      type: FactType.growth,
-      name: 'Profession service revenue decreases 19% (16.8 Million)',
-      notes: [
-        {
-          content: 'Indicate less large customers',
-        },
-      ],
-    },
-    {
-      type: FactType.business,
-      name: 'Small percent are enterprise customers: (170K out of 1.17M)',
-      notes: [
-        {
-          content: 'Indicate less large customers',
-        },
-      ],
-    },
-  ],
 
   earningsReports: [
     {

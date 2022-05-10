@@ -4,32 +4,32 @@ import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const coinRisks = [
+  {
+    name: 'New user or revenue growth slows down',
+    level: RiskLevel.medium,
+    type: FactType.growth,
+    notes: [
+      {
+        content:
+          'decline in crypto asset volatility and crypt asset price compared to all-time high levels in Q4 2021',
+      },
+      {
+        content: 'Crypt market capitalize n is down over 20%',
+      },
+      {
+        content: ' lower trading volume per retail MTU trends to date in QA',
+      },
+    ],
+  },
+  {
+    name: 'Crypto transaction related revenue decreases',
+    level: RiskLevel.medium,
+  },
+];
+
 export const coin: StockAnalysis = {
   marketCap: 41.02 * BILLION,
-
-  risks: [
-    {
-      name: 'New user or revenue growth slows down',
-      level: RiskLevel.medium,
-      type: FactType.growth,
-      notes: [
-        {
-          content:
-            'decline in crypto asset volatility and crypt asset price compared to all-time high levels in Q4 2021',
-        },
-        {
-          content: 'Crypt market capitalize n is down over 20%',
-        },
-        {
-          content: ' lower trading volume per retail MTU trends to date in QA',
-        },
-      ],
-    },
-    {
-      name: 'Crypto transaction related revenue decreases',
-      level: RiskLevel.medium,
-    },
-  ],
 
   business: {
     markets: [MarketType.crypto],

@@ -4,6 +4,216 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { Source } from '../models/news-source.enum';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const snapRisks = [
+  {
+    name: 'Business Moat',
+    level: RiskLevel.medium,
+    notes: [
+      {
+        content:
+          'Provide advanced technology to end users, such as augmented reality',
+        notes: [
+          { content: 'Does not have a strong demands with daily users' },
+          { content: 'Competitors: TikTok, Apple, Facebook' },
+        ],
+      },
+      {
+        content: 'Popular content from influencers, broadcasters, celebrities',
+        notes: [
+          { content: 'Slow growth: peoples screen time is limited.' },
+          { content: 'A low margin and competitive areas' },
+          { content: 'Competitors: Netflix, Disney, etc' },
+        ],
+      },
+      {
+        content: 'Efficient marketing tools',
+        notes: [
+          {
+            content:
+              'Could be limited by laws and regulations such as Apple privacy rules',
+          },
+          {
+            content:
+              'Need to compete with other technology company such as TikTok, Google, Facebook, Twitter',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Revenue and Growth',
+    level: RiskLevel.medium,
+    notes: [
+      {
+        content: 'Revenue +42% (0.91B -> 1.3B)',
+        source: Source.earningReport,
+        notes: [
+          {
+            content: 'Amazon advertising +33% (9.716B)',
+          },
+          {
+            content: 'Youtube Ads: +25.3% (8.633B)',
+          },
+          {
+            content: 'Google advertising +32.5% (61.239B)',
+          },
+          {
+            content: 'Facebook advertising +15.5% (32.639B)',
+          },
+        ],
+      },
+      {
+        content: 'Daily active user growth in North America is low.',
+        notes: [
+          {
+            content: 'Daily Active User +20% (265M ->319M)',
+          },
+          {
+            content: 'North America +6%',
+          },
+          {
+            content: 'Europe +11%',
+          },
+          {
+            content: 'Others +41%',
+          },
+          {
+            content: '',
+          },
+        ],
+      },
+      {
+        content: 'Revenue per user growth is in other region is low',
+        notes: [
+          {
+            content: 'Average revenue per user +18% (3.44 -> 4.06)',
+          },
+          {
+            content: 'North America +33% (7.19 -> 9.58)',
+          },
+          {
+            content: 'Europe +33% (1.91 -> 2.54)',
+          },
+          {
+            content: 'Others +1% (1.11 -> 1.12)',
+          },
+        ],
+      },
+
+      {
+        content: '2022 Q1 outlook',
+        notes: [
+          {
+            content:
+              'revenue between $1,030 million and $1,080 million. (34% with 770m -> 1030m)',
+          },
+          {
+            content:
+              'Adjusted EBITDA is estimated to be approximately breakeven',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Income & Profitability',
+    level: RiskLevel.medium,
+    notes: [
+      {
+        content:
+          'Post first positive net income but operating income is still negative.',
+        source: Source.earningReport,
+      },
+      {
+        content: 'Quarterly operating margin is still negative (-11% -> -2%)',
+        notes: [
+          {
+            content: 'Facebook operating margin (33%)',
+          },
+          {
+            content: 'Google operating margin (27.4%)',
+          },
+          {
+            content:
+              'This could be a headwind during Fed rate increasing cycle.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Stock Valuation',
+    level: RiskLevel.medium,
+    notes: [
+      {
+        content: 'Market Cap: 39.44B (Google: 1842B, Facebook: 627B)',
+      },
+      {
+        content: 'Revenue: 1.3B (Google 75B, Facebook: 33.67B)',
+      },
+    ],
+  },
+  // {
+  //   name: 'Management & Execution',
+  //   level: RiskLevel.medium,
+  //   notes: [
+  //     {
+  //       content: 'Glassdoor: 4 starts',
+  //     },
+  //     {
+  //       content:
+  //         'Historically, Amazon has been growing quickly despite having the worst reputation among all the big Tech firms',
+  //     },
+  //     {
+  //       content:
+  //         'New CEO is an Amazon veteran who is used to be in charge of AWS',
+  //     },
+  //     {
+  //       content:
+  //         'New CEO might create a better working environment and reputation for Amazon',
+  //     },
+  //   ],
+  // },
+  {
+    name: 'Investors Sentiment',
+    level: RiskLevel.medium,
+    notes: [
+      {
+        content: '18 Buy, 9 Hold, 0 Sell',
+        source: 'TipRanks.com',
+      },
+      {
+        content: 'Analysts give average price target 55.2 (Min 36, Max 93)',
+        source: 'TipRanks.com',
+      },
+    ],
+  },
+  // {
+  //   name: 'Technical Trends',
+  //   level: RiskLevel.medium,
+  //   notes: [
+  //     {
+  //       content: 'RSI is below average currently (was oversold in past week)',
+  //     },
+  //     {
+  //       content: 'Still below 200 day moving average after rebound',
+  //     },
+  //     {
+  //       content: 'Has stagnated since Jun 2020',
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: 'Macro Market',
+  //   level: RiskLevel.medium,
+  //   notes: [
+  //     {
+  //       content: 'Fed rate increase would affect stocks with no income.',
+  //     },
+  //   ],
+  // },
+];
+
 export const snap: StockAnalysis = {
   marketCap: 45 * BILLION,
   business: {
@@ -33,216 +243,6 @@ export const snap: StockAnalysis = {
 
   // Demand
   painPoint: [''],
-  risks: [
-    {
-      name: 'Business Moat',
-      level: RiskLevel.medium,
-      notes: [
-        {
-          content:
-            'Provide advanced technology to end users, such as augmented reality',
-          notes: [
-            { content: 'Does not have a strong demands with daily users' },
-            { content: 'Competitors: TikTok, Apple, Facebook' },
-          ],
-        },
-        {
-          content:
-            'Popular content from influencers, broadcasters, celebrities',
-          notes: [
-            { content: 'Slow growth: peoples screen time is limited.' },
-            { content: 'A low margin and competitive areas' },
-            { content: 'Competitors: Netflix, Disney, etc' },
-          ],
-        },
-        {
-          content: 'Efficient marketing tools',
-          notes: [
-            {
-              content:
-                'Could be limited by laws and regulations such as Apple privacy rules',
-            },
-            {
-              content:
-                'Need to compete with other technology company such as TikTok, Google, Facebook, Twitter',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'Revenue and Growth',
-      level: RiskLevel.low,
-      notes: [
-        {
-          content: 'Revenue +42% (0.91B -> 1.3B)',
-          source: Source.earningReport,
-          notes: [
-            {
-              content: 'Amazon advertising +33% (9.716B)',
-            },
-            {
-              content: 'Youtube Ads: +25.3% (8.633B)',
-            },
-            {
-              content: 'Google advertising +32.5% (61.239B)',
-            },
-            {
-              content: 'Facebook advertising +15.5% (32.639B)',
-            },
-          ],
-        },
-        {
-          content: 'Daily active user growth in North America is low.',
-          notes: [
-            {
-              content: 'Daily Active User +20% (265M ->319M)',
-            },
-            {
-              content: 'North America +6%',
-            },
-            {
-              content: 'Europe +11%',
-            },
-            {
-              content: 'Others +41%',
-            },
-            {
-              content: '',
-            },
-          ],
-        },
-        {
-          content: 'Revenue per user growth is in other region is low',
-          notes: [
-            {
-              content: 'Average revenue per user +18% (3.44 -> 4.06)',
-            },
-            {
-              content: 'North America +33% (7.19 -> 9.58)',
-            },
-            {
-              content: 'Europe +33% (1.91 -> 2.54)',
-            },
-            {
-              content: 'Others +1% (1.11 -> 1.12)',
-            },
-          ],
-        },
-
-        {
-          content: '2022 Q1 outlook',
-          notes: [
-            {
-              content:
-                'revenue between $1,030 million and $1,080 million. (34% with 770m -> 1030m)',
-            },
-            {
-              content:
-                'Adjusted EBITDA is estimated to be approximately breakeven',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'Income & Profitability',
-      level: RiskLevel.low,
-      notes: [
-        {
-          content:
-            'Post first positive net income but operating income is still negative.',
-          source: Source.earningReport,
-        },
-        {
-          content: 'Quarterly operating margin is still negative (-11% -> -2%)',
-          notes: [
-            {
-              content: 'Facebook operating margin (33%)',
-            },
-            {
-              content: 'Google operating margin (27.4%)',
-            },
-            {
-              content:
-                'This could be a headwind during Fed rate increasing cycle.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'Stock Valuation',
-      level: RiskLevel.low,
-      notes: [
-        {
-          content: 'Market Cap: 39.44B (Google: 1842B, Facebook: 627B)',
-        },
-        {
-          content: 'Revenue: 1.3B (Google 75B, Facebook: 33.67B)',
-        },
-      ],
-    },
-    // {
-    //   name: 'Management & Execution',
-    //   level: RiskLevel.noRisk,
-    //   notes: [
-    //     {
-    //       content: 'Glassdoor: 4 starts',
-    //     },
-    //     {
-    //       content:
-    //         'Historically, Amazon has been growing quickly despite having the worst reputation among all the big Tech firms',
-    //     },
-    //     {
-    //       content:
-    //         'New CEO is an Amazon veteran who is used to be in charge of AWS',
-    //     },
-    //     {
-    //       content:
-    //         'New CEO might create a better working environment and reputation for Amazon',
-    //     },
-    //   ],
-    // },
-    {
-      name: 'Investors Sentiment',
-      level: RiskLevel.noRisk,
-      notes: [
-        {
-          content: '18 Buy, 9 Hold, 0 Sell',
-          source: 'TipRanks.com',
-        },
-        {
-          content: 'Analysts give average price target 55.2 (Min 36, Max 93)',
-          source: 'TipRanks.com',
-        },
-      ],
-    },
-    // {
-    //   name: 'Technical Trends',
-    //   level: RiskLevel.low,
-    //   notes: [
-    //     {
-    //       content: 'RSI is below average currently (was oversold in past week)',
-    //     },
-    //     {
-    //       content: 'Still below 200 day moving average after rebound',
-    //     },
-    //     {
-    //       content: 'Has stagnated since Jun 2020',
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: 'Macro Market',
-    //   level: RiskLevel.low,
-    //   notes: [
-    //     {
-    //       content: 'Fed rate increase would affect stocks with no income.',
-    //     },
-    //   ],
-    // },
-  ],
 
   earningsReports: [
     {

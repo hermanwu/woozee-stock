@@ -9,7 +9,6 @@ export const v: StockAnalysis = {
   ticker: 'v',
   shortName: 'Visa',
 
-  risks: [],
   // Earnings Report:
   earningsReports: [
     {

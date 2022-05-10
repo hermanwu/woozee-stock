@@ -1,6 +1,30 @@
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
+export const teamRisks = [
+  {
+    name: 'no income',
+    level: RiskLevel.medium,
+  },
+  {
+    name: 'High price to sales ratio: 33.73',
+    level: RiskLevel.medium,
+    notes: [
+      {
+        content: 'ServiceNow: 19.29, Salesforce: 8.88',
+      },
+    ],
+  },
+  {
+    name: 'Marketing and sales, General and administrative cost increases (+74% & +73%)',
+    level: RiskLevel.medium,
+    notes: [
+      {
+        content: 'Sales only increases 36%',
+      },
+    ],
+  },
+];
 
 export const team: StockAnalysis = {
   marketCap: 64 * BILLION,
@@ -9,31 +33,6 @@ export const team: StockAnalysis = {
   description: [],
   ticker: 'team',
   shortName: 'Atlassian',
-
-  risks: [
-    {
-      name: 'no income',
-      level: RiskLevel.medium,
-    },
-    {
-      name: 'High price to sales ratio: 33.73',
-      level: RiskLevel.medium,
-      notes: [
-        {
-          content: 'ServiceNow: 19.29, Salesforce: 8.88',
-        },
-      ],
-    },
-    {
-      name: 'Marketing and sales, General and administrative cost increases (+74% & +73%)',
-      level: RiskLevel.low,
-      notes: [
-        {
-          content: 'Sales only increases 36%',
-        },
-      ],
-    },
-  ],
 
   earningsReports: [
     {

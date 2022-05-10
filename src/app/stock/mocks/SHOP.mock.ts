@@ -5,6 +5,21 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { PredicationAction } from '../models/predication.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const shopRisks = [
+  {
+    type: FactType.business,
+    name: 'datacenter is hosted on Google Cloud',
+  },
+  {
+    type: FactType.business,
+    name: "Google has announced changes to the ways that third parties can use web browsers to obtain user information and Apple has implemented similar changes to iOS 14 that will impact how applications and third parties can access user information. These increasingly restrictive practices could affect our merchants ' ability to sell or market their offerings, which could affect the demand for our platform and lead to the loss of current or prospective merchants or other business relationships.",
+  },
+  {
+    type: FactType.business,
+    name: 'We currently rely on a single supplier to provide the technology we offer through Shopify Payments.',
+  },
+];
+
 export const shop: StockAnalysis = {
   marketCap: 34 * BILLION,
 
@@ -27,20 +42,6 @@ export const shop: StockAnalysis = {
 
   // Demand
   painPoint: [''],
-  risks: [
-    {
-      type: FactType.business,
-      name: 'datacenter is hosted on Google Cloud',
-    },
-    {
-      type: FactType.business,
-      name: "Google has announced changes to the ways that third parties can use web browsers to obtain user information and Apple has implemented similar changes to iOS 14 that will impact how applications and third parties can access user information. These increasingly restrictive practices could affect our merchants ' ability to sell or market their offerings, which could affect the demand for our platform and lead to the loss of current or prospective merchants or other business relationships.",
-    },
-    {
-      type: FactType.business,
-      name: 'We currently rely on a single supplier to provide the technology we offer through Shopify Payments.',
-    },
-  ],
 
   // Earnings Report:
   earningsReports: [

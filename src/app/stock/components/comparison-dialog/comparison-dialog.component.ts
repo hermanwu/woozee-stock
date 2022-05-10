@@ -1,10 +1,11 @@
 import { Component, Inject } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MarketType } from '../facts/data/area.enum';
-import { FactType } from '../risks/models/fact-type.enum';
-import { foreverOwnStocks } from '../stock/forever-own-stocks-panel/forever-own-stocks.model';
-import { stocksMap } from '../stock/mocks/stock-list.const';
-import { StockAnalysis } from '../stock/models/stock-analysis.model';
+import { MarketType } from 'src/app/facts/data/area.enum';
+import { FactType } from 'src/app/risks/models/fact-type.enum';
+import { foreverOwnStocks } from '../../forever-own-stocks-panel/forever-own-stocks.model';
+import { stocksMap } from '../../mocks/stock-list.const';
+import { StockAnalysis } from '../../models/stock-analysis.model';
 import { ComparisonDialogInput } from './comparison-dialog-input.model';
 
 @Component({
@@ -22,12 +23,17 @@ export class ComparisonDialogComponent {
   allStocks = Object.values(stocksMap);
 
   competitorTypeArray = [];
+  newTickerForm: FormGroup;
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public dialogData: ComparisonDialogInput,
     private dialogReference: MatDialogRef<ComparisonDialogComponent>
   ) {
+    this.newTickerForm = new FormGroup({
+      ticker: new FormControl(),
+    });
+
     this.selectedFact = dialogData.factType;
     this.stocks.push(dialogData.stock);
 
@@ -38,6 +44,20 @@ export class ComparisonDialogComponent {
     if (dialogData.stock?.business?.markets) {
       const markets = dialogData.stock.business.markets;
       this.competitorTypeArray.push(...markets);
+    }
+
+    this.competitorTypeArray.push('Custom');
+  }
+
+  addTicker() {
+    const ticker = this.newTickerForm.value.ticker;
+    const stockToAdd = this.allStocks.filter(
+      (stock) => stock.ticker === ticker
+    )[0];
+
+    if (stockToAdd) {
+      this.stocks.push(stockToAdd);
+      this.newTickerForm.reset();
     }
   }
 
@@ -50,7 +70,6 @@ export class ComparisonDialogComponent {
    * @param event
    */
   selectMarket(event: Event) {
-    debugger;
     this.selectedMarketType = (event.target as HTMLSelectElement).value as
       | MarketType
       | string;

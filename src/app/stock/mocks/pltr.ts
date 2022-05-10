@@ -4,22 +4,23 @@ import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const pltrRisks = [
+  {
+    type: FactType.business,
+    name: 'Big commercial company own the data and has their own data team.',
+  },
+  {
+    type: FactType.business,
+    name: 'How to compete with competitors that are specilizing in one domain?. i.e. CrowdStrike',
+  },
+  {
+    type: FactType.business,
+    name: 'What Platiner wants to create?',
+  },
+];
+
 export const pltr: StockAnalysis = {
   marketCap: 23.71 * BILLION,
-  risks: [
-    {
-      type: FactType.business,
-      name: 'Big commercial company own the data and has their own data team.',
-    },
-    {
-      type: FactType.business,
-      name: 'How to compete with competitors that are specilizing in one domain?. i.e. CrowdStrike',
-    },
-    {
-      type: FactType.business,
-      name: 'What Platiner wants to create?',
-    },
-  ],
 
   earningsReports: [
     {

@@ -11,12 +11,6 @@ export const now: StockAnalysis = {
 
   // Earnings Report:
 
-  risks: [
-    {
-      name: 'PE is high (482)',
-    },
-  ],
-
   earningsReports: [
     {
       year: 2021,

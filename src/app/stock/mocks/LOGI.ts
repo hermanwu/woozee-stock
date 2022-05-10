@@ -33,13 +33,4 @@ export const logi: StockAnalysis = {
   },
 
   trends: [],
-
-  risks: [
-    {
-      name: 'revenue decreases',
-    },
-    {
-      name: 'margin decreases',
-    },
-  ],
 };

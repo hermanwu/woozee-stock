@@ -7,6 +7,7 @@ import { schwab } from 'src/app/accounts/ mock-data/herman-schwab-account';
 import { jessicaPaypal } from 'src/app/accounts/ mock-data/jessica-paypal-account';
 import { webull } from 'src/app/accounts/ mock-data/jessica-wubu-account';
 import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
+import { currentUser } from 'src/app/accounts/data/user.mock';
 import { industry } from 'src/app/shared/industry.enum';
 import { Trend } from 'src/app/shared/trend.enum';
 import { ObjectiveDataService } from '../../services/objective-data.service';
@@ -45,8 +46,12 @@ export class StockListPageComponent implements OnInit {
   watchList: any[];
   stocks: StockData[];
 
+  currentUser = currentUser;
+
   constructor(private objectiveDataService: ObjectiveDataService) {
-    this.stocks = this.objectiveDataService.getAllStockData();
+    this.stocks = this.objectiveDataService
+      .getAllStockData()
+      .filter((stock) => currentUser?.watchList?.indexOf(stock.uuid) >= 0);
   }
 
   ngOnInit(): void {

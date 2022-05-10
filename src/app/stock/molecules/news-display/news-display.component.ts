@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { SubjectiveDataService } from 'src/app/risks/services/subjective-data.service';
+import { riskService } from 'src/app/risks/services/subjective-data.service';
 import { NewsDisplay } from './news-display.interface';
 
 @Component({
@@ -15,7 +15,7 @@ export class NewsDisplayComponent implements OnInit, OnChanges {
   tickers: string[];
   marketTypes: MarketType[];
 
-  constructor(private subjectiveDataService: SubjectiveDataService) {}
+  constructor(private riskService: riskService) {}
 
   ngOnInit(): void {}
 
@@ -30,8 +30,7 @@ export class NewsDisplayComponent implements OnInit, OnChanges {
       opinions.push(...this.news.catalysts);
     }
 
-    this.tickers = this.subjectiveDataService.getTickersFromOpinions(opinions);
-    this.marketTypes =
-      this.subjectiveDataService.getMarketsFromOpinions(opinions);
+    this.tickers = this.riskService.getTickersFromOpinions(opinions);
+    this.marketTypes = this.riskService.getMarketsFromOpinions(opinions);
   }
 }

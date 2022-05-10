@@ -30,10 +30,4 @@ export const rtx: StockAnalysis = {
       },
     },
   },
-
-  risks: [
-    {
-      name: 'Revenue decreases',
-    },
-  ],
 };

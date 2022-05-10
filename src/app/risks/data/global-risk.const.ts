@@ -3,12 +3,11 @@ import { MarketType } from 'src/app/facts/data/area.enum';
 import { FactType } from '../models/fact-type.enum';
 import { RiskLevel } from '../models/risk-level.model';
 import { Risk } from '../models/risk.model';
+import { allStockRisks } from './all-stock-risks.const';
 import { marketRisks } from './markets.risks';
 import { covid } from './risks/covid.model';
-import { fedRate } from './risks/fed-rate.model';
 import { geopolitics } from './risks/geopolitics.model';
 import { inflation } from './risks/inflation.model';
-import { laborShortage } from './risks/labor-shortage.model';
 
 export const allRisks: Risk[] = [
   // {
@@ -18,6 +17,7 @@ export const allRisks: Risk[] = [
   //   type: FactType.business,
   //   updatedTime: new Date('2022-04-26'),
   // },
+  ...allStockRisks,
   ...marketRisks,
   {
     uuid: 'r23',
@@ -25,14 +25,14 @@ export const allRisks: Risk[] = [
       'Q3 guidance is weak due to COVID headwind in China. Ipad constraints, Subscription up dramatically, Sale in China and Russia, Focus on the supply side instead of inflation caused by demand side. COVID and silicon cause constraints. Does not including Shanghai problem. 4-8 billion affecting sales',
     tickers: ['aapl'],
     updatedTime: new Date('2022-05-03'),
-    level: RiskLevel.low,
+    level: RiskLevel.medium,
   },
   {
     uuid: 'r22',
     content: 'Twitter acquisition process',
     tickers: ['tsla'],
     updatedTime: new Date('2022-04-30'),
-    level: RiskLevel.low,
+    level: RiskLevel.medium,
   },
   {
     uuid: 'r21',
@@ -46,21 +46,21 @@ export const allRisks: Risk[] = [
     content: 'Rising raw material, commodity, logistics and expedite costs',
     tickers: ['tsla'],
     updatedTime: new Date('2022-04-30'),
-    level: RiskLevel.low,
+    level: RiskLevel.medium,
   },
   {
     uuid: 'r19',
     content: 'Next quarter forecasts suggests growth could dip even further.',
     tickers: ['AMZN'],
     updatedTime: new Date('2022-04-28'),
-    level: RiskLevel.low,
+    level: RiskLevel.medium,
   },
   {
     uuid: 'r18',
     content: 'Amazon recorded a $7.6 billion loss on its Rivian investment.',
     tickers: ['AMZN'],
     updatedTime: new Date('2022-04-28'),
-    level: RiskLevel.low,
+    level: RiskLevel.medium,
   },
   {
     content:
@@ -95,13 +95,6 @@ export const allRisks: Risk[] = [
     markets: [MarketType.social],
     type: FactType.business,
     level: RiskLevel.medium,
-    updatedTime: new Date('2022-04-27'),
-  },
-  {
-    uuid: 'r13',
-    content: 'US Consumer spending decreases.',
-    markets: [MarketType.us],
-    type: FactType.growth,
     updatedTime: new Date('2022-04-27'),
   },
   {
@@ -180,9 +173,8 @@ export const allRisks: Risk[] = [
     type: FactType.profit,
     updatedTime: new Date('2022-04-19'),
   },
-  fedRate,
   geopolitics,
-  laborShortage,
+
   covid,
   inflation,
   ...portfolioRisks,

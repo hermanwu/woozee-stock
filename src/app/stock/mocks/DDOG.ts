@@ -2,6 +2,12 @@ import { MarketType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const ddogRisks = [
+  {
+    name: 'Market size might be too small',
+  },
+];
+
 export const ddog: StockAnalysis = {
   marketCap: 45 * BILLION,
   business: {
@@ -10,11 +16,6 @@ export const ddog: StockAnalysis = {
       'Datadog is the monitoring and analytics platform for developers, IT operations teams and business users in the cloud age.',
     ],
   },
-  risks: [
-    {
-      name: 'Market size might be too small',
-    },
-  ],
   earningsReports: [
     {
       year: 2021,

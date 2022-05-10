@@ -29,9 +29,4 @@ export const AXP: StockAnalysis = {
       },
     },
   },
-  risks: [
-    {
-      name: 'Relatively high RSI',
-    },
-  ],
 };

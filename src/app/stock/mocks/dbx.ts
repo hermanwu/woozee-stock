@@ -10,8 +10,6 @@ export const dbx: StockAnalysis = {
   secFilings: 'https://dropbox.gcs-web.com/financial-information/sec-filings',
   shortName: 'Dropbox',
 
-  risks: [],
-
   earningsReports: [
     {
       year: 2022,

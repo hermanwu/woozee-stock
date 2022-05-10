@@ -1,6 +1,4 @@
-import { Risk } from 'src/app/risks/models/risk.model';
 import { Note } from 'src/app/shared/data/note.interface';
-import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { Business } from '../components/business-overview/business.model';
 import { EarningsReport } from './earnings.model';
 import { MyScore } from './herman-score.model';
@@ -19,8 +17,8 @@ export interface StockAnalysis {
   ticker?: string;
   ceoQuote?: string[];
   advantage?: string[];
-  risks?: Risk[];
-  catalysts?: Catalyst[];
+  riskUuids?: string[];
+  catalystUuids?: string[];
   marketCap?: any;
   // POTENTIALS:
   revenueGrowth?: number;

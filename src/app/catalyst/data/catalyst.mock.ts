@@ -3,6 +3,8 @@ import { MarketType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { CatalystLevel } from '../catalyst-level-display/catalyst-level.enum';
+import { allCatalystsForStocks } from './all-catalyst-for-stocks.const';
+import { marketCatalysts } from './markets-catalysts.mock';
 
 export const catalysts: Catalyst[] = [
   // {
@@ -23,6 +25,8 @@ export const catalysts: Catalyst[] = [
   //     },
   //   ],
   // },
+  ...allCatalystsForStocks,
+  ...marketCatalysts,
   {
     uuid: 'c9',
     content: 'Full Self-Driving release.',
@@ -107,7 +111,7 @@ export const catalysts: Catalyst[] = [
     content:
       'Ukraine-Russian War increases defense / government contract spending',
     markets: [MarketType.defense],
-    level: CatalystLevel.weak,
+    level: CatalystLevel.moderate,
     type: FactType.event,
     date: new Date('2022-04-18'),
   },

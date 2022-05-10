@@ -2,6 +2,12 @@ import { MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { capMock } from './market-cap.mock';
 
+export const msftRisks = [
+  {
+    name: 'Cloud services decelerate',
+  },
+];
+
 export const msft: StockAnalysis = {
   marketCap: capMock.msft,
   logo: '',
@@ -151,11 +157,6 @@ export const msft: StockAnalysis = {
     },
   ],
 
-  risks: [
-    {
-      name: 'Cloud services decelerate',
-    },
-  ],
   business: {
     markets: [],
   },

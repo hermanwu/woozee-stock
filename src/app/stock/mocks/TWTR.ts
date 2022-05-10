@@ -5,13 +5,77 @@ import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const twtrCatalysts = [
+  {
+    name: 'Elon Musk became the largest stakeholder of Twitter (9.2%)',
+    level: CatalystLevel.strong,
+    type: FactType.sentiment,
+    date: new Date('2022-04-18'),
+  },
+  {
+    name: 'P/S and P/Gross Profit are relatively low.',
+    level: CatalystLevel.moderate,
+    type: FactType.valuation,
+    date: new Date('2022-04-18'),
+  },
+  {
+    name: 'Both operating income and net income are positive this quarter.',
+    level: CatalystLevel.moderate,
+    type: FactType.profit,
+    date: new Date('2022-04-18'),
+  },
+];
+
 export const twtrRisks = [
   {
     uuid: 'risk-6',
     content: "Twitter's future is unknown under current acquisition drama",
-    level: RiskLevel.low,
+    level: RiskLevel.medium,
     tickers: ['TWTR'],
     type: FactType.event,
+  },
+  {
+    name: 'Revenue is not growing fast enough. (low to mid 20% range)',
+    type: FactType.growth,
+    level: RiskLevel.high,
+    notes: [
+      {
+        content: 'Q4 2021 revenue growth is 22%.',
+      },
+      {
+        content: 'Total ad engagements decreased 12% in Q4 2021.',
+      },
+      {
+        content:
+          'Expect full-year revenue to grow in the low to mid 20% range in 2022.',
+      },
+    ],
+  },
+  {
+    name: 'Expense grows faster than income.',
+    type: FactType.profit,
+    level: RiskLevel.medium,
+    notes: [
+      {
+        content:
+          'Gross profit only increased 23% while operating expenses increased 42% Q/Q.',
+      },
+      {
+        content: 'Sales and marketing expenses grew 39% Q/Q',
+      },
+      {
+        content:
+          'General and administrative expenses increased 55% due to higher personnel-related costs and professional fees.',
+      },
+      {
+        content:
+          'Operating margin and net margin decreased in the quarter (20% -> 11%, 17% -> 12%).',
+      },
+      {
+        content:
+          'In Q1 2022, GAAP operating loss to be between $225 million and $175 million ',
+      },
+    ],
   },
 ];
 
@@ -23,73 +87,6 @@ export const twtr: StockAnalysis = {
   ticker: 'twtr',
   shortName: 'Twitter',
   irAddress: 'https://investor.twitterinc.com/home/default.aspx',
-
-  catalysts: [
-    {
-      name: 'Elon Musk became the largest stakeholder of Twitter (9.2%)',
-      level: CatalystLevel.strong,
-      type: FactType.sentiment,
-      date: new Date('2022-04-18'),
-    },
-    {
-      name: 'P/S and P/Gross Profit are relatively low.',
-      level: CatalystLevel.moderate,
-      type: FactType.valuation,
-      date: new Date('2022-04-18'),
-    },
-    {
-      name: 'Both operating income and net income are positive this quarter.',
-      level: CatalystLevel.weak,
-      type: FactType.profit,
-      date: new Date('2022-04-18'),
-    },
-  ],
-
-  risks: [
-    {
-      name: 'Revenue is not growing fast enough. (low to mid 20% range)',
-      type: FactType.growth,
-      level: RiskLevel.high,
-      notes: [
-        {
-          content: 'Q4 2021 revenue growth is 22%.',
-        },
-        {
-          content: 'Total ad engagements decreased 12% in Q4 2021.',
-        },
-        {
-          content:
-            'Expect full-year revenue to grow in the low to mid 20% range in 2022.',
-        },
-      ],
-    },
-    {
-      name: 'Expense grows faster than income.',
-      type: FactType.profit,
-      level: RiskLevel.medium,
-      notes: [
-        {
-          content:
-            'Gross profit only increased 23% while operating expenses increased 42% Q/Q.',
-        },
-        {
-          content: 'Sales and marketing expenses grew 39% Q/Q',
-        },
-        {
-          content:
-            'General and administrative expenses increased 55% due to higher personnel-related costs and professional fees.',
-        },
-        {
-          content:
-            'Operating margin and net margin decreased in the quarter (20% -> 11%, 17% -> 12%).',
-        },
-        {
-          content:
-            'In Q1 2022, GAAP operating loss to be between $225 million and $175 million ',
-        },
-      ],
-    },
-  ],
 
   // Earnings Report:
   earningsReports: [

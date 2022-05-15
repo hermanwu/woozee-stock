@@ -3,6 +3,49 @@ import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
   {
+    uuid: 'n24',
+    content:
+      'Coinbase earnings missed analyst estimates and shares fell as much as 19% in extended trading.',
+    source: Source.OFFICIAL,
+    date: new Date('2022-05-02'),
+    type: EventType.stock,
+    notes: [
+      {
+        content: 'Loss per share (EPS): $1.98',
+      },
+      {
+        content:
+          'Revenue: $1.17 billion, versus $1.48 billion expected, fell 27% from a year ago, and it also reported a net loss of $430 million in the first quarter.',
+      },
+      {
+        content:
+          'Retail monthly transaction users (MTUs) fell to 9.2 million, down from 11.4 million in the fourth quarter',
+      },
+      {
+        content:
+          'Total trading volume dropped from $547 billion in Q4 to $309 billion',
+      },
+      {
+        content:
+          '"While we continue to invest and enhance our core investment platform, the application era of crypto is upon us, led by NFDs and decentralized finance, and we are increasingly focusing our efforts on these market opportunities."',
+      },
+      {
+        content:
+          'Increased spending also helped to drag down the company’s bottom line. Overall operating expenses came in at $1.72 billion, outstripping revenue for the first time since the company began reporting finances publicly.',
+        notes: [
+          {
+            content:
+              'General and administrative expenses were $414 million, up 39% compared to the prior quarter.',
+          },
+          {
+            content:
+              'Coinbase attributed the rise to higher expenses related to full-time and contractor-related headcount. ',
+          },
+        ],
+      },
+    ],
+  },
+  {
     uuid: 'n23',
     content: 'Mortgage rates just hit their highest level since 2009',
     source: Source.cnbc,

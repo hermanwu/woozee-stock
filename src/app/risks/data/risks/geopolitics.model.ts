@@ -5,7 +5,7 @@ export const geopolitics = {
   uuid: '4',
   name: 'Russian-Ukraine war',
   type: FactType.event,
-  level: RiskLevel.medium,
+  level: RiskLevel.shortTerm,
   notes: [
     {
       content:

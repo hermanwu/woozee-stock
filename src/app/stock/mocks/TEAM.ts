@@ -4,11 +4,11 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 export const teamRisks = [
   {
     name: 'no income',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
   },
   {
     name: 'High price to sales ratio: 33.73',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     notes: [
       {
         content: 'ServiceNow: 19.29, Salesforce: 8.88',
@@ -17,7 +17,7 @@ export const teamRisks = [
   },
   {
     name: 'Marketing and sales, General and administrative cost increases (+74% & +73%)',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     notes: [
       {
         content: 'Sales only increases 36%',

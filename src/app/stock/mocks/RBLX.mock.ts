@@ -2,6 +2,8 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { Rating } from '../models/rating.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const rblxRisks = [];
+
 export const rblx: StockAnalysis = {
   marketCap: 24.27 * BILLION,
   name: 'Roblox',
@@ -14,6 +16,7 @@ export const rblx: StockAnalysis = {
   myRating: Rating.Buy,
   propertiesPageEnabled: true,
   irAddress: 'https://ir.roblox.com/overview/default.aspx',
+  riskUuids: rblxRisks.map((r) => r.uuid),
   // POTENTIALS:
 
   // Demand:

@@ -1,7 +1,15 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
+import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { capMock } from './market-cap.mock';
+
+export const googleCatalysts: Catalyst[] = [
+  {
+    uuid: 'googl-c-1',
+    content: 'New pixel watch and tablet.',
+  },
+];
 
 export const googl: StockAnalysis = {
   marketCap: capMock.googl,
@@ -12,6 +20,7 @@ export const googl: StockAnalysis = {
   ceoQuote: [],
   advantage: [],
   irAddress: 'https://abc.xyz/investor/',
+  catalystUuids: googleCatalysts.map((c) => c.uuid),
   // POTENTIALS:
 
   // Demand:

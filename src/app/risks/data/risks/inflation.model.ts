@@ -5,7 +5,7 @@ export const inflation = {
   uuid: '1',
   updatedTime: new Date('2022-04-07'),
   name: 'Inflation',
-  level: RiskLevel.high,
+  level: RiskLevel.longTerm,
   tags: ['inflation'],
   notes: [
     // {

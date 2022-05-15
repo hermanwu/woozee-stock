@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrendIndustriesComponent } from './trend-industries.component';
+import { RiskTotalDisplayComponent } from './risk-total-display.component';
 
-describe('TrendIndustriesComponent', () => {
-  let component: TrendIndustriesComponent;
-  let fixture: ComponentFixture<TrendIndustriesComponent>;
+describe('RiskTotalDisplayComponent', () => {
+  let component: RiskTotalDisplayComponent;
+  let fixture: ComponentFixture<RiskTotalDisplayComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TrendIndustriesComponent ]
+      declarations: [ RiskTotalDisplayComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TrendIndustriesComponent);
+    fixture = TestBed.createComponent(RiskTotalDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

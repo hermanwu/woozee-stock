@@ -13,7 +13,7 @@ export const tslaCatalysts = [
 export const tslaRisks = [
   {
     name: 'Value',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     type: FactType.valuation,
     notes: [
       {
@@ -27,7 +27,7 @@ export const tslaRisks = [
   },
   {
     name: 'Company Growth',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     type: FactType.growth,
     notes: [
       {
@@ -51,6 +51,7 @@ export const tslaRisks = [
 ];
 
 export const tsla: StockAnalysis = {
+  uuid: 'aapl',
   logo: 'https://www.carlogos.org/car-logos/tesla-logo-2200x2800.png',
   name: 'Tesla',
   ticker: 'TSLA',

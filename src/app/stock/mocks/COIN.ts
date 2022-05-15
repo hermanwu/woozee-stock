@@ -1,13 +1,17 @@
+import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { MarketType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Risk } from 'src/app/risks/models/risk.model';
+import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const coinRisks = [
+export const coinRisks: Risk[] = [
   {
-    name: 'New user or revenue growth slows down',
-    level: RiskLevel.medium,
+    uuid: 'coin-r-1',
+    content: 'New user and revenue growth slows down',
+    level: RiskLevel.shortTerm,
     type: FactType.growth,
     notes: [
       {
@@ -23,20 +27,69 @@ export const coinRisks = [
     ],
   },
   {
-    name: 'Crypto transaction related revenue decreases',
-    level: RiskLevel.medium,
+    uuid: 'coin-r-2',
+    name: 'Highly tied to crypto business.',
+    level: RiskLevel.longTerm,
+  },
+  {
+    uuid: 'coin-r-2',
+    name: 'Transaction based revenue could be . (i.e. company like Schwab)',
+    level: RiskLevel.longTerm,
+  },
+  {
+    uuid: 'coin-r-3',
+    name: 'Too much competition in the business, from startup to established brokerage.',
+    level: RiskLevel.longTerm,
+  },
+  {
+    uuid: 'coin-r-5',
+    name: 'Crypto is not a good investment since it wont increase value',
+    level: RiskLevel.longTerm,
+  },
+  {
+    uuid: 'coin-r-6',
+    name: 'Assets on the platform only grow about 10% compared to last year.',
+  },
+  {
+    uuid: 'coin-r-7',
+    content:
+      'Historical transaction revenue per user does not grow in the past 5 years.',
+    level: RiskLevel.shortTerm,
+    type: FactType.growth,
+  },
+  {
+    uuid: 'coin-r-8',
+    content: 'Forecast in Q2 does not any better.',
+    level: RiskLevel.shortTerm,
+    type: FactType.growth,
+  },
+];
+
+export const coinCatalysts: Catalyst[] = [
+  {
+    uuid: 'coin-c-1',
+    content: 'NFT market',
+    level: CatalystLevel.strong,
+  },
+  {
+    uuid: 'coin-c-2',
+    content: 'decentralized finance',
+    level: CatalystLevel.strong,
   },
 ];
 
 export const coin: StockAnalysis = {
-  marketCap: 41.02 * BILLION,
+  uuid: 'us-coin',
+  marketCap: 18.53 * BILLION,
+  riskUuids: coinRisks.map((r) => r.uuid),
+  catalystUuids: coinCatalysts.map((c) => c.uuid),
 
   business: {
     markets: [MarketType.crypto],
     users: [
       { type: 'Retail users: We serve as the users’ primary crypto account' },
       {
-        type: 'Institutions: We provide a platform solution for safely accessing and transacting in crypto markets to institutions',
+        type: 'Institutions: We provide a platform `solution for safely accessing and transacting in crypto markets to institutions',
       },
       {
         type: 'Ecosystem partners: We provide developers, creators, merchants, and asset issuers a platform with technology and services that enables them to build applications that leverage crypto protocols, actively participate in crypto networks, and securely accept cryptocurrencies as payment.',
@@ -49,10 +102,11 @@ export const coin: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      totalRevenue: 8.1 * BILLION,
-      operatingIncome: 2970 * MILLION,
-      activeUserCount: 10 * MILLION,
-      isForecast: true,
+      totalRevenue: 1166.436 * MILLION,
+      costOfRevenue: 277.826 * MILLION,
+      totalOperatingExpense: 1720.899 * MILLION,
+      netIncome: 429.659 * MILLION,
+      operatingIncome: -554.463 * MILLION,
     },
 
     {

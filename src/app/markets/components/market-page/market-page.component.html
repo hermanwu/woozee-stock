@@ -2,4 +2,10 @@
   <div title i18n>Markets</div>
 </app-title-menu>
 
+<div buttons>
+  <button mat-icon-button type="button" (click)="sort()">
+    <mat-icon>sort</mat-icon>
+  </button>
+</div>
+
 <app-market-list [markets]="markets"></app-market-list>

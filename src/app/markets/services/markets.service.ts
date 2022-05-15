@@ -19,4 +19,54 @@ export class MarketsService {
       );
     }
   }
+
+  sortMarketsByRiskCount(markets: Market[]): Market[] {
+    const marketsClone = cloneDeep(markets);
+
+    return marketsClone.sort((a, b) => {
+      if (!a['riskUuids'] && !b['riskUuids']) {
+        return 0;
+      }
+
+      if (!a['riskUuids']) {
+        return 1;
+      }
+
+      if (!b['riskUuids']) {
+        return -1;
+      }
+
+      const isAscending = false;
+      if (isAscending === false) {
+        [a, b] = [b, a];
+      }
+
+      // switch (this.sortOrder.column) {
+      //   case StockListTableColumn.ticker:
+      //     return a[StockListTableColumn.ticker].localeCompare(
+      //       b[StockListTableColumn.ticker]
+      //     );
+      // }
+
+      return a['riskUuids'].length - b['riskUuids'].length;
+    });
+  }
+
+  sortByCatalystRiskDifference(items: Market[]) {
+    const itemCopy = cloneDeep(items);
+
+    return itemCopy.sort((a, b) => {
+      const aRiskCount = a?.riskUuids?.length > 0 ? a.riskUuids.length : 0;
+      const aCatalystCount =
+        a?.catalystUuids?.length > 0 ? a.catalystUuids.length : 0;
+      const aDiff = aCatalystCount - aRiskCount;
+
+      const bRiskCount = b?.riskUuids?.length > 0 ? b.riskUuids.length : 0;
+      const bCatalystCount =
+        b?.catalystUuids?.length > 0 ? b.catalystUuids.length : 0;
+      const bDiff = bCatalystCount - bRiskCount;
+
+      return bDiff - aDiff;
+    });
+  }
 }

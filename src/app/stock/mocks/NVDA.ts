@@ -9,7 +9,7 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 export const nvdaRisks = [
   {
     type: FactType.growth,
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     name: 'Automotive and Robotic business slows down',
     notes: [
       {
@@ -20,7 +20,7 @@ export const nvdaRisks = [
   },
   {
     type: FactType.valuation,
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     name: 'P/S and P/E are relatively high',
     notes: [
       {

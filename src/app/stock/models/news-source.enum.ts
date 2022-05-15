@@ -14,7 +14,7 @@ export enum Source {
   me = 'me',
   MORGAN_STANLEY = 'Morgan Stanley',
   Morningbrew = 'morningbrew.com',
-  OFFICIAL = '官方',
+  OFFICIAL = 'Earnings Report',
   reuters = 'Reuters',
   YAHOO = '雅虎财经',
   ibd = "Investor's Business Daily",

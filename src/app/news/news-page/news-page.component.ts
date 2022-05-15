@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { riskService } from 'src/app/risks/services/subjective-data.service';
+import { Market } from 'src/app/stock/models/market.models';
 import { NewsWithDetails } from 'src/app/stock/models/news.model';
+import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
 
 @Component({
   selector: 'app-news-page',
@@ -9,9 +11,11 @@ import { NewsWithDetails } from 'src/app/stock/models/news.model';
 })
 export class NewsPageComponent implements OnInit {
   news: NewsWithDetails[];
+  stocks: StockAnalysis[];
+  markets: Market[];
 
   constructor(private risksDataService: riskService) {
-    this.news = risksDataService.getNewsDetails().slice(0, 3);
+    this.news = risksDataService.getNewsDetails();
   }
 
   ngOnInit(): void {}

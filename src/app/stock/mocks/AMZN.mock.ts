@@ -12,7 +12,7 @@ export const amznRisks = [
   {
     name: 'Slow revenue growth last quarter',
     type: FactType.growth,
-    level: RiskLevel.high,
+    level: RiskLevel.longTerm,
     notes: [
       {
         content:
@@ -24,7 +24,7 @@ export const amznRisks = [
   {
     name: 'Operating expense increases faster than gross profit',
     type: FactType.profit,
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     notes: [
       {
         content:
@@ -40,7 +40,7 @@ export const amznRisks = [
   },
   {
     name: 'Future growth slows',
-    level: RiskLevel.high,
+    level: RiskLevel.longTerm,
     type: FactType.growth,
     notes: [
       {

@@ -1,3 +1,3 @@
 export const currentUser = {
-  watchList: ['aapl'],
+  watchList: ['aapl', 'tsla'],
 };

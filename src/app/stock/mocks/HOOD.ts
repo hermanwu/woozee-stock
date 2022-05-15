@@ -30,7 +30,7 @@ export const hoodCatalysts = [
 export const hoodRisks = [
   {
     name: 'Revenues only increased 14% this quarter',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     type: FactType.growth,
     notes: [
       {
@@ -44,7 +44,7 @@ export const hoodRisks = [
   },
   {
     name: 'User growth is stagnating',
-    level: RiskLevel.high,
+    level: RiskLevel.longTerm,
     type: FactType.growth,
     notes: [
       {
@@ -55,7 +55,7 @@ export const hoodRisks = [
   },
   {
     name: 'Revenue is declining in next quarter forecast',
-    level: RiskLevel.high,
+    level: RiskLevel.longTerm,
     type: FactType.growth,
     notes: [
       {
@@ -66,7 +66,7 @@ export const hoodRisks = [
   {
     name: 'Company is losing money much faster than it can earn.',
     type: FactType.profit,
-    level: RiskLevel.high,
+    level: RiskLevel.longTerm,
     notes: [
       {
         content:

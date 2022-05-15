@@ -8,7 +8,7 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 export const fbRisks = [
   {
     name: 'Financial Health',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     type: FactType.profit,
     notes: [
       {
@@ -22,7 +22,7 @@ export const fbRisks = [
   },
   {
     name: 'Value',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     notes: [
       {
         content:
@@ -35,12 +35,12 @@ export const fbRisks = [
   },
   {
     name: 'Future Growth',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     notes: [allNews[2]],
   },
   {
     name: 'Management',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     notes: [
       {
         content: "Elon Musk's health and focus",
@@ -53,7 +53,7 @@ export const fbRisks = [
   },
   {
     name: 'Investors Sentiment',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     notes: [
       {
         content:
@@ -81,12 +81,12 @@ export const fbRisks = [
   },
   {
     name: 'Competitors',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     notes: [allNews[3]],
   },
   {
     name: 'Technical Chart',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     notes: [
       {
         content: 'RSI is below average',
@@ -98,7 +98,7 @@ export const fbRisks = [
   },
   {
     name: 'Macroeconomics',
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     notes: [],
   },
 ];

@@ -4,7 +4,7 @@ import { RiskLevel } from '../../models/risk-level.model';
 export const laborShortage = {
   uuid: 'usr-3',
   name: 'Labor Shortage',
-  level: RiskLevel.medium,
+  level: RiskLevel.shortTerm,
   type: FactType.business,
   notes: [
     {

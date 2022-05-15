@@ -1,22 +1,63 @@
+import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { MarketType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
-import { FactType } from 'src/app/risks/models/fact-type.enum';
+import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Risk } from 'src/app/risks/models/risk.model';
+import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const afrmRisks = [
+export const afrmRisks: Risk[] = [
   {
-    type: FactType.business,
-    name: 'Interest Rate Increases',
+    uuid: 'afrm-r-3',
+    name: 'Operating expenses (581M) is way larger than total revenue (354M).',
+    level: RiskLevel.longTerm,
+  },
+
+  {
+    uuid: 'afrm-r-2',
+    name: 'Consumer spending and delinquency rate could be negatively affected by high inflation.',
   },
   {
-    type: FactType.business,
-    name: 'Delinquency rate could be affected by high inflation',
+    uuid: 'afrm-r-1',
+    name: 'Raising interest environment could discourage user from using Affirm.',
+  },
+  {
+    uuid: 'afrm-r-3',
+    name: 'Fintech product is hard to build a moat with many competitions in general.',
+  },
+];
+
+export const afrmCatalysts: Catalyst[] = [
+  {
+    uuid: 'afrm-c-2',
+    name: '81% of transactions were from repeat users',
+    level: CatalystLevel.strong,
+  },
+  {
+    uuid: 'afrm-c-1',
+    name: 'Revenue increases 54% Q/Q while operating expenses only increased 32%',
+  },
+
+  {
+    uuid: 'afrm-c-2',
+    name: 'Directly integrated with half of top 10 largest retailers in the US. Addresses more than 60% of US ecommerce.',
+  },
+  {
+    uuid: 'afrm-c-3',
+    name: 'Active merchants increased 1698% percent (from 12K to 207K)',
+  },
+  {
+    uuid: 'afrm-c-3',
+    name: 'Active consumers increased 137% percent (from 5.4M to 12.7M)',
   },
 ];
 
 export const afrm: StockAnalysis = {
-  marketCap: 9 * BILLION,
+  marketCap: 5.56 * BILLION,
+
+  riskUuids: afrmRisks.map((r) => r.uuid),
+  catalystUuids: afrmCatalysts.map((i) => i.uuid),
 
   logo: '',
   name: 'Affirm',
@@ -63,48 +104,115 @@ export const afrm: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      totalRevenue: 330 * 1e6,
-      operatingIncome: -60 * 1e6,
-      isForecast: true,
+      totalRevenue: 354.762 * MILLION,
+      costOfRevenue: (46.853 + 66.294 + 15.824) * MILLION,
+      totalOperatingExpense: 581.313 * MILLION,
+      operatingIncome: -226.551 * MILLION,
+      netIncome: -54.671 * MILLION,
     },
     {
       year: 2021,
       quarter: 4,
-      reportLink:
-        'https://s25.q4cdn.com/442043304/files/doc_financials/2021/q4/Snap-10K-(2021).pdf',
-      pressReleaseLink:
-        'https://investors.affirm.com/static-files/61176b0c-9cdf-481b-bfbc-5e844f33b9f6',
-      slidesLink:
-        'https://investors.affirm.com/static-files/887da555-3305-4b39-a53c-b3fb44ee0026',
-      totalRevenue: 361 * 1e6,
-      operatingIncome: -196200 * 1e3,
-      activeUserCount: 319 * 1e6,
-      salesAndMarketingCost: 143.476 * MILLION,
+      totalRevenue: 303 * MILLION,
+      sellingGeneralAndAdministrative: 421 * MILLION,
+      unusualExpenseIncome: 7 * MILLION,
+      totalOperatingExpense: 499 * MILLION,
+      operatingIncome: -196 * MILLION,
+      otherIncomeNet: 36 * MILLION,
+      netIncomeBeforeTaxes: -159 * MILLION,
+      provisionForIncomeTaxes: 0 * MILLION,
+      netIncome: -159 * MILLION,
     },
     {
       year: 2021,
       quarter: 3,
-      totalRevenue: 269385 * 1e3,
-      operatingIncome: -166071 * 1e3,
+      totalRevenue: 238 * MILLION,
+      sellingGeneralAndAdministrative: 303 * MILLION,
+      unusualExpenseIncome: 20 * MILLION,
+      totalOperatingExpense: 404 * MILLION,
+      operatingIncome: -166 * MILLION,
+      otherIncomeNet: -140 * MILLION,
+      netIncomeBeforeTaxes: -306 * MILLION,
+      provisionForIncomeTaxes: 0 * MILLION,
+      netIncome: -306 * MILLION,
     },
     {
       year: 2021,
       quarter: 2,
-      totalRevenue: 261780 * 1e3,
-      operatingIncome: -124690 * 1e3,
+      totalRevenue: 219 * MILLION,
+      sellingGeneralAndAdministrative: 316 * MILLION,
+      unusualExpenseIncome: 10 * MILLION,
+      totalOperatingExpense: 368 * MILLION,
+      operatingIncome: -149 * MILLION,
+      otherIncomeNet: -5 * MILLION,
+      netIncomeBeforeTaxes: -155 * MILLION,
+      provisionForIncomeTaxes: -2 * MILLION,
+      netIncome: -153 * MILLION,
     },
     {
       year: 2021,
       quarter: 1,
-      totalRevenue: 230665 * 1e3,
-      operatingIncome: -194437 * 1e3,
+      totalRevenue: 230 * MILLION,
+      sellingGeneralAndAdministrative: 312 * MILLION,
+      unusualExpenseIncome: 57 * MILLION,
+      totalOperatingExpense: 383 * MILLION,
+      operatingIncome: -169 * MILLION,
+      otherIncomeNet: -77 * MILLION,
+      netIncomeBeforeTaxes: -247 * MILLION,
+      provisionForIncomeTaxes: 0 * MILLION,
+      netIncome: -247 * MILLION,
     },
     {
       year: 2020,
       quarter: 4,
-      totalRevenue: 204041 * 1e3,
-      operatingIncome: -26772 * 1e3,
-      salesAndMarketingCost: 39.112 * MILLION,
+      totalRevenue: 189 * MILLION,
+      sellingGeneralAndAdministrative: 138 * MILLION,
+      unusualExpenseIncome: 53 * MILLION,
+      totalOperatingExpense: 216 * MILLION,
+      operatingIncome: -26 * MILLION,
+      otherIncomeNet: 0 * MILLION,
+      netIncomeBeforeTaxes: -26 * MILLION,
+      provisionForIncomeTaxes: 0 * MILLION,
+      netIncome: -26 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 3,
+      totalRevenue: 157 * MILLION,
+      sellingGeneralAndAdministrative: 102 * MILLION,
+      unusualExpenseIncome: 49 * MILLION,
+      totalOperatingExpense: 190 * MILLION,
+      operatingIncome: -33 * MILLION,
+      otherIncomeNet: 29 * MILLION,
+      netIncomeBeforeTaxes: -3 * MILLION,
+      provisionForIncomeTaxes: 0 * MILLION,
+      netIncome: -3 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 2,
+      totalRevenue: 141 * MILLION,
+      sellingGeneralAndAdministrative: 83 * MILLION,
+      unusualExpenseIncome: 43 * MILLION,
+      totalOperatingExpense: 102 * MILLION,
+      operatingIncome: 39 * MILLION,
+      otherIncomeNet: -4 * MILLION,
+      netIncomeBeforeTaxes: 34 * MILLION,
+      provisionForIncomeTaxes: 0 * MILLION,
+      netIncome: 34 * MILLION,
+    },
+    {
+      year: 2020,
+      quarter: 1,
+      totalRevenue: 128 * MILLION,
+      sellingGeneralAndAdministrative: 85 * MILLION,
+      unusualExpenseIncome: 33 * MILLION,
+      totalOperatingExpense: 209 * MILLION,
+      operatingIncome: -81 * MILLION,
+      otherIncomeNet: -4 * MILLION,
+      netIncomeBeforeTaxes: -85 * MILLION,
+      provisionForIncomeTaxes: 0 * MILLION,
+      netIncome: -85 * MILLION,
     },
   ],
 };

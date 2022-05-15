@@ -13,26 +13,3 @@
     <mat-icon>more_horiz</mat-icon>
   </button> -->
 </app-card>
-
-<app-title-menu>
-  <div title>Trending Risks</div>
-</app-title-menu>
-
-<app-card>
-  <ng-container *ngFor="let item of news; last as isLast">
-    <app-news-display [news]="item"></app-news-display>
-    <app-divider *ngIf="!isLast"></app-divider>
-  </ng-container>
-</app-card>
-
-<app-title-menu>
-  <div title>Trending Catalysts</div>
-</app-title-menu>
-
-<app-card>
-  <ng-container *ngFor="let item of news; last as isLast">
-    <app-news-display [news]="item"></app-news-display>
-    <app-divider *ngIf="!isLast"></app-divider>
-  </ng-container>
-  >
-</app-card>

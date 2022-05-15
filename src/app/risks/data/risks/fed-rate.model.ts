@@ -6,7 +6,7 @@ import { RiskLevel } from '../../models/risk-level.model';
 export const fedRate = {
   uuid: 'usr-5',
   name: 'Fed rate increases could potentially cause recession.',
-  level: RiskLevel.high,
+  level: RiskLevel.longTerm,
   type: FactType.event,
   markets: [MarketType.us],
   notes: [

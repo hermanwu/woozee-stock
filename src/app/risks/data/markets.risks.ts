@@ -1,3 +1,4 @@
+import { cryptoRisks } from 'src/app/markets/data/crypto-market.const';
 import { fintechRisks } from 'src/app/markets/data/fintech-market.const';
 import { foodDeliveryRisks } from 'src/app/markets/data/food-delivery-market.const';
 import { sharedEconomyRisks } from 'src/app/markets/data/shared-economy.const';
@@ -9,4 +10,5 @@ export const marketRisks: Risk[] = [
   ...sharedEconomyRisks,
   ...fintechRisks,
   ...usMarketRisks,
+  ...cryptoRisks,
 ];

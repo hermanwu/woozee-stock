@@ -31,7 +31,7 @@
     </div>
 
     <div>
-      Revenue Growth <span class="low-gray">(Y/Y) -> </span>(Q/Q)
+      Revenue Growth (Q/Q)
       <button
         mat-icon-button
         type="button"
@@ -44,6 +44,8 @@
     <div>Risks</div>
 
     <div>Catalysts</div>
+
+    <div>Latest Earnings</div>
   </div>
 
   <div *ngFor="let stock of stocks; let i = index" class="stock-row">
@@ -67,12 +69,6 @@
 
     <div class="number-display">
       <span>
-        <span *ngIf="stock.yearOverYearRevenueGrowth" class="low-gray">
-          {{
-            stock.yearOverYearRevenueGrowth | siUnit: 2 | percent | undefined
-          }}
-          ->
-        </span>
         {{ stock.quarterRevenueGrowth | siUnit: 2 | percent | undefined }}
       </span>
     </div>
@@ -86,6 +82,12 @@
     <div class="number-display">
       <span>
         {{ stock?.catalystUuids?.length || 0 }}
+      </span>
+    </div>
+
+    <div class="number-display">
+      <span>
+        {{ stock?.latestReport?.year }}Q{{ stock?.latestReport?.quarter }}
       </span>
     </div>
   </div>

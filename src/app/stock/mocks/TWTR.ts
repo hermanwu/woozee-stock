@@ -30,14 +30,14 @@ export const twtrRisks = [
   {
     uuid: 'risk-6',
     content: "Twitter's future is unknown under current acquisition drama",
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     tickers: ['TWTR'],
     type: FactType.event,
   },
   {
     name: 'Revenue is not growing fast enough. (low to mid 20% range)',
     type: FactType.growth,
-    level: RiskLevel.high,
+    level: RiskLevel.longTerm,
     notes: [
       {
         content: 'Q4 2021 revenue growth is 22%.',
@@ -54,7 +54,7 @@ export const twtrRisks = [
   {
     name: 'Expense grows faster than income.',
     type: FactType.profit,
-    level: RiskLevel.medium,
+    level: RiskLevel.shortTerm,
     notes: [
       {
         content:

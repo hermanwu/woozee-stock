@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { catalysts } from 'src/app/catalyst/data/catalyst.mock';
 import { MarketType } from 'src/app/facts/data/area.enum';
+import { allMarkets } from 'src/app/markets/data/all-markets.const';
 import { allNews } from 'src/app/media/news/news.const';
-import { markets } from 'src/app/shared/data/mocks/markets/markets.const';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { Market } from 'src/app/stock/models/market.models';
@@ -27,7 +27,7 @@ export class riskService {
     this.risks = cloneDeep(allRisks);
     this.newsWithDetails = cloneDeep(allNews) as NewsWithDetails[];
     this.catalysts = cloneDeep(catalysts);
-    this.markets = cloneDeep(markets);
+    this.markets = cloneDeep(allMarkets);
 
     for (let catalyst of this.catalysts) {
       if (catalyst.uuid) {
@@ -41,7 +41,7 @@ export class riskService {
       }
     }
 
-    for (let market of markets) {
+    for (let market of this.markets) {
       this.marketMap.set(market.type, market);
     }
 
@@ -62,6 +62,7 @@ export class riskService {
   }
 
   getRisksByUuids(uuids: string[]): Risk[] {
+    console.log(uuids);
     if (uuids && uuids.length > 0) {
       return this.risks.filter((risk) => uuids.indexOf(risk.uuid) >= 0);
     }

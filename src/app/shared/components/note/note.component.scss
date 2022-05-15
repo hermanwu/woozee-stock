@@ -1,8 +1,8 @@
 .grid {
-  display: grid;
+  display: flex;
 
-  &.grid-with-buttons {
-    grid-template-columns: 5fr 2fr;
+  .action-buttons {
+    margin-left: auto;
   }
 }
 

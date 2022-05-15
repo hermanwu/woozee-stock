@@ -6,7 +6,7 @@ export const covid = {
   uuid: '2',
   updatedTime: new Date('2022-01-01'),
   name: 'COVID',
-  level: RiskLevel.medium,
+  level: RiskLevel.shortTerm,
   type: FactType.event,
   notes: [
     {

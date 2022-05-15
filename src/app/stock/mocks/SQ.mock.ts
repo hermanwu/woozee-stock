@@ -30,7 +30,7 @@ export const blockRisks: Risk[] = [
   {
     uuid: 'sqr-5',
     name: 'Small sellers (<$125K Annualized GPV) decreases from 16.1B to 13.8, which means less new customers are joining',
-    level: RiskLevel.high,
+    level: RiskLevel.longTerm,
   },
 ];
 

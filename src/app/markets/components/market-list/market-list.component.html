@@ -2,13 +2,12 @@
   <div>
     <app-market-display [marketType]="market.type"></app-market-display>
 
-    <span> Risks </span>
-    <span>{{ multiplySign }}</span>
-    <span>{{ market?.riskUuids?.length || 0 }}</span>
+    <app-risk-total-display
+      [riskUuids]="market?.riskUuids"
+    ></app-risk-total-display>
 
-    <span> Catalysts </span>
-    <span>{{ multiplySign }}</span>
-    <span>{{ market?.catalystUuids?.length || 0 }}</span>
+    <app-catalyst-total-display [catalystUuids]="market?.catalystUuids">
+    </app-catalyst-total-display>
   </div>
 
   <app-divider *ngIf="!isLast"></app-divider>

@@ -14,6 +14,7 @@ import { BoosterComponent } from './catalyst/booster/booster.component';
 import { CatalystLevelDisplayComponent } from './catalyst/catalyst-level-display/catalyst-level-display.component';
 import { CatalystListComponent } from './catalyst/components/catalyst-list/catalyst-list.component';
 import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
+import { CatalystTotalDisplayComponent } from './catalyst/components/catalyst-total-display/catalyst-total-display.component';
 import { CatalystComponent } from './catalyst/components/catalyst/catalyst.component';
 import { FactComponent } from './facts/components/fact/fact.component';
 import { FomoStocksComponent as HomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
@@ -33,6 +34,7 @@ import { ProfitabilityComponent } from './profitability/profitability.component'
 import { RiskCatalystDialogComponent } from './risk-catalyst-dialog/risk-catalyst-dialog.component';
 import { RiskLevelDisplayComponent } from './risks/components/risk-level-display/risk-level-display.component';
 import { RiskListComponent } from './risks/components/risk-list/risk-list.component';
+import { RiskTotalDisplayComponent } from './risks/components/risk-total-display/risk-total-display.component';
 import { RiskComponent } from './risks/components/risk/risk.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
@@ -70,7 +72,6 @@ import { StockPropertiesPageComponent } from './stock/pages/stock-properties-pag
 import { StockDisplayComponent } from './stock/stock-display/stock-display.component';
 import { TitleMenuComponent } from './title-menu/title-menu.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
-import { TrendIndustriesComponent } from './trend/trend-industries/trend-industries.component';
 import { TrendComponent } from './trend/trend.component';
 
 // Use this when you want to disable Material ripple animations for all components
@@ -87,7 +88,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     HighGrowthIndustryComponent,
     StockDisplayComponent,
     TrendComponent,
-    TrendIndustriesComponent,
     HomoStocksComponent,
     ForeverOwnStocksPanelComponent,
     StockListTableComponent,
@@ -138,6 +138,8 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     RiskCatalystDialogComponent,
     SliderComponent,
     DemoPageComponent,
+    RiskTotalDisplayComponent,
+    CatalystTotalDisplayComponent,
   ],
   imports: [
     BrowserModule,

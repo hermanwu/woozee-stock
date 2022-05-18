@@ -23,6 +23,7 @@ export enum EventType {
   geopolitics = 'Geopolitics',
   industry = 'Sector',
   stock = 'Stocks',
+  investor = 'Investor',
 }
 
 export interface NewsWithDetails extends News {

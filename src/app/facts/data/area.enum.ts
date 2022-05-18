@@ -17,7 +17,7 @@ export enum MarketType {
   fintech = 'Fintech',
   loan = 'Loan',
   shared_economy = 'Shared Economy',
-  travel = 'Travel Booking',
+  travel = 'Travel & Tourism',
   crypto = 'Crypto',
   nft = 'NFT',
 

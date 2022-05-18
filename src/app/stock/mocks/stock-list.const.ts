@@ -106,8 +106,7 @@ import { TRMB } from './TRMB';
 import { tsla } from './TSLA.mock';
 import { TSM } from './TSM';
 import { TTD } from './TTD';
-import { ttwo } from './TTWO';
-import { twlo } from './twlo';
+import { twlo } from './TWLO';
 import { twtr } from './twtr';
 import { u } from './U.mock';
 import { uber } from './uber';
@@ -236,12 +235,10 @@ export const stocksMap = {
   team,
   techy,
   tgt,
-  ttwo,
   TRMB,
   tsla,
   TSM,
   TTD,
-  twlo,
   twtr,
   u,
   uber,
@@ -265,4 +262,5 @@ export const stocksMap = {
   path,
   mttr,
   oxy,
+  twlo,
 };

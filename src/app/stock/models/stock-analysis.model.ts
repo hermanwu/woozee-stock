@@ -20,6 +20,7 @@ export interface StockAnalysis {
   riskUuids?: string[];
   catalystUuids?: string[];
   marketCap?: any;
+  price?: number;
   // POTENTIALS:
   revenueGrowth?: number;
   PS?: any;
@@ -36,7 +37,6 @@ export interface StockAnalysis {
   value?: string[];
   products?: any[];
   painPoint?: string[]; // for market.
-  customers?: string[];
   market?: string[]; // China, US, ETC
   trends?: string[] | Trend[];
 

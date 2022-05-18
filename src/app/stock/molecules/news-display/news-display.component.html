@@ -1,5 +1,11 @@
 <div class="flex">
   <span>
+    <app-badge *ngIf="news.source">
+      <a [href]="news.sourceLink" target="_blank">{{ news.source }}</a>
+    </app-badge>
+  </span>
+
+  <span>
     <app-badge *ngIf="news.type">
       <span>{{ news.type }}</span>
     </app-badge>
@@ -13,27 +19,23 @@
     <app-market-display [marketType]="marketType"></app-market-display>
   </span>
 
-  <span class="news">
-    <app-badge *ngIf="news.source">
-      <a [href]="news.sourceLink" target="_blank">{{ news.source }}</a>
-    </app-badge>
-  </span>
-
   <!-- <app-date-display [date]="news.date"></app-date-display> -->
 
-  <button
-    mat-icon-button
-    type="button"
-    [disabled]="
-      !news.notes &&
-      (!news.catalystUuids || news.catalystUuids.length === 0) &&
-      (!news.riskUuids || news.riskUuids.length === 0)
-    "
-    (click)="expanded = !expanded"
-  >
-    <mat-icon *ngIf="expanded">expand_less</mat-icon>
-    <mat-icon *ngIf="!expanded">expand_more</mat-icon>
-  </button>
+  <span class="news">
+    <button
+      mat-icon-button
+      type="button"
+      [disabled]="
+        !news.notes &&
+        (!news.catalystUuids || news.catalystUuids.length === 0) &&
+        (!news.riskUuids || news.riskUuids.length === 0)
+      "
+      (click)="expanded = !expanded"
+    >
+      <mat-icon *ngIf="expanded">expand_less</mat-icon>
+      <mat-icon *ngIf="!expanded">expand_more</mat-icon>
+    </button>
+  </span>
 </div>
 
 <div>

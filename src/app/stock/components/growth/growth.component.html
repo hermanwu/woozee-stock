@@ -24,7 +24,7 @@
 
   <!-- <div class="stats">{{ unicode.NextLine }}</div> -->
 
-  <div class="row">
+  <div class="row" *ngIf="nextQuarterForecastGrowth && !compareDisplay">
     <div *ngIf="!hideLabel">Forecast Next Q/Q</div>
     <div class="stats">
       <span class="gray" *ngIf="!compareDisplay">

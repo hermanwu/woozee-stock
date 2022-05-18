@@ -5,7 +5,6 @@ import { hermanFutu } from 'src/app/accounts/ mock-data/herman-futu';
 import { hermanIbAccount } from 'src/app/accounts/ mock-data/herman-ib-account';
 import { schwab } from 'src/app/accounts/ mock-data/herman-schwab-account';
 import { jessicaPaypal } from 'src/app/accounts/ mock-data/jessica-paypal-account';
-import { webull } from 'src/app/accounts/ mock-data/jessica-wubu-account';
 import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
 import { currentUser } from 'src/app/accounts/data/user.mock';
 import { industry } from 'src/app/shared/industry.enum';
@@ -36,7 +35,6 @@ export class StockListPageComponent implements OnInit {
     ...hermanFutu,
 
     // Jessica Account.
-    ...webull,
     ...jessicaPaypal,
 
     // Mei long Account

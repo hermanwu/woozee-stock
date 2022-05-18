@@ -32,7 +32,7 @@ export interface Business {
   markets?: MarketType[];
   revenue?: Market[];
   competitiveAdvantages?: Strategy[];
-  users?: User[];
+  users?: User[] | string[];
   growthStrategy?: string[];
   productBenefits?: Benefit[];
 }

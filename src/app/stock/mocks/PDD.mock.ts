@@ -92,10 +92,7 @@ export const pdd: StockAnalysis = {
         'https://lh3.googleusercontent.com/pw/ACtC-3cT_xiDmJ0t0r0LooLECn-pcGBXj9nouzMx0TNDbvGBpKRMtNmgLlS83iOFikdBNYrqefy2PlRIIjglJHT1FEoJO8Mt_5RRAaDsnA4mRI66LDT-FzayygnjfPj-PqjDAL15ak0KkinQMyNTPPvSLltB=w1652-h1168-no?authuser=3',
     },
   ],
-  customers: [
-    'Customers who are more sensitive to price.',
-    'Customers who are interested in discovery shopping',
-  ],
+
   business: {
     markets: [MarketType.ecommerce],
     growthStrategy: [
@@ -104,6 +101,10 @@ export const pdd: StockAnalysis = {
       'Work with Tencent as a strategic partner.',
       'Use psychology to drive more discovery shopping',
       'C2M model: Use data to create accurate demand for manufacturer and lower the cost.',
+    ],
+    users: [
+      'Customers who are more sensitive to price.',
+      'Customers who are interested in discovery shopping',
     ],
   },
   advantage: [

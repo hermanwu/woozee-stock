@@ -60,6 +60,10 @@ export const sq: StockAnalysis = {
   business: {
     markets: [MarketType.fintech],
     competitiveAdvantages: [{ type: StrategyType.ecoSystem }],
+    users: [
+      'Logistic and customer relation management for small business owners.',
+      'Banking and financial services for individuals that enjoy managing their wealth.',
+    ],
   },
 
   riskUuids: blockRisks.map((risk) => risk.uuid),
@@ -265,10 +269,6 @@ export const sq: StockAnalysis = {
       imageLink:
         'https://lh3.googleusercontent.com/pw/ACtC-3fVJX5-Zl1ifYAvvi2h738zhlGnorfNIh9Ji96wg01UQOKU3ZQe_KOsT46PNSOG4IzTA31FIzL6djsSHck6iaYNfk6AzmbjQhKJ4F1YkP6YxAqPFO48C4qdt2dB8nlR5J5AbsvlgqIM9v0qjmcblWFv=w1424-h1410-no?authuser=3',
     },
-  ],
-  customers: [
-    'Logistic and customer relation management for small business owners.',
-    'Banking and financial services for individuals that enjoy managing their wealth.',
   ],
   market: ['Banking and financial services'],
   advantage: [

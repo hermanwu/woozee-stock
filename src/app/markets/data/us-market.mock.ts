@@ -12,6 +12,20 @@ export const usMarketRisks: Risk[] = [
     content: 'US Consumer spending decreases.',
     updatedTime: new Date('2022-04-27'),
   },
+  {
+    uuid: 'usr14',
+    content: 'Companies start to cut spending.',
+    notes: [
+      {
+        content:
+          'Netflix lays off 150 employees as the streaming service contends with big subscriber losses',
+      },
+      {
+        content:
+          'Coinbase would temper hiring and instead focus on integrating the employees it has already hired.',
+      },
+    ],
+  },
 ];
 
 export const usMarket: Market = {

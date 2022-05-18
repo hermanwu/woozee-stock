@@ -130,15 +130,16 @@ export const bili: StockAnalysis = {
         'https://lh3.googleusercontent.com/pw/ACtC-3f0JlfMENR5Dw0sBPk2idrdNb_3Gcwwbwvr1LXizjNVKz9lEgHK6TQr_VFSb6wBdmvCnBDtMMTmN8yYfJWqXwP1aKaewrVdler6ABhi6v6zO18flWY4mHJsOGDSik_ZPokxRbkuNVw0GELZ4mvX-Nxx=w2984-h1766-no?authuser=3',
     },
   ],
-  customers: [
-    'Z代，即1990年至2009年在中国出生的个人。他们通常接受高质量的教育，并且精通技术，对文化产品的需求旺盛，并具有自我表达和社会互动的途径',
-  ],
+
   business: {
     growthStrategy: [
       '开创了“子弹聊天”功能，营造高度交互性和令人愉悦的观看体验，用户能够有很强的社区感。',
       '社区感刺激创作者生成跟多内容。',
       '通过播放广告',
       '向多元化内容发展包括直播和移动游戏来变现。',
+    ],
+    users: [
+      'Z代，即1990年至2009年在中国出生的个人。他们通常接受高质量的教育，并且精通技术，对文化产品的需求旺盛，并具有自我表达和社会互动的途径',
     ],
   },
   advantage: [

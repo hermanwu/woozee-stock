@@ -20,14 +20,18 @@ export const pltrRisks = [
 ];
 
 export const pltr: StockAnalysis = {
-  marketCap: 23.71 * BILLION,
+  marketCap: 15 * BILLION,
 
   earningsReports: [
     {
       year: 2022,
       quarter: 1,
-      totalRevenue: 443 * 1e6,
-      isForecast: true,
+      totalRevenue: 446.357 * MILLION,
+      costOfRevenue: 94.403 * MILLION,
+      grossProfit: 351.954 * MILLION,
+      totalOperatingExpense: 391.393 * MILLION,
+      operatingIncome: -39.439 * MILLION,
+      netIncome: -101.379 * MILLION,
     },
 
     {

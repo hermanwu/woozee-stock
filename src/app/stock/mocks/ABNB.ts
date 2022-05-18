@@ -5,17 +5,36 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const abnbRisks = [
   {
-    name: 'Has not fully recovered to pre-pandemic level',
-    notes: [
-      {
-        content: 'Q4 2021 Nights and experiences booked -3% Y/2Y',
-      },
-    ],
+    uuid: 'abnb-r-1',
+    content:
+      'Airbnb Q1 compound annual growth rate in the past three years is only 21%',
+  },
+  {
+    uuid: 'abnb-r-2',
+    content: 'Travel and tourism industry has a slow growth rate (10%)',
+  },
+  {
+    uuid: 'abnb-r-3',
+    content:
+      'Raising inflation could increase cost and reduce the demand for travel.',
+  },
+];
+export const abnbCatalysts = [
+  {
+    uuid: 'abnb-c-1',
+    content: 'Post-COVID travel demand.',
+  },
+  {
+    uuid: 'abnb-c-2',
+    content:
+      'High inflation pushes travelers to look for cheap options on Airbnb instead of hotels.',
   },
 ];
 
 export const abnb: StockAnalysis = {
-  marketCap: 92 * BILLION,
+  marketCap: 73.89 * BILLION,
+  riskUuids: abnbRisks.map((r) => r.uuid),
+  catalystUuids: abnbCatalysts.map((c) => c.uuid),
 
   logo: '',
   name: 'Airbnb',
@@ -48,6 +67,12 @@ export const abnb: StockAnalysis = {
   },
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 2.1 * BILLION,
+      isForecast: true,
+    },
     {
       year: 2022,
       quarter: 1,

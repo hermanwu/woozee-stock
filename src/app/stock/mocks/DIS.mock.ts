@@ -1,10 +1,63 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
+import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Risk } from 'src/app/risks/models/risk.model';
+import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const disneyCatalysts: Catalyst[] = [
+  {
+    uuid: 'dis-c-2',
+    content:
+      'Disney Parks, Experiences and Products revenues grow from 3.2B to 6.7B in the latest quarter benefiting from Post-COVID recovery.',
+  },
+  {
+    uuid: 'dis-c-1',
+    content:
+      'Disney+ subscribers continue to grow and could exceeds Netflix in future.',
+    notes: [
+      {
+        content: 'Disney+ has 138M subscribers right now.',
+      },
+      {
+        content:
+          'Disney plan to have between 230 million and 260 million global subscribers by 2024, which exceeds Netflix current 222M subscriber count.',
+      },
+    ],
+  },
+];
+
+export const disneyRisks: Risk[] = [
+  {
+    uuid: 'dis-r-1',
+    content: 'COVID impact in Asia, specifically lockdown in China.',
+    notes: [
+      {
+        content: 'Parks have been closed in Shanghai and Hongkong.',
+      },
+    ],
+    level: RiskLevel.longTerm,
+  },
+  {
+    uuid: 'dis-r-2',
+    content: 'Higher programming and production cost is across all areas.',
+    level: RiskLevel.longTerm,
+  },
+  {
+    uuid: 'dis-r-3',
+    level: RiskLevel.shortTerm,
+    content: '70+ PE ratio is relatively high',
+  },
+];
+
 export const dis: StockAnalysis = {
-  marketCap: 265 * BILLION,
+  uuid: 'dis',
+  price: 107.33,
+  marketCap: 190 * BILLION,
+  riskUuids: disneyRisks.map((r) => r.uuid),
+  catalystUuids: disneyCatalysts.map((c) => c.uuid),
   name: 'Disney',
+  shortName: 'Disney',
   description: [],
   trends: [],
   logo: '',
@@ -14,12 +67,24 @@ export const dis: StockAnalysis = {
   business: {
     markets: [MarketType.streaming, MarketType.entertainment],
   },
+  irAddress: 'https://thewaltdisneycompany.com/investor-relations/',
   // POTENTIALS:
 
   // Demand:
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 1,
+      pressReleaseLink:
+        'https://thewaltdisneycompany.com/the-walt-disney-company-reports-second-quarter-and-six-months-earnings-for-fiscal-2022/',
+      totalRevenue: 19249 * MILLION,
+      costOfRevenue: 12594 * MILLION,
+      totalOperatingExpense: 17649 * MILLION,
+      operatingIncome: 1.62 * BILLION,
+      netIncome: 470 * MILLION,
+    },
     {
       year: 2021,
       quarter: 4,

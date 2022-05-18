@@ -9,7 +9,8 @@ export const ddogRisks = [
 ];
 
 export const ddog: StockAnalysis = {
-  marketCap: 45 * BILLION,
+  uuid: 'ddog',
+  marketCap: 31 * BILLION,
   business: {
     markets: [MarketType.dataAnalytics],
     overview: [
@@ -17,6 +18,15 @@ export const ddog: StockAnalysis = {
     ],
   },
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 363 * MILLION,
+      costOfRevenue: 74.462 * MILLION,
+      totalOperatingExpense: 278.154 * MILLION,
+      operatingIncome: 10.414 * MILLION,
+      netIncome: 9.738 * MILLION,
+    },
     {
       year: 2021,
       quarter: 4,

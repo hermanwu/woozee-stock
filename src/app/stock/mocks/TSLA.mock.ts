@@ -1,39 +1,34 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Risk } from 'src/app/risks/models/risk.model';
+import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { capMock } from './market-cap.mock';
 
-export const tslaCatalysts = [
+export const tslaCatalysts: Catalyst[] = [
   {
+    uuid: 'tsla-c-1',
     name: 'Synology between SpaceX, Twitter, etc.',
   },
-];
-export const tslaRisks = [
   {
-    name: 'Value',
-    level: RiskLevel.shortTerm,
-    type: FactType.valuation,
-    notes: [
-      {
-        content:
-          'PE Ratio 180+ (US market: 16.3, Auto industry: 12.8, Tech industry: 25.1)',
-      },
-      {
-        content: 'PEG Ratio is 8.82 (Apple: 2.1)',
-      },
-    ],
+    uuid: 'tsla-c-2',
+    name: 'Vertical integration of car manufacturing.',
   },
   {
-    name: 'Company Growth',
-    level: RiskLevel.shortTerm,
+    uuid: 'tsla-c-4',
+    name: 'In-house developed software.',
+  },
+  {
+    uuid: 'tsla-c-4',
+    name: 'Massive supercharging network',
+  },
+  {
+    uuid: 'tsla-c-3',
+    name: 'Vehicle deliveries would comfortably grow by more than 50% year-over-year in 2022 despite persistent supply chain issues ',
     type: FactType.growth,
     notes: [
-      {
-        content:
-          'Vehicle deliveries would comfortably grow by more than 50% year-over-year in 2022 despite persistent supply chain issues ',
-      },
       {
         content: 'Tesla current demand is much bigger than supply',
       },
@@ -50,6 +45,14 @@ export const tslaRisks = [
   },
 ];
 
+export const tslaRisks: Risk[] = [
+  {
+    uuid: 'tsla-r-1',
+    content: 'Twitter acquisition',
+    level: RiskLevel.shortTerm,
+  },
+];
+
 export const tsla: StockAnalysis = {
   uuid: 'aapl',
   logo: 'https://www.carlogos.org/car-logos/tesla-logo-2200x2800.png',
@@ -63,6 +66,8 @@ export const tsla: StockAnalysis = {
     markets: [MarketType.ai, MarketType.ev, MarketType.energy],
   },
 
+  riskUuids: tslaRisks.map((r) => r.uuid),
+  catalystUuids: tslaCatalysts.map((c) => c.uuid),
   earningsReports: [
     {
       year: 2022,

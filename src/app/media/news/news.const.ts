@@ -3,6 +3,14 @@ import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
   {
+    uuid: 'n25',
+    content:
+      'Maverick Capital increases bets on Carvana, Uber and Snowflake in the first quarter',
+    source: Source.cnbc,
+    date: new Date('2022-05-02'),
+    type: EventType.investor,
+  },
+  {
     uuid: 'n24',
     content:
       'Coinbase earnings missed analyst estimates and shares fell as much as 19% in extended trading.',

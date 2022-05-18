@@ -6,7 +6,7 @@
   <div class="title-display padding-1rem">
     <h1>
       {{ stockAnalysis.shortName || stockAnalysis.name }}
-      ({{ stockAnalysis?.ticker | uppercase }})
+      ({{ stockAnalysis?.ticker | uppercase }}) - {{ stockAnalysis.price }}
     </h1>
 
     <div class="buttons">

@@ -64,7 +64,7 @@ export enum MarketType {
 
   leisure = 'Leisure',
 
-  beauty = 'Beauty',
+  beauty = 'Beauty and Cosmetics',
 
   streaming = 'Streaming Service',
 

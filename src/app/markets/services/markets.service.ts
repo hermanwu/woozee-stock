@@ -51,22 +51,4 @@ export class MarketsService {
       return a['riskUuids'].length - b['riskUuids'].length;
     });
   }
-
-  sortByCatalystRiskDifference(items: Market[]) {
-    const itemCopy = cloneDeep(items);
-
-    return itemCopy.sort((a, b) => {
-      const aRiskCount = a?.riskUuids?.length > 0 ? a.riskUuids.length : 0;
-      const aCatalystCount =
-        a?.catalystUuids?.length > 0 ? a.catalystUuids.length : 0;
-      const aDiff = aCatalystCount - aRiskCount;
-
-      const bRiskCount = b?.riskUuids?.length > 0 ? b.riskUuids.length : 0;
-      const bCatalystCount =
-        b?.catalystUuids?.length > 0 ? b.catalystUuids.length : 0;
-      const bDiff = bCatalystCount - bRiskCount;
-
-      return bDiff - aDiff;
-    });
-  }
 }

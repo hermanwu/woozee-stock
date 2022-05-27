@@ -1,4 +1,8 @@
-<div *ngFor="let catalyst of catalysts; last as isLast">
-  <app-catalyst [catalyst]="catalyst"></app-catalyst>
-  <app-divider *ngIf="!isLast"></app-divider>
+<div *ngIf="catalysts?.length > 0; else noData">
+  <div *ngFor="let catalyst of catalysts; last as isLast">
+    <app-catalyst [catalyst]="catalyst"></app-catalyst>
+    <app-divider *ngIf="!isLast"></app-divider>
+  </div>
 </div>
+
+<ng-template #noData> No Data </ng-template>

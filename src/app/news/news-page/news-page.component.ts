@@ -10,12 +10,15 @@ import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
   styleUrls: ['./news-page.component.scss'],
 })
 export class NewsPageComponent implements OnInit {
+  showTools: boolean = false;
   news: NewsWithDetails[];
   stocks: StockAnalysis[];
   markets: Market[];
 
   constructor(private risksDataService: riskService) {
     this.news = risksDataService.getNewsDetails();
+
+    this.news = this.news.slice(0, 5);
   }
 
   ngOnInit(): void {}

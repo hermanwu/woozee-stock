@@ -2,10 +2,32 @@
   <div title i18n>Markets</div>
 </app-title-menu>
 
-<div buttons>
-  <button mat-icon-button type="button" (click)="sort()">
-    <mat-icon>sort</mat-icon>
-  </button>
-</div>
+<app-title-menu>
+  <div header-2 i18n>Trending Bullish</div>
+  <div buttons>
+    <button mat-icon-button type="button" (click)="sort()" disabled>
+      <mat-icon>sort</mat-icon>
+    </button>
+    <button mat-icon-button (click)="showTools = !showTools" disabled>
+      <mat-icon>filter_alt</mat-icon>
+    </button>
+  </div>
+</app-title-menu>
 
-<app-market-list [markets]="markets"></app-market-list>
+<app-market-list [markets]="bullishMarkets"></app-market-list>
+
+<div class="margin-top-1rem">
+  <app-title-menu>
+    <div header-2 i18n>Trending Bearish</div>
+    <div buttons>
+      <button mat-icon-button type="button" (click)="sort()" disabled>
+        <mat-icon>sort</mat-icon>
+      </button>
+      <button mat-icon-button (click)="showTools = !showTools" disabled>
+        <mat-icon>filter_alt</mat-icon>
+      </button>
+    </div>
+  </app-title-menu>
+
+  <app-market-list [markets]="bearishMarkets"></app-market-list>
+</div>

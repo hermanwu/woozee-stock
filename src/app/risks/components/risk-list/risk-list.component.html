@@ -1,4 +1,8 @@
-<div *ngFor="let item of risks; last as isLast">
-  <app-risk [showCategory]="showCategory" [risk]="item"></app-risk>
-  <app-divider *ngIf="!isLast"></app-divider>
+<div *ngIf="risks?.length > 0; else noData">
+  <div *ngFor="let item of risks; last as isLast">
+    <app-risk [showCategory]="showCategory" [risk]="item"></app-risk>
+    <app-divider *ngIf="!isLast"></app-divider>
+  </div>
 </div>
+
+<ng-template #noData> No Data </ng-template>

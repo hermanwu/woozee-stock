@@ -3,6 +3,130 @@ import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
   {
+    uuid: 'n29',
+    content:
+      'Ulta raises full year sales and earnings guidance witch better-than-expected 1Q result',
+    notes: [
+      {
+        content:
+          'For the quarter, net sales increased 21% to $2.3 billion, comp sales increased 18% (comp sales = sales for stores open at least 14 months and e-commerce sales)',
+      },
+      {
+        content:
+          'Increase outlook for fiscal 2022. Expect comp sales growth between 6% and 8%. (low to mid-teens in the first half and then moderate to low single-digit growth in the second half).',
+      },
+      {
+        content:
+          'Consumers continue to be highly engaged with the beauty category, as they participate in more in-person activities, engage in more travel and lean into experiential spending',
+      },
+      {
+        content:
+          'During the quarter, all major categories exceeded expectation: Fragrance and bath, hair care, makeup, and skin care all delivered double-digit comp growth against the first quarter last year.',
+      },
+      {
+        content:
+          'Sales of makeup exceeded pre-pandemic levels in both mass and prestige cosmetics.',
+      },
+      {
+        content:
+          'Relaunched makeup services in all stores, just in time to support special events such as proms, graduations and weddings',
+      },
+      {
+        content:
+          'Launched skin analysis software and virtual hairstyle try-on software powered by AI startups',
+      },
+      {
+        content:
+          "Continue working and leveraging Target's strong traffic to introduce Ulta Beauty and Ultamate Rewards to new guests",
+      },
+      {
+        content:
+          'Experienced double-digit growth in supply chain costs, primarily from increases in wage rates, transportation costs and fuel surcharges.',
+      },
+      {
+        content:
+          'Average ticket (order size) increased 7.3%, resulting primarily from an increase in average selling price.',
+      },
+      {
+        content:
+          'As a percentage of sales, e-commerce sales were 4% lower than last year.',
+      },
+      {
+        content:
+          'Not changing long-term financial targets due to limited visibility into the economic environment and expected cost pressures.',
+      },
+    ],
+    source: Source.earningReport,
+    date: new Date('2022-05-26'),
+    type: EventType.stock,
+  },
+  {
+    uuid: 'n28',
+    content: 'Nvidia stock falls on light guidance.',
+    notes: [
+      {
+        content:
+          'The stock dropped in extended trading after the chipmaker gave a light forecast for the current quarter.',
+      },
+      {
+        content:
+          'Nvidia will slow down its hiring pace and control expenses as the company deals with a challenging macroeconomic environment, its CFO Colette Kress said.',
+      },
+    ],
+    source: Source.cnbc,
+    date: new Date('2022-05-26'),
+    type: EventType.stock,
+  },
+  {
+    uuid: 'n27',
+    content:
+      'Nordstrom raises full-year outlook as first-quarter sales top expectation',
+    notes: [
+      {
+        content:
+          'Nordstrom also hiked its financial outlook for the full year, citing momentum in the business.',
+      },
+      {
+        content:
+          'CEO Erik Nordstrom said the company has been able to capitalize on demand from people who are shopping for “long-awaited occasions.”',
+      },
+      {
+        content:
+          'Nordstrom now sees fiscal 2022 revenue, including credit card sales, up 6% to 8%, compared with a prior range of up 5% to 7%.',
+      },
+      {
+        content:
+          'The optimistic outlook stands in contrast to retailers like Target, Kohl’s, Abercrombie & Fitch and a slew of others that in recent days dialed back their annual forecasts as supply chain costs and other expenses eat into profits.',
+      },
+    ],
+    source: Source.cnbc,
+    date: new Date('2022-05-25'),
+    type: EventType.stock,
+  },
+  {
+    uuid: 'n26',
+    content: 'Snap CEO Evan Spiegel warned of slowing growth',
+    notes: [
+      {
+        content:
+          'His message sent a chill across the digital advertising industry.',
+      },
+      {
+        content:
+          'Analysts pointed to macroeconomic trends that could extend far beyond Snap.',
+      },
+      {
+        content:
+          'In telling employees and Wall Street that “the macro environment has deteriorated further and faster than we anticipated when we issued our quarterly guidance last month',
+      },
+    ],
+    riskUuids: [],
+    catalystUuids: [],
+    source: Source.cnbc,
+    date: new Date('2022-05-25'),
+    type: EventType.stock,
+  },
+  {
     uuid: 'n25',
     content:
       'Maverick Capital increases bets on Carvana, Uber and Snowflake in the first quarter',

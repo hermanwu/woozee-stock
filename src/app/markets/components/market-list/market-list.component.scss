@@ -1,0 +1,10 @@
+.row {
+  display: grid;
+  gap: 2rem;
+  grid-auto-flow: column;
+  grid-template-columns: 3fr 1fr 1fr;
+}
+
+.header {
+  margin-bottom: 1rem;
+}

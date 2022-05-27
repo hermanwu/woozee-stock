@@ -1,13 +1,22 @@
+<div class="row header">
+  <div>Market</div>
+  <div>Risks</div>
+  <div>Catalysts</div>
+</div>
+
 <ng-container *ngFor="let market of markets; last as isLast">
-  <div>
+  <div class="row">
     <app-market-display [marketType]="market.type"></app-market-display>
 
-    <app-risk-total-display
-      [riskUuids]="market?.riskUuids"
-    ></app-risk-total-display>
+    <div>
+      <span>{{ multiplySign }}</span>
+      {{ market?.riskUuids?.length || 0 }}
+    </div>
 
-    <app-catalyst-total-display [catalystUuids]="market?.catalystUuids">
-    </app-catalyst-total-display>
+    <div>
+      <span>{{ multiplySign }}</span>
+      {{ market?.catalystUuids?.length || 0 }}
+    </div>
   </div>
 
   <app-divider *ngIf="!isLast"></app-divider>

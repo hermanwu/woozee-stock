@@ -1,7 +1,14 @@
 <div class="title-menu">
   <div class="title">
-    <ng-content select="[title]"></ng-content>
+    <div class="header-1">
+      <ng-content select="[title]"></ng-content>
+    </div>
+
+    <div class="header-2">
+      <ng-content select="[header-2]"></ng-content>
+    </div>
   </div>
+
   <div class="buttons">
     <ng-content select="[buttons]"></ng-content>
   </div>

@@ -9,7 +9,7 @@ import { NewsDisplay } from './news-display.interface';
   styleUrls: ['./news-display.component.scss'],
 })
 export class NewsDisplayComponent implements OnInit, OnChanges {
-  expanded: boolean;
+  @Input() expanded: boolean;
   @Input() news: NewsDisplay;
 
   tickers: string[];

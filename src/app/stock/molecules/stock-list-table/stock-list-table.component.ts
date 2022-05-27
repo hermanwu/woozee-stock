@@ -52,6 +52,6 @@ export class StockListTableComponent implements OnChanges {
   }
 
   ngOnChanges() {
-    this.sort(undefined);
+    // this.sort(undefined);
   }
 }

@@ -1,10 +1,21 @@
 <app-title-menu>
-  <div title>Trending News</div>
+  <div title>News</div>
 </app-title-menu>
+
+<app-title-menu>
+  <div header-2>Trending</div>
+  <div buttons>
+    <button mat-icon-button (click)="showTools = !showTools" disabled>
+      <mat-icon>filter_alt</mat-icon>
+    </button>
+  </div>
+</app-title-menu>
+
+<div *ngIf="showTools"></div>
 
 <app-card>
   <ng-container *ngFor="let item of news; last as isLast">
-    <app-news-display [news]="item"></app-news-display>
+    <app-news-display [news]="item" [expanded]="true"></app-news-display>
     <app-divider *ngIf="!isLast"></app-divider>
   </ng-container>
 

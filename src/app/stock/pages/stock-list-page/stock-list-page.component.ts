@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BOA } from 'src/app/accounts/ mock-data/herman-boa-account';
-import { citi } from 'src/app/accounts/ mock-data/herman-citi-account';
-import { hermanFutu } from 'src/app/accounts/ mock-data/herman-futu';
-import { hermanIbAccount } from 'src/app/accounts/ mock-data/herman-ib-account';
-import { schwab } from 'src/app/accounts/ mock-data/herman-schwab-account';
-import { jessicaPaypal } from 'src/app/accounts/ mock-data/jessica-paypal-account';
-import { meilongIbAccount } from 'src/app/accounts/ mock-data/meilong-ib-account';
 import { currentUser } from 'src/app/accounts/data/user.mock';
+import { sortByCatalystRiskDifference } from 'src/app/shared/functions/sorting.function';
 import { industry } from 'src/app/shared/industry.enum';
 import { Trend } from 'src/app/shared/trend.enum';
 import { ObjectiveDataService } from '../../services/objective-data.service';
@@ -26,23 +20,11 @@ export class StockListPageComponent implements OnInit {
   industries = Object.values(industry);
   trends = Object.values(Trend);
 
-  tickers: Equity[] = [
-    // My account
-    ...citi,
-    ...BOA,
-    ...schwab,
-    ...hermanIbAccount,
-    ...hermanFutu,
-
-    // Jessica Account.
-    ...jessicaPaypal,
-
-    // Mei long Account
-    ...meilongIbAccount,
-  ];
-  equitySummaryMap = this.generateEquitySummaryMap(this.tickers);
   watchList: any[];
   stocks: StockData[];
+
+  bearishStocks: StockData[];
+  bullishStocks: StockData[];
 
   currentUser = currentUser;
 
@@ -50,6 +32,10 @@ export class StockListPageComponent implements OnInit {
     this.stocks = this.objectiveDataService
       .getAllStockData()
       .filter((stock) => currentUser?.watchList?.indexOf(stock.uuid) >= 0);
+
+    this.stocks = sortByCatalystRiskDifference(this.stocks);
+    this.bullishStocks = this.stocks.slice(0, 5);
+    this.bearishStocks = this.stocks.reverse().slice(0, 5);
   }
 
   ngOnInit(): void {
@@ -58,19 +44,5 @@ export class StockListPageComponent implements OnInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-  }
-
-  private generateEquitySummaryMap(tickers: Equity[]): any {
-    const result = {};
-
-    for (let equity of tickers) {
-      if (result[equity.ticker]) {
-        result[equity.ticker] = result[equity.ticker] + equity.shares ?? 0;
-      } else {
-        result[equity.ticker] = equity.shares;
-      }
-    }
-
-    return result;
   }
 }

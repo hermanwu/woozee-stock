@@ -22,6 +22,7 @@ export interface StockData extends StockAnalysis {
   quarterExpensesGrowth?: number;
   quarterOperatingCostOverGrossProfit?: number;
   quarterOperatingMargin?: number;
+  quarterNetMargin?: number;
 
   ttmOI?: number;
   ttmGrossProfit?: number;

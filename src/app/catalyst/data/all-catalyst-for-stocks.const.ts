@@ -6,6 +6,7 @@ import { disneyCatalysts } from 'src/app/stock/mocks/dis.mock';
 import { googleCatalysts } from 'src/app/stock/mocks/googl.mock';
 import { blockCatalysts } from 'src/app/stock/mocks/sq.mock';
 import { tslaCatalysts } from 'src/app/stock/mocks/TSLA.mock';
+import { ultaCatalysts } from 'src/app/stock/mocks/ULTA';
 
 export const allCatalystsForStocks: Catalyst[] = [
   ...blockCatalysts,
@@ -15,4 +16,5 @@ export const allCatalystsForStocks: Catalyst[] = [
   ...disneyCatalysts,
   ...abnbCatalysts,
   ...tslaCatalysts,
+  ...ultaCatalysts,
 ];

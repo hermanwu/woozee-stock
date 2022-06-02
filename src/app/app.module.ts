@@ -62,6 +62,7 @@ import { UndefinedPipeModule } from './shared/pipes/undefined-pipe/undefined-pip
 import { AppMaterialModule } from './shared/styles/app-material.module';
 import { BusinessOverviewComponent } from './stock/components/business-overview/business-overview.component';
 import { ComparisonDialogComponent } from './stock/components/comparison-dialog/comparison-dialog.component';
+import { EarningsReportComponent } from './stock/components/earnings-report/earnings-report.component';
 import { GrowthComponent } from './stock/components/growth/growth.component';
 import { LinksComponent } from './stock/components/links/links.component';
 import { TickerDisplayComponent } from './stock/components/ticker-display/ticker-display.component';
@@ -146,6 +147,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     RiskTotalDisplayComponent,
     CatalystTotalDisplayComponent,
     DecisionDashboardComponent,
+    EarningsReportComponent,
   ],
   imports: [
     BrowserModule,

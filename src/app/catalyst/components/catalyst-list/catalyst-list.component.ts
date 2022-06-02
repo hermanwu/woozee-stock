@@ -7,6 +7,7 @@ import { Catalyst } from 'src/app/shared/models/booster.interface';
   styleUrls: ['./catalyst-list.component.scss'],
 })
 export class CatalystListComponent implements OnInit {
+  @Input() showCategory = false;
   @Input() catalysts: Catalyst[];
 
   constructor() {}

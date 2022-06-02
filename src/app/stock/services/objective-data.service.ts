@@ -153,6 +153,9 @@ export class ObjectiveDataService {
         stock.quarterOperatingMargin =
           currentReport.operatingIncome / currentReport.totalRevenue;
 
+        stock.quarterNetMargin =
+          currentReport.netIncome / currentReport.totalRevenue;
+
         stock.previousQuarterRevenue = previousReport.totalRevenue;
         stock.quarterRevenue = currentReport.totalRevenue;
         stock.quarterRevenueGrowth =

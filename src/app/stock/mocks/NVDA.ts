@@ -3,7 +3,6 @@ import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
-import { PredicationAction } from '../models/predication.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const nvdaRisks = [
@@ -38,24 +37,48 @@ export const nvdaRisks = [
 ];
 
 export const nvda: StockAnalysis = {
-  marketCap: 532 * BILLION,
+  marketCap: 461 * BILLION,
 
-  predications: [
-    {
-      price: 150,
-      days: 90,
-      start: new Date('2022-01-18'),
-      action: PredicationAction.Sell,
-    },
-  ],
+  // predications: [
+  //   {
+  //     price: 150,
+  //     days: 90,
+  //     start: new Date('2022-01-18'),
+  //     action: PredicationAction.Sell,
+  //   },
+  // ],
 
   earningsReports: [
     {
       year: 2022,
       quarter: 1,
-      totalRevenue: 8.1 * 1e9,
-      operatingIncome: 2970 * 1e6,
-      isForecast: true,
+      totalRevenue: 8.288 * BILLION,
+      costOfRevenue: 2.857 * BILLION,
+      totalOperatingExpense: 3.563 * BILLION,
+      operatingIncome: 1.868 * BILLION,
+      netIncome: 1.618 * BILLION,
+      reportLink:
+        'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/8b8d4537-83d8-4c94-b065-e7a2cd34da49.pdf',
+      revenues: [
+        {
+          name: 'Data Center',
+          size: 3.75 * BILLION,
+          type: MarketType.datacenter,
+          growthRate: 0.83,
+        },
+        {
+          name: 'Gaming',
+          size: 3.62 * BILLION,
+          type: MarketType.gaming,
+          growthRate: 0.31,
+        },
+        {
+          name: 'Professional Visualization',
+          size: 622 * MILLION,
+          type: MarketType.virtualRendering,
+          growthRate: 0.67,
+        },
+      ],
     },
 
     {

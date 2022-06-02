@@ -11,11 +11,11 @@
     </app-badge>
   </span>
 
-  <span *ngFor="let ticker of tickers">
+  <span *ngFor="let ticker of news?.tickers">
     <app-ticker-display [ticker]="ticker"></app-ticker-display>
   </span>
 
-  <span *ngFor="let marketType of marketTypes">
+  <span *ngFor="let marketType of news?.markets">
     <app-market-display [marketType]="marketType"></app-market-display>
   </span>
 
@@ -53,11 +53,14 @@
 
   <app-card *ngIf="news.catalysts && news.catalysts.length > 0">
     <div>Catalysts</div>
-    <app-catalyst-list [catalysts]="news.catalysts"></app-catalyst-list>
+    <app-catalyst-list
+      [catalysts]="news.catalysts"
+      [showCategory]="false"
+    ></app-catalyst-list>
   </app-card>
 
   <app-card *ngIf="news.risks && news.risks.length > 0">
     <div>Risks</div>
-    <app-risk-list [risks]="news.risks" [showCategory]="true"></app-risk-list>
+    <app-risk-list [risks]="news.risks" [showCategory]="false"></app-risk-list>
   </app-card>
 </div>

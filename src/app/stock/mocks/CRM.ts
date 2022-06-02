@@ -20,7 +20,14 @@ export const crm: StockAnalysis = {
       year: 2022,
       quarter: 1,
       totalRevenue: 7.375 * BILLION,
-      isForecast: true,
+      pressReleaseLink:
+        'https://s23.q4cdn.com/574569502/files/doc_financials/2023/q1/CRM-Q1-FY23-Earnings-Press-Release-w-financials.pdf',
+      slidesLink:
+        'https://s23.q4cdn.com/574569502/files/doc_financials/2023/q1/CRM-Q1-FY23-Earnings-Presentation.pdf',
+      transcript:
+        'https://s23.q4cdn.com/574569502/files/doc_financials/2023/q1/final-053122-salesforce-q1-fy23-earnings-call-25004.pdf',
+      webcast:
+        'https://investor.salesforce.com/events-and-presentations/event-details/2022/Q1-FY23-Earnings-Conference-Call/default.aspx',
     },
     {
       pressReleaseLink:

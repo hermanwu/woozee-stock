@@ -1,15 +1,15 @@
 <ng-container *ngIf="stockAnalysis === null; else hasStock">
-  This stock has not supported yet.
+  This stock ticker is not supported for now.
 </ng-container>
 
 <ng-template #hasStock>
-  <div class="title-display padding-1rem">
-    <h1>
-      {{ stockAnalysis.shortName || stockAnalysis.name }}
-      ({{ stockAnalysis?.ticker | uppercase }}) - {{ stockAnalysis.price }}
-    </h1>
-
-    <div class="buttons">
+  <app-title-menu>
+    <div title i18n>
+      {{ stockAnalysis.shortName || stockAnalysis.name }} ({{
+        stockAnalysis?.ticker | uppercase
+      }}) - {{ stockAnalysis.price }}
+    </div>
+    <div buttons>
       <button
         class="buttons"
         mat-icon-button
@@ -34,7 +34,7 @@
         <button mat-menu-item disabled>Profit</button>
       </mat-menu>
     </div>
-  </div>
+  </app-title-menu>
 
   <div class="grid grid-dynamic">
     <div class="padding-1rem" *ngIf="risks?.length > 0">
@@ -162,6 +162,12 @@
             {{ stockAnalysis.predications[0]?.start | date }}
           </div>
         </div>
+      </app-card>
+    </div>
+
+    <div class="padding-1rem">
+      <app-card>
+        <app-earnings-report [stock]="stockAnalysis"></app-earnings-report>
       </app-card>
     </div>
 

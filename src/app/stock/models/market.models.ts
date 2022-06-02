@@ -2,6 +2,7 @@ import { MarketType } from 'src/app/facts/data/area.enum';
 
 export interface Market {
   uuid?: string;
+  name?: string;
   type: MarketType;
   size?: number;
   growthRate?: number;

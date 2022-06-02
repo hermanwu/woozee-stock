@@ -76,5 +76,7 @@ export enum MarketType {
 
   vr = 'Virtual Reality',
 
+  virtualRendering = '3D Virtual Rendering',
+
   datacenter = 'Data Center',
 }

@@ -1,3 +1,4 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Note } from 'src/app/shared/data/note.interface';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
@@ -16,6 +17,9 @@ export interface News {
   author?: string;
   sourceLink?: string;
   notes?: Note[];
+
+  markets?: MarketType[];
+  tickers?: string[];
 }
 
 export enum EventType {

@@ -3,31 +3,27 @@
     <app-risk-level-display [riskLevel]="risk.level"></app-risk-level-display>
   </span>
 
+  <span class="flex" *ngIf="showCategory">
+    <span *ngFor="let item of risk?.tickers">
+      <app-ticker-display [ticker]="item"></app-ticker-display>
+    </span>
+
+    <span *ngFor="let item of risk?.markets">
+      <app-market-display [marketType]="item"></app-market-display>
+    </span>
+  </span>
+
   {{ risk.name || risk.content }}
 
   <app-fact-type-display [factType]="risk.type"> </app-fact-type-display>
 
-  <span *ngIf="!showCategory" class="align-right">
-    <button mat-icon-button type="button" (click)="expanded = !expanded">
-      <mat-icon *ngIf="expanded">expand_less</mat-icon>
-      <mat-icon *ngIf="!expanded">expand_more</mat-icon>
-    </button>
-  </span>
-</div>
-
-<div class="flex" *ngIf="showCategory">
-  <mat-icon>trending_down</mat-icon>:
-
-  <span *ngFor="let item of risk?.tickers">
-    <app-ticker-display [ticker]="item"></app-ticker-display>
-  </span>
-
-  <span *ngFor="let item of risk?.markets">
-    <app-market-display [marketType]="item"></app-market-display>
-  </span>
-
-  <span>
-    <button mat-icon-button type="button" (click)="expanded = !expanded">
+  <span class="action-buttons">
+    <button
+      mat-icon-button
+      type="button"
+      (click)="expanded = !expanded"
+      [disabled]="!risk.notes"
+    >
       <mat-icon *ngIf="expanded">expand_less</mat-icon>
       <mat-icon *ngIf="!expanded">expand_more</mat-icon>
     </button>
@@ -35,6 +31,8 @@
 </div>
 
 <div *ngIf="expanded">
+  <mat-icon>trending_down</mat-icon>:
+
   <ul>
     <li *ngFor="let item of risk.notes">
       <app-note [note]="item" [isExpanded]="false"> </app-note>

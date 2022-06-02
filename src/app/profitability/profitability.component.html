@@ -29,6 +29,16 @@
   </div>
 
   <div class="row">
+    <div *ngIf="!hideLabel">Net Margin</div>
+
+    <div class="stats">
+      <span>
+        {{ stock?.quarterNetMargin | siUnit: 2 | percent | undefined }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
     <div *ngIf="!hideLabel">Gross Profit Q/Q</div>
 
     <div class="stats">

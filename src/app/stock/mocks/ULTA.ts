@@ -1,6 +1,41 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
+import { Risk } from 'src/app/risks/models/risk.model';
+import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
+
+export const ultaCatalysts: Catalyst[] = [
+  {
+    uuid: 'ulta-c-1',
+    content:
+      'Strong tailwind from more in-person activities and travel during post COVID era.',
+    tickers: ['ulta'],
+  },
+];
+
+export const ultaRisks: Risk[] = [
+  {
+    uuid: 'ulta-r-1',
+    content:
+      'Face strong competitions from mass retailers like Walmart, Amazon.',
+  },
+  {
+    uuid: 'ulta-r-2',
+    content:
+      'Depending on the relationship with brands and influencers on social media.',
+  },
+  {
+    uuid: 'ulta-r-3',
+    content: 'E-commerce sales were 4% lower than last year.',
+    tickers: ['ulta'],
+  },
+  {
+    uuid: 'ulta-r-4',
+    content:
+      'Limited visibility in supply chain and wage cost under current economic environment.',
+    tickers: ['ulta'],
+  },
+];
 
 export const ulta: StockAnalysis = {
   logo: '',
@@ -8,7 +43,10 @@ export const ulta: StockAnalysis = {
   description: [],
   ticker: 'ULTA',
   shortName: 'Ulta Beauty',
-  marketCap: 19.74 * BILLION,
+  marketCap: 22 * BILLION,
+  catalystUuids: ultaCatalysts.map((c) => c.uuid),
+  riskUuids: ultaRisks.map((r) => r.uuid),
+
   business: {
     markets: [MarketType.beauty],
   },

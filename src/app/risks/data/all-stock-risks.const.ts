@@ -5,6 +5,7 @@ import { disneyRisks } from 'src/app/stock/mocks/dis.mock';
 import { snowflakeRisks } from 'src/app/stock/mocks/snow';
 import { blockRisks } from 'src/app/stock/mocks/sq.mock';
 import { tslaRisks } from 'src/app/stock/mocks/TSLA.mock';
+import { ultaRisks } from 'src/app/stock/mocks/ULTA';
 
 export const allStockRisks = [
   ...blockRisks,
@@ -14,4 +15,5 @@ export const allStockRisks = [
   ...abnbRisks,
   ...snowflakeRisks,
   ...tslaRisks,
+  ...ultaRisks,
 ];

@@ -29,8 +29,5 @@ export class NewsDisplayComponent implements OnInit, OnChanges {
     if (this.news?.catalysts?.length > 0) {
       opinions.push(...this.news.catalysts);
     }
-
-    this.tickers = this.riskService.getTickersFromOpinions(opinions);
-    this.marketTypes = this.riskService.getMarketsFromOpinions(opinions);
   }
 }

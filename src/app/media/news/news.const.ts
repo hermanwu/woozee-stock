@@ -2,10 +2,62 @@ import { Source } from 'src/app/stock/models/news-source.enum';
 import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
+  // {
+  //   content: 'snow flake',
+  //   notes: [
+  //     {
+  //       content: 'consumption model',
+  //     },
+  //     {
+  //       content: 'sales increases fasterly',
+  //     },
+  //     {
+  //       content: 'Power by snowflake growth',
+  //     },
+  //     {
+  //       content: 'Retention rate.',
+  //     },
+  //   ],
+  // },
+  // {
+  //   uuid: 'n30',
+  //   content: '',
+  //   notes: [
+  //     {
+  //       content:
+  //         'In terms of comparable sales for the third quarter, for the 12 weeks on a reported basis, the US was better or up by 16.6%, Canada better by 15.2%. Other international, up 5.7% and total company, again, up 14.9%. Our e-comm business in the third quarter reported better by 7.4% versus a year ago.',
+  //     },
+  //     {
+  //       content:
+  //         'In terms of renewal rates, we hit an all-time -- we hit all-time highs. At Q3 end, our US and Canada renewal rate was 92.3%, up 0.3% from the 12 weeks earlier at Q2 end. And the worldwide rate came in at 90% for the first time in company history, and thats up 0.4% from what we reported at Q2 end.',
+  //     },
+  //     {
+  //       content:
+  //         ' number of member households and cardholders at Q3 end, we ended Q3 with 64.4 million paid households and 116.6 million cardholders, both of those up over 6%, compared to a year ago.',
+  //     },
+  //     {
+  //       content:
+  //         'The best performing categories in Q3 were candy, sundries, tires, toys, jewelry, kiosks, home furnishings, apparel, bakery and deli. Underperforming departments were liquor, office, sporting goods and hardware, all of which were quite strong a year ago.',
+  //     },
+  //     { content: 'e-commerce just below 8% at 7.9% for the quarter.' },
+  //     {
+  //       content:
+  //         'Costco Logistics. Costco Logistics continues to drive big and bulky sales for us. We averaged more than 58,000 stops a week in the third quarter. For the full year, we estimate total deliveries will be up 23% and will exceed $3 million. ',
+  //     },
+  //     {
+  //       content:
+  //         'I want to address some incorrect information floating around on social media and a few other media outlets claiming that we have increased the price of our $1.50 hot dog and soda combinations sold in our food courts. Let me just say the price when we introduced the hot dog/ soda combo in the mid-80s was $1.50. The price today is $1.50, and we have no plans to increase the price at this time.r',
+  //     },
+  //     { content: 'Shift spending' },
+  //   ],
+  //   date: new Date('2022-05-26'),
+  //   type: EventType.stock,
+  //   source: Source.earningReport,
+  // },
   {
     uuid: 'n29',
     content:
-      'Ulta raises full year sales and earnings guidance witch better-than-expected 1Q result',
+      'Ulta raises full year sales and earnings guidance which is better-than-expected 1Q result',
     notes: [
       {
         content:
@@ -59,6 +111,9 @@ export const allNews: News[] = [
     source: Source.earningReport,
     date: new Date('2022-05-26'),
     type: EventType.stock,
+    riskUuids: ['ulta-r-3', 'ulta-r-4'],
+    catalystUuids: ['ulta-c-1'],
+    tickers: ['ulta'],
   },
   {
     uuid: 'n28',

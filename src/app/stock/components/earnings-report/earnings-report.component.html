@@ -1,5 +1,5 @@
 <app-title-menu>
-  <div title>Outside Links</div>
+  <div title>Earnings Report</div>
 </app-title-menu>
 
 <div>
@@ -27,5 +27,17 @@
 <div *ngIf="earningReport?.slidesLink">
   <a target="_blank" href="{{ earningReport?.slidesLink }}">
     Slides <mat-icon>open_in_new</mat-icon>
+  </a>
+</div>
+
+<div *ngIf="earningReport?.webcast">
+  <a target="_blank" href="{{ earningReport?.webcast }}">
+    Webcast <mat-icon>open_in_new</mat-icon>
+  </a>
+</div>
+
+<div *ngIf="earningReport?.transcript">
+  <a target="_blank" href="{{ earningReport?.transcript }}">
+    Transcript <mat-icon>open_in_new</mat-icon>
   </a>
 </div>

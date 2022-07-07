@@ -1,0 +1,7 @@
+<app-badge>
+  {{ revenue.name }}
+
+  <span *ngIf="total">
+    {{ revenue.size / total | siUnit: 2 | percent | undefined }}
+  </span>
+</app-badge>

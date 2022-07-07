@@ -32,7 +32,7 @@ import { EA } from './EA';
 import { EDIT } from './EDIT';
 import { estc } from './estc';
 import { etsy } from './etsy';
-import { fb } from './fb';
+import { meta } from './fb';
 import { ftnt } from './ftnt';
 import { fvrr } from './fvrr';
 import { gme } from './gme';
@@ -59,6 +59,7 @@ import { mrk } from './mrk';
 import { mrna } from './mrna';
 import { msft } from './msft';
 import { mttr } from './mttr.mock';
+import { mu } from './mu.mock';
 import { net } from './net';
 import { nflx } from './NFLX';
 import { NIO } from './NIO_mock';
@@ -169,7 +170,7 @@ export const stocksMap = {
   EDIT,
   estc,
   etsy,
-  fb,
+  meta,
   fvrr,
   gme,
   googl,
@@ -263,4 +264,5 @@ export const stocksMap = {
   mttr,
   oxy,
   twlo,
+  mu,
 };

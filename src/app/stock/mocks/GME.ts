@@ -6,31 +6,42 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const gmeCatalysts = [
   {
+    uuid: 'gme-c-1',
+
     name: 'Partnership with Immutable X to support the development of GameStop’s NFT marketplace',
     type: FactType.business,
     date: new Date('2022-04-18'),
   },
   {
+    uuid: 'gme-c-1',
+
     name: 'Hired talents with experience in areas such as blockchain gaming, ecommerce and technology, product refurbishment and operations.',
     type: FactType.business,
     date: new Date('2022-04-18'),
   },
   {
+    uuid: 'gme-c-1',
+
     name: 'Raised more than $1.67 billion in capital and eliminated all of the Company’s long-term debt',
     type: FactType.business,
     date: new Date('2022-04-18'),
   },
   {
+    uuid: 'gme-c-1',
+
     name: 'Established/expanded brand relationships with PC gaming companies such as Alienware, Corsair and Lenovo',
     type: FactType.growth,
     date: new Date('2022-04-18'),
   },
   {
+    uuid: 'gme-c-1',
+
     name: 'Expanded the product catalog to include a broader set of consumer electronics, PC gaming equipment and refurbished hardware.',
     type: FactType.growth,
     date: new Date('2022-04-18'),
   },
   {
+    uuid: 'gme-c-1',
     name: 'Grew PowerUp Rewards Pro members by 32% on a year-over-year basis, taking total membership to approximately 5.8 million.',
     type: FactType.growth,
     date: new Date('2022-04-18'),
@@ -38,20 +49,34 @@ export const gmeCatalysts = [
 ];
 
 export const gme: StockAnalysis = {
-  marketCap: 13.73 * BILLION,
+  marketCap: 8.86 * BILLION,
   logo: '',
   name: 'GameStop Corp.',
   description: [],
   ticker: 'gme',
   shortName: 'GameStop',
   irAddress: 'https://investor.gamestop.com/home',
+  catalystUuids: gmeCatalysts.map((g) => g.uuid),
 
   // Earnings Report:
   earningsReports: [
     {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 1.378 * BILLION,
+      costOfRevenue: 1079.9 * MILLION,
+      grossProfit: 298.5 * MILLION,
+      operatingIncome: -153.7 * MILLION,
+      netIncome: -157.9 * MILLION,
+      reportLink:
+        'https://investor.gamestop.com/static-files/5df55006-ebe2-478e-8058-d88a7b5b3d88',
+    },
+    {
       year: 2021,
       quarter: 4,
       totalRevenue: 2.254 * BILLION,
+      costOfRevenue: 1875.7 * MILLION,
+
       operatingIncome: -166.8 * MILLION,
       grossProfit: 378.2 * MILLION,
       sellingGeneralAndAdministrative: 538.9 * MILLION,
@@ -78,6 +103,7 @@ export const gme: StockAnalysis = {
       year: 2021,
       quarter: 3,
       totalRevenue: 1296.6 * MILLION,
+      costOfRevenue: 978.0 * MILLION,
       grossProfit: 318.6 * MILLION,
       operatingIncome: -102.9 * MILLION,
     },
@@ -86,6 +112,7 @@ export const gme: StockAnalysis = {
       year: 2021,
       quarter: 2,
       totalRevenue: 1183.4 * MILLION,
+      costOfRevenue: 862.5 * MILLION,
       grossProfit: 320.9 * MILLION,
       operatingIncome: -58.0 * MILLION,
     },

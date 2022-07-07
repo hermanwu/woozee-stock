@@ -5,8 +5,11 @@ import { BenefitType } from '../components/business-overview/business.model';
 import { PredicationAction } from '../models/predication.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
+export const crmRisks = [];
+export const crmCatalysts = [];
+
 export const crm: StockAnalysis = {
-  marketCap: 170 * BILLION,
+  marketCap: 175 * BILLION,
   predications: [
     {
       start: new Date('2022-3-1'),
@@ -15,11 +18,16 @@ export const crm: StockAnalysis = {
       action: PredicationAction.Sell,
     },
   ],
+  shortName: 'Salesforce',
   earningsReports: [
     {
       year: 2022,
       quarter: 1,
-      totalRevenue: 7.375 * BILLION,
+      totalRevenue: 7.411 * BILLION,
+      costOfRevenue: 2.045 * BILLION,
+      grossProfit: 5.366 * BILLION,
+      operatingIncome: 20 * MILLION,
+      netIncome: 28 * MILLION,
       pressReleaseLink:
         'https://s23.q4cdn.com/574569502/files/doc_financials/2023/q1/CRM-Q1-FY23-Earnings-Press-Release-w-financials.pdf',
       slidesLink:

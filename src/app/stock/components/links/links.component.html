@@ -2,12 +2,6 @@
   <div title>Outside Links</div>
 </app-title-menu>
 
-<div>
-  <a target="_blank" href="{{ stock?.irAddress }}">
-    Investor Relations<mat-icon>open_in_new</mat-icon>
-  </a>
-</div>
-
 <ng-template #quarterReport>
   <div *ngIf="earningReport?.reportLink">
     <a target="_blank" href="{{ earningReport?.reportLink }}">

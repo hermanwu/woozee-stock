@@ -76,6 +76,8 @@ export const tsla: StockAnalysis = {
       costOfRevenue: 13296 * MILLION,
       operatingIncome: 3603 * MILLION,
       netIncome: 3280 * MILLION,
+      reportLink:
+        'https://ir.tesla.com/_flysystem/s3/sec/000095017022006034/tsla-20220331-gen.pdf',
       pressReleaseLink:
         'https://ir.tesla.com/press-release/tesla-vehicle-production-deliveries-and-date-financial-results-webcast-first-quarter',
     },

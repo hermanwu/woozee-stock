@@ -1,3 +1,4 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { Note } from 'src/app/shared/data/note.interface';
 import { Business } from '../components/business-overview/business.model';
 import { EarningsReport } from './earnings.model';
@@ -8,6 +9,14 @@ import { Rating } from './rating.model';
 import { StockStats } from './stock-stats.model';
 import { Trend } from './trend.enum';
 
+export interface Product {
+  name?: string;
+  size?: number;
+  markets?: MarketType[];
+  description?: string;
+  imageLink?: string;
+  url?: string;
+}
 export interface StockAnalysis {
   uuid?: string;
   logo?: string;
@@ -30,12 +39,12 @@ export interface StockAnalysis {
   irAddress?: string;
   secFilings?: string;
   business?: Business;
+  products?: Product[];
   foundedYear?: number;
 
   // Demand:
   vision?: string[];
   value?: string[];
-  products?: any[];
   painPoint?: string[]; // for market.
   market?: string[]; // China, US, ETC
   trends?: string[] | Trend[];

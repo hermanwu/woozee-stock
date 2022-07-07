@@ -4,10 +4,25 @@
 </div>
 
 <div>
+  <div class="label">Products</div>
+</div>
+
+<div>
+  <div class="label">Revenue Composition</div>
+  <app-revenue-composition-display
+    [revenues]="business?.revenues"
+  ></app-revenue-composition-display>
+</div>
+
+<div>
   <div class="label">Markets</div>
   <span *ngFor="let item of business?.markets">
     <app-market-display [marketType]="item"></app-market-display>
   </span>
+</div>
+
+<div>
+  <div class="label">Competitors</div>
 </div>
 
 <div *ngIf="business?.competitiveAdvantages">

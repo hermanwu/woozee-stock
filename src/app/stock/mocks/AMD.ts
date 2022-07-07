@@ -13,6 +13,7 @@ export const amd: StockAnalysis = {
   name: 'AMD',
   description: [],
   ticker: 'amd',
+  irAddress: 'https://ir.amd.com/',
 
   business: {
     markets: [MarketType.semi, MarketType.datacenter],
@@ -20,6 +21,21 @@ export const amd: StockAnalysis = {
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 5.887 * BILLION,
+      costOfRevenue: 3.069 * BILLION,
+      grossProfit: 2.818 * BILLION,
+      operatingIncome: 951 * MILLION,
+      netIncome: 786 * MILLION,
+      reportLink:
+        'https://ir.amd.com/sec-filings/content/0000002488-22-000078/0000002488-22-000078.pdf',
+      pressReleaseLink:
+        'https://d1io3yog0oux5.cloudfront.net/_bd6a8214d7bef00b1d177bfadde38e10/amd/news/2022-05-03_AMD_Reports_First_Quarter_2022_Financial_1062.pdf',
+      slidesLink:
+        'https://d1io3yog0oux5.cloudfront.net/_bd6a8214d7bef00b1d177bfadde38e10/amd/db/778/6717/file/AMD+Q1%2722+Financial+Results+Slides.pdf',
+    },
     {
       year: 2021,
       quarter: 4,

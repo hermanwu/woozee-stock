@@ -65,6 +65,8 @@ import { ComparisonDialogComponent } from './stock/components/comparison-dialog/
 import { EarningsReportComponent } from './stock/components/earnings-report/earnings-report.component';
 import { GrowthComponent } from './stock/components/growth/growth.component';
 import { LinksComponent } from './stock/components/links/links.component';
+import { RevenueCompositionDisplayComponent } from './stock/components/revenue-composition-display/revenue-composition-display.component';
+import { RevenueDisplayComponent } from './stock/components/revenue-display/revenue-display.component';
 import { TickerDisplayComponent } from './stock/components/ticker-display/ticker-display.component';
 import { ValuationComponent } from './stock/components/valuation/valuation.component';
 import { ForeverOwnStocksPanelComponent } from './stock/forever-own-stocks-panel/forever-own-stocks-panel.component';
@@ -148,6 +150,8 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     CatalystTotalDisplayComponent,
     DecisionDashboardComponent,
     EarningsReportComponent,
+    RevenueCompositionDisplayComponent,
+    RevenueDisplayComponent,
   ],
   imports: [
     BrowserModule,

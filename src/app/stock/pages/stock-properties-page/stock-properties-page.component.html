@@ -150,7 +150,7 @@
 
     <div class="padding-1rem" *ngIf="stockAnalysis.predications">
       <app-card>
-        <h2>My Forecast</h2>
+        <h2>Ratings</h2>
 
         <div *ngIf="stockAnalysis?.predications">
           <div>
@@ -158,7 +158,7 @@
             {{ stockAnalysis.predications[0]?.price | undefined }}
           </div>
           <div>
-            Predication Date:
+            Scores Date:
             {{ stockAnalysis.predications[0]?.start | date }}
           </div>
         </div>

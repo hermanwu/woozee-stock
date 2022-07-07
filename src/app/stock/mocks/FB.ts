@@ -103,7 +103,7 @@ export const fbRisks = [
   },
 ];
 
-export const fb: StockAnalysis = {
+export const meta: StockAnalysis = {
   marketCap: 475 * BILLION,
   shortName: 'Meta',
   predications: [
@@ -116,9 +116,9 @@ export const fb: StockAnalysis = {
   logo: '',
   name: 'Meta',
   description: [],
-  ticker: 'fb',
+  ticker: 'meta',
   lastUpdated: new Date('2021-08-23'),
-  irAddress: 'https://investor.fb.com/home/default.aspx',
+  irAddress: 'https://investor.meta.com/home/default.aspx',
 
   // Earnings Report:
   earningsReports: [

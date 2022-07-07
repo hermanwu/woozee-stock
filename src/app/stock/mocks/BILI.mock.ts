@@ -35,6 +35,15 @@ export const bili: StockAnalysis = {
   secFilings: 'https://ir.bilibili.com/financial-information/sec-filings',
   earningsReports: [
     {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 1,
+      pressReleaseLink:
+        'https://ir.bilibili.com/static-files/91528e13-31e8-4460-a3c0-e04abedeb5fd',
+      reportLink:
+        'https://ir.bilibili.com/static-files/5934fe40-2676-4587-b71c-d333a2800be2',
+    },
+    {
       year: 2021,
       quarter: 4,
       totalRevenue: 5780.78 * MILLION * rmbToDollar,

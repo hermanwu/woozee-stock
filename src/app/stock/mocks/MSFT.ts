@@ -9,6 +9,7 @@ export const msftRisks = [
 ];
 
 export const msft: StockAnalysis = {
+  uuid: 'us-msft-1',
   marketCap: capMock.msft,
   logo: '',
   name: 'MICROSOFT CORPORATION',

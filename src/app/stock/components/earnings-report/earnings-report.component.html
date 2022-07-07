@@ -3,41 +3,29 @@
 </app-title-menu>
 
 <div>
-  <a target="_blank" href="{{ stock?.irAddress }}">
-    Investor Relations<mat-icon>open_in_new</mat-icon>
-  </a>
+  <a target="_blank" href="{{ stock?.irAddress }}"> Investor Relations </a>
 </div>
 
-<ng-template #quarterReport>
-  <div *ngIf="earningReport?.reportLink">
-    <a target="_blank" href="{{ earningReport?.reportLink }}">
-      {{ earningReport?.year }} - {{ earningReport?.quarter }} Earnings Report
-      <mat-icon>open_in_new</mat-icon>
-    </a>
-  </div>
-</ng-template>
+<div *ngIf="earningReport?.reportLink">
+  <a target="_blank" href="{{ earningReport?.reportLink }}">
+    {{ earningReport?.year }} - {{ earningReport?.quarter }} Earnings Report
+  </a>
+</div>
 
 <div *ngIf="earningReport?.pressReleaseLink">
   <a target="_blank" href="{{ earningReport?.pressReleaseLink }}">
     Press Release
-    <mat-icon>open_in_new</mat-icon>
   </a>
 </div>
 
 <div *ngIf="earningReport?.slidesLink">
-  <a target="_blank" href="{{ earningReport?.slidesLink }}">
-    Slides <mat-icon>open_in_new</mat-icon>
-  </a>
+  <a target="_blank" href="{{ earningReport?.slidesLink }}"> Slides </a>
 </div>
 
 <div *ngIf="earningReport?.webcast">
-  <a target="_blank" href="{{ earningReport?.webcast }}">
-    Webcast <mat-icon>open_in_new</mat-icon>
-  </a>
+  <a target="_blank" href="{{ earningReport?.webcast }}"> Webcast </a>
 </div>
 
 <div *ngIf="earningReport?.transcript">
-  <a target="_blank" href="{{ earningReport?.transcript }}">
-    Transcript <mat-icon>open_in_new</mat-icon>
-  </a>
+  <a target="_blank" href="{{ earningReport?.transcript }}"> Transcript </a>
 </div>

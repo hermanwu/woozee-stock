@@ -254,7 +254,8 @@ export const allNews: News[] = [
       'Meta jumped about 20% in extended trading on Wednesday on better-than-expected profit.',
     source: Source.cnbc,
     type: EventType.stock,
-    sourceLink: 'https://www.cnbc.com/2022/04/27/meta-fb-q1-2022-earnings.html',
+    sourceLink:
+      'https://www.cnbc.com/2022/04/27/meta-meta-q1-2022-earnings.html',
     date: new Date('2022-04-27'),
     riskUuids: ['r15', 'r16', 'r14'],
     catalystUuids: ['c6'],

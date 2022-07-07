@@ -25,7 +25,7 @@ export const docuRisks = [
 ];
 
 export const docu: StockAnalysis = {
-  marketCap: 14.329 * BILLION,
+  marketCap: 17.46 * BILLION,
   logo: '',
   name: 'DOCUSIGN, INC.',
   description: [],
@@ -37,9 +37,14 @@ export const docu: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      totalRevenue: 581 * MILLION,
+      totalRevenue: 588.692 * MILLION,
+      costOfRevenue: 132.416 * MILLION,
+      operatingIncome: -19.226 * MILLION,
+      netIncome: -27.373 * MILLION,
       fullyYearForecastRevenue: 2476 * MILLION,
-      isForecast: true,
+
+      reportLink:
+        'https://s22.q4cdn.com/408980645/files/doc_financials/2023/q1/cab9d609-89e9-43c1-b276-71e08ecfe329.pdf',
     },
     {
       pressReleaseLink:

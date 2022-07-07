@@ -2,6 +2,7 @@ export enum MarketType {
   global = 'Global',
   us = 'United States',
   china = 'China',
+  hardware = 'Hardware',
 
   digitalMedia = 'Digital Media',
 
@@ -79,4 +80,9 @@ export enum MarketType {
   virtualRendering = '3D Virtual Rendering',
 
   datacenter = 'Data Center',
+
+  pc = 'PC',
+
+  mobile = 'Mobile and Edge Computing',
+  storage = '',
 }

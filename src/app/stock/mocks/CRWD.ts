@@ -3,13 +3,24 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const crwd: StockAnalysis = {
-  marketCap: 51 * BILLION,
+  uuid: 'crwd-uuid-1',
+  marketCap: 37 * BILLION,
+  predications: [
+    {
+      uuid: 'crwd-prediction-1',
+      betterOptionUuids: ['better-options-1'],
+    },
+  ],
   earningsReports: [
     {
       year: 2022,
       quarter: 1,
-      totalRevenue: 462 * MILLION,
-      isForecast: true,
+      totalRevenue: 487.834 * MILLION,
+      costOfRevenue: 126.832 * MILLION,
+      grossProfit: 361.002 * MILLION,
+      totalOperatingExpense: 384.885 * MILLION,
+      operatingIncome: -23.883 * MILLION,
+      netIncome: -30.409 * MILLION,
     },
     {
       pressReleaseLink:

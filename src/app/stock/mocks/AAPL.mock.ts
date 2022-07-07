@@ -1,5 +1,5 @@
 import { MarketType } from 'src/app/facts/data/area.enum';
-import { MILLION } from 'src/app/shared/numbers/number.model';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { capMock } from './market-cap.mock';
 
@@ -14,7 +14,33 @@ export const aapl: StockAnalysis = {
   ticker: 'aapl',
   ceoQuote: [],
   irAddress: 'https://investor.apple.com/investor-relations/default.aspx',
-
+  products: [
+    {
+      name: 'iPhone',
+      size: 50.57 * BILLION,
+      markets: [MarketType.hardware],
+    },
+    {
+      name: 'Mac',
+      size: 10.435 * BILLION,
+      markets: [MarketType.hardware],
+    },
+    {
+      name: 'iPad',
+      size: 7.646 * BILLION,
+      markets: [MarketType.hardware],
+    },
+    {
+      name: 'Wearables, Home and Accessories',
+      size: 8.806 * BILLION,
+      markets: [MarketType.hardware],
+    },
+    {
+      name: 'Services',
+      size: 19.821 * BILLION,
+      markets: [MarketType.cloudService],
+    },
+  ],
   business: {
     markets: [MarketType.us, MarketType.consumerElectronics],
   },
@@ -28,6 +54,10 @@ export const aapl: StockAnalysis = {
       costOfRevenue: 54719 * MILLION,
       operatingIncome: 29979 * MILLION,
       netIncome: 25010 * MILLION,
+      pressReleaseLink:
+        'https://www.apple.com/newsroom/2022/04/apple-reports-second-quarter-results/',
+      reportLink:
+        'https://d18rn0p25nwr6d.cloudfront.net/CIK-0000320193/485ae20a-4b5c-4477-8971-40f401afe35b.pdf',
     },
     {
       year: 2021,

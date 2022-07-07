@@ -1,13 +1,4 @@
 <div class="container">
-  <div class="row sub-title">
-    <div *ngIf="!hideLabel">Quarter</div>
-    <div class="stats">
-      <span>
-        {{ stock.latestReport.year }}Q{{ stock.latestReport.quarter }}
-      </span>
-    </div>
-  </div>
-
   <div class="row">
     <div *ngIf="!hideLabel">Revenue Q/Q</div>
     <div class="stats">
@@ -22,7 +13,19 @@
     </div>
   </div>
 
-  <!-- <div class="stats">{{ unicode.NextLine }}</div> -->
+  <div class="row">
+    <div *ngIf="!hideLabel">Revenue Y/Y (TTM)</div>
+    <div class="stats">
+      <span class="gray" *ngIf="!compareDisplay">
+        ({{ stock.previousTtmRevenue | siUnit: 2 | undefined }} ->
+        {{ stock.ttmRevenue | siUnit: 2 | undefined }})
+      </span>
+      <span>
+        <span *ngIf="stock.yearOverYearRevenueGrowth > 0">+</span
+        >{{ stock.yearOverYearRevenueGrowth | siUnit: 2 | percent | undefined }}
+      </span>
+    </div>
+  </div>
 
   <div class="row" *ngIf="nextQuarterForecastGrowth && !compareDisplay">
     <div *ngIf="!hideLabel">Forecast Next Q/Q</div>
@@ -33,24 +36,6 @@
       <span>
         <span *ngIf="nextQuarterForecastGrowth > 0">+</span
         >{{ nextQuarterForecastGrowth | siUnit: 2 | percent | undefined }}
-      </span>
-    </div>
-  </div>
-
-  <div class="row sub-title">
-    <span *ngIf="!hideLabel"> Year (TTM)</span>
-  </div>
-
-  <div class="row">
-    <div *ngIf="!hideLabel">Revenue Y/Y</div>
-    <div class="stats">
-      <span class="gray" *ngIf="!compareDisplay">
-        ({{ stock.previousTtmRevenue | siUnit: 2 | undefined }} ->
-        {{ stock.ttmRevenue | siUnit: 2 | undefined }})
-      </span>
-      <span>
-        <span *ngIf="stock.yearOverYearRevenueGrowth > 0">+</span
-        >{{ stock.yearOverYearRevenueGrowth | siUnit: 2 | percent | undefined }}
       </span>
     </div>
   </div>

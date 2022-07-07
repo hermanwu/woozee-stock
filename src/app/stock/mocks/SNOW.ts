@@ -12,7 +12,7 @@ export const snowflakeRisks: Risk[] = [
 ];
 
 export const snow: StockAnalysis = {
-  marketCap: 40 * BILLION,
+  marketCap: 42 * BILLION,
   riskUuids: snowflakeRisks.map((r) => r.uuid),
   business: {
     overview: [

@@ -104,7 +104,7 @@ export const fbRisks = [
 ];
 
 export const meta: StockAnalysis = {
-  marketCap: 475 * BILLION,
+  marketCap: 466 * BILLION,
   shortName: 'Meta',
   predications: [
     {

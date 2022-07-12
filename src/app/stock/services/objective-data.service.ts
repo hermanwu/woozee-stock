@@ -49,7 +49,10 @@ export class ObjectiveDataService {
       let ttmNetIncome = 0;
 
       for (let report of currentYearReports) {
-        report.grossProfit = report.totalRevenue - report.costOfRevenue;
+        // If report does not have gross profit data, generat it from cost of revenue.
+        if (!report.grossProfit) {
+          report.grossProfit = report.totalRevenue - report.costOfRevenue;
+        }
 
         if (ttmRevenue !== undefined) {
           ttmRevenue = report.totalRevenue

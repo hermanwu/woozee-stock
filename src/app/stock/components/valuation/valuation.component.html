@@ -1,33 +1,29 @@
-<div *ngIf="stock" class="container">
-  <div class="row" *ngIf="!compareDisplay">
+<ul *ngIf="stock" class="container">
+  <li class="row" *ngIf="!compareDisplay">
     <div *ngIf="!hideLabel">Market Cap</div>
     <div class="stats">
       <span>
         {{ stock.marketCap | siUnit: 2 | undefined }}
       </span>
     </div>
-  </div>
+  </li>
 
-  <div class="row sub-title">
-    <div *ngIf="!hideLabel">Year (TTM)</div>
-  </div>
-
-  <div class="row">
-    <div *ngIf="!hideLabel">P / S</div>
+  <li class="row">
+    <div *ngIf="!hideLabel">P / S:</div>
     <div class="stats">
       {{ stock.marketCap / stock.ttmRevenue | siUnit: 0 | undefined }}
     </div>
-  </div>
+  </li>
 
-  <div class="row">
-    <div *ngIf="!hideLabel">P / Gross Profit</div>
+  <li class="row">
+    <div *ngIf="!hideLabel">P / Gross Profit:</div>
     <div class="stats">
       {{ stock.marketCap / stock.ttmGrossProfit | siUnit: 0 | undefined }}
     </div>
-  </div>
+  </li>
 
-  <div class="row">
-    <div *ngIf="!hideLabel">P / Operating Income</div>
+  <li class="row">
+    <div *ngIf="!hideLabel">P / Operating Income:</div>
     <div class="stats">
       {{
         (stock.marketCapToOiRatio > 0 ? stock.marketCapToOiRatio : undefined)
@@ -35,10 +31,10 @@
           | undefined
       }}
     </div>
-  </div>
+  </li>
 
-  <div class="row">
-    <div *ngIf="!hideLabel">P / E</div>
+  <li class="row">
+    <div *ngIf="!hideLabel">P / E:</div>
     <div class="stats">
       {{
         (stock.marketCap / stock.ttmNetIncome > 0
@@ -49,5 +45,5 @@
           | undefined
       }}
     </div>
-  </div>
-</div>
+  </li>
+</ul>

@@ -80,7 +80,7 @@ export const twtrRisks = [
 ];
 
 export const twtr: StockAnalysis = {
-  marketCap: 31.47 * BILLION,
+  marketCap: 29.64 * BILLION,
   logo: '',
   name: 'Twitter, Inc.',
   description: [],
@@ -93,9 +93,15 @@ export const twtr: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      isForecast: true,
       fullyYearForecastRevenue: 5.08 * BILLION * 1.22,
-      totalRevenue: 1.22 * BILLION,
+      totalRevenue: 1.2 * BILLION,
+      costOfRevenue: 507.45 * MILLION,
+      operatingIncome: -127.833 * MILLION,
+      netIncome: 513.286 * MILLION,
+      reportLink:
+        'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001418091/bfcefac6-7b00-4d5f-9e6a-fc72218de9df.pdf',
+      pressReleaseLink:
+        'https://s22.q4cdn.com/826641620/files/doc_financials/2022/q1/Final-Q1%e2%80%9922-earnings-release.pdf',
     },
     {
       year: 2021,
@@ -237,5 +243,15 @@ export const twtr: StockAnalysis = {
 
   business: {
     markets: [MarketType.adTech],
+    revenues: [
+      {
+        name: 'Advertising',
+        size: 1.11 * BILLION,
+      },
+      {
+        name: 'Subscription',
+        size: 94 * MILLION,
+      },
+    ],
   },
 };

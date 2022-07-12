@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
 import { EarningsReport } from '../../models/earnings.model';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 
@@ -9,6 +10,9 @@ import { StockAnalysis } from '../../models/stock-analysis.model';
 })
 export class EarningsReportComponent implements OnInit {
   @Input() stock: StockAnalysis;
+
+  readonly emojiLink = EmojiUnicode.link;
+
   earningReport: EarningsReport;
   annualReportLink: string;
 

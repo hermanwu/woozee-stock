@@ -215,7 +215,7 @@ export const snapRisks = [
 ];
 
 export const snap: StockAnalysis = {
-  marketCap: 45 * BILLION,
+  marketCap: 24.78 * BILLION,
   business: {
     markets: [MarketType.adTech, MarketType.social],
   },
@@ -245,6 +245,16 @@ export const snap: StockAnalysis = {
   painPoint: [''],
 
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 1,
+      reportLink:
+        'https://s25.q4cdn.com/442043304/files/doc_financials/2022/q1/Snap-Inc.-Q1-2022-10Q.pdf',
+      totalRevenue: 1062.727 * MILLION,
+      costOfRevenue: 420.897 * MILLION,
+      operatingIncome: -271.527 * MILLION,
+      netIncome: -8.51 * MILLION,
+    },
     {
       reportLink:
         'https://s25.q4cdn.com/442043304/files/doc_financials/2021/q4/Snap-10K-(2021).pdf',

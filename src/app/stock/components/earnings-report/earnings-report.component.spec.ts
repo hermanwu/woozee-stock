@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { EarningsReportComponent } from './earnings-report.component';
 
 describe('EarningsReportComponent', () => {
@@ -8,9 +7,8 @@ describe('EarningsReportComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EarningsReportComponent ]
-    })
-    .compileComponents();
+      declarations: [EarningsReportComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

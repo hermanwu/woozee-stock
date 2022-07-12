@@ -4,7 +4,11 @@ import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { allNews } from 'src/app/media/news/news.const';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
-import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
+import {
+  BILLION,
+  MILLION,
+  TRILLION,
+} from 'src/app/shared/numbers/number.model';
 import { Source } from '../models/news-source.enum';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -138,7 +142,7 @@ export const amzn: StockAnalysis = {
   description: [],
   logo: 'http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
-  marketCap: 1.47 * 1e12,
+  marketCap: 1.183 * TRILLION,
   shortName: 'Amazon',
 
   business: {

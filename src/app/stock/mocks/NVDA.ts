@@ -59,26 +59,6 @@ export const nvda: StockAnalysis = {
       netIncome: 1.618 * BILLION,
       reportLink:
         'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/8b8d4537-83d8-4c94-b065-e7a2cd34da49.pdf',
-      revenues: [
-        {
-          name: 'Data Center',
-          size: 3.75 * BILLION,
-          type: MarketType.datacenter,
-          growthRate: 0.83,
-        },
-        {
-          name: 'Gaming',
-          size: 3.62 * BILLION,
-          type: MarketType.gaming,
-          growthRate: 0.31,
-        },
-        {
-          name: 'Professional Visualization',
-          size: 622 * MILLION,
-          type: MarketType.virtualRendering,
-          growthRate: 0.67,
-        },
-      ],
     },
 
     {
@@ -258,6 +238,26 @@ export const nvda: StockAnalysis = {
       { type: StrategyType.platform },
       { type: StrategyType.tool },
       { type: StrategyType.technology },
+    ],
+    revenues: [
+      {
+        name: 'Data Center',
+        size: 3.75 * BILLION,
+        type: MarketType.datacenter,
+        growthRate: 0.83,
+      },
+      {
+        name: 'Gaming',
+        size: 3.62 * BILLION,
+        type: MarketType.gaming,
+        growthRate: 0.31,
+      },
+      {
+        name: 'Professional Visualization',
+        size: 622 * MILLION,
+        type: MarketType.virtualRendering,
+        growthRate: 0.67,
+      },
     ],
   },
   ticker: 'nvda',

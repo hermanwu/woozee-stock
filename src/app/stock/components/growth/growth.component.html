@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="row">
+<ul class="container">
+  <li class="row">
     <div *ngIf="!hideLabel">Revenue Q/Q</div>
     <div class="stats">
       <span class="gray" *ngIf="!compareDisplay">
@@ -11,10 +11,10 @@
         >{{ stock.quarterRevenueGrowth | siUnit: 2 | percent | undefined }}
       </span>
     </div>
-  </div>
+  </li>
 
-  <div class="row">
-    <div *ngIf="!hideLabel">Revenue Y/Y (TTM)</div>
+  <li class="row">
+    <div *ngIf="!hideLabel">Revenue TTM</div>
     <div class="stats">
       <span class="gray" *ngIf="!compareDisplay">
         ({{ stock.previousTtmRevenue | siUnit: 2 | undefined }} ->
@@ -25,9 +25,9 @@
         >{{ stock.yearOverYearRevenueGrowth | siUnit: 2 | percent | undefined }}
       </span>
     </div>
-  </div>
+  </li>
 
-  <div class="row" *ngIf="nextQuarterForecastGrowth && !compareDisplay">
+  <li class="row" *ngIf="nextQuarterForecastGrowth && !compareDisplay">
     <div *ngIf="!hideLabel">Forecast Next Q/Q</div>
     <div class="stats">
       <span class="gray" *ngIf="!compareDisplay">
@@ -38,30 +38,30 @@
         >{{ nextQuarterForecastGrowth | siUnit: 2 | percent | undefined }}
       </span>
     </div>
-  </div>
+  </li>
 
   <ng-container *ngIf="activeUserCount && !compareDisplay">
-    <div class="stats">{{ unicode.NextLine }}</div>
+    <li class="stats">{{ unicode.NextLine }}</li>
 
-    <div class="row">
+    <li class="row">
       <div *ngIf="!hideLabel">Active User</div>
       <div class="stats">
         <span>
           {{ activeUserCount | siUnit: 2 | undefined }}
         </span>
       </div>
-    </div>
+    </li>
 
-    <div class="row" *ngIf="userCountGrowth && !compareDisplay">
+    <li class="row" *ngIf="userCountGrowth && !compareDisplay">
       <div *ngIf="!hideLabel">User Growth Q/Q</div>
       <div class="stats">
         <span>
           {{ userCountGrowth | siUnit: 2 | percent | undefined }}
         </span>
       </div>
-    </div>
+    </li>
 
-    <div
+    <li
       class="row"
       *ngIf="quarterlyRevenue && activeUserCount && !compareDisplay"
     >
@@ -71,6 +71,6 @@
           {{ quarterlyRevenue / activeUserCount | siUnit: 2 | undefined }}
         </span>
       </div>
-    </div>
+    </li>
   </ng-container>
-</div>
+</ul>

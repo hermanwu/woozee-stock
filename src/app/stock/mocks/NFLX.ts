@@ -3,7 +3,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const nflx: StockAnalysis = {
-  marketCap: 114 * BILLION,
+  marketCap: 81 * BILLION,
   logo: '',
   name: 'Netflix',
   description: [],
@@ -11,10 +11,26 @@ export const nflx: StockAnalysis = {
   shortName: 'Netflix',
   irAddress: 'https://ir.netflix.net/ir-overview/profile/default.aspx',
   business: {
+    products: [
+      'subscription streaming service',
+      'Netflix produced movies/shows',
+    ],
     markets: [MarketType.streaming],
   },
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 7.867767 * BILLION,
+      costOfRevenue: 4.284705 * BILLION,
+      operatingIncome: 1.971626 * BILLION,
+      netIncome: 1.597447 * BILLION,
+      reportLink:
+        'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001065280/8fc9b7d4-759d-4380-9dbc-b55e7f29d138.pdf',
+      pressReleaseLink:
+        'https://s22.q4cdn.com/959853165/files/doc_financials/2022/q1/FINAL-Q1-22-Shareholder-Letter.pdf',
+    },
     {
       year: 2021,
       quarter: 4,

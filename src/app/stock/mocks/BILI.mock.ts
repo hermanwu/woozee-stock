@@ -1,3 +1,4 @@
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { rmbToDollar } from 'src/app/shared/currency';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -27,8 +28,8 @@ export const biliRisks = [
 ];
 
 export const bili: StockAnalysis = {
-  marketCap: 9.82 * BILLION,
-  logo: 'https://lh3.googleusercontent.com/pw/ACtC-3e9AoltCnmSTNXb44UMaYhVOVfeVGD0_rM7wOvceClSFwu_b3_NPLwMXGxITQwqZ1gPu-GMU-T9fhIWYRiqMmicuQTHiJpTZgar7N1AyxoaIhv0nsyFZBe959Es1OgCMoM44TRT9v1vFblgZ-TEyEPA=w870-h412-no?authuser=3',
+  marketCap: 11 * BILLION,
+  logo: 'https://lh3.googleusercontent.com/pw/ACtC-3e9AoltCnmSTNXb44UMaPYhVOVfeVGD0_rM7wOvceClSFwu_b3_NPLwMXGxITQwqZ1gPu-GMU-T9fhIWYRiqMmicuQTHiJpTZgar7N1AyxoaIhv0nsyFZBe959Es1OgCMoM44TRT9v1vFblgZ-TEyEPA=w870-h412-no?authuser=3',
   name: 'Bilibili',
   ticker: 'bili',
   irAddress: 'https://ir.bilibili.com/',
@@ -37,11 +38,17 @@ export const bili: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      totalRevenue: 1,
+      totalRevenue: 5.054 * BILLION * rmbToDollar,
+      costOfRevenue: 4.246858 * BILLION * rmbToDollar,
+      grossProfit: 807.241 * MILLION * rmbToDollar,
+      operatingIncome: -1.990812 * BILLION * rmbToDollar,
+      netIncome: -2.284132 * BILLION * rmbToDollar,
       pressReleaseLink:
         'https://ir.bilibili.com/static-files/91528e13-31e8-4460-a3c0-e04abedeb5fd',
       reportLink:
         'https://ir.bilibili.com/static-files/5934fe40-2676-4587-b71c-d333a2800be2',
+      slidesLink:
+        'https://ir.bilibili.com/static-files/3371d6d5-2a68-4373-adc7-a5ab89494a4e',
     },
     {
       year: 2021,
@@ -141,6 +148,29 @@ export const bili: StockAnalysis = {
   ],
 
   business: {
+    revenues: [
+      {
+        name: 'Mobile Games',
+        size: 1.357818 * BILLION * rmbToDollar,
+        type: MarketType.gaming,
+      },
+      {
+        name: 'Membership and Services',
+        size: 2.052192 * BILLION * rmbToDollar,
+        type: MarketType.streaming,
+      },
+      {
+        name: 'Advertising',
+        size: 1.04077 * BILLION * rmbToDollar,
+        type: MarketType.adTech,
+      },
+      {
+        name: 'E-commerce',
+        size: 0.603319 * BILLION * rmbToDollar,
+        type: MarketType.ecommerce,
+      },
+    ],
+    markets: [MarketType.streaming, MarketType.gaming, MarketType.adTech],
     growthStrategy: [
       '开创了“子弹聊天”功能，营造高度交互性和令人愉悦的观看体验，用户能够有很强的社区感。',
       '社区感刺激创作者生成跟多内容。',

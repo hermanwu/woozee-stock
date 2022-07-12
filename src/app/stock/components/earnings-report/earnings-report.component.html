@@ -1,31 +1,33 @@
 <app-title-menu>
-  <div title>Earnings Report</div>
+  <div title>Latest Earnings Report</div>
 </app-title-menu>
 
-<div>
-  <a target="_blank" href="{{ stock?.irAddress }}"> Investor Relations </a>
+<div *ngIf="earningReport?.pressReleaseLink">
+  <a target="_blank" href="{{ earningReport?.pressReleaseLink }}">
+    Press Release {{ emojiLink }}
+  </a>
 </div>
 
 <div *ngIf="earningReport?.reportLink">
   <a target="_blank" href="{{ earningReport?.reportLink }}">
-    {{ earningReport?.year }} - {{ earningReport?.quarter }} Earnings Report
-  </a>
-</div>
-
-<div *ngIf="earningReport?.pressReleaseLink">
-  <a target="_blank" href="{{ earningReport?.pressReleaseLink }}">
-    Press Release
+    SEC Filing {{ emojiLink }}
   </a>
 </div>
 
 <div *ngIf="earningReport?.slidesLink">
-  <a target="_blank" href="{{ earningReport?.slidesLink }}"> Slides </a>
+  <a target="_blank" href="{{ earningReport?.slidesLink }}">
+    Investor Presentation {{ emojiLink }}</a
+  >
 </div>
 
 <div *ngIf="earningReport?.webcast">
-  <a target="_blank" href="{{ earningReport?.webcast }}"> Webcast </a>
+  <a target="_blank" href="{{ earningReport?.webcast }}">
+    Webcast {{ emojiLink }}</a
+  >
 </div>
 
 <div *ngIf="earningReport?.transcript">
-  <a target="_blank" href="{{ earningReport?.transcript }}"> Transcript </a>
+  <a target="_blank" href="{{ earningReport?.transcript }}">
+    Transcript {{ emojiLink }}</a
+  >
 </div>

@@ -1,25 +1,9 @@
 <app-title-menu>
-  <div title>Outside Links</div>
+  <div title>Links</div>
 </app-title-menu>
 
-<ng-template #quarterReport>
-  <div *ngIf="earningReport?.reportLink">
-    <a target="_blank" href="{{ earningReport?.reportLink }}">
-      {{ earningReport?.year }} - {{ earningReport?.quarter }} Earnings Report
-      <mat-icon>open_in_new</mat-icon>
-    </a>
-  </div>
-</ng-template>
-
-<div *ngIf="earningReport?.pressReleaseLink">
-  <a target="_blank" href="{{ earningReport?.pressReleaseLink }}">
-    Press Release
-    <mat-icon>open_in_new</mat-icon>
-  </a>
-</div>
-
-<div *ngIf="earningReport?.slidesLink">
-  <a target="_blank" href="{{ earningReport?.slidesLink }}">
-    Slides <mat-icon>open_in_new</mat-icon>
+<div>
+  <a target="_blank" href="{{ stock?.irAddress }}">
+    Investor Relations {{ emojiLink }}
   </a>
 </div>

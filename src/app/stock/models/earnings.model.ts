@@ -1,13 +1,11 @@
 import { Note } from 'src/app/shared/data/note.interface';
 import { Composition } from './composition.model';
-import { Market } from './market.models';
 
 export interface EarningsReport {
   year: number;
   quarter: number;
   isForecast?: boolean;
   fullyYearForecastRevenue?: number;
-  revenues?: Market[];
 
   reportLink?: string;
   pressReleaseLink?: string;

@@ -96,13 +96,15 @@ export class ComparisonDialogComponent {
           }
         }
         return false;
-      })
-      // Sort them by market cap.
-      .sort((a, b) => b.marketCap - a.marketCap)
-      // Select three stocks.
-      .slice(0, 3);
+      });
 
-    this.stocks = [this.dialogData.stock, ...competitors];
+    // Sort stocks by their size difference compare to the target.
+    const targetMarketCap = this.dialogData.stock.marketCap;
+    this.stocks = [this.dialogData.stock, ...competitors].sort(
+      (a, b) =>
+        Math.abs(a.marketCap - targetMarketCap) -
+        Math.abs(b.marketCap - targetMarketCap)
+    );
   }
 
   /**

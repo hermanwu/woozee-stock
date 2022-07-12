@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
+import { MarketType } from 'src/app/facts/data/area.enum';
 import { Business } from './business.model';
 
 @Component({
@@ -6,9 +7,15 @@ import { Business } from './business.model';
   templateUrl: './business-overview.component.html',
   styleUrls: ['./business-overview.component.scss'],
 })
-export class BusinessOverviewComponent implements OnInit {
+export class BusinessOverviewComponent implements OnChanges {
   @Input() business: Business;
+  markets: MarketType[];
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnChanges(): void {
+    if (this.business) {
+      this.markets = this.business.markets;
+    }
+  }
 }

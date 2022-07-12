@@ -3,7 +3,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const pins: StockAnalysis = {
-  marketCap: 16.33 * BILLION,
+  marketCap: 13.45 * BILLION,
   logo: '',
   name: 'Pinterest',
   description: [],
@@ -15,8 +15,10 @@ export const pins: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
-      isForecast: true,
-      totalRevenue: 485 * MILLION * 1.18,
+      totalRevenue: 574.885 * MILLION,
+      costOfRevenue: 146.07 * MILLION,
+      operatingIncome: -3.665 * MILLION,
+      netIncome: -5.281 * MILLION,
     },
     {
       year: 2021,

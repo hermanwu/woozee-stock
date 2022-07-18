@@ -1,5 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
+import { MarketsService } from 'src/app/markets/services/markets.service';
+import { StockAnalysis } from '../../models/stock-analysis.model';
 import { Business } from './business.model';
 
 @Component({
@@ -9,13 +11,21 @@ import { Business } from './business.model';
 })
 export class BusinessOverviewComponent implements OnChanges {
   @Input() business: Business;
-  markets: MarketType[];
+  markets: IndustryType[];
+  competitorMap: Map<IndustryType, StockAnalysis[]> = new Map();
 
-  constructor() {}
+  constructor(private marketsService: MarketsService) {}
 
   ngOnChanges(): void {
     if (this.business) {
       this.markets = this.business.markets;
+
+      for (let market of this.markets) {
+        this.competitorMap.set(
+          market,
+          this.marketsService.getStocksByIndustryType(market)
+        );
+      }
     }
   }
 }

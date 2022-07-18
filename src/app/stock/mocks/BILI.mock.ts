@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { rmbToDollar } from 'src/app/shared/currency';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -152,25 +152,25 @@ export const bili: StockAnalysis = {
       {
         name: 'Mobile Games',
         size: 1.357818 * BILLION * rmbToDollar,
-        type: MarketType.gaming,
+        type: IndustryType.gaming,
       },
       {
         name: 'Membership and Services',
         size: 2.052192 * BILLION * rmbToDollar,
-        type: MarketType.streaming,
+        type: IndustryType.streaming,
       },
       {
         name: 'Advertising',
         size: 1.04077 * BILLION * rmbToDollar,
-        type: MarketType.adTech,
+        type: IndustryType.adTech,
       },
       {
         name: 'E-commerce',
         size: 0.603319 * BILLION * rmbToDollar,
-        type: MarketType.ecommerce,
+        type: IndustryType.ecommerce,
       },
     ],
-    markets: [MarketType.streaming, MarketType.gaming, MarketType.adTech],
+    markets: [IndustryType.streaming, IndustryType.gaming, IndustryType.adTech],
     growthStrategy: [
       '开创了“子弹聊天”功能，营造高度交互性和令人愉悦的观看体验，用户能够有很强的社区感。',
       '社区感刺激创作者生成跟多内容。',

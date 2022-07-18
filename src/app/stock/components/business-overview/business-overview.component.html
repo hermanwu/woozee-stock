@@ -3,25 +3,29 @@
   <div *ngFor="let item of business?.overview">{{ item }}</div>
 </div>
 
-<div>
+<div *ngIf="business?.products">
   <h3 class="label">Products</h3>
   <ul>
     <li *ngFor="let item of business?.products">{{ item }}</li>
   </ul>
 </div>
 
-<div>
+<div *ngIf="business?.revenues">
   <div class="label">Revenue Composition</div>
   <app-revenue-composition-display
     [revenues]="business?.revenues"
   ></app-revenue-composition-display>
 </div>
 
-<div>
+<div *ngIf="business?.markets">
   <div class="label">Industries and Competitors</div>
   <ul>
     <li *ngFor="let item of business?.markets">
-      {{ item }}
+      {{ item }}:
+
+      <span *ngFor="let competitor of competitorMap.get(item)">
+        {{ competitor.shortName }}({{ competitor.ticker.toUpperCase() }});
+      </span>
     </li>
   </ul>
 </div>

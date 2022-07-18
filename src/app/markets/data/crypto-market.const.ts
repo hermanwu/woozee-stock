@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { Market } from 'src/app/stock/models/market.models';
 
@@ -48,7 +48,7 @@ export const cryptoMarketCatalysts = [
 ];
 
 export const cryptoMarket: Market = {
-  type: MarketType.crypto,
+  type: IndustryType.crypto,
   riskUuids: cryptoRisks.map((r) => r.uuid),
   catalystUuids: cryptoMarketCatalysts.map((c) => c.uuid),
 };

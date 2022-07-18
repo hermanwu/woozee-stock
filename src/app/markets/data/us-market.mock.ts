@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { fedRate } from 'src/app/risks/data/risks/fed-rate.model';
 import { laborShortage } from 'src/app/risks/data/risks/labor-shortage.model';
 import { Risk } from 'src/app/risks/models/risk.model';
@@ -29,6 +29,6 @@ export const usMarketRisks: Risk[] = [
 ];
 
 export const usMarket: Market = {
-  type: MarketType.us,
+  type: IndustryType.us,
   riskUuids: usMarketRisks.map((r) => r.uuid),
 };

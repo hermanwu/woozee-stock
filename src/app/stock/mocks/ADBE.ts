@@ -1,5 +1,5 @@
 import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -48,23 +48,27 @@ export const adbe: StockAnalysis = {
   ticker: 'adbe',
 
   business: {
-    markets: [MarketType.saas, MarketType.mediaTool, MarketType.documentTool],
+    markets: [
+      IndustryType.saas,
+      IndustryType.mediaTool,
+      IndustryType.documentTool,
+    ],
     revenues: [
       {
-        type: MarketType.saas,
+        type: IndustryType.saas,
       },
       {
-        type: MarketType.mediaTool,
+        type: IndustryType.mediaTool,
         size: 3.11 * BILLION,
         growthRate: 0.09,
         children: [
           {
-            type: MarketType.mediaTool,
+            type: IndustryType.mediaTool,
             size: 2.55 * BILLION,
             growthRate: 0.07,
           },
           {
-            type: MarketType.documentTool,
+            type: IndustryType.documentTool,
             size: 562 * MILLION,
             growthRate: 0.17,
           },

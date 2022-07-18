@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -10,7 +10,7 @@ export const baba: StockAnalysis = {
   ticker: 'baba',
   irAddress: 'https://www.alibabagroup.com/en/ir/home',
   business: {
-    markets: [MarketType.ecommerce],
+    markets: [IndustryType.ecommerce],
   },
 
   earningsReports: [

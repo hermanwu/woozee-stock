@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -48,7 +48,7 @@ export const ulta: StockAnalysis = {
   riskUuids: ultaRisks.map((r) => r.uuid),
 
   business: {
-    markets: [MarketType.beauty],
+    markets: [IndustryType.beauty],
   },
   irAddress: 'https://www.ulta.com/investor',
 

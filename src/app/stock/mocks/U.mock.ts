@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -12,7 +12,7 @@ export const u: StockAnalysis = {
   shortName: 'Unity',
   irAddress: 'https://investors.unity.com/overview/default.aspx',
   business: {
-    markets: [MarketType.gaming, MarketType.vr],
+    markets: [IndustryType.gaming, IndustryType.vr],
   },
   // POTENTIALS:
 

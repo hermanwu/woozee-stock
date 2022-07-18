@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -15,7 +15,7 @@ export const nflx: StockAnalysis = {
       'subscription streaming service',
       'Netflix produced movies/shows',
     ],
-    markets: [MarketType.streaming],
+    markets: [IndustryType.streaming],
   },
   // Earnings Report:
   earningsReports: [

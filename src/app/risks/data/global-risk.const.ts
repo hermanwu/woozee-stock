@@ -1,5 +1,5 @@
 import { portfolioRisks } from 'src/app/accounts/ mock-data/portoflio-risks.const';
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from '../models/fact-type.enum';
 import { RiskLevel } from '../models/risk-level.model';
 import { Risk } from '../models/risk.model';
@@ -12,7 +12,7 @@ import { inflation } from './risks/inflation.model';
 export const allRisks: Risk[] = [
   // {
   //   uuid: 'r12',
-  //   markets: [MarketType.adTech],
+  //   markets: [IndustryType.adTech],
   //   level: RiskLevel.longTerm,
   //   type: FactType.business,
   //   updatedTime: new Date('2022-04-26'),
@@ -85,14 +85,14 @@ export const allRisks: Risk[] = [
     uuid: 'r15',
     content:
       'Virtual reality could be costly to invest in and might not generate any return soon',
-    markets: [MarketType.vr],
+    markets: [IndustryType.vr],
     updatedTime: new Date('2022-04-27'),
     level: RiskLevel.shortTerm,
   },
   {
     uuid: 'r14',
     content: 'More regulatory scrutiny towards user data privacy.',
-    markets: [MarketType.social],
+    markets: [IndustryType.social],
     type: FactType.business,
     level: RiskLevel.shortTerm,
     updatedTime: new Date('2022-04-27'),
@@ -100,7 +100,7 @@ export const allRisks: Risk[] = [
   {
     uuid: 'r12',
     content: 'Consumer spending decrease will cause Fintech revenue decrease.',
-    markets: [MarketType.fintech],
+    markets: [IndustryType.fintech],
     type: FactType.growth,
     updatedTime: new Date('2022-04-27'),
   },
@@ -113,7 +113,7 @@ export const allRisks: Risk[] = [
           'That’s roughly half of the 936,000 electric vehicles delivered by Tesla last year.',
       },
     ],
-    markets: [MarketType.china],
+    markets: [IndustryType.china],
     tickers: ['TSLA'],
     level: RiskLevel.shortTerm,
     type: FactType.business,
@@ -123,7 +123,7 @@ export const allRisks: Risk[] = [
     uuid: 'r11',
     content:
       'COVID lock down causes economy slow down in China and global supply chain issue Globally',
-    markets: [MarketType.global],
+    markets: [IndustryType.global],
     level: RiskLevel.longTerm,
     type: FactType.business,
     updatedTime: new Date('2022-04-26'),
@@ -131,7 +131,7 @@ export const allRisks: Risk[] = [
   {
     uuid: 'r10',
     content: 'Investment banking business is not growing',
-    markets: [MarketType.investmentBanking],
+    markets: [IndustryType.investmentBanking],
     level: RiskLevel.longTerm,
     type: FactType.business,
     updatedTime: new Date('2022-04-20'),
@@ -140,7 +140,7 @@ export const allRisks: Risk[] = [
     uuid: 'r9',
     content:
       'Users are more interested in watching short videos on Tiktok than long videos on Netflix ',
-    markets: [MarketType.streaming],
+    markets: [IndustryType.streaming],
     level: RiskLevel.shortTerm,
     type: FactType.growth,
     updatedTime: new Date('2022-04-20'),
@@ -161,7 +161,7 @@ export const allRisks: Risk[] = [
     uuid: 'r8',
     content: 'Entertainment industry has too much competition',
     level: RiskLevel.shortTerm,
-    markets: [MarketType.streaming],
+    markets: [IndustryType.streaming],
     type: FactType.growth,
     updatedTime: new Date('2022-04-19'),
   },

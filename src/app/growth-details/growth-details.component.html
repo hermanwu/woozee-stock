@@ -1,0 +1,14 @@
+<ul>
+  <li>
+    Quarterly Revenue {{ stock.quarterRevenue | siUnit: 2 | undefined }}, Growth
+
+    <span>
+      <span *ngIf="stock.quarterRevenueGrowth > 0; else negative">Up</span>
+      <ng-template #negative>Down</ng-template>
+      {{ stock.quarterRevenueGrowth | siUnit: 2 | percent | undefined }}
+    </span>
+    YoY
+
+    <app-sentiment-display></app-sentiment-display>
+  </li>
+</ul>

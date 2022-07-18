@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -188,6 +188,6 @@ export const docu: StockAnalysis = {
     },
   ],
   business: {
-    markets: [MarketType.saas],
+    markets: [IndustryType.saas],
   },
 };

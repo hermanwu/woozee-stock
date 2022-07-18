@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 
 export const fintechRisks: Risk[] = [
@@ -13,6 +13,6 @@ export const fintechRisks: Risk[] = [
 ];
 
 export const fintechMarket = {
-  type: MarketType.fintech,
+  type: IndustryType.fintech,
   riskUuids: fintechRisks.map((c) => c.uuid),
 };

@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CatalystService } from 'src/app/catalyst/services/catalyst.service';
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { riskService } from 'src/app/risks/services/subjective-data.service';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
@@ -19,7 +19,7 @@ export class MarketPropertiesPageComponent implements OnInit {
   private readonly marketTypeParamName = 'marketType';
   routeSub: Subscription;
 
-  marketType: MarketType;
+  marketType: IndustryType;
   market: Market;
   risks: Risk[];
   catalysts: Catalyst[];

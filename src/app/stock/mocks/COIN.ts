@@ -1,5 +1,5 @@
 import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { Risk } from 'src/app/risks/models/risk.model';
@@ -85,7 +85,7 @@ export const coin: StockAnalysis = {
   catalystUuids: coinCatalysts.map((c) => c.uuid),
 
   business: {
-    markets: [MarketType.crypto],
+    markets: [IndustryType.crypto],
     users: [
       { type: 'Retail users: We serve as the users’ primary crypto account' },
       {

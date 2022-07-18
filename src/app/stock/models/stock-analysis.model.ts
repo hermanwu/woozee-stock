@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Note } from 'src/app/shared/data/note.interface';
 import { Business } from '../components/business-overview/business.model';
 import { EarningsReport } from './earnings.model';
@@ -12,7 +12,7 @@ import { Trend } from './trend.enum';
 export interface Product {
   name?: string;
   size?: number;
-  markets?: MarketType[];
+  markets?: IndustryType[];
   description?: string;
   imageLink?: string;
   url?: string;

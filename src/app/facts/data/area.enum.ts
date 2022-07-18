@@ -1,88 +1,56 @@
-export enum MarketType {
-  global = 'Global',
-  us = 'United States',
-  china = 'China',
-  hardware = 'Hardware',
-
-  digitalMedia = 'Digital Media',
-
-  consumerElectronics = 'Consumer Electronics',
-
-  Retails = 'Retails',
-
-  crm = 'CRM',
-
-  foodDelivery = 'Food Delivery',
-  entertainment = 'Entertainment',
-
-  fintech = 'Fintech',
-  loan = 'Loan',
-  shared_economy = 'Shared Economy',
-  travel = 'Travel & Tourism',
-  crypto = 'Crypto',
-  nft = 'NFT',
-
-  energy = 'Energy',
-
-  b2b = 'b2b',
-
+export enum IndustryType {
+  adTech = 'Advertising',
   ai = 'AI',
-  gaming = 'Gaming',
-  cloudService = 'Cloud Service',
-  virtualSpace = 'Virtualization',
+  airline = 'Airline',
   autoRobotics = 'Auto and Robotics',
+  b2b = 'b2b',
+  beauty = 'Beauty and Cosmetics',
+  bigData = 'Big Data',
+  china = 'China',
+  cloudService = 'Cloud Service',
+  consumer = 'Consumer',
+  consumerElectronics = 'Consumer Electronics',
+  crm = 'CRM',
+  crypto = 'Crypto',
+  customerOperatingManagement = 'Customer Relation Management',
+  customerRelationManagement = 'Customer Relation Management',
+  cybersecurity = 'Cybersecurity',
   dataAnalytics = 'Data Analytics',
-
+  datacenter = 'Data Center',
+  defense = 'Defense',
+  digitalMedia = 'Digital Media',
+  documentTool = 'Document Tool',
   ecommerce = 'Ecommerce',
   ecommerceTools = 'Ecommerce Tools',
-
-  itOperatingManagement = 'IT Operating Management',
-  customerOperatingManagement = 'Customer Relation Management',
-  cybersecurity = 'Cybersecurity',
-
-  customerRelationManagement = 'Customer Relation Management',
-
-  saas = 'SaaS',
-
-  adTech = 'Advertising',
-  social = 'Social Networking',
-
-  industrial = 'Industrial',
-
-  bigData = 'Big Data',
-
-  consumer = 'Consumer',
-
+  energy = 'Energy',
+  entertainment = 'Entertainment',
   ev = 'EV',
-
-  defense = 'Defense',
-
-  semi = 'Semiconductor',
-
+  fintech = 'Fintech',
+  foodDelivery = 'Food Delivery',
+  gaming = 'Gaming',
+  global = 'Global',
+  hardware = 'Hardware',
   hospitality = 'Hospitality',
-
-  airline = 'Airline',
-
-  leisure = 'Leisure',
-
-  beauty = 'Beauty and Cosmetics',
-
-  streaming = 'Streaming Service',
-
-  documentTool = 'Document Tool',
-  mediaTool = 'Media Tool',
-  marketingTool = 'Marketing Tool',
-
+  industrial = 'Industrial',
   investmentBanking = 'Investment banking',
-
-  vr = 'Virtual Reality',
-
-  virtualRendering = '3D Virtual Rendering',
-
-  datacenter = 'Data Center',
-
-  pc = 'PC',
-
+  itOperatingManagement = 'IT Operating Management',
+  leisure = 'Leisure',
+  loan = 'Loan',
+  marketingTool = 'Marketing Tool',
+  mediaTool = 'Media Tool',
   mobile = 'Mobile and Edge Computing',
+  nft = 'NFT',
+  pc = 'PC',
+  Retails = 'Retails',
+  saas = 'SaaS',
+  semi = 'Semiconductor',
+  shared_economy = 'Shared Economy',
+  social = 'Social Networking',
   storage = '',
+  streaming = 'Streaming Service',
+  travel = 'Travel & Tourism',
+  us = 'United States',
+  virtualRendering = '3D Virtual Rendering',
+  virtualSpace = 'Virtualization',
+  vr = 'Virtual Reality',
 }

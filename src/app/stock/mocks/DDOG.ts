@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -12,7 +12,7 @@ export const ddog: StockAnalysis = {
   uuid: 'ddog',
   marketCap: 31 * BILLION,
   business: {
-    markets: [MarketType.dataAnalytics],
+    markets: [IndustryType.dataAnalytics],
     overview: [
       'Datadog is the monitoring and analytics platform for developers, IT operations teams and business users in the cloud age.',
     ],

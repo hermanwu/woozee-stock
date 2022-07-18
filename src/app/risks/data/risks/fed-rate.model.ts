@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Source } from 'src/app/stock/models/news-source.enum';
 import { FactType } from '../../models/fact-type.enum';
 import { RiskLevel } from '../../models/risk-level.model';
@@ -8,7 +8,7 @@ export const fedRate = {
   name: 'Fed rate increases could potentially cause recession.',
   level: RiskLevel.longTerm,
   type: FactType.event,
-  markets: [MarketType.us],
+  markets: [IndustryType.us],
   notes: [
     {
       content:

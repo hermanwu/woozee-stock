@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
@@ -65,7 +65,7 @@ export const dis: StockAnalysis = {
   ceoQuote: [],
   advantage: [],
   business: {
-    markets: [MarketType.streaming, MarketType.entertainment],
+    markets: [IndustryType.streaming, IndustryType.entertainment],
   },
   irAddress: 'https://thewaltdisneycompany.com/investor-relations/',
   // POTENTIALS:

@@ -1,5 +1,5 @@
 import { portfolioCatalysts } from 'src/app/accounts/ mock-data/portoflio-catalysts.const';
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { CatalystLevel } from '../catalyst-level-display/catalyst-level.enum';
@@ -10,7 +10,7 @@ export const catalysts: Catalyst[] = [
   // {
   //   uuid: 'c-5',
   //   content: "Tesla's growth is accelerating.",
-  //   markets: [MarketType.ev],
+  //   markets: [IndustryType.ev],
   //   level: CatalystLevel.moderate,
   //   type: FactType.growth,
   //   date: new Date('2022-04-20'),
@@ -62,7 +62,7 @@ export const catalysts: Catalyst[] = [
     uuid: 'c6',
     content:
       'The short video format popularized by TikTok has excellent momentum.',
-    markets: [MarketType.digitalMedia],
+    markets: [IndustryType.digitalMedia],
     level: CatalystLevel.moderate,
     type: FactType.growth,
     date: new Date('2022-04-27'),
@@ -89,10 +89,10 @@ export const catalysts: Catalyst[] = [
     uuid: 'c-4',
     content: 'Pent-up demand for travel after COVID ',
     markets: [
-      MarketType.hospitality,
-      MarketType.leisure,
-      MarketType.airline,
-      MarketType.beauty,
+      IndustryType.hospitality,
+      IndustryType.leisure,
+      IndustryType.airline,
+      IndustryType.beauty,
     ],
     level: CatalystLevel.moderate,
     type: FactType.growth,
@@ -101,7 +101,7 @@ export const catalysts: Catalyst[] = [
   {
     uuid: 'c-2',
     content: 'EV demand would drive chip demand.',
-    markets: [MarketType.semi],
+    markets: [IndustryType.semi],
     level: CatalystLevel.moderate,
     type: FactType.growth,
     date: new Date('2022-04-18'),
@@ -110,7 +110,7 @@ export const catalysts: Catalyst[] = [
     uuid: '1',
     content:
       'Ukraine-Russian War increases defense / government contract spending',
-    markets: [MarketType.defense],
+    markets: [IndustryType.defense],
     level: CatalystLevel.moderate,
     type: FactType.event,
     date: new Date('2022-04-18'),
@@ -124,7 +124,7 @@ export const catalysts: Catalyst[] = [
   //   content:
   //     'Trading in NFTs spiked 21,000% to more than $17 billion in 2021, report says',
   //   type: FactType.growth,
-  //   markets: [MarketType.crypto, MarketType.nft],
+  //   markets: [IndustryType.crypto, IndustryType.nft],
   // },
   // {
   //   content: 'Crowdstrike pop',

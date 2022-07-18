@@ -30,7 +30,23 @@
   </div>
 
   <div class="row">
-    <div *ngIf="!hideLabel">Gross Profit Q/Q</div>
+    <div *ngIf="!hideLabel">Quarterly Gross Profit Growth YoY</div>
+
+    <div class="stats">
+      <span class="gray-font" *ngIf="!compareDisplay">
+        ({{ stock?.previousQuarterGrossProfit | siUnit: 2 | undefined }} ->
+        {{ stock?.quarterGrossProfit | siUnit: 2 | undefined }})
+      </span>
+
+      <span>
+        <span *ngIf="stock?.quarterGrossProfitGrowth > 0">+</span
+        >{{ stock?.quarterGrossProfitGrowth | siUnit: 2 | percent | undefined }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="!hideLabel">Quarterly Gross Profit Growth QoQ</div>
 
     <div class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">
@@ -46,7 +62,7 @@
   </div>
 
   <div class="row" *ngIf="!compareDisplay">
-    <div *ngIf="!hideLabel">Gross Profit TTM</div>
+    <div *ngIf="!hideLabel">Gross Profit Trailing 12 months</div>
     <div class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">
         ({{ stock?.previousTtmGrossProfit | siUnit: 2 | undefined }} ->

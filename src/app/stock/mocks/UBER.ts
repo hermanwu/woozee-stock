@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -20,7 +20,7 @@ export const uber: StockAnalysis = {
   irAddress: 'https://investor.uber.com/home/default.aspx',
 
   business: {
-    markets: [MarketType.foodDelivery, MarketType.shared_economy],
+    markets: [IndustryType.foodDelivery, IndustryType.shared_economy],
   },
 
   // Earnings Report:

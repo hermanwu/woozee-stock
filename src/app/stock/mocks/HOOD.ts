@@ -1,5 +1,5 @@
 import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -94,7 +94,7 @@ export const hood: StockAnalysis = {
         type: UserType.retailInvestor,
       },
     ],
-    markets: [MarketType.fintech, MarketType.crypto],
+    markets: [IndustryType.fintech, IndustryType.crypto],
   },
 
   // Earnings Report:

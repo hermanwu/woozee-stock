@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { capMock } from './market-cap.mock';
@@ -18,31 +18,31 @@ export const aapl: StockAnalysis = {
     {
       name: 'iPhone',
       size: 50.57 * BILLION,
-      markets: [MarketType.hardware],
+      markets: [IndustryType.hardware],
     },
     {
       name: 'Mac',
       size: 10.435 * BILLION,
-      markets: [MarketType.hardware],
+      markets: [IndustryType.hardware],
     },
     {
       name: 'iPad',
       size: 7.646 * BILLION,
-      markets: [MarketType.hardware],
+      markets: [IndustryType.hardware],
     },
     {
       name: 'Wearables, Home and Accessories',
       size: 8.806 * BILLION,
-      markets: [MarketType.hardware],
+      markets: [IndustryType.hardware],
     },
     {
       name: 'Services',
       size: 19.821 * BILLION,
-      markets: [MarketType.cloudService],
+      markets: [IndustryType.cloudService],
     },
   ],
   business: {
-    markets: [MarketType.us, MarketType.consumerElectronics],
+    markets: [IndustryType.us, IndustryType.consumerElectronics],
   },
 
   // Earnings Report:

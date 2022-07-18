@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -11,7 +11,7 @@ export const mttr: StockAnalysis = {
   ticker: 'mttr',
   shortName: 'Matterport',
   business: {
-    markets: [MarketType.vr],
+    markets: [IndustryType.vr],
   },
 
   earningsReports: [

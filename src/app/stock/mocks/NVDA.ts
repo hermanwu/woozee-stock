@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
@@ -228,11 +228,11 @@ export const nvda: StockAnalysis = {
   ],
   business: {
     markets: [
-      MarketType.cloudService,
-      MarketType.gaming,
-      MarketType.virtualSpace,
-      MarketType.autoRobotics,
-      MarketType.semi,
+      IndustryType.cloudService,
+      IndustryType.gaming,
+      IndustryType.virtualSpace,
+      IndustryType.autoRobotics,
+      IndustryType.semi,
     ],
     competitiveAdvantages: [
       { type: StrategyType.platform },
@@ -243,19 +243,19 @@ export const nvda: StockAnalysis = {
       {
         name: 'Data Center',
         size: 3.75 * BILLION,
-        type: MarketType.datacenter,
+        type: IndustryType.datacenter,
         growthRate: 0.83,
       },
       {
         name: 'Gaming',
         size: 3.62 * BILLION,
-        type: MarketType.gaming,
+        type: IndustryType.gaming,
         growthRate: 0.31,
       },
       {
         name: 'Professional Visualization',
         size: 622 * MILLION,
-        type: MarketType.virtualRendering,
+        type: IndustryType.virtualRendering,
         growthRate: 0.67,
       },
     ],

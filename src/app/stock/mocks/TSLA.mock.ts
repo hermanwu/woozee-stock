@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { Risk } from 'src/app/risks/models/risk.model';
@@ -63,7 +63,7 @@ export const tsla: StockAnalysis = {
   marketCap: capMock.tsla,
   secFilings: 'https://ir.tesla.com/sec-filings',
   business: {
-    markets: [MarketType.ai, MarketType.ev, MarketType.energy],
+    markets: [IndustryType.ai, IndustryType.ev, IndustryType.energy],
   },
 
   riskUuids: tslaRisks.map((r) => r.uuid),

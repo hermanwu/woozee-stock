@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { MarketType } from '../../../facts/data/area.enum';
+import { IndustryType } from '../../../facts/data/area.enum';
 
 @Component({
   selector: 'app-market-display',
@@ -8,7 +8,7 @@ import { MarketType } from '../../../facts/data/area.enum';
   styleUrls: ['./market-display.component.scss'],
 })
 export class MarketDisplayComponent implements OnInit {
-  @Input() marketType: MarketType;
+  @Input() marketType: IndustryType;
   environment = environment;
 
   constructor() {}

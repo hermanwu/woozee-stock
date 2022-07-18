@@ -1,5 +1,5 @@
 import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { Risk } from 'src/app/risks/models/risk.model';
@@ -58,7 +58,7 @@ export const blockCatalysts: Catalyst[] = [
 export const sq: StockAnalysis = {
   marketCap: 71 * BILLION,
   business: {
-    markets: [MarketType.fintech],
+    markets: [IndustryType.fintech],
     competitiveAdvantages: [{ type: StrategyType.ecoSystem }],
     users: [
       'Logistic and customer relation management for small business owners.',

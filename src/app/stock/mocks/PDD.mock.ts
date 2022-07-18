@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { rmbToDollar } from 'src/app/shared/currency';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -94,7 +94,7 @@ export const pdd: StockAnalysis = {
   ],
 
   business: {
-    markets: [MarketType.ecommerce],
+    markets: [IndustryType.ecommerce],
     growthStrategy: [
       'Create a team purchase model that initiated by user with more detailed customer information.',
       'Focus on less-developed cities/market with consumers that are more sensitive to price, where Alibaba and JD were not focused',

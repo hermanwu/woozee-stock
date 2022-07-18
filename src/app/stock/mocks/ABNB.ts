@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -58,7 +58,7 @@ export const abnb: StockAnalysis = {
   ticker: 'abnb',
   irAddress: 'https://airbnb2020ipo.q4web.com/home/default.aspx',
   business: {
-    markets: [MarketType.shared_economy, MarketType.travel],
+    markets: [IndustryType.shared_economy, IndustryType.travel],
     competitiveAdvantages: [
       { type: StrategyType.platform },
       { type: StrategyType.userData },

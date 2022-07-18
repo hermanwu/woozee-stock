@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { catalysts } from 'src/app/catalyst/data/catalyst.mock';
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { allMarkets } from 'src/app/markets/data/all-markets.const';
 import { allNews } from 'src/app/media/news/news.const';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
@@ -21,7 +21,7 @@ export class riskService {
 
   catalystMap: Map<string, Catalyst> = new Map();
   riskMap: Map<string, Risk> = new Map();
-  marketMap: Map<MarketType, Market> = new Map();
+  marketMap: Map<IndustryType, Market> = new Map();
 
   constructor() {
     this.risks = cloneDeep(allRisks);
@@ -62,7 +62,6 @@ export class riskService {
   }
 
   getRisksByUuids(uuids: string[]): Risk[] {
-    console.log(uuids);
     if (uuids && uuids.length > 0) {
       return this.risks.filter((risk) => uuids.indexOf(risk.uuid) >= 0);
     }
@@ -76,7 +75,7 @@ export class riskService {
     );
   }
 
-  getRisksByMarkets(marketTypes: MarketType[]): Risk[] {
+  getRisksByMarkets(marketTypes: IndustryType[]): Risk[] {
     const set = new Set();
 
     if (marketTypes) {
@@ -99,7 +98,7 @@ export class riskService {
     );
   }
 
-  getCatalystsByMarkets(marketTypes: MarketType[]): Catalyst[] {
+  getCatalystsByMarkets(marketTypes: IndustryType[]): Catalyst[] {
     if (marketTypes) {
       const set = new Set<Catalyst>();
 
@@ -157,8 +156,8 @@ export class riskService {
    * Get market types from a list of risks or catalysts.
    * @param opinions
    */
-  getMarketsFromOpinions(opinions: (Catalyst | Risk)[]): MarketType[] {
-    const set = new Set<MarketType>();
+  getMarketsFromOpinions(opinions: (Catalyst | Risk)[]): IndustryType[] {
+    const set = new Set<IndustryType>();
 
     for (let opinion of opinions) {
       if (opinion?.markets?.length) {

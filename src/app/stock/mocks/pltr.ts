@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -257,7 +257,7 @@ export const pltr: StockAnalysis = {
       { type: StrategyType.userData },
       { type: StrategyType.technology },
     ],
-    markets: [MarketType.dataAnalytics, MarketType.defense],
+    markets: [IndustryType.dataAnalytics, IndustryType.defense],
     users: [{ type: 'Any Employee' }],
   },
 };

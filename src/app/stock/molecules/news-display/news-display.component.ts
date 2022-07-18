@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { riskService } from 'src/app/risks/services/subjective-data.service';
 import { NewsDisplay } from './news-display.interface';
 
@@ -13,7 +13,7 @@ export class NewsDisplayComponent implements OnInit, OnChanges {
   @Input() news: NewsDisplay;
 
   tickers: string[];
-  marketTypes: MarketType[];
+  marketTypes: IndustryType[];
 
   constructor(private riskService: riskService) {}
 

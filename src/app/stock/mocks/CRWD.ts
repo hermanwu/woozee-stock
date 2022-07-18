@@ -1,10 +1,10 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const crwd: StockAnalysis = {
   uuid: 'crwd-uuid-1',
-  marketCap: 37 * BILLION,
+  marketCap: 40.57 * BILLION,
   predications: [
     {
       uuid: 'crwd-prediction-1',
@@ -163,12 +163,13 @@ export const crwd: StockAnalysis = {
   ],
   logo: '',
   name: 'Crowdstrike',
+  shortName: 'Crowdstrike',
   description: [],
   ticker: 'crwd',
   irAddress: 'https://ir.crowdstrike.com/',
   secFilings: 'https://ir.crowdstrike.com/financial-information/sec-filings',
   business: {
-    markets: [MarketType.saas],
+    markets: [IndustryType.saas, IndustryType.cybersecurity],
     overview: [
       'We founded CrowdStrike in 2011 to reinvent security for the cloud era.',
       'leverages the network effects of crowdsourced data applied to modern technologies such as AI, cloud computing, and graph databases.',

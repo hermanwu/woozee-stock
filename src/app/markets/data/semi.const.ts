@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 
 export const semiconductorCatalysts: Catalyst[] = [
@@ -9,6 +9,6 @@ export const semiconductorCatalysts: Catalyst[] = [
 ];
 
 export const semiconductorMarket = {
-  type: MarketType.semi,
+  type: IndustryType.semi,
   catalystUuids: semiconductorCatalysts.map((c) => c.uuid),
 };

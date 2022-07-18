@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { allNews } from 'src/app/media/news/news.const';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
@@ -272,10 +272,10 @@ export const meta: StockAnalysis = {
 
   business: {
     markets: [
-      MarketType.adTech,
-      MarketType.social,
-      MarketType.vr,
-      MarketType.digitalMedia,
+      IndustryType.social,
+      IndustryType.adTech,
+      IndustryType.vr,
+      IndustryType.digitalMedia,
     ],
   },
 };

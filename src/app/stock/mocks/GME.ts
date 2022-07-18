@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { UserType } from '../components/business-overview/business.model';
@@ -156,7 +156,7 @@ export const gme: StockAnalysis = {
   ],
 
   business: {
-    markets: [MarketType.crypto, MarketType.ecommerce],
+    markets: [IndustryType.crypto, IndustryType.ecommerce],
     users: [
       {
         type: UserType.gamer,

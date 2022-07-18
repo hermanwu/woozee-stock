@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 
 export const foodDeliveryRisks: Risk[] = [
@@ -9,6 +9,6 @@ export const foodDeliveryRisks: Risk[] = [
 ];
 
 export const foodDeliveryMarket = {
-  type: MarketType.foodDelivery,
+  type: IndustryType.foodDelivery,
   riskUuids: ['mrfd-1'],
 };

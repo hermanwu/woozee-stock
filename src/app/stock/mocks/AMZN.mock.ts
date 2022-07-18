@@ -1,5 +1,5 @@
 import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { allNews } from 'src/app/media/news/news.const';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
@@ -142,15 +142,15 @@ export const amzn: StockAnalysis = {
   description: [],
   logo: 'http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
-  marketCap: 1.183 * TRILLION,
+  marketCap: 1.133 * TRILLION,
   shortName: 'Amazon',
 
   business: {
     markets: [
-      MarketType.ecommerce,
-      MarketType.cloudService,
-      MarketType.adTech,
-      MarketType.Retails,
+      IndustryType.ecommerce,
+      IndustryType.cloudService,
+      IndustryType.adTech,
+      IndustryType.Retails,
     ],
 
     competitiveAdvantages: [

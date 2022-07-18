@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -143,6 +143,6 @@ export const pins: StockAnalysis = {
   ],
 
   business: {
-    markets: [MarketType.adTech],
+    markets: [IndustryType.adTech, IndustryType.social],
   },
 };

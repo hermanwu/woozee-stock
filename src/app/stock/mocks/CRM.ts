@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { BenefitType } from '../components/business-overview/business.model';
@@ -187,7 +187,7 @@ export const crm: StockAnalysis = {
   secFilings: 'https://investor.salesforce.com/financials/default.aspx',
   business: {
     missions: ['We build bridges between companies and customers.'],
-    markets: [MarketType.saas, MarketType.crm],
+    markets: [IndustryType.saas, IndustryType.crm],
     users: [
       {
         type: 'Sales',

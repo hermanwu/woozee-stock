@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -183,9 +183,10 @@ export const googl: StockAnalysis = {
 
   business: {
     markets: [
-      MarketType.adTech,
-      MarketType.datacenter,
-      MarketType.digitalMedia,
+      IndustryType.adTech,
+      IndustryType.social,
+      IndustryType.datacenter,
+      IndustryType.digitalMedia,
     ],
   },
 };

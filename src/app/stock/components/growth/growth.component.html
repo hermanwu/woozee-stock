@@ -1,6 +1,6 @@
 <ul class="container">
   <li class="row">
-    <div *ngIf="!hideLabel">Revenue Q/Q</div>
+    <div *ngIf="!hideLabel">Quarterly Revenue Growth YoY</div>
     <div class="stats">
       <span class="gray" *ngIf="!compareDisplay">
         ({{ stock.previousYearReport?.totalRevenue | siUnit: 2 | undefined }} ->
@@ -14,7 +14,7 @@
   </li>
 
   <li class="row">
-    <div *ngIf="!hideLabel">Revenue TTM</div>
+    <div *ngIf="!hideLabel">Revenue trailing 12 months</div>
     <div class="stats">
       <span class="gray" *ngIf="!compareDisplay">
         ({{ stock.previousTtmRevenue | siUnit: 2 | undefined }} ->

@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { Source } from '../models/news-source.enum';
@@ -217,7 +217,7 @@ export const snapRisks = [
 export const snap: StockAnalysis = {
   marketCap: 24.78 * BILLION,
   business: {
-    markets: [MarketType.adTech, MarketType.social],
+    markets: [IndustryType.adTech, IndustryType.social],
   },
 
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Snapchat--Logo.png/1024px-Snapchat--Logo.png',

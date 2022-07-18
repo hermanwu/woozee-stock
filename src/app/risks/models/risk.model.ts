@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Note } from 'src/app/shared/data/note.interface';
 import { FactType } from './fact-type.enum';
 import { RiskLevel } from './risk-level.model';
@@ -8,7 +8,7 @@ export interface Risk extends Note {
   newsUuid?: string;
   level?: RiskLevel;
   type?: FactType;
-  markets?: MarketType[];
+  markets?: IndustryType[];
 
   // TO RETIRE:
   name?: string;

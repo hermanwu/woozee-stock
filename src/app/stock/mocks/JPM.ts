@@ -5,6 +5,7 @@ export const jpm: StockAnalysis = {
   name: 'JPMorgan Chase & Co.',
   description: [],
   ticker: 'jpm',
+  irAddress: 'https://www.jpmorganchase.com/ir',
 
   // Earnings Report:
   earnings: {

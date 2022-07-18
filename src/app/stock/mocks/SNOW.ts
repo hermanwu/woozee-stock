@@ -1,4 +1,4 @@
-import { MarketType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -20,7 +20,7 @@ export const snow: StockAnalysis = {
       'The more customers adopt our platform, the more data can be exchanged with other Snowflake customers, partners, data providers, and data consumers, enhancing the value of our platform for all users.',
     ],
     users: [{ type: 'Data Scientist' }, { type: 'Data Analyst' }],
-    markets: [MarketType.saas, MarketType.b2b, MarketType.dataAnalytics],
+    markets: [IndustryType.saas, IndustryType.b2b, IndustryType.dataAnalytics],
     competitiveAdvantages: [
       { type: StrategyType.platform },
       { type: StrategyType.tool },

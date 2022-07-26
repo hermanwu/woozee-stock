@@ -28,20 +28,35 @@ export class MarketsService {
    */
   populateIndustryData(marketType: IndustryType): Market {
     // total revenue divide by previous revenue;
-    let currentTotal = 0;
-    let previousTotal = 0;
+    let currentQuarterRevenueTotal = 0;
+    let previousQuarterRevenueTotal = 0;
+    let currentTtmRevenue = 0;
+    let previousTtmRevenue = 0;
     let stocks = this.getStocksByIndustryType(marketType);
 
     for (let stock of stocks) {
       if (stock.previousQuarterRevenue && stock.quarterRevenue) {
-        currentTotal += stock.quarterRevenue;
-        previousTotal += stock.previousQuarterRevenue;
+        currentQuarterRevenueTotal += stock.quarterRevenue;
+        previousQuarterRevenueTotal += stock.previousQuarterRevenue;
+      }
+
+      if (stock.ttmRevenue && stock.previousTtmRevenue) {
+        currentTtmRevenue += stock.ttmRevenue;
+        previousTtmRevenue += stock.previousTtmRevenue;
       }
     }
 
     return {
       type: marketType,
-      growthRate: calculateIncreasePercentage(previousTotal, currentTotal),
+      quarterRevenueGrowth: calculateIncreasePercentage(
+        previousQuarterRevenueTotal,
+        currentQuarterRevenueTotal
+      ),
+
+      yearOverYearRevenueGrowth: calculateIncreasePercentage(
+        previousTtmRevenue,
+        currentTtmRevenue
+      ),
     } as Market;
   }
 
@@ -56,7 +71,7 @@ export class MarketsService {
   /**
    * Get average revenue growth of a market.
    */
-  getIndustry(type: IndustryType): Market {
+  getIndustryByType(type: IndustryType): Market {
     if (this.marketTypeToMarketMap.has(type) === false) {
       this.marketTypeToMarketMap.set(type, this.populateIndustryData(type));
     }

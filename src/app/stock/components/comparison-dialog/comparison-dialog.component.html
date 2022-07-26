@@ -24,7 +24,7 @@
         <option
           *ngFor="let type of competitorTypeArray"
           [value]="type"
-          [selected]="selectedMarketType === type"
+          [selected]="selectedComparisonGroup === type"
         >
           {{ type }}
         </option>
@@ -67,7 +67,25 @@
     </ng-container>
   </div>
 
-  <div *ngIf="selectedMarketType === 'Custom'">
+  <div
+    *ngIf="
+      selectedComparisonGroup &&
+      selectedComparisonGroup !== 'Custom' &&
+      selectedComparisonGroup !== 'Favorites'
+    "
+  >
+    <div class="sub-label">Companies</div>
+
+    <div class="label">Average</div>
+
+    <app-growth
+      [stock]="industry"
+      [hideLabel]="true"
+      [compareDisplay]="'true'"
+    ></app-growth>
+  </div>
+
+  <div *ngIf="selectedComparisonGroup === 'Custom'">
     <form [formGroup]="newTickerForm" (ngSubmit)="addTicker()">
       <mat-form-field>
         <input

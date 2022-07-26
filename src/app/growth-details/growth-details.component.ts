@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Market } from '../stock/models/market.models';
 import { StockData } from '../stock/services/stock-data.model';
 
 @Component({
@@ -8,6 +9,7 @@ import { StockData } from '../stock/services/stock-data.model';
 })
 export class GrowthDetailsComponent implements OnInit {
   @Input() stock: StockData;
+  @Input() market?: Market;
 
   constructor() {}
 

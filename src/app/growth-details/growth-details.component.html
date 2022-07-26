@@ -1,11 +1,24 @@
 <ul>
   <li>
-    Quarterly Revenue {{ stock.quarterRevenue | siUnit: 2 | undefined }}, Growth
+    Quarterly Revenue {{ stock.quarterRevenue | siUnit: 2 | undefined }},
 
-    <span>
+    <span class="strong">
       <span *ngIf="stock.quarterRevenueGrowth > 0; else negative">Up</span>
       <ng-template #negative>Down</ng-template>
       {{ stock.quarterRevenueGrowth | siUnit: 2 | percent | undefined }}
+    </span>
+    YoY
+
+    <app-sentiment-display></app-sentiment-display>
+  </li>
+
+  <li>
+    Trailing 12 Months Revenue {{ stock.ttmRevenue | siUnit: 2 | undefined }},
+
+    <span class="strong">
+      <span *ngIf="stock.yearOverYearRevenueGrowth > 0; else negative">Up</span>
+      <ng-template #negative>Down</ng-template>
+      {{ stock.yearOverYearRevenueGrowth | siUnit: 2 | percent | undefined }}
     </span>
     YoY
 

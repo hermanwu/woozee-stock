@@ -1,11 +1,12 @@
 import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { MarketsService } from 'src/app/markets/services/markets.service';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { foreverOwnStocks } from '../../forever-own-stocks-panel/forever-own-stocks.model';
 import { stocksMap } from '../../mocks/stock-list.const';
+import { Market } from '../../models/market.models';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 import { ComparisonDialogInput } from './comparison-dialog-input.model';
 
@@ -19,9 +20,10 @@ export class ComparisonDialogComponent {
   favorites = foreverOwnStocks;
   factType = FactType;
   selectedFact: FactType;
-  selectedMarketType: string | IndustryType = 'Favorites';
+  industry?: Market;
   factTypeArray = Object.values(FactType);
   allStocks = Object.values(stocksMap);
+  selectedComparisonGroup: string | IndustryType = 'Favorites';
 
   competitorTypeArray = [];
   newTickerForm: FormGroup;
@@ -29,7 +31,6 @@ export class ComparisonDialogComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public dialogData: ComparisonDialogInput,
-    private dialogReference: MatDialogRef<ComparisonDialogComponent>,
     private marketService: MarketsService
   ) {
     this.newTickerForm = new FormGroup({
@@ -72,21 +73,22 @@ export class ComparisonDialogComponent {
    * @param event
    */
   selectMarket(event: Event) {
-    this.selectedMarketType = (event.target as HTMLSelectElement).value as
+    this.selectedComparisonGroup = (event.target as HTMLSelectElement).value as
       | IndustryType
       | string;
 
-    if (this.selectedMarketType === 'Favorites') {
+    if (this.selectedComparisonGroup === 'Favorites') {
+      this.industry = null;
       return this.setFavoriteStocks();
     }
 
-    this.selectedMarketType = (event.target as HTMLSelectElement)
-      .value as IndustryType;
-
-    const competitors = this.marketService.getStocksByIndustryType(
-      this.selectedMarketType as IndustryType
+    this.industry = this.marketService.getIndustryByType(
+      this.selectedComparisonGroup as IndustryType
     );
-
+    console.log(this.industry);
+    const competitors = this.marketService.getStocksByIndustryType(
+      this.selectedComparisonGroup as IndustryType
+    );
     // Sort stocks by their size difference compare to the target.
     const targetMarketCap = this.dialogData.stock.marketCap;
     this.stocks = [...competitors].sort(

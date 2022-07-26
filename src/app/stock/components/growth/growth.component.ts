@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { UnicodeCharacters } from 'src/app/shared/data/enum/unicode-characters.enum';
+import { Market } from '../../models/market.models';
 import { StockData } from '../../services/stock-data.model';
 
 @Component({
@@ -9,6 +10,7 @@ import { StockData } from '../../services/stock-data.model';
 })
 export class GrowthComponent implements OnInit, OnChanges {
   @Input() stock: StockData;
+  @Input() industry?: Market;
   @Input() hideLabel: boolean;
   @Input() compareDisplay: boolean;
 

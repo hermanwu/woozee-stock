@@ -40,7 +40,7 @@
     <div class="padding-1rem" *ngIf="risks?.length > 0">
       <app-card>
         <app-title-menu>
-          <div title>Risks</div>
+          <div title>Bearish Arguments {{ emojiUnicode.thumbDown }}</div>
 
           <div buttons>
             <button
@@ -104,7 +104,7 @@
     <div class="padding-1rem" *ngIf="catalysts?.length > 0">
       <app-card>
         <app-title-menu>
-          <div title>Catalysts</div>
+          <div title>Bullish Arguments {{ emojiUnicode.thumbUp }}</div>
 
           <div buttons>
             <button mat-icon-button type="button" matTooltip="Add Catalyst">
@@ -135,7 +135,9 @@
 
     <div class="padding-1rem">
       <app-fact [factType]="factType.profit" [stock]="stockAnalysis">
-        <app-profitability [stock]="stockAnalysis"></app-profitability>
+        <app-profitability-details
+          [stock]="stockAnalysis"
+        ></app-profitability-details>
       </app-fact>
     </div>
 

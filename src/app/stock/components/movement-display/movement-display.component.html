@@ -1,0 +1,5 @@
+<span class="strong">
+  <span *ngIf="isUp; else down"> {{ emojiUnicode.arrowUp }} Up </span>
+  <ng-template #down>{{ emojiUnicode.arrowDown }} Down</ng-template>
+  {{ changePercent | siUnit: 2 | percent | undefined }}
+</span>

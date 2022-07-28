@@ -22,6 +22,7 @@ import { CatalystTotalDisplayComponent } from './catalyst/components/catalyst-to
 import { CatalystComponent } from './catalyst/components/catalyst/catalyst.component';
 import { DecisionDashboardComponent } from './decision-dashboard/decision-dashboard.component';
 import { FactComponent } from './facts/components/fact/fact.component';
+import { GrowthDetailsComponent } from './growth-details/growth-details.component';
 import { FomoStocksComponent as HomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
 import { MarketDisplayComponent } from './markets/components/market-display/market-display.component';
 import { MarketListComponent } from './markets/components/market-list/market-list.component';
@@ -42,6 +43,7 @@ import { RiskListComponent } from './risks/components/risk-list/risk-list.compon
 import { RiskTotalDisplayComponent } from './risks/components/risk-total-display/risk-total-display.component';
 import { RiskComponent } from './risks/components/risk/risk.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
+import { SentimentDisplayComponent } from './sentiment-display/sentiment-display.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
 import { BadgeComponent } from './shared/components/badge/badge.component';
 import { CardComponent } from './shared/components/card/card.component';
@@ -65,6 +67,8 @@ import { ComparisonDialogComponent } from './stock/components/comparison-dialog/
 import { EarningsReportComponent } from './stock/components/earnings-report/earnings-report.component';
 import { GrowthComponent } from './stock/components/growth/growth.component';
 import { LinksComponent } from './stock/components/links/links.component';
+import { MovementDisplayComponent } from './stock/components/movement-display/movement-display.component';
+import { ProfitabilityDetailsComponent } from './stock/components/profitability-details/profitability-details.component';
 import { RevenueCompositionDisplayComponent } from './stock/components/revenue-composition-display/revenue-composition-display.component';
 import { RevenueDisplayComponent } from './stock/components/revenue-display/revenue-display.component';
 import { TickerDisplayComponent } from './stock/components/ticker-display/ticker-display.component';
@@ -81,8 +85,6 @@ import { StockDisplayComponent } from './stock/stock-display/stock-display.compo
 import { TitleMenuComponent } from './title-menu/title-menu.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
-import { GrowthDetailsComponent } from './growth-details/growth-details.component';
-import { SentimentDisplayComponent } from './sentiment-display/sentiment-display.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -156,6 +158,8 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     RevenueDisplayComponent,
     GrowthDetailsComponent,
     SentimentDisplayComponent,
+    MovementDisplayComponent,
+    ProfitabilityDetailsComponent,
   ],
   imports: [
     BrowserModule,

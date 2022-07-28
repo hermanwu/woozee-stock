@@ -1,8 +1,4 @@
 <div class="flex">
-  <app-catalyst-level-display
-    [catalystLevel]="catalyst.level"
-  ></app-catalyst-level-display>
-
   <span class="flex" *ngIf="showCategory">
     <span *ngFor="let item of catalyst?.tickers">
       <app-ticker-display [ticker]="item"></app-ticker-display>

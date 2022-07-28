@@ -1,8 +1,4 @@
 <div class="flex">
-  <span>
-    <app-risk-level-display [riskLevel]="risk.level"></app-risk-level-display>
-  </span>
-
   <span class="flex" *ngIf="showCategory">
     <span *ngFor="let item of risk?.tickers">
       <app-ticker-display [ticker]="item"></app-ticker-display>

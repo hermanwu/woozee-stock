@@ -1,0 +1,65 @@
+<ul>
+  <li>
+    Quarterly Gross Margin was
+    <strong>{{
+      stock?.quarterGrossProfitMargin | siUnit: 2 | percent | undefined
+    }}</strong>
+  </li>
+
+  <li>
+    Quarterly Operating Margin was
+    <strong>{{
+      stock?.quarterOperatingMargin | siUnit: 2 | percent | undefined
+    }}</strong>
+  </li>
+
+  <li>
+    Quarterly Net Margin was
+    <strong>
+      {{ stock?.quarterNetMargin | siUnit: 2 | percent | undefined }}
+    </strong>
+  </li>
+
+  <li>
+    Quarterly Operating Expenses was
+    {{ stock.quarterExpenses | siUnit: 2 | undefined }},
+
+    <app-movement-display
+      [previousData]="stock.previousQuarterExpenses"
+      [currentData]="stock.quarterExpenses"
+    ></app-movement-display>
+    YoY
+  </li>
+
+  <li>
+    Quarterly Gross Profit was
+    {{ stock.quarterGrossProfit | siUnit: 2 | undefined }},
+
+    <app-movement-display
+      [previousData]="stock.previousQuarterGrossProfit"
+      [currentData]="stock.quarterGrossProfit"
+    ></app-movement-display>
+    YoY
+  </li>
+
+  <li>
+    Trailing 12 Months Gross Profit was
+    {{ stock.ttmGrossProfit | siUnit: 2 | undefined }},
+
+    <app-movement-display
+      [previousData]="stock.previousTtmGrossProfit"
+      [currentData]="stock.ttmGrossProfit"
+    ></app-movement-display>
+    YoY
+  </li>
+
+  <li>
+    Quarterly Operating Expenses / Gross Profit Ratio was
+    <strong>{{
+      stock.quarterOperatingCostOverGrossProfit
+        | siUnit: 2
+        | percent
+        | undefined
+    }}</strong>
+  </li>
+</ul>

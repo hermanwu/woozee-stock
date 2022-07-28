@@ -9,6 +9,7 @@ import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { riskService } from 'src/app/risks/services/subjective-data.service';
 import { NoteDialogComponent } from 'src/app/shared/components/note-dialog/note-dialog.component';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
+import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 import { ObjectiveDataService } from '../../services/objective-data.service';
 
@@ -19,6 +20,7 @@ import { ObjectiveDataService } from '../../services/objective-data.service';
 })
 export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   readonly displayModeEnum = DisplayMode;
+  readonly emojiUnicode = EmojiUnicode;
 
   private stockId = 'stockId';
 

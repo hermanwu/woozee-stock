@@ -9,6 +9,20 @@
   </li>
 
   <li class="row">
+    <div *ngIf="!hideLabel">P / E:</div>
+    <div class="stats">
+      {{
+        (stock.marketCap / stock.ttmNetIncome > 0
+          ? stock.marketCap / stock.ttmNetIncome
+          : undefined
+        )
+          | siUnit: 0
+          | undefined
+      }}
+    </div>
+  </li>
+
+  <li class="row">
     <div *ngIf="!hideLabel">P / S:</div>
     <div class="stats">
       {{ stock.marketCap / stock.ttmRevenue | siUnit: 0 | undefined }}
@@ -27,20 +41,6 @@
     <div class="stats">
       {{
         (stock.marketCapToOiRatio > 0 ? stock.marketCapToOiRatio : undefined)
-          | siUnit: 0
-          | undefined
-      }}
-    </div>
-  </li>
-
-  <li class="row">
-    <div *ngIf="!hideLabel">P / E:</div>
-    <div class="stats">
-      {{
-        (stock.marketCap / stock.ttmNetIncome > 0
-          ? stock.marketCap / stock.ttmNetIncome
-          : undefined
-        )
           | siUnit: 0
           | undefined
       }}

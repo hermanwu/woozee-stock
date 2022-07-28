@@ -29,6 +29,14 @@ export const googl: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
+      quarter: 2,
+      totalRevenue: 69685 * MILLION,
+      costOfRevenue: 30104 * MILLION,
+      operatingIncome: 19453 * MILLION,
+      netIncome: 16002 * MILLION,
+    },
+    {
+      year: 2022,
       quarter: 1,
       totalRevenue: 68011 * MILLION,
       costOfRevenue: 24103 * MILLION,
@@ -185,8 +193,8 @@ export const googl: StockAnalysis = {
     markets: [
       IndustryType.adTech,
       IndustryType.social,
-      IndustryType.datacenter,
       IndustryType.digitalMedia,
+      IndustryType.cloudService,
     ],
   },
 };

@@ -1,4 +1,5 @@
-import { MILLION } from 'src/app/shared/numbers/number.model';
+import { IndustryType } from 'src/app/facts/data/area.enum';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { capMock } from './market-cap.mock';
 
@@ -18,6 +19,22 @@ export const msft: StockAnalysis = {
   irAddress: 'https://www.microsoft.com/en-us/investor',
   shortName: 'Microsoft',
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 51.865 * BILLION,
+      costOfRevenue: 16.429 * BILLION,
+      operatingIncome: 20.534 * BILLION,
+      netIncome: 16.74 * BILLION,
+    },
+    {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 49.36 * BILLION,
+      costOfRevenue: 15.615 * BILLION,
+      operatingIncome: 20.314 * BILLION,
+      netIncome: 16.728 * BILLION,
+    },
     {
       pressReleaseLink:
         'https://www.microsoft.com/en-us/investor/earnings/fy-2022-q2/press-release-webcast',
@@ -159,6 +176,6 @@ export const msft: StockAnalysis = {
   ],
 
   business: {
-    markets: [],
+    markets: [IndustryType.cloudService],
   },
 };

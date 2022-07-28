@@ -247,6 +247,14 @@ export const snap: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
+      quarter: 2,
+      totalRevenue: 1110.909 * MILLION,
+      costOfRevenue: 446.377 * MILLION,
+      operatingIncome: -400.94 * MILLION,
+      netIncome: -422.067 * MILLION,
+    },
+    {
+      year: 2022,
       quarter: 1,
       reportLink:
         'https://s25.q4cdn.com/442043304/files/doc_financials/2022/q1/Snap-Inc.-Q1-2022-10Q.pdf',

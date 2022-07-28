@@ -142,7 +142,7 @@ export const amzn: StockAnalysis = {
   description: [],
   logo: 'http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
-  marketCap: 1.133 * TRILLION,
+  marketCap: 1.2 * TRILLION,
   shortName: 'Amazon',
 
   business: {
@@ -151,6 +151,7 @@ export const amzn: StockAnalysis = {
       IndustryType.cloudService,
       IndustryType.adTech,
       IndustryType.Retails,
+      IndustryType.datacenter,
     ],
 
     competitiveAdvantages: [

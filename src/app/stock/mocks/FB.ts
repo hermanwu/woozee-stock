@@ -104,7 +104,7 @@ export const fbRisks = [
 ];
 
 export const meta: StockAnalysis = {
-  marketCap: 466 * BILLION,
+  marketCap: 496 * BILLION,
   shortName: 'Meta',
   predications: [
     {
@@ -118,15 +118,21 @@ export const meta: StockAnalysis = {
   description: [],
   ticker: 'meta',
   lastUpdated: new Date('2021-08-23'),
-  irAddress: 'https://investor.meta.com/home/default.aspx',
+  irAddress: 'https://investor.fb.com/home/default.aspx',
 
   // Earnings Report:
   earningsReports: [
     {
       year: 2022,
       quarter: 2,
-      totalRevenue: 29 * BILLION,
-      isForecast: true,
+      totalRevenue: 28.822 * BILLION,
+      costOfRevenue: 5.192 * BILLION,
+      operatingIncome: 8.358 * BILLION,
+      netIncome: 6.687 * BILLION,
+      slidesLink:
+        'https://s21.q4cdn.com/399680738/files/doc_financials/2022/q2/Q2-2022_Earnings-Presentation.pdf',
+      pressReleaseLink:
+        'https://s21.q4cdn.com/399680738/files/doc_financials/2022/q2/Meta-06.30.2022-Exhibit-99.1-Final.pdf',
     },
     {
       year: 2022,

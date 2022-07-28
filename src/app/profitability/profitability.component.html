@@ -30,23 +30,24 @@
   </div>
 
   <div class="row">
-    <div *ngIf="!hideLabel">Quarterly Gross Profit Growth YoY</div>
+    <div *ngIf="!hideLabel">Operating Expenses YoY</div>
 
     <div class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">
-        ({{ stock?.previousQuarterGrossProfit | siUnit: 2 | undefined }} ->
-        {{ stock?.quarterGrossProfit | siUnit: 2 | undefined }})
+        ({{ stock?.previousQuarterExpenses | siUnit: 2 | undefined }}
+        ->
+        {{ stock?.quarterExpenses | siUnit: 2 | undefined }})
       </span>
 
       <span>
-        <span *ngIf="stock?.quarterGrossProfitGrowth > 0">+</span
-        >{{ stock?.quarterGrossProfitGrowth | siUnit: 2 | percent | undefined }}
+        <span *ngIf="stock?.quarterExpensesGrowth > 0">+</span
+        >{{ stock?.quarterExpensesGrowth | siUnit: 2 | percent | undefined }}
       </span>
     </div>
   </div>
 
   <div class="row">
-    <div *ngIf="!hideLabel">Quarterly Gross Profit Growth QoQ</div>
+    <div *ngIf="!hideLabel">Quarterly Gross Profit YoY</div>
 
     <div class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">
@@ -83,24 +84,7 @@
     </div>
   </div>
 
-  <div class="row">
-    <div *ngIf="!hideLabel">Operating Expenses Q/Q</div>
-
-    <div class="stats">
-      <span class="gray-font" *ngIf="!compareDisplay">
-        ({{ stock?.previousQuarterExpenses | siUnit: 2 | undefined }}
-        ->
-        {{ stock?.quarterExpenses | siUnit: 2 | undefined }})
-      </span>
-
-      <span>
-        <span *ngIf="stock?.quarterExpensesGrowth > 0">+</span
-        >{{ stock?.quarterExpensesGrowth | siUnit: 2 | percent | undefined }}
-      </span>
-    </div>
-  </div>
-
-  <div class="row">
+  <div class="row" *ngIf="!compareDisplay">
     <div *ngIf="!hideLabel">Operating Expenses / Gross Profit</div>
     <div class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">
@@ -170,7 +154,7 @@
     </div>
   </ng-container>
 
-  <div class="row">
+  <div class="row" *ngIf="!compareDisplay">
     <div *ngIf="!hideLabel">Operating Expenses / Gross Profit TTM</div>
     <div class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">

@@ -25,7 +25,7 @@ export interface EarningsReport {
   netIncomeBeforeTaxes?: number;
   provisionForIncomeTaxes?: number;
   netIncome?: number;
-  revenueDetails?: Composition[];
+  statsDetails?: Composition[];
   activeUserCount?: number;
   revenueRetention?: number;
 

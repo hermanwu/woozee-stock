@@ -85,6 +85,7 @@ import { StockDisplayComponent } from './stock/stock-display/stock-display.compo
 import { TitleMenuComponent } from './title-menu/title-menu.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
+import { GrowthDetailListComponent } from './growth-detail-list/growth-detail-list.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -160,6 +161,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     SentimentDisplayComponent,
     MovementDisplayComponent,
     ProfitabilityDetailsComponent,
+    GrowthDetailListComponent,
   ],
   imports: [
     BrowserModule,

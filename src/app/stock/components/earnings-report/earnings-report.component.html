@@ -2,32 +2,34 @@
   <div title>Latest Earnings Report</div>
 </app-title-menu>
 
-<div *ngIf="earningReport?.pressReleaseLink">
-  <a target="_blank" href="{{ earningReport?.pressReleaseLink }}">
-    Press Release {{ emojiLink }}
-  </a>
-</div>
+<ul>
+  <li *ngIf="earningReport?.pressReleaseLink">
+    <a target="_blank" href="{{ earningReport?.pressReleaseLink }}">
+      Press Release {{ emojiLink }}
+    </a>
+  </li>
 
-<div *ngIf="earningReport?.reportLink">
-  <a target="_blank" href="{{ earningReport?.reportLink }}">
-    SEC Filing {{ emojiLink }}
-  </a>
-</div>
+  <li *ngIf="earningReport?.reportLink">
+    <a target="_blank" href="{{ earningReport?.reportLink }}">
+      SEC Filing {{ emojiLink }}
+    </a>
+  </li>
 
-<div *ngIf="earningReport?.slidesLink">
-  <a target="_blank" href="{{ earningReport?.slidesLink }}">
-    Investor Presentation {{ emojiLink }}</a
-  >
-</div>
+  <li *ngIf="earningReport?.slidesLink">
+    <a target="_blank" href="{{ earningReport?.slidesLink }}">
+      Investor Presentation {{ emojiLink }}</a
+    >
+  </li>
 
-<div *ngIf="earningReport?.webcast">
-  <a target="_blank" href="{{ earningReport?.webcast }}">
-    Webcast {{ emojiLink }}</a
-  >
-</div>
+  <li *ngIf="earningReport?.webcast">
+    <a target="_blank" href="{{ earningReport?.webcast }}">
+      Webcast {{ emojiLink }}</a
+    >
+  </li>
 
-<div *ngIf="earningReport?.transcript">
-  <a target="_blank" href="{{ earningReport?.transcript }}">
-    Transcript {{ emojiLink }}</a
-  >
-</div>
+  <li *ngIf="earningReport?.transcript">
+    <a target="_blank" href="{{ earningReport?.transcript }}">
+      Transcript {{ emojiLink }}</a
+    >
+  </li>
+</ul>

@@ -1,6 +1,7 @@
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { abnbCatalysts } from 'src/app/stock/mocks/abnb';
 import { afrmCatalysts } from 'src/app/stock/mocks/afrm';
+import { amznCatalysts } from 'src/app/stock/mocks/amzn.mock';
 import { coinCatalysts } from 'src/app/stock/mocks/coin';
 import { disneyCatalysts } from 'src/app/stock/mocks/dis.mock';
 import { gmeCatalysts } from 'src/app/stock/mocks/gme';
@@ -19,4 +20,5 @@ export const allCatalystsForStocks: Catalyst[] = [
   ...tslaCatalysts,
   ...ultaCatalysts,
   ...gmeCatalysts,
+  ...amznCatalysts,
 ];

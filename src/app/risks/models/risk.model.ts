@@ -5,6 +5,7 @@ import { RiskLevel } from './risk-level.model';
 
 export interface Risk extends Note {
   uuid?: string;
+  stockId?: string;
   newsUuid?: string;
   level?: RiskLevel;
   type?: FactType;

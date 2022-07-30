@@ -14,6 +14,7 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const amznRisks = [
   {
+    uuid: 'az-id-1',
     name: 'Slow revenue growth last quarter',
     type: FactType.growth,
     level: RiskLevel.longTerm,
@@ -26,6 +27,7 @@ export const amznRisks = [
     ],
   },
   {
+    uuid: 'az-id-2',
     name: 'Operating expense increases faster than gross profit',
     type: FactType.profit,
     level: RiskLevel.shortTerm,
@@ -43,6 +45,7 @@ export const amznRisks = [
     ],
   },
   {
+    uuid: 'az-id-3',
     name: 'Future growth slows',
     level: RiskLevel.longTerm,
     type: FactType.growth,
@@ -80,14 +83,8 @@ export const amznRisks = [
 
 export const amznCatalysts = [
   {
-    name: 'Stock will be 20-to-1 split on June 3',
-    level: CatalystLevel.moderate,
-    type: FactType.sentiment,
-    date: new Date('2022-03-18'),
-  },
-
-  {
-    name: 'Cloud business still keep 40% growth rate.',
+    uuid: 'az-id-2',
+    name: 'Service sales revenue is more than .',
     level: CatalystLevel.strong,
     type: FactType.growth,
     notes: [
@@ -110,6 +107,7 @@ export const amznCatalysts = [
   },
 
   {
+    uuid: 'az-id-3',
     name: 'Advertising business is booming.',
     level: CatalystLevel.moderate,
     type: FactType.growth,
@@ -144,6 +142,8 @@ export const amzn: StockAnalysis = {
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
   marketCap: 1.2 * TRILLION,
   shortName: 'Amazon',
+  riskUuids: amznRisks.map((risk) => risk.uuid),
+  catalystUuids: amznCatalysts.map((risk) => risk.uuid),
 
   business: {
     markets: [
@@ -169,8 +169,29 @@ export const amzn: StockAnalysis = {
     {
       year: 2022,
       quarter: 2,
-      isForecast: true,
-      totalRevenue: 118.5 * BILLION,
+      totalRevenue: 121.334 * BILLION,
+      costOfRevenue: 66424 * MILLION,
+      operatingIncome: 3317 * MILLION,
+      netIncome: -2028 * MILLION,
+      statsDetails: [
+        {
+          name: 'Sale Categories',
+          details: [
+            {
+              name: 'Net Product Sales',
+              value: 56575,
+            },
+            {
+              name: 'Net Service Sales',
+              value: 64659,
+            },
+          ],
+        },
+      ],
+      pressReleaseLink:
+        'https://s2.q4cdn.com/299287126/files/doc_financials/2022/q2/Q2-2022-Amazon-Earnings-Release.pdf',
+      slidesLink:
+        'https://s2.q4cdn.com/299287126/files/doc_financials/2022/q2/Webslides_Q222_Final.pdf',
     },
     {
       year: 2022,
@@ -229,6 +250,21 @@ export const amzn: StockAnalysis = {
       netIncomeBeforeTaxes: 8634 * MILLION,
       provisionForIncomeTaxes: 868 * MILLION,
       netIncome: 7778 * MILLION,
+      statsDetails: [
+        {
+          name: 'Sale Categories',
+          details: [
+            {
+              name: 'Net Product Sales',
+              value: 58004,
+            },
+            {
+              name: 'Net Service Sales',
+              value: 55076,
+            },
+          ],
+        },
+      ],
     },
     {
       year: 2021,

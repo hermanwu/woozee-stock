@@ -1,5 +1,5 @@
 export interface Composition {
   name: string;
-  value: number;
+  value?: number;
   details?: Composition[];
 }

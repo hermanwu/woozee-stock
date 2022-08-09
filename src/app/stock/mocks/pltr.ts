@@ -25,6 +25,37 @@ export const pltr: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
+      quarter: 2,
+      totalRevenue: 473 * MILLION,
+      costOfRevenue: 102.224 * MILLION,
+      operatingIncome: -41.745 * MILLION,
+      netIncome: -179.329 * MILLION,
+      pressReleaseLink:
+        'https://investors.palantir.com/news-details/2022/Palantir-Reports-Revenue-Growth-of-26-YY-for-Q2-2022-US-Commercial-Revenue-Up-120-YY-in-Q2-2022',
+      slidesLink:
+        'https://investors.palantir.com/files/Palantir%20Q2%202022%20Business%20Update.pdf',
+      growthDetails: [
+        {
+          name: 'US revenue',
+          value: 290 * MILLION,
+          growth: 0.45,
+        },
+        {
+          name: 'Commercial revenue',
+          growth: 0.46,
+        },
+        {
+          name: 'US government revenue',
+          growth: 0.27,
+        },
+        {
+          name: 'US commercial customer count',
+          growth: 0.27,
+        },
+      ],
+    },
+    {
+      year: 2022,
       quarter: 1,
       totalRevenue: 446.357 * MILLION,
       costOfRevenue: 94.403 * MILLION,
@@ -33,7 +64,6 @@ export const pltr: StockAnalysis = {
       operatingIncome: -39.439 * MILLION,
       netIncome: -101.379 * MILLION,
     },
-
     {
       year: 2021,
       quarter: 4,

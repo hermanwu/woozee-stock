@@ -140,7 +140,7 @@ export const amzn: StockAnalysis = {
   description: [],
   logo: 'http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
-  marketCap: 1.2 * TRILLION,
+  marketCap: 1.234 * TRILLION,
   shortName: 'Amazon',
   riskUuids: amznRisks.map((risk) => risk.uuid),
   catalystUuids: amznCatalysts.map((risk) => risk.uuid),
@@ -173,17 +173,65 @@ export const amzn: StockAnalysis = {
       costOfRevenue: 66424 * MILLION,
       operatingIncome: 3317 * MILLION,
       netIncome: -2028 * MILLION,
-      statsDetails: [
+      growthDetails: [
         {
           name: 'Sale Categories',
           details: [
             {
               name: 'Net Product Sales',
-              value: 56575,
+              value: 56575 * MILLION,
             },
             {
               name: 'Net Service Sales',
-              value: 64659,
+              value: 64659 * MILLION,
+            },
+          ],
+        },
+        {
+          name: 'Segments',
+          details: [
+            {
+              name: 'North America Sales',
+              value: 74.43 * BILLION,
+            },
+            {
+              name: 'International Sales',
+              value: 27.065 * BILLION,
+            },
+            {
+              name: 'AWS Sales',
+              value: 19.739 * BILLION,
+            },
+          ],
+        },
+        {
+          name: 'Advertising Service',
+          value: 8.757 * BILLION,
+        },
+      ],
+      costDetails: [
+        {
+          name: 'Operating expenses',
+          details: [
+            {
+              name: 'Cost of sales',
+              value: 66.424 * BILLION,
+            },
+            {
+              name: 'Fulfillment',
+              value: 20.342 * BILLION,
+            },
+            {
+              name: 'Technology and content',
+              value: 18.072 * BILLION,
+            },
+            {
+              name: 'Sales and marketing',
+              value: 10.086 * BILLION,
+            },
+            {
+              name: 'General and administrative',
+              value: 2.903 * BILLION,
             },
           ],
         },
@@ -250,17 +298,65 @@ export const amzn: StockAnalysis = {
       netIncomeBeforeTaxes: 8634 * MILLION,
       provisionForIncomeTaxes: 868 * MILLION,
       netIncome: 7778 * MILLION,
-      statsDetails: [
+      growthDetails: [
         {
           name: 'Sale Categories',
           details: [
             {
               name: 'Net Product Sales',
-              value: 58004,
+              value: 58004 * MILLION,
             },
             {
               name: 'Net Service Sales',
-              value: 55076,
+              value: 55076 * MILLION,
+            },
+          ],
+        },
+        {
+          name: 'Segments',
+          details: [
+            {
+              name: 'North America Sales',
+              value: 67.55 * BILLION,
+            },
+            {
+              name: 'International Sales',
+              value: 30.721 * BILLION,
+            },
+            {
+              name: 'AWS Sales',
+              value: 14.809 * BILLION,
+            },
+          ],
+        },
+        {
+          name: 'Advertising Service',
+          value: 7.451 * BILLION,
+        },
+      ],
+      costDetails: [
+        {
+          name: 'Operating expenses',
+          details: [
+            {
+              name: 'Cost of sales',
+              value: 64.176 * BILLION,
+            },
+            {
+              name: 'Fulfillment',
+              value: 17.638 * BILLION,
+            },
+            {
+              name: 'Technology and content',
+              value: 13.871 * BILLION,
+            },
+            {
+              name: 'Sales and marketing',
+              value: 7.524 * BILLION,
+            },
+            {
+              name: 'General and administrative',
+              value: 2.158 * BILLION,
             },
           ],
         },

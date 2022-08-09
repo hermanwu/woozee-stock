@@ -63,6 +63,7 @@ export interface StockAnalysis {
   };
   earnings?: {}; // TODO: retire this.
   earningsReports?: EarningsReport[];
+  forcast?: {};
 
   score?: MyScore;
   lastUpdated?: Date;

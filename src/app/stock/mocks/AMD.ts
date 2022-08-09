@@ -7,7 +7,7 @@ export const amdRisks = [];
 export const amdCatalysts = [];
 
 export const amd: StockAnalysis = {
-  marketCap: 152 * BILLION,
+  marketCap: 156 * BILLION,
 
   logo: '',
   name: 'AMD',
@@ -21,6 +21,51 @@ export const amd: StockAnalysis = {
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 3,
+      isForecast: true,
+      totalRevenue: 6.7 * BILLION,
+    },
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 6.55 * BILLION,
+      grossProfit: 3.028 * BILLION,
+      operatingIncome: 526 * MILLION,
+      netIncome: 447 * MILLION,
+      growthDetails: [
+        {
+          name: 'Segments Revenue',
+          details: [
+            {
+              name: 'Data Center (Server CPU, datacenter GPU, Pensando, Xilinx)',
+              value: 1.5 * BILLION,
+              growth: 0.83,
+            },
+            {
+              name: 'Client (PC processors and chips)',
+              value: 2.2 * BILLION,
+              growth: 0.25,
+            },
+            {
+              name: 'Gaming (Discrete GPU and semi-custom game console)',
+              value: 1.7 * BILLION,
+              growth: 0.32,
+            },
+            {
+              name: 'Embedded (Xilinx)',
+              value: 1.3 * BILLION,
+              growth: 22.28,
+            },
+          ],
+        },
+      ],
+      slidesLink:
+        'https://d1io3yog0oux5.cloudfront.net/_17762bd717cfef214ea76c9f6586fc80/amd/db/778/6877/file/AMD+Q2%2722+Earnings+Slides_8.2.22.pdf',
+      pressReleaseLink:
+        'https://ir.amd.com/news-events/press-releases/detail/1084/amd-reports-second-quarter-2022-financial-results/',
+    },
     {
       year: 2022,
       quarter: 1,

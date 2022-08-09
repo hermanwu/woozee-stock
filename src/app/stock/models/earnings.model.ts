@@ -12,6 +12,7 @@ export interface EarningsReport {
   slidesLink?: string;
   transcript?: string;
   webcast?: string;
+  shareholderLetter?: string;
 
   // Growth
   totalRevenue?: number;
@@ -25,9 +26,10 @@ export interface EarningsReport {
   netIncomeBeforeTaxes?: number;
   provisionForIncomeTaxes?: number;
   netIncome?: number;
-  statsDetails?: Composition[];
-  activeUserCount?: number;
   revenueRetention?: number;
+  revenueForecastTop?: number;
+  revenueForecastBottom?: number;
+  growthDetails?: Composition[];
 
   // Profitablity
   grossProfit?: number;
@@ -36,6 +38,7 @@ export interface EarningsReport {
   // Additional Stats
   isAnnual?: boolean;
   notes?: Note[];
+  costDetails?: Composition[];
 
   // notes
   quarterHighlights?: Note[] | string[];

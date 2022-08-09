@@ -17,13 +17,19 @@
 
   <li *ngIf="earningReport?.slidesLink">
     <a target="_blank" href="{{ earningReport?.slidesLink }}">
-      Investor Presentation {{ emojiLink }}</a
+      Presentation {{ emojiLink }}</a
     >
   </li>
 
   <li *ngIf="earningReport?.webcast">
     <a target="_blank" href="{{ earningReport?.webcast }}">
       Webcast {{ emojiLink }}</a
+    >
+  </li>
+
+  <li *ngIf="earningReport?.shareholderLetter">
+    <a target="_blank" href="{{ earningReport?.shareholderLetter }}">
+      Shareholder Letter {{ emojiLink }}</a
     >
   </li>
 

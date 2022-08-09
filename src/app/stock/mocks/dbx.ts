@@ -23,7 +23,6 @@ export const dbx: StockAnalysis = {
       quarter: 4,
       totalRevenue: 580.8 * MILLION,
       operatingIncome: -25.178 * MILLION,
-      activeUserCount: 1.17 * MILLION,
       salesAndMarketingCost: 299.417 * MILLION,
       reportLink:
         'https://dropbox.gcs-web.com/static-files/58450624-a3a9-4f41-a94a-8799456275d1',
@@ -33,7 +32,6 @@ export const dbx: StockAnalysis = {
     {
       year: 2021,
       quarter: 3,
-      activeUserCount: 1.11 * MILLION,
       totalRevenue: 545.46 * MILLION,
       operatingIncome: -3.36 * MILLION,
     },

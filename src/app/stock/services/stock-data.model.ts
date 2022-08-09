@@ -3,13 +3,16 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 
 export interface StockData extends StockAnalysis {
   // Earnings
+  futureReport?: EarningsReport;
   latestReport?: EarningsReport;
   previousYearReport?: EarningsReport;
 
-  // Revenue
+  // Growth
   previousQuarterRevenue?: number;
+  previousQuarterRevenueForForecast?: number;
   quarterRevenue?: number;
   quarterRevenueGrowth?: number;
+  quarterRevenueForcast?: number;
   ttmRevenue?: number;
   previousTtmRevenue?: number;
   yearOverYearRevenueGrowth?: number;

@@ -7,17 +7,68 @@
   </li>
 
   <li>
-    Quarterly Operating Margin was
-    <strong>{{
-      stock?.quarterOperatingMargin | siUnit: 2 | percent | undefined
-    }}</strong>
+    <span *ngIf="stock?.quarterOperatingMargin >= 0; else operatingLoss">
+      Quarterly Operating Income was {{ emojiUnicode.money }}
+      {{ stock?.latestReport?.operatingIncome | siUnit: 2 }}</span
+    ><ng-template #operatingLoss>
+      Quarterly Operating Loss was
+      {{ emojiUnicode.warning }}
+      {{ -stock?.latestReport?.operatingIncome | siUnit: 2 }}</ng-template
+    ><span
+      >, Equal to
+
+      <strong>
+        {{ stock?.quarterOperatingMargin | siUnit: 2 | percent | undefined }}
+      </strong>
+      Operating Margin</span
+    ><span
+      ><!--filler
+    -->,
+      {{
+        stock.previousYearReport?.operatingIncome >
+        stock.latestReport?.operatingIncome
+          ? "⬇️ worse than"
+          : "⬆️ better than"
+      }}
+      {{
+        stock.previousYearReport?.operatingIncome >= 0
+          ? (stock.previousYearReport?.operatingIncome | siUnit: 2) + " Income"
+          : (-stock.previousYearReport?.operatingIncome | siUnit: 2) + " Loss"
+      }}
+      one year ago
+    </span>
   </li>
 
   <li>
-    Quarterly Net Margin was
-    <strong>
-      {{ stock?.quarterNetMargin | siUnit: 2 | percent | undefined }}
-    </strong>
+    <span *ngIf="stock?.quarterNetMargin >= 0; else netLoss">
+      Quarterly Net Income was {{ emojiUnicode.money }}
+      {{ stock?.latestReport?.netIncome | siUnit: 2 }}</span
+    ><ng-template #netLoss>
+      Quarterly Net Loss was
+      {{ emojiUnicode.warning }}
+      {{ -stock?.latestReport?.netIncome | siUnit: 2 }}</ng-template
+    ><span
+      >, Equal to
+
+      <strong>
+        {{ stock?.quarterNetMargin | siUnit: 2 | percent | undefined }}
+      </strong>
+      Net Margin</span
+    ><span
+      ><!--filler
+    -->,
+      {{
+        stock.previousYearReport?.netIncome > stock.latestReport?.netIncome
+          ? "⬇️ worse than"
+          : "⬆️ better than"
+      }}
+      {{
+        stock.previousYearReport?.netIncome >= 0
+          ? (stock.previousYearReport?.netIncome | siUnit: 2) + " Income"
+          : (-stock.previousYearReport?.netIncome | siUnit: 2) + " Loss"
+      }}
+      one year ago
+    </span>
   </li>
 
   <li>
@@ -62,4 +113,9 @@
         | undefined
     }}</strong>
   </li>
+
+  <app-stats-detail-list
+    [statsDetails]="statsDetails"
+    [previousStatsDetails]="previousStatsDetails"
+  ></app-stats-detail-list>
 </ul>

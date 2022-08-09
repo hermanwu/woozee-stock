@@ -16,6 +16,25 @@ export const dash: StockAnalysis = {
 
   earningsReports: [
     {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 1608 * MILLION,
+      costOfRevenue: 880 * MILLION,
+      operatingIncome: -273 * MILLION,
+      netIncome: -263 * MILLION,
+      pressReleaseLink:
+        'https://s22.q4cdn.com/280253921/files/doc_financials/2022/q2/DASH-Q2-2022-Shareholder-Letter_FINAL.pdf',
+    },
+    {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 1456 * MILLION,
+      costOfRevenue: 763 * MILLION,
+      grossProfit: 693 * MILLION,
+      operatingIncome: -173 * MILLION,
+      netIncome: -167 * MILLION,
+    },
+    {
       year: 2021,
       quarter: 4,
       totalRevenue: 1300 * MILLION,

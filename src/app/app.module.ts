@@ -62,6 +62,7 @@ import { SafePipe } from './shared/pipes/safe.pipe';
 import { SiUnitPipeModule } from './shared/pipes/si-unit/si-unit-pipe.module';
 import { UndefinedPipeModule } from './shared/pipes/undefined-pipe/undefined-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
+import { StatsDetailListComponent } from './stats-detail-list/stats-detail-list.component';
 import { BusinessOverviewComponent } from './stock/components/business-overview/business-overview.component';
 import { ComparisonDialogComponent } from './stock/components/comparison-dialog/comparison-dialog.component';
 import { EarningsReportComponent } from './stock/components/earnings-report/earnings-report.component';
@@ -85,7 +86,6 @@ import { StockDisplayComponent } from './stock/stock-display/stock-display.compo
 import { TitleMenuComponent } from './title-menu/title-menu.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
-import { GrowthDetailListComponent } from './growth-detail-list/growth-detail-list.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -161,7 +161,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     SentimentDisplayComponent,
     MovementDisplayComponent,
     ProfitabilityDetailsComponent,
-    GrowthDetailListComponent,
+    StatsDetailListComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { Composition } from '../stock/models/composition.model';
+import { convertStatsDetailsToObject } from '../shared/functions/covert-stats-details-to-object.function';
 import { Market } from '../stock/models/market.models';
 import { StockData } from '../stock/services/stock-data.model';
 
@@ -11,39 +11,22 @@ import { StockData } from '../stock/services/stock-data.model';
 export class GrowthDetailsComponent implements OnChanges {
   @Input() stock: StockData;
   @Input() market?: Market;
-  statsDetails: any;
+  growthDetails: any;
   previousStatsDetails: any;
 
   constructor() {}
 
   ngOnChanges(): void {
     if (this.stock && this.stock.latestReport) {
-      this.statsDetails = this.convertStatsDetailsToObject(
-        this.stock.latestReport.statsDetails
+      this.growthDetails = convertStatsDetailsToObject(
+        this.stock.latestReport.growthDetails
       );
 
       if (this.stock.previousYearReport) {
-        this.previousStatsDetails = this.convertStatsDetailsToObject(
-          this.stock.previousYearReport.statsDetails
+        this.previousStatsDetails = convertStatsDetailsToObject(
+          this.stock.previousYearReport.growthDetails
         );
       }
-    }
-  }
-
-  convertStatsDetailsToObject(detailsList: Composition[]) {
-    if (detailsList && detailsList.length > 0) {
-      const result = {};
-
-      for (let composition of detailsList) {
-        const nameConcat = composition.name.split(' ').join('');
-        result[nameConcat] = {
-          name: composition.name,
-          value: composition.value,
-          details: this.convertStatsDetailsToObject(composition.details),
-        };
-      }
-
-      return result;
     }
   }
 }

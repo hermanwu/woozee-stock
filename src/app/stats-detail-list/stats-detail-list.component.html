@@ -1,0 +1,36 @@
+<ul>
+  <li *ngFor="let item of statsDetails | keyvalue">
+    🔸 {{ item.value.name }}:
+
+    <!-- Display the value -->
+
+    <ng-container *ngIf="item.value.value">
+      {{ item.value.value | siUnit: 2
+      }}<ng-container
+        *ngIf="item.value.growth || previousStatsDetails?.[item.key]"
+        >,
+      </ng-container>
+    </ng-container>
+
+    <ng-container
+      *ngIf="item.value.growth || (item.value.value) && previousStatsDetails?.[item.key]"
+    >
+      <app-movement-display
+        [previousData]="previousStatsDetails?.[item.key]?.value"
+        [currentData]="item.value.value"
+        [changePercent]="item.value.growth"
+      ></app-movement-display>
+      YoY
+    </ng-container>
+
+    <div class="nested-list" *ngIf="item.value.details">
+      <app-stats-detail-list
+        [statsDetails]="item.value.details"
+        [previousStatsDetails]="previousStatsDetails?.[item.key]?.details"
+      ></app-stats-detail-list>
+    </div>
+    <!-- <ng-template #nestedList>
+      {{ item.value.name }}:
+    </ng-template> -->
+  </li>
+</ul>

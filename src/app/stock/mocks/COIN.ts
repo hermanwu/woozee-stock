@@ -110,12 +110,11 @@ export const coin: StockAnalysis = {
     },
 
     {
-      activeUserCount: 11.4 * MILLION,
       pressReleaseLink:
         'https://s27.q4cdn.com/397450999/files/doc_financials/2021/q4/Coinbase-Q421-Shareholder-Letter.pdf',
       reportLink:
         'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001679788/8e5e0508-da75-434d-9505-cba99fa00147.pdf',
-      statsDetails: [
+      growthDetails: [
         {
           name: 'subscription and service',
           value: 200 * MILLION,

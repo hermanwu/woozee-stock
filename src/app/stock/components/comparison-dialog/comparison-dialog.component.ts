@@ -85,7 +85,6 @@ export class ComparisonDialogComponent {
     this.industry = this.marketService.getIndustryByType(
       this.selectedComparisonGroup as IndustryType
     );
-    console.log(this.industry);
     const competitors = this.marketService.getStocksByIndustryType(
       this.selectedComparisonGroup as IndustryType
     );

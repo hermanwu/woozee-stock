@@ -19,7 +19,6 @@ export class GrowthComponent implements OnInit, OnChanges {
   activeUserCount: number;
   userCountGrowth: number;
   forecastRevenue: number;
-  nextQuarterForecastGrowth: number;
   revenueRetention: number;
 
   constructor() {}

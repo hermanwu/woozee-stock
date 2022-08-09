@@ -51,6 +51,13 @@ export const nvda: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
+      quarter: 2,
+      revenueForecastTop: 6.7 * BILLION,
+      revenueForecastBottom: 6.7 * BILLION,
+      isForecast: true,
+    },
+    {
+      year: 2022,
       quarter: 1,
       totalRevenue: 8.288 * BILLION,
       costOfRevenue: 2.857 * BILLION,
@@ -60,7 +67,6 @@ export const nvda: StockAnalysis = {
       reportLink:
         'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/8b8d4537-83d8-4c94-b065-e7a2cd34da49.pdf',
     },
-
     {
       reportLink:
         'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/0ec16816-55e2-4812-8f77-75cab5909247.pdf',

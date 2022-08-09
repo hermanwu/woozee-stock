@@ -14,7 +14,6 @@ export const roku: StockAnalysis = {
   earningsReports: [
     {
       isAnnual: true,
-      activeUserCount: 60.1 * MILLION,
       pressReleaseLink:
         'https://image.roku.com/c3VwcG9ydC1B/4Q21ShareholderFinal.pdf',
       reportLink:

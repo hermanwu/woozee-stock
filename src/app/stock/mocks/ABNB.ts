@@ -70,8 +70,28 @@ export const abnb: StockAnalysis = {
     {
       year: 2022,
       quarter: 2,
-      totalRevenue: 2.1 * BILLION,
-      isForecast: true,
+      totalRevenue: 2.104 * BILLION,
+      costOfRevenue: 390.107 * MILLION,
+      operatingIncome: 368.823 * MILLION,
+      netIncome: 383.111 * MILLION,
+      growthDetails: [
+        {
+          name: 'Nights and Experiences Booked',
+          growth: 0.24,
+          value: 103.7 * MILLION,
+        },
+        {
+          name: 'Long-term stays of 28+ days',
+          growth: 0.25,
+        },
+        {
+          name: 'Gross Booking Value',
+          value: 16980 * MILLION,
+          growth: 0.27,
+        },
+      ],
+      pressReleaseLink:
+        'https://s26.q4cdn.com/656283129/files/doc_financials/2022/q2/Airbnb_Q2-2022-Shareholder-Letter_Final.pdf',
     },
     {
       year: 2022,

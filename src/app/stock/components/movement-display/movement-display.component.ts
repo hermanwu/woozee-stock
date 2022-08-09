@@ -9,21 +9,24 @@ import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
 export class MovementDisplayComponent implements OnChanges {
   @Input() previousData: number;
   @Input() currentData: number;
+  @Input() changePercent: number;
+  @Input() hideMovement: boolean;
 
   readonly emojiUnicode = EmojiUnicode;
 
   isUp: boolean;
-  changePercent: number;
 
   constructor() {}
 
   ngOnChanges(): void {
-    if (this.currentData > this.previousData) {
-      this.isUp = true;
-    }
+    if (this.currentData && this.previousData) {
+      if (this.currentData > this.previousData) {
+        this.isUp = true;
+      }
 
-    this.changePercent = Math.abs(
-      (this.currentData - this.previousData) / this.previousData
-    );
+      this.changePercent = Math.abs(
+        (this.currentData - this.previousData) / this.previousData
+      );
+    }
   }
 }

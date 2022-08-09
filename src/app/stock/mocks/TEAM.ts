@@ -1,3 +1,4 @@
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -33,8 +34,39 @@ export const team: StockAnalysis = {
   description: [],
   ticker: 'team',
   shortName: 'Atlassian',
+  irAddress: 'https://investors.atlassian.com/',
+  business: {
+    markets: [IndustryType.saas],
+  },
 
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 2,
+      isForecast: true,
+      revenueForecastBottom: 795 * MILLION,
+      revenueForecastTop: 810 * MILLION,
+    },
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 759.841 * MILLION,
+      costOfRevenue: 133.154 * MILLION,
+      operatingIncome: -63.253 * MILLION,
+      netIncome: -105.463 * MILLION,
+      shareholderLetter:
+        'https://s28.q4cdn.com/541786762/files/doc_financials/2022/q4/TEAM-Q4FY2022-Shareholder-Letter.pdf',
+      pressReleaseLink:
+        'https://s28.q4cdn.com/541786762/files/doc_financials/2022/q4/TEAM-Q4FY2022-Earnings-Release.pdf',
+    },
+    {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 740.49 * MILLION,
+      grossProfit: 621.12 * MILLION,
+      operatingIncome: -16.13 * MILLION,
+      netIncome: -31 * MILLION,
+    },
     {
       year: 2021,
       quarter: 4,

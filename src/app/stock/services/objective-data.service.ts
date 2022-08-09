@@ -36,6 +36,12 @@ export class ObjectiveDataService {
 
   calculateRevenues(stock: StockData): StockData {
     if (stock && stock.earningsReports) {
+      const futureReport =
+        stock.earningsReports[0]?.isForecast ||
+        stock.earningsReports[0]?.revenueForecastBottom
+          ? stock.earningsReports[0]
+          : null;
+
       const reports = stock.earningsReports
         .filter((report) => !report.isForecast)
         .sort((a, b) => b.year - a.year || b.quarter - a.quarter);
@@ -130,6 +136,7 @@ export class ObjectiveDataService {
 
       stock.latestReport = currentReport;
       stock.previousYearReport = previousReport;
+      stock.futureReport = futureReport;
 
       if (currentReport && previousReport) {
         // Calculate quarterly gross profit.

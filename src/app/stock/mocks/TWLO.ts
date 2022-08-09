@@ -26,6 +26,14 @@ export const twlo: StockAnalysis = {
     //   quarter: 1,
     // },
     {
+      year: 2022,
+      quarter: 2,
+      pressReleaseLink:
+        'https://investors.twilio.com/news/news-details/2022/Twilio-Announces-Second-Quarter-2022-Results/default.aspx',
+      slidesLink:
+        "https://s21.q4cdn.com/963721274/files/doc_financials/2022/q2/Q2'22-Earnings-Presentation.pdf",
+    },
+    {
       year: 2021,
       quarter: 4,
       totalRevenue: 842 * MILLION,

@@ -49,6 +49,16 @@ export const aapl: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
+      quarter: 2,
+      totalRevenue: 82.959 * BILLION,
+      costOfRevenue: 47.074 * BILLION,
+      operatingIncome: 23.076 * BILLION,
+      netIncome: 19.442 * BILLION,
+      pressReleaseLink:
+        'https://www.apple.com/newsroom/2022/07/apple-reports-third-quarter-results/',
+    },
+    {
+      year: 2022,
       quarter: 1,
       totalRevenue: 97278 * MILLION,
       costOfRevenue: 54719 * MILLION,

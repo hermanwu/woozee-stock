@@ -27,19 +27,6 @@
     </div>
   </li>
 
-  <li class="row" *ngIf="nextQuarterForecastGrowth && !compareDisplay">
-    <div *ngIf="!hideLabel">Forecast Next Q/Q</div>
-    <div class="stats">
-      <span class="gray" *ngIf="!compareDisplay">
-        ({{ forecastRevenue | siUnit: 2 | undefined }})
-      </span>
-      <span>
-        <span *ngIf="nextQuarterForecastGrowth > 0">+</span
-        >{{ nextQuarterForecastGrowth | siUnit: 2 | percent | undefined }}
-      </span>
-    </div>
-  </li>
-
   <ng-container *ngIf="activeUserCount && !compareDisplay">
     <li class="stats">{{ unicode.NextLine }}</li>
 

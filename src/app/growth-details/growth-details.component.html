@@ -1,6 +1,6 @@
 <ul>
   <li>
-    Quarterly Revenue {{ stock.quarterRevenue | siUnit: 2 | undefined }},
+    🔸 Quarterly Revenue {{ stock.quarterRevenue | siUnit: 2 | undefined }},
 
     <app-movement-display
       [previousData]="stock.previousQuarterRevenue"
@@ -13,37 +13,8 @@
   </li>
 
   <li>
-    Trailing 12 Months Revenue {{ stock.ttmRevenue | siUnit: 2 | undefined }},
-
-    <app-movement-display
-      [previousData]="stock.previousTtmRevenue"
-      [currentData]="stock.ttmRevenue"
-    ></app-movement-display>
-    YoY
-
-    <app-sentiment-display></app-sentiment-display>
-  </li>
-
-  <li>
-    Next Quarter Forecast Revenue is from
-    <!-- {{ stock.futureReport?.revenueForecastBottom | siUnit: 2 | undefined }}
-    (<app-movement-display
-      [previousData]="stock.quarterRevenue"
-      [currentData]="stock.futureReport?.revenueForecastTop"
-    ></app-movement-display
-    >) to
-    {{ stock.futureReport?.revenueForecastTop | siUnit: 2 | undefined }}
-    (<app-movement-display
-      [previousData]="stock.quarterRevenue"
-      [currentData]="stock.futureReport?.revenueForecastTop"
-    ></app-movement-display
-    >) -->
-
-    <app-sentiment-display></app-sentiment-display>
-  </li>
-
-  <li>
-    Trailing 12 Months Revenue {{ stock.ttmRevenue | siUnit: 2 | undefined }},
+    🔸 Trailing 12 Months Revenue
+    {{ stock.ttmRevenue | siUnit: 2 | undefined }},
 
     <app-movement-display
       [previousData]="stock.previousTtmRevenue"
@@ -55,8 +26,10 @@
   </li>
 </ul>
 
-<h3>Growth Details</h3>
+<h3>More Details:</h3>
 <app-stats-detail-list
   [statsDetails]="growthDetails"
   [previousStatsDetails]="previousStatsDetails"
 ></app-stats-detail-list>
+
+<!-- <h3>Forecast</h3> -->

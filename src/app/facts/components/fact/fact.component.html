@@ -1,9 +1,13 @@
 <app-card>
-  <app-title-menu>
+  <div *ngIf="showDetails">
     <h2 header-2>
       {{ factType }}
     </h2>
 
+    <ng-content></ng-content>
+  </div>
+
+  <app-title-menu>
     <div buttons>
       <button mat-icon-button type="button" (click)="onRiskCatalystClick()">
         <mat-icon>difference</mat-icon>
@@ -23,8 +27,4 @@
       </button>
     </div>
   </app-title-menu>
-
-  <div *ngIf="showDetails">
-    <ng-content></ng-content>
-  </div>
 </app-card>

@@ -15,7 +15,8 @@ export enum EmojiUnicode {
   money = '💰',
   rocket = '🚀',
   bull = '',
+  yellowDiamond = '🔸',
 }
 
 export const hashes =
-  '  #stocks #markets #investments #investing #earnings #news #financialfreedom ';
+  '  #stocks #stockmarket #investments #investing #earnings #news #financialfreedom #sp500 #nasdaq';

@@ -5,7 +5,7 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 export const rblxRisks = [];
 
 export const rblx: StockAnalysis = {
-  marketCap: 24.27 * BILLION,
+  marketCap: 28 * BILLION,
   name: 'Roblox',
   description: [],
   trends: [],
@@ -17,12 +17,75 @@ export const rblx: StockAnalysis = {
   propertiesPageEnabled: true,
   irAddress: 'https://ir.roblox.com/overview/default.aspx',
   riskUuids: rblxRisks.map((r) => r.uuid),
+
   // POTENTIALS:
 
   // Demand:
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 591.2 * MILLION,
+      costOfRevenue: 143.157 * MILLION,
+      operatingIncome: -170.267 * MILLION,
+      netIncome: -179.012 * MILLION,
+      growthDetails: [
+        {
+          name: 'Bookings',
+          value: 639.9 * MILLION,
+          growth: -0.04,
+        },
+        {
+          name: 'DAU',
+          value: 52.2 * MILLION,
+          growth: 0.21,
+        },
+        {
+          name: 'Hours Engaged',
+          value: 11.3 * BILLION,
+          growth: 0.16,
+        },
+        {
+          name: 'Hours Engaged',
+          value: 11.3 * BILLION,
+          growth: 0.16,
+        },
+        {
+          name: 'Average Bookings per DAU (ABPDAU)',
+          value: 12.25,
+          growth: -0.21,
+        },
+        // {
+        //   name: 'July 2022 Key Metric Estimates',
+        //   details: [
+        //     {
+        //       name: 'Revenue',
+        //       text: 'Up 25% - 27% YoY',
+        //     },
+        //     {
+        //       name: 'Revenue',
+        //       text: 'Up 25% - 27% YoY',
+        //     },
+        //   ],
+        // },
+      ],
+      pressReleaseLink:
+        'https://s27.q4cdn.com/984876518/files/doc_financials/2022/q2/RBLX-2022.08.09-Earnings-release-FINAL.docx.pdf',
+      shareholderLetter:
+        'https://s27.q4cdn.com/984876518/files/doc_financials/2022/q2/RBLX_Shareholder_Letter_FINAL.pdf',
+      slidesLink:
+        "https://s27.q4cdn.com/984876518/files/doc_financials/2022/q2/Q2'22-Supplemental-Materials-FINAL.pdf",
+    },
+    {
+      year: 2022,
+      quarter: 1,
+      totalRevenue: 537.13 * MILLION,
+      costOfRevenue: 135.63 * MILLION,
+      operatingIncome: -151.61 * MILLION,
+      netIncome: -160.2 * MILLION,
+    },
     {
       year: 2021,
       quarter: 4,

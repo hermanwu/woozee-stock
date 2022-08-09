@@ -13,20 +13,16 @@ export class MovementDisplayComponent implements OnChanges {
   @Input() hideMovement: boolean;
 
   readonly emojiUnicode = EmojiUnicode;
-
-  isUp: boolean;
+  displayPercent: number;
 
   constructor() {}
 
   ngOnChanges(): void {
     if (this.currentData && this.previousData) {
-      if (this.currentData > this.previousData) {
-        this.isUp = true;
-      }
-
-      this.changePercent = Math.abs(
-        (this.currentData - this.previousData) / this.previousData
-      );
+      this.changePercent =
+        (this.currentData - this.previousData) / this.previousData;
     }
+
+    this.displayPercent = Math.abs(this.changePercent);
   }
 }

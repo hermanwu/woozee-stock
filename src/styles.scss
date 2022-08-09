@@ -11,6 +11,13 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 *,
 *:before,
 *:after {
@@ -23,7 +30,9 @@ a {
 }
 
 ul {
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .page-padding {

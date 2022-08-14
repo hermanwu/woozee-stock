@@ -1,0 +1,20 @@
+export const images = new Map<string, string[]>([
+  [
+    'DIS',
+    [
+      'https://lh3.googleusercontent.com/pw/AL9nZEUOdgmR_QvTVSGOTXHx9sJSR63YSGoMDUfIX51e1yURu0pw3JTT4CzIS6HL24WCtMu7Eg2E3YOSPVYwbFydeemY9G7oOcuiBC1RuJ37LPnhGvevrOdwcnXOYnqT6T-j6IpVYaDuVbSsUhU81W-CJPQA=w970-h610-no?authuser=0',
+    ],
+  ],
+  [
+    'TOST',
+    ['https://pbs.twimg.com/media/FaACIrVUEAA6gg0?format=jpg&name=large'],
+  ],
+  [
+    'RIVN',
+    ['https://pbs.twimg.com/media/FZ_wMy1UIAA71A2?format=jpg&name=large'],
+  ],
+  [
+    'LZ',
+    ['https://pbs.twimg.com/media/FaAIvfAVQAAkJN9?format=jpg&name=medium'],
+  ],
+]);

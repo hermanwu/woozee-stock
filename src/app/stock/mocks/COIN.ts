@@ -101,6 +101,46 @@ export const coin: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
+      quarter: 2,
+      totalRevenue: 808.325 * MILLION,
+      costOfRevenue: 167.187 * MILLION,
+      netIncome: -1093.654 * MILLION,
+      operatingIncome: -1044.389 * MILLION,
+      stats: [
+        {
+          name: 'Subscriptions and Services Revenue ($M)',
+          value: 147.4,
+        },
+        {
+          name: 'Monthly Transacting Users MTU (M)',
+          value: 9,
+        },
+        {
+          name: 'Trading Volume ($B)',
+          value: 217,
+          details: [
+            {
+              name: 'Retail ($B)',
+              value: 46,
+            },
+            {
+              name: 'Institutional ($B)',
+              value: 171,
+            },
+          ],
+        },
+        {
+          name: 'Asset on Platform ($B)',
+          value: 90,
+        },
+      ],
+      pressReleaseLink:
+        'https://investor.coinbase.com/news/news-details/2022/Coinbase-Releases-Second-Quarter-2022-Shareholder-Letter/',
+      shareholderLetter:
+        'https://s27.q4cdn.com/397450999/files/doc_financials/2022/q2/Q2-2022-Shareholder-Letter.pdf',
+    },
+    {
+      year: 2022,
       quarter: 1,
       totalRevenue: 1166.436 * MILLION,
       costOfRevenue: 277.826 * MILLION,
@@ -108,13 +148,12 @@ export const coin: StockAnalysis = {
       netIncome: 429.659 * MILLION,
       operatingIncome: -554.463 * MILLION,
     },
-
     {
       pressReleaseLink:
         'https://s27.q4cdn.com/397450999/files/doc_financials/2021/q4/Coinbase-Q421-Shareholder-Letter.pdf',
       reportLink:
         'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001679788/8e5e0508-da75-434d-9505-cba99fa00147.pdf',
-      growthDetails: [
+      stats: [
         {
           name: 'subscription and service',
           value: 200 * MILLION,
@@ -163,6 +202,34 @@ export const coin: StockAnalysis = {
       netIncomeBeforeTaxes: 868 * MILLION,
       provisionForIncomeTaxes: -737 * MILLION,
       netIncome: 1606 * MILLION,
+      stats: [
+        {
+          name: 'Subscriptions and Services Revenue ($M)',
+          value: 102.6,
+        },
+        {
+          name: 'Monthly Transacting Users MTU (M)',
+          value: 8.8,
+        },
+        {
+          name: 'Trading Volume ($B)',
+          value: 462,
+          details: [
+            {
+              name: 'Retail ($B)',
+              value: 145,
+            },
+            {
+              name: 'Institutional ($B)',
+              value: 317,
+            },
+          ],
+        },
+        {
+          name: 'Asset on Platform ($B)',
+          value: 180,
+        },
+      ],
     },
     {
       year: 2021,

@@ -1,0 +1,48 @@
+<ul *ngIf="stock" class="container">
+  <li class="row" *ngIf="!compareDisplay">
+    <div *ngIf="!hideLabel">
+      🔸 Market Cap:
+      <span>
+        {{ stock.marketCap | siUnit: 2 | undefined }}
+      </span>
+    </div>
+  </li>
+
+  <li class="row">
+    <div *ngIf="!hideLabel">
+      🔸 P / E:
+      {{
+        (stock.marketCap / stock.ttmNetIncome > 0
+          ? stock.marketCap / stock.ttmNetIncome
+          : undefined
+        )
+          | siUnit: 0
+          | undefined
+      }}
+    </div>
+  </li>
+
+  <li class="row">
+    <div *ngIf="!hideLabel">
+      🔸 P / S: {{ stock.marketCap / stock.ttmRevenue | siUnit: 0 | undefined }}
+    </div>
+  </li>
+
+  <li class="row">
+    <div *ngIf="!hideLabel">
+      🔸 P / Gross Profit:
+      {{ stock.marketCap / stock.ttmGrossProfit | siUnit: 0 | undefined }}
+    </div>
+  </li>
+
+  <li class="row">
+    <div *ngIf="!hideLabel">
+      🔸 P / Operating Income:
+      {{
+        (stock.marketCapToOiRatio > 0 ? stock.marketCapToOiRatio : undefined)
+          | siUnit: 0
+          | undefined
+      }}
+    </div>
+  </li>
+</ul>

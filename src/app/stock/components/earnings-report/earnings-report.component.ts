@@ -1,6 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
-import { convertStatsDetailsToObject } from 'src/app/shared/functions/covert-stats-details-to-object.function';
 import { EarningsReport } from '../../models/earnings.model';
 import { StockData } from '../../services/stock-data.model';
 
@@ -32,18 +31,6 @@ export class EarningsReportComponent implements OnInit, OnChanges {
       this.annualReportLink = earningsReports.filter(
         (a) => a.isAnnual
       )[0]?.reportLink;
-    }
-
-    if (this.stock && this.stock.latestReport) {
-      this.growthDetails = convertStatsDetailsToObject(
-        this.stock.latestReport.growthDetails
-      );
-
-      if (this.stock.previousYearReport) {
-        this.previousStatsDetails = convertStatsDetailsToObject(
-          this.stock.previousYearReport.growthDetails
-        );
-      }
     }
   }
 }

@@ -24,6 +24,7 @@ import { DecisionDashboardComponent } from './decision-dashboard/decision-dashbo
 import { FactComponent } from './facts/components/fact/fact.component';
 import { GrowthDetailsComponent } from './growth-details/growth-details.component';
 import { FomoStocksComponent as HomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
+import { ImageDisplayComponent } from './images/components/image-display/image-display.component';
 import { MarketDisplayComponent } from './markets/components/market-display/market-display.component';
 import { MarketListComponent } from './markets/components/market-list/market-list.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
@@ -62,7 +63,7 @@ import { SafePipe } from './shared/pipes/safe.pipe';
 import { SiUnitPipeModule } from './shared/pipes/si-unit/si-unit-pipe.module';
 import { UndefinedPipeModule } from './shared/pipes/undefined-pipe/undefined-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
-import { StatsDetailListComponent } from './stats-detail-list/stats-detail-list.component';
+import { StatsDisplayComponent } from './stats-display/stats-display.component';
 import { BusinessOverviewComponent } from './stock/components/business-overview/business-overview.component';
 import { ComparisonDialogComponent } from './stock/components/comparison-dialog/comparison-dialog.component';
 import { EarningsReportComponent } from './stock/components/earnings-report/earnings-report.component';
@@ -86,6 +87,7 @@ import { StockDisplayComponent } from './stock/stock-display/stock-display.compo
 import { TitleMenuComponent } from './title-menu/title-menu.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
+import { ValuationDetailsComponent } from './valuation-details/valuation-details.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -161,7 +163,9 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     SentimentDisplayComponent,
     MovementDisplayComponent,
     ProfitabilityDetailsComponent,
-    StatsDetailListComponent,
+    StatsDisplayComponent,
+    ImageDisplayComponent,
+    ValuationDetailsComponent,
   ],
   imports: [
     BrowserModule,

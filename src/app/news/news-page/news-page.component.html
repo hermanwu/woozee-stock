@@ -13,11 +13,11 @@
 
 <div *ngIf="showTools"></div>
 
-<ng-container *ngFor="let item of news">
-  <app-card>
+<div class="news-card" *ngFor="let item of news">
+  <app-card [isSquare]="'true'">
     <app-news-display [news]="item" [expanded]="true"></app-news-display>
   </app-card>
-</ng-container>
+</div>
 
 <!-- <button type="button" mat-button disabled>
     Load More

@@ -1,6 +1,6 @@
 <ul>
   <li>
-    🔸 Quarterly Gross Profit was
+    🔸 Quarterly Gross Profit ($):
     {{ stock.quarterGrossProfit | siUnit: 2 | undefined }}, 🟰
     <strong>{{
       stock?.quarterGrossProfitMargin | siUnit: 2 | percent | undefined
@@ -15,12 +15,12 @@
 
   <li>
     <span *ngIf="stock?.quarterOperatingMargin >= 0; else operatingLoss">
-      🔸 Quarterly Operating Income was {{ emojiUnicode.money }}
+      🔸 Quarterly Operating Income ($): {{ emojiUnicode.money }}
       {{ stock?.latestReport?.operatingIncome | siUnit: 2 }}</span
     ><ng-template #operatingLoss>
-      🔸 Quarterly Operating Loss was
-      {{ emojiUnicode.warning }}
-      {{ -stock?.latestReport?.operatingIncome | siUnit: 2 }}</ng-template
+      🔸 Quarterly Operating Loss ($):
+      {{ emojiUnicode.warning
+      }}{{ -stock?.latestReport?.operatingIncome | siUnit: 2 }}</ng-template
     ><span
       >, 🟰
 
@@ -48,10 +48,10 @@
 
   <li>
     <span *ngIf="stock?.quarterNetMargin >= 0; else netLoss">
-      🔸 Quarterly Net Income was {{ emojiUnicode.money }}
+      🔸 Quarterly Net Income ($): {{ emojiUnicode.money }}
       {{ stock?.latestReport?.netIncome | siUnit: 2 }}</span
     ><ng-template #netLoss>
-      🔸 Quarterly Net Loss was
+      🔸 Quarterly Net Loss ($):
       {{ emojiUnicode.warning }}
       {{ -stock?.latestReport?.netIncome | siUnit: 2 }}</ng-template
     ><span
@@ -79,7 +79,7 @@
   </li>
 
   <li>
-    🔸 Quarterly Operating Expenses was
+    🔸 Quarterly Operating Expenses ($):
     {{ stock.quarterExpenses | siUnit: 2 | undefined }},
 
     <app-movement-display
@@ -109,9 +109,4 @@
         | undefined
     }}</strong>
   </li> -->
-
-  <app-stats-detail-list
-    [statsDetails]="statsDetails"
-    [previousStatsDetails]="previousStatsDetails"
-  ></app-stats-detail-list>
 </ul>

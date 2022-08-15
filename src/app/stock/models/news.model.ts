@@ -2,8 +2,8 @@ import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Note } from 'src/app/shared/data/note.interface';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
+import { StatsDisplay } from '../../stats-display/stats-display.interface';
 import { Source } from '../models/news-source.enum';
-import { StatsDisplay } from '../molecules/news-display/stats-display.interface';
 
 export interface News {
   uuid: string;

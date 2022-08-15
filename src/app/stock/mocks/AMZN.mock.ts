@@ -173,7 +173,7 @@ export const amzn: StockAnalysis = {
       costOfRevenue: 66424 * MILLION,
       operatingIncome: 3317 * MILLION,
       netIncome: -2028 * MILLION,
-      growthDetails: [
+      stats: [
         {
           name: 'Sale Categories',
           details: [
@@ -208,8 +208,7 @@ export const amzn: StockAnalysis = {
           name: 'Advertising Service',
           value: 8.757 * BILLION,
         },
-      ],
-      costDetails: [
+
         {
           name: 'Operating expenses',
           details: [
@@ -298,7 +297,7 @@ export const amzn: StockAnalysis = {
       netIncomeBeforeTaxes: 8634 * MILLION,
       provisionForIncomeTaxes: 868 * MILLION,
       netIncome: 7778 * MILLION,
-      growthDetails: [
+      stats: [
         {
           name: 'Sale Categories',
           details: [
@@ -333,8 +332,7 @@ export const amzn: StockAnalysis = {
           name: 'Advertising Service',
           value: 7.451 * BILLION,
         },
-      ],
-      costDetails: [
+
         {
           name: 'Operating expenses',
           details: [

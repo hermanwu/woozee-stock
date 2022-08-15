@@ -1,5 +1,5 @@
 import { Note } from 'src/app/shared/data/note.interface';
-import { Composition } from './composition.model';
+import { StatsDisplay } from 'src/app/stats-display/stats-display.interface';
 
 export interface EarningsReport {
   year: number;
@@ -29,7 +29,6 @@ export interface EarningsReport {
   revenueRetention?: number;
   revenueForecastTop?: number;
   revenueForecastBottom?: number;
-  growthDetails?: Composition[];
 
   // Profitablity
   grossProfit?: number;
@@ -38,9 +37,10 @@ export interface EarningsReport {
   // Additional Stats
   isAnnual?: boolean;
   notes?: Note[];
-  costDetails?: Composition[];
 
   // notes
   quarterHighlights?: Note[] | string[];
   annualHighlights?: string[];
+
+  stats?: StatsDisplay[];
 }

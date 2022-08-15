@@ -1,66 +1,25 @@
-<div class="flex">
-  <span>
-    <app-badge *ngIf="news.source">
-      <a [href]="news.sourceLink" target="_blank">{{ news.source }}</a>
-    </app-badge>
-  </span>
-
-  <span>
-    <app-badge *ngIf="news.type">
-      <span>{{ news.type }}</span>
-    </app-badge>
-  </span>
-
-  <span *ngFor="let ticker of news?.tickers">
-    <app-ticker-display [ticker]="ticker"></app-ticker-display>
-  </span>
-
-  <span *ngFor="let marketType of news?.markets">
-    <app-market-display [marketType]="marketType"></app-market-display>
-  </span>
-
-  <!-- <app-date-display [date]="news.date"></app-date-display> -->
-
-  <span class="news">
-    <button
-      mat-icon-button
-      type="button"
-      [disabled]="
-        !news.notes &&
-        (!news.catalystUuids || news.catalystUuids.length === 0) &&
-        (!news.riskUuids || news.riskUuids.length === 0)
-      "
-      (click)="expanded = !expanded"
-    >
-      <mat-icon *ngIf="expanded">expand_less</mat-icon>
-      <mat-icon *ngIf="!expanded">expand_more</mat-icon>
-    </button>
-  </span>
-</div>
-
 <div>
-  <span>
-    {{ news.content }}
-  </span>
-</div>
+  <h1>
+    📰 {{ news.type }} ➡️ {{ news.title }}
+    <span *ngIf="news.isBullish === true">📈 Bullish 🚀</span>
+  </h1>
 
-<div *ngIf="expanded" class="expanded-display">
+  <app-image-display [imageLink]="imageLink"></app-image-display>
+
   <ul>
-    <li *ngFor="let item of news.notes">
-      <app-note [note]="item" [isExpanded]="false"> </app-note>
+    <li *ngFor="let item of news.content">🔸 {{ item }}</li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let item of news.stats">
+      <app-stats-display [statsDisplay]="item"></app-stats-display>
     </li>
   </ul>
 
-  <app-card *ngIf="news.catalysts && news.catalysts.length > 0">
-    <div>Catalysts</div>
-    <app-catalyst-list
-      [catalysts]="news.catalysts"
-      [showCategory]="false"
-    ></app-catalyst-list>
-  </app-card>
-
-  <app-card *ngIf="news.risks && news.risks.length > 0">
-    <div>Risks</div>
-    <app-risk-list [risks]="news.risks" [showCategory]="false"></app-risk-list>
-  </app-card>
+  <div class="right-align">
+    <span>
+      🔗 Source:
+      {{ news.source }}
+    </span>
+  </div>
 </div>

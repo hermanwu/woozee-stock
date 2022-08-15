@@ -1,5 +1,6 @@
 :host {
   line-height: 1.5rem;
+  max-height: 100%;
 }
 
 .gray-text {
@@ -10,18 +11,20 @@
   margin-left: 0.5rem;
 }
 
-.flex {
-  display: flex;
-  align-items: center;
-  flex-flow: wrap;
-  gap: 0.1rem;
+.expanded-display {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
 
-  .news {
+.right-align {
+  display: flex;
+
+  span {
     margin-left: auto;
   }
 }
 
-.expanded-display {
-  margin-top: 1rem;
-  margin-left: 1rem;
+app-image-display {
+  display: block;
+  margin: 1rem 0;
 }

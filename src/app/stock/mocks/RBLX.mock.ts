@@ -31,31 +31,31 @@ export const rblx: StockAnalysis = {
       costOfRevenue: 143.157 * MILLION,
       operatingIncome: -170.267 * MILLION,
       netIncome: -179.012 * MILLION,
-      growthDetails: [
+      stats: [
         {
           name: 'Bookings',
           value: 639.9 * MILLION,
-          growth: -0.04,
+          changeRate: -0.04,
         },
         {
           name: 'DAU',
           value: 52.2 * MILLION,
-          growth: 0.21,
+          changeRate: 0.21,
         },
         {
           name: 'Hours Engaged',
           value: 11.3 * BILLION,
-          growth: 0.16,
+          changeRate: 0.16,
         },
         {
           name: 'Hours Engaged',
           value: 11.3 * BILLION,
-          growth: 0.16,
+          changeRate: 0.16,
         },
         {
           name: 'Average Bookings per DAU (ABPDAU)',
           value: 12.25,
-          growth: -0.21,
+          changeRate: -0.21,
         },
         // {
         //   name: 'July 2022 Key Metric Estimates',

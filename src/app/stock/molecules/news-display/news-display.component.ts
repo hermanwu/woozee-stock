@@ -1,6 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { IndustryType } from 'src/app/facts/data/area.enum';
-import { riskService } from 'src/app/risks/services/subjective-data.service';
+import { ImageServices } from 'src/app/images/services/images.services';
 import { NewsDisplay } from './news-display.interface';
 
 @Component({
@@ -12,22 +11,16 @@ export class NewsDisplayComponent implements OnInit, OnChanges {
   @Input() expanded: boolean;
   @Input() news: NewsDisplay;
 
-  tickers: string[];
-  marketTypes: IndustryType[];
+  imageLink: string;
 
-  constructor(private riskService: riskService) {}
+  constructor(private imageServices: ImageServices) {}
 
   ngOnInit(): void {}
 
   ngOnChanges(): void {
-    const opinions = [];
-
-    if (this.news?.risks?.length > 0) {
-      opinions.push(...this.news.risks);
-    }
-
-    if (this.news?.catalysts?.length > 0) {
-      opinions.push(...this.news.catalysts);
+    if (this.news?.tickers?.length) {
+      const ticker = this.news.tickers[0];
+      this.imageLink = this.imageServices.getImage(ticker);
     }
   }
 }

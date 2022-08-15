@@ -34,29 +34,29 @@ export const amd: StockAnalysis = {
       grossProfit: 3.028 * BILLION,
       operatingIncome: 526 * MILLION,
       netIncome: 447 * MILLION,
-      growthDetails: [
+      stats: [
         {
           name: 'Segments Revenue',
           details: [
             {
               name: 'Data Center (Server CPU, datacenter GPU, Pensando, Xilinx)',
               value: 1.5 * BILLION,
-              growth: 0.83,
+              changeRate: 0.83,
             },
             {
               name: 'Client (PC processors and chips)',
               value: 2.2 * BILLION,
-              growth: 0.25,
+              changeRate: 0.25,
             },
             {
               name: 'Gaming (Discrete GPU and semi-custom game console)',
               value: 1.7 * BILLION,
-              growth: 0.32,
+              changeRate: 0.32,
             },
             {
               name: 'Embedded (Xilinx)',
               value: 1.3 * BILLION,
-              growth: 22.28,
+              changeRate: 22.28,
             },
           ],
         },

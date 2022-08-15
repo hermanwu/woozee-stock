@@ -1,8 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {
-  StatsDisplay,
-  TimeFrame,
-} from '../stock/molecules/news-display/stats-display.interface';
+import { StatsDisplay, TimeFrame } from './stats-display.interface';
 
 @Component({
   selector: 'app-stats-display',

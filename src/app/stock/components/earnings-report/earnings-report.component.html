@@ -2,6 +2,11 @@
   <div title>Latest Earnings Report</div>
 </app-title-menu>
 
+<app-stats-detail-list
+  [statsDetails]="growthDetails"
+  [previousStatsDetails]="previousStatsDetails"
+></app-stats-detail-list>
+
 <ul>
   <li *ngIf="earningReport?.pressReleaseLink">
     <a target="_blank" href="{{ earningReport?.pressReleaseLink }}">

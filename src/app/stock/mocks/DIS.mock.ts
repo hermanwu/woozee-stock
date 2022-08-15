@@ -76,6 +76,15 @@ export const dis: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
+      quarter: 2,
+      totalRevenue: 21.504 * BILLION,
+      operatingIncome: 2.119 * BILLION,
+      netIncome: 1.502 * BILLION,
+      pressReleaseLink:
+        'https://thewaltdisneycompany.com/app/uploads/2022/08/q3-fy22-earnings.pdf',
+    },
+    {
+      year: 2022,
       quarter: 1,
       pressReleaseLink:
         'https://thewaltdisneycompany.com/the-walt-disney-company-reports-second-quarter-and-six-months-earnings-for-fiscal-2022/',

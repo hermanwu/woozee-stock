@@ -14,9 +14,10 @@ export enum Source {
   me = 'me',
   MORGAN_STANLEY = 'Morgan Stanley',
   Morningbrew = 'morningbrew.com',
-  OFFICIAL = 'Earnings Report',
+  OFFICIAL = 'Company Press Release',
   reuters = 'Reuters',
   YAHOO = '雅虎财经',
   ibd = "Investor's Business Daily",
   electrek = 'Electrek',
+  laborStatistics = 'U.S. Bureau Of Labor Statistics',
 }

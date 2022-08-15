@@ -1,15 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
+import { convertStatsDetailsToObject } from 'src/app/shared/functions/covert-stats-details-to-object.function';
 import { EarningsReport } from '../../models/earnings.model';
-import { StockAnalysis } from '../../models/stock-analysis.model';
+import { StockData } from '../../services/stock-data.model';
 
 @Component({
   selector: 'app-earnings-report',
   templateUrl: './earnings-report.component.html',
   styleUrls: ['./earnings-report.component.scss'],
 })
-export class EarningsReportComponent implements OnInit {
-  @Input() stock: StockAnalysis;
+export class EarningsReportComponent implements OnInit, OnChanges {
+  @Input() stock: StockData;
+  growthDetails: any;
+  previousStatsDetails: any;
 
   readonly emojiLink = EmojiUnicode.link;
 
@@ -29,6 +32,18 @@ export class EarningsReportComponent implements OnInit {
       this.annualReportLink = earningsReports.filter(
         (a) => a.isAnnual
       )[0]?.reportLink;
+    }
+
+    if (this.stock && this.stock.latestReport) {
+      this.growthDetails = convertStatsDetailsToObject(
+        this.stock.latestReport.growthDetails
+      );
+
+      if (this.stock.previousYearReport) {
+        this.previousStatsDetails = convertStatsDetailsToObject(
+          this.stock.previousYearReport.growthDetails
+        );
+      }
     }
   }
 }

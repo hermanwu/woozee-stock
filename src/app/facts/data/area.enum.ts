@@ -53,4 +53,9 @@ export enum IndustryType {
   virtualRendering = '3D Virtual Rendering',
   virtualSpace = 'Virtualization',
   vr = 'Virtual Reality',
+  quantumComputing = 'Quantum Computing',
+  discountStores = 'Discount Stores',
+  itSolution = 'IT Solutions',
+  digitalTransformation = 'Digital Transformation',
+  ibuying = 'iBuying',
 }

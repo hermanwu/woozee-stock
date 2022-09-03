@@ -6,6 +6,10 @@ export const images = new Map<string, string[]>([
     ],
   ],
   [
+    'WMT',
+    ['https://pbs.twimg.com/media/FaUuVXzUYAENWgr?format=png&name=small'],
+  ],
+  [
     'TOST',
     ['https://pbs.twimg.com/media/FaACIrVUEAA6gg0?format=jpg&name=large'],
   ],
@@ -16,5 +20,30 @@ export const images = new Map<string, string[]>([
   [
     'LZ',
     ['https://pbs.twimg.com/media/FaAIvfAVQAAkJN9?format=jpg&name=medium'],
+  ],
+
+  [
+    'LI',
+    ['https://pbs.twimg.com/media/FaPj1YxVEAAukuu?format=png&name=900x900'],
+  ],
+  [
+    'IONQ',
+    ['https://pbs.twimg.com/media/FaUSk3OVUAE2J--?format=jpg&name=medium'],
+  ],
+  [
+    'TGT',
+    ['https://pbs.twimg.com/media/FaZkSNyUcAAwrVx?format=jpg&name=large'],
+  ],
+  [
+    'CSCO',
+    ['https://pbs.twimg.com/media/FaaTAiUUIAAuIWe?format=jpg&name=medium'],
+  ],
+  [
+    'ZM',
+    ['https://pbs.twimg.com/media/Fa0rlkPVsAE2xo_?format=jpg&name=medium'],
+  ],
+  [
+    'PANW',
+    ['https://pbs.twimg.com/media/Fa0z3XiUIAA02lS?format=jpg&name=large'],
   ],
 ]);

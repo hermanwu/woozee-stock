@@ -1,6 +1,7 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -30,6 +31,38 @@ export const snow: StockAnalysis = {
   },
 
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 497.248 * MILLION,
+      grossProfit: 324.016 * MILLION,
+      operatingIncome: -207.732 * MILLION,
+      netIncome: -222.806 * MILLION,
+      forecastRevenueTop: 535 * MILLION,
+      forecastRevenueBottom: 530 * MILLION,
+      date: convertDateToUTC(new Date('2022-8-24')),
+      links: [
+        {
+          name: 'Earnings Release',
+          value:
+            'https://investors.snowflake.com/news/news-details/2022/Snowflake-Reports-Financial-Results-for-the-Second-Quarter-of-Fiscal-2023/default.aspx',
+        },
+        {
+          name: 'Investor Presentation',
+          value:
+            'https://s26.q4cdn.com/463892824/files/doc_financials/2023/q2/Q2-FY2023-Investor-Presentation_vF.pdf',
+        },
+        {
+          name: 'Infographics',
+          value:
+            'https://s26.q4cdn.com/463892824/files/doc_financials/2023/q2/FY23-Q2-GLOBAL-Regional-Infographics.png',
+        },
+      ],
+    },
+    {
+      year: 2022,
+      quarter: 1,
+    },
     {
       year: 2021,
       quarter: 4,

@@ -1,4 +1,5 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { capMock } from './market-cap.mock';
@@ -21,15 +22,23 @@ export const msft: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
-      quarter: 2,
+      quarter: 4,
       totalRevenue: 51.865 * BILLION,
       costOfRevenue: 16.429 * BILLION,
       operatingIncome: 20.534 * BILLION,
       netIncome: 16.74 * BILLION,
+      date: convertDateToUTC(new Date('2022-7-15')),
+      links: [
+        {
+          name: 'Press Release',
+          value:
+            'https://www.microsoft.com/en-us/investor/earnings/FY-2022-Q4/press-release-webcast',
+        },
+      ],
     },
     {
       year: 2022,
-      quarter: 1,
+      quarter: 3,
       totalRevenue: 49.36 * BILLION,
       costOfRevenue: 15.615 * BILLION,
       operatingIncome: 20.314 * BILLION,
@@ -38,8 +47,8 @@ export const msft: StockAnalysis = {
     {
       pressReleaseLink:
         'https://www.microsoft.com/en-us/investor/earnings/fy-2022-q2/press-release-webcast',
-      year: 2021,
-      quarter: 4,
+      year: 2022,
+      quarter: 2,
       totalRevenue: 51728 * MILLION,
       costOfRevenue: 16960 * MILLION,
       grossProfit: 34768 * MILLION,
@@ -55,8 +64,8 @@ export const msft: StockAnalysis = {
       netIncome: 18765 * MILLION,
     },
     {
-      year: 2021,
-      quarter: 3,
+      year: 2022,
+      quarter: 1,
       totalRevenue: 45317 * MILLION,
       costOfRevenue: 13646 * MILLION,
       grossProfit: 31671 * MILLION,
@@ -73,7 +82,7 @@ export const msft: StockAnalysis = {
     },
     {
       year: 2021,
-      quarter: 2,
+      quarter: 4,
       totalRevenue: 46152 * MILLION,
       costOfRevenue: 13991 * MILLION,
       grossProfit: 32161 * MILLION,
@@ -90,7 +99,7 @@ export const msft: StockAnalysis = {
     },
     {
       year: 2021,
-      quarter: 1,
+      quarter: 3,
       totalRevenue: 41706 * MILLION,
       costOfRevenue: 13045 * MILLION,
       grossProfit: 28661 * MILLION,
@@ -106,8 +115,8 @@ export const msft: StockAnalysis = {
       netIncome: 15457 * MILLION,
     },
     {
-      year: 2020,
-      quarter: 4,
+      year: 2021,
+      quarter: 2,
       totalRevenue: 43076 * MILLION,
       costOfRevenue: 14194 * MILLION,
       grossProfit: 28882 * MILLION,
@@ -123,8 +132,8 @@ export const msft: StockAnalysis = {
       netIncome: 15463 * MILLION,
     },
     {
-      year: 2020,
-      quarter: 3,
+      year: 2021,
+      quarter: 1,
       totalRevenue: 37154 * MILLION,
       costOfRevenue: 11002 * MILLION,
       grossProfit: 26152 * MILLION,
@@ -141,7 +150,7 @@ export const msft: StockAnalysis = {
     },
     {
       year: 2020,
-      quarter: 2,
+      quarter: 4,
       totalRevenue: 38033 * MILLION,
       costOfRevenue: 12339 * MILLION,
       grossProfit: 25694 * MILLION,
@@ -158,7 +167,7 @@ export const msft: StockAnalysis = {
     },
     {
       year: 2020,
-      quarter: 1,
+      quarter: 3,
       totalRevenue: 35021 * MILLION,
       costOfRevenue: 10975 * MILLION,
       grossProfit: 24046 * MILLION,

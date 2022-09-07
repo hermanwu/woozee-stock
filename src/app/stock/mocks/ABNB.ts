@@ -1,5 +1,6 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -74,22 +75,9 @@ export const abnb: StockAnalysis = {
       costOfRevenue: 390.107 * MILLION,
       operatingIncome: 368.823 * MILLION,
       netIncome: 383.111 * MILLION,
-      growthDetails: [
-        {
-          name: 'Nights and Experiences Booked',
-          growth: 0.24,
-          value: 103.7 * MILLION,
-        },
-        {
-          name: 'Long-term stays of 28+ days',
-          growth: 0.25,
-        },
-        {
-          name: 'Gross Booking Value',
-          value: 16980 * MILLION,
-          growth: 0.27,
-        },
-      ],
+      date: convertDateToUTC(new Date('2022-8-2')),
+      forecastRevenueTop: 2.88 * BILLION,
+      forecastRevenueBottom: 2.78 * BILLION,
       pressReleaseLink:
         'https://s26.q4cdn.com/656283129/files/doc_financials/2022/q2/Airbnb_Q2-2022-Shareholder-Letter_Final.pdf',
     },

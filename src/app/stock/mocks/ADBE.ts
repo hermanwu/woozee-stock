@@ -1,6 +1,7 @@
 import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -82,8 +83,13 @@ export const adbe: StockAnalysis = {
     {
       year: 2022,
       quarter: 2,
-      totalRevenue: 4.34 * BILLION,
-      isForecast: true,
+      totalRevenue: 4.39 * BILLION,
+      forecastRevenueTop: 4.43 * BILLION,
+      forecastRevenueBottom: 4.43 * BILLION,
+      grossProfit: 3847 * MILLION,
+      operatingIncome: 1529 * MILLION,
+      netIncome: 1178 * MILLION,
+      date: convertDateToUTC(new Date('2022-06-16')),
     },
     {
       quarterHighlights: [

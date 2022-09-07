@@ -1,4 +1,5 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -34,6 +35,7 @@ export const googl: StockAnalysis = {
       costOfRevenue: 30104 * MILLION,
       operatingIncome: 19453 * MILLION,
       netIncome: 16002 * MILLION,
+      date: convertDateToUTC(new Date('2022-7-15')),
     },
     {
       year: 2022,

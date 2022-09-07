@@ -1,4 +1,5 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -9,6 +10,7 @@ export const dash: StockAnalysis = {
   description: [],
   ticker: 'dash',
   shortName: 'DoorDash',
+  irAddress: 'https://ir.doordash.com/overview/default.aspx',
 
   business: {
     markets: [IndustryType.foodDelivery],
@@ -22,6 +24,9 @@ export const dash: StockAnalysis = {
       costOfRevenue: 880 * MILLION,
       operatingIncome: -273 * MILLION,
       netIncome: -263 * MILLION,
+      forecastRevenueTop: 1.62 * BILLION,
+      forecastRevenueBottom: 1.608 * BILLION,
+      date: convertDateToUTC(new Date('2022-8-4')),
       pressReleaseLink:
         'https://s22.q4cdn.com/280253921/files/doc_financials/2022/q2/DASH-Q2-2022-Shareholder-Letter_FINAL.pdf',
     },

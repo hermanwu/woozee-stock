@@ -2,6 +2,7 @@ import { IndustryType } from 'src/app/facts/data/area.enum';
 import { allNews } from 'src/app/media/news/news.const';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -129,6 +130,7 @@ export const meta: StockAnalysis = {
       costOfRevenue: 5.192 * BILLION,
       operatingIncome: 8.358 * BILLION,
       netIncome: 6.687 * BILLION,
+      date: convertDateToUTC(new Date('2022-7-27')),
       slidesLink:
         'https://s21.q4cdn.com/399680738/files/doc_financials/2022/q2/Q2-2022_Earnings-Presentation.pdf',
       pressReleaseLink:

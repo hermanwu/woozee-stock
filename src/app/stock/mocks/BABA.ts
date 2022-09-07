@@ -1,5 +1,6 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { rmbToDollar } from 'src/app/shared/currency';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -22,6 +23,14 @@ export const baba: StockAnalysis = {
       grossProfit: 65107 * MILLION * rmbToDollar,
       operatingIncome: 24943 * MILLION * rmbToDollar,
       netIncome: 20298 * MILLION * rmbToDollar,
+      date: convertDateToUTC(new Date('2022-8-4')),
+      links: [
+        {
+          name: 'Press Release',
+          value:
+            'https://data.alibabagroup.com/ecms-files/1532295521/fceda7a9-57ee-423d-a357-147f796a95e8.pdf',
+        },
+      ],
     },
     {
       year: 2022,

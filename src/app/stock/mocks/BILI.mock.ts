@@ -1,5 +1,6 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { rmbToDollar } from 'src/app/shared/currency';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -43,6 +44,10 @@ export const bili: StockAnalysis = {
       grossProfit: 807.241 * MILLION * rmbToDollar,
       operatingIncome: -1.990812 * BILLION * rmbToDollar,
       netIncome: -2.284132 * BILLION * rmbToDollar,
+      forecastRevenueTop: 4.95 * BILLION * rmbToDollar,
+      forecastRevenueBottom: 4.85 * BILLION * rmbToDollar,
+      date: convertDateToUTC(new Date('2022-6-9')),
+
       pressReleaseLink:
         'https://ir.bilibili.com/static-files/91528e13-31e8-4460-a3c0-e04abedeb5fd',
       reportLink:

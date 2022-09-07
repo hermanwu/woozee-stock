@@ -3,6 +3,7 @@ import { abnb } from './abnb';
 import { adbe } from './adbe';
 import { ADSK } from './ADSK';
 import { afrm } from './afrm';
+import { ai } from './AI';
 import { amc } from './amc';
 import { amd } from './amd';
 import { amzn } from './amzn.mock';
@@ -14,13 +15,15 @@ import { AXP } from './AXP';
 import { baba } from './baba';
 import { bidu } from './bidu';
 import { bili } from './bili.mock';
+import { bill } from './bill.mock';
 import { blde } from './blde';
 import { bynd } from './bynd';
-import { CHWY } from './CHWY';
+import { chwy } from './CHWY';
 import { CLOV } from './CLOV';
 import { coin } from './coin';
 import { crm } from './crm';
 import { crwd } from './crwd';
+import { csco } from './csco.mock';
 import { dash } from './dash';
 import { dbx } from './dbx';
 import { ddog } from './DDOG';
@@ -32,7 +35,6 @@ import { EA } from './EA';
 import { EDIT } from './EDIT';
 import { estc } from './estc';
 import { etsy } from './etsy';
-import { meta } from './fb';
 import { ftnt } from './ftnt';
 import { fvrr } from './fvrr';
 import { gme } from './gme';
@@ -43,20 +45,24 @@ import { hood } from './hood';
 import { huya } from './huya';
 import { iac } from './iac';
 import { intu } from './intu';
+import { ionq } from './ionq.mock';
 import { isrg } from './isrg';
-import { JD } from './JD';
+import { jd } from './JD';
 import { JMIA } from './JMIA';
 import { jnj } from './jnj';
 import { jpm } from './jpm';
 import { lmt } from './lmt';
 import { logi } from './LOGI';
 import { lrcx } from './lrcx';
+import { lulu } from './lulu.mock';
 import { luv } from './luv';
 import { LZ } from './LZ';
 import { mdb } from './mdb';
 import { meli } from './MELI';
+import { meta } from './meta';
 import { mrk } from './mrk';
 import { mrna } from './mrna';
+import { mrvl } from './mrvl.mock';
 import { msft } from './msft';
 import { mttr } from './mttr.mock';
 import { mu } from './mu.mock';
@@ -69,15 +75,17 @@ import { ntdoy } from './ntdoy';
 import { nvax } from './nvax';
 import { nvda } from './nvda';
 import { ob } from './ob';
-import { OKTA } from './OKTA';
+import { okta } from './OKTA';
 import { open } from './open';
 import { orcl } from './orcl';
 import { oxy } from './oxy';
+import { panw } from './panw.mock';
 import { path } from './PATH';
 import { pdd } from './pdd.mock';
 import { PENN } from './PENN';
 import { pins } from './PINs';
 import { pltr } from './pltr';
+import { pstg } from './pstg.mock';
 import { pton } from './pton';
 import { pypl } from './pypl';
 import { qs } from './qs';
@@ -87,6 +95,7 @@ import { RH } from './RH';
 import { roku } from './roku';
 import { rskd } from './rskd';
 import { rtx } from './rtx';
+import { s } from './s.mock';
 import { sbux } from './sbux';
 import { se } from './se';
 import { shop } from './shop.mock';
@@ -121,6 +130,7 @@ import { VMEO } from './vmeo';
 import { vmw } from './vmw';
 import { wish } from './wish';
 import { wix } from './wix';
+import { wmt } from './wmt.mock';
 import { xpev } from './XPEV';
 import { you } from './you';
 import { z } from './Z.mock';
@@ -155,7 +165,6 @@ export const stocksMap = {
   bili,
   blde,
   bynd,
-  CHWY,
   CLOV,
   coin,
   crm,
@@ -181,7 +190,7 @@ export const stocksMap = {
   iac,
   intu,
   isrg,
-  JD,
+  jd,
   JMIA,
   jnj,
   jpm,
@@ -204,7 +213,7 @@ export const stocksMap = {
   nvax,
   nvda,
   ob,
-  OKTA,
+  okta,
   open,
   orcl,
   pdd,
@@ -265,4 +274,15 @@ export const stocksMap = {
   oxy,
   twlo,
   mu,
+  ionq,
+  wmt,
+  csco,
+  bill,
+  panw,
+  mrvl,
+  chwy,
+  ai,
+  s,
+  lulu,
+  pstg,
 };

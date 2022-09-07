@@ -4,6 +4,7 @@ import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { allNews } from 'src/app/media/news/news.const';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import {
   BILLION,
   MILLION,
@@ -173,6 +174,9 @@ export const amzn: StockAnalysis = {
       costOfRevenue: 66424 * MILLION,
       operatingIncome: 3317 * MILLION,
       netIncome: -2028 * MILLION,
+      forecastRevenueBottom: 125 * BILLION,
+      forecastRevenueTop: 130 * BILLION,
+      date: convertDateToUTC(new Date('2022-7-28')),
       stats: [
         {
           name: 'Sale Categories',

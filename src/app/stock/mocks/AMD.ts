@@ -1,4 +1,5 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -23,17 +24,15 @@ export const amd: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
-      quarter: 3,
-      isForecast: true,
-      totalRevenue: 6.7 * BILLION,
-    },
-    {
-      year: 2022,
       quarter: 2,
       totalRevenue: 6.55 * BILLION,
       grossProfit: 3.028 * BILLION,
       operatingIncome: 526 * MILLION,
       netIncome: 447 * MILLION,
+      forecastRevenueTop: 6.7 * BILLION,
+      forecastRevenueBottom: 6.7 * BILLION,
+      date: convertDateToUTC(new Date('2022-8-2')),
+
       stats: [
         {
           name: 'Segments Revenue',

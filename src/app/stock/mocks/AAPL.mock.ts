@@ -1,4 +1,5 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { capMock } from './market-cap.mock';
@@ -49,17 +50,23 @@ export const aapl: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
-      quarter: 2,
+      quarter: 3,
       totalRevenue: 82.959 * BILLION,
       costOfRevenue: 47.074 * BILLION,
       operatingIncome: 23.076 * BILLION,
       netIncome: 19.442 * BILLION,
-      pressReleaseLink:
-        'https://www.apple.com/newsroom/2022/07/apple-reports-third-quarter-results/',
+      date: convertDateToUTC(new Date('2022-7-28')),
+      links: [
+        {
+          name: 'Press Release',
+          value:
+            'https://www.apple.com/newsroom/2022/07/apple-reports-third-quarter-results/',
+        },
+      ],
     },
     {
       year: 2022,
-      quarter: 1,
+      quarter: 2,
       totalRevenue: 97278 * MILLION,
       costOfRevenue: 54719 * MILLION,
       operatingIncome: 29979 * MILLION,
@@ -70,8 +77,8 @@ export const aapl: StockAnalysis = {
         'https://d18rn0p25nwr6d.cloudfront.net/CIK-0000320193/485ae20a-4b5c-4477-8971-40f401afe35b.pdf',
     },
     {
-      year: 2021,
-      quarter: 4,
+      year: 2022,
+      quarter: 1,
       totalRevenue: 123945 * MILLION,
       costOfRevenue: 69702 * MILLION,
       grossProfit: 54243 * MILLION,
@@ -87,7 +94,7 @@ export const aapl: StockAnalysis = {
     },
     {
       year: 2021,
-      quarter: 3,
+      quarter: 4,
       totalRevenue: 83360 * MILLION,
       costOfRevenue: 48186 * MILLION,
       grossProfit: 35174 * MILLION,
@@ -103,7 +110,7 @@ export const aapl: StockAnalysis = {
     },
     {
       year: 2021,
-      quarter: 2,
+      quarter: 3,
       totalRevenue: 81434 * MILLION,
       costOfRevenue: 46179 * MILLION,
       grossProfit: 35255 * MILLION,
@@ -119,7 +126,7 @@ export const aapl: StockAnalysis = {
     },
     {
       year: 2021,
-      quarter: 1,
+      quarter: 2,
       totalRevenue: 89584 * MILLION,
       costOfRevenue: 51505 * MILLION,
       grossProfit: 38079 * MILLION,
@@ -134,8 +141,8 @@ export const aapl: StockAnalysis = {
       netIncome: 23630 * MILLION,
     },
     {
-      year: 2020,
-      quarter: 4,
+      year: 2021,
+      quarter: 1,
       totalRevenue: 111439 * MILLION,
       costOfRevenue: 67111 * MILLION,
       grossProfit: 44328 * MILLION,
@@ -151,7 +158,7 @@ export const aapl: StockAnalysis = {
     },
     {
       year: 2020,
-      quarter: 3,
+      quarter: 4,
       totalRevenue: 64698 * MILLION,
       costOfRevenue: 40009 * MILLION,
       grossProfit: 24689 * MILLION,
@@ -167,7 +174,7 @@ export const aapl: StockAnalysis = {
     },
     {
       year: 2020,
-      quarter: 2,
+      quarter: 3,
       totalRevenue: 59685 * MILLION,
       costOfRevenue: 37005 * MILLION,
       grossProfit: 22680 * MILLION,
@@ -183,7 +190,7 @@ export const aapl: StockAnalysis = {
     },
     {
       year: 2020,
-      quarter: 1,
+      quarter: 2,
       totalRevenue: 58313 * MILLION,
       costOfRevenue: 35943 * MILLION,
       grossProfit: 22370 * MILLION,

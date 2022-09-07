@@ -2,6 +2,7 @@ import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { Risk } from 'src/app/risks/models/risk.model';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -69,6 +70,24 @@ export const tsla: StockAnalysis = {
   riskUuids: tslaRisks.map((r) => r.uuid),
   catalystUuids: tslaCatalysts.map((c) => c.uuid),
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 16.934 * BILLION,
+      grossProfit: 4.234 * BILLION,
+      operatingIncome: 2.464 * BILLION,
+      netIncome: 2.259 * BILLION,
+      date: convertDateToUTC(new Date('2022-7-20')),
+      forecastQuarterlyGrowthRateTop: 0.5,
+      forecastQuarterlyGrowthRateBottom: 0.5,
+      links: [
+        {
+          name: 'Shareholder Deck',
+          value:
+            'https://tesla-cdn.thron.com/static/EIUQEC_2022_Q2_Quarterly_Update_Deck_J8VLIK.pdf?xseo=&response-content-disposition=inline%3Bfilename%3D%22tsla-q2-22-update.pdf%22',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 1,

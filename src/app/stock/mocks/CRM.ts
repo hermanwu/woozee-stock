@@ -1,5 +1,6 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { BenefitType } from '../components/business-overview/business.model';
 import { PredicationAction } from '../models/predication.model';
@@ -19,7 +20,26 @@ export const crm: StockAnalysis = {
     },
   ],
   shortName: 'Salesforce',
+  irAddress: 'https://investor.salesforce.com/overview/default.aspx',
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 7.72 * BILLION,
+      grossProfit: 5.593 * BILLION,
+      operatingIncome: 193 * MILLION,
+      netIncome: 68 * MILLION,
+      date: convertDateToUTC(new Date('2022-8-24')),
+      forecastRevenueTop: 7.83 * BILLION,
+      forecastRevenueBottom: 7.82 * BILLION,
+      links: [
+        {
+          name: 'Press Release',
+          value:
+            'https://s23.q4cdn.com/574569502/files/doc_financials/2023/q2/CRM-Q2-FY23-Earnings-Press-Release-w-financials.pdf',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 1,
@@ -183,7 +203,6 @@ export const crm: StockAnalysis = {
   description: [],
   ticker: 'crm',
   lastUpdated: new Date('2021-08-25'),
-  irAddress: 'https://investor.salesforce.com/overview/default.aspx',
   secFilings: 'https://investor.salesforce.com/financials/default.aspx',
   business: {
     missions: ['We build bridges between companies and customers.'],

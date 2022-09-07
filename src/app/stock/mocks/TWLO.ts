@@ -1,3 +1,4 @@
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -28,6 +29,13 @@ export const twlo: StockAnalysis = {
     {
       year: 2022,
       quarter: 2,
+      totalRevenue: 943.35 * MILLION,
+      grossProfit: 445.29 * MILLION,
+      operatingIncome: -311.94 * MILLION,
+      netIncome: -322.77 * MILLION,
+      date: convertDateToUTC(new Date('2022-08-4')),
+      forecastRevenueTop: 975 * MILLION,
+      forecastRevenueBottom: 965 * MILLION,
       pressReleaseLink:
         'https://investors.twilio.com/news/news-details/2022/Twilio-Announces-Second-Quarter-2022-Results/default.aspx',
       slidesLink:

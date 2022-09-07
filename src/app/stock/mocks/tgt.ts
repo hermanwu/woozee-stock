@@ -1,3 +1,4 @@
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -8,6 +9,7 @@ export const tgt: StockAnalysis = {
   description: [],
   ticker: 'TGT',
   shortName: 'Target',
+  industries: [IndustryType.discountStores],
 
   // Earnings Report:
   earningsReports: [

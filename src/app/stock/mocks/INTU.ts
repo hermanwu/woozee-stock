@@ -1,4 +1,5 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -14,14 +15,24 @@ export const intu: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
-      quarter: 1,
-      totalRevenue: 4.23 * BILLION,
-      isForecast: true,
-      fullyYearForecastRevenue: 17.9 * BILLION,
+      quarter: 4,
+      totalRevenue: 2414 * MILLION,
+      grossProfit: 1814 * MILLION,
+      operatingIncome: -75 * MILLION,
+      netIncome: -56 * MILLION,
+      date: convertDateToUTC(new Date('2022-8-23')),
     },
     {
-      year: 2021,
-      quarter: 4,
+      year: 2022,
+      quarter: 3,
+      totalRevenue: 5632 * MILLION,
+      grossProfit: 4808 * MILLION,
+      operatingIncome: 2395 * MILLION,
+      netIncome: 1794 * MILLION,
+    },
+    {
+      year: 2022,
+      quarter: 2,
       totalRevenue: 2673 * MILLION,
       costOfRevenue: 565 * MILLION,
       grossProfit: 2108 * MILLION,
@@ -36,8 +47,8 @@ export const intu: StockAnalysis = {
       netIncome: 100 * MILLION,
     },
     {
-      year: 2021,
-      quarter: 3,
+      year: 2022,
+      quarter: 1,
       totalRevenue: 2007 * MILLION,
       costOfRevenue: 417 * MILLION,
       grossProfit: 1590 * MILLION,
@@ -53,7 +64,7 @@ export const intu: StockAnalysis = {
     },
     {
       year: 2021,
-      quarter: 2,
+      quarter: 4,
       totalRevenue: 2561 * MILLION,
       costOfRevenue: 465 * MILLION,
       grossProfit: 2096 * MILLION,
@@ -69,7 +80,7 @@ export const intu: StockAnalysis = {
     },
     {
       year: 2021,
-      quarter: 1,
+      quarter: 3,
       totalRevenue: 4173 * MILLION,
       costOfRevenue: 595 * MILLION,
       grossProfit: 3578 * MILLION,
@@ -84,8 +95,8 @@ export const intu: StockAnalysis = {
       netIncome: 1464 * MILLION,
     },
     {
-      year: 2020,
-      quarter: 4,
+      year: 2021,
+      quarter: 2,
       totalRevenue: 1576 * MILLION,
       costOfRevenue: 367 * MILLION,
       grossProfit: 1209 * MILLION,
@@ -100,8 +111,8 @@ export const intu: StockAnalysis = {
       netIncome: 20 * MILLION,
     },
     {
-      year: 2020,
-      quarter: 3,
+      year: 2021,
+      quarter: 1,
       totalRevenue: 1323 * MILLION,
       costOfRevenue: 256 * MILLION,
       grossProfit: 1067 * MILLION,
@@ -117,7 +128,7 @@ export const intu: StockAnalysis = {
     },
     {
       year: 2020,
-      quarter: 2,
+      quarter: 4,
       totalRevenue: 1816 * MILLION,
       costOfRevenue: 322 * MILLION,
       grossProfit: 1494 * MILLION,
@@ -133,7 +144,7 @@ export const intu: StockAnalysis = {
     },
     {
       year: 2020,
-      quarter: 1,
+      quarter: 3,
       totalRevenue: 3002 * MILLION,
       costOfRevenue: 426 * MILLION,
       grossProfit: 2576 * MILLION,

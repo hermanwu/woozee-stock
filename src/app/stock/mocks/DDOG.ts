@@ -1,4 +1,5 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -18,6 +19,24 @@ export const ddog: StockAnalysis = {
     ],
   },
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 406.138 * MILLION,
+      grossProfit: 324.213 * MILLION,
+      operatingIncome: -3.139 * MILLION,
+      netIncome: -4.879 * MILLION,
+      forecastRevenueTop: 414 * MILLION,
+      forecastRevenueBottom: 410 * MILLION,
+      date: convertDateToUTC(new Date('2022-8-4')),
+      links: [
+        {
+          name: 'Press Release',
+          value:
+            'https://investors.datadoghq.com/static-files/9e82d3c5-00bc-44af-abfe-ebbc486e71fa',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 1,

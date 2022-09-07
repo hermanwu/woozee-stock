@@ -3,6 +3,7 @@ import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { Risk } from 'src/app/risks/models/risk.model';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -79,6 +80,22 @@ export const sq: StockAnalysis = {
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 4404.499 * MILLION,
+      grossProfit: 1469.65 * MILLION,
+      operatingIncome: -213.77 * MILLION,
+      netIncome: -208.01 * MILLION,
+      date: convertDateToUTC(new Date('2022-8-4')),
+      links: [
+        {
+          name: 'Shareholder Letter',
+          value:
+            'https://s29.q4cdn.com/628966176/files/doc_financials/2022/q2/Block_2Q22-Shareholder-Letter.pdf',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 1,

@@ -2,6 +2,7 @@ import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -43,21 +44,32 @@ export const nvda: StockAnalysis = {
   //   {
   //     price: 150,
   //     days: 90,
-  //     start: new Date('2022-01-18'),
+  //     start: new Date('2023-01-18'),
   //     action: PredicationAction.Sell,
   //   },
   // ],
 
   earningsReports: [
     {
-      year: 2022,
+      year: 2023,
       quarter: 2,
-      revenueForecastTop: 6.7 * BILLION,
-      revenueForecastBottom: 6.7 * BILLION,
-      isForecast: true,
+      totalRevenue: 6.704 * BILLION,
+      grossProfit: 2.915 * BILLION,
+      operatingIncome: 499 * MILLION,
+      netIncome: 656 * MILLION,
+      forecastRevenueTop: 5.9 * BILLION,
+      forecastRevenueBottom: 5.9 * BILLION,
+      date: convertDateToUTC(new Date('2022-08-24')),
+      links: [
+        {
+          name: 'Press Release',
+          value:
+            'https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2023',
+        },
+      ],
     },
     {
-      year: 2022,
+      year: 2023,
       quarter: 1,
       totalRevenue: 8.288 * BILLION,
       costOfRevenue: 2.857 * BILLION,
@@ -71,14 +83,14 @@ export const nvda: StockAnalysis = {
       reportLink:
         'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/0ec16816-55e2-4812-8f77-75cab5909247.pdf',
       pressReleaseLink:
-        'https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2022',
+        'https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2023',
       notes: [
         { content: 'Gaming: 3.42B +37%' },
         { content: 'Professional Visualization: 3.26B +71%' },
         { content: 'Virtual: 643M +109%' },
         { content: 'Automotive and Robotics: 125M -14%' },
       ],
-      year: 2021,
+      year: 2022,
       quarter: 4,
       totalRevenue: 7643 * MILLION,
       costOfRevenue: 2644 * MILLION,
@@ -94,7 +106,7 @@ export const nvda: StockAnalysis = {
       netIncome: 3003 * MILLION,
     },
     {
-      year: 2021,
+      year: 2022,
       quarter: 3,
       totalRevenue: 7103 * MILLION,
       costOfRevenue: 2472 * MILLION,
@@ -110,7 +122,7 @@ export const nvda: StockAnalysis = {
       netIncome: 2464 * MILLION,
     },
     {
-      year: 2021,
+      year: 2022,
       quarter: 2,
       totalRevenue: 6507 * MILLION,
       costOfRevenue: 2292 * MILLION,
@@ -126,7 +138,7 @@ export const nvda: StockAnalysis = {
       netIncome: 2374 * MILLION,
     },
     {
-      year: 2021,
+      year: 2022,
       quarter: 1,
       totalRevenue: 5661 * MILLION,
       costOfRevenue: 2032 * MILLION,
@@ -142,7 +154,7 @@ export const nvda: StockAnalysis = {
       netIncome: 1912 * MILLION,
     },
     {
-      year: 2020,
+      year: 2021,
       quarter: 4,
       totalRevenue: 5003 * MILLION,
       costOfRevenue: 1847 * MILLION,
@@ -158,7 +170,7 @@ export const nvda: StockAnalysis = {
       netIncome: 1457 * MILLION,
     },
     {
-      year: 2020,
+      year: 2021,
       quarter: 3,
       totalRevenue: 4726 * MILLION,
       costOfRevenue: 1766 * MILLION,
@@ -174,7 +186,7 @@ export const nvda: StockAnalysis = {
       netIncome: 1336 * MILLION,
     },
     {
-      year: 2020,
+      year: 2021,
       quarter: 2,
       totalRevenue: 3866 * MILLION,
       costOfRevenue: 1591 * MILLION,
@@ -190,7 +202,7 @@ export const nvda: StockAnalysis = {
       netIncome: 622 * MILLION,
     },
     {
-      year: 2020,
+      year: 2021,
       quarter: 1,
       totalRevenue: 3080 * MILLION,
       costOfRevenue: 1076 * MILLION,

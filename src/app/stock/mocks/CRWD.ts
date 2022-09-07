@@ -1,4 +1,5 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -12,6 +13,29 @@ export const crwd: StockAnalysis = {
     },
   ],
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 2,
+      date: convertDateToUTC(new Date('2022-08-31')),
+      totalRevenue: 535.153 * MILLION,
+      grossProfit: 394.586 * MILLION,
+      operatingIncome: -48.307 * MILLION,
+      netIncome: -48.313 * MILLION,
+      forecastRevenueTop: 575.9 * MILLION,
+      forecastRevenueBottom: 569.1 * MILLION,
+      links: [
+        {
+          name: 'Q2 Financial Results',
+          value:
+            'https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-reports-second-quarter-fiscal-year-2023-financial',
+        },
+        {
+          name: 'Form 10-Q',
+          value:
+            'https://ir.crowdstrike.com/static-files/49137c3e-100d-4ad7-8487-b64d33d3fa41',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 1,

@@ -1,5 +1,6 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 export const teamRisks = [
@@ -43,17 +44,13 @@ export const team: StockAnalysis = {
     {
       year: 2022,
       quarter: 2,
-      isForecast: true,
-      revenueForecastBottom: 795 * MILLION,
-      revenueForecastTop: 810 * MILLION,
-    },
-    {
-      year: 2022,
-      quarter: 2,
       totalRevenue: 759.841 * MILLION,
       costOfRevenue: 133.154 * MILLION,
       operatingIncome: -63.253 * MILLION,
       netIncome: -105.463 * MILLION,
+      forecastRevenueTop: 810 * MILLION,
+      forecastRevenueBottom: 795 * MILLION,
+      date: convertDateToUTC(new Date('2022-8-4')),
       shareholderLetter:
         'https://s28.q4cdn.com/541786762/files/doc_financials/2022/q4/TEAM-Q4FY2022-Shareholder-Letter.pdf',
       pressReleaseLink:

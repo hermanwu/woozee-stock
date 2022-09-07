@@ -1,3 +1,4 @@
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -9,6 +10,7 @@ export const open: StockAnalysis = {
   ticker: 'open',
   lastUpdated: new Date('2021-08-22'),
   irAddress: 'https://investor.opendoor.com/',
+  industries: [IndustryType.digitalTransformation, IndustryType.ibuying],
   earningsReports: [
     {
       year: 2021,

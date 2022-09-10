@@ -1,0 +1,9 @@
+<span *ngIf="stock">
+  {{ "#" + stock.ticker }}
+  {{ "#" + stock.shortName }}
+  <span *ngFor="let item of stock.industries">{{
+    "#" + item.split(" ").join("")
+  }}</span>
+</span>
+
+{{ defaultTags }}

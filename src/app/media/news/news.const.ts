@@ -1,6 +1,9 @@
 import { MacroType } from 'src/app/macro/macro.enum';
 import { TimeFrame } from 'src/app/shared/components/stats-display/stats-display.interface';
-import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
+import {
+  convertDateToUTC,
+  getUtcDate,
+} from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { Source } from 'src/app/stock/models/news-source.enum';
 import { EventType, News } from 'src/app/stock/models/news.model';
@@ -9,7 +12,7 @@ export const allNews: News[] = [
   {
     uuid: 'n15',
     type: EventType.macro,
-    date: convertDateToUTC(new Date('2022-09-9')),
+    date: getUtcDate(2022, 9, 9),
     tags: [MacroType.sp500, MacroType.nasdaq],
     title:
       'Stock market rallied on Friday and snapped a three-week losing streak wtih a strong performance. Nasdaq was up 4.14% and S&P 500 gained 3.65% for the week.',
@@ -17,7 +20,7 @@ export const allNews: News[] = [
   {
     uuid: 'n15',
     type: EventType.stock,
-    date: convertDateToUTC(new Date('2022-09-9')),
+    date: getUtcDate(2022, 9, 9),
     tickers: ['hood'],
     title:
       'Robinhood is working on enabling Cardano (ADA) cryptocurrency transfers on its platform.',
@@ -25,7 +28,7 @@ export const allNews: News[] = [
   {
     uuid: 'n13',
     type: EventType.stock,
-    date: convertDateToUTC(new Date('2022-09-9')),
+    date: getUtcDate(2022, 9, 9),
     tickers: ['oxy'],
     title: 'Warren Buffet increased Occidental ownership to 26.8% from 20%.',
   },

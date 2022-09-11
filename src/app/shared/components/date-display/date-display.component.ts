@@ -9,11 +9,10 @@ export class DateDisplayComponent implements OnChanges {
   @Input() date: Date;
 
   constructor() {
-    let timeZone;
-    if (typeof Intl === 'object' && typeof Intl.DateTimeFormat === 'function') {
-      timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      console.log({ timeZone });
-    }
+    // let timeZone;
+    // if (typeof Intl === 'object' && typeof Intl.DateTimeFormat === 'function') {
+    //   timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    // }
   }
 
   ngOnChanges() {

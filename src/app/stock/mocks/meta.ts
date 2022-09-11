@@ -130,7 +130,7 @@ export const meta: StockAnalysis = {
       costOfRevenue: 5.192 * BILLION,
       operatingIncome: 8.358 * BILLION,
       netIncome: 6.687 * BILLION,
-      date: convertDateToUTC(new Date('2022-7-27')),
+      date: convertDateToUTC(new Date('2022-07-27')),
       slidesLink:
         'https://s21.q4cdn.com/399680738/files/doc_financials/2022/q2/Q2-2022_Earnings-Presentation.pdf',
       pressReleaseLink:

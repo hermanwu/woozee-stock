@@ -27,7 +27,7 @@ export const msft: StockAnalysis = {
       costOfRevenue: 16.429 * BILLION,
       operatingIncome: 20.534 * BILLION,
       netIncome: 16.74 * BILLION,
-      date: convertDateToUTC(new Date('2022-7-15')),
+      date: convertDateToUTC(new Date('2022-07-15')),
       links: [
         {
           name: 'Press Release',

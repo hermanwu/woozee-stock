@@ -27,7 +27,7 @@ export const zs: StockAnalysis = {
       netIncome: -97.652 * MILLION,
       forecastRevenueTop: 341 * MILLION,
       forecastRevenueBottom: 339 * MILLION,
-      date: convertDateToUTC(new Date('2022-9-8')),
+      date: convertDateToUTC(new Date('2022-09-08')),
       links: [
         {
           name: 'Press Release',

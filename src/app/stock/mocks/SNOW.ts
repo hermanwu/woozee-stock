@@ -40,7 +40,7 @@ export const snow: StockAnalysis = {
       netIncome: -222.806 * MILLION,
       forecastRevenueTop: 535 * MILLION,
       forecastRevenueBottom: 530 * MILLION,
-      date: convertDateToUTC(new Date('2022-8-24')),
+      date: convertDateToUTC(new Date('2022-08-24')),
       links: [
         {
           name: 'Earnings Release',

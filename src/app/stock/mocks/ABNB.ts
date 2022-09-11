@@ -75,7 +75,7 @@ export const abnb: StockAnalysis = {
       costOfRevenue: 390.107 * MILLION,
       operatingIncome: 368.823 * MILLION,
       netIncome: 383.111 * MILLION,
-      date: convertDateToUTC(new Date('2022-8-2')),
+      date: convertDateToUTC(new Date('2022-08-02')),
       forecastRevenueTop: 2.88 * BILLION,
       forecastRevenueBottom: 2.78 * BILLION,
       pressReleaseLink:

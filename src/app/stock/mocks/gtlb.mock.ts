@@ -15,7 +15,7 @@ export const gtlb: StockAnalysis = {
       grossProfit: 88.011 * MILLION,
       operatingIncome: -65.302 * MILLION,
       netIncome: -61.497 * MILLION,
-      date: convertDateToUTC(new Date('2022-9-7')),
+      date: convertDateToUTC(new Date('2022-09-07')),
     },
     {
       year: 2023,

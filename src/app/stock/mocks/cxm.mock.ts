@@ -26,7 +26,7 @@ export const cxm: StockAnalysis = {
       netIncome: -23.927 * MILLION,
       forecastRevenueTop: 157 * MILLION,
       forecastRevenueBottom: 155 * MILLION,
-      date: convertDateToUTC(new Date('2022-9-8')),
+      date: convertDateToUTC(new Date('2022-09-08')),
       links: [
         {
           name: 'Press Release',

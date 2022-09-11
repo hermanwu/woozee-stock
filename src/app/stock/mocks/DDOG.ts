@@ -28,7 +28,7 @@ export const ddog: StockAnalysis = {
       netIncome: -4.879 * MILLION,
       forecastRevenueTop: 414 * MILLION,
       forecastRevenueBottom: 410 * MILLION,
-      date: convertDateToUTC(new Date('2022-8-4')),
+      date: convertDateToUTC(new Date('2022-08-04')),
       links: [
         {
           name: 'Press Release',

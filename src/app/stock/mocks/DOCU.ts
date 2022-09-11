@@ -44,7 +44,7 @@ export const docu: StockAnalysis = {
       netIncome: -45.078 * MILLION,
       forecastRevenueTop: 628 * MILLION,
       forecastRevenueBottom: 624 * MILLION,
-      date: convertDateToUTC(new Date('2022-9-8')),
+      date: convertDateToUTC(new Date('2022-09-08')),
       links: [
         {
           name: 'Press Release',

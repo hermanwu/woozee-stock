@@ -26,7 +26,7 @@ export const dash: StockAnalysis = {
       netIncome: -263 * MILLION,
       forecastRevenueTop: 1.62 * BILLION,
       forecastRevenueBottom: 1.608 * BILLION,
-      date: convertDateToUTC(new Date('2022-8-4')),
+      date: convertDateToUTC(new Date('2022-08-04')),
       pressReleaseLink:
         'https://s22.q4cdn.com/280253921/files/doc_financials/2022/q2/DASH-Q2-2022-Shareholder-Letter_FINAL.pdf',
     },

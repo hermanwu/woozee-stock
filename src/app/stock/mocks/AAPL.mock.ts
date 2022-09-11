@@ -55,7 +55,7 @@ export const aapl: StockAnalysis = {
       costOfRevenue: 47.074 * BILLION,
       operatingIncome: 23.076 * BILLION,
       netIncome: 19.442 * BILLION,
-      date: convertDateToUTC(new Date('2022-7-28')),
+      date: convertDateToUTC(new Date('2022-07-28')),
       links: [
         {
           name: 'Press Release',

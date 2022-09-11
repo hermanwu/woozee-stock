@@ -35,7 +35,7 @@ export const googl: StockAnalysis = {
       costOfRevenue: 30104 * MILLION,
       operatingIncome: 19453 * MILLION,
       netIncome: 16002 * MILLION,
-      date: convertDateToUTC(new Date('2022-7-15')),
+      date: convertDateToUTC(new Date('2022-07-15')),
     },
     {
       year: 2022,

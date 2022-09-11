@@ -176,7 +176,7 @@ export const amzn: StockAnalysis = {
       netIncome: -2028 * MILLION,
       forecastRevenueBottom: 125 * BILLION,
       forecastRevenueTop: 130 * BILLION,
-      date: convertDateToUTC(new Date('2022-7-28')),
+      date: convertDateToUTC(new Date('2022-07-28')),
       stats: [
         {
           name: 'Sale Categories',

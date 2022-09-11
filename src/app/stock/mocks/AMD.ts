@@ -31,7 +31,7 @@ export const amd: StockAnalysis = {
       netIncome: 447 * MILLION,
       forecastRevenueTop: 6.7 * BILLION,
       forecastRevenueBottom: 6.7 * BILLION,
-      date: convertDateToUTC(new Date('2022-8-2')),
+      date: convertDateToUTC(new Date('2022-08-02')),
 
       stats: [
         {

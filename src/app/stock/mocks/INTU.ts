@@ -20,7 +20,7 @@ export const intu: StockAnalysis = {
       grossProfit: 1814 * MILLION,
       operatingIncome: -75 * MILLION,
       netIncome: -56 * MILLION,
-      date: convertDateToUTC(new Date('2022-8-23')),
+      date: convertDateToUTC(new Date('2022-08-23')),
     },
     {
       year: 2022,

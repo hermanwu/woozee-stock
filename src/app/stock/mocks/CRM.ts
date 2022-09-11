@@ -29,7 +29,7 @@ export const crm: StockAnalysis = {
       grossProfit: 5.593 * BILLION,
       operatingIncome: 193 * MILLION,
       netIncome: 68 * MILLION,
-      date: convertDateToUTC(new Date('2022-8-24')),
+      date: convertDateToUTC(new Date('2022-08-24')),
       forecastRevenueTop: 7.83 * BILLION,
       forecastRevenueBottom: 7.82 * BILLION,
       links: [

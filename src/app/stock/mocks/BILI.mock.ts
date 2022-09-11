@@ -45,7 +45,7 @@ export const bili: StockAnalysis = {
       netIncome: -2.010445 * BILLION * rmbToDollar,
       forecastRevenueTop: 5.8 * BILLION * rmbToDollar,
       forecastRevenueBottom: 5.6 * BILLION * rmbToDollar,
-      date: convertDateToUTC(new Date('2022-9-8')),
+      date: convertDateToUTC(new Date('2022-09-08')),
       links: [
         {
           name: 'Press Release',
@@ -64,7 +64,7 @@ export const bili: StockAnalysis = {
       netIncome: -2.284132 * BILLION * rmbToDollar,
       forecastRevenueTop: 4.95 * BILLION * rmbToDollar,
       forecastRevenueBottom: 4.85 * BILLION * rmbToDollar,
-      date: convertDateToUTC(new Date('2022-6-9')),
+      date: convertDateToUTC(new Date('2022-06-09')),
 
       pressReleaseLink:
         'https://ir.bilibili.com/static-files/91528e13-31e8-4460-a3c0-e04abedeb5fd',

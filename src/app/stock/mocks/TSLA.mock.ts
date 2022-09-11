@@ -77,7 +77,7 @@ export const tsla: StockAnalysis = {
       grossProfit: 4.234 * BILLION,
       operatingIncome: 2.464 * BILLION,
       netIncome: 2.259 * BILLION,
-      date: convertDateToUTC(new Date('2022-7-20')),
+      date: convertDateToUTC(new Date('2022-07-20')),
       forecastQuarterlyGrowthRateTop: 0.5,
       forecastQuarterlyGrowthRateBottom: 0.5,
       links: [

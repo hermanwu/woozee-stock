@@ -18,7 +18,7 @@ export const path: StockAnalysis = {
       netIncome: -120.378 * MILLION,
       forecastRevenueTop: 245 * MILLION,
       forecastRevenueBottom: 243 * MILLION,
-      date: convertDateToUTC(new Date('2022-9-7')),
+      date: convertDateToUTC(new Date('2022-09-07')),
     },
     {
       year: 2023,

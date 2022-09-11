@@ -50,7 +50,7 @@ export const team: StockAnalysis = {
       netIncome: -105.463 * MILLION,
       forecastRevenueTop: 810 * MILLION,
       forecastRevenueBottom: 795 * MILLION,
-      date: convertDateToUTC(new Date('2022-8-4')),
+      date: convertDateToUTC(new Date('2022-08-04')),
       shareholderLetter:
         'https://s28.q4cdn.com/541786762/files/doc_financials/2022/q4/TEAM-Q4FY2022-Shareholder-Letter.pdf',
       pressReleaseLink:

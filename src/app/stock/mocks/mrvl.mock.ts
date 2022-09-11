@@ -13,7 +13,7 @@ export const mrvl: StockAnalysis = {
     {
       year: 2022,
       quarter: 2,
-      date: new Date('2022-8-25'),
+      date: new Date('2022-08-25'),
       totalRevenue: 1516.9 * MILLION,
       grossProfit: 786.0 * MILLION,
       operatingIncome: 39.1 * MILLION,

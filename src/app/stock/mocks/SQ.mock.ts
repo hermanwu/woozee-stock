@@ -87,7 +87,7 @@ export const sq: StockAnalysis = {
       grossProfit: 1469.65 * MILLION,
       operatingIncome: -213.77 * MILLION,
       netIncome: -208.01 * MILLION,
-      date: convertDateToUTC(new Date('2022-8-4')),
+      date: convertDateToUTC(new Date('2022-08-04')),
       links: [
         {
           name: 'Shareholder Letter',

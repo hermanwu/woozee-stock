@@ -23,7 +23,7 @@ export const baba: StockAnalysis = {
       grossProfit: 65107 * MILLION * rmbToDollar,
       operatingIncome: 24943 * MILLION * rmbToDollar,
       netIncome: 20298 * MILLION * rmbToDollar,
-      date: convertDateToUTC(new Date('2022-8-4')),
+      date: convertDateToUTC(new Date('2022-08-04')),
       links: [
         {
           name: 'Press Release',

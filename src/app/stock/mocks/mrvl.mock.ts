@@ -7,6 +7,7 @@ export const mrvl: StockAnalysis = {
   shortName: 'Marvell Technology',
   irAddress: 'https://investor.marvell.com/',
   marketCap: 48 * BILLION,
+  ticker: 'mrvl',
 
   earningsReports: [
     {

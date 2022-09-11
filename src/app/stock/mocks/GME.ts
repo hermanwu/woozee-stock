@@ -1,5 +1,6 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { UserType } from '../components/business-overview/business.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -60,6 +61,27 @@ export const gme: StockAnalysis = {
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 2,
+      date: convertDateToUTC(new Date('2022-09-07')),
+      totalRevenue: 1.136 * BILLION,
+      grossProfit: 282.2 * MILLION,
+      operatingIncome: -107.8 * MILLION,
+      netIncome: -108.7 * MILLION,
+      links: [
+        {
+          name: 'Press Release',
+          value:
+            'https://investor.gamestop.com/news-releases/news-release-details/gamestop-reports-second-quarter-fiscal-year-2022-results',
+        },
+        {
+          name: 'Form 10-Q',
+          value:
+            'https://investor.gamestop.com/sec-filings/sec-filing/10-q/0001326380-22-000126',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 1,

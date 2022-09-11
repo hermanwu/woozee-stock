@@ -2,22 +2,6 @@
   <div title i18n>Stocks</div>
 </app-title-menu>
 
-<div>
-  <app-title-menu>
-    <div header-2 i18n>Trending Bullish</div>
-  </app-title-menu>
-
-  <div class="stock-list-table">
-    <app-stock-list-table [stocks]="bullishStocks"></app-stock-list-table>
-  </div>
-</div>
-
-<div class="margin-top-1rem">
-  <app-title-menu>
-    <div header-2 i18n>Trending Bearish</div>
-  </app-title-menu>
-
-  <div class="stock-list-table">
-    <app-stock-list-table [stocks]="bearishStocks"></app-stock-list-table>
-  </div>
+<div class="stock-list-table">
+  <app-stock-list-table [stocks]="stocks"></app-stock-list-table>
 </div>

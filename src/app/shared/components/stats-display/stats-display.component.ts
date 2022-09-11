@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { StatsDisplay, TimeFrame } from './stats-display.interface';
+import {
+  DisplayType,
+  StatsDisplay,
+  TimeFrame,
+} from './stats-display.interface';
 
 @Component({
   selector: 'app-stats-display',
@@ -9,6 +13,7 @@ import { StatsDisplay, TimeFrame } from './stats-display.interface';
 export class StatsDisplayComponent implements OnInit {
   @Input() statsDisplay: StatsDisplay;
 
+  readonly DisplayType = DisplayType;
   readonly TimeFrameEnum = TimeFrame;
 
   constructor() {}

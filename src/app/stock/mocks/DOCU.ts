@@ -1,5 +1,6 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -34,6 +35,29 @@ export const docu: StockAnalysis = {
   shortName: 'DocuSign',
 
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 622.184 * MILLION,
+      grossProfit: 485.48 * MILLION,
+      operatingIncome: -41.09 * MILLION,
+      netIncome: -45.078 * MILLION,
+      forecastRevenueTop: 628 * MILLION,
+      forecastRevenueBottom: 624 * MILLION,
+      date: convertDateToUTC(new Date('2022-9-8')),
+      links: [
+        {
+          name: 'Press Release',
+          value:
+            'https://investor.docusign.com/investors/press-releases/press-release-details/2022/DocuSign-Announces-Second-Quarter-Fiscal-2023-Financial-Results/',
+        },
+        {
+          name: 'Earnings Slides',
+          value:
+            'https://s22.q4cdn.com/408980645/files/doc_financials/2023/q2/DS-Q2-FY2023-Earnings-Slides_Final.pdf',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 1,

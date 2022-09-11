@@ -37,6 +37,15 @@
   </app-title-menu>
 
   <div class="grid grid-dynamic">
+    <div class="padding-1rem">
+      <app-card>
+        <app-earnings-report
+          [stock]="stockAnalysis"
+          [pastTwoYearsEarningsReports]="stockAnalysis?.earningsReports"
+        ></app-earnings-report>
+      </app-card>
+    </div>
+
     <div class="padding-1rem" *ngIf="risks?.length > 0">
       <app-card>
         <app-title-menu>
@@ -161,12 +170,6 @@
             {{ stockAnalysis.predications[0]?.start | date }}
           </div>
         </div>
-      </app-card>
-    </div>
-
-    <div class="padding-1rem">
-      <app-card>
-        <app-earnings-report [stock]="stockAnalysis"></app-earnings-report>
       </app-card>
     </div>
 

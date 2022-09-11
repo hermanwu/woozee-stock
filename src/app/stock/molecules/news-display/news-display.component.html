@@ -1,14 +1,48 @@
-<div>
-  <h1>
-    📰 {{ news.type }} ➡️ {{ news.title }}
-    <span *ngIf="news.isBullish === true">📈 Bullish 🚀</span>
-  </h1>
+<h1>
+  <app-date-display [date]="news?.date"></app-date-display>
+</h1>
+
+<app-stock-image-display [ticker]="stock?.ticker"></app-stock-image-display>
+
+<h2>🎙️ {{ news.title }}</h2>
+
+<ng-container [ngSwitch]="news.type">
+  <ng-container *ngSwitchCase="eventType.macro" i18n> </ng-container>
+
+  <ng-container *ngSwitchCase="eventType.industry" i18n> </ng-container>
+
+  <ng-container *ngSwitchCase="eventType.industry" i18n> </ng-container>
+
+  <ng-container *ngSwitchDefault i18n> </ng-container>
+</ng-container>
+
+<div *ngIf="!environment.production">
+  <button mat-button type="button" (click)="showDetails = !showDetails">
+    More
+    <mat-icon *ngIf="showDetails">expand_less</mat-icon>
+    <mat-icon *ngIf="!showDetails">expand_more</mat-icon>
+  </button>
+
+  <button mat-button (click)="openDialog()">Twitter</button>
+
+  <button mat-button (click)="openInstagramDialog()">Instagram</button>
+</div>
+
+<div *ngIf="showDetails">
+  <ng-container *ngIf="news.type === eventType.earnings">
+    <app-earnings-report
+      [stock]="stock"
+      [pastTwoYearsEarningsReports]="stock?.earningsReports"
+    ></app-earnings-report>
+  </ng-container>
+
+  📈 {{ stock?.ticker }} - {{ stock?.shortName }} -
+  <span *ngIf="stock?.industries?.[0]">
+    {{ stock?.industries?.[0] }}
+    {{ industryEmojiMap[stock?.industries[0]] }}
+  </span>
 
   <app-image-display [imageLink]="imageLink"></app-image-display>
-
-  <ul>
-    <li *ngFor="let item of news.content">🔸 {{ item }}</li>
-  </ul>
 
   <ul>
     <li *ngFor="let item of news.stats">
@@ -16,10 +50,7 @@
     </li>
   </ul>
 
-  <div class="right-align">
-    <span>
-      🔗 Source:
-      {{ news.source }}
-    </span>
-  </div>
+  <ul>
+    <li *ngFor="let item of news.content">🔸 {{ item }}</li>
+  </ul>
 </div>

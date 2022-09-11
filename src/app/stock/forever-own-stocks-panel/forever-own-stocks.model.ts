@@ -1,7 +1,7 @@
 import { aapl } from '../mocks/aapl.mock';
 import { baba } from '../mocks/baba';
-import { meta } from '../mocks/fb';
 import { googl } from '../mocks/googl.mock';
+import { meta } from '../mocks/meta';
 import { msft } from '../mocks/msft';
 import { pltr } from '../mocks/pltr';
 import { snow } from '../mocks/snow';

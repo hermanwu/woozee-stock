@@ -1,10 +1,13 @@
 <app-title-menu>
-  <div title>News</div>
-</app-title-menu>
-
-<app-title-menu>
-  <div header-2>Trending</div>
+  <div title>Trending News</div>
   <div buttons>
+    <button
+      mat-button
+      (click)="openDailyReportDialog()"
+      [disabled]="environment.production"
+    >
+      Daily Report
+    </button>
     <button mat-icon-button (click)="showTools = !showTools" disabled>
       <mat-icon>filter_alt</mat-icon>
     </button>
@@ -14,7 +17,7 @@
 <div *ngIf="showTools"></div>
 
 <div class="news-card" *ngFor="let item of news">
-  <app-card [isSquare]="'true'">
+  <app-card>
     <app-news-display [news]="item" [expanded]="true"></app-news-display>
   </app-card>
 </div>

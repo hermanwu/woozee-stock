@@ -1,6 +1,8 @@
 export enum StockListTableColumn {
+  index = 'index',
   marketCap = 'marketCap',
   ticker = 'ticker',
+  shortName = 'Short Name',
 
   // revenue
   ttmRevenue = 'ttmRevenue',
@@ -12,4 +14,9 @@ export enum StockListTableColumn {
   // Valuation
   psRatio = 'psRatio',
   marketCapToOiRatio = 'marketCapToOiRatio',
+
+  latestEarningsDate = 'latest earning date',
+
+  bullArguments = 'Bull Arguments',
+  bearArguments = 'Bear Arguments',
 }

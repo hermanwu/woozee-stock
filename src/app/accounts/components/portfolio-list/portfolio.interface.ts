@@ -6,11 +6,9 @@ export interface Holding {
 }
 
 export enum Strategy {
-  sellCoveredPutWithPremiumToStock = 'Sell covered put and add premium to stock owning',
-  sellCoveredCallWithPremiumToStock = 'Sell covered call and add premium to stock owning',
-  callSpread = 'Call Spread',
-  putSpread = 'Put Spread',
-  spTrading = 'S&P Trading',
+  weeklyOption = 'Roll Option Week by Week',
+  callSelling = ' Sell Call',
+  putSelling = 'Sell Put',
 }
 export interface Portfolio {
   riskUuids?: string[];

@@ -1,0 +1,82 @@
+📊 <strong *ngIf="statsDisplay?.name">{{ statsDisplay.name }} </strong>
+
+<ng-container [ngSwitch]="statsDisplay.displayType">
+  <ng-container *ngSwitchCase="DisplayType.percent" i18n>
+    was
+    {{
+      statsDisplay?.value | siUnit: 3 | percent: "1.1-2" | undefined
+    }}</ng-container
+  >
+
+  <ng-container *ngSwitchDefault i18n>
+    <span
+      *ngIf="
+        statsDisplay &&
+        statsDisplay?.value &&
+        (statsDisplay?.changeRate ||
+          statsDisplay?.value > statsDisplay?.previousValue)
+      "
+    >
+      increased to
+    </span>
+
+    <span
+      *ngIf="
+        statsDisplay &&
+        statsDisplay?.value &&
+        (statsDisplay?.changeRate < 0 ||
+          statsDisplay?.value < statsDisplay?.previousValue)
+      "
+    >
+      decreased to
+    </span>
+
+    <span *ngIf="statsDisplay?.value">
+      {{ statsDisplay.value | siUnit: 2 | undefined }},
+    </span>
+
+    <app-movement-display
+      *ngIf="
+        (statsDisplay?.value && statsDisplay?.previousValue) ||
+        statsDisplay?.changeRate
+      "
+      [previousData]="statsDisplay?.previousValue"
+      [currentData]="statsDisplay?.value"
+      [changePercent]="statsDisplay?.changeRate"
+    ></app-movement-display
+    ><ng-container [ngSwitch]="statsDisplay.timeFrame">
+      <span *ngSwitchDefault>YoY</span
+      ><span *ngSwitchCase="TimeFrameEnum.qoq">QoQ</span
+      ><span *ngSwitchCase="TimeFrameEnum.mtm">MoM</span>
+    </ng-container>
+    <ng-container *ngIf="statsDisplay.previousValue">
+      (from {{ statsDisplay.previousValue | siUnit: 2 | undefined }})
+    </ng-container>
+    <span *ngIf="statsDisplay?.expectedChangeRate"
+      >,{{
+        statsDisplay?.expectedChangeRate < statsDisplay?.changeRate
+          ? "above expectations of"
+          : "below expectations of"
+      }}{{
+        statsDisplay?.expectedChangeRate
+          | siUnit: 3
+          | percent: "1.1-2"
+          | undefined
+      }}</span
+    ><span *ngIf="statsDisplay?.expectedValue"
+      >,
+      {{
+        statsDisplay?.expectedValue < statsDisplay?.value
+          ? "above expectations of"
+          : "below expectations of"
+      }}
+      {{ statsDisplay?.expectedValue | siUnit: 2 | undefined }}
+    </span>
+  </ng-container>
+</ng-container>
+
+<ul *ngIf="statsDisplay.details">
+  <li *ngFor="let item of statsDisplay.details">
+    <app-stats-display [statsDisplay]="item"></app-stats-display>
+  </li>
+</ul>

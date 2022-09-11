@@ -1,3 +1,4 @@
+import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -5,10 +6,30 @@ export const path: StockAnalysis = {
   marketCap: 9.97 * BILLION,
   name: 'Ui Path',
   ticker: 'path',
+  irAddress: 'https://ir.uipath.com/',
 
   earningsReports: [
     {
-      year: 2021,
+      year: 2023,
+      quarter: 2,
+      totalRevenue: 242.222 * MILLION,
+      grossProfit: 197.646 * MILLION,
+      operatingIncome: -120.193 * MILLION,
+      netIncome: -120.378 * MILLION,
+      forecastRevenueTop: 245 * MILLION,
+      forecastRevenueBottom: 243 * MILLION,
+      date: convertDateToUTC(new Date('2022-9-7')),
+    },
+    {
+      year: 2023,
+      quarter: 1,
+      totalRevenue: 245.07 * MILLION,
+      grossProfit: 200.05 * MILLION,
+      operatingIncome: -115.95 * MILLION,
+      netIncome: -122.56 * MILLION,
+    },
+    {
+      year: 2022,
       quarter: 4,
       totalRevenue: 289 * MILLION,
       costOfRevenue: 41 * MILLION,
@@ -24,7 +45,7 @@ export const path: StockAnalysis = {
       netIncome: -63 * MILLION,
     },
     {
-      year: 2021,
+      year: 2022,
       quarter: 3,
       totalRevenue: 220 * MILLION,
       costOfRevenue: 43 * MILLION,
@@ -40,7 +61,7 @@ export const path: StockAnalysis = {
       netIncome: -122 * MILLION,
     },
     {
-      year: 2021,
+      year: 2022,
       quarter: 2,
       totalRevenue: 195 * MILLION,
       costOfRevenue: 35 * MILLION,
@@ -56,7 +77,7 @@ export const path: StockAnalysis = {
       netIncome: -100 * MILLION,
     },
     {
-      year: 2021,
+      year: 2022,
       quarter: 1,
       totalRevenue: 186 * MILLION,
       costOfRevenue: 49 * MILLION,
@@ -72,7 +93,7 @@ export const path: StockAnalysis = {
       netIncome: -239 * MILLION,
     },
     {
-      year: 2020,
+      year: 2021,
       quarter: 4,
       totalRevenue: 207 * MILLION,
       costOfRevenue: 20 * MILLION,
@@ -88,7 +109,7 @@ export const path: StockAnalysis = {
       netIncome: 26 * MILLION,
     },
     {
-      year: 2020,
+      year: 2021,
       quarter: 3,
       totalRevenue: 147 * MILLION,
       costOfRevenue: 17 * MILLION,
@@ -104,7 +125,7 @@ export const path: StockAnalysis = {
       netIncome: -70 * MILLION,
     },
     {
-      year: 2020,
+      year: 2021,
       quarter: 2,
       totalRevenue: 139 * MILLION,
       costOfRevenue: 14 * MILLION,
@@ -120,7 +141,7 @@ export const path: StockAnalysis = {
       netIncome: 4 * MILLION,
     },
     {
-      year: 2020,
+      year: 2021,
       quarter: 1,
       totalRevenue: 113 * MILLION,
       costOfRevenue: 13 * MILLION,

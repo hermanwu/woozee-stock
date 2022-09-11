@@ -24,6 +24,7 @@ import { coin } from './coin';
 import { crm } from './crm';
 import { crwd } from './crwd';
 import { csco } from './csco.mock';
+import { cxm } from './cxm.mock';
 import { dash } from './dash';
 import { dbx } from './dbx';
 import { ddog } from './DDOG';
@@ -40,6 +41,7 @@ import { fvrr } from './fvrr';
 import { gme } from './gme';
 import { googl } from './googl.mock';
 import { gs } from './gs';
+import { gtlb } from './gtlb.mock';
 import { HD } from './HD';
 import { hood } from './hood';
 import { huya } from './huya';
@@ -51,6 +53,7 @@ import { jd } from './JD';
 import { JMIA } from './JMIA';
 import { jnj } from './jnj';
 import { jpm } from './jpm';
+import { li } from './li.mock';
 import { lmt } from './lmt';
 import { logi } from './LOGI';
 import { lrcx } from './lrcx';
@@ -68,7 +71,7 @@ import { mttr } from './mttr.mock';
 import { mu } from './mu.mock';
 import { net } from './net';
 import { nflx } from './NFLX';
-import { NIO } from './NIO_mock';
+import { nio } from './nio.mock';
 import { noc } from './noc';
 import { now } from './now';
 import { ntdoy } from './ntdoy';
@@ -135,7 +138,7 @@ import { xpev } from './XPEV';
 import { you } from './you';
 import { z } from './Z.mock';
 import { zm } from './zm';
-import { ZS } from './ZS';
+import { zs } from './ZS';
 
 export const foreverOwnedStock = {
   // Ecosystem
@@ -206,7 +209,7 @@ export const stocksMap = {
   msft,
   net,
   nflx,
-  NIO,
+  nio,
   noc,
   now,
   ntdoy,
@@ -266,7 +269,7 @@ export const stocksMap = {
   you,
   z,
   zm,
-  ZS,
+  zs,
   ftnt,
   dbx,
   path,
@@ -285,4 +288,7 @@ export const stocksMap = {
   s,
   lulu,
   pstg,
+  gtlb,
+  li,
+  cxm,
 };

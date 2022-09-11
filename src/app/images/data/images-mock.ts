@@ -46,4 +46,24 @@ export const images = new Map<string, string[]>([
     'PANW',
     ['https://pbs.twimg.com/media/Fa0z3XiUIAA02lS?format=jpg&name=large'],
   ],
+  [
+    'LULU',
+    ['https://pbs.twimg.com/media/FbmW7vBUEAEurwc?format=png&name=900x900'],
+  ],
+  [
+    'DOCU',
+    ['https://pbs.twimg.com/media/FcKWHNJakAMH6KM?format=jpg&name=medium'],
+  ],
+  [
+    'ZS',
+    ['https://pbs.twimg.com/media/FcKrgcPagAQcjdA?format=png&name=900x900'],
+  ],
+  [
+    'oxy',
+    ['https://pbs.twimg.com/media/FcP7YRDakAA5NCd?format=jpg&name=large'],
+  ],
+  [
+    'HOOD',
+    ['https://pbs.twimg.com/media/FcQQs2_aMAAQBPE?format=png&name=900x900'],
+  ],
 ]);

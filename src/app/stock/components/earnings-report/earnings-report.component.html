@@ -1,41 +1,23 @@
-<app-title-menu>
-  <div title>Latest Earnings Report</div>
-</app-title-menu>
+<ng-container
+  *ngIf="pastTwoYearsEarningsReports?.[0] && pastTwoYearsEarningsReports[0].date; else noReport"
+>
+  <app-title-menu>
+    <div title>
+      🎙️
+      <app-date-display
+        [date]="pastTwoYearsEarningsReports[0].date"
+      ></app-date-display>
+      Earnings Results
+    </div>
+  </app-title-menu>
 
-<ul>
-  <li *ngIf="earningReport?.pressReleaseLink">
-    <a target="_blank" href="{{ earningReport?.pressReleaseLink }}">
-      Press Release {{ emojiLink }}
-    </a>
-  </li>
+  <app-stock-metric-display
+    [stock]="stock"
+    [displayMetrics]="displayMetrics"
+  ></app-stock-metric-display>
+  <app-links-display
+    [links]="pastTwoYearsEarningsReports?.[0]?.links"
+  ></app-links-display>
+</ng-container>
 
-  <li *ngIf="earningReport?.reportLink">
-    <a target="_blank" href="{{ earningReport?.reportLink }}">
-      SEC Filing {{ emojiLink }}
-    </a>
-  </li>
-
-  <li *ngIf="earningReport?.slidesLink">
-    <a target="_blank" href="{{ earningReport?.slidesLink }}">
-      Presentation {{ emojiLink }}</a
-    >
-  </li>
-
-  <li *ngIf="earningReport?.webcast">
-    <a target="_blank" href="{{ earningReport?.webcast }}">
-      Webcast {{ emojiLink }}</a
-    >
-  </li>
-
-  <li *ngIf="earningReport?.shareholderLetter">
-    <a target="_blank" href="{{ earningReport?.shareholderLetter }}">
-      Shareholder Letter {{ emojiLink }}</a
-    >
-  </li>
-
-  <li *ngIf="earningReport?.transcript">
-    <a target="_blank" href="{{ earningReport?.transcript }}">
-      Transcript {{ emojiLink }}</a
-    >
-  </li>
-</ul>
+<ng-template #noReport>No Earnings Report</ng-template>

@@ -84,6 +84,7 @@ export const hood: StockAnalysis = {
   marketCap: 11.72 * BILLION,
   logo: '',
   name: 'Robinhood',
+  shortName: 'Robinhood',
   description: [],
   ticker: 'hood',
   irAddress: 'https://investors.robinhood.com/overview/default.aspx',

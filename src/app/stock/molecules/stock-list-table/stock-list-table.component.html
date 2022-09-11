@@ -1,94 +1,130 @@
 <div class="container">
   <div class="stock-row">
-    <!--Column 1-->
-    <div>#</div>
+    <div *ngFor="let column of displayColumns">
+      <ng-container [ngSwitch]="column">
+        <ng-container *ngSwitchCase="stockListTableColumn.index">
+          #
+        </ng-container>
 
-    <!--Column 2-->
-    <div>
-      Ticker
-      <span>
-        <button
-          mat-icon-button
-          type="button"
-          (click)="sort(stockListTableColumn.ticker)"
-        >
-          <mat-icon>sort</mat-icon>
-        </button>
-      </span>
+        <ng-container *ngSwitchCase="stockListTableColumn.shortName">
+          <div>Name</div>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="stockListTableColumn.ticker">
+          <div>
+            Ticker
+            <span>
+              <button
+                mat-icon-button
+                type="button"
+                (click)="sort(stockListTableColumn.ticker)"
+              >
+                <mat-icon>sort</mat-icon>
+              </button>
+            </span>
+          </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="stockListTableColumn.marketCap">
+          <div>
+            Market Cap
+            <span>
+              <button
+                mat-icon-button
+                type="button"
+                (click)="sort(stockListTableColumn.marketCap)"
+              >
+                <mat-icon>sort</mat-icon>
+              </button>
+            </span>
+          </div>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="stockListTableColumn.quarterRevenueGrowth">
+          <div>
+            Revenue Growth (Q/Q)
+            <button
+              mat-icon-button
+              type="button"
+              (click)="sort(stockListTableColumn.quarterRevenueGrowth)"
+            >
+              <mat-icon>sort</mat-icon>
+            </button>
+          </div>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="stockListTableColumn.latestEarningsDate">
+          <div>Latest Earnings</div>
+        </ng-container>
+
+        <ng-container *ngSwitchDefault> </ng-container>
+      </ng-container>
     </div>
-
-    <!-- <div>
-      Market Cap
-      <span>
-        <button
-          mat-icon-button
-          type="button"
-          (click)="sort(stockListTableColumn.marketCap)"
-        >
-          <mat-icon>sort</mat-icon>
-        </button>
-      </span>
-    </div> -->
-
-    <div>
-      Revenue Growth (Q/Q)
-      <button
-        mat-icon-button
-        type="button"
-        (click)="sort(stockListTableColumn.quarterRevenueGrowth)"
-      >
-        <mat-icon>sort</mat-icon>
-      </button>
-    </div>
-
-    <div>Risks</div>
-
-    <div>Catalysts</div>
-
-    <div>Latest Earnings</div>
   </div>
 
   <div *ngFor="let stock of stocks; let i = index" class="stock-row">
-    <div>{{ i + 1 }}</div>
+    <div *ngFor="let column of displayColumns">
+      <ng-container [ngSwitch]="column">
+        <ng-container *ngSwitchCase="stockListTableColumn.index">
+          <div>{{ i + 1 }}</div>
+        </ng-container>
 
-    <div>
-      <a
-        [routerLink]="['/woozee/stocks', stock.ticker]"
-        class="margin-left-20"
-        matTooltip="{{ stock.name }}{{ stock.chineseName }}"
-      >
-        {{ stock.ticker | uppercase }}
-      </a>
-    </div>
+        <ng-container *ngSwitchCase="stockListTableColumn.shortName">
+          <div>{{ stock.shortName }}</div>
+        </ng-container>
 
-    <!-- <div class="number-display">
-      <span>
-        {{ stock.marketCap | siUnit: 2 | undefined }}
-      </span>
-    </div> -->
+        <ng-container *ngSwitchCase="stockListTableColumn.ticker">
+          <div>
+            <a
+              [routerLink]="['/woozee/stocks', stock.ticker]"
+              class="margin-left-20"
+              matTooltip="{{ stock.name }}{{ stock.chineseName }}"
+            >
+              {{ stock.ticker | uppercase }}
+            </a>
+          </div>
+        </ng-container>
 
-    <div class="number-display">
-      <span>
-        {{ stock.quarterRevenueGrowth | siUnit: 2 | percent | undefined }}
-      </span>
-    </div>
+        <ng-container *ngSwitchCase="stockListTableColumn.quarterRevenueGrowth">
+          <div class="number-display">
+            <span>
+              {{ stock.quarterRevenueGrowth | siUnit: 2 | percent | undefined }}
+            </span>
+          </div>
+        </ng-container>
 
-    <div class="number-display">
-      <span>
-        {{ stock?.riskUuids?.length || 0 }}
-      </span>
-    </div>
+        <ng-container *ngSwitchCase="stockListTableColumn.marketCap">
+          <div class="number-display">
+            <span>
+              {{ stock.marketCap | siUnit: 2 | undefined }}
+            </span>
+          </div>
+        </ng-container>
 
-    <div class="number-display">
-      <span>
-        {{ stock?.catalystUuids?.length || 0 }}
-      </span>
-    </div>
+        <ng-container *ngSwitchCase="stockListTableColumn.bullArguments">
+          <div class="number-display">
+            <span>
+              {{ stock?.catalystUuids?.length || 0 }}
+            </span>
+          </div>
+        </ng-container>
 
-    <div class="number-display">
-      <span>
-        {{ stock?.latestReport?.year }}Q{{ stock?.latestReport?.quarter }}
-      </span>
+        <ng-container *ngSwitchCase="stockListTableColumn.bearArguments">
+          <div class="number-display">
+            <span>
+              {{ stock?.riskUuids?.length || 0 }}
+            </span>
+          </div>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="stockListTableColumn.latestEarningsDate">
+          <div class="number-display">
+            <app-date-display
+              class="gray-text align-right"
+              [date]="stock?.latestReport?.date"
+            ></app-date-display>
+          </div>
+        </ng-container>
+      </ng-container>
     </div>
   </div>
 </div>

@@ -1,11 +1,12 @@
+import { StatsDisplay } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { Note } from 'src/app/shared/data/note.interface';
-import { StatsDisplay } from 'src/app/stats-display/stats-display.interface';
 
 export interface EarningsReport {
   year: number;
   quarter: number;
   isForecast?: boolean;
   fullyYearForecastRevenue?: number;
+  date?: Date;
 
   reportLink?: string;
   pressReleaseLink?: string;
@@ -13,6 +14,7 @@ export interface EarningsReport {
   transcript?: string;
   webcast?: string;
   shareholderLetter?: string;
+  links?: { name: string; value: string }[];
 
   // Growth
   totalRevenue?: number;
@@ -27,8 +29,11 @@ export interface EarningsReport {
   provisionForIncomeTaxes?: number;
   netIncome?: number;
   revenueRetention?: number;
-  revenueForecastTop?: number;
-  revenueForecastBottom?: number;
+
+  forecastRevenueTop?: number;
+  forecastRevenueBottom?: number;
+  forecastQuarterlyGrowthRateTop?: number;
+  forecastQuarterlyGrowthRateBottom?: number;
 
   // Profitablity
   grossProfit?: number;

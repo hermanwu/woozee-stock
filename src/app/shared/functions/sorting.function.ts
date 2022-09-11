@@ -35,3 +35,10 @@ export function sortByCatalystRiskDifference(
     return bDiff - aDiff;
   });
 }
+
+export function sortByShortName(items: { shortName?: string }[]) {
+  const itemCopy = cloneDeep(items);
+  return itemCopy.sort((a, b) =>
+    a.shortName && b.shortName ? (a.shortName as any) - (b.shortName as any) : 0
+  );
+}

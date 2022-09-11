@@ -1,0 +1,18 @@
+<app-stock-image-display [ticker]="stock.ticker"></app-stock-image-display>
+
+<div class="title">🎙️ {{ dialogData?.title }}</div>
+
+<div *ngIf="displayStockMetrics">
+  <app-stock-metric-display
+    [stock]="stock"
+    [displayMetrics]="displayStockMetrics"
+  ></app-stock-metric-display>
+</div>
+
+<div *ngIf="dialogData?.showTags">
+  <app-tags-display [stock]="dialogData?.stock"> </app-tags-display>
+</div>
+
+<div *ngIf="links">
+  <app-links-display [links]="links" [showUrls]="'true'"></app-links-display>
+</div>

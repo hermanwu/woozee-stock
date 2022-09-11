@@ -6,6 +6,8 @@ import { images } from '../data/images-mock';
 })
 export class ImageServices {
   getImage(ticker: string) {
-    return images.get(ticker.toUpperCase())?.[0];
+    if (ticker) {
+      return images.get(ticker.toUpperCase())?.[0];
+    }
   }
 }

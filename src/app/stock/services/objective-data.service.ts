@@ -21,7 +21,7 @@ export class ObjectiveDataService {
 
       this.calculateRevenues(stock);
 
-      this.dataMap.set(property, stock);
+      this.dataMap.set(property.toLowerCase(), stock);
     }
   }
 
@@ -38,7 +38,7 @@ export class ObjectiveDataService {
     if (stock && stock.earningsReports) {
       const futureReport =
         stock.earningsReports[0]?.isForecast ||
-        stock.earningsReports[0]?.revenueForecastBottom
+        stock.earningsReports[0]?.forecastRevenueBottom
           ? stock.earningsReports[0]
           : null;
 

@@ -8,6 +8,7 @@ export const oxy: StockAnalysis = {
   ticker: 'oxy',
   shortName: 'Occidental Petroleum',
   marketCap: 51.61 * BILLION,
+  irAddress: 'https://www.oxy.com/investors/',
 
   // Earnings Report:
   earningsReports: [

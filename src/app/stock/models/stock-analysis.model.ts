@@ -48,6 +48,7 @@ export interface StockAnalysis {
   painPoint?: string[]; // for market.
   market?: string[]; // China, US, ETC
   trends?: string[] | Trend[];
+  industries?: IndustryType[];
 
   // Supply:
   moat?: string[]; // As company grows, what moat

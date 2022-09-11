@@ -1,3 +1,4 @@
+import { ClipboardModule } from '@angular/cdk/clipboard';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -30,6 +31,7 @@ import { MarketListComponent } from './markets/components/market-list/market-lis
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
 import { MarketPropertiesPageComponent } from './markets/components/market-properties-page/market-properties-page.component';
 import { MediaLinkComponent } from './media/media-link/media-link.component';
+import { NewsDisplayDialogComponent } from './news-display-dialog/news-display-dialog.component';
 import { NewsPageComponent } from './news/news-page/news-page.component';
 import { ThumbnailComponent } from './presentation/components/thumbnail/thumbnail.component';
 import { PresentationHeaderComponent } from './presentation/presentation-header/presentation-header.component';
@@ -53,17 +55,21 @@ import { DateDisplayComponent } from './shared/components/date-display/date-disp
 import { DemoPageComponent } from './shared/components/demo-page/demo-page.component';
 import { DividerComponent } from './shared/components/divider/divider.component';
 import { FactTypeDisplayComponent } from './shared/components/fact-type-display/fact-type-display.component';
+import { LinksDisplayComponent } from './shared/components/links-display/links-display.component';
 import { NoteDialogComponent } from './shared/components/note-dialog/note-dialog.component';
 import { NoteComponent } from './shared/components/note/note.component';
 import { SearchComponent } from './shared/components/search/search.component';
 import { SliderComponent } from './shared/components/slider/slider.component';
+import { StatsDisplayComponent } from './shared/components/stats-display/stats-display.component';
+import { TagsDisplayComponent } from './shared/components/tags-display/tags-display.component';
 import { AutofocusDirective } from './shared/directives/auto-focus.directive';
 import { IopsPipeModule } from './shared/pipes/iops/iops-pipe.module';
 import { SafePipe } from './shared/pipes/safe.pipe';
 import { SiUnitPipeModule } from './shared/pipes/si-unit/si-unit-pipe.module';
 import { UndefinedPipeModule } from './shared/pipes/undefined-pipe/undefined-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
-import { StatsDisplayComponent } from './stats-display/stats-display.component';
+import { StockImageDisplayComponent } from './stock-image-display/stock-image-display.component';
+import { StockMetricDisplayComponent } from './stock-metric-display/stock-metric-display.component';
 import { BusinessOverviewComponent } from './stock/components/business-overview/business-overview.component';
 import { ComparisonDialogComponent } from './stock/components/comparison-dialog/comparison-dialog.component';
 import { EarningsReportComponent } from './stock/components/earnings-report/earnings-report.component';
@@ -88,7 +94,8 @@ import { TitleMenuComponent } from './title-menu/title-menu.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
 import { ValuationDetailsComponent } from './valuation-details/valuation-details.component';
-
+import { TwitterDisplayDialogComponent } from './twitter-display-dialog/twitter-display-dialog.component';
+import { DailyMediumReportDisplayDialogComponent } from './daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
 @NgModule({
@@ -166,6 +173,13 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     StatsDisplayComponent,
     ImageDisplayComponent,
     ValuationDetailsComponent,
+    TagsDisplayComponent,
+    LinksDisplayComponent,
+    NewsDisplayDialogComponent,
+    StockMetricDisplayComponent,
+    StockImageDisplayComponent,
+    TwitterDisplayDialogComponent,
+    DailyMediumReportDisplayDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -176,6 +190,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     IopsPipeModule,
     UndefinedPipeModule,
     SiUnitPipeModule,
+    ClipboardModule,
     // Setup angular fire.
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,

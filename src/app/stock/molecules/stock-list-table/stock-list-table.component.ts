@@ -9,6 +9,12 @@ import { StockListTableColumn } from './stock-list-table-column.enum';
 })
 export class StockListTableComponent implements OnChanges {
   readonly stockListTableColumn = StockListTableColumn;
+  displayColumns = [
+    StockListTableColumn.ticker,
+    StockListTableColumn.shortName,
+    StockListTableColumn.quarterRevenueGrowth,
+    StockListTableColumn.latestEarningsDate,
+  ];
   sortOrder = {
     column: StockListTableColumn.ticker,
     ascending: true,

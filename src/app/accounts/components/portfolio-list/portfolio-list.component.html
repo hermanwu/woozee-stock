@@ -2,7 +2,7 @@
   <div title>Portfolios</div>
 </app-title-menu>
 
-<div *ngFor="let portfolio of portfolios">
+<app-card *ngFor="let portfolio of portfolios">
   <app-title-menu>
     <div title>{{ portfolio.name }}</div>
   </app-title-menu>
@@ -11,19 +11,5 @@
     {{ strategy }}
   </div>
 
-  <app-title-menu>
-    <div title>Risks</div>
-  </app-title-menu>
-  <app-card>
-    <app-risk-list [risks]="portfolio.risks"></app-risk-list>
-  </app-card>
-
-  <app-title-menu>
-    <div title>Catalysts</div>
-  </app-title-menu>
-  <app-card>
-    <app-catalyst-list [catalysts]="portfolio.catalysts"></app-catalyst-list>
-  </app-card>
-
   <app-divider></app-divider>
-</div>
+</app-card>

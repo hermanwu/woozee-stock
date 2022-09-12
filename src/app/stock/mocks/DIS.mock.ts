@@ -52,7 +52,6 @@ export const disneyRisks: Risk[] = [
 
 export const dis: StockAnalysis = {
   uuid: 'dis',
-  price: 107.33,
   marketCap: 190 * BILLION,
   riskUuids: disneyRisks.map((r) => r.uuid),
   catalystUuids: disneyCatalysts.map((c) => c.uuid),

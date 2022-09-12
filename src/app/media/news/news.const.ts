@@ -1,4 +1,4 @@
-import { MacroType } from 'src/app/macro/macro.enum';
+import { Index, MacroType } from 'src/app/macro/macro.enum';
 import { TimeFrame } from 'src/app/shared/components/stats-display/stats-display.interface';
 import {
   convertDateToUTC,
@@ -13,7 +13,7 @@ export const allNews: News[] = [
     uuid: 'n15',
     type: EventType.macro,
     date: getUtcDate(2022, 9, 9),
-    tags: [MacroType.sp500, MacroType.nasdaq],
+    tags: [Index.sp500, Index.nasdaq],
     title:
       'Stock market rallied on Friday and snapped a three-week losing streak wtih a strong performance. Nasdaq was up 4.14% and S&P 500 gained 3.65% for the week.',
   },
@@ -72,7 +72,7 @@ export const allNews: News[] = [
   {
     uuid: 'n10',
     type: EventType.macro,
-    tags: [MacroType.usStockMarket],
+    tags: [MacroType.stock],
     date: convertDateToUTC(new Date('2022-09-08')),
     title:
       'S&P 500 +0.66% and Nasdaq +0.60% today, as they are on pace to snap a 3-week losing streak.',

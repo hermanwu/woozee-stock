@@ -1,4 +1,5 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
+import { getUtcDate } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -19,6 +20,17 @@ export const nflx: StockAnalysis = {
   },
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 7.97 * BILLION,
+      costOfRevenue: 4.690755 * BILLION,
+      operatingIncome: 1.578283 * BILLION,
+      forecastQuarterlyGrowthRateTop: 0.05,
+      forecastQuarterlyGrowthRateBottom: 0.05,
+      netIncome: 1.440951 * BILLION,
+      date: getUtcDate(2022, 7, 19),
+    },
     {
       year: 2022,
       quarter: 1,

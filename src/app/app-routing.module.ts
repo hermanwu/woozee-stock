@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
 import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
 import { FomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
+import { MacroStatsPageComponent } from './macro/components/macro-stats-page/macro-stats-page.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
 import { MarketPropertiesPageComponent } from './markets/components/market-properties-page/market-properties-page.component';
 import { NewsPageComponent } from './news/news-page/news-page.component';
@@ -30,6 +31,11 @@ const routes: Routes = [
       {
         path: 'about',
         component: AboutComponent,
+        pathMatch: 'full',
+      },
+      {
+        path: 'macro',
+        component: MacroStatsPageComponent,
         pathMatch: 'full',
       },
       { path: '', redirectTo: 'news', pathMatch: 'full' },

@@ -54,14 +54,7 @@
     <!-- <button mat-menu-item disabled>
       <a [routerLink]="['/stocks']">Stocks</a>
     </button> -->
-    <button
-      [routerLink]="['/dashboard']"
-      mat-menu-item
-      i18n
-      [disabled]="environment.production"
-    >
-      Macro
-    </button>
+    <button [routerLink]="['/macro']" mat-menu-item i18n>Macro</button>
 
     <button [routerLink]="['/woozee/markets']" mat-menu-item i18n>
       Industries

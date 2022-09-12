@@ -21,11 +21,13 @@ import { CatalystListComponent } from './catalyst/components/catalyst-list/catal
 import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
 import { CatalystTotalDisplayComponent } from './catalyst/components/catalyst-total-display/catalyst-total-display.component';
 import { CatalystComponent } from './catalyst/components/catalyst/catalyst.component';
+import { DailyMediumReportDisplayDialogComponent } from './daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { DecisionDashboardComponent } from './decision-dashboard/decision-dashboard.component';
 import { FactComponent } from './facts/components/fact/fact.component';
 import { GrowthDetailsComponent } from './growth-details/growth-details.component';
 import { FomoStocksComponent as HomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
 import { ImageDisplayComponent } from './images/components/image-display/image-display.component';
+import { MacroStatsPageComponent } from './macro/components/macro-stats-page/macro-stats-page.component';
 import { MarketDisplayComponent } from './markets/components/market-display/market-display.component';
 import { MarketListComponent } from './markets/components/market-list/market-list.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
@@ -93,9 +95,8 @@ import { StockDisplayComponent } from './stock/stock-display/stock-display.compo
 import { TitleMenuComponent } from './title-menu/title-menu.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
-import { ValuationDetailsComponent } from './valuation-details/valuation-details.component';
 import { TwitterDisplayDialogComponent } from './twitter-display-dialog/twitter-display-dialog.component';
-import { DailyMediumReportDisplayDialogComponent } from './daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
+import { ValuationDetailsComponent } from './valuation-details/valuation-details.component';
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
 @NgModule({
@@ -180,6 +181,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     StockImageDisplayComponent,
     TwitterDisplayDialogComponent,
     DailyMediumReportDisplayDialogComponent,
+    MacroStatsPageComponent,
   ],
   imports: [
     BrowserModule,

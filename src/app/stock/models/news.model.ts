@@ -24,7 +24,7 @@ export interface News {
   markets?: IndustryType[];
   tickers?: string[];
 
-  tags?: (IndustryType | MacroType)[];
+  tags?: (IndustryType | MacroType | string)[];
   isBullish?: boolean;
   stats?: StatsDisplay[];
 

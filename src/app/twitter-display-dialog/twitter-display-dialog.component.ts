@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ImageServices } from '../images/services/images.services';
-import { NewsDisplayDialogInput } from '../news-display-dialog/news-display-dialog-input.interface';
-import { StockMetric } from '../stock-metric-display/stock-metric.enum';
+import { StockMetric } from '../stock/components/stock-metric-display/stock-metric.enum';
 import { StockAnalysis } from '../stock/models/stock-analysis.model';
+import { TwitterDisplayDialogInput } from './twitter-display-dialog-input.interface';
 
 @Component({
   selector: 'app-twitter-display-dialog',
@@ -15,16 +15,16 @@ export class TwitterDisplayDialogComponent implements OnInit {
   links: any[];
   imageLink: string;
   displayStockMetrics?: StockMetric[];
+  sourceLink?: string;
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    public dialogData: NewsDisplayDialogInput,
+    public dialogData: TwitterDisplayDialogInput,
     private imageServices: ImageServices
   ) {}
 
   ngOnInit(): void {
     this.links = this.dialogData.links;
     this.stock = this.dialogData.stock;
-    this.displayStockMetrics = this.dialogData.stockMetrics;
   }
 }

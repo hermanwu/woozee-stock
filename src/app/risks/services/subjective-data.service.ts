@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { catalysts } from 'src/app/catalyst/data/catalyst.mock';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { allMarkets } from 'src/app/markets/data/all-markets.const';
-import { allNews } from 'src/app/media/news/news.const';
+import { allNews } from 'src/app/news/data/news.const';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { Market } from 'src/app/stock/models/market.models';

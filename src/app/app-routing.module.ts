@@ -7,7 +7,7 @@ import { FomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
 import { MacroStatsPageComponent } from './macro/components/macro-stats-page/macro-stats-page.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
 import { MarketPropertiesPageComponent } from './markets/components/market-properties-page/market-properties-page.component';
-import { NewsPageComponent } from './news/news-page/news-page.component';
+import { NewsPageComponent } from './news/components/news-page/news-page.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';

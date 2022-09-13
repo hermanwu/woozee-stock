@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UnicodeCharacters } from '../shared/data/enum/unicode-characters.enum';
-import { EarningsReport } from '../stock/models/earnings.model';
-import { StockAnalysis } from '../stock/models/stock-analysis.model';
+import { UnicodeCharacters } from '../../../shared/data/enum/unicode-characters.enum';
+import { EarningsReport } from '../../models/earnings.model';
+import { StockAnalysis } from '../../models/stock-analysis.model';
 
 @Component({
   selector: 'app-valuation-details',

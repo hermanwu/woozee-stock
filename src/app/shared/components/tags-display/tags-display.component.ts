@@ -9,6 +9,7 @@ import { tags } from '../../data/const/tag.mock';
 })
 export class TagsDisplayComponent implements OnInit {
   @Input() stock: StockAnalysis;
+  @Input() tags: string[];
 
   investTrend = 'investTrends';
   defaultTags = tags;

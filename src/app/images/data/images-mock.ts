@@ -66,4 +66,13 @@ export const images = new Map<string, string[]>([
     'HOOD',
     ['https://pbs.twimg.com/media/FcQQs2_aMAAQBPE?format=png&name=900x900'],
   ],
+  ['PTON', ['https://i.ibb.co/6Nc2BLy/Peloton-Logo.jpg']],
+  [
+    'GOOGL',
+    ['https://i.ibb.co/rbTcZs4/Screen-Shot-2022-09-12-at-5-16-30-PM.png'],
+  ],
+  [
+    'bitcoin',
+    ['https://i.ibb.co/0j0Szy1/Screen-Shot-2022-09-12-at-5-34-43-PM.png'],
+  ],
 ]);

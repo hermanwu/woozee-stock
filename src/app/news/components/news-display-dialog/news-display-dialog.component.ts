@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ImageServices } from '../images/services/images.services';
-import { StockMetric } from '../stock-metric-display/stock-metric.enum';
-import { StockAnalysis } from '../stock/models/stock-analysis.model';
+import { StockMetric } from 'src/app/stock/components/stock-metric-display/stock-metric.enum';
+import { ImageServices } from '../../../images/services/images.services';
+import { StockAnalysis } from '../../../stock/models/stock-analysis.model';
 import { NewsDisplayDialogInput } from './news-display-dialog-input.interface';
 
 @Component({

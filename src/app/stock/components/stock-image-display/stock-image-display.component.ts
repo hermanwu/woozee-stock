@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { ImageServices } from '../images/services/images.services';
+import { ImageServices } from '../../../images/services/images.services';
 
 @Component({
   selector: 'app-stock-image-display',

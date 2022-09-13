@@ -1,0 +1,11 @@
+<span
+  [ngClass]="{
+    green: price.value - price.previousValue > 0,
+    red: price.value - price.previousValue < 0
+  }"
+>
+  <span *ngIf="price.value - price.previousValue > 0">+</span
+  >{{
+    (price.value - price.previousValue) / price.previousValue | percent: "1.1-2"
+  }}
+</span>

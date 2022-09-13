@@ -1,8 +1,8 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
-import { StockMetric } from 'src/app/stock-metric-display/stock-metric.enum';
 import { EarningsReport } from '../../models/earnings.model';
 import { StockData } from '../../services/stock-data.model';
+import { StockMetric } from '../stock-metric-display/stock-metric.enum';
 
 @Component({
   selector: 'app-earnings-report',

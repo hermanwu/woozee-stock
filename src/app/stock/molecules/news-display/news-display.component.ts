@@ -1,12 +1,12 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ImageServices } from 'src/app/images/services/images.services';
-import { NewsDisplayDialogInput } from 'src/app/news-display-dialog/news-display-dialog-input.interface';
-import { NewsDisplayDialogComponent } from 'src/app/news-display-dialog/news-display-dialog.component';
+import { NewsDisplayDialogInput } from 'src/app/news/components/news-display-dialog/news-display-dialog-input.interface';
+import { NewsDisplayDialogComponent } from 'src/app/news/components/news-display-dialog/news-display-dialog.component';
 import { industryEmojiMap } from 'src/app/shared/data/enum/emoji.enum';
-import { StockMetric } from 'src/app/stock-metric-display/stock-metric.enum';
 import { TwitterDisplayDialogComponent } from 'src/app/twitter-display-dialog/twitter-display-dialog.component';
 import { environment } from 'src/environments/environment';
+import { StockMetric } from '../../components/stock-metric-display/stock-metric.enum';
 import { EventType } from '../../models/news.model';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 import { StockService } from '../../services/stock.service';
@@ -51,14 +51,15 @@ export class NewsDisplayComponent implements OnChanges {
           stock: this.stock,
           type: EventType.earnings,
           title: this.news.title,
-          links: this.stock?.earningsReports[0]?.links,
-          showTags: true,
+          links: this.stock?.earningsReports?.[0]?.links,
+          sourceLink: this.news.sourceLink,
           stockMetrics: [
             StockMetric.quarterlyRevenue,
             StockMetric.forecastQuarterlyRevenue,
             StockMetric.operatingExpense,
             StockMetric.operatingMargin,
           ],
+          tags: this.news.tags,
         },
         panelClass: 'medium-modal-panel',
       }

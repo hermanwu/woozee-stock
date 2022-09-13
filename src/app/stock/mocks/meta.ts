@@ -1,5 +1,5 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
-import { allNews } from 'src/app/media/news/news.const';
+import { allNews } from 'src/app/news/data/news.const';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RiskLevel } from 'src/app/risks/models/risk-level.model';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';

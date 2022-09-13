@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DailyMediumReportDisplayDialogComponent } from 'src/app/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
+import { DailyMediumReportDisplayDialogComponent } from 'src/app/news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { riskService } from 'src/app/risks/services/subjective-data.service';
 import { Market } from 'src/app/stock/models/market.models';
 import { EventType, NewsWithDetails } from 'src/app/stock/models/news.model';

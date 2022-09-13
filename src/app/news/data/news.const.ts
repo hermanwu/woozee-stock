@@ -10,6 +10,79 @@ import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
   {
+    uuid: 'n19',
+    date: getUtcDate(2022, 9, 12),
+    type: EventType.macro,
+    tags: ['arkk', 'inflation', 'cathie wood'],
+    title: 'Cathie Wood warns of deflation ahead of this week’s key price data',
+  },
+  {
+    uuid: 'n19',
+    date: getUtcDate(2022, 9, 12),
+    type: EventType.stock,
+    tags: ['aapl'],
+    title:
+      "iPhone 14 pre-order demand is 'robust,' tracking 'slightly ahead' of iPhone 13: Wedbush",
+  },
+  {
+    uuid: 'n19',
+    date: getUtcDate(2022, 9, 12),
+    type: EventType.stock,
+    tags: ['gs'],
+    title:
+      'Goldman Sachs gets ready to lay off workers as deal activity cools - NYT',
+  },
+  {
+    uuid: 'n19',
+    date: getUtcDate(2022, 9, 12),
+    type: EventType.stock,
+    tags: ['mu'],
+    title:
+      'Micron CEO says company breaking ground on $15B Idaho factory, more plants coming: report',
+  },
+  {
+    uuid: 'n19',
+    type: EventType.stock,
+    date: getUtcDate(2022, 9, 12),
+    tags: ['GM'],
+    title:
+      "GM's Cruise preps for rideshare service launch, eyes $1B in revenue",
+  },
+  {
+    uuid: 'n19',
+    type: EventType.industry,
+    date: getUtcDate(2022, 9, 12),
+    tags: ['crypto', 'bitcoin'],
+    title:
+      'Fidelity Investments is considering to allow individual investors to trade bitcoin on its brokerage platform',
+  },
+  {
+    uuid: 'n18',
+    type: EventType.stock,
+    date: getUtcDate(2022, 9, 12),
+    tickers: ['Googl'],
+    sourceLink:
+      'https://www.theverge.com/2022/9/12/23348999/google-pixelbook-canceled-team-shut-down',
+    title:
+      'Google canceled the next version of its Pixelbook computer and has closed down the team that was building it',
+  },
+  {
+    uuid: 'n17',
+    type: EventType.macro,
+    date: getUtcDate(2022, 9, 12),
+    tags: [Index.nasdaq, Index.sp500],
+    title:
+      'Stocks close higher for fourth straight session. S&P500 was up 0.71% and ',
+  },
+  {
+    uuid: 'n16',
+    type: EventType.stock,
+    date: getUtcDate(2022, 9, 12),
+    tickers: ['PTON'],
+    title:
+      'Peloton Cofounders, John Foley and Hisao Kushi, are leaving the company',
+  },
+  {
     uuid: 'n15',
     type: EventType.macro,
     date: getUtcDate(2022, 9, 9),

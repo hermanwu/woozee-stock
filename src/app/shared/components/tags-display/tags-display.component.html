@@ -6,4 +6,8 @@
   }}</span>
 </span>
 
+<span *ngIf="tags">
+  <span *ngFor="let item of tags">{{ "#" + item }}</span>
+</span>
+
 {{ defaultTags }}

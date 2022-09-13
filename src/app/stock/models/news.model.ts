@@ -39,6 +39,7 @@ export enum EventType {
   stock = 'Stocks',
   investor = 'Investor',
   earnings = 'Earnings Results',
+  opinions = 'Opinion',
 }
 
 export interface NewsWithDetails extends News {

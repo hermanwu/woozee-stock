@@ -5,6 +5,7 @@ export const intc: StockAnalysis = {
   logo: '',
   name: { English: 'Intel' },
   description: [],
+  shortName: 'Intel',
   ticker: 'INTC',
   myRating: Rating.Buy,
 
@@ -13,10 +14,4 @@ export const intc: StockAnalysis = {
     website: 'https://www.investors.intuit.com',
     latestReportQuarter: ['2021', '1'],
   },
-
-  risks: [
-    {
-      name: 'slow revenue growth',
-    },
-  ],
 };

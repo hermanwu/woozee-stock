@@ -34,7 +34,7 @@ export const adbeRisks = [
 ];
 
 export const adbe: StockAnalysis = {
-  marketCap: 216.55 * BILLION,
+  marketCap: 151 * BILLION,
   predications: [
     {
       start: new Date('2022-3-5'),
@@ -45,6 +45,7 @@ export const adbe: StockAnalysis = {
   irAddress: 'https://www.adobe.com/investor-relations.html',
   logo: '',
   name: 'Adobe',
+  shortName: 'Adobe',
   description: [],
   ticker: 'adbe',
 
@@ -80,6 +81,29 @@ export const adbe: StockAnalysis = {
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 3,
+      totalRevenue: 4.433 * BILLION,
+      forecastRevenueTop: 4.52 * BILLION,
+      forecastRevenueBottom: 4.52 * BILLION,
+      grossProfit: 3887 * MILLION,
+      operatingIncome: 1484 * MILLION,
+      netIncome: 1136 * MILLION,
+      date: convertDateToUTC(new Date('2022-09-15')),
+      links: [
+        {
+          name: 'Press Release',
+          value:
+            'https://www.adobe.com/pdf-page.html?pdfTarget=aHR0cHM6Ly93d3cuYWRvYmUuY29tL2NvbnRlbnQvZGFtL2NjL2VuL2ludmVzdG9yLXJlbGF0aW9ucy9wZGZzLzUxOTAyMjAyL2NhNzgzNGl1aHJlZndmLnBkZg==',
+        },
+        {
+          name: 'Adobe’s Acquisition of Figma',
+          value:
+            'https://www.adobe.com/pdf-page.html?pdfTarget=aHR0cHM6Ly93d3cuYWRvYmUuY29tL2NvbnRlbnQvZGFtL2NjL2VuL2ludmVzdG9yLXJlbGF0aW9ucy9wZGZzLzUxOTAyMjAyL2JkOTg3MjN5NGhydWVqYmZkLnBkZg==',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 2,

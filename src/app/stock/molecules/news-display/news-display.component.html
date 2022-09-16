@@ -1,10 +1,6 @@
-<h1>
-  <app-date-display [date]="news?.date"></app-date-display>
-</h1>
+<app-stock-image-display [tag]="stock?.ticker"></app-stock-image-display>
 
-<app-stock-image-display [ticker]="stock?.ticker"></app-stock-image-display>
-
-<h2>🎙️ {{ news.title }}</h2>
+<div>🎙️ {{ news.title }}</div>
 
 <ng-container [ngSwitch]="news.type">
   <ng-container *ngSwitchCase="eventType.macro" i18n> </ng-container>
@@ -16,16 +12,20 @@
   <ng-container *ngSwitchDefault i18n> </ng-container>
 </ng-container>
 
-<div *ngIf="!environment.production">
-  <button mat-button type="button" (click)="showDetails = !showDetails">
-    More
-    <mat-icon *ngIf="showDetails">expand_less</mat-icon>
-    <mat-icon *ngIf="!showDetails">expand_more</mat-icon>
-  </button>
+<div>
+  <ng-container *ngIf="!environment.production">
+    <button mat-button type="button" (click)="showDetails = !showDetails">
+      More
+      <mat-icon *ngIf="showDetails">expand_less</mat-icon>
+      <mat-icon *ngIf="!showDetails">expand_more</mat-icon>
+    </button>
 
-  <button mat-button (click)="openDialog()">Twitter</button>
+    <button mat-button (click)="openDialog()">Twitter</button>
 
-  <button mat-button (click)="openInstagramDialog()">Instagram</button>
+    <button mat-button (click)="openInstagramDialog()">Instagram</button>
+  </ng-container>
+
+  <app-date-display [date]="news?.date"></app-date-display>
 </div>
 
 <div *ngIf="showDetails">
@@ -35,12 +35,6 @@
       [pastTwoYearsEarningsReports]="stock?.earningsReports"
     ></app-earnings-report>
   </ng-container>
-
-  📈 {{ stock?.ticker }} - {{ stock?.shortName }} -
-  <span *ngIf="stock?.industries?.[0]">
-    {{ stock?.industries?.[0] }}
-    {{ industryEmojiMap[stock?.industries[0]] }}
-  </span>
 
   <app-image-display [imageLink]="imageLink"></app-image-display>
 

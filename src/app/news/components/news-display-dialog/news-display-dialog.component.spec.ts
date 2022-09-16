@@ -1,20 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { InstagramNewsDisplayDialogComponent } from './news-display-dialog.component';
 
-import { NewsDisplayDialogComponent } from './news-display-dialog.component';
-
-describe('NewsDisplayDialogComponent', () => {
-  let component: NewsDisplayDialogComponent;
-  let fixture: ComponentFixture<NewsDisplayDialogComponent>;
+describe('InstagramNewsDisplayDialogComponent', () => {
+  let component: InstagramNewsDisplayDialogComponent;
+  let fixture: ComponentFixture<InstagramNewsDisplayDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewsDisplayDialogComponent ]
-    })
-    .compileComponents();
+      declarations: [InstagramNewsDisplayDialogComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewsDisplayDialogComponent);
+    fixture = TestBed.createComponent(InstagramNewsDisplayDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

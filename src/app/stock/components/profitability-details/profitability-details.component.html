@@ -15,7 +15,7 @@
 
   <li>
     <span *ngIf="stock?.quarterOperatingMargin >= 0; else operatingLoss">
-      🔸 Quarterly Operating Income ($): {{ emojiUnicode.money }}
+      🔸 Quarterly Operating Income ($):
       {{ stock?.latestReport?.operatingIncome | siUnit: 2 }}</span
     ><ng-template #operatingLoss>
       🔸 Quarterly Operating Loss ($):
@@ -48,7 +48,7 @@
 
   <li>
     <span *ngIf="stock?.quarterNetMargin >= 0; else netLoss">
-      🔸 Quarterly Net Income ($): {{ emojiUnicode.money }}
+      🔸 Quarterly Net Income ($):
       {{ stock?.latestReport?.netIncome | siUnit: 2 }}</span
     ><ng-template #netLoss>
       🔸 Quarterly Net Loss ($):

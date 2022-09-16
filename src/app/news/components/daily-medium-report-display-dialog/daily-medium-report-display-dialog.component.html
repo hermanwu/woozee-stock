@@ -1,9 +1,91 @@
-<div>
-  S&P 500
-  <app-price-display [price]="sp500Stats"></app-price-display>
+<div class="index-display">
+  <div>
+    S&P 500
+    <app-price-display [price]="sp500Stats"></app-price-display>
+  </div>
+
+  <div>
+    Nasdaq Composite
+    <app-price-display [price]="nasdaqStats"></app-price-display>
+  </div>
 </div>
 
+<app-title-menu>
+  <h1 title>Macro</h1>
+</app-title-menu>
 <div>
-  Nasdaq Composite
-  <app-price-display [price]="nasdaqStats"></app-price-display>
+  🔸
+  <strong
+    >S&P 500 <app-price-display [price]="sp500Stats"></app-price-display>
+    Nasdaq
+    <app-price-display [price]="nasdaqStats"></app-price-display
+  ></strong>
+  ➡️ {{ overviewNews?.[0]?.title }}
+</div>
+<div *ngFor="let news of macroNews">
+  <app-stock-image-display [tag]="news?.tags?.[0]"></app-stock-image-display>
+  🔸 <strong>{{news.tags?.[0] | tagdisplay}}</strong> ➡️ {{ news.title }}
+  <ul>
+    <li *ngFor="let item of news?.content">{{ item }}</li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let item of news?.stats">
+      <app-stats-display [statsDisplay]="item"></app-stats-display>
+    </li>
+  </ul>
+</div>
+
+<app-title-menu>
+  <h1 title>Industry</h1>
+</app-title-menu>
+<div *ngFor="let news of industryNews">
+  <app-stock-image-display [tag]="news.tags?.[0]"></app-stock-image-display>
+  🔸 <strong>{{news.tags?.[0]}}</strong> ➡️ {{ news.title }}
+
+  <ul>
+    <li *ngFor="let item of news?.content">{{ item }}</li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let item of news?.stats">
+      <app-stats-display [statsDisplay]="item"></app-stats-display>
+    </li>
+  </ul>
+</div>
+
+<app-title-menu>
+  <h1 title>Stock</h1>
+</app-title-menu>
+<div *ngFor="let news of stockNews">
+  <app-stock-image-display [tag]="news.tags?.[0]"></app-stock-image-display>
+  🔸 <strong>{{ news.tags?.[0] | tagdisplay }}</strong> ➡️ {{ news.title }}
+
+  <ul>
+    <li *ngFor="let item of news?.content">{{ item }}</li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let item of news?.stats">
+      <app-stats-display [statsDisplay]="item"></app-stats-display>
+    </li>
+  </ul>
+</div>
+
+<app-title-menu *ngIf="earningsNews?.length > 0">
+  <h1 title>Earnings</h1>
+</app-title-menu>
+<div *ngFor="let news of earningsNews">
+  <app-stock-image-display [tag]="news.tags?.[0]"></app-stock-image-display>
+  🔸 <strong>{{news.tags?.[0]}}</strong> ➡️ {{ news.title }}
+
+  <ul>
+    <li *ngFor="let item of news?.content">{{ item }}</li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let item of news?.stats">
+      <app-stats-display [statsDisplay]="item"></app-stats-display>
+    </li>
+  </ul>
 </div>

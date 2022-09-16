@@ -15,6 +15,7 @@ export const pddRisks = [
 
 export const pdd: StockAnalysis = {
   marketCap: 54.96 * BILLION,
+  shortName: 'Pinduoduo',
   earningsReports: [
     {
       year: 2022,

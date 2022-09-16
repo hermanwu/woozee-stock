@@ -1,9 +1,18 @@
-<app-stock-image-display [ticker]="stock?.ticker"></app-stock-image-display>
+<app-stock-image-display [tag]="dialogData?.tags[0]"></app-stock-image-display>
 
 <div class="title">🎙️ {{ dialogData?.title }}</div>
 
-<app-tags-display [stock]="dialogData?.stock" [tags]="dialogData?.tags">
-</app-tags-display>
+<ul>
+  <li *ngFor="let item of dialogData?.content">🔸 {{ item }}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let item of dialogData?.stats">
+    <app-stats-display [statsDisplay]="item"></app-stats-display>
+  </li>
+</ul>
+
+<app-tags-display [tags]="dialogData?.tags"> </app-tags-display>
 
 <div *ngIf="links">
   <app-links-display [links]="links" [showUrls]="'true'"></app-links-display>

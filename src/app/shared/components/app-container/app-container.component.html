@@ -49,6 +49,8 @@
   </button>
 
   <mat-menu #menu="matMenu">
+    <button [routerLink]="['/blogs']" mat-menu-item i18n>Blog</button>
+
     <button [routerLink]="['/news']" mat-menu-item i18n>News</button>
 
     <!-- <button mat-menu-item disabled>

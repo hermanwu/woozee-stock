@@ -38,6 +38,7 @@ const routes: Routes = [
         component: MacroStatsPageComponent,
         pathMatch: 'full',
       },
+      {},
       { path: '', redirectTo: 'news', pathMatch: 'full' },
     ],
   },

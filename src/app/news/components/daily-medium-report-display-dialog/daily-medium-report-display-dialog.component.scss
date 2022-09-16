@@ -1,0 +1,14 @@
+.index-display {
+}
+:host {
+  max-height: 100vh;
+}
+
+ul {
+  padding-left: 20px;
+  list-style: inside;
+
+  li {
+    margin-bottom: 10px;
+  }
+}

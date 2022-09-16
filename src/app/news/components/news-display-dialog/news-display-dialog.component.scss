@@ -4,4 +4,25 @@ div {
 
 .title {
   font-size: 1.2rem;
+  line-height: 1.2rem;
+}
+
+.square {
+  border: thick double gray;
+  width: 400px;
+  height: 400px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.image {
+  max-height: 200px;
+  margin: 10px auto;
+}
+
+.instagram-top {
+  font-size: 1rem;
+  text-align: center;
 }

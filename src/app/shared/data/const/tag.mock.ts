@@ -1,1 +1,6 @@
-export const tags = '#stocks #investing #stockmarket #investments';
+export const stockTagsMock = [
+  'stocks',
+  'investing',
+  'stock market',
+  'investments',
+];

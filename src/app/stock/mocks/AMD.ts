@@ -12,6 +12,7 @@ export const amd: StockAnalysis = {
 
   logo: '',
   name: 'AMD',
+  shortName: 'AMD',
   description: [],
   ticker: 'amd',
   irAddress: 'https://ir.amd.com/',

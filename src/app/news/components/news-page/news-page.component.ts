@@ -26,13 +26,14 @@ export class NewsPageComponent implements OnInit {
   ) {
     this.news = risksDataService.getNewsDetails();
 
-    this.news = this.news.slice(0, 20);
+    this.news = this.news.slice(0, 30);
   }
 
   openDailyReportDialog() {
     this.dialogService.open<DailyMediumReportDisplayDialogComponent>(
       DailyMediumReportDisplayDialogComponent,
       {
+        maxHeight: '90vh', //you can adjust the value as per your view
         data: {},
         panelClass: 'medium-modal-panel',
       }

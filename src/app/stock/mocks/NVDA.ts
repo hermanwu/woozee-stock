@@ -221,6 +221,7 @@ export const nvda: StockAnalysis = {
 
   logo: '',
   name: 'Nvidia',
+  shortName: 'Nvidia',
   description: [
     {
       content: 'competitors',

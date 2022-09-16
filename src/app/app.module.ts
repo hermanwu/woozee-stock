@@ -33,7 +33,7 @@ import { MarketPageComponent } from './markets/components/market-page/market-pag
 import { MarketPropertiesPageComponent } from './markets/components/market-properties-page/market-properties-page.component';
 import { DailyMediumReportDisplayDialogComponent } from './news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { MediaLinkComponent } from './news/components/media-link/media-link.component';
-import { NewsDisplayDialogComponent } from './news/components/news-display-dialog/news-display-dialog.component';
+import { InstagramNewsDisplayDialogComponent } from './news/components/news-display-dialog/news-display-dialog.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
 import { ThumbnailComponent } from './presentation/components/thumbnail/thumbnail.component';
 import { PresentationHeaderComponent } from './presentation/presentation-header/presentation-header.component';
@@ -69,6 +69,7 @@ import { AutofocusDirective } from './shared/directives/auto-focus.directive';
 import { IopsPipeModule } from './shared/pipes/iops/iops-pipe.module';
 import { SafePipe } from './shared/pipes/safe.pipe';
 import { SiUnitPipeModule } from './shared/pipes/si-unit/si-unit-pipe.module';
+import { TagDisplayPipe } from './shared/pipes/tag-display.pipe';
 import { UndefinedPipeModule } from './shared/pipes/undefined-pipe/undefined-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
 import { BusinessOverviewComponent } from './stock/components/business-overview/business-overview.component';
@@ -98,6 +99,8 @@ import { TitleMenuComponent } from './title-menu/title-menu.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
 import { TwitterDisplayDialogComponent } from './twitter-display-dialog/twitter-display-dialog.component';
+import { UiComponentsPageComponent } from './ui-components-page/ui-components-page.component';
+import { BlogPageComponent } from './blog-page/blog-page.component';
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
 @NgModule({
@@ -177,13 +180,16 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     ValuationDetailsComponent,
     TagsDisplayComponent,
     LinksDisplayComponent,
-    NewsDisplayDialogComponent,
+    InstagramNewsDisplayDialogComponent,
     StockImageDisplayComponent,
     TwitterDisplayDialogComponent,
     DailyMediumReportDisplayDialogComponent,
     MacroStatsPageComponent,
     PriceDisplayComponent,
     StockMetricDisplayComponent,
+    UiComponentsPageComponent,
+    TagDisplayPipe,
+    BlogPageComponent,
   ],
   imports: [
     BrowserModule,

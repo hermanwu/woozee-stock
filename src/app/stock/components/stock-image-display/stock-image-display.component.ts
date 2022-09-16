@@ -7,7 +7,7 @@ import { ImageServices } from '../../../images/services/images.services';
   styleUrls: ['./stock-image-display.component.scss'],
 })
 export class StockImageDisplayComponent implements OnInit, OnChanges {
-  @Input() ticker;
+  @Input() tag;
 
   imageLink: string;
   constructor(private imageServices: ImageServices) {}
@@ -15,6 +15,6 @@ export class StockImageDisplayComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   ngOnChanges(): void {
-    this.imageLink = this.imageServices.getImage(this.ticker);
+    this.imageLink = this.imageServices.getImage(this.tag);
   }
 }

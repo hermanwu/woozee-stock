@@ -1,8 +1,9 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ImageServices } from 'src/app/images/services/images.services';
-import { NewsDisplayDialogInput } from 'src/app/news/components/news-display-dialog/news-display-dialog-input.interface';
-import { NewsDisplayDialogComponent } from 'src/app/news/components/news-display-dialog/news-display-dialog.component';
+import { InstagramNewsDisplayDialogInput } from 'src/app/news/components/news-display-dialog/news-display-dialog-input.interface';
+import { InstagramNewsDisplayDialogComponent } from 'src/app/news/components/news-display-dialog/news-display-dialog.component';
+import { stockTagsMock } from 'src/app/shared/data/const/tag.mock';
 import { industryEmojiMap } from 'src/app/shared/data/enum/emoji.enum';
 import { TwitterDisplayDialogComponent } from 'src/app/twitter-display-dialog/twitter-display-dialog.component';
 import { environment } from 'src/environments/environment';
@@ -59,7 +60,9 @@ export class NewsDisplayComponent implements OnChanges {
             StockMetric.operatingExpense,
             StockMetric.operatingMargin,
           ],
-          tags: this.news.tags,
+          tags: [...this.news.tags, ...stockTagsMock],
+          content: this.news.content,
+          stats: this.news.stats,
         },
         panelClass: 'medium-modal-panel',
       }
@@ -67,23 +70,19 @@ export class NewsDisplayComponent implements OnChanges {
   }
 
   openInstagramDialog() {
-    const data: NewsDisplayDialogInput = {
-      stock: this.stock,
-      type: EventType.earnings,
-      showImage: true,
+    const data: InstagramNewsDisplayDialogInput = {
       title: this.news.title,
-      showTags: true,
-
-      stockMetrics: [
-        StockMetric.quarterlyRevenue,
-        StockMetric.forecastQuarterlyRevenue,
-        StockMetric.operatingExpense,
-        StockMetric.operatingMargin,
-      ],
+      links: this.stock?.earningsReports?.[0]?.links,
+      type: this.news.type,
+      tags: [...this.news.tags, ...stockTagsMock],
+      content: this.news.content,
+      stats: this.news.stats,
+      date: this.news.date,
+      imageLinks: this.news.imageLinks,
     };
 
-    this.dialogService.open<NewsDisplayDialogComponent>(
-      NewsDisplayDialogComponent,
+    this.dialogService.open<InstagramNewsDisplayDialogComponent>(
+      InstagramNewsDisplayDialogComponent,
       {
         data: data,
         panelClass: 'medium-modal-panel',

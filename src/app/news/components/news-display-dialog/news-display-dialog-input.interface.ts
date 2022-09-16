@@ -1,13 +1,13 @@
-import { StockMetric } from 'src/app/stock/components/stock-metric-display/stock-metric.enum';
+import { StatsDisplay } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { EventType } from '../../../stock/models/news.model';
-import { StockAnalysis } from '../../../stock/models/stock-analysis.model';
 
-export interface NewsDisplayDialogInput {
-  stock: StockAnalysis;
+export interface InstagramNewsDisplayDialogInput {
   title: string;
   links?: any[];
-  showImage?: boolean;
   type: EventType;
-  stockMetrics?: StockMetric[];
-  showTags?: boolean;
+  tags?: string[];
+  stats?: StatsDisplay[];
+  content?: string[];
+  imageLinks?: string[];
+  date?: Date;
 }

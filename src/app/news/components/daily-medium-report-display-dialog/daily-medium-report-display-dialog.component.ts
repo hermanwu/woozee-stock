@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { EventType } from 'src/app/stock/models/news.model';
 import { StatsDisplay } from '../../../shared/components/stats-display/stats-display.interface';
 import { getUtcDate } from '../../../shared/functions/getUtcDate.function';
+import { NewsService } from '../../services/news.services';
 
 @Component({
   selector: 'app-daily-medium-report-display-dialog',
@@ -9,13 +11,20 @@ import { getUtcDate } from '../../../shared/functions/getUtcDate.function';
 })
 export class DailyMediumReportDisplayDialogComponent implements OnInit {
   sp500 = [
+    { date: getUtcDate(2022, 9, 15), price: 3901.35 },
+    { date: getUtcDate(2022, 9, 14), price: 3946.01 },
+    { date: getUtcDate(2022, 9, 13), price: 3932.69 },
     { date: getUtcDate(2022, 9, 12), price: 4110.41 },
     { date: getUtcDate(2022, 9, 9), price: 4067.36 },
   ];
   nasdaqPrices = [
+    { date: getUtcDate(2022, 9, 15), price: 11552.4 },
+    { date: getUtcDate(2022, 9, 14), price: 11719.7 },
+    { date: getUtcDate(2022, 9, 13), price: 11633.6 },
     { date: getUtcDate(2022, 9, 12), price: 12266.41 },
     { date: getUtcDate(2022, 9, 9), price: 12112.31 },
   ];
+  S;
 
   nasdaqStats: StatsDisplay = {
     name: 'Nasdaq',
@@ -28,7 +37,33 @@ export class DailyMediumReportDisplayDialogComponent implements OnInit {
     previousValue: this.sp500[1].price,
   };
 
-  constructor() {}
+  allNews;
+  allTags = [];
+  macroNews = [];
+  industryNews = [];
+  stockNews = [];
+  earningsNews = [];
+  overviewNews = [];
+  investorNews = [];
+
+  constructor(private newsService: NewsService) {
+    this.allNews = this.newsService.getNewsByDate(new Date(2022, 8, 15));
+    for (let news of this.allNews) {
+      if (news.type === EventType.macro) {
+        this.macroNews.push(news);
+      } else if (news.type === EventType.industry) {
+        this.industryNews.push(news);
+      } else if (news.type === EventType.stock) {
+        this.stockNews.push(news);
+      } else if (news.type === EventType.earnings) {
+        this.earningsNews.push(news);
+      } else if (news.type === EventType.overview) {
+        this.overviewNews.push(news);
+      } else if (news.type === EventType.investor) {
+        this.investorNews.push(news);
+      }
+    }
+  }
 
   ngOnInit(): void {}
 }

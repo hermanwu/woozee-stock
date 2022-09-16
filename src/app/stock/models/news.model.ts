@@ -35,11 +35,12 @@ export interface News {
 export enum EventType {
   macro = 'Macro',
   geopolitics = 'Geopolitics',
-  industry = 'industry',
-  stock = 'Stocks',
-  investor = 'Investor',
-  earnings = 'Earnings Results',
-  opinions = 'Opinion',
+  industry = 'Industry',
+  stock = 'Stock',
+  earnings = 'Earnings',
+  opinions = 'Investor',
+  overview = 'Overview',
+  investor = 'investor',
 }
 
 export interface NewsWithDetails extends News {

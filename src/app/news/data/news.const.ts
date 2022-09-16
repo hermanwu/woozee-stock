@@ -1,3 +1,4 @@
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Index, MacroType } from 'src/app/macro/macro.enum';
 import { TimeFrame } from 'src/app/shared/components/stats-display/stats-display.interface';
 import {
@@ -9,6 +10,278 @@ import { Source } from 'src/app/stock/models/news-source.enum';
 import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
+  {
+    uuid: 'n29',
+    date: getUtcDate(2022, 9, 15),
+    title:
+      'Major averages were on pace toward their fourth losing week in five after the surprisingly hot CPI report.',
+    type: EventType.overview,
+  },
+  {
+    uuid: 'n29',
+    date: getUtcDate(2022, 9, 15),
+    title:
+      'Disney CEO said ESPN is looking for a partner to do the sports gambling business.',
+    type: EventType.stock,
+    tags: ['dis'],
+    content: [
+      'He emphasized that Walt Disney Company would never enter the sports betting business by itself.',
+    ],
+  },
+  {
+    uuid: 'n29',
+    date: getUtcDate(2022, 9, 15),
+    tags: ['txn'],
+    title:
+      'Texas Instruments raised its dividend by 8% to $1.24 and authorized a $15B buyback',
+    type: EventType.stock,
+  },
+  {
+    uuid: 'n29',
+    date: getUtcDate(2022, 9, 15),
+    title:
+      'Roblox (NYSE:RBLX) on Thursday reported a Y/Y rise for the month of Aug. ',
+    type: EventType.stock,
+    tags: ['rblx'],
+    content: [
+      'Estimated revenue was between $208M and $211M, up 22% to 24% Y/Y.',
+      'Estimated average bookings per daily active user was down 14% to 16% Y/Y.',
+      'Daily active users in Aug. were 59.9M (+24% Y/Y) and hours engaged were 4.7B, up 18% Y/Y.',
+    ],
+  },
+  {
+    uuid: 'n29',
+    date: getUtcDate(2022, 9, 15),
+    title:
+      'Southwest Airlines noted business travel remains well below the 2019 level and narrowed revenue guidance for the third quarter.',
+    type: EventType.industry,
+    tags: [IndustryType.airline, IndustryType.travel, 'luv'],
+    content: [
+      'July and August 2022 managed business revenues were down approximately 26% and 32%, respectively, both compared with their respective 2019 levels',
+    ],
+  },
+  {
+    uuid: 'n29',
+    date: getUtcDate(2022, 9, 15),
+    title:
+      "Bridgewater's Ray Dalio said that inflation rate will stay significantly above what Fed want it to be",
+    type: EventType.macro,
+    tags: ['inflation', 'recession', 'bridgewater', 'ray dalio'],
+    content: [
+      'His guesstimates is that inflation rate will stay from 4.5% to 6% for the next 10 years and  a economic contraction will be required',
+      'He also estimates such a rate would have a twenty-percent negative impact on equity prices.',
+    ],
+  },
+  {
+    uuid: 'n29',
+    date: getUtcDate(2022, 9, 15),
+    title:
+      'Tesla plans on closing some high-cost showrooms and focusing on expanding its services in China.',
+    type: EventType.stock,
+    tags: ['tsla'],
+    content: [
+      "Tesla's job site has more than 300 service positions open right now.",
+    ],
+  },
+  {
+    uuid: 'n29',
+    date: getUtcDate(2022, 9, 15),
+    title:
+      "Roku's SEC filing propped some investors believe that a takeover offer may be coming.",
+    type: EventType.stock,
+    tags: ['roku'],
+    content: [
+      'Roku ammended its severance benefit plan, in the event of a change control, according to an 8-K filing',
+    ],
+  },
+  {
+    uuid: 'n29',
+    date: getUtcDate(2022, 9, 15),
+    title:
+      "30-year fixed-rate mortgage averaged 6.02% for the week ending Sep. 15, up from last week's 5.89% average and from 2.86% average a year ago",
+    type: EventType.macro,
+    tags: ['housing', 'mortgage'],
+  },
+  {
+    uuid: 'n29',
+    date: getUtcDate(2022, 9, 15),
+    title: 'General Motor plans to invest $491M to support EV production',
+    type: EventType.stock,
+    tags: ['gm', 'ev'],
+  },
+  {
+    uuid: 'n29',
+    date: getUtcDate(2022, 9, 15),
+    title:
+      'Bed Bath and Beyond  listed 56 locations slated for closure including locations in Stamford, Connecticut, Paramus, New Jersey, Tucson, Arizona and Sandusky, Ohio,   ',
+    type: EventType.stock,
+    tags: ['bbby'],
+  },
+  {
+    uuid: 'n29',
+    date: getUtcDate(2022, 9, 15),
+    title:
+      'Fedex dropped 15% after quarterly results that wildly missed estimates.',
+    type: EventType.stock,
+    tags: ['fdx'],
+
+    content: [
+      'Business is impacted by the softness and challenges in Asia and Europe.',
+      'Fedex also withdrew its 2023 guidance and announced cost-cutting plan including 90 office closure.',
+      'This warnings is dramatically from the optimitics tune two months ago.',
+    ],
+  },
+  {
+    uuid: 'n28',
+    date: getUtcDate(2022, 9, 15),
+    title:
+      'Adobe released earnings result and announced acquisition of Figma for $20B dollars.',
+    type: EventType.earnings,
+    tags: ['adbe'],
+    content: [
+      'Quarterly Revenue increased to 4.43B, ⬆️ Up 12.7% YoY (from 3.94B)',
+      'Next Quarter Revenue Forecast increased to 4.52B, ⬆️ Up 10% YoY',
+      'Figma is a great company with ~90% gross margin and >150% net dollar retention rate.',
+      "Figma is expected to add $200M to $400M ARR to Adobe, which is only 1% - 2% of Adobe's annual revenue.",
+      'Adobe paid $20B for $200M - $400M annual revenue, equivalent to 50 - 100 P/S ratio, is too high under current market condition.',
+      'However, the Adobe-Figma deal will eliminate competition and remove the possibility of other SaaS giants such as Microsoft or Salesforce, acquiring Figma.',
+    ],
+  },
+  {
+    uuid: 'n28',
+    date: getUtcDate(2022, 9, 14),
+    title:
+      'Cathie Wood bought 18 different stocks after the huge selloff on Tuesday.',
+    type: EventType.investor,
+    tags: ['cathie wood', 'arkk'],
+    content: [
+      'The ARK Innovation ETF purchased 1M shares of various stocks, led by Roku (ROKU) and Zoom (ZM).',
+    ],
+  },
+  {
+    uuid: 'n27',
+    date: getUtcDate(2022, 9, 14),
+    title: 'Twilio announced to layoff 11% of workforce',
+    type: EventType.stock,
+    tags: ['twlo', 'layoff'],
+    content: ['It has also reaffirmed third quarter guidance.'],
+  },
+  {
+    uuid: 'n26',
+    date: getUtcDate(2022, 9, 14),
+    title:
+      'Biden announced the approval of $900M funding for EV charging infrastructure',
+    type: EventType.industry,
+    tags: [IndustryType.ev],
+    content: [
+      'The funding is part of the $1T infrastructure law approved in 2021',
+    ],
+  },
+  {
+    uuid: 'n25',
+    date: getUtcDate(2022, 9, 14),
+    title:
+      'Stocks rebounded today after the worst day since 2020 due to hot CPI report.',
+    type: EventType.overview,
+    tags: ['sp500', 'nasdaq'],
+  },
+  {
+    uuid: 'n25',
+    date: getUtcDate(2022, 9, 14),
+    title: 'Ethereum price outpaces Bitcoin with its merge process coming',
+    type: EventType.stock,
+    tags: ['eth', 'ethereum', 'crypto', 'bitcoin'],
+    content: [
+      'The merge process would reduce ethereum energy consumption by 99%',
+    ],
+  },
+  {
+    uuid: 'n24',
+    date: getUtcDate(2022, 9, 14),
+    title:
+      'Netflix estimated that its ad-supported tier will reach 40M viewers by 2023Q3. Currently, Netflix has 220M subscribers',
+    type: EventType.stock,
+    tags: ['nflx'],
+  },
+  {
+    uuid: 'n23',
+    date: getUtcDate(2022, 9, 14),
+    type: EventType.stock,
+    tags: ['tsla'],
+    title:
+      'Tesla’s Gigafactory expansion in Germany has been delayed indefinitely',
+    content: [
+      'City committee has removed the voting plan from the committee agenda',
+      'Expansion plan could be paused by Tesla itself due to falling demand',
+    ],
+  },
+  {
+    uuid: 'n23',
+    date: getUtcDate(2022, 9, 13),
+    type: EventType.stock,
+    tags: ['aapl'],
+    title: 'Apple plans to sell ads in new spots in the App Store - CNBC',
+    content: [
+      'Apple has been planning to double its digital advertising business workforce.',
+    ],
+  },
+  {
+    uuid: 'n22',
+    date: getUtcDate(2022, 9, 13),
+    type: EventType.stock,
+    tags: ['hood', 'crypto', 'bitcoin'],
+    title:
+      'Bitcoin is the most popular recurring investment on Robinhood, according to its CEO',
+    content: [
+      'This indicates that retail investors view Bitcoin as a long-term investment',
+    ],
+  },
+  {
+    uuid: 'n21',
+    date: getUtcDate(2022, 9, 13),
+    type: EventType.macro,
+    tags: ['inflation', 'CPI'],
+    title:
+      'CPI climbs 8.3% YoY in August, which is equivalvent to +0.1% compared to previous month.',
+    content: [
+      'All indices increased except energy commodities and apparel compared to previous month',
+    ],
+    stats: [
+      { name: 'Core Inflation', changeRate: 0.006, timeFrame: TimeFrame.mtm },
+      { name: 'Food', changeRate: 0.008, timeFrame: TimeFrame.mtm },
+      { name: 'Shelter', changeRate: 0.007, timeFrame: TimeFrame.mtm },
+      {
+        name: 'Medical care services',
+        changeRate: 0.008,
+        timeFrame: TimeFrame.mtm,
+      },
+    ],
+    imageLinks: [
+      'https://pbs.twimg.com/media/Fck1g5TakAIU9mR?format=png&name=large',
+      'https://pbs.twimg.com/media/Fck1g5SaUAAJGu2?format=jpg&name=large',
+    ],
+  },
+  {
+    uuid: 'n20',
+    date: getUtcDate(2022, 9, 13),
+    type: EventType.industry,
+    tags: [IndustryType.semi, 'nvda', 'amd', 'mu', 'intc'],
+    title: 'Chips stock plunged today after hot CPI report',
+    content: [
+      'Nvidia was down 9.47%, hit a new 52 week low',
+      'AMD was down 8.99%',
+      'Intel was down 7.19%',
+      'Micron was down 7.46%',
+    ],
+  },
+  {
+    uuid: 'n19',
+    date: getUtcDate(2022, 9, 13),
+    type: EventType.stock,
+    tags: ['twtr', 'elon musk'],
+    title:
+      "Twitter got 98.6% shareholder vote approval of Elon Musk's $44B acquisition deal.",
+  },
   {
     uuid: 'n19',
     date: getUtcDate(2022, 9, 12),
@@ -546,70 +819,5 @@ export const allNews: News[] = [
     ],
     type: EventType.earnings,
     source: Source.OFFICIAL,
-  },
-  {
-    uuid: 'n31',
-    title: 'Disney was up 7% after both revenue and earnings beat esitmates',
-    source: Source.OFFICIAL,
-    date: new Date('2022-08-09'),
-    type: EventType.earnings,
-    isBullish: true,
-    tickers: ['DIS'],
-    content: [
-      "Disneys' Hulu, ESPN+ and Disney+ have over 221 million subscribers in total, which is more than Netflix's 220 million subscribers",
-      'Starting Dec. 8, ad-free Disney+ will rise 38% to $10.99 per month',
-      'Disney’s parks, experiences and products division saw revenue increase 72% to $7.4 billion',
-    ],
-    stats: [
-      {
-        name: 'Disney+ subscriptions',
-        value: 152.1 * MILLION,
-        expectedValue: 147 * MILLION,
-      },
-      {
-        name: 'Parks, experiences and products revenue',
-        value: 7.4 * BILLION,
-        changeRate: 0.72,
-        timeFrame: TimeFrame.yoy,
-      },
-    ],
-  },
-  {
-    uuid: 'n30',
-    title: 'Latest CPI report shows slowdown in inflation',
-    content: [
-      'July CPI was Up 8.5% YoY, lower than expectations.',
-      'Month to month CPI of all items unchanged as fall in gasoline offsets shelter, food increases.',
-      'Lower-than-expected inflation numbers could take some heat off the Fed.',
-    ],
-    source: Source.laborStatistics,
-    date: new Date('2022-08-09'),
-    type: EventType.macro,
-    tickers: ['SPY'],
-    isBullish: true,
-
-    stats: [
-      {
-        name: 'Shelter',
-        changeRate: 0.005,
-        timeFrame: TimeFrame.mtm,
-      },
-
-      {
-        name: 'Core CPI',
-        details: [
-          {
-            changeRate: 0.059,
-            timeFrame: TimeFrame.yoy,
-            expectedChangeRate: 0.061,
-          },
-          {
-            changeRate: 0.003,
-            timeFrame: TimeFrame.mtm,
-            expectedChangeRate: 0.005,
-          },
-        ],
-      },
-    ],
   },
 ];

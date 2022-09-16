@@ -10,6 +10,10 @@ import { Source } from 'src/app/stock/models/news-source.enum';
 import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
+  // {
+  //   title:
+  //     'Stocks hit lowest level since July as FedEx sends S&P, Nasdaq, Dow lower again',
+  // },
   {
     uuid: 'n29',
     date: getUtcDate(2022, 9, 15),

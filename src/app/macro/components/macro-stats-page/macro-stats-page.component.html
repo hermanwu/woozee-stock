@@ -1,13 +1,20 @@
 <app-title-menu>
-  <h1 title>Macro Indicators</h1>
+  <h1 title>Macro</h1>
 </app-title-menu>
+
+<div>US Market</div>
+
+<div>China Market</div>
+
+<div>European Market</div>
+
+<div></div>
+
 <div *ngFor="let item of macros">
   {{ item.type }}
 </div>
 
-<app-title-menu>
-  <h1 title>Regions</h1>
-</app-title-menu>
-<div *ngFor="let item of regions">
-  {{ item.type }}
+<div>
+  <div>Indicator Name</div>
+  <div>Region</div>
 </div>

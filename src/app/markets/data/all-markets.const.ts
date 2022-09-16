@@ -10,14 +10,12 @@ import { saas } from './saas-market.const';
 import { semiconductorMarket } from './semi.const';
 import { sharedEconomyMarket } from './shared-economy.const';
 import { travelMarket } from './travel-market.const';
-import { usMarket } from './us-market.mock';
 
 export const allMarkets: Market[] = [
   foodDeliveryMarket,
   sharedEconomyMarket,
   semiconductorMarket,
   fintechMarket,
-  usMarket,
   hospitalityMarket,
   saas,
   crmMarket,

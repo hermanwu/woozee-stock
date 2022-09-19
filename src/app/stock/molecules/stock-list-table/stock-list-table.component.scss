@@ -1,6 +1,6 @@
 .stock-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+  grid-template-columns: 1fr 2fr 1fr 1fr;
   grid-gap: 1rem;
   align-items: top;
 }

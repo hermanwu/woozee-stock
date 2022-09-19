@@ -8,6 +8,7 @@ export const baba: StockAnalysis = {
   marketCap: 277.39 * BILLION,
   logo: '',
   name: 'Alibaba',
+  shortName: 'Alibaba',
   description: [],
   ticker: 'baba',
   irAddress: 'https://www.alibabagroup.com/en/ir/home',

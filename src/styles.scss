@@ -9,6 +9,14 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: 0.00625em;
+  color: #202124;
+  line-height: 1.5rem;
+}
+
+strong {
+  font-weight: 500;
+  letter-spacing: 0.015em;
 }
 
 h1,

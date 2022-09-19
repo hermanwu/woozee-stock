@@ -1,21 +1,21 @@
 <ng-container [ngSwitch]="factType">
   <ng-container *ngSwitchCase="factTypeEnum.profit" i18n>
     <app-title-menu>
-      <div title>Profitability Risks</div>
+      <div header-1>Profitability Risks</div>
     </app-title-menu>
     <app-risk-list [risks]="risks"></app-risk-list>
   </ng-container>
 
   <ng-container *ngSwitchCase="factTypeEnum.growth" i18n>
     <app-title-menu>
-      <div title>Growth Risks</div>
+      <div header-1>Growth Risks</div>
     </app-title-menu>
     <app-risk-list [risks]="risks"></app-risk-list>
   </ng-container>
 
   <ng-container *ngSwitchCase="factTypeEnum.business" i18n>
     <app-title-menu>
-      <div title>Market Risks</div>
+      <div header>Market Risks</div>
     </app-title-menu>
 
     <div *ngFor="let market of markets">

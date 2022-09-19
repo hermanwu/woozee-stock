@@ -78,6 +78,8 @@ export class MarketsService {
     return this.marketTypeToMarketMap.get(type);
   }
 
+  getIndustries() {}
+
   getStocksByIndustryType(
     type: IndustryType,
     stocks: StockData[] = this.allStocks

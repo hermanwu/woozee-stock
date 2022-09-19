@@ -1,14 +1,3 @@
-export enum MacroType {
-  housing = 'Housing Market',
-  naturalGas = 'Natural Gas',
-  gold = 'Gold',
-  fed = 'Fed',
-  currency = 'Currency',
-  inflation = 'Inflation',
-  stock = 'Stock Market',
-  gepolictics = 'Gepolictics',
-}
-
 export enum Region {
   us = 'United States',
   europe = 'Europe',

@@ -5,9 +5,6 @@ import { RiskLevel } from '../models/risk-level.model';
 import { Risk } from '../models/risk.model';
 import { allStockRisks } from './all-stock-risks.const';
 import { marketRisks } from './markets.risks';
-import { covid } from './risks/covid.model';
-import { geopolitics } from './risks/geopolitics.model';
-import { inflation } from './risks/inflation.model';
 
 export const allRisks: Risk[] = [
   // {
@@ -173,9 +170,5 @@ export const allRisks: Risk[] = [
     type: FactType.profit,
     updatedTime: new Date('2022-04-19'),
   },
-  geopolitics,
-
-  covid,
-  inflation,
   ...portfolioRisks,
 ];

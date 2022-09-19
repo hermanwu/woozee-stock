@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MacroServices } from '../../macro.services';
+import { MacroServices, Rating } from '../../macro.services';
 
 @Component({
   selector: 'app-macro-stats-page',
@@ -7,12 +7,12 @@ import { MacroServices } from '../../macro.services';
   styleUrls: ['./macro-stats-page.component.scss'],
 })
 export class MacroStatsPageComponent implements OnInit {
+  readonly rating = Rating;
   macros: any[];
   regions: any[];
 
   constructor(private macroServices: MacroServices) {
     this.macros = this.macroServices.getMacros();
-    this.regions = this.macroServices.getRegions();
   }
 
   ngOnInit(): void {}

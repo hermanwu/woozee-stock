@@ -1,0 +1,15 @@
+.table > div {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  align-items: top;
+  border-top: 1px solid lightgray;
+}
+
+h1 {
+  font-size: medium;
+}
+
+app-card {
+  margin: 10px;
+}

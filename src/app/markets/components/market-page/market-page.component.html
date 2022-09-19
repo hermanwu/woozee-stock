@@ -1,5 +1,5 @@
 <app-title-menu>
-  <div title i18n>Industries</div>
+  <div header-1 i18n>Industries</div>
 
   <div buttons>
     <button mat-icon-button type="button" (click)="sort()" disabled>
@@ -11,4 +11,6 @@
   </div>
 </app-title-menu>
 
-<app-market-list [markets]="markets"></app-market-list>
+<app-card>
+  <app-market-list [markets]="markets"></app-market-list>
+</app-card>

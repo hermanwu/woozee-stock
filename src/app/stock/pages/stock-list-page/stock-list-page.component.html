@@ -1,7 +1,9 @@
 <app-title-menu>
-  <div title i18n>Stocks</div>
+  <div header-1 i18n>Stocks</div>
 </app-title-menu>
 
-<div class="stock-list-table">
-  <app-stock-list-table [stocks]="stocks"></app-stock-list-table>
-</div>
+<app-card>
+  <div class="stock-list-table">
+    <app-stock-list-table [stocks]="stocks"></app-stock-list-table>
+  </div>
+</app-card>

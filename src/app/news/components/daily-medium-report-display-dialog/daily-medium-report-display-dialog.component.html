@@ -11,7 +11,7 @@
 </div>
 
 <app-title-menu>
-  <h1 title>Macro</h1>
+  <h1 header-1>Macro</h1>
 </app-title-menu>
 <div>
   🔸
@@ -37,7 +37,7 @@
 </div>
 
 <app-title-menu>
-  <h1 title>Industry</h1>
+  <h1 header-1>Industry</h1>
 </app-title-menu>
 <div *ngFor="let news of industryNews">
   <app-stock-image-display [tag]="news.tags?.[0]"></app-stock-image-display>
@@ -55,7 +55,7 @@
 </div>
 
 <app-title-menu>
-  <h1 title>Stock</h1>
+  <h1 header-1>Stock</h1>
 </app-title-menu>
 <div *ngFor="let news of stockNews">
   <app-stock-image-display [tag]="news.tags?.[0]"></app-stock-image-display>
@@ -73,7 +73,7 @@
 </div>
 
 <app-title-menu *ngIf="earningsNews?.length > 0">
-  <h1 title>Earnings</h1>
+  <h1 header-1>Earnings</h1>
 </app-title-menu>
 <div *ngFor="let news of earningsNews">
   <app-stock-image-display [tag]="news.tags?.[0]"></app-stock-image-display>

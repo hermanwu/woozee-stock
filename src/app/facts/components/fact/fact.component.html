@@ -1,8 +1,8 @@
 <app-card>
   <div *ngIf="showDetails">
-    <h2 header-2>
-      {{ factType }}
-    </h2>
+    <app-title-menu>
+      <div header-2>{{ factType }}</div>
+    </app-title-menu>
 
     <ng-content></ng-content>
   </div>

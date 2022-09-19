@@ -1,5 +1,5 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
-import { Index, MacroType } from 'src/app/macro/macro.enum';
+import { Index } from 'src/app/macro/macro.enum';
 import { TimeFrame } from 'src/app/shared/components/stats-display/stats-display.interface';
 import {
   convertDateToUTC,
@@ -414,7 +414,7 @@ export const allNews: News[] = [
   {
     uuid: 'n11',
     type: EventType.macro,
-    tags: [MacroType.currency],
+    tags: ['currency'],
     date: convertDateToUTC(new Date('2022-09-08')),
     title:
       'Chinese currency continued devaluating, which could have significant impact on Asian-heavy companies',
@@ -422,7 +422,7 @@ export const allNews: News[] = [
   {
     uuid: 'n10',
     type: EventType.macro,
-    tags: [MacroType.stock],
+    tags: ['stock'],
     date: convertDateToUTC(new Date('2022-09-08')),
     title:
       'S&P 500 +0.66% and Nasdaq +0.60% today, as they are on pace to snap a 3-week losing streak.',
@@ -430,7 +430,7 @@ export const allNews: News[] = [
   {
     uuid: 'n10',
     type: EventType.macro,
-    tags: [MacroType.fed],
+    tags: ['fed'],
     date: convertDateToUTC(new Date('2022-09-08')),
     title:
       'Federal Reserve Chair Jerome Powell gave a hawish speech that he is strongly committed to fight inflation.',
@@ -597,7 +597,7 @@ export const allNews: News[] = [
     date: new Date('2022-08-17'),
     type: EventType.macro,
     source: null,
-    tags: [MacroType.housing],
+    tags: ['housing'],
     sourceLink: '',
   },
   {

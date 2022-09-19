@@ -1,5 +1,4 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
-import { MacroType } from 'src/app/macro/macro.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Note } from 'src/app/shared/data/note.interface';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
@@ -24,7 +23,7 @@ export interface News {
   markets?: IndustryType[];
   tickers?: string[];
 
-  tags?: (IndustryType | MacroType | string)[];
+  tags?: (IndustryType | string)[];
   isBullish?: boolean;
   stats?: StatsDisplay[];
 

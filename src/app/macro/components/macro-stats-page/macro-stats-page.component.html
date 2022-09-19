@@ -1,20 +1,30 @@
 <app-title-menu>
-  <h1 title>Macro</h1>
+  <div header-1>Global Macro</div>
 </app-title-menu>
 
-<div>US Market</div>
+<app-card>
+  <div class="table">
+    <div class="table-head">
+      <div>Title</div>
+      <div>Region</div>
+      <div>Opinion</div>
+    </div>
 
-<div>China Market</div>
-
-<div>European Market</div>
-
-<div></div>
-
-<div *ngFor="let item of macros">
-  {{ item.type }}
-</div>
-
-<div>
-  <div>Indicator Name</div>
-  <div>Region</div>
-</div>
+    <div *ngFor="let item of macros" class="table-row">
+      <div>
+        <div>{{ item.title }}</div>
+        <div>
+          <app-badge *ngFor="let tag of item.tags">{{ tag }}</app-badge>
+        </div>
+      </div>
+      <div>
+        <span *ngFor="let region of item.regions">
+          <app-badge>{{ region }}</app-badge>
+        </span>
+      </div>
+      <div>
+        <span *ngIf="item.type === rating.BEAR"> {{ item.type }} </span>
+      </div>
+    </div>
+  </div>
+</app-card>

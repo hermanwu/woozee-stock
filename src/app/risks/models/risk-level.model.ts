@@ -1,6 +1,4 @@
-export enum RiskLevel {
-  // Cause stock to drop.
-  shortTerm = 'Short Term',
-  // Cause stock to be out of business.
-  longTerm = 'Long Term',
+export enum Term {
+  short = 'Short Term',
+  long = 'Long Term',
 }

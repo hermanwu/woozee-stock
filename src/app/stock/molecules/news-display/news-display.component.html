@@ -13,6 +13,12 @@
 </ng-container>
 
 <div>
+  <app-tags-display [tags]="news?.tags"> </app-tags-display>
+
+  <app-date-display [date]="news?.date"></app-date-display>
+</div>
+
+<div>
   <ng-container *ngIf="!environment.production">
     <button mat-button type="button" (click)="showDetails = !showDetails">
       More
@@ -24,8 +30,6 @@
 
     <button mat-button (click)="openInstagramDialog()">Instagram</button>
   </ng-container>
-
-  <app-date-display [date]="news?.date"></app-date-display>
 </div>
 
 <div *ngIf="showDetails">

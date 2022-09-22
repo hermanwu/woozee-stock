@@ -7,8 +7,8 @@ import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { riskService } from 'src/app/risks/services/subjective-data.service';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
-import { Market } from 'src/app/stock/models/market.models';
-import { MarketsService } from '../../services/markets.service';
+import { Industry } from 'src/app/stock/models/market.models';
+import { IndustriesService } from '../../services/industries.service';
 
 @Component({
   selector: 'app-market-properties-page',
@@ -20,7 +20,7 @@ export class MarketPropertiesPageComponent implements OnInit {
   routeSub: Subscription;
 
   marketType: IndustryType;
-  market: Market;
+  market: Industry;
   risks: Risk[];
   catalysts: Catalyst[];
 
@@ -28,7 +28,7 @@ export class MarketPropertiesPageComponent implements OnInit {
     private route: ActivatedRoute,
     private titleService: Title,
     private riskService: riskService,
-    private marketService: MarketsService,
+    private marketService: IndustriesService,
     private catalystService: CatalystService
   ) {}
 

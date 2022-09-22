@@ -22,6 +22,10 @@ export enum EmojiUnicode {
   speaker = '🎙️',
 }
 
+export const BullishEmoji = ['🚀', '😆', '🙂', '👍'];
+
+export const BearishEmoji = ['😫', '🙁', '👎'];
+
 export const industryEmojiMap = {
   [IndustryType.quantumComputing]: '⚛️',
   [IndustryType.ecommerce]: '🛒',

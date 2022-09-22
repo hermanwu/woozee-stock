@@ -1,5 +1,5 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { Source } from '../models/news-source.enum';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -7,7 +7,7 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 export const snapRisks = [
   {
     name: 'Business Moat',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [
       {
         content:
@@ -42,7 +42,7 @@ export const snapRisks = [
   },
   {
     name: 'Revenue and Growth',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [
       {
         content: 'Revenue +42% (0.91B -> 1.3B)',
@@ -117,7 +117,7 @@ export const snapRisks = [
   },
   {
     name: 'Income & Profitability',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [
       {
         content:
@@ -143,7 +143,7 @@ export const snapRisks = [
   },
   {
     name: 'Stock Valuation',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [
       {
         content: 'Market Cap: 39.44B (Google: 1842B, Facebook: 627B)',
@@ -155,7 +155,7 @@ export const snapRisks = [
   },
   // {
   //   name: 'Management & Execution',
-  //   level: RiskLevel.shortTerm,
+  //   level: Term.short,
   //   notes: [
   //     {
   //       content: 'Glassdoor: 4 starts',
@@ -176,7 +176,7 @@ export const snapRisks = [
   // },
   {
     name: 'Investors Sentiment',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [
       {
         content: '18 Buy, 9 Hold, 0 Sell',
@@ -190,7 +190,7 @@ export const snapRisks = [
   },
   // {
   //   name: 'Technical Trends',
-  //   level: RiskLevel.shortTerm,
+  //   level: Term.short,
   //   notes: [
   //     {
   //       content: 'RSI is below average currently (was oversold in past week)',
@@ -205,7 +205,7 @@ export const snapRisks = [
   // },
   // {
   //   name: 'Macro Market',
-  //   level: RiskLevel.shortTerm,
+  //   level: Term.short,
   //   notes: [
   //     {
   //       content: 'Fed rate increase would affect stocks with no income.',

@@ -1,7 +1,7 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -9,7 +9,7 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 export const nvdaRisks = [
   {
     type: FactType.growth,
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     name: 'Automotive and Robotic business slows down',
     notes: [
       {
@@ -20,7 +20,7 @@ export const nvdaRisks = [
   },
   {
     type: FactType.valuation,
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     name: 'P/S and P/E are relatively high',
     notes: [
       {

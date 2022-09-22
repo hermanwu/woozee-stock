@@ -10,10 +10,240 @@ import { Source } from 'src/app/stock/models/news-source.enum';
 import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
-  // {
-  //   title:
-  //     'Stocks hit lowest level since July as FedEx sends S&P, Nasdaq, Dow lower again',
-  // },
+  {
+    date: getUtcDate(2022, 9, 21),
+    title:
+      'Ford lost 12% as it is facing an extra $1B inflation-related supplier costs.',
+    type: EventType.stock,
+    tags: ['f', 'ev'],
+    content: ['Up to 45k vehicles, mostly trucks and SUVs have been impacted'],
+  },
+  {
+    date: getUtcDate(2022, 9, 21),
+    type: EventType.macro,
+    title:
+      'Dollar index hit another 20-year high against other currencies since Russia started to invade Ukraine.',
+    tags: ['Currency'],
+  },
+  {
+    date: getUtcDate(2022, 9, 21),
+    type: EventType.industry,
+    title:
+      'Nasdaq plans to launch a crypto custody service as company sees increasing digital currencies demand ',
+    tags: [IndustryType.crypto],
+  },
+  {
+    date: getUtcDate(2022, 9, 21),
+    type: EventType.industry,
+    title:
+      'FTX is in talks with investors to raise up to $1B that would value company at $32B',
+    tags: [IndustryType.crypto],
+  },
+  {
+    date: getUtcDate(2022, 9, 21),
+    type: EventType.macro,
+    tags: ['Russia-Ukriain War'],
+    title:
+      "Russia president Putin announced 'partial military mobilization' and called up 300,000 reservists for the war.",
+  },
+  {
+    date: getUtcDate(2022, 9, 21),
+    type: EventType.stock,
+    tags: ['meta'],
+    title:
+      'Meta reportedly sets plans for 10% cost cuts and gave some workers a month to find a new role at the company.',
+    content: [],
+  },
+  {
+    date: getUtcDate(2022, 9, 21),
+    type: EventType.macro,
+    tags: ['bond, treasury yield'],
+    title: '2-year Treasury surges above 4.1%, highest level since 2007.',
+    content: [
+      '2-year Treasury is now higher than 10-year Treasury (3.64%), which is a popluar indicator of a recession.',
+    ],
+  },
+  {
+    date: getUtcDate(2022, 9, 21),
+    type: EventType.overview,
+    tags: ['fed rate'],
+    title:
+      'As expected, Federal Reserve boosts another 75 basis points, brining it to 3% - 3.25%, the highest point since 2008',
+    content: [
+      'This is the third boost in a row',
+      'Fed will also continue shrinking its balance sheet.',
+      'The economy will begin to slow more as it is more costly for businesses to borrow money.',
+      'Fed now expected to see rates going to nearly 4.5% by the end of the year.',
+    ],
+  },
+  {
+    uuid: 'n31',
+    date: getUtcDate(2022, 9, 21),
+    type: EventType.stock,
+    tags: ['crm'],
+    title:
+      'Salesforce announced a revenue target of $50B for 2026, which represents ~17% compound annual growth.',
+    content: [
+      'The forecast revenue for fiscal 2023 is $31B, presenting exactly ~17% growth from $26.5B in fiscal 2022.',
+      'Company also aims for 25% opertaing margin in 2026.',
+    ],
+  },
+  {
+    uuid: 'n31',
+    date: getUtcDate(2022, 9, 20),
+    type: EventType.macro,
+    tags: ['inflation', 'cpi', 'canada'],
+    title:
+      'Canada inflation rate slowed to 7% in August, faster than expected.',
+    content: ['The slowdown was largely driven by gasoline price fall'],
+  },
+  {
+    uuid: 'n31',
+    date: getUtcDate(2022, 9, 20),
+    type: EventType.stock,
+    tags: ['nvda'],
+    title: 'Nvidia unveiled new products during annual GTC conference.',
+    content: [
+      'New cloud servicess to support AI workflows',
+      'New generation of GeForce RTX GPUs',
+      'First GPUs based on the new NVIDIA Ada Lovelace architecture for gamers and creators.',
+      'Grace CPU and Grace Hopper Superchip for enterprises',
+      'New Thor superchip for Autonomous Vehicles, Robotics, Medical Instruments and More',
+    ],
+    sourceLink:
+      'https://blogs.nvidia.com/blog/2022/09/20/keynote-gtc-nvidia-ceo/',
+  },
+  {
+    uuid: 'n31',
+    date: getUtcDate(2022, 9, 20),
+    type: EventType.stock,
+    tags: ['ual'],
+    title:
+      'United Airlines paused 25 Boeing 777 airplanes operation after findig them failed to perform inspection on wing panels.',
+  },
+  {
+    uuid: 'n31',
+    date: getUtcDate(2022, 9, 20),
+    type: EventType.stock,
+    tags: ['bynd'],
+    title:
+      "Beyond Meat COO was suspended after arrest for allegedly biting man's nose.",
+  },
+  {
+    uuid: 'n30',
+    date: getUtcDate(2022, 9, 20),
+    type: EventType.overview,
+    title:
+      'All 11 sectors of the S&P fell today as investors waiting for the Fed rate decision tomorrow.',
+  },
+  {
+    uuid: 'n31',
+    date: getUtcDate(2022, 9, 20),
+    type: EventType.stock,
+    tags: ['coin'],
+    title:
+      'Coinbase plan to increase fees for those trading less than $250m a month.',
+  },
+  {
+    uuid: 'n31',
+    date: getUtcDate(2022, 9, 20),
+    type: EventType.stock,
+    tags: ['meta'],
+    title:
+      'Meta said that it would integrate WhatsApp with Salesforce so business can chat with their customers through WhatsApp messaging service',
+  },
+  {
+    uuid: 'n30',
+    date: getUtcDate(2022, 9, 19),
+    type: EventType.industry,
+    tags: ['bnpl', 'pypl', 'sq', 'afrm'],
+    title:
+      'The U.S. Consumer Financial Protection Bureau (CFPB) plans to start regulating "buy-now, pay-later" (BNPL) companies like Affirm due to worries that consumers are not protected enough.',
+  },
+  {
+    uuid: 'n30',
+    date: getUtcDate(2022, 9, 19),
+    type: EventType.stock,
+    tags: ['panw'],
+    title:
+      'Palo Alto Networks is in the process of acquiring cybersecurity startup Apiiro for $600M.',
+  },
+  {
+    uuid: 'n30',
+    date: getUtcDate(2022, 9, 19),
+    type: EventType.stock,
+    tags: ['open'],
+    title:
+      'Opendoor stock slides after a report saying it is losing money on 42% of all transactions in August',
+    content: [
+      'This data exposed the risks of the iBuying business, which could be hugely affected by macro environment',
+      'Last year, Zillow pulled out of iBuying business after concluding that home prices was too unpredictable ',
+    ],
+  },
+  {
+    uuid: 'n30',
+    date: getUtcDate(2022, 9, 19),
+    type: EventType.industry,
+    tags: ['crypto'],
+    title: 'Etherum sank near 25% last week after the Merge is completed.',
+    content: [
+      'After the Merge, over 40% of the blocks were added by two addresses: Coinbase and Lido',
+      '50% of the nodes are hosted on Amazon Web Services',
+      'The result raised concerns about the decentralization as these centralized institutions controlled majority of the network.',
+    ],
+  },
+  {
+    uuid: 'n30',
+    date: getUtcDate(2022, 9, 19),
+    type: EventType.overview,
+    title:
+      'S&P moved higher around the 3900 support level after a volatile trading session as investors waiting for the Fed interest-rate decision this week.',
+  },
+  {
+    uuid: 'n30',
+    date: getUtcDate(2022, 9, 19),
+    title:
+      'Ford expected inflation-related supplier costs during Q3 to be $1B higher than previous estimated',
+    type: EventType.stock,
+    tags: ['f', 'ev'],
+  },
+  {
+    uuid: 'n30',
+    date: getUtcDate(2022, 9, 19),
+    title: 'Cruise robotaxi service to expand to Austin, Phoenix in 2022',
+    type: EventType.industry,
+    tags: [IndustryType.selfDriving, IndustryType.ai],
+  },
+  {
+    uuid: 'n30',
+    date: getUtcDate(2022, 9, 19),
+    title:
+      'The benchmark 10-year Treasury yield gained 6 basis points to 3.518%, hitting its highest level since April 2011 as mortgage rates keep moving higher.',
+
+    type: EventType.macro,
+    tags: ['Treasury Yields'],
+  },
+  {
+    uuid: 'n30',
+    date: getUtcDate(2022, 9, 19),
+    title:
+      "Fed's two-day meeting will begin Tuesday, with the market expecting another 75 basis point hike.",
+
+    type: EventType.macro,
+    tags: ['Fed Rate'],
+  },
+  {
+    uuid: 'n30',
+    date: getUtcDate(2022, 9, 19),
+    title:
+      'CVOID-19 vaccine stocks fell as President Biden said the pandemic is over.',
+    content: [
+      'President Joe Biden said "We still have a problem with COVID. We are still doing a lot of work on it. But the pandemic is over.',
+      'Both Moderna and Novavax dropped ~8%',
+    ],
+    type: EventType.industry,
+    tags: ['covid', 'mrna', 'nvax', 'covid'],
+  },
   {
     uuid: 'n29',
     date: getUtcDate(2022, 9, 15),

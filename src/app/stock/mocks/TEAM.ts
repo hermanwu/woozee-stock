@@ -1,16 +1,16 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 export const teamRisks = [
   {
     name: 'no income',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
   },
   {
     name: 'High price to sales ratio: 33.73',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [
       {
         content: 'ServiceNow: 19.29, Salesforce: 8.88',
@@ -19,7 +19,7 @@ export const teamRisks = [
   },
   {
     name: 'Marketing and sales, General and administrative cost increases (+74% & +73%)',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [
       {
         content: 'Sales only increases 36%',

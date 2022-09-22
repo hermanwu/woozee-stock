@@ -1,8 +1,8 @@
 import { portfolioCatalysts } from 'src/app/accounts/ mock-data/portoflio-catalysts.const';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
-import { CatalystLevel } from '../catalyst-level-display/catalyst-level.enum';
 import { allCatalystsForStocks } from './all-catalyst-for-stocks.const';
 import { marketCatalysts } from './markets-catalysts.mock';
 
@@ -11,7 +11,7 @@ export const catalysts: Catalyst[] = [
   //   uuid: 'c-5',
   //   content: "Tesla's growth is accelerating.",
   //   markets: [IndustryType.ev],
-  //   level: CatalystLevel.moderate,
+  //   level: Term.short,
   //   type: FactType.growth,
   //   date: new Date('2022-04-20'),
   //   notes: [
@@ -31,7 +31,7 @@ export const catalysts: Catalyst[] = [
     uuid: 'c9',
     content: 'Full Self-Driving release.',
     tickers: ['tsla'],
-    level: CatalystLevel.moderate,
+    level: Term.short,
     date: new Date('2022-04-30'),
   },
   {
@@ -39,7 +39,7 @@ export const catalysts: Catalyst[] = [
     content:
       'Production and Deliveries started in Gigafactory Berlin and Texas',
     tickers: ['tsla'],
-    level: CatalystLevel.strong,
+    level: Term.short,
     date: new Date('2022-04-30'),
   },
   {
@@ -47,14 +47,14 @@ export const catalysts: Catalyst[] = [
     content:
       'AWS growth remains really strong: revenue +37% & operating income +57%.',
     tickers: ['AMZN'],
-    level: CatalystLevel.strong,
+    level: Term.short,
     date: new Date('2022-04-27'),
   },
   {
     uuid: 'c8',
     content: 'Ad business grew 23% year over year',
     tickers: ['AMZN'],
-    level: CatalystLevel.moderate,
+    level: Term.short,
     date: new Date('2022-04-27'),
   },
 
@@ -63,7 +63,7 @@ export const catalysts: Catalyst[] = [
     content:
       'The short video format popularized by TikTok has excellent momentum.',
     markets: [IndustryType.digitalMedia],
-    level: CatalystLevel.moderate,
+    level: Term.short,
     type: FactType.growth,
     date: new Date('2022-04-27'),
   },
@@ -71,7 +71,7 @@ export const catalysts: Catalyst[] = [
     uuid: 'c-5',
     content: "Tesla's growth is accelerating.",
     tickers: ['TSLA'],
-    level: CatalystLevel.moderate,
+    level: Term.short,
     type: FactType.growth,
     date: new Date('2022-04-20'),
     notes: [
@@ -94,7 +94,7 @@ export const catalysts: Catalyst[] = [
       IndustryType.airline,
       IndustryType.beauty,
     ],
-    level: CatalystLevel.moderate,
+    level: Term.short,
     type: FactType.growth,
     date: new Date('2022-04-18'),
   },
@@ -102,7 +102,7 @@ export const catalysts: Catalyst[] = [
     uuid: 'c-2',
     content: 'EV demand would drive chip demand.',
     markets: [IndustryType.semi],
-    level: CatalystLevel.moderate,
+    level: Term.short,
     type: FactType.growth,
     date: new Date('2022-04-18'),
   },
@@ -111,7 +111,7 @@ export const catalysts: Catalyst[] = [
     content:
       'Ukraine-Russian War increases defense / government contract spending',
     markets: [IndustryType.defense],
-    level: CatalystLevel.moderate,
+    level: Term.short,
     type: FactType.event,
     date: new Date('2022-04-18'),
   },

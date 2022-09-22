@@ -122,6 +122,7 @@ import { TTD } from './TTD';
 import { twlo } from './TWLO';
 import { twtr } from './twtr';
 import { u } from './U.mock';
+import { ual } from './ual.mock';
 import { uber } from './uber';
 import { ulta } from './ULTA';
 import { unh } from './unh';
@@ -291,4 +292,5 @@ export const stocksMap = {
   gtlb,
   li,
   cxm,
+  ual,
 };

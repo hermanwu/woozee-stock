@@ -19,11 +19,16 @@
       </div>
       <div>
         <span *ngFor="let region of item.regions">
-          <app-badge>{{ region }}</app-badge>
+          <app-badge
+            ><app-region-display [region]="region"></app-region-display
+          ></app-badge>
         </span>
       </div>
       <div>
-        <span *ngIf="item.type === rating.BEAR"> {{ item.type }} </span>
+        <app-opinion-display
+          *ngIf="item.opinion"
+          [opinion]="item?.opinion"
+        ></app-opinion-display>
       </div>
     </div>
   </div>

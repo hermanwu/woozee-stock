@@ -1,7 +1,7 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { allNews } from 'src/app/news/data/news.const';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -9,7 +9,7 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 export const fbRisks = [
   {
     name: 'Financial Health',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     type: FactType.profit,
     notes: [
       {
@@ -23,7 +23,7 @@ export const fbRisks = [
   },
   {
     name: 'Value',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [
       {
         content:
@@ -36,12 +36,12 @@ export const fbRisks = [
   },
   {
     name: 'Future Growth',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [allNews[2]],
   },
   {
     name: 'Management',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [
       {
         content: "Elon Musk's health and focus",
@@ -54,7 +54,7 @@ export const fbRisks = [
   },
   {
     name: 'Investors Sentiment',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [
       {
         content:
@@ -82,12 +82,12 @@ export const fbRisks = [
   },
   {
     name: 'Competitors',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [allNews[3]],
   },
   {
     name: 'Technical Chart',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [
       {
         content: 'RSI is below average',
@@ -99,7 +99,7 @@ export const fbRisks = [
   },
   {
     name: 'Macroeconomics',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [],
   },
 ];

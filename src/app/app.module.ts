@@ -15,8 +15,8 @@ import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BlogPageComponent } from './blog-page/blog-page.component';
 import { BoosterComponent } from './catalyst/booster/booster.component';
-import { CatalystLevelDisplayComponent } from './catalyst/catalyst-level-display/catalyst-level-display.component';
 import { CatalystListComponent } from './catalyst/components/catalyst-list/catalyst-list.component';
 import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
 import { CatalystTotalDisplayComponent } from './catalyst/components/catalyst-total-display/catalyst-total-display.component';
@@ -26,15 +26,17 @@ import { FactComponent } from './facts/components/fact/fact.component';
 import { GrowthDetailsComponent } from './growth-details/growth-details.component';
 import { FomoStocksComponent as HomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
 import { ImageDisplayComponent } from './images/components/image-display/image-display.component';
+import { InstagramDisplayComponent } from './instagram-display/instagram-display.component';
 import { MacroStatsPageComponent } from './macro/components/macro-stats-page/macro-stats-page.component';
 import { MarketDisplayComponent } from './markets/components/market-display/market-display.component';
 import { MarketListComponent } from './markets/components/market-list/market-list.component';
-import { MarketPageComponent } from './markets/components/market-page/market-page.component';
+import { IndustriesPageComponent } from './markets/components/market-page/market-page.component';
 import { MarketPropertiesPageComponent } from './markets/components/market-properties-page/market-properties-page.component';
 import { DailyMediumReportDisplayDialogComponent } from './news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { MediaLinkComponent } from './news/components/media-link/media-link.component';
 import { InstagramNewsDisplayDialogComponent } from './news/components/news-display-dialog/news-display-dialog.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
+import { OpinionDisplayComponent } from './opinion-display/opinion-display.component';
 import { ThumbnailComponent } from './presentation/components/thumbnail/thumbnail.component';
 import { PresentationHeaderComponent } from './presentation/presentation-header/presentation-header.component';
 import { PresentationComponent } from './presentation/presentation.component';
@@ -44,7 +46,6 @@ import { SlideComponent } from './presentation/slide/slide/slide.component';
 import { PriceDisplayComponent } from './price-display/price-display.component';
 import { ProfitabilityComponent } from './profitability/profitability.component';
 import { RiskCatalystDialogComponent } from './risk-catalyst-dialog/risk-catalyst-dialog.component';
-import { RiskLevelDisplayComponent } from './risks/components/risk-level-display/risk-level-display.component';
 import { RiskListComponent } from './risks/components/risk-list/risk-list.component';
 import { RiskTotalDisplayComponent } from './risks/components/risk-total-display/risk-total-display.component';
 import { RiskComponent } from './risks/components/risk/risk.component';
@@ -61,6 +62,7 @@ import { FactTypeDisplayComponent } from './shared/components/fact-type-display/
 import { LinksDisplayComponent } from './shared/components/links-display/links-display.component';
 import { NoteDialogComponent } from './shared/components/note-dialog/note-dialog.component';
 import { NoteComponent } from './shared/components/note/note.component';
+import { RegionDisplayComponent } from './shared/components/region-display/region-display.component';
 import { SearchComponent } from './shared/components/search/search.component';
 import { SliderComponent } from './shared/components/slider/slider.component';
 import { StatsDisplayComponent } from './shared/components/stats-display/stats-display.component';
@@ -100,7 +102,6 @@ import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-g
 import { TrendComponent } from './trend/trend.component';
 import { TwitterDisplayDialogComponent } from './twitter-display-dialog/twitter-display-dialog.component';
 import { UiComponentsPageComponent } from './ui-components-page/ui-components-page.component';
-import { BlogPageComponent } from './blog-page/blog-page.component';
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
 @NgModule({
@@ -130,7 +131,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     PresentationHeaderComponent,
     NoteDialogComponent,
     SafePipe,
-    RiskLevelDisplayComponent,
     CarousalComponent,
     TitleMenuComponent,
     MediaLinkComponent,
@@ -144,7 +144,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     GrowthComponent,
     AboutComponent,
     BoosterComponent,
-    CatalystLevelDisplayComponent,
     FactTypeDisplayComponent,
     RiskListComponent,
     CatalystListComponent,
@@ -155,7 +154,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     AutofocusDirective,
     NewsPageComponent,
     CatalystPageComponent,
-    MarketPageComponent,
+    IndustriesPageComponent,
     MarketListComponent,
     MarketDisplayComponent,
     MarketPropertiesPageComponent,
@@ -190,6 +189,9 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     UiComponentsPageComponent,
     TagDisplayPipe,
     BlogPageComponent,
+    RegionDisplayComponent,
+    InstagramDisplayComponent,
+    OpinionDisplayComponent,
   ],
   imports: [
     BrowserModule,

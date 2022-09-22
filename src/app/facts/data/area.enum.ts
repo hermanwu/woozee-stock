@@ -58,4 +58,6 @@ export enum IndustryType {
   itSolution = 'IT Solutions',
   digitalTransformation = 'Digital Transformation',
   ibuying = 'iBuying',
+  selfDriving = 'Self Driving',
+  bnpl = 'Buy Now, Pay Later',
 }

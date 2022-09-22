@@ -1,6 +1,6 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
@@ -50,7 +50,7 @@ export const tslaRisks: Risk[] = [
   {
     uuid: 'tsla-r-1',
     content: 'Twitter acquisition',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
   },
 ];
 

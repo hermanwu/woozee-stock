@@ -1,6 +1,6 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
-import { Market } from 'src/app/stock/models/market.models';
+import { Term } from 'src/app/risks/models/risk-level.model';
+import { Industry } from 'src/app/stock/models/market.models';
 
 export const cryptoRisks = [
   {
@@ -12,27 +12,27 @@ export const cryptoRisks = [
           'It is intended to function like US dollars, which is not an investment.',
       },
     ],
-    level: RiskLevel.longTerm,
+    level: Term.long,
   },
   {
     uuid: 'crypto-r-2',
     content: 'Too many competitions in the space and lower the margin.',
-    level: RiskLevel.longTerm,
+    level: Term.long,
   },
   {
     uuid: 'crypto-r-3',
     content: 'Hard to develop a moat as most financial services.',
-    level: RiskLevel.longTerm,
+    level: Term.long,
   },
   {
     uuid: 'crypto-r-4',
     content: 'For now, it is not a necessary good or services',
-    level: RiskLevel.longTerm,
+    level: Term.long,
   },
   {
     uuid: 'crypto-r-5',
     content: 'The regulatory policies for cryptocurrency remain unclear.',
-    level: RiskLevel.longTerm,
+    level: Term.long,
   },
 ];
 
@@ -47,7 +47,7 @@ export const cryptoMarketCatalysts = [
   },
 ];
 
-export const cryptoMarket: Market = {
+export const cryptoMarket: Industry = {
   type: IndustryType.crypto,
   riskUuids: cryptoRisks.map((r) => r.uuid),
   catalystUuids: cryptoMarketCatalysts.map((c) => c.uuid),

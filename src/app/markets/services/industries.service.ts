@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { calculateIncreasePercentage } from 'src/app/shared/functions/math.function';
-import { Market } from 'src/app/stock/models/market.models';
+import { Industry } from 'src/app/stock/models/market.models';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
 import { ObjectiveDataService } from 'src/app/stock/services/objective-data.service';
 import { StockData } from 'src/app/stock/services/stock-data.model';
@@ -11,9 +11,9 @@ import { allMarkets } from '../data/all-markets.const';
 @Injectable({
   providedIn: 'root',
 })
-export class MarketsService {
-  markets: Market[] = allMarkets;
-  marketTypeToMarketMap: Map<IndustryType, Market> = new Map();
+export class IndustriesService {
+  markets: Industry[] = allMarkets;
+  marketTypeToMarketMap: Map<IndustryType, Industry> = new Map();
   marketTypeToStocksMap: Map<IndustryType, StockAnalysis[]> = new Map();
   allStocks: StockData[];
 
@@ -26,7 +26,7 @@ export class MarketsService {
    * @param types
    * @returns
    */
-  populateIndustryData(marketType: IndustryType): Market {
+  populateIndustryData(marketType: IndustryType): Industry {
     // total revenue divide by previous revenue;
     let currentQuarterRevenueTotal = 0;
     let previousQuarterRevenueTotal = 0;
@@ -57,10 +57,10 @@ export class MarketsService {
         previousTtmRevenue,
         currentTtmRevenue
       ),
-    } as Market;
+    } as Industry;
   }
 
-  getMarketsByTypes(types: IndustryType[]): Market[] {
+  getMarketsByTypes(types: IndustryType[]): Industry[] {
     if (types && types.length > 0) {
       return cloneDeep(
         this.markets.filter((market) => types.indexOf(market.type) >= 0)
@@ -71,14 +71,32 @@ export class MarketsService {
   /**
    * Get average revenue growth of a market.
    */
-  getIndustryByType(type: IndustryType): Market {
+  getIndustryByType(type: IndustryType): Industry {
     if (this.marketTypeToMarketMap.has(type) === false) {
       this.marketTypeToMarketMap.set(type, this.populateIndustryData(type));
     }
     return this.marketTypeToMarketMap.get(type);
   }
 
-  getIndustries() {}
+  getAllIndustries(): Industry[] {
+    const map = {};
+
+    for (let industry of allMarkets) {
+      if (!map[industry.type]) {
+        map[industry.type] = industry;
+      }
+    }
+
+    for (let industryType of Object.values(IndustryType)) {
+      if (!map[industryType]) {
+        map[industryType] = {
+          type: industryType,
+        };
+      }
+    }
+
+    return Object.values(map) as Industry[];
+  }
 
   getStocksByIndustryType(
     type: IndustryType,
@@ -104,7 +122,7 @@ export class MarketsService {
     );
   }
 
-  sortMarketsByRiskCount(markets: Market[]): Market[] {
+  sortMarketsByRiskCount(markets: Industry[]): Industry[] {
     const marketsClone = cloneDeep(markets);
 
     return marketsClone.sort((a, b) => {

@@ -1,9 +1,8 @@
-import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { allNews } from 'src/app/news/data/news.const';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import {
   BILLION,
@@ -18,7 +17,7 @@ export const amznRisks = [
     uuid: 'az-id-1',
     name: 'Slow revenue growth last quarter',
     type: FactType.growth,
-    level: RiskLevel.longTerm,
+    level: Term.long,
     notes: [
       {
         content:
@@ -31,7 +30,7 @@ export const amznRisks = [
     uuid: 'az-id-2',
     name: 'Operating expense increases faster than gross profit',
     type: FactType.profit,
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [
       {
         content:
@@ -48,7 +47,7 @@ export const amznRisks = [
   {
     uuid: 'az-id-3',
     name: 'Future growth slows',
-    level: RiskLevel.longTerm,
+    level: Term.long,
     type: FactType.growth,
     notes: [
       {
@@ -86,7 +85,7 @@ export const amznCatalysts = [
   {
     uuid: 'az-id-2',
     name: 'Service sales revenue is more than .',
-    level: CatalystLevel.strong,
+    level: Term.long,
     type: FactType.growth,
     notes: [
       {
@@ -110,7 +109,7 @@ export const amznCatalysts = [
   {
     uuid: 'az-id-3',
     name: 'Advertising business is booming.',
-    level: CatalystLevel.moderate,
+    level: Term.long,
     type: FactType.growth,
     notes: [
       {

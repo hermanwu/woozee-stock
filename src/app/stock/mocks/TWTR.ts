@@ -1,26 +1,25 @@
-import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const twtrCatalysts = [
   {
     name: 'Elon Musk became the largest stakeholder of Twitter (9.2%)',
-    level: CatalystLevel.strong,
+    level: Term.short,
     type: FactType.sentiment,
     date: new Date('2022-04-18'),
   },
   {
     name: 'P/S and P/Gross Profit are relatively low.',
-    level: CatalystLevel.moderate,
+    level: Term.short,
     type: FactType.valuation,
     date: new Date('2022-04-18'),
   },
   {
     name: 'Both operating income and net income are positive this quarter.',
-    level: CatalystLevel.moderate,
+    level: Term.short,
     type: FactType.profit,
     date: new Date('2022-04-18'),
   },
@@ -30,14 +29,14 @@ export const twtrRisks = [
   {
     uuid: 'risk-6',
     content: "Twitter's future is unknown under current acquisition drama",
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     tickers: ['TWTR'],
     type: FactType.event,
   },
   {
     name: 'Revenue is not growing fast enough. (low to mid 20% range)',
     type: FactType.growth,
-    level: RiskLevel.longTerm,
+    level: Term.long,
     notes: [
       {
         content: 'Q4 2021 revenue growth is 22%.',
@@ -54,7 +53,7 @@ export const twtrRisks = [
   {
     name: 'Expense grows faster than income.',
     type: FactType.profit,
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     notes: [
       {
         content:

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MacroServices, Rating } from '../../macro.services';
+import { Rating } from 'src/app/stock/models/rating.model';
+import { MacroServices } from '../../macro.services';
 
 @Component({
   selector: 'app-macro-stats-page',

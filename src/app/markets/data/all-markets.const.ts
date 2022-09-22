@@ -1,5 +1,5 @@
 import { foodDeliveryMarket } from 'src/app/markets/data/food-delivery-market.const';
-import { Market } from 'src/app/stock/models/market.models';
+import { Industry } from 'src/app/stock/models/market.models';
 import { beautyAndCosmeticsMarket } from './beauty-market.const';
 import { crmMarket } from './crm-market.const';
 import { cryptoMarket } from './crypto-market.const';
@@ -11,7 +11,7 @@ import { semiconductorMarket } from './semi.const';
 import { sharedEconomyMarket } from './shared-economy.const';
 import { travelMarket } from './travel-market.const';
 
-export const allMarkets: Market[] = [
+export const allMarkets: Industry[] = [
   foodDeliveryMarket,
   sharedEconomyMarket,
   semiconductorMarket,

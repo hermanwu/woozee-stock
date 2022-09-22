@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { StockService } from 'src/app/stock/services/stock.service';
+import { cloneDeep } from '../../functions/clone-deep';
 
 @Component({
   selector: 'app-tags-display',
@@ -8,7 +9,9 @@ import { StockService } from 'src/app/stock/services/stock.service';
 })
 export class TagsDisplayComponent implements OnChanges {
   @Input() tags: string[];
+  @Input() showDefaultTags: boolean;
 
+  readonly defaultTags = '#Stocks #StockMarket #Investing #Investment';
   investTrend = 'investTrends';
   allTagStrings = '';
 
@@ -16,22 +19,35 @@ export class TagsDisplayComponent implements OnChanges {
 
   ngOnChanges() {
     if (this.tags) {
+      const tagsCopy = cloneDeep(this.tags);
       for (let tag of this.tags) {
         // Check if tag is a stock.
         const stock = this.stockServices.getStockByTicker(tag);
-        if (stock) {
-          this.allTagStrings += `#${stock.shortName?.toLowerCase()} `;
+        if (stock?.shortName) {
+          tagsCopy.push(stock.shortName);
         }
-
-        const tagWord = tag
-          .toLowerCase()
-          .split(' ')
-          .map((word, index) =>
-            index === 0 ? word : word[0].toUpperCase() + word.slice(1)
-          )
-          .join('');
-        this.allTagStrings += `#${tagWord} `;
       }
+
+      const set = new Set();
+
+      for (let tag of tagsCopy) {
+        set.add(
+          tag.length > 4
+            ? `#${this.capitalizeFirstCharacter(tag)}`
+            : `#${tag.toUpperCase()}`
+        );
+      }
+
+      this.allTagStrings = Array.from(set).join(' ');
+    }
+  }
+
+  capitalizeFirstCharacter(str) {
+    if (str) {
+      return str
+        .split(' ')
+        .map((word) => word[0].toUpperCase() + word.slice(1))
+        .join('');
     }
   }
 }

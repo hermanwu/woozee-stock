@@ -6,7 +6,7 @@ import { StatsDisplay } from '../../shared/components/stats-display/stats-displa
 import { Source } from '../models/news-source.enum';
 
 export interface News {
-  uuid: string;
+  uuid?: string;
   catalystUuids?: string[];
   riskUuids?: string[];
   type: EventType;

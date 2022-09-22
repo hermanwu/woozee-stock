@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { cloneDeep } from 'src/app/shared/functions/clone-deep';
-import { Market } from 'src/app/stock/models/market.models';
-import { allMarkets } from '../../data/all-markets.const';
-import { MarketsService } from '../../services/markets.service';
+import { Industry } from 'src/app/stock/models/market.models';
+import { IndustriesService } from '../../services/industries.service';
 
 @Component({
   selector: 'app-market-page',
   templateUrl: './market-page.component.html',
   styleUrls: ['./market-page.component.scss'],
 })
-export class MarketPageComponent implements OnInit {
+export class IndustriesPageComponent implements OnInit {
   showTools = false;
-  markets: Market[];
+  industries: Industry[];
 
-  constructor(private marketService: MarketsService) {}
+  constructor(private industriesService: IndustriesService) {}
 
   ngOnInit(): void {
-    this.markets = cloneDeep(allMarkets);
+    this.industries = this.industriesService.getAllIndustries();
   }
 
   sort() {}

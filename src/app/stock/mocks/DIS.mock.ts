@@ -1,5 +1,5 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -36,16 +36,16 @@ export const disneyRisks: Risk[] = [
         content: 'Parks have been closed in Shanghai and Hongkong.',
       },
     ],
-    level: RiskLevel.longTerm,
+    level: Term.long,
   },
   {
     uuid: 'dis-r-2',
     content: 'Higher programming and production cost is across all areas.',
-    level: RiskLevel.longTerm,
+    level: Term.long,
   },
   {
     uuid: 'dis-r-3',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     content: '70+ PE ratio is relatively high',
   },
 ];

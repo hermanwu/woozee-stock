@@ -1,7 +1,7 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
-import { Market } from 'src/app/stock/models/market.models';
+import { Industry } from 'src/app/stock/models/market.models';
 
 export const beautyCatalysts: Catalyst[] = [
   {
@@ -22,7 +22,7 @@ export const beautyRisks: Risk[] = [
   },
 ];
 
-export const beautyAndCosmeticsMarket: Market = {
+export const beautyAndCosmeticsMarket: Industry = {
   type: IndustryType.beauty,
   catalystUuids: beautyCatalysts.map((c) => c.uuid),
 };

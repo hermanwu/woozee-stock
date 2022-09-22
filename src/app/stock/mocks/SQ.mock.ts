@@ -1,7 +1,6 @@
-import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
@@ -31,7 +30,7 @@ export const blockRisks: Risk[] = [
   {
     uuid: 'sqr-5',
     name: 'Small sellers (<$125K Annualized GPV) decreases from 16.1B to 13.8, which means less new customers are joining',
-    level: RiskLevel.longTerm,
+    level: Term.long,
   },
 ];
 
@@ -46,12 +45,12 @@ export const blockCatalysts: Catalyst[] = [
   },
   {
     uuid: 'sqc-3',
-    level: CatalystLevel.strong,
+    level: Term.long,
     name: 'Block is led by visionary founder, Jack Dorsey, who is intent on making strategic long-term investments.',
   },
   {
     uuid: 'sqc-4',
-    level: CatalystLevel.strong,
+    level: Term.long,
     name: 'A bank charter that can perform all banking services such as loans',
   },
 ];

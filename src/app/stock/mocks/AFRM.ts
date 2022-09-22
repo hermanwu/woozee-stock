@@ -1,7 +1,6 @@
-import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
@@ -11,7 +10,7 @@ export const afrmRisks: Risk[] = [
   {
     uuid: 'afrm-r-3',
     name: 'Operating expenses (581M) is way larger than total revenue (354M).',
-    level: RiskLevel.longTerm,
+    level: Term.long,
   },
 
   {
@@ -32,7 +31,7 @@ export const afrmCatalysts: Catalyst[] = [
   {
     uuid: 'afrm-c-2',
     name: '81% of transactions were from repeat users',
-    level: CatalystLevel.strong,
+    level: Term.long,
   },
   {
     uuid: 'afrm-c-1',

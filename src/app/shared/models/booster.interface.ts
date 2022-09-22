@@ -1,12 +1,12 @@
-import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { Note } from '../data/note.interface';
 
 export interface Catalyst extends Note {
   uuid?: string;
   name?: string;
-  level?: CatalystLevel;
+  level?: Term;
   type?: FactType;
   tickers?: string[];
   markets?: IndustryType[];

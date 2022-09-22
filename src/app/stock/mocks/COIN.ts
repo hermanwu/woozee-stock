@@ -1,7 +1,6 @@
-import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
@@ -12,7 +11,7 @@ export const coinRisks: Risk[] = [
   {
     uuid: 'coin-r-1',
     content: 'New user and revenue growth slows down',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     type: FactType.growth,
     notes: [
       {
@@ -30,22 +29,22 @@ export const coinRisks: Risk[] = [
   {
     uuid: 'coin-r-2',
     name: 'Highly tied to crypto business.',
-    level: RiskLevel.longTerm,
+    level: Term.long,
   },
   {
     uuid: 'coin-r-2',
     name: 'Transaction based revenue could be . (i.e. company like Schwab)',
-    level: RiskLevel.longTerm,
+    level: Term.long,
   },
   {
     uuid: 'coin-r-3',
     name: 'Too much competition in the business, from startup to established brokerage.',
-    level: RiskLevel.longTerm,
+    level: Term.long,
   },
   {
     uuid: 'coin-r-5',
     name: 'Crypto is not a good investment since it wont increase value',
-    level: RiskLevel.longTerm,
+    level: Term.long,
   },
   {
     uuid: 'coin-r-6',
@@ -55,13 +54,13 @@ export const coinRisks: Risk[] = [
     uuid: 'coin-r-7',
     content:
       'Historical transaction revenue per user does not grow in the past 5 years.',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     type: FactType.growth,
   },
   {
     uuid: 'coin-r-8',
     content: 'Forecast in Q2 does not any better.',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     type: FactType.growth,
   },
 ];
@@ -70,12 +69,12 @@ export const coinCatalysts: Catalyst[] = [
   {
     uuid: 'coin-c-1',
     content: 'NFT market',
-    level: CatalystLevel.strong,
+    level: Term.long,
   },
   {
     uuid: 'coin-c-2',
     content: 'decentralized finance',
-    level: CatalystLevel.strong,
+    level: Term.long,
   },
 ];
 

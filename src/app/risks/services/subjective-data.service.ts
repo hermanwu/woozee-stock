@@ -5,7 +5,7 @@ import { allMarkets } from 'src/app/markets/data/all-markets.const';
 import { allNews } from 'src/app/news/data/news.const';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
-import { Market } from 'src/app/stock/models/market.models';
+import { Industry } from 'src/app/stock/models/market.models';
 import { NewsWithDetails } from 'src/app/stock/models/news.model';
 import { allRisks } from '../data/global-risk.const';
 import { Risk } from '../models/risk.model';
@@ -17,11 +17,11 @@ export class riskService {
   risks: Risk[];
   catalysts: Catalyst[];
   newsWithDetails: NewsWithDetails[];
-  markets: Market[];
+  markets: Industry[];
 
   catalystMap: Map<string, Catalyst> = new Map();
   riskMap: Map<string, Risk> = new Map();
-  marketMap: Map<IndustryType, Market> = new Map();
+  marketMap: Map<IndustryType, Industry> = new Map();
 
   constructor() {
     this.risks = cloneDeep(allRisks);

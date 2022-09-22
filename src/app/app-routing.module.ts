@@ -6,7 +6,7 @@ import { BlogPageComponent } from './blog-page/blog-page.component';
 import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
 import { FomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
 import { MacroStatsPageComponent } from './macro/components/macro-stats-page/macro-stats-page.component';
-import { MarketPageComponent } from './markets/components/market-page/market-page.component';
+import { IndustriesPageComponent } from './markets/components/market-page/market-page.component';
 import { MarketPropertiesPageComponent } from './markets/components/market-properties-page/market-properties-page.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
@@ -80,7 +80,7 @@ const routes: Routes = [
       },
       {
         path: 'markets',
-        component: MarketPageComponent,
+        component: IndustriesPageComponent,
       },
 
       {

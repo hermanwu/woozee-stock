@@ -1,20 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TermDisplayComponent } from './risk-level-display.component';
 
-import { RiskLevelDisplayComponent } from './risk-level-display.component';
-
-describe('RiskLevelDisplayComponent', () => {
-  let component: RiskLevelDisplayComponent;
-  let fixture: ComponentFixture<RiskLevelDisplayComponent>;
+describe('TermDisplayComponent', () => {
+  let component: TermDisplayComponent;
+  let fixture: ComponentFixture<TermDisplayComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RiskLevelDisplayComponent ]
-    })
-    .compileComponents();
+      declarations: [TermDisplayComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RiskLevelDisplayComponent);
+    fixture = TestBed.createComponent(TermDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

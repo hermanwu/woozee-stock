@@ -2,11 +2,11 @@ import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IndustryType } from 'src/app/facts/data/area.enum';
-import { MarketsService } from 'src/app/markets/services/markets.service';
+import { IndustriesService } from 'src/app/markets/services/industries.service';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { foreverOwnStocks } from '../../forever-own-stocks-panel/forever-own-stocks.model';
 import { stocksMap } from '../../mocks/stock-list.const';
-import { Market } from '../../models/market.models';
+import { Industry } from '../../models/market.models';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 import { ComparisonDialogInput } from './comparison-dialog-input.model';
 
@@ -20,7 +20,7 @@ export class ComparisonDialogComponent {
   favorites = foreverOwnStocks;
   factType = FactType;
   selectedFact: FactType;
-  industry?: Market;
+  industry?: Industry;
   factTypeArray = Object.values(FactType);
   allStocks = Object.values(stocksMap);
   selectedComparisonGroup: string | IndustryType = 'Favorites';
@@ -31,7 +31,7 @@ export class ComparisonDialogComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public dialogData: ComparisonDialogInput,
-    private marketService: MarketsService
+    private marketService: IndustriesService
   ) {
     this.newTickerForm = new FormGroup({
       ticker: new FormControl(),

@@ -11,6 +11,10 @@ import { NewsService } from '../../services/news.services';
 })
 export class DailyMediumReportDisplayDialogComponent implements OnInit {
   sp500 = [
+    { date: getUtcDate(2022, 9, 21), price: 3789.93 },
+    { date: getUtcDate(2022, 9, 20), price: 3855.93 },
+    { date: getUtcDate(2022, 9, 19), price: 3899.89 },
+    { date: getUtcDate(2022, 9, 16), price: 3873.33 },
     { date: getUtcDate(2022, 9, 15), price: 3901.35 },
     { date: getUtcDate(2022, 9, 14), price: 3946.01 },
     { date: getUtcDate(2022, 9, 13), price: 3932.69 },
@@ -18,6 +22,10 @@ export class DailyMediumReportDisplayDialogComponent implements OnInit {
     { date: getUtcDate(2022, 9, 9), price: 4067.36 },
   ];
   nasdaqPrices = [
+    { date: getUtcDate(2022, 9, 21), price: 11220.2 },
+    { date: getUtcDate(2022, 9, 20), price: 11425.1 },
+    { date: getUtcDate(2022, 9, 19), price: 11535.0 },
+    { date: getUtcDate(2022, 9, 16), price: 11448.4 },
     { date: getUtcDate(2022, 9, 15), price: 11552.4 },
     { date: getUtcDate(2022, 9, 14), price: 11719.7 },
     { date: getUtcDate(2022, 9, 13), price: 11633.6 },
@@ -47,8 +55,12 @@ export class DailyMediumReportDisplayDialogComponent implements OnInit {
   investorNews = [];
 
   constructor(private newsService: NewsService) {
-    this.allNews = this.newsService.getNewsByDate(new Date(2022, 8, 15));
+    this.allNews = this.newsService.getNewsByDate(new Date(2022, 8, 21));
+    const tags = [];
     for (let news of this.allNews) {
+      if (news?.tags) {
+        tags.push(...news.tags);
+      }
       if (news.type === EventType.macro) {
         this.macroNews.push(news);
       } else if (news.type === EventType.industry) {
@@ -63,6 +75,7 @@ export class DailyMediumReportDisplayDialogComponent implements OnInit {
         this.investorNews.push(news);
       }
     }
+    this.allTags = tags;
   }
 
   ngOnInit(): void {}

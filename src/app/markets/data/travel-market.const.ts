@@ -1,7 +1,7 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { BILLION } from 'src/app/shared/numbers/number.model';
-import { Market } from 'src/app/stock/models/market.models';
+import { Industry } from 'src/app/stock/models/market.models';
 
 export const travelMarketRisks: Risk[] = [
   {
@@ -10,7 +10,7 @@ export const travelMarketRisks: Risk[] = [
   },
 ];
 
-export const travelMarket: Market = {
+export const travelMarket: Industry = {
   uuid: 'travel-market',
   type: IndustryType.travel,
   growthRate: 0.1,

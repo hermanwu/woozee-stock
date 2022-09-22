@@ -1,7 +1,6 @@
-import { CatalystLevel } from 'src/app/catalyst/catalyst-level-display/catalyst-level.enum';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { RiskLevel } from 'src/app/risks/models/risk-level.model';
+import { Term } from 'src/app/risks/models/risk-level.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { UserType } from '../components/business-overview/business.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -10,14 +9,14 @@ export const hoodCatalysts = [
   {
     name: 'Meme stocks (i.e. GME) trading becomes popular among retail investors.',
     type: FactType.growth,
-    level: CatalystLevel.moderate,
+    level: Term.short,
     notes: [],
     date: new Date('2022-04-18'),
   },
   {
     name: 'Crypto trading market continues to grow',
     type: FactType.growth,
-    level: CatalystLevel.moderate,
+    level: Term.short,
     date: new Date('2022-04-18'),
     notes: [
       {
@@ -30,7 +29,7 @@ export const hoodCatalysts = [
 export const hoodRisks = [
   {
     name: 'Revenues only increased 14% this quarter',
-    level: RiskLevel.shortTerm,
+    level: Term.short,
     type: FactType.growth,
     notes: [
       {
@@ -44,7 +43,7 @@ export const hoodRisks = [
   },
   {
     name: 'User growth is stagnating',
-    level: RiskLevel.longTerm,
+    level: Term.long,
     type: FactType.growth,
     notes: [
       {
@@ -55,7 +54,7 @@ export const hoodRisks = [
   },
   {
     name: 'Revenue is declining in next quarter forecast',
-    level: RiskLevel.longTerm,
+    level: Term.long,
     type: FactType.growth,
     notes: [
       {
@@ -66,7 +65,7 @@ export const hoodRisks = [
   {
     name: 'Company is losing money much faster than it can earn.',
     type: FactType.profit,
-    level: RiskLevel.longTerm,
+    level: Term.long,
     notes: [
       {
         content:

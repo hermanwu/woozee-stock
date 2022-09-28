@@ -29,6 +29,8 @@ export interface News {
 
   quotes?: string[];
   people?: string[];
+
+  takeAway?: string;
 }
 
 export enum EventType {

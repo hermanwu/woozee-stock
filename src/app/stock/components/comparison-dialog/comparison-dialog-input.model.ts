@@ -3,5 +3,5 @@ import { StockAnalysis } from '../../models/stock-analysis.model';
 
 export interface ComparisonDialogInput {
   factType: FactType;
-  stock: StockAnalysis;
+  stocks: StockAnalysis[];
 }

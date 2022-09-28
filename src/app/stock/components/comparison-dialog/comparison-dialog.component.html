@@ -14,23 +14,6 @@
       </select>
     </mat-form-field>
   </div>
-
-  <div class="select-field">
-    <mat-form-field appearance="fill">
-      <mat-label>Compare Market</mat-label>
-
-      <select matNativeControl (change)="selectMarket($event)">
-        <option></option>
-        <option
-          *ngFor="let type of competitorTypeArray"
-          [value]="type"
-          [selected]="selectedComparisonGroup === type"
-        >
-          {{ type }}
-        </option>
-      </select>
-    </mat-form-field>
-  </div>
 </div>
 
 <div class="container">
@@ -85,7 +68,7 @@
     ></app-growth>
   </div>
 
-  <div *ngIf="selectedComparisonGroup === 'Custom'">
+  <div>
     <form [formGroup]="newTickerForm" (ngSubmit)="addTicker()">
       <mat-form-field>
         <input

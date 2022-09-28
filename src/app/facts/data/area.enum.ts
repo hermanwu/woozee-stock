@@ -46,7 +46,6 @@ export enum IndustryType {
   semi = 'Semiconductor',
   shared_economy = 'Shared Economy',
   social = 'Social Networking',
-  storage = '',
   streaming = 'Streaming Service',
   travel = 'Travel & Tourism',
   us = 'United States',

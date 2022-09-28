@@ -39,4 +39,6 @@ export interface StockData extends StockAnalysis {
 
   // Value
   marketCapToOiRatio?: number;
+
+  rank?: number;
 }

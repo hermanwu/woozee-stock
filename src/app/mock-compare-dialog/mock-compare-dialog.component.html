@@ -1,0 +1,30 @@
+<div>Sorted Portfolio {{ sortedPortfolio | json }}</div>
+<div>To Compare List {{ toCompareList | json }}</div>
+
+<div>Which one is better?: Selected {{ selected }}</div>
+
+<div class="option" (click)="selected = stock">
+  {{ stock }}
+
+  <span *ngIf="selected === stock">👍</span>
+</div>
+
+<div>vs</div>
+
+<div class="option" (click)="selected = pickedToCompare">
+  {{ pickedToCompare }}
+
+  <span *ngIf="selected === pickedToCompare">👍</span>
+</div>
+
+<div>
+  <button
+    mat-stroked-button
+    [disabled]="toCompareList.length === 0 || !selected"
+    (click)="next()"
+  >
+    Next
+  </button>
+  <button mat-stroked-button (click)="save()">Finish</button>
+  <button mat-stroked-button mat-dialog-close>Cancel</button>
+</div>

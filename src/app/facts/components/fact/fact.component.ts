@@ -26,7 +26,7 @@ export class FactComponent implements OnInit {
       {
         data: {
           factType: this.factType,
-          stock: this.stock,
+          stocks: [this.stock],
         },
         panelClass: 'medium-modal-panel',
         autoFocus: false,

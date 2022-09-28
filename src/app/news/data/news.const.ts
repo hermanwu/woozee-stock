@@ -11,6 +11,87 @@ import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
   {
+    title:
+      'Apple ditched the plan to increase iphone production after seeing flattened demand',
+    takeAway:
+      'Demand of consumer product is likely to decrease during a recession.',
+    date: getUtcDate(2022, 9, 28),
+    type: EventType.stock,
+    tags: ['aapl'],
+  },
+  {
+    title:
+      'FTX won bid to buy bankrupt crypto lender Voyager’s assets for $1.4 billion',
+    date: getUtcDate(2022, 9, 27),
+    type: EventType.industry,
+    tags: ['crypto', 'FTX', 'Yoyager'],
+  },
+  {
+    date: getUtcDate(2022, 9, 27),
+    title: 'Cathie Wood says she is bullish on Tesla, Roku, and bitcoin',
+    type: EventType.opinions,
+    tags: ['Cathie Wood', 'TSLA', 'ROKU', 'Bitcoin'],
+  },
+  {
+    date: getUtcDate(2022, 9, 22),
+    title:
+      'WTI crude prices climbed 3.2% as as Putin announced partial mobilization',
+
+    type: EventType.macro,
+    tags: ['Crude Oil', 'War'],
+  },
+  {
+    date: getUtcDate(2022, 9, 22),
+    title:
+      'Bank of England continued tightening and raised rates by 50 basis points',
+    type: EventType.macro,
+    tags: ['Fed Rate', 'England'],
+  },
+  {
+    date: getUtcDate(2022, 9, 22),
+    title:
+      'Japan government moved to boost yen for first time in more than 20 years',
+    type: EventType.macro,
+    tags: ['Fed Rate', 'Japan'],
+    content: ['Japanese yen has fallen to a 24-year low against U.S dollar.'],
+  },
+  {
+    date: getUtcDate(2022, 9, 22),
+    title:
+      'Qualcomm CEO announed its automotive design-win pipeline has now climbed to $30B from $19B',
+    type: EventType.stock,
+    tags: ['qcom'],
+    content: ['Starting in 2023, Qualcomm will be used in Mercedes-Benz cars.'],
+  },
+  {
+    date: getUtcDate(2022, 9, 22),
+    title:
+      'US stock market finished Thursday with more losses after Fed handed another 75bps rate hike yesterday.',
+    type: EventType.overview,
+    content: [
+      '“The chances of a soft landing are likely to diminish” said the Fed Chair J-Pow.',
+    ],
+  },
+  {
+    date: getUtcDate(2022, 9, 22),
+    title: 'Costco released latest financial results that beat estimates',
+    type: EventType.earnings,
+    tags: ['cost'],
+    content: [
+      'For now, Costco will not raise membership price. “There are no specific plans regarding a fee increase at this time,” said Chief Financial Officer Richard Galanti on the earnings conference call. However, he continued, “it’s a question of when, not if.”',
+    ],
+  },
+  {
+    date: getUtcDate(2022, 9, 22),
+    title:
+      'DocuSign names former Google advertising executive Allan Thygesen as new CEO',
+    type: EventType.stock,
+    tags: ['docu'],
+    content: [
+      "Thygesen has spent past 12 years at Google and led Google's $100B+ advertising business in North and South America.",
+    ],
+  },
+  {
     date: getUtcDate(2022, 9, 21),
     title:
       'Ford lost 12% as it is facing an extra $1B inflation-related supplier costs.',

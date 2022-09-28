@@ -2,6 +2,10 @@ import { IndustryType } from 'src/app/facts/data/area.enum';
 
 export const images = new Map<string, string[]>([
   [
+    'cost',
+    ['https://i.ibb.co/ctB2mHm/Screen-Shot-2022-09-22-at-4-14-07-PM.png'],
+  ],
+  [
     'DIS'.toLowerCase(),
     [
       'https://lh3.googleusercontent.com/pw/AL9nZEUOdgmR_QvTVSGOTXHx9sJSR63YSGoMDUfIX51e1yURu0pw3JTT4CzIS6HL24WCtMu7Eg2E3YOSPVYwbFydeemY9G7oOcuiBC1RuJ37LPnhGvevrOdwcnXOYnqT6T-j6IpVYaDuVbSsUhU81W-CJPQA=w970-h610-no?authuser=0'.toLowerCase(),

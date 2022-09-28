@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { StockService } from 'src/app/stock/services/stock.service';
+import { StockServices } from 'src/app/stock/services/objective-data.service';
 import { cloneDeep } from '../../functions/clone-deep';
 
 @Component({
@@ -15,7 +15,7 @@ export class TagsDisplayComponent implements OnChanges {
   investTrend = 'investTrends';
   allTagStrings = '';
 
-  constructor(private stockServices: StockService) {}
+  constructor(private stockServices: StockServices) {}
 
   ngOnChanges() {
     if (this.tags) {

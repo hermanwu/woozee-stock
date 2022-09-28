@@ -20,6 +20,8 @@ export enum EmojiUnicode {
   yellowDiamond = '🔸',
   blueDiamond = '🔹',
   speaker = '🎙️',
+  lightening = '⚡',
+  pencil = '✏️',
 }
 
 export const BullishEmoji = ['🚀', '😆', '🙂', '👍'];

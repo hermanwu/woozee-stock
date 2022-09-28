@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { DisplayType } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { StockAnalysis } from '../../models/stock-analysis.model';
-import { StockService } from '../../services/stock.service';
+import { StockServices } from '../../services/objective-data.service';
 import { StockMetric } from './stock-metric.enum';
 
 @Component({
@@ -14,7 +14,7 @@ export class StockMetricDisplayComponent implements OnInit, OnChanges {
   @Input() displayMetrics: StockMetric[] = [];
   arrayToDisplay = [];
 
-  constructor(private stockServices: StockService) {}
+  constructor(private stockServices: StockServices) {}
 
   ngOnInit(): void {}
 

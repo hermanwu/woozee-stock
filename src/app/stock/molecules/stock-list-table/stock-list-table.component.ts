@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { StockData } from '../../services/stock-data.model';
 import { StockListTableColumn } from './stock-list-table-column.enum';
 
@@ -8,12 +9,15 @@ import { StockListTableColumn } from './stock-list-table-column.enum';
   styleUrls: ['./stock-list-table.component.scss'],
 })
 export class StockListTableComponent implements OnChanges {
+  readonly environment = environment;
   readonly stockListTableColumn = StockListTableColumn;
   displayColumns = [
+    StockListTableColumn.index,
     StockListTableColumn.ticker,
     StockListTableColumn.shortName,
     StockListTableColumn.quarterRevenueGrowth,
     StockListTableColumn.latestEarningsDate,
+    StockListTableColumn.actionsButton,
   ];
   sortOrder = {
     column: StockListTableColumn.ticker,
@@ -60,4 +64,6 @@ export class StockListTableComponent implements OnChanges {
   ngOnChanges() {
     // this.sort(undefined);
   }
+
+  compareStocks(originalStock: string) {}
 }

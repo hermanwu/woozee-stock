@@ -10,8 +10,9 @@ import { riskService } from 'src/app/risks/services/subjective-data.service';
 import { NoteDialogComponent } from 'src/app/shared/components/note-dialog/note-dialog.component';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
+import { environment } from 'src/environments/environment';
 import { StockAnalysis } from '../../models/stock-analysis.model';
-import { ObjectiveDataService } from '../../services/objective-data.service';
+import { StockServices } from '../../services/objective-data.service';
 
 @Component({
   selector: 'app-stock-properties-page',
@@ -21,6 +22,7 @@ import { ObjectiveDataService } from '../../services/objective-data.service';
 export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   readonly displayModeEnum = DisplayMode;
   readonly emojiUnicode = EmojiUnicode;
+  readonly environment = environment;
 
   private stockId = 'stockId';
 
@@ -42,7 +44,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private dialog: MatDialog,
     private titleService: Title,
-    private objectiveDataService: ObjectiveDataService,
+    private objectiveDataService: StockServices,
     private riskService: riskService,
     private catalystService: CatalystService
   ) {}

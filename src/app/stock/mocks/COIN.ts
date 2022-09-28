@@ -10,6 +10,10 @@ import { StockAnalysis } from '../models/stock-analysis.model';
 export const coinRisks: Risk[] = [
   {
     uuid: 'coin-r-1',
+    content: 'Crypto market is not well regulated by goveronment.',
+  },
+  {
+    uuid: 'coin-r-1',
     content: 'New user and revenue growth slows down',
     level: Term.short,
     type: FactType.growth,
@@ -33,7 +37,7 @@ export const coinRisks: Risk[] = [
   },
   {
     uuid: 'coin-r-2',
-    name: 'Transaction based revenue could be . (i.e. company like Schwab)',
+    name: 'Transaction based revenue could be limited. (i.e. company like Schwab)',
     level: Term.long,
   },
   {
@@ -74,6 +78,11 @@ export const coinCatalysts: Catalyst[] = [
   {
     uuid: 'coin-c-2',
     content: 'decentralized finance',
+    level: Term.long,
+  },
+  {
+    uuid: 'coin-c-3',
+    content: 'Coinbase is trying to diversify its revenue streams.',
     level: Term.long,
   },
 ];

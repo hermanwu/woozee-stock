@@ -23,7 +23,7 @@ export interface StockAnalysis {
   name?: any;
   shortName?: string;
   description?: Note[];
-  ticker?: string;
+  ticker: string;
   ceoQuote?: string[];
   advantage?: string[];
   riskUuids?: string[];

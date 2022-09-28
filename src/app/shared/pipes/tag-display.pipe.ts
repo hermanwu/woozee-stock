@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { StockService } from 'src/app/stock/services/stock.service';
+import { StockServices } from 'src/app/stock/services/objective-data.service';
 
 /**
  * Add a sign to string.
@@ -8,7 +8,7 @@ import { StockService } from 'src/app/stock/services/stock.service';
   name: 'tagdisplay',
 })
 export class TagDisplayPipe implements PipeTransform {
-  constructor(private stockService: StockService) {}
+  constructor(private stockService: StockServices) {}
 
   transform(value: string): string {
     const stock = this.stockService.getStockByTicker(value);

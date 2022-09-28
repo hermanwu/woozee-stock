@@ -1,4 +1,41 @@
 <app-card>
+  <h1>Drop Down</h1>
+
+  <div>Selected Portfolio: {{ selectedPortfolio }}</div>
+
+  <button mat-stroked-button [matMenuTriggerFor]="menu">
+    {{ selectedPortfolio ? selectedPortfolio : "All Stocks" }}
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <div *ngFor="let portfolio of mockPortfolios">
+      <button mat-menu-item i18n (click)="changePortfolio(portfolio)">
+        {{ portfolio.name }}
+      </button>
+    </div>
+    <button mat-menu-item i18n (click)="changePortfolio(null)">
+      All Stocks
+    </button>
+  </mat-menu>
+</app-card>
+
+<app-card>
+  <h1>Ranking Stocks</h1>
+
+  <div>Global Ranking: {{ globalRanking | json }}</div>
+
+  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let stock of mockPortfolio" cdkDrag>
+      {{ stock }}
+      <button mat-stroked-button (click)="compareStock(stock)">compare</button>
+    </div>
+  </div>
+
+  <button mat-stroked-button (click)="saveRank()">Save Rank</button>
+</app-card>
+
+<app-card>
   <h1>Badge</h1>
 
   <app-badge>Test</app-badge>
@@ -50,10 +87,6 @@
 
 <app-card>
   <h1>Card With Limit</h1>
-</app-card>
-
-<app-card>
-  <h1>Ranking Stocks</h1>
 </app-card>
 
 <app-card>

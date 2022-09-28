@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container" *ngIf="stocks?.length > 0; else noStocks">
   <div class="stock-row">
     <div *ngFor="let column of displayColumns">
       <ng-container [ngSwitch]="column">
         <ng-container *ngSwitchCase="stockListTableColumn.index">
-          #
+          Ranking
         </ng-container>
 
         <ng-container *ngSwitchCase="stockListTableColumn.shortName">
@@ -56,16 +56,22 @@
           <div>Latest Earnings</div>
         </ng-container>
 
+        <ng-container *ngSwitchCase="stockListTableColumn.actionsButton">
+          <div></div>
+        </ng-container>
+
         <ng-container *ngSwitchDefault> </ng-container>
       </ng-container>
     </div>
   </div>
 
-  <div *ngFor="let stock of stocks; let i = index" class="stock-row">
+  <div *ngFor="let stock of stocks" class="stock-row">
     <div *ngFor="let column of displayColumns">
       <ng-container [ngSwitch]="column">
         <ng-container *ngSwitchCase="stockListTableColumn.index">
-          <div>{{ i + 1 }}</div>
+          <div>
+            {{ stock.rank + 1 || null }}
+          </div>
         </ng-container>
 
         <ng-container *ngSwitchCase="stockListTableColumn.shortName">
@@ -124,7 +130,28 @@
             ></app-date-display>
           </div>
         </ng-container>
+
+        <ng-container *ngSwitchCase="stockListTableColumn.actionsButton">
+          <button
+            mat-icon-button
+            [matMenuTriggerFor]="menu"
+            [disabled]="stock?.rank === undefined || environment.production"
+          >
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+
+          <mat-menu #menu="matMenu">
+            <button
+              mat-menu-item
+              (click)="compareStocks(stockListTableColumn.ticker)"
+            >
+              compare
+            </button>
+          </mat-menu>
+        </ng-container>
       </ng-container>
     </div>
   </div>
 </div>
+
+<ng-template #noStocks> No Stocks </ng-template>

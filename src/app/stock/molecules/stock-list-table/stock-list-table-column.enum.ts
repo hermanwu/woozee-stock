@@ -19,4 +19,6 @@ export enum StockListTableColumn {
 
   bullArguments = 'Bull Arguments',
   bearArguments = 'Bear Arguments',
+
+  actionsButton = 'Actions Button',
 }

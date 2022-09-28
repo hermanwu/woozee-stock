@@ -11,6 +11,7 @@ import { NewsService } from '../../services/news.services';
 })
 export class DailyMediumReportDisplayDialogComponent implements OnInit {
   sp500 = [
+    { date: getUtcDate(2022, 9, 22), price: 3757.99 },
     { date: getUtcDate(2022, 9, 21), price: 3789.93 },
     { date: getUtcDate(2022, 9, 20), price: 3855.93 },
     { date: getUtcDate(2022, 9, 19), price: 3899.89 },
@@ -22,6 +23,7 @@ export class DailyMediumReportDisplayDialogComponent implements OnInit {
     { date: getUtcDate(2022, 9, 9), price: 4067.36 },
   ];
   nasdaqPrices = [
+    { date: getUtcDate(2022, 9, 22), price: 11066.8 },
     { date: getUtcDate(2022, 9, 21), price: 11220.2 },
     { date: getUtcDate(2022, 9, 20), price: 11425.1 },
     { date: getUtcDate(2022, 9, 19), price: 11535.0 },
@@ -55,7 +57,7 @@ export class DailyMediumReportDisplayDialogComponent implements OnInit {
   investorNews = [];
 
   constructor(private newsService: NewsService) {
-    this.allNews = this.newsService.getNewsByDate(new Date(2022, 8, 21));
+    this.allNews = this.newsService.getNewsByDate(new Date(2022, 8, 22));
     const tags = [];
     for (let news of this.allNews) {
       if (news?.tags) {

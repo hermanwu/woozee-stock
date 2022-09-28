@@ -32,6 +32,7 @@ import { MarketDisplayComponent } from './markets/components/market-display/mark
 import { MarketListComponent } from './markets/components/market-list/market-list.component';
 import { IndustriesPageComponent } from './markets/components/market-page/market-page.component';
 import { MarketPropertiesPageComponent } from './markets/components/market-properties-page/market-properties-page.component';
+import { MockCompareDialogComponent } from './mock-compare-dialog/mock-compare-dialog.component';
 import { DailyMediumReportDisplayDialogComponent } from './news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { MediaLinkComponent } from './news/components/media-link/media-link.component';
 import { InstagramNewsDisplayDialogComponent } from './news/components/news-display-dialog/news-display-dialog.component';
@@ -58,6 +59,7 @@ import { CarousalComponent } from './shared/components/carousal/carousal.compone
 import { DateDisplayComponent } from './shared/components/date-display/date-display.component';
 import { DemoPageComponent } from './shared/components/demo-page/demo-page.component';
 import { DividerComponent } from './shared/components/divider/divider.component';
+import { DragDropRankDialogComponent } from './shared/components/drag-drop-rank-dialog/drag-drop-rank-dialog.component';
 import { FactTypeDisplayComponent } from './shared/components/fact-type-display/fact-type-display.component';
 import { LinksDisplayComponent } from './shared/components/links-display/links-display.component';
 import { NoteDialogComponent } from './shared/components/note-dialog/note-dialog.component';
@@ -192,6 +194,8 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     RegionDisplayComponent,
     InstagramDisplayComponent,
     OpinionDisplayComponent,
+    DragDropRankDialogComponent,
+    MockCompareDialogComponent,
   ],
   imports: [
     BrowserModule,

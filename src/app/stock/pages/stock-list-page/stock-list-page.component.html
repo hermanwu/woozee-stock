@@ -1,6 +1,36 @@
 <app-title-menu>
   <div header-1 i18n>Stocks</div>
+
+  <div buttons>
+    <button mat-button *ngIf="!environment.production" (click)="rankStocks()">
+      Rank
+    </button>
+
+    <button
+      mat-button
+      *ngIf="!environment.production"
+      [matMenuTriggerFor]="menu"
+    >
+      {{ selectedPortfolio ? selectedPortfolio.name : "All Stocks" }}
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <div *ngFor="let portfolio of portfolios">
+        <button mat-menu-item i18n (click)="updatePortfolio(portfolio)">
+          {{ portfolio.name }}
+        </button>
+      </div>
+      <button mat-menu-item i18n (click)="updatePortfolio(null)">
+        All Stocks
+      </button>
+    </mat-menu>
+  </div>
 </app-title-menu>
+
+<div *ngIf="!environment.production">
+  Global Ranking: {{ userServices.rankings$ | async | json }}
+</div>
 
 <app-card>
   <div class="stock-list-table">

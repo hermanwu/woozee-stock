@@ -1,6 +1,6 @@
 <app-stock-image-display [tag]="dialogData?.tags[0]"></app-stock-image-display>
 
-<div class="title">🎙️ {{ dialogData?.title }}</div>
+<div class="title">⚡NEWS {{ dialogData?.title }}</div>
 
 <ul>
   <li *ngFor="let item of dialogData?.content">🔸 {{ item }}</li>
@@ -11,6 +11,8 @@
     <app-stats-display [statsDisplay]="item"></app-stats-display>
   </li>
 </ul>
+
+<div *ngIf="dialogData?.takeAway">✏️TAKEAWAY {{ dialogData.takeAway }}</div>
 
 <app-tags-display [tags]="dialogData?.tags"> </app-tags-display>
 

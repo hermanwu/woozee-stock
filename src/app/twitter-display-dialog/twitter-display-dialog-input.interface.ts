@@ -14,4 +14,5 @@ export interface TwitterDisplayDialogInput {
   sourceLink?: string;
   tags?: string[];
   stats?: StatsDisplay[];
+  takeAway?: string;
 }

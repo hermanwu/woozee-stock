@@ -23,9 +23,12 @@
     <li *ngFor="let item of business?.markets">
       <strong>{{ item }}:</strong>
 
-      <span *ngFor="let competitor of competitorMap.get(item)">
-        {{ competitor.shortName || competitor.name }};
-      </span>
+      <ng-container *ngFor="let competitor of competitorMap.get(item)">
+        <app-badge>
+          {{ competitor.shortName || competitor.name }}
+          ({{ competitor.ticker.toUpperCase() }})
+        </app-badge>
+      </ng-container>
     </li>
   </ul>
 </div>

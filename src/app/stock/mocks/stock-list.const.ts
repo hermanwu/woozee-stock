@@ -21,6 +21,7 @@ import { bynd } from './bynd';
 import { chwy } from './CHWY';
 import { CLOV } from './CLOV';
 import { coin } from './coin';
+import { cost } from './cost';
 import { crm } from './crm';
 import { crwd } from './crwd';
 import { csco } from './csco.mock';
@@ -293,4 +294,5 @@ export const stocksMap = {
   li,
   cxm,
   ual,
+  cost,
 };

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { stocksMap } from '../mocks/stock-list.const';
 import { EarningsReport } from '../models/earnings.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
@@ -7,7 +8,7 @@ import { StockData } from './stock-data.model';
 @Injectable({
   providedIn: 'root',
 })
-export class ObjectiveDataService {
+export class StockServices {
   dataMap: Map<string, StockData> = new Map();
   currentQuarterEr: EarningsReport;
   fourPreviousQuarterEr: EarningsReport;
@@ -32,6 +33,25 @@ export class ObjectiveDataService {
   getAllStockData(): StockData[] {
     const stocks = Array.from(this.dataMap.values());
     return stocks;
+  }
+
+  getStockByTicker(ticker: string): StockAnalysis {
+    return stocksMap[ticker.toLowerCase()];
+  }
+
+  getStocksByTickers(tickers: string[]): StockAnalysis[] {
+    const result = [];
+
+    for (let ticker of tickers) {
+      result.push(stocksMap[ticker.toLocaleLowerCase()]);
+    }
+    return result;
+  }
+
+  getEarningsReportInDescendingOrder(earningsReports: EarningsReport[]) {
+    return cloneDeep(earningsReports)
+      .filter((report) => !report.isForecast)
+      .sort((a, b) => b.year - a.year || b.quarter - a.quarter);
   }
 
   calculateRevenues(stock: StockData): StockData {

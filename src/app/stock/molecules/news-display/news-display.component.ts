@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 import { StockMetric } from '../../components/stock-metric-display/stock-metric.enum';
 import { EventType } from '../../models/news.model';
 import { StockAnalysis } from '../../models/stock-analysis.model';
-import { StockService } from '../../services/stock.service';
+import { StockServices } from '../../services/objective-data.service';
 import { NewsDisplay } from './news-display.interface';
 
 @Component({
@@ -32,7 +32,7 @@ export class NewsDisplayComponent implements OnChanges {
 
   constructor(
     private imageServices: ImageServices,
-    private stockServices: StockService,
+    private stockServices: StockServices,
     private dialogService: MatDialog
   ) {}
 
@@ -60,8 +60,9 @@ export class NewsDisplayComponent implements OnChanges {
             StockMetric.operatingExpense,
             StockMetric.operatingMargin,
           ],
-          tags: [...this.news.tags, ...stockTagsMock],
+          tags: [...(this.news?.tags ? this.news.tags : []), ...stockTagsMock],
           content: this.news.content,
+          takeAway: this.news.takeAway,
           stats: this.news.stats,
         },
         panelClass: 'medium-modal-panel',

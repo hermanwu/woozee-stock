@@ -4,7 +4,7 @@ import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { calculateIncreasePercentage } from 'src/app/shared/functions/math.function';
 import { Industry } from 'src/app/stock/models/market.models';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
-import { ObjectiveDataService } from 'src/app/stock/services/objective-data.service';
+import { StockServices } from 'src/app/stock/services/objective-data.service';
 import { StockData } from 'src/app/stock/services/stock-data.model';
 import { allMarkets } from '../data/all-markets.const';
 
@@ -17,7 +17,7 @@ export class IndustriesService {
   marketTypeToStocksMap: Map<IndustryType, StockAnalysis[]> = new Map();
   allStocks: StockData[];
 
-  constructor(private objectiveDataService: ObjectiveDataService) {
+  constructor(private objectiveDataService: StockServices) {
     this.allStocks = objectiveDataService.getAllStockData();
   }
 

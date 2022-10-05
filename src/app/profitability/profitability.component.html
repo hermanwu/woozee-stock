@@ -2,7 +2,7 @@
   <div class="row">
     <div *ngIf="!hideLabel">Gross Margin</div>
 
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       <span>
         {{ stock?.quarterGrossProfitMargin | siUnit: 2 | percent | undefined }}
       </span>
@@ -12,7 +12,7 @@
   <div class="row">
     <div *ngIf="!hideLabel">Operating Margin</div>
 
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       <span>
         {{ stock?.quarterOperatingMargin | siUnit: 2 | percent | undefined }}
       </span>
@@ -22,7 +22,7 @@
   <div class="row">
     <div *ngIf="!hideLabel">Net Margin</div>
 
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       <span>
         {{ stock?.quarterNetMargin | siUnit: 2 | percent | undefined }}
       </span>
@@ -32,7 +32,7 @@
   <div class="row">
     <div *ngIf="!hideLabel">Operating Expenses YoY</div>
 
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">
         ({{ stock?.previousQuarterExpenses | siUnit: 2 | undefined }}
         ->
@@ -49,7 +49,7 @@
   <div class="row">
     <div *ngIf="!hideLabel">Quarterly Gross Profit YoY</div>
 
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">
         ({{ stock?.previousQuarterGrossProfit | siUnit: 2 | undefined }} ->
         {{ stock?.quarterGrossProfit | siUnit: 2 | undefined }})
@@ -64,7 +64,7 @@
 
   <div class="row" *ngIf="!compareDisplay">
     <div *ngIf="!hideLabel">Gross Profit Trailing 12 months</div>
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">
         ({{ stock?.previousTtmGrossProfit | siUnit: 2 | undefined }} ->
         {{ stock?.ttmGrossProfit | siUnit: 2 | undefined }})
@@ -86,7 +86,7 @@
 
   <div class="row" *ngIf="!compareDisplay">
     <div *ngIf="!hideLabel">Operating Expenses / Gross Profit</div>
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">
         ({{ stock?.quarterExpenses | siUnit: 2 | undefined }} /
         {{ stock?.quarterGrossProfit | siUnit: 2 | undefined }})
@@ -107,7 +107,7 @@
   >
     <div class="row">
       <div *ngIf="!hideLabel">Revenue Retention</div>
-      <div class="stats">
+      <div *ngIf="!hideData" class="stats">
         <span>
           {{
             stock?.latestReport?.revenueRetention
@@ -125,7 +125,7 @@
   >
     <div class="row">
       <div *ngIf="!hideLabel">Sales & Marketing Cost</div>
-      <div class="stats">
+      <div *ngIf="!hideData" class="stats">
         <span *ngIf="stock?.latestReport?.salesAndMarketingCost">
           {{
             stock?.latestReport?.salesAndMarketingCost | siUnit: 2 | undefined
@@ -142,7 +142,7 @@
   >
     <div class="row">
       <div *ngIf="!hideLabel">Selling, General and Administrative Cost</div>
-      <div class="stats">
+      <div *ngIf="!hideData" class="stats">
         <span>
           {{
             stock?.latestReport?.sellingGeneralAndAdministrative
@@ -156,7 +156,7 @@
 
   <div class="row" *ngIf="!compareDisplay">
     <div *ngIf="!hideLabel">Operating Expenses / Gross Profit TTM</div>
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       <span class="gray-font" *ngIf="!compareDisplay">
         ({{ stock?.ttmGrossProfit - stock?.ttmOI | siUnit: 2 | undefined }} /
         {{ stock?.ttmGrossProfit | siUnit: 2 | undefined }})

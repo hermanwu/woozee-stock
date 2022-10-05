@@ -13,6 +13,7 @@ export class GrowthComponent implements OnInit, OnChanges {
   @Input() industry?: Industry;
   @Input() hideLabel: boolean;
   @Input() compareDisplay: boolean;
+  @Input() hideData?: boolean;
 
   unicode = UnicodeCharacters;
   quarterlyRevenue: number;

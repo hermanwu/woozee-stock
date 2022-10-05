@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { DragDropRankDialogComponent } from 'src/app/shared/components/drag-drop-rank-dialog/drag-drop-rank-dialog.component';
 import { environment } from 'src/environments/environment';
+import { ComparisonDialogComponent } from '../../components/comparison-dialog/comparison-dialog.component';
 import { StockServices } from '../../services/objective-data.service';
 import { StockData } from '../../services/stock-data.model';
 
@@ -108,5 +109,19 @@ export class StockListPageComponent implements OnInit, OnDestroy {
     });
 
     return stocks;
+  }
+
+  stockListTableAction(tableOutput: { stock: StockData; action: string }) {
+    console.log(tableOutput.stock);
+    this.dialogService.open<ComparisonDialogComponent>(
+      ComparisonDialogComponent,
+      {
+        data: {
+          stock: tableOutput.stock,
+        },
+        panelClass: 'large-modal-panel',
+        autoFocus: false,
+      }
+    );
   }
 }

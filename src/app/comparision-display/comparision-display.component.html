@@ -1,0 +1,32 @@
+<div class="comparison-display">
+  <div>
+    <div>
+      <span>&nbsp;</span>
+    </div>
+    <ng-content select="[note]"></ng-content>
+  </div>
+  <div (click)="select(0)" *ngIf="items[0]">
+    <div class="align-center">
+      <span> {{ rankedItems[0] === items[0] ? "✅" : "&nbsp;" }} </span>
+    </div>
+    <div class="item-column">
+      <ng-content select="[item-1]"></ng-content>
+    </div>
+  </div>
+  <div (click)="select(1)" *ngIf="items[1]">
+    <div class="align-center">
+      <span> {{ rankedItems[0] === items[1] ? "✅" : "&nbsp;" }} </span>
+    </div>
+    <div class="item-column">
+      <ng-content select="[item-2]"></ng-content>
+    </div>
+  </div>
+  <div (click)="select(2)" *ngIf="items[2]">
+    <div class="align-center">
+      <span> {{ rankedItems[0] === items[2] ? "✅" : "&nbsp;" }} </span>
+    </div>
+    <div class="item-column">
+      <ng-content select="[item-3]"></ng-content>
+    </div>
+  </div>
+</div>

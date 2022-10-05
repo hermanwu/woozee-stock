@@ -1,4 +1,14 @@
 <mat-toolbar>
+  <span *ngIf="showSearchBar; else appName">
+    <app-search> </app-search>
+  </span>
+  <ng-template #appName>
+    <div>
+      <div>Woozee</div>
+      <div class="subtitle">Match, Rank, Invest</div>
+    </div>
+  </ng-template>
+
   <button
     mat-icon-button
     (click)="searchIconClicked()"
@@ -6,13 +16,6 @@
   >
     <mat-icon>search</mat-icon>
   </button>
-
-  <span *ngIf="showSearchBar; else appName">
-    <app-search> </app-search>
-  </span>
-  <ng-template #appName>
-    <span>Woozee Investment</span>
-  </ng-template>
 
   <span class="spacer"></span>
 
@@ -70,6 +73,10 @@
 </mat-toolbar>
 
 <div class="content-container">
+  <div *ngIf="!environment.production">
+    Global Ranking: {{ userServices?.rankings$ | async | json }}
+  </div>
+
   <router-outlet></router-outlet>
 </div>
 <!-- <mat-drawer-container class="example-container" autosize>

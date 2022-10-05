@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserServices } from 'src/app/accounts/services/user.services';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -12,7 +13,7 @@ export class AppContainerComponent implements OnInit {
 
   showSearchBar: boolean;
 
-  constructor() {}
+  constructor(private userServices: UserServices) {}
 
   ngOnInit(): void {}
 

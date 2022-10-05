@@ -1,4 +1,43 @@
 <app-card>
+  <div>Function Test</div>
+
+  <div>Mock Ranks: {{ mockRanks }}</div>
+
+  <div>Item: {{ mockItem }}</div>
+
+  <div>Higher: {{ higherItem }}</div>
+  <div>Lower: {{ lowerItem }}</div>
+
+  <div>Result: {{ mockResult }}</div>
+
+  <button (click)="mockRankHigher()">Rank Higher</button>
+
+  <button (click)="mockRankLower()">Rank Lower</button>
+</app-card>
+
+<app-card>
+  <h1>Data Comparsion Display</h1>
+
+  <div>
+    <div>INPUT:</div>
+    <div>items: {{ mockStocks | json }}</div>
+    <div>OUTPUT:</div>
+    <div>{{ rankedStocks | json }}</div>
+
+    <app-comparision-display
+      [items]="mockStocks"
+      (selectAction)="rankedStocks = $event"
+    >
+      <div note>
+        This is a super super super super super super super super long text
+      </div>
+      <div item-1>Test 1</div>
+      <div item-2>Test 2</div>
+    </app-comparision-display>
+  </div>
+</app-card>
+
+<app-card>
   <h1>Drop Down</h1>
 
   <div>Selected Portfolio: {{ selectedPortfolio }}</div>

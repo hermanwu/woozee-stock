@@ -21,3 +21,9 @@
   margin-top: 0.5rem;
   height: 1.5rem;
 }
+
+:host {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+}

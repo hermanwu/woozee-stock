@@ -1,5 +1,12 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+} from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Stock } from '../../models/stock.model';
 import { StockData } from '../../services/stock-data.model';
 import { StockListTableColumn } from './stock-list-table-column.enum';
 
@@ -25,6 +32,10 @@ export class StockListTableComponent implements OnChanges {
   };
 
   @Input() stocks: StockData[];
+  @Output() stockListTableAction = new EventEmitter<{
+    stock: Stock;
+    action: string;
+  }>();
 
   constructor() {}
 
@@ -65,5 +76,7 @@ export class StockListTableComponent implements OnChanges {
     // this.sort(undefined);
   }
 
-  compareStocks(originalStock: string) {}
+  compareStocks(stock: StockData) {
+    this.stockListTableAction.emit({ stock, action: 'compare' });
+  }
 }

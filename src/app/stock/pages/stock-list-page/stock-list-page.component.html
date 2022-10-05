@@ -28,12 +28,11 @@
   </div>
 </app-title-menu>
 
-<div *ngIf="!environment.production">
-  Global Ranking: {{ userServices.rankings$ | async | json }}
-</div>
-
 <app-card>
   <div class="stock-list-table">
-    <app-stock-list-table [stocks]="stocks"></app-stock-list-table>
+    <app-stock-list-table
+      [stocks]="stocks"
+      (stockListTableAction)="stockListTableAction($event)"
+    ></app-stock-list-table>
   </div>
 </app-card>

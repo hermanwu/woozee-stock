@@ -1,7 +1,7 @@
 <ul *ngIf="stock" class="container">
   <li class="row" *ngIf="!compareDisplay">
     <div *ngIf="!hideLabel">Market Cap</div>
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       <span>
         {{ stock.marketCap | siUnit: 2 | undefined }}
       </span>
@@ -10,7 +10,7 @@
 
   <li class="row">
     <div *ngIf="!hideLabel">P / E:</div>
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       {{
         (stock.marketCap / stock.ttmNetIncome > 0
           ? stock.marketCap / stock.ttmNetIncome
@@ -24,21 +24,21 @@
 
   <li class="row">
     <div *ngIf="!hideLabel">P / S:</div>
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       {{ stock.marketCap / stock.ttmRevenue | siUnit: 0 | undefined }}
     </div>
   </li>
 
   <li class="row">
     <div *ngIf="!hideLabel">P / Gross Profit:</div>
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       {{ stock.marketCap / stock.ttmGrossProfit | siUnit: 0 | undefined }}
     </div>
   </li>
 
   <li class="row">
     <div *ngIf="!hideLabel">P / Operating Income:</div>
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       {{
         (stock.marketCapToOiRatio > 0 ? stock.marketCapToOiRatio : undefined)
           | siUnit: 0

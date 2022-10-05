@@ -11,6 +11,7 @@ export class ProfitabilityComponent implements OnInit, OnChanges {
   @Input() stock: StockData;
   @Input() hideLabel: boolean;
   @Input() compareDisplay: boolean;
+  @Input() hideData?: boolean;
 
   readonly unicode = UnicodeCharacters;
 

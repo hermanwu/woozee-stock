@@ -21,3 +21,19 @@
 .margin-up {
   margin-top: 1rem;
 }
+
+.option {
+  &:hover {
+    background-color: lightblue;
+  }
+}
+
+.comparision-display {
+  max-height: 60vh;
+}
+
+.flex-display {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}

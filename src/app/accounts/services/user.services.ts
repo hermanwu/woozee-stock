@@ -56,4 +56,6 @@ export class UserServices {
 
     return updatedStocks;
   }
+
+  // updateStockRanks(stock: Stock, lowerRanks: Stock) {}
 }

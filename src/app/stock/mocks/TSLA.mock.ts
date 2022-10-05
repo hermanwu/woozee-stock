@@ -63,6 +63,7 @@ export const tsla: StockAnalysis = {
   irAddress: 'https://ir.tesla.com/',
   marketCap: capMock.tsla,
   secFilings: 'https://ir.tesla.com/sec-filings',
+  industries: [IndustryType.ai, IndustryType.ev, IndustryType.energy],
   business: {
     markets: [IndustryType.ai, IndustryType.ev, IndustryType.energy],
   },

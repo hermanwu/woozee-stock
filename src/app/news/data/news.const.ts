@@ -12,6 +12,37 @@ import { EventType, News } from 'src/app/stock/models/news.model';
 export const allNews: News[] = [
   {
     title:
+      'Credit Suisse issued warning about economic outlook:‘The worst is yet to come’',
+    takeAway: 'Economy will not be better until rates stop increasing.',
+    date: getUtcDate(2022, 9, 28),
+    tags: ['Credit Suisse', 'Fed Rates'],
+    type: EventType.opinions,
+    content: [
+      'Crucially, the rising share of price categories above central bank inflation target levels shows inflation is broadening out from a limited group of supply shock related drivers to more general inflation',
+      'Higher rates combine with ongoing shocks to lead us to cut GDP forecasts.',
+      'The euro area and UK are in recession, China is in a growth recession, and the US is flirting with recession.',
+    ],
+  },
+  {
+    title:
+      'Apple ditched the plan to increase iphone production after seeing flattened demand',
+    takeAway:
+      'Demand of consumer product is likely to decrease during a recession.',
+    date: getUtcDate(2022, 9, 28),
+    type: EventType.stock,
+    tags: ['aapl'],
+  },
+  {
+    title:
+      'Apple ditched the plan to increase iphone production after seeing flattened demand',
+    takeAway:
+      'Demand of consumer product is likely to decrease during a recession.',
+    date: getUtcDate(2022, 9, 28),
+    type: EventType.stock,
+    tags: ['aapl'],
+  },
+  {
+    title:
       'Apple ditched the plan to increase iphone production after seeing flattened demand',
     takeAway:
       'Demand of consumer product is likely to decrease during a recession.',

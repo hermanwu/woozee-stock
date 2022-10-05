@@ -1,7 +1,7 @@
 <ul class="container">
   <li class="row">
     <div *ngIf="!hideLabel">Quarterly Revenue Growth YoY</div>
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       <span class="gray" *ngIf="!compareDisplay">
         ({{ stock.previousYearReport?.totalRevenue | siUnit: 2 | undefined }} ->
         {{ stock.quarterRevenue | siUnit: 2 | undefined }})
@@ -15,7 +15,7 @@
 
   <li class="row">
     <div *ngIf="!hideLabel">Revenue TTM YoY</div>
-    <div class="stats">
+    <div *ngIf="!hideData" class="stats">
       <span class="gray" *ngIf="!compareDisplay">
         ({{ stock.previousTtmRevenue | siUnit: 2 | undefined }} ->
         {{ stock.ttmRevenue | siUnit: 2 | undefined }})
@@ -53,7 +53,7 @@
       *ngIf="quarterlyRevenue && activeUserCount && !compareDisplay"
     >
       <div *ngIf="!hideLabel">Average Revenue / User</div>
-      <div class="stats">
+      <div *ngIf="!hideData" class="stats">
         <span>
           {{ quarterlyRevenue / activeUserCount | siUnit: 2 | undefined }}
         </span>

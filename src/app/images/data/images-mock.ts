@@ -27,7 +27,6 @@ export const images = new Map<string, string[]>([
     'LZ'.toLowerCase(),
     ['https://pbs.twimg.com/media/FaAIvfAVQAAkJN9?format=jpg&name=medium'],
   ],
-
   [
     'LI'.toLowerCase(),
     ['https://pbs.twimg.com/media/FaPj1YxVEAAukuu?format=png&name=900x900'],

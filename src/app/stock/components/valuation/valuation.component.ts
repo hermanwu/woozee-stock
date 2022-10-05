@@ -11,6 +11,7 @@ import { StockAnalysis } from '../../models/stock-analysis.model';
 export class ValuationComponent implements OnInit, OnChanges {
   @Input() stock: StockAnalysis;
   @Input() hideLabel: boolean;
+  @Input() hideData?: boolean;
 
   readonly unicode = UnicodeCharacters;
   earningReports: EarningsReport[];

@@ -21,6 +21,7 @@ import { CatalystListComponent } from './catalyst/components/catalyst-list/catal
 import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
 import { CatalystTotalDisplayComponent } from './catalyst/components/catalyst-total-display/catalyst-total-display.component';
 import { CatalystComponent } from './catalyst/components/catalyst/catalyst.component';
+import { ComparisionDisplayComponent } from './comparision-display/comparision-display.component';
 import { DecisionDashboardComponent } from './decision-dashboard/decision-dashboard.component';
 import { FactComponent } from './facts/components/fact/fact.component';
 import { GrowthDetailsComponent } from './growth-details/growth-details.component';
@@ -91,7 +92,6 @@ import { TickerDisplayComponent } from './stock/components/ticker-display/ticker
 import { ValuationDetailsComponent } from './stock/components/valuation-details/valuation-details.component';
 import { ValuationComponent } from './stock/components/valuation/valuation.component';
 import { ForeverOwnStocksPanelComponent } from './stock/forever-own-stocks-panel/forever-own-stocks-panel.component';
-import { FundamentalStatsDisplayComponent } from './stock/molecules/fundamental-stats-display/fundamental-stats-display.component';
 import { NewsDisplayComponent } from './stock/molecules/news-display/news-display.component';
 import { StockListTableComponent } from './stock/molecules/stock-list-table/stock-list-table.component';
 import { StockProductsListComponent } from './stock/molecules/stock-products-list/stock-products-list.component';
@@ -113,7 +113,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     StockListPageComponent,
     ThoughtsDisplayComponent,
     NewsDisplayComponent,
-    FundamentalStatsDisplayComponent,
     StockProductsListComponent,
     HighGrowthIndustryComponent,
     StockDisplayComponent,
@@ -196,6 +195,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     OpinionDisplayComponent,
     DragDropRankDialogComponent,
     MockCompareDialogComponent,
+    ComparisionDisplayComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,8 @@ import { MockCompareDialogComponent } from '../mock-compare-dialog/mock-compare-
 import { Opinion } from '../opinion-display/opinion.interface';
 import { EmojiUnicode } from '../shared/data/enum/emoji.enum';
 import {
+  rankHigher,
+  rankLower,
   sortPortoflioBasedOnRanking,
   updateGlobalRankBasedOnPortfolio,
 } from '../shared/functions/ranking.function';
@@ -17,6 +19,12 @@ import { Rating } from '../stock/models/rating.model';
   styleUrls: ['./ui-components-page.component.scss'],
 })
 export class UiComponentsPageComponent implements OnInit {
+  mockRanks = ['tsla', 'aapl', 'meta', 'amzn'];
+  mockItem = 'aapl';
+  higherItem = 'meta';
+  lowerItem = 'amzn';
+  mockResult;
+
   tagsMock = ['tsla', 'tesla', 'elon musk'];
   selectedPortfolio;
   mockPortfolios = currentUserMock.portfolios;
@@ -25,7 +33,24 @@ export class UiComponentsPageComponent implements OnInit {
     emojis: [EmojiUnicode.thumbDown],
   };
   mockPortfolio;
+  rankedStocks;
   globalRanking = this.userServices.getGlobalRanking();
+
+  mockStocks = [
+    {
+      name: 'Stock A',
+      ticker: 'TSLA',
+      revenue: 100,
+      profit: 50,
+    },
+
+    {
+      name: 'Stock B',
+      ticker: 'AAPL',
+      revenue: 50,
+      profit: 25,
+    },
+  ];
 
   constructor(
     private userServices: UserServices,
@@ -64,8 +89,6 @@ export class UiComponentsPageComponent implements OnInit {
   }
 
   compareStock(stock) {
-    console.log(stock);
-
     this.dialogService
       .open<MockCompareDialogComponent>(MockCompareDialogComponent, {
         data: {
@@ -84,5 +107,17 @@ export class UiComponentsPageComponent implements OnInit {
           );
         }
       });
+  }
+
+  mockRankHigher() {
+    this.mockResult = rankHigher(
+      this.higherItem,
+      this.mockItem,
+      this.mockRanks
+    );
+  }
+
+  mockRankLower() {
+    this.mockResult = rankLower(this.lowerItem, this.mockItem, this.mockRanks);
   }
 }

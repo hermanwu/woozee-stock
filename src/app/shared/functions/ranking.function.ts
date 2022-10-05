@@ -1,3 +1,5 @@
+import { cloneDeep } from './clone-deep';
+
 export function sortPortoflioBasedOnRanking(
   portfolioStocks: string[],
   ranking: string[]
@@ -39,4 +41,74 @@ export function updateGlobalRankBasedOnPortfolio(
   result.push(...sortedPortoflio.slice(indexToChange.length));
 
   return result;
+}
+
+export function rankHigher(
+  higher: string,
+  item: string,
+  inputRanks: string[]
+): string[] {
+  const ranks = cloneDeep(inputRanks);
+  const itemIndex = ranks.indexOf(item);
+  const higherIndex = ranks.indexOf(higher);
+
+  if (itemIndex === -1 && higherIndex === -1) {
+    ranks.push(higher, item);
+    return ranks;
+  }
+
+  if (higherIndex === -1) {
+    return ranks.splice(itemIndex, 0, higher);
+  }
+
+  if (itemIndex === -1) {
+    ranks.push(item);
+    return ranks;
+  }
+
+  if (higherIndex <= itemIndex) {
+    return ranks;
+  } else if (higherIndex > itemIndex) {
+    ranks.splice(higherIndex, 1);
+    ranks.splice(itemIndex, 0, higher);
+
+    return ranks;
+  }
+
+  return ranks;
+}
+
+export function rankLower(
+  lower: string,
+  item: string,
+  inputRanks: string[]
+): string[] {
+  const ranks = cloneDeep(inputRanks);
+  const itemIndex = ranks.indexOf(item);
+  const lowerIndex = ranks.indexOf(lower);
+
+  if (itemIndex === -1 && lowerIndex === -1) {
+    ranks.push(item, lower);
+    return ranks;
+  }
+
+  if (itemIndex === -1) {
+    return ranks.splice(lowerIndex, 0, item);
+  }
+
+  if (lowerIndex === -1) {
+    ranks.push(lower);
+    return ranks;
+  }
+
+  if (lowerIndex >= itemIndex) {
+    return ranks;
+  } else if (lowerIndex < itemIndex) {
+    ranks.splice(lowerIndex, 1);
+    ranks.splice(itemIndex, 0, lower);
+
+    return ranks;
+  }
+
+  return ranks;
 }

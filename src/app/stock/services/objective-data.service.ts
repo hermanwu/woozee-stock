@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { IndustryType } from 'src/app/facts/data/area.enum';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { stocksMap } from '../mocks/stock-list.const';
 import { EarningsReport } from '../models/earnings.model';
@@ -33,6 +34,26 @@ export class StockServices {
   getAllStockData(): StockData[] {
     const stocks = Array.from(this.dataMap.values());
     return stocks;
+  }
+
+  getStocksByIndustryType(
+    type: IndustryType,
+    stocks: StockData[] = Array.from(this.dataMap.values())
+  ): StockData[] {
+    return (
+      stocks
+        // filter out the stock that is in this market.
+        .filter((stock) => {
+          if (stock?.industries || stock?.business?.markets) {
+            const markets = stock?.industries || stock?.business?.markets;
+
+            if (markets.filter((market) => market === type).length > 0) {
+              return true;
+            }
+          }
+          return false;
+        })
+    );
   }
 
   getStockByTicker(ticker: string): StockAnalysis {

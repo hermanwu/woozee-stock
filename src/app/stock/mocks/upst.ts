@@ -1,3 +1,4 @@
+import { getUtcDate } from 'src/app/shared/functions/getUtcDate.function';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const upst: StockAnalysis = {
@@ -24,24 +25,18 @@ export const upst: StockAnalysis = {
   irAddress: 'https://ir.upstart.com/',
 
   // Earnings Report:
-  earnings: {
-    latestReportQuarter: ['2021', '2'],
-    2021: {
-      2: {
-        '10q10k': null,
-        presentation: null,
-        press: null,
-        webcast: null,
-        marketCap: 23.23 * 1e9,
-        totalRevenue: 193.946 * 1e6,
-        operatingIncome: 36.294 * 1e6,
-      },
+  earnings: [
+    {
+      year: 2022,
+      quarter: 3,
+      date: getUtcDate(2022, 11, 8),
+      links: [
+        {
+          name: 'Earnings Release',
+          value:
+            'https://ir.upstart.com/static-files/3fe3702b-410d-4696-a0eb-c8d45cedb51b',
+        },
+      ],
     },
-    2020: {
-      2: {
-        totalRevenue: 17.353 * 1e6,
-        operatingIncome: -11.388 * 1e6,
-      },
-    },
-  },
+  ],
 };

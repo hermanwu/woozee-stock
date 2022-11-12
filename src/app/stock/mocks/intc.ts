@@ -7,7 +7,7 @@ export const intc: StockAnalysis = {
   description: [],
   shortName: 'Intel',
   ticker: 'INTC',
-  myRating: Rating.Buy,
+  myRating: Rating.Bullish,
 
   // Earnings Report:
   earnings: {

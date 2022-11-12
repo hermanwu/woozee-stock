@@ -40,6 +40,7 @@ export interface StockAnalysis {
   secFilings?: string;
   business?: Business;
   products?: Product[];
+  revenues?: any[];
   foundedYear?: number;
 
   // Demand:

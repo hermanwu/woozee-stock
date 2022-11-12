@@ -29,7 +29,7 @@ export const teamRisks = [
 ];
 
 export const team: StockAnalysis = {
-  marketCap: 64 * BILLION,
+  marketCap: 31.54 * BILLION,
   logo: '',
   name: 'Atlassian Corporation Plc',
   description: [],
@@ -43,16 +43,42 @@ export const team: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
-      quarter: 2,
+      quarter: 3,
       totalRevenue: 759.841 * MILLION,
       costOfRevenue: 133.154 * MILLION,
       operatingIncome: -63.253 * MILLION,
       netIncome: -105.463 * MILLION,
+      forecastRevenueTop: 855 * MILLION,
+      forecastRevenueBottom: 835 * MILLION,
+      date: convertDateToUTC(new Date('2022-11-03')),
+      links: [
+        {
+          name: 'Shareholder Letter',
+          value:
+            'https://s28.q4cdn.com/541786762/files/doc_financials/2023/q1/TEAM-Q1-2023-Shareholder-Letter.pdf',
+        },
+      ],
+      quotes: [
+        {
+          content:
+            'Subscription revenue grew by 50% year-over-year. Cloud revenue grew by 49% year-over-year and Data Center revenue grew by 54% year-over-year.',
+        },
+        {
+          content:
+            'we also saw the growth of paid users from existing customers slow in the second half of Q1, largely due to customers slowing their rate of hiring.',
+        },
+      ],
+    },
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 807.392 * MILLION,
+      costOfRevenue: 139.392 * MILLION,
+      operatingIncome: -34.027 * MILLION,
+      netIncome: -13.741 * MILLION,
       forecastRevenueTop: 810 * MILLION,
       forecastRevenueBottom: 795 * MILLION,
       date: convertDateToUTC(new Date('2022-08-04')),
-      shareholderLetter:
-        'https://s28.q4cdn.com/541786762/files/doc_financials/2022/q4/TEAM-Q4FY2022-Shareholder-Letter.pdf',
       pressReleaseLink:
         'https://s28.q4cdn.com/541786762/files/doc_financials/2022/q4/TEAM-Q4FY2022-Earnings-Release.pdf',
     },

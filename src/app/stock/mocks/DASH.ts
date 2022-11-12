@@ -12,9 +12,7 @@ export const dash: StockAnalysis = {
   shortName: 'DoorDash',
   irAddress: 'https://ir.doordash.com/overview/default.aspx',
 
-  business: {
-    markets: [IndustryType.foodDelivery],
-  },
+  industries: [IndustryType.foodDelivery],
 
   earningsReports: [
     {

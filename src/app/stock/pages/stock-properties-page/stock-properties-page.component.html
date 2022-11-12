@@ -7,7 +7,8 @@
     <div header-1 i18n>
       {{ stockAnalysis.shortName || stockAnalysis.name }} ({{
         stockAnalysis?.ticker | uppercase
-      }}) - {{ stockAnalysis.price }}
+      }}) - Rank {{ rank$ | async | undefined }} -
+      {{ stockAnalysis.price | undefined }}
     </div>
     <div buttons>
       <button
@@ -46,10 +47,10 @@
       </app-card>
     </div>
 
-    <div class="padding-1rem" *ngIf="risks?.length > 0">
+    <div class="padding-1rem" *ngIf="opinions?.length > 0">
       <app-card>
         <app-title-menu>
-          <div header-1>Bearish Arguments {{ emojiUnicode.thumbDown }}</div>
+          <div header-1>Opinions</div>
 
           <div buttons>
             <button
@@ -77,7 +78,11 @@
           class="grid grid-list"
           *ngIf="displayMode === displayModeEnum.list"
         >
-          <app-risk-list [risks]="risks"></app-risk-list>
+          <app-card *ngFor="let opinion of opinions">
+            <app-opinion-item-display
+              [opinion]="opinion"
+            ></app-opinion-item-display>
+          </app-card>
         </div>
 
         <div *ngIf="displayMode === displayModeEnum.slide">
@@ -110,27 +115,9 @@
       </app-card>
     </div>
 
-    <div class="padding-1rem" *ngIf="catalysts?.length > 0">
-      <app-card>
-        <app-title-menu>
-          <div header-1>Bullish Arguments {{ emojiUnicode.thumbUp }}</div>
-
-          <div buttons>
-            <button mat-icon-button type="button" matTooltip="Add Catalyst">
-              <mat-icon>add_circle</mat-icon>
-            </button>
-          </div>
-        </app-title-menu>
-
-        <app-catalyst-list [catalysts]="catalysts"></app-catalyst-list>
-      </app-card>
-    </div>
-
-    <div class="padding-1rem" *ngIf="stockAnalysis?.business">
+    <div class="padding-1rem" *ngIf="stockAnalysis">
       <app-fact [factType]="factType.business" [stock]="stockAnalysis">
-        <app-business-overview
-          [business]="stockAnalysis.business"
-        ></app-business-overview>
+        <app-business-overview [stock]="stockAnalysis"></app-business-overview>
       </app-fact>
     </div>
 

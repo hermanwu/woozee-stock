@@ -26,7 +26,7 @@ export enum EmojiUnicode {
   vs = '🆚',
 }
 
-export const BullishEmoji = ['🚀', '😆', '🙂', '👍'];
+export const BullishEmoji = ['🚀', '😆', '🙂', '👍', '🤑', '😲'];
 
 export const BearishEmoji = ['😫', '🙁', '👎'];
 

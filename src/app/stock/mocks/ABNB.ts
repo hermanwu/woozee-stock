@@ -1,6 +1,9 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
-import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
+import {
+  convertDateToUTC,
+  getUtcDate,
+} from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -33,7 +36,7 @@ export const abnbCatalysts = [
 ];
 
 export const abnb: StockAnalysis = {
-  marketCap: 73.89 * BILLION,
+  marketCap: 61 * BILLION,
   riskUuids: abnbRisks.map((r) => r.uuid),
   catalystUuids: abnbCatalysts.map((c) => c.uuid),
   shortName: 'Airbnb',
@@ -59,15 +62,34 @@ export const abnb: StockAnalysis = {
   ticker: 'abnb',
   irAddress: 'https://airbnb2020ipo.q4web.com/home/default.aspx',
   business: {
-    markets: [IndustryType.shared_economy, IndustryType.travel],
     competitiveAdvantages: [
       { type: StrategyType.platform },
       { type: StrategyType.userData },
       { type: StrategyType.feature },
     ],
   },
+  industries: [IndustryType.shared_economy, IndustryType.travel],
+
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 3,
+      totalRevenue: 2.884 * BILLION,
+      costOfRevenue: 401.149 * MILLION,
+      operatingIncome: 1.203 * BILLION,
+      netIncome: 1.214 * BILLION,
+      date: getUtcDate(2022, 11, 1),
+      forecastRevenueTop: 2.88 * BILLION,
+      forecastRevenueBottom: 2.78 * BILLION,
+      links: [
+        {
+          name: 'Shareholder Letter',
+          value:
+            'https://s26.q4cdn.com/656283129/files/doc_financials/2022/q3/Airbnb_Q3-2022-Shareholder-Letter_Final.pdf',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 2,

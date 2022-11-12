@@ -10,7 +10,7 @@ export const zs: StockAnalysis = {
   shortName: 'Zscaler',
   description: [],
   ticker: 'ZS',
-  myRating: Rating.Hold,
+  myRating: Rating.Neutral,
   irAddress: 'https://ir.zscaler.com/',
   business: {
     markets: [IndustryType.cybersecurity],

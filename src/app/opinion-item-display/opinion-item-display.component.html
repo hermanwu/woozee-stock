@@ -1,0 +1,24 @@
+<div>
+  <app-opinion-display
+    *ngIf="opinion"
+    [opinion]="opinion"
+  ></app-opinion-display>
+</div>
+
+<div>
+  <app-badge *ngIf="opinion.factType">{{ opinion.factType }}</app-badge>
+
+  {{opinion?.content?.[0]}}
+</div>
+
+<!-- <div *ngFor="let item of opinion.content">
+  {{ item }}
+</div> -->
+
+<div *ngIf="opinion.links">
+  <app-links-display [links]="opinion.links"></app-links-display>
+</div>
+
+<div>
+  <app-tags-display [tags]="opinion.tags"> </app-tags-display>
+</div>

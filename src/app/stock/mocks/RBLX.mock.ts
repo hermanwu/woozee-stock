@@ -15,7 +15,7 @@ export const rblx: StockAnalysis = {
   ticker: 'rblx',
   ceoQuote: [],
   advantage: [],
-  myRating: Rating.Buy,
+  myRating: Rating.Bullish,
   propertiesPageEnabled: true,
   irAddress: 'https://ir.roblox.com/overview/default.aspx',
   riskUuids: rblxRisks.map((r) => r.uuid),
@@ -76,10 +76,6 @@ export const rblx: StockAnalysis = {
       ],
       pressReleaseLink:
         'https://s27.q4cdn.com/984876518/files/doc_financials/2022/q2/RBLX-2022.08.09-Earnings-release-FINAL.docx.pdf',
-      shareholderLetter:
-        'https://s27.q4cdn.com/984876518/files/doc_financials/2022/q2/RBLX_Shareholder_Letter_FINAL.pdf',
-      slidesLink:
-        "https://s27.q4cdn.com/984876518/files/doc_financials/2022/q2/Q2'22-Supplemental-Materials-FINAL.pdf",
     },
     {
       year: 2022,

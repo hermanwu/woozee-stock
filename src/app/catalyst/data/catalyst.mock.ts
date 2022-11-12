@@ -74,16 +74,16 @@ export const catalysts: Catalyst[] = [
     level: Term.short,
     type: FactType.growth,
     date: new Date('2022-04-20'),
-    notes: [
-      {
-        content:
-          '81% growth in 2022Q1, compared to 65% in 2021Q4 growth and 71% average growth in 2021',
-      },
-      {
-        content:
-          '2022 forecasts growth is 60%, which is better than previous 50% estimate.',
-      },
-    ],
+    // notes: [
+    //   {
+    //     content:
+    //       '81% growth in 2022Q1, compared to 65% in 2021Q4 growth and 71% average growth in 2021',
+    //   },
+    //   {
+    //     content:
+    //       '2022 forecasts growth is 60%, which is better than previous 50% estimate.',
+    //   },
+    // ],
   },
   {
     uuid: 'c-4',

@@ -140,20 +140,17 @@ export const amzn: StockAnalysis = {
   description: [],
   logo: 'http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
-  marketCap: 1.234 * TRILLION,
+  marketCap: 1 * TRILLION,
   shortName: 'Amazon',
-  riskUuids: amznRisks.map((risk) => risk.uuid),
-  catalystUuids: amznCatalysts.map((risk) => risk.uuid),
+  industries: [
+    IndustryType.ecommerce,
+    IndustryType.cloudService,
+    IndustryType.adTech,
+    IndustryType.Retails,
+    IndustryType.datacenter,
+  ],
 
   business: {
-    markets: [
-      IndustryType.ecommerce,
-      IndustryType.cloudService,
-      IndustryType.adTech,
-      IndustryType.Retails,
-      IndustryType.datacenter,
-    ],
-
     competitiveAdvantages: [
       { type: StrategyType.efficientScale },
       { type: StrategyType.userData },
@@ -166,6 +163,24 @@ export const amzn: StockAnalysis = {
   },
 
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 3,
+      totalRevenue: 127.101 * BILLION,
+      costOfRevenue: 70.268 * BILLION,
+      operatingIncome: 2.525 * BILLION,
+      netIncome: 2.872 * MILLION,
+      forecastRevenueTop: 148 * BILLION,
+      forecastRevenueBottom: 140 * BILLION,
+      date: convertDateToUTC(new Date('2022-10-27')),
+      links: [
+        {
+          name: 'Earnings Release',
+          value:
+            'https://s2.q4cdn.com/299287126/files/doc_financials/2022/q3/Q3-2022-Amazon-Earnings-Release.pdf',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 2,

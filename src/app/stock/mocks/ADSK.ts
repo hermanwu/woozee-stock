@@ -6,7 +6,7 @@ export const ADSK: StockAnalysis = {
   name: { English: 'AUTODESK, INC.' },
   description: [],
   ticker: 'ADSK',
-  myRating: Rating.Hold,
+  myRating: Rating.Neutral,
 
   // Earnings Report:
   earnings: {

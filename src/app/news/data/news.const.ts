@@ -1,6 +1,7 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Index } from 'src/app/macro/macro.enum';
 import { TimeFrame } from 'src/app/shared/components/stats-display/stats-display.interface';
+import { RegionCode } from 'src/app/shared/data/enum/region.enum';
 import {
   convertDateToUTC,
   getUtcDate,
@@ -10,6 +11,14 @@ import { Source } from 'src/app/stock/models/news-source.enum';
 import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
+  {
+    title: 'October CPI report was released',
+    date: getUtcDate(2022, 11, 10),
+    content: [
+      'CPI was up 0.4% MoM, and 7.7% YoY as shelter, gasoline, and food increased.',
+    ],
+    tags: ['CPI', RegionCode.us],
+  },
   {
     title:
       'Credit Suisse issued warning about economic outlook:‘The worst is yet to come’',

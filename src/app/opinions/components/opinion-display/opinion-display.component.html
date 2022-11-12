@@ -1,3 +1,13 @@
+<app-title-menu>
+  <div header-3>Anonymous User</div>
+
+  <button buttons mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_horiz</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu"> </mat-menu>
+</app-title-menu>
+
 <ng-container [ngSwitch]="opinion.term">
   <ng-container *ngSwitchCase="termEnum.short" i18n>Short Term</ng-container>
 
@@ -7,19 +17,19 @@
 </ng-container>
 
 <ng-container [ngSwitch]="opinion.rating">
-  <ng-container *ngSwitchCase="ratingEnum.StrongBuy" i18n>
+  <ng-container *ngSwitchCase="ratingEnum.VeryBullish" i18n>
     <span class="very-green">Very Bullish</span>
   </ng-container>
 
-  <ng-container *ngSwitchCase="ratingEnum.Buy" i18n>
+  <ng-container *ngSwitchCase="ratingEnum.Bullish" i18n>
     <span class="green">Bullish</span>
   </ng-container>
 
-  <ng-container *ngSwitchCase="ratingEnum.StrongSell" i18n>
+  <ng-container *ngSwitchCase="ratingEnum.VeryBearish" i18n>
     <span class="very-red">Very Bearish</span>
   </ng-container>
 
-  <ng-container *ngSwitchCase="ratingEnum.Sell" i18n>
+  <ng-container *ngSwitchCase="ratingEnum.Bearish" i18n>
     <span class="red">Bearish</span>
   </ng-container>
 
@@ -27,5 +37,5 @@
 </ng-container>
 
 <span>
-  {{ opinion?.emojis?.join("") }}
+  {{ emojis }}
 </span>

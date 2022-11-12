@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { UnicodeCharacters } from 'src/app/shared/data/enum/unicode-characters.enum';
-import { Industry } from 'src/app/stock/models/market.models';
+import { Industry } from 'src/app/stock/models/industry.model';
 
 @Component({
   selector: 'app-market-list',

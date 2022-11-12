@@ -1,34 +1,32 @@
-<div *ngIf="business?.overview">
+<div *ngIf="stock?.business?.overview">
   <div class="label">Overview</div>
-  <div *ngFor="let item of business?.overview">{{ item }}</div>
+  <div *ngFor="let item of stock?.business?.overview">{{ item }}</div>
 </div>
 
-<div *ngIf="business?.products">
+<div *ngIf="stock?.business?.products">
   <h3 class="label">Products</h3>
   <ul>
-    <li *ngFor="let item of business?.products">{{ item }}</li>
+    <li *ngFor="let item of stock?.business?.products">{{ item }}</li>
   </ul>
 </div>
 
-<div *ngIf="business?.revenues">
+<div *ngIf="stock?.business?.revenues">
   <div class="label">Revenue Composition</div>
   <app-revenue-composition-display
-    [revenues]="business?.revenues"
+    [revenues]="stock?.business?.revenues"
   ></app-revenue-composition-display>
 </div>
 
-<div *ngIf="business?.markets">
+<div *ngIf="industryTypes">
   <div class="label">Industries and Competitors</div>
   <ul>
-    <li *ngFor="let item of business?.markets">
+    <li *ngFor="let item of industryTypes">
       <strong>{{ item }}:</strong>
 
-      <ng-container *ngFor="let competitor of competitorMap.get(item)">
-        <app-badge>
-          {{ competitor.shortName || competitor.name }}
-          ({{ competitor.ticker.toUpperCase() }})
-        </app-badge>
-      </ng-container>
+      <app-stock-badge-list
+        [isLink]="'true'"
+        [stocks]="competitorMap.get(item)"
+      ></app-stock-badge-list>
     </li>
   </ul>
 </div>
@@ -37,29 +35,29 @@
   <div></div>
 </div>
 
-<div *ngIf="business?.competitiveAdvantages">
+<div *ngIf="stock?.business?.competitiveAdvantages">
   <div class="label">Competitive Advantages</div>
-  <span *ngFor="let item of business?.competitiveAdvantages">
+  <span *ngFor="let item of stock?.business?.competitiveAdvantages">
     <span class="badge">{{ item.type }}</span>
   </span>
 </div>
 
-<div *ngIf="business?.missions">
+<div *ngIf="stock?.business?.missions">
   <div class="label">Mission</div>
-  <div *ngFor="let item of business?.missions">{{ item }}</div>
+  <div *ngFor="let item of stock?.business?.missions">{{ item }}</div>
 </div>
 
-<div *ngIf="business?.productBenefits">
+<div *ngIf="stock?.business?.productBenefits">
   <div class="label">Problems Solved</div>
-  <div *ngFor="let item of business?.productBenefits">
+  <div *ngFor="let item of stock?.business?.productBenefits">
     <span class="badge">{{ item.type }}</span>
     <span *ngIf="item.note"> - {{ item.note }}</span>
   </div>
 </div>
 
-<ng-container *ngIf="business?.growthStrategy">
+<ng-container *ngIf="stock?.business?.growthStrategy">
   <div class="label">Growth Strategies</div>
-  <div *ngFor="let item of business?.growthStrategy">- {{ item }}</div>
+  <div *ngFor="let item of stock?.business?.growthStrategy">- {{ item }}</div>
 </ng-container>
 
 <!-- <div *ngIf="expanded">

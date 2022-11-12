@@ -15,7 +15,7 @@ export const tdoc: StockAnalysis = {
   name: 'Teladoc Health',
   description: [],
   ticker: 'tdoc',
-  myRating: Rating.Buy,
+  myRating: Rating.Bullish,
   shortName: 'Teladoc',
   irAddress: 'https://ir.teladochealth.com/investors/default.aspx',
 

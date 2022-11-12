@@ -1,3 +1,4 @@
+import { getUtcDate } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -11,6 +12,18 @@ export const amc: StockAnalysis = {
   irAddress: 'https://investor.amctheatres.com/corporate-overview/default.aspx',
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 3,
+      date: getUtcDate(2022, 11, 8),
+      links: [
+        {
+          name: 'Earniings Report',
+          value:
+            'https://mms.businesswire.com/media/20221108006003/en/1630039/1/FINAL_-_3Q_2022_Earnings_Release_Draft_20221108_1010_v.F.pdf',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 1,

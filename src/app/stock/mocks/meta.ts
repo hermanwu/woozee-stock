@@ -105,7 +105,7 @@ export const fbRisks = [
 ];
 
 export const meta: StockAnalysis = {
-  marketCap: 496 * BILLION,
+  marketCap: 350 * BILLION,
   shortName: 'Meta',
   predications: [
     {
@@ -123,6 +123,19 @@ export const meta: StockAnalysis = {
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 3,
+      totalRevenue: 27.714 * BILLION,
+      costOfRevenue: 5.716 * BILLION,
+      operatingIncome: 5.664 * BILLION,
+      netIncome: 4.395 * BILLION,
+      date: convertDateToUTC(new Date('2022-10-26')),
+      slidesLink:
+        'https://s21.q4cdn.com/399680738/files/doc_financials/2022/q2/Q2-2022_Earnings-Presentation.pdf',
+      pressReleaseLink:
+        'https://s21.q4cdn.com/399680738/files/doc_financials/2022/q3/Meta-09.30.2022-Exhibit-99.1-FINAL.pdf',
+    },
     {
       year: 2022,
       quarter: 2,
@@ -278,12 +291,10 @@ export const meta: StockAnalysis = {
     },
   ],
 
-  business: {
-    markets: [
-      IndustryType.social,
-      IndustryType.adTech,
-      IndustryType.vr,
-      IndustryType.digitalMedia,
-    ],
-  },
+  industries: [
+    IndustryType.social,
+    IndustryType.adTech,
+    IndustryType.vr,
+    IndustryType.digitalMedia,
+  ],
 };

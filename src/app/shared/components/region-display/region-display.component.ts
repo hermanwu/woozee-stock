@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { Region, RegionCode } from '../../data/enum/region.enum';
+import { RegionCode, RegionMap } from '../../data/enum/region.enum';
 
 @Component({
   selector: 'app-region-display',
@@ -10,7 +10,7 @@ export class RegionDisplayComponent implements OnChanges {
   @Input() region: string;
 
   readonly regionCode = RegionCode;
-  readonly regionMap = Region;
+  readonly regionMap = RegionMap;
 
   flag;
 

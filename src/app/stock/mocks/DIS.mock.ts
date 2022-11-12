@@ -15,15 +15,15 @@ export const disneyCatalysts: Catalyst[] = [
     uuid: 'dis-c-1',
     content:
       'Disney+ subscribers continue to grow and could exceeds Netflix in future.',
-    notes: [
-      {
-        content: 'Disney+ has 138M subscribers right now.',
-      },
-      {
-        content:
-          'Disney plan to have between 230 million and 260 million global subscribers by 2024, which exceeds Netflix current 222M subscriber count.',
-      },
-    ],
+    // notes: [
+    //   {
+    //     content: 'Disney+ has 138M subscribers right now.',
+    //   },
+    //   {
+    //     content:
+    //       'Disney plan to have between 230 million and 260 million global subscribers by 2024, which exceeds Netflix current 222M subscriber count.',
+    //   },
+    // ],
   },
 ];
 

@@ -1,5 +1,5 @@
 import { foodDeliveryMarket } from 'src/app/markets/data/food-delivery-market.const';
-import { Industry } from 'src/app/stock/models/market.models';
+import { Industry } from 'src/app/stock/models/industry.model';
 import { beautyAndCosmeticsMarket } from './beauty-market.const';
 import { crmMarket } from './crm-market.const';
 import { cryptoMarket } from './crypto-market.const';

@@ -44,20 +44,16 @@
   </button>
 
   <mat-menu #menu="matMenu">
-    <button [routerLink]="['/blog']" mat-menu-item i18n>Blog</button>
+    <button mat-menu-item [routerLink]="['/rankings']" i18n>Rankings</button>
+
+    <button [routerLink]="['/opinions']" mat-menu-item i18n>Opinions</button>
 
     <button [routerLink]="['/news']" mat-menu-item i18n>News</button>
 
     <!-- <button mat-menu-item disabled>
       <a [routerLink]="['/stocks']">Stocks</a>
     </button> -->
-    <button [routerLink]="['/macro']" mat-menu-item i18n>Global Macro</button>
 
-    <button [routerLink]="['/woozee/markets']" mat-menu-item i18n>
-      Industries
-    </button>
-
-    <button mat-menu-item [routerLink]="['/woozee/stocks']" i18n>Stocks</button>
     <a mat-menu-item [href]="aboutPage">About</a>
     <!-- <button mat-menu-item [routerLink]="['/about']">About</button> -->
 

@@ -1,6 +1,6 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Term } from 'src/app/risks/models/risk-level.model';
-import { Industry } from 'src/app/stock/models/market.models';
+import { Industry } from 'src/app/stock/models/industry.model';
 
 export const cryptoRisks = [
   {

@@ -8,7 +8,7 @@ export const twtrCatalysts = [
   {
     name: 'Elon Musk became the largest stakeholder of Twitter (9.2%)',
     level: Term.short,
-    type: FactType.sentiment,
+    type: FactType.opportunities,
     date: new Date('2022-04-18'),
   },
   {

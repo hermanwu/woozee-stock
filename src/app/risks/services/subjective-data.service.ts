@@ -5,7 +5,7 @@ import { allMarkets } from 'src/app/markets/data/all-markets.const';
 import { allNews } from 'src/app/news/data/news.const';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
-import { Industry } from 'src/app/stock/models/market.models';
+import { Industry } from 'src/app/stock/models/industry.model';
 import { NewsWithDetails } from 'src/app/stock/models/news.model';
 import { allRisks } from '../data/global-risk.const';
 import { Risk } from '../models/risk.model';

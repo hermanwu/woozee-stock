@@ -1,13 +1,35 @@
 <app-title-menu>
-  <div header-1>{{ marketType }}</div>
+  <div header-1>Markets</div>
 </app-title-menu>
 
-<app-title-menu>
-  <div header-2>Bear Says</div>
-</app-title-menu>
-<app-risk-list [risks]="risks"></app-risk-list>
+<app-card>
+  <div class="table">
+    <div class="table-head">
+      <div>Title</div>
+      <div>Region</div>
+      <div>Opinion</div>
+    </div>
 
-<app-title-menu>
-  <div header-2>Bull Says</div>
-</app-title-menu>
-<app-catalyst-list [catalysts]="catalysts"></app-catalyst-list>
+    <div *ngFor="let item of macros" class="table-row">
+      <div>
+        <div>{{ item.title }}</div>
+        <div>
+          <app-badge *ngFor="let tag of item.tags">{{ tag }}</app-badge>
+        </div>
+      </div>
+      <div>
+        <span *ngFor="let region of item.regions">
+          <app-badge
+            ><app-region-display [region]="region"></app-region-display
+          ></app-badge>
+        </span>
+      </div>
+      <div>
+        <app-opinion-display
+          *ngIf="item.opinion"
+          [opinion]="item?.opinion"
+        ></app-opinion-display>
+      </div>
+    </div>
+  </div>
+</app-card>

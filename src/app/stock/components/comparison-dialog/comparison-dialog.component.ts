@@ -9,7 +9,7 @@ import {
   rankLower,
 } from 'src/app/shared/functions/ranking.function';
 import { environment } from 'src/environments/environment';
-import { Industry } from '../../models/market.models';
+import { Industry } from '../../models/industry.model';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 import { StockServices } from '../../services/objective-data.service';
 import { ComparisonDialogInput } from './comparison-dialog-input.model';
@@ -25,6 +25,7 @@ export class ComparisonDialogComponent {
   factType = FactType;
   selectedFact: FactType;
   industry?: Industry;
+  industryTypes: IndustryType[];
   factTypeArray = Object.values(FactType);
   selectedComparisonGroup: string | IndustryType = 'Favorites';
   competitorTypeArray = [];

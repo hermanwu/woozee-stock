@@ -13,7 +13,6 @@ export interface EarningsReport {
   slidesLink?: string;
   transcript?: string;
   webcast?: string;
-  shareholderLetter?: string;
   links?: { name: string; value: string }[];
 
   // Growth
@@ -48,4 +47,5 @@ export interface EarningsReport {
   annualHighlights?: string[];
 
   stats?: StatsDisplay[];
+  quotes?: Note[];
 }

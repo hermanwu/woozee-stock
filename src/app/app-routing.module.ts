@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
-import { BlogPageComponent } from './blog-page/blog-page.component';
 import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
-import { FomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
-import { MacroStatsPageComponent } from './macro/components/macro-stats-page/macro-stats-page.component';
-import { IndustriesPageComponent } from './markets/components/market-page/market-page.component';
-import { MarketPropertiesPageComponent } from './markets/components/market-properties-page/market-properties-page.component';
+import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
+import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
+import { MarketPageComponent } from './markets/components/market-page/market-page.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
+import { BlogPageComponent } from './opinions/components/blog-page/blog-page.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
+import { RankingsPageComponent } from './rankings-page/rankings-page.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
 import { DemoPageComponent } from './shared/components/demo-page/demo-page.component';
@@ -31,17 +31,38 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       {
+        path: 'rankings',
+        component: RankingsPageComponent,
+        children: [
+          {
+            path: 'stocks',
+            component: StockListPageComponent,
+            pathMatch: 'full',
+          },
+          {
+            path: 'industries',
+            component: IndustryListPageComponent,
+            pathMatch: 'full',
+          },
+          {
+            path: 'markets',
+            component: MarketPageComponent,
+            pathMatch: 'full',
+          },
+          {
+            path: '**',
+            redirectTo: 'stocks',
+          },
+        ],
+      },
+      {
         path: 'about',
         component: AboutComponent,
         pathMatch: 'full',
       },
+
       {
-        path: 'macro',
-        component: MacroStatsPageComponent,
-        pathMatch: 'full',
-      },
-      {
-        path: 'blog',
+        path: 'opinions',
         component: BlogPageComponent,
         pathMatch: 'full',
       },
@@ -75,12 +96,12 @@ const routes: Routes = [
         component: PortfolioListComponent,
       },
       {
-        path: 'markets/:marketType',
-        component: MarketPropertiesPageComponent,
+        path: 'industries/:marketType',
+        component: IndustryPropertiesPageComponent,
       },
       {
-        path: 'markets',
-        component: IndustriesPageComponent,
+        path: 'industries',
+        component: IndustryListPageComponent,
       },
 
       {
@@ -91,12 +112,9 @@ const routes: Routes = [
         path: 'forever-own',
         component: ForeverOwnStocksPanelComponent,
       },
+
       {
-        path: 'fomo',
-        component: FomoStocksComponent,
-      },
-      {
-        path: 'industries',
+        path: 'industries2',
         component: HighGrowthIndustryComponent,
       },
       {

@@ -1,11 +1,14 @@
 <div class="row header">
+  <div>Rank</div>
   <div>Name</div>
-  <div>Bear Arguments</div>
-  <div>Bull Arguments</div>
+  <div>Bearish Opinions</div>
+  <div>Bullish Opinions</div>
 </div>
 
 <ng-container *ngFor="let market of markets; last as isLast">
   <div class="row">
+    <div>{{ market.rank }}</div>
+
     <app-market-display [marketType]="market.type"></app-market-display>
 
     <div>

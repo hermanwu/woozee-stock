@@ -10,6 +10,7 @@ import { cloneDeep } from '../../functions/clone-deep';
 export class TagsDisplayComponent implements OnChanges {
   @Input() tags: string[];
   @Input() showDefaultTags: boolean;
+  @Input() showLinks: boolean;
 
   readonly defaultTags = '#Stocks #StockMarket #Investing #Investment';
   investTrend = 'investTrends';
@@ -39,6 +40,9 @@ export class TagsDisplayComponent implements OnChanges {
       }
 
       this.allTagStrings = Array.from(set).join(' ');
+    }
+
+    if (this.showLinks) {
     }
   }
 

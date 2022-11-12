@@ -6,7 +6,7 @@ export const DUOL: StockAnalysis = {
   name: { English: 'Duolingo, Inc.' },
   description: [],
   ticker: 'DUOL',
-  myRating: Rating.Sell,
+  myRating: Rating.Bearish,
 
   // Earnings Report:
   earnings: {

@@ -1,5 +1,5 @@
 <app-title-menu>
-  <div header-1 i18n>Stocks</div>
+  <div header-1 i18n>Stocks / ETFs</div>
 
   <div buttons>
     <button mat-button *ngIf="!environment.production" (click)="rankStocks()">
@@ -11,7 +11,7 @@
       *ngIf="!environment.production"
       [matMenuTriggerFor]="menu"
     >
-      {{ selectedPortfolio ? selectedPortfolio.name : "All Stocks" }}
+      {{ selectedPortfolio ? selectedPortfolio.name : "Following" }}
       <mat-icon>arrow_drop_down</mat-icon>
     </button>
 
@@ -22,7 +22,7 @@
         </button>
       </div>
       <button mat-menu-item i18n (click)="updatePortfolio(null)">
-        All Stocks
+        Following
       </button>
     </mat-menu>
   </div>

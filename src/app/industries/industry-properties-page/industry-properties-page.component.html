@@ -1,0 +1,24 @@
+<app-title-menu>
+  <div header-1>{{ marketType }}</div>
+</app-title-menu>
+
+<div>
+  <app-title-menu>
+    <div header-2>Stocks</div>
+  </app-title-menu>
+
+  <app-stock-badge-list
+    [stocks]="stocks"
+    [isLink]="'true'"
+  ></app-stock-badge-list>
+</div>
+
+<app-title-menu>
+  <div header-2>Bear Says</div>
+</app-title-menu>
+<app-risk-list [risks]="risks"></app-risk-list>
+
+<app-title-menu>
+  <div header-2>Bull Says</div>
+</app-title-menu>
+<app-catalyst-list [catalysts]="catalysts"></app-catalyst-list>

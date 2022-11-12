@@ -21,9 +21,8 @@ export interface Equity {
 export class StockListPageComponent implements OnInit, OnDestroy {
   readonly environment = environment;
 
-  allStocks: StockData[];
+  allStocks: StockData[] = [];
   stocks: StockData[] = [];
-
   portfolios = [];
   selectedPortfolio = null;
   globalRankingSub: Subscription;
@@ -32,24 +31,19 @@ export class StockListPageComponent implements OnInit, OnDestroy {
   bullishStocks: StockData[];
 
   constructor(
-    private objectiveDataService: StockServices,
     private userServices: UserServices,
     private stockServices: StockServices,
     private dialogService: MatDialog
   ) {
-    this.allStocks = this.objectiveDataService
-      .getAllStockData()
-      .filter((item) => item?.latestReport?.date);
     this.portfolios = this.userServices.getPortfolios();
 
     this.globalRankingSub = this.userServices.rankings$.subscribe(
       (rankings) => {
         this.allStocks = this.userServices.updateStockRanks(
-          this.allStocks,
+          this.stockServices.getStocksByTickers(rankings),
           rankings
         );
-
-        this.stocks = this.sortStockByRank(this.allStocks);
+        this.updatePortfolio(this.selectedPortfolio);
       }
     );
   }
@@ -112,7 +106,6 @@ export class StockListPageComponent implements OnInit, OnDestroy {
   }
 
   stockListTableAction(tableOutput: { stock: StockData; action: string }) {
-    console.log(tableOutput.stock);
     this.dialogService.open<ComparisonDialogComponent>(
       ComparisonDialogComponent,
       {

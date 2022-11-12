@@ -15,7 +15,6 @@ import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BlogPageComponent } from './blog-page/blog-page.component';
 import { BoosterComponent } from './catalyst/booster/booster.component';
 import { CatalystListComponent } from './catalyst/components/catalyst-list/catalyst-list.component';
 import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
@@ -25,20 +24,22 @@ import { ComparisionDisplayComponent } from './comparision-display/comparision-d
 import { DecisionDashboardComponent } from './decision-dashboard/decision-dashboard.component';
 import { FactComponent } from './facts/components/fact/fact.component';
 import { GrowthDetailsComponent } from './growth-details/growth-details.component';
-import { FomoStocksComponent as HomoStocksComponent } from './ideas/fomo-stocks/fomo-stocks.component';
 import { ImageDisplayComponent } from './images/components/image-display/image-display.component';
+import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
+import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
 import { InstagramDisplayComponent } from './instagram-display/instagram-display.component';
-import { MacroStatsPageComponent } from './macro/components/macro-stats-page/macro-stats-page.component';
 import { MarketDisplayComponent } from './markets/components/market-display/market-display.component';
 import { MarketListComponent } from './markets/components/market-list/market-list.component';
-import { IndustriesPageComponent } from './markets/components/market-page/market-page.component';
+import { MarketPageComponent } from './markets/components/market-page/market-page.component';
 import { MarketPropertiesPageComponent } from './markets/components/market-properties-page/market-properties-page.component';
 import { MockCompareDialogComponent } from './mock-compare-dialog/mock-compare-dialog.component';
 import { DailyMediumReportDisplayDialogComponent } from './news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { MediaLinkComponent } from './news/components/media-link/media-link.component';
 import { InstagramNewsDisplayDialogComponent } from './news/components/news-display-dialog/news-display-dialog.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
-import { OpinionDisplayComponent } from './opinion-display/opinion-display.component';
+import { OpinionItemDisplayComponent } from './opinion-item-display/opinion-item-display.component';
+import { BlogPageComponent } from './opinions/components/blog-page/blog-page.component';
+import { OpinionDisplayComponent } from './opinions/components/opinion-display/opinion-display.component';
 import { ThumbnailComponent } from './presentation/components/thumbnail/thumbnail.component';
 import { PresentationHeaderComponent } from './presentation/presentation-header/presentation-header.component';
 import { PresentationComponent } from './presentation/presentation.component';
@@ -47,6 +48,7 @@ import { SlideFooterComponent } from './presentation/slide/slide-footer/slide-fo
 import { SlideComponent } from './presentation/slide/slide/slide.component';
 import { PriceDisplayComponent } from './price-display/price-display.component';
 import { ProfitabilityComponent } from './profitability/profitability.component';
+import { RankingsPageComponent } from './rankings-page/rankings-page.component';
 import { RiskCatalystDialogComponent } from './risk-catalyst-dialog/risk-catalyst-dialog.component';
 import { RiskListComponent } from './risks/components/risk-list/risk-list.component';
 import { RiskTotalDisplayComponent } from './risks/components/risk-total-display/risk-total-display.component';
@@ -86,6 +88,7 @@ import { MovementDisplayComponent } from './stock/components/movement-display/mo
 import { ProfitabilityDetailsComponent } from './stock/components/profitability-details/profitability-details.component';
 import { RevenueCompositionDisplayComponent } from './stock/components/revenue-composition-display/revenue-composition-display.component';
 import { RevenueDisplayComponent } from './stock/components/revenue-display/revenue-display.component';
+import { StockBadgeListComponent } from './stock/components/stock-badge-list/stock-badge-list.component';
 import { StockImageDisplayComponent } from './stock/components/stock-image-display/stock-image-display.component';
 import { StockMetricDisplayComponent } from './stock/components/stock-metric-display/stock-metric-display.component';
 import { TickerDisplayComponent } from './stock/components/ticker-display/ticker-display.component';
@@ -117,7 +120,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     HighGrowthIndustryComponent,
     StockDisplayComponent,
     TrendComponent,
-    HomoStocksComponent,
     ForeverOwnStocksPanelComponent,
     StockListTableComponent,
     SlideDemoComponent,
@@ -155,7 +157,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     AutofocusDirective,
     NewsPageComponent,
     CatalystPageComponent,
-    IndustriesPageComponent,
     MarketListComponent,
     MarketDisplayComponent,
     MarketPropertiesPageComponent,
@@ -184,7 +185,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     StockImageDisplayComponent,
     TwitterDisplayDialogComponent,
     DailyMediumReportDisplayDialogComponent,
-    MacroStatsPageComponent,
     PriceDisplayComponent,
     StockMetricDisplayComponent,
     UiComponentsPageComponent,
@@ -196,6 +196,12 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     DragDropRankDialogComponent,
     MockCompareDialogComponent,
     ComparisionDisplayComponent,
+    RankingsPageComponent,
+    StockBadgeListComponent,
+    OpinionItemDisplayComponent,
+    IndustryListPageComponent,
+    IndustryPropertiesPageComponent,
+    MarketPageComponent,
   ],
   imports: [
     BrowserModule,

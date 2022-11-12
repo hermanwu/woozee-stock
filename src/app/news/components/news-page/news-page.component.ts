@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DailyMediumReportDisplayDialogComponent } from 'src/app/news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { riskService } from 'src/app/risks/services/subjective-data.service';
-import { Industry } from 'src/app/stock/models/market.models';
+import { Industry } from 'src/app/stock/models/industry.model';
 import { EventType, NewsWithDetails } from 'src/app/stock/models/news.model';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
 import { environment } from 'src/environments/environment';

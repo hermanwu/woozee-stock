@@ -1,0 +1,16 @@
+<app-title-menu>
+  <div header-1 i18n>Industries</div>
+
+  <div buttons>
+    <button mat-icon-button type="button" (click)="sort()" disabled>
+      <mat-icon>sort</mat-icon>
+    </button>
+    <button mat-icon-button (click)="showTools = !showTools" disabled>
+      <mat-icon>filter_alt</mat-icon>
+    </button>
+  </div>
+</app-title-menu>
+
+<app-card>
+  <app-market-list [markets]="industries"></app-market-list>
+</app-card>

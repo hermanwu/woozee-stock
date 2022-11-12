@@ -10,4 +10,5 @@ export interface Industry {
   tickers?: Set<string>;
   riskUuids?: string[];
   catalystUuids?: string[];
+  rank?: number;
 }

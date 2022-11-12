@@ -1,10 +1,12 @@
 export enum FactType {
   business = 'Business',
-  user = 'User',
   growth = 'Growth 🌱',
   profit = 'Profitability 💰',
   valuation = 'Valuation ⚖️',
   technical = 'Technical',
-  sentiment = 'Sentiment',
+  moats = 'Moats',
+  opportunities = 'Opportunities',
+  challenges = 'Challenges',
+  risks = 'Risks',
   event = 'Event',
 }

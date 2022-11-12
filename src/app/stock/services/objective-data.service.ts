@@ -64,7 +64,13 @@ export class StockServices {
     const result = [];
 
     for (let ticker of tickers) {
-      result.push(stocksMap[ticker.toLocaleLowerCase()]);
+      if (stocksMap[ticker.toLocaleLowerCase()]) {
+        result.push(stocksMap[ticker.toLocaleLowerCase()]);
+      } else {
+        result.push({
+          ticker: ticker,
+        });
+      }
     }
     return result;
   }

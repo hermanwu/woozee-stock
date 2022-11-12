@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { UnicodeCharacters } from 'src/app/shared/data/enum/unicode-characters.enum';
-import { Industry } from '../../models/market.models';
+import { Industry } from '../../models/industry.model';
 import { StockData } from '../../services/stock-data.model';
 
 @Component({

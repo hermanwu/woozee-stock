@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { calculateIncreasePercentage } from 'src/app/shared/functions/math.function';
-import { Industry } from 'src/app/stock/models/market.models';
+import { Industry } from 'src/app/stock/models/industry.model';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
 import { StockServices } from 'src/app/stock/services/objective-data.service';
 import { StockData } from 'src/app/stock/services/stock-data.model';
@@ -71,11 +71,17 @@ export class IndustriesService {
   /**
    * Get average revenue growth of a market.
    */
-  getIndustryByType(type: IndustryType): Industry {
-    if (this.marketTypeToMarketMap.has(type) === false) {
-      this.marketTypeToMarketMap.set(type, this.populateIndustryData(type));
+  getIndustryByTypes(types: IndustryType[]): Industry[] {
+    const result = [];
+
+    for (let type of types) {
+      if (this.marketTypeToMarketMap.has(type) === false) {
+        this.marketTypeToMarketMap.set(type, this.populateIndustryData(type));
+      }
+      result.push(this.marketTypeToMarketMap.get(type));
     }
-    return this.marketTypeToMarketMap.get(type);
+
+    return result;
   }
 
   getAllIndustries(): Industry[] {
@@ -110,13 +116,20 @@ export class IndustriesService {
       stocks
         // filter out the stock that is in this market.
         .filter((stock) => {
-          if (stock?.business?.markets) {
+          if (stock?.industries) {
+            if (
+              stock.industries.filter((market) => market === type).length > 0
+            ) {
+              return true;
+            }
+          } else if (stock?.business?.markets) {
             const markets = stock.business.markets;
 
             if (markets.filter((market) => market === type).length > 0) {
               return true;
             }
           }
+
           return false;
         })
     );

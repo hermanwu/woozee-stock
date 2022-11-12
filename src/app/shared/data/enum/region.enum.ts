@@ -6,7 +6,14 @@ export enum RegionCode {
   global = 'Global',
 }
 
-export const Region = {
+export interface Region {
+  flag: string;
+  code: string;
+  name: string;
+  rank?: number;
+}
+
+export const RegionMap = {
   [RegionCode.us]: {
     flag: '🇺🇸',
     code: 'US',

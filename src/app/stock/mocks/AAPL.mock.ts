@@ -15,7 +15,7 @@ export const aapl: StockAnalysis = {
   ticker: 'aapl',
   ceoQuote: [],
   irAddress: 'https://investor.apple.com/investor-relations/default.aspx',
-  products: [
+  revenues: [
     {
       name: 'iPhone',
       size: 50.57 * BILLION,
@@ -42,12 +42,55 @@ export const aapl: StockAnalysis = {
       markets: [IndustryType.cloudService],
     },
   ],
-  business: {
-    markets: [IndustryType.us, IndustryType.consumerElectronics],
-  },
+
+  products: [
+    {
+      name: 'AirPod Pro',
+    },
+    {
+      name: 'Mac',
+    },
+    {
+      name: 'Apple Watch',
+    },
+    {
+      name: 'TV+',
+    },
+    {
+      name: 'Fitness+',
+    },
+    {
+      name: 'Apple Card',
+    },
+    {
+      name: 'Apple Care',
+    },
+  ],
+  industries: [IndustryType.us, IndustryType.consumerElectronics],
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 4,
+      totalRevenue: 90.146 * BILLION,
+      grossProfit: 38.095 * BILLION,
+      operatingIncome: 24.894 * BILLION,
+      netIncome: 20.721 * BILLION,
+      date: convertDateToUTC(new Date('2022-10-27')),
+      links: [
+        {
+          name: 'Press Release',
+          value:
+            'https://www.apple.com/newsroom/2022/10/apple-reports-fourth-quarter-results/',
+        },
+        {
+          name: 'Consolidated Financial Statements',
+          value:
+            'https://www.apple.com/newsroom/pdfs/FY22_Q4_Consolidated_Financial_Statements.pdf',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 3,

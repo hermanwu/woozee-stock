@@ -9,6 +9,7 @@ export const avgo: StockAnalysis = {
   description: [],
   ticker: 'avgo',
   irAddress: 'https://investors.broadcom.com/',
+  marketCap: 185 * BILLION,
 
   // Earnings Report:
   earningsReports: [

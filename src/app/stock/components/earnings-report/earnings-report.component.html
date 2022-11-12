@@ -18,6 +18,13 @@
   <app-links-display
     [links]="pastTwoYearsEarningsReports?.[0]?.links"
   ></app-links-display>
+
+  <div *ngIf="pastTwoYearsEarningsReports[0].quotes">
+    <div>Highlights</div>
+    <div *ngFor="let item of pastTwoYearsEarningsReports[0].quotes">
+      {{ item.content }}
+    </div>
+  </div>
 </ng-container>
 
 <ng-template #noReport>No Earnings Report</ng-template>

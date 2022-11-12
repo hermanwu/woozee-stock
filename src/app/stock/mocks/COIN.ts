@@ -89,7 +89,7 @@ export const coinCatalysts: Catalyst[] = [
 
 export const coin: StockAnalysis = {
   uuid: 'us-coin',
-  marketCap: 18.53 * BILLION,
+  marketCap: 15 * BILLION,
   riskUuids: coinRisks.map((r) => r.uuid),
   catalystUuids: coinCatalysts.map((c) => c.uuid),
 
@@ -110,44 +110,56 @@ export const coin: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
+      quarter: 3,
+      date: convertDateToUTC(new Date('2022-11-03')),
+      totalRevenue: 590.339 * MILLION,
+      costOfRevenue: 101.876 * MILLION,
+      operatingIncome: -556.484 * MILLION,
+      netIncome: -544.635 * MILLION,
+      links: [
+        {
+          name: 'Press Release',
+          value:
+            'https://investor.coinbase.com/news/news-details/2022/Coinbase-Releases-Third-Quarter-2022-Shareholder-Letter/',
+        },
+        {
+          name: 'Shareholder Letter',
+          value:
+            'https://s27.q4cdn.com/397450999/files/doc_financials/2022/q3/Q32022-Shareholder-Letter.pdf',
+        },
+      ],
+    },
+    {
+      year: 2022,
       quarter: 2,
       date: convertDateToUTC(new Date('2022-08-09')),
       totalRevenue: 808.325 * MILLION,
       costOfRevenue: 167.187 * MILLION,
       netIncome: -1093.654 * MILLION,
       operatingIncome: -1044.389 * MILLION,
-      stats: [
+      links: [
         {
-          name: 'Subscriptions and Services Revenue ($M)',
-          value: 147.4,
-        },
-        {
-          name: 'Monthly Transacting Users MTU (M)',
-          value: 9,
-        },
-        {
-          name: 'Trading Volume ($B)',
-          value: 217,
-          details: [
-            {
-              name: 'Retail ($B)',
-              value: 46,
-            },
-            {
-              name: 'Institutional ($B)',
-              value: 171,
-            },
-          ],
-        },
-        {
-          name: 'Asset on Platform ($B)',
-          value: 90,
+          name: 'Press Release',
+          value:
+            'https://investor.coinbase.com/news/news-details/2022/Coinbase-Releases-Second-Quarter-2022-Shareholder-Letter/',
         },
       ],
-      pressReleaseLink:
-        'https://investor.coinbase.com/news/news-details/2022/Coinbase-Releases-Second-Quarter-2022-Shareholder-Letter/',
-      shareholderLetter:
-        'https://s27.q4cdn.com/397450999/files/doc_financials/2022/q2/Q2-2022-Shareholder-Letter.pdf',
+    },
+    {
+      year: 2022,
+      quarter: 2,
+      date: convertDateToUTC(new Date('2022-08-09')),
+      totalRevenue: 808.325 * MILLION,
+      costOfRevenue: 167.187 * MILLION,
+      netIncome: -1093.654 * MILLION,
+      operatingIncome: -1044.389 * MILLION,
+      links: [
+        {
+          name: 'Press Release',
+          value:
+            'https://investor.coinbase.com/news/news-details/2022/Coinbase-Releases-Second-Quarter-2022-Shareholder-Letter/',
+        },
+      ],
     },
     {
       year: 2022,

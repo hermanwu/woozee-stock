@@ -64,13 +64,28 @@ export const tsla: StockAnalysis = {
   marketCap: capMock.tsla,
   secFilings: 'https://ir.tesla.com/sec-filings',
   industries: [IndustryType.ai, IndustryType.ev, IndustryType.energy],
-  business: {
-    markets: [IndustryType.ai, IndustryType.ev, IndustryType.energy],
-  },
 
   riskUuids: tslaRisks.map((r) => r.uuid),
   catalystUuids: tslaCatalysts.map((c) => c.uuid),
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 3,
+      totalRevenue: 21.454 * BILLION,
+      grossProfit: 5.382 * BILLION,
+      operatingIncome: 3.688 * BILLION,
+      netIncome: 3.292 * BILLION,
+      date: convertDateToUTC(new Date('2022-10-19')),
+      forecastQuarterlyGrowthRateTop: 0.5,
+      forecastQuarterlyGrowthRateBottom: 0.5,
+      links: [
+        {
+          name: 'Shareholder Deck',
+          value:
+            'https://tesla-cdn.thron.com/static/WTULXQ_TSLA_Q3_2022_Update_KPK2Y7.pdf?xseo=&response-content-disposition=inline%3Bfilename%3D%22tsla-q3-2022-update.pdf%22',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 2,

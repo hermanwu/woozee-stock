@@ -1,16 +1,30 @@
 <app-title-menu>
-  <div header-1 i18n>Industries</div>
-
-  <div buttons>
-    <button mat-icon-button type="button" (click)="sort()" disabled>
-      <mat-icon>sort</mat-icon>
-    </button>
-    <button mat-icon-button (click)="showTools = !showTools" disabled>
-      <mat-icon>filter_alt</mat-icon>
-    </button>
-  </div>
+  <div header-1>Regions</div>
 </app-title-menu>
 
 <app-card>
-  <app-market-list [markets]="industries"></app-market-list>
+  <div class="table">
+    <div class="table-head">
+      <div>Rank</div>
+      <div>Region</div>
+      <div>Opinion</div>
+    </div>
+
+    <div *ngFor="let item of regions" class="table-row">
+      <div>
+        {{ item.rank }}
+      </div>
+      <div>
+        <app-badge
+          ><app-region-display [region]="item.code"></app-region-display
+        ></app-badge>
+      </div>
+      <div>
+        <app-opinion-display
+          *ngIf="item.opinion"
+          [opinion]="item?.opinion"
+        ></app-opinion-display>
+      </div>
+    </div>
+  </div>
 </app-card>

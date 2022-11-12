@@ -7,7 +7,7 @@ export const RDFN: StockAnalysis = {
   description: [],
   ticker: 'RDFN',
   marketCap: 5.28 * 1e9,
-  myRating: Rating.Buy,
+  myRating: Rating.Bullish,
 
   // Earnings Report:
   earnings: {

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MacroStatsPageComponent } from './macro-stats-page.component';
+import { RankingsPageComponent } from './rankings-page.component';
 
-describe('MacroStatsPageComponent', () => {
-  let component: MacroStatsPageComponent;
-  let fixture: ComponentFixture<MacroStatsPageComponent>;
+describe('RankingsPageComponent', () => {
+  let component: RankingsPageComponent;
+  let fixture: ComponentFixture<RankingsPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MacroStatsPageComponent ]
+      declarations: [ RankingsPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MacroStatsPageComponent);
+    fixture = TestBed.createComponent(RankingsPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

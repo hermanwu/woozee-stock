@@ -8,7 +8,7 @@ export const opinions = [
     title: 'US companies are laying off employees',
     tags: ['job market'],
     opinion: {
-      rating: Rating.Sell,
+      rating: Rating.Bearish,
       emojis: [EmojiUnicode.thumbDown],
     },
     regions: [RegionCode.us],
@@ -20,7 +20,7 @@ export const opinions = [
     title: 'US consumer spending decreases',
     tags: ['consumer spending'],
     opinion: {
-      rating: Rating.Sell,
+      rating: Rating.Bearish,
       emojis: [EmojiUnicode.thumbDown],
     },
     regions: [RegionCode.us],
@@ -28,7 +28,7 @@ export const opinions = [
   {
     title: 'Labor Shortage',
     opinion: {
-      rating: Rating.Sell,
+      rating: Rating.Bearish,
       emojis: [EmojiUnicode.thumbDown],
     },
     tags: ['labor shortage'],
@@ -37,7 +37,7 @@ export const opinions = [
   {
     title: 'Fed rate increases could potentially cause recession.',
     opinion: {
-      rating: Rating.Sell,
+      rating: Rating.Bearish,
       emojis: [EmojiUnicode.thumbDown],
     },
     tags: ['Fed Rate'],
@@ -46,7 +46,7 @@ export const opinions = [
   {
     title: 'Russian-Ukraine war',
     opinion: {
-      rating: Rating.Sell,
+      rating: Rating.Bearish,
       emojis: [EmojiUnicode.thumbDown],
     },
     tags: ['war'],
@@ -55,7 +55,7 @@ export const opinions = [
   {
     title: 'COVID',
     opinion: {
-      rating: Rating.Sell,
+      rating: Rating.Bearish,
       emojis: [EmojiUnicode.thumbDown],
     },
     tags: ['covid'],
@@ -64,7 +64,7 @@ export const opinions = [
   {
     title: 'Inflation is very high.',
     opinion: {
-      rating: Rating.Sell,
+      rating: Rating.Bearish,
       emojis: [EmojiUnicode.thumbDown],
     },
     tags: ['inflation', 'CPI'],

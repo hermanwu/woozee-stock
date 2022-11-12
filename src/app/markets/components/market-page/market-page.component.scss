@@ -1,3 +1,19 @@
 .margin-top-1rem {
   margin-top: 1rem;
 }
+
+.table > div {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-gap: 1rem;
+  align-items: top;
+  padding: 5px;
+}
+
+.table-head {
+  font-weight: bold;
+}
+
+.table-row {
+  border-top: 1px solid lightgray;
+}

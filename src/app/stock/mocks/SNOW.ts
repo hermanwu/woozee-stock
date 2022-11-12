@@ -13,7 +13,7 @@ export const snowflakeRisks: Risk[] = [
 ];
 
 export const snow: StockAnalysis = {
-  marketCap: 42 * BILLION,
+  marketCap: 42.24 * BILLION,
   riskUuids: snowflakeRisks.map((r) => r.uuid),
   business: {
     overview: [
@@ -62,6 +62,10 @@ export const snow: StockAnalysis = {
     {
       year: 2022,
       quarter: 1,
+      totalRevenue: 422.37 * MILLION,
+      grossProfit: 274.44 * MILLION,
+      operatingIncome: -188.77 * MILLION,
+      netIncome: -165.79 * MILLION,
     },
     {
       year: 2021,

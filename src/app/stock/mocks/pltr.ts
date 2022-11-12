@@ -210,67 +210,67 @@ export const pltr: StockAnalysis = {
     {
       content: 'Government money is sticky',
     },
-    {
-      content: 'Strength',
-      notes: [
-        {
-          content: 'New Generation of software compared to MSFt and SAP',
-        },
-        {
-          content: 'Privacy and security seriously (worked for CIA and FBI)',
-        },
-        {
-          content:
-            'Simulate the what if situation with AI based suggestion, and eliminate code',
-        },
+    // {
+    //   content: 'Strength',
+    //   notes: [
+    //     {
+    //       content: 'New Generation of software compared to MSFt and SAP',
+    //     },
+    //     {
+    //       content: 'Privacy and security seriously (worked for CIA and FBI)',
+    //     },
+    //     {
+    //       content:
+    //         'Simulate the what if situation with AI based suggestion, and eliminate code',
+    //     },
 
-        {
-          content: 'Central Operating System for Data',
-        },
-        {
-          content:
-            'Our Software Does Not Displace Existing Systems, It Augments Them',
-        },
-        {
-          content:
-            ' identify  patterns  hidden  deep  within  datasets,  ranging  from  signals  intelligence  sources  to  reports  from  confidential informants',
-        },
-        {
-          content: 'We have chosen sides.',
-        },
-        {
-          content:
-            'Our software engineers are on the front lines. Our forward deployed engineers (“FDEs”) have travelled to bases in Afghanistan and factories in the industrial Midwest to deploy our platforms',
-        },
-      ],
-    },
-    {
-      content: 'Growth',
-      notes: [
-        {
-          content: 'Continue expansion into the commercial sector.',
-        },
-        {
-          content:
-            'Become the default operating system for data across the U.S. government.',
-        },
-        {
-          content: 'Expand our reach with U.S. allies abroad.',
-        },
-      ],
-    },
-    {
-      content: 'Principles',
-      notes: [
-        {
-          content:
-            'Decisions that can affect individuals’ rights and liberties cannot be left solely to computers.',
-        },
-        {
-          content: 'Technology is not the answer to every problem',
-        },
-      ],
-    },
+    //     {
+    //       content: 'Central Operating System for Data',
+    //     },
+    //     {
+    //       content:
+    //         'Our Software Does Not Displace Existing Systems, It Augments Them',
+    //     },
+    //     {
+    //       content:
+    //         ' identify  patterns  hidden  deep  within  datasets,  ranging  from  signals  intelligence  sources  to  reports  from  confidential informants',
+    //     },
+    //     {
+    //       content: 'We have chosen sides.',
+    //     },
+    //     {
+    //       content:
+    //         'Our software engineers are on the front lines. Our forward deployed engineers (“FDEs”) have travelled to bases in Afghanistan and factories in the industrial Midwest to deploy our platforms',
+    //     },
+    //   ],
+    // },
+    // {
+    //   content: 'Growth',
+    //   notes: [
+    //     {
+    //       content: 'Continue expansion into the commercial sector.',
+    //     },
+    //     {
+    //       content:
+    //         'Become the default operating system for data across the U.S. government.',
+    //     },
+    //     {
+    //       content: 'Expand our reach with U.S. allies abroad.',
+    //     },
+    //   ],
+    // },
+    // {
+    //   content: 'Principles',
+    //   notes: [
+    //     {
+    //       content:
+    //         'Decisions that can affect individuals’ rights and liberties cannot be left solely to computers.',
+    //     },
+    //     {
+    //       content: 'Technology is not the answer to every problem',
+    //     },
+    //   ],
+    // },
   ],
   business: {
     overview: [

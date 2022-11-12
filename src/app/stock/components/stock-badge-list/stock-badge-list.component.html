@@ -1,0 +1,14 @@
+<span
+  [ngClass]="{
+    'cursor-pointer': isLink === true
+  }"
+>
+  <ng-container *ngFor="let stock of stocks">
+    <app-badge>
+      <a [routerLink]="['/woozee/stocks', stock.ticker]">
+        {{ stock.shortName || stock.name }}
+        ({{ stock.ticker.toUpperCase() }})
+      </a>
+    </app-badge>
+  </ng-container>
+</span>

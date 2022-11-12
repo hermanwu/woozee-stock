@@ -21,13 +21,22 @@
 </div>
 
 <div>
-  Groups to add:
+  Suggested Stocks:
   <app-badge
     *ngFor="let item of stock.industries"
     (click)="addIndustry(item)"
     >{{ item }}</app-badge
   >
 </div>
+
+<div>
+  Suggested Industries:
+  <app-badge *ngFor="let item of industryTypes" (click)="addIndustry(item)">{{
+    item
+  }}</app-badge>
+</div>
+
+<app-divider></app-divider>
 
 <mat-form-field appearance="fill">
   <mat-label>Compare Property</mat-label>

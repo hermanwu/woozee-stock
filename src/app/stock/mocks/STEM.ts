@@ -6,7 +6,7 @@ export const STEM: StockAnalysis = {
   name: { English: 'Stem' },
   description: [],
   ticker: 'STEM',
-  myRating: Rating.Buy,
+  myRating: Rating.Bullish,
 
   // Earnings Report:
   earnings: {

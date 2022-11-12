@@ -2,7 +2,7 @@ import { Component, Input, OnChanges } from '@angular/core';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { IndustriesService } from 'src/app/markets/services/industries.service';
 import { StockAnalysis } from '../../models/stock-analysis.model';
-import { Business } from './business.model';
+import { StockData } from '../../services/stock-data.model';
 
 @Component({
   selector: 'app-business-overview',
@@ -10,20 +10,25 @@ import { Business } from './business.model';
   styleUrls: ['./business-overview.component.scss'],
 })
 export class BusinessOverviewComponent implements OnChanges {
-  @Input() business: Business;
-  markets: IndustryType[];
+  @Input() stock: StockData;
+  industryTypes = [];
   competitorMap: Map<IndustryType, StockAnalysis[]> = new Map();
 
   constructor(private marketsService: IndustriesService) {}
 
   ngOnChanges(): void {
-    if (this.business) {
-      this.markets = this.business.markets;
+    if (!this.stock?.industries && this.stock?.business) {
+      this.industryTypes = this.stock.business.markets;
+    }
 
-      for (let market of this.markets) {
+    if (this.stock?.industries) {
+      this.industryTypes = this.stock.industries;
+      for (let industry of this.stock.industries) {
         this.competitorMap.set(
-          market,
-          this.marketsService.getStocksByIndustryType(market)
+          industry,
+          this.marketsService
+            .getStocksByIndustryType(industry)
+            .filter((stock) => stock.ticker !== this.stock.ticker)
         );
       }
     }

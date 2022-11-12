@@ -1,0 +1,38 @@
+<nav mat-tab-nav-bar>
+  <a
+    mat-tab-link
+    [routerLink]="[stocksRoute]"
+    [active]="activeRoute === stocksRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+    >Stocks / ETFs</a
+  >
+  <a
+    mat-tab-link
+    [routerLink]="[industriesRoute]"
+    [active]="activeRoute === industriesRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+    >Industries</a
+  >
+
+  <a
+    mat-tab-link
+    [routerLink]="[regionsRoute]"
+    [active]="activeRoute === regionsRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+    >Regions</a
+  >
+
+  <a
+    mat-tab-link
+    [routerLink]="[assetsRoute]"
+    [active]="activeRoute === assetsRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+    >Assets</a
+  >
+</nav>
+
+<router-outlet></router-outlet>

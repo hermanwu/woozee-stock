@@ -6,7 +6,7 @@ export const PENN: StockAnalysis = {
   name: { English: 'PENN NATIONAL GAMING, INC.' },
   description: [],
   ticker: 'PENN',
-  myRating: Rating.Buy,
+  myRating: Rating.Bullish,
 
   // Earnings Report:
   earnings: {

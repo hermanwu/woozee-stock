@@ -42,6 +42,15 @@ export const googl: StockAnalysis = {
       costOfRevenue: 30104 * MILLION,
       operatingIncome: 19453 * MILLION,
       netIncome: 16002 * MILLION,
+      date: convertDateToUTC(new Date('2022-10-25')),
+    },
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 69685 * MILLION,
+      costOfRevenue: 30104 * MILLION,
+      operatingIncome: 19453 * MILLION,
+      netIncome: 16002 * MILLION,
       date: convertDateToUTC(new Date('2022-07-15')),
     },
     {
@@ -197,14 +206,4 @@ export const googl: StockAnalysis = {
       netIncome: 6836 * MILLION,
     },
   ],
-
-  business: {
-    markets: [
-      IndustryType.adTech,
-      IndustryType.social,
-      IndustryType.digitalMedia,
-      IndustryType.cloudService,
-      IndustryType.ai,
-    ],
-  },
 };

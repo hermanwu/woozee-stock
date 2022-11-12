@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { Industry } from '../stock/models/market.models';
+import { Industry } from '../stock/models/industry.model';
 import { StockData } from '../stock/services/stock-data.model';
 
 @Component({

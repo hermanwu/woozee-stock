@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { currentUserMock } from '../accounts/data/user.mock';
 import { UserServices } from '../accounts/services/user.services';
 import { MockCompareDialogComponent } from '../mock-compare-dialog/mock-compare-dialog.component';
-import { Opinion } from '../opinion-display/opinion.interface';
+import { Opinion } from '../opinions/components/opinion-display/opinion.interface';
 import { EmojiUnicode } from '../shared/data/enum/emoji.enum';
 import {
   rankHigher,
@@ -29,7 +29,7 @@ export class UiComponentsPageComponent implements OnInit {
   selectedPortfolio;
   mockPortfolios = currentUserMock.portfolios;
   opinionMock: Opinion = {
-    rating: Rating.Sell,
+    rating: Rating.Bearish,
     emojis: [EmojiUnicode.thumbDown],
   };
   mockPortfolio;

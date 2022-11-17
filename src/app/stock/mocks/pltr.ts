@@ -1,6 +1,7 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StrategyType } from 'src/app/facts/data/stratgies.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
+import { getUtcDate } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
@@ -23,6 +24,17 @@ export const pltr: StockAnalysis = {
   marketCap: 15 * BILLION,
 
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 3,
+      totalRevenue: 477.88 * MILLION,
+      grossProfit: 370.269 * MILLION,
+      operatingIncome: -62.191 * MILLION,
+      netIncome: -122.779 * MILLION,
+      forecastRevenueTop: 503.753 * MILLION,
+      forecastRevenueBottom: 503.753 * MILLION,
+      date: getUtcDate(2022, 11, 7),
+    },
     {
       year: 2022,
       quarter: 2,

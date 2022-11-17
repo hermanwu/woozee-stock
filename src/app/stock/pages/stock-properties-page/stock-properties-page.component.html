@@ -1,76 +1,86 @@
 <ng-container *ngIf="stockAnalysis === null; else hasStock">
-  This stock ticker is not supported for now.
+  No result is supported for now.
 </ng-container>
 
 <ng-template #hasStock>
   <app-title-menu>
     <div header-1 i18n>
-      {{ stockAnalysis.shortName || stockAnalysis.name }} ({{
-        stockAnalysis?.ticker | uppercase
-      }}) - Rank {{ rank$ | async | undefined }} -
-      {{ stockAnalysis.price | undefined }}
+      <span
+        >{{ stockAnalysis.shortName || stockAnalysis.name }} ({{
+          stockAnalysis?.ticker | uppercase
+        }})</span
+      >
+      <span *ngIf="rank$ | async; else followButton">
+        - Rank {{ rank$ | async | undefined }}</span
+      >
+      <span *ngIf="stockAnalysis.price">
+        - {{ stockAnalysis.price | undefined }}</span
+      >
     </div>
     <div buttons>
-      <button
-        class="buttons"
-        mat-icon-button
-        aria-label="Organize widgets"
-        matTooltip="Organize Widgets"
-      >
-        <mat-icon>sort</mat-icon>
+      <button mat-icon-button [matMenuTriggerFor]="stockMenu">
+        <mat-icon>more_horiz</mat-icon>
       </button>
 
-      <button
-        class="buttons"
-        mat-icon-button
-        [matMenuTriggerFor]="menu"
-        aria-label="navigate to sections"
-        matTooltip="Navigator"
-      >
-        <mat-icon>link</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item disabled>Business</button>
-        <button mat-menu-item disabled>Growth</button>
-        <button mat-menu-item disabled>Profit</button>
+      <mat-menu #stockMenu="matMenu">
+        <button
+          class="buttons"
+          mat-menu-item
+          aria-label="Organize widgets"
+          matTooltip="Organize Widgets"
+        >
+          <mat-icon>sort</mat-icon>
+        </button>
+
+        <button
+          class="buttons"
+          mat-menu-item
+          [matMenuTriggerFor]="menu"
+          aria-label="navigate to sections"
+          matTooltip="Navigator"
+        >
+          <mat-icon>link</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item disabled>Business</button>
+          <button mat-menu-item disabled>Growth</button>
+          <button mat-menu-item disabled>Profit</button>
+        </mat-menu>
       </mat-menu>
     </div>
   </app-title-menu>
 
   <div class="grid grid-dynamic">
-    <div class="padding-1rem">
-      <app-card>
-        <app-earnings-report
-          [stock]="stockAnalysis"
-          [pastTwoYearsEarningsReports]="stockAnalysis?.earningsReports"
-        ></app-earnings-report>
-      </app-card>
-    </div>
-
     <div class="padding-1rem" *ngIf="opinions?.length > 0">
       <app-card>
         <app-title-menu>
           <div header-1>Opinions</div>
 
           <div buttons>
-            <button
-              mat-icon-button
-              type="button"
-              (click)="setDisplayMode(displayModeEnum.list)"
-            >
-              <mat-icon>list</mat-icon>
-            </button>
-            <button
-              mat-icon-button
-              type="button"
-              (click)="setDisplayMode(displayModeEnum.slide)"
-            >
-              <mat-icon>view_array</mat-icon>
+            <button buttons mat-icon-button [matMenuTriggerFor]="opinionMenu">
+              <mat-icon>more_horiz</mat-icon>
             </button>
 
-            <button mat-icon-button type="button" matTooltip="Add Risk">
-              <mat-icon>add_circle</mat-icon>
-            </button>
+            <mat-menu #opinionMenu="matMenu">
+              <button
+                mat-menu-item
+                type="button"
+                (click)="setDisplayMode(displayModeEnum.list)"
+              >
+                <mat-icon>list</mat-icon>
+              </button>
+              <button
+                mat-menu-item
+                type="button"
+                (click)="setDisplayMode(displayModeEnum.slide)"
+              >
+                <mat-icon>view_array</mat-icon>
+              </button>
+
+              <button mat-menu-item type="button" matTooltip="Add Risk">
+                <mat-icon>add_circle</mat-icon>
+              </button>
+            </mat-menu>
           </div>
         </app-title-menu>
 
@@ -79,9 +89,13 @@
           *ngIf="displayMode === displayModeEnum.list"
         >
           <app-card *ngFor="let opinion of opinions">
-            <app-opinion-item-display
-              [opinion]="opinion"
-            ></app-opinion-item-display>
+            <div>
+              <app-opinion-display [opinion]="opinion"></app-opinion-display>
+            </div>
+
+            <!-- <div *ngFor="let item of opinion.content">
+              {{ item }}
+            </div> -->
           </app-card>
         </div>
 
@@ -112,6 +126,15 @@
             </div>
           </app-carousal>
         </div>
+      </app-card>
+    </div>
+
+    <div class="padding-1rem">
+      <app-card>
+        <app-earnings-report
+          [stock]="stockAnalysis"
+          [pastTwoYearsEarningsReports]="stockAnalysis?.earningsReports"
+        ></app-earnings-report>
       </app-card>
     </div>
 

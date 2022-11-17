@@ -16,7 +16,7 @@ export class OpinionServices {
   getOpinionsByStock(stock: Stock): Opinion[] {
     return this.opinions.filter(
       (opinion) =>
-        opinion?.tags?.filter(
+        opinion?.targets?.filter(
           (tag) => tag.toLowerCase() === stock.ticker.toLowerCase()
         ).length > 0
     );

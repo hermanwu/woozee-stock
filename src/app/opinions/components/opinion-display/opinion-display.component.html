@@ -1,41 +1,60 @@
-<app-title-menu>
-  <div header-3>Anonymous User</div>
+<div>
+  <span *ngIf="opinion?.rating">
+    <ng-container [ngSwitch]="opinion.rating">
+      <ng-container *ngSwitchCase="ratingEnum.VeryBullish" i18n>
+        <span class="very-green">Very Bullish</span>
+      </ng-container>
 
-  <button buttons mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_horiz</mat-icon>
-  </button>
+      <ng-container *ngSwitchCase="ratingEnum.Bullish" i18n>
+        <span class="green">Bullish</span>
+      </ng-container>
 
-  <mat-menu #menu="matMenu"> </mat-menu>
-</app-title-menu>
+      <ng-container *ngSwitchCase="ratingEnum.VeryBearish" i18n>
+        <span class="very-red">Very Bearish</span>
+      </ng-container>
 
-<ng-container [ngSwitch]="opinion.term">
-  <ng-container *ngSwitchCase="termEnum.short" i18n>Short Term</ng-container>
+      <ng-container *ngSwitchCase="ratingEnum.Bearish" i18n>
+        <span class="red">Bearish</span>
+      </ng-container>
 
-  <ng-container *ngSwitchCase="termEnum.long" i18n>Long Term</ng-container>
+      <ng-container *ngSwitchDefault i18n></ng-container>
+    </ng-container>
 
-  <ng-container *ngSwitchDefault i18n></ng-container>
-</ng-container>
+    <!-- <ng-container>
+      {{opinion?.target?.}}
+    </ng-container> -->
 
-<ng-container [ngSwitch]="opinion.rating">
-  <ng-container *ngSwitchCase="ratingEnum.VeryBullish" i18n>
-    <span class="very-green">Very Bullish</span>
-  </ng-container>
+    <ng-container [ngSwitch]="opinion.term">
+      <ng-container *ngSwitchCase="termEnum.short" i18n
+        >Short Term</ng-container
+      >
 
-  <ng-container *ngSwitchCase="ratingEnum.Bullish" i18n>
-    <span class="green">Bullish</span>
-  </ng-container>
+      <ng-container *ngSwitchCase="termEnum.long" i18n>Long Term</ng-container>
 
-  <ng-container *ngSwitchCase="ratingEnum.VeryBearish" i18n>
-    <span class="very-red">Very Bearish</span>
-  </ng-container>
+      <ng-container *ngSwitchDefault i18n></ng-container>
+    </ng-container>
 
-  <ng-container *ngSwitchCase="ratingEnum.Bearish" i18n>
-    <span class="red">Bearish</span>
-  </ng-container>
+    <app-badge *ngIf="opinion.factType">{{ opinion.factType }}</app-badge>
+  </span>
 
-  <ng-container *ngSwitchDefault i18n></ng-container>
-</ng-container>
+  <span *ngIf="opinion?.content">
+    {{ opinion.content }}
+  </span>
 
-<span>
-  {{ emojis }}
-</span>
+  <span
+    class="more-button"
+    *ngIf="opinion?.details && opinion.details.length > 0"
+    (click)="expanded = !expanded"
+    >more</span
+  >
+</div>
+
+<div *ngIf="expanded">
+  <div *ngFor="let item of opinion?.details">
+    {{ item }}
+  </div>
+</div>
+
+<!-- <span>
+    {{ emojis }}
+  </span> -->

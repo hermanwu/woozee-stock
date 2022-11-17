@@ -13,3 +13,12 @@
 .very-green {
   color: yellowgreen;
 }
+
+.more-button {
+  color: gray;
+  padding: 5px;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}

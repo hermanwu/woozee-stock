@@ -31,7 +31,6 @@ export const currentUserMock: {
     'abnb',
     'snow',
     'aapl',
-    'coin',
     'crwd',
     'team',
     'amd',
@@ -53,24 +52,26 @@ export const currentUserMock: {
   assetRankings: [],
   opinions: [
     {
-      content: [
+      content:
         'Three key of a business: value proposition, ecosystem, business model.',
+      details: [
         'Value proposition is how to bring 10x value to the user.',
         'Ecosystem is about how to create moat/network effect. It includes all users: free users, preimum users, power users, companies.',
         'Business model is about how to make money.',
       ],
     },
     {
-      content: [],
+      content: 'Investing the Future — High Growth Industries and Stocks',
+      details: [],
       links: [
         {
-          name: 'Investing the Future — High Growth Industries and Stocks',
+          name: '',
           value: 'https://woozee.medium.com/investing-the-future-c672dd6c2716',
         },
       ],
     },
     {
-      content: [],
+      details: [],
       links: [
         {
           name: 'Top Growth Stocks To Own In 2022',
@@ -80,7 +81,7 @@ export const currentUserMock: {
       ],
     },
     {
-      content: [],
+      details: [],
       links: [
         {
           name: 'Top Profitable Companies To Own In 2022',
@@ -90,93 +91,94 @@ export const currentUserMock: {
       ],
     },
     {
-      content: [
+      content:
         'US will continue block high-end semiconductor chips to be sell in China',
-      ],
-      tags: [IndustryType.semi, 'China'],
+      details: [],
+      targets: [IndustryType.semi, 'China'],
       rating: Rating.Bearish,
     },
     {
-      content: [
+      content:
         'In Q3, Tesla began to transit a more even regional mix of vehicle builds each week, which makes it hard to secure vehicle transportation capacity and at a reasonable cost during peak logistics weeks.',
-      ],
-      tags: ['TSLA'],
+
+      targets: ['TSLA'],
       rating: Rating.Neutral,
       date: getUtcDate(2022, 10, 19),
     },
     {
-      content: [
+      content:
         'Tesla is a profit machine. Latest quarterly revenue grew 55.9% YoY, while the operating expense only grew 2.3 YoY.',
+      details: [
         'Apple quarterly revenue growth is 1.9%, while the operating expense grew 15.1% YoY',
         'Microsoft quarterly revenue growth is 12.4%, while the operating expense grew 14.1% YoY',
         'Google quarterly revenue growth is 12.6%%, while the operating expense grew 23.5% YoY',
       ],
-      tags: ['TSLA'],
+      targets: ['TSLA'],
       rating: Rating.VeryBullish,
       date: getUtcDate(2022, 10, 19),
     },
     {
-      content: [
+      content:
         'More growth catalysts are coming, including energy, semi-truck, robotaxi, optimus robot.',
+      details: [
         'Elon Musk said he sees a potential path for Tesla to be worth more than Apple and Saudi Aramco combined.',
       ],
-      tags: ['TSLA'],
+      targets: ['TSLA'],
       rating: Rating.VeryBullish,
       date: getUtcDate(2022, 10, 19),
     },
     {
-      content: ['Revenue estimate was missed in 2022Q3'],
-      tags: ['TSLA'],
+      content: 'Revenue estimate was missed in 2022Q3',
+      targets: ['TSLA'],
       rating: Rating.Bearish,
       date: getUtcDate(2022, 10, 19),
     },
     {
-      content: ['Automotive gross margin was not growing.'],
-      tags: ['TSLA'],
+      content: 'Automotive gross margin was not growing.',
+      targets: ['TSLA'],
       rating: Rating.Bearish,
       date: getUtcDate(2022, 10, 19),
       factType: FactType.profit,
     },
     {
-      content: ['Ziglu acquisition will help Robinhood expand to Europe'],
-      tags: ['HOOD'],
+      content: 'Ziglu acquisition will help Robinhood expand to Europe',
+      targets: ['HOOD'],
       rating: Rating.Bullish,
       date: getUtcDate(2022, 10, 19),
       factType: FactType.growth,
     },
     {
-      content: ['No moat to keep users from leaving the platform'],
-      tags: ['HOOD'],
+      content: 'No moat to keep users from leaving the platform',
+      targets: ['HOOD'],
       rating: Rating.Bearish,
       date: getUtcDate(2022, 10, 19),
       factType: FactType.moats,
     },
     {
-      content: ['AWS growth rate dip below 30%'],
-      tags: ['AMZN'],
+      content: 'AWS growth rate dip below 30%',
+      targets: ['AMZN'],
       rating: Rating.Bearish,
       date: getUtcDate(2022, 10, 19),
       factType: FactType.growth,
     },
     {
-      content: ['P/E ratio is much higher than other big tech.'],
-      tags: ['AMZN'],
+      content: 'P/E ratio is much higher than other big tech.',
+      targets: ['AMZN'],
       rating: Rating.Bearish,
       date: getUtcDate(2022, 10, 19),
       factType: FactType.profit,
     },
     {
-      content: ['Fullfillment Center are costing too much money'],
-      tags: ['AMZN'],
+      content: 'Fullfillment Center are costing too much money',
+      targets: ['AMZN'],
       rating: Rating.Bearish,
       date: getUtcDate(2022, 10, 19),
       factType: FactType.challenges,
     },
     {
-      content: [
+      content:
         'Meta 10x next year earning valuation is too low and could pop due to any good news such as Tiktok Ban',
-      ],
-      tags: ['META'],
+      targets: ['META'],
       actions: ['Sell put and use the money to buy long term call.'],
       date: getUtcDate(2022, 10, 19),
     },

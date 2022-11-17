@@ -3,11 +3,26 @@
     <input
       autoFocus
       matInput
-      placeholder="Stock Ticker"
       value=""
       formControlName="searchText"
+      [matAutocomplete]="auto"
     />
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-optgroup
+        *ngFor="let group of stateGroupOptions | async"
+        [label]="group.label"
+      >
+        <mat-option
+          *ngFor="let option of group.names"
+          [value]="option"
+          (onSelectionChange)="onSelectionChange($event, group.label)"
+        >
+          {{ option }}
+        </mat-option>
+      </mat-optgroup>
+    </mat-autocomplete>
   </mat-form-field>
+
   <button
     matSuffix
     mat-icon-button

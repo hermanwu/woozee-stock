@@ -14,6 +14,7 @@ export class OpinionDisplayComponent implements OnInit, OnChanges {
 
   readonly ratingEnum = Rating;
   readonly termEnum = Term;
+  expanded: boolean;
   emojis: string;
 
   constructor() {}

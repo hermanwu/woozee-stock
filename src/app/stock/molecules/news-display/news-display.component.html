@@ -24,7 +24,7 @@
 
 <ng-template #fullVersion>
   <app-title-menu>
-    <div header-3>{{ news?.source || "WOOZEE News" }}</div>
+    <div header-3>{{ news?.source || "News" }}</div>
 
     <button
       buttons
@@ -50,7 +50,7 @@
 
   <app-stock-image-display [tag]="stock?.ticker"></app-stock-image-display>
 
-  <div>🎙️ {{ news.title }}</div>
+  <div>⚡ {{ news.title }}</div>
 
   <ul>
     <li *ngFor="let item of news.stats">

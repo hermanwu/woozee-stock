@@ -19,7 +19,7 @@ export class ContentDisplayComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.content) {
-      this.lines = this.content.split('\n');
+      this.lines = this.content.split('\n').filter((line) => line.length > 0);
     }
   }
 

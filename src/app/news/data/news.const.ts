@@ -12,6 +12,54 @@ import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
   {
+    title:
+      '爆红人工智能软件ChatGPT的母公司，OpenAI考虑接受新一轮的投资。估值达到2021年的两倍',
+    content:
+      '投资者包括风投机构Thrive Capital 和 Founders Fund\n新估值将达到290亿美元，两倍于2021年140亿估值\n已有投资人包括微软。微软希望ChatGPT能够被用于Bing搜索引擎\n',
+    tags: ['msft', 'googl'],
+    sourceLink:
+      'https://seekingalpha.com/news/3922500-chatgpt-creator-openai-in-talks-for-tender-offer-at-29b-valuation-report',
+    uuid: '07673046-13d4-49a1-8415-11f50845116f',
+    date: '2023-01-05T21:34:29.386Z',
+  },
+  {
+    title: '零售商Bed Bath & Beyond考虑申请破产保护',
+    content:
+      '公司声称即将用完现金，预计第三季度损失3.85亿美元\nBed Bath & Beyond今天下跌30%',
+    tags: ['bbby'],
+    sourceLink: 'https://www.cnbc.com/quotes/BBBY',
+    uuid: '5c61fcb6-fbaf-42dc-8e2e-22a55d78f762',
+    date: '2023-01-05T21:20:33.129Z',
+  },
+  {
+    title: '加密货币银行Silvergate宣布本季度用户资产较三个月前下跌60%',
+    content:
+      '很多用户已经不再相信机构能管理他们的资产，所以把资产都直接取出放入冷钱包\nSilvergate卖出50亿美元债务证券来填补资产流失。\n该消息导致加密货币关联股票大跌: Silvergate下跌42%，Coinbase下跌10.8%.\n',
+    tags: ['crypto'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/05/silvergate-capital-tanks-40percent-after-crypto-bank-discloses-massive-q4-withdrawals.html',
+    uuid: '68be3051-1f87-478b-8796-96a920bb55c3',
+    date: '2023-01-05T21:08:36.765Z',
+  },
+  {
+    title: '亚马逊将超预期裁员18000人\n\n',
+    content:
+      "主要裁员发生在Amazon Store和 Amazon's People Experience and Technology Solutions(PXT)",
+    tags: ['amzn'],
+    sourceLink:
+      'https://www.aboutamazon.com/news/company-news/update-from-ceo-andy-jassy-on-role-eliminations',
+    uuid: 'cd00fe45-9ddc-4ae6-87d8-0da05f9c0aef',
+    date: '2023-01-05T20:58:47.875Z',
+  },
+  {
+    title: '微软CEO：未来两年可能是科技行业最具挑战的两年\n',
+    content: 'CEO Satya Nadella指出全球很多地方正在经历经济衰退',
+    tags: ['msft'],
+    uuid: '72cb28ec-61ae-4134-b924-7074dd05a58c',
+    date: '2023-01-05T20:52:25.731Z',
+  },
+
+  {
     title: '​特斯拉12月总共交付55796辆电动汽车​\n',
     content:
       '这个数字是5个月来的最低水平，但有很大原因是因为疫情导致的\n上海工厂2022总交付年化增长50%\n上海工厂目前产能过剩，在12月24日到1月2日间进行了停产\n比亚迪在12月总共交付234598辆纯电或混电汽车',
@@ -1185,66 +1233,6 @@ export const allNews: News[] = [
         name: 'Gross Profit',
         value: 280.4 * MILLION,
         changeRate: 0.971,
-        timeFrame: TimeFrame.yoy,
-      },
-    ],
-    eventType: EventType.earnings,
-    source: Source.OFFICIAL,
-  },
-  {
-    uuid: 'n33',
-    title: 'LegalZoom.com share was up 18% on beating estimates',
-    tickers: ['LZ'],
-    date: new Date('2022-08-12'),
-    details: [
-      'Future subscription revenue is expected to grow 20% year-over-year',
-    ],
-    stats: [
-      {
-        name: 'Revenue ($)',
-        value: 163.87 * MILLION,
-        changeRate: 0.09,
-        timeFrame: TimeFrame.yoy,
-      },
-      {
-        name: 'Transaction Revenue ($)',
-        value: 66.5 * MILLION,
-        changeRate: -0.09,
-        timeFrame: TimeFrame.yoy,
-      },
-      {
-        name: 'Subscription Revenue ($)',
-        value: 91.3 * MILLION,
-        changeRate: 0.32,
-        timeFrame: TimeFrame.yoy,
-      },
-    ],
-    eventType: EventType.earnings,
-    source: Source.OFFICIAL,
-  },
-  {
-    uuid: 'n33',
-    title: 'Toast share was up 8% as revenue grew 58%',
-    tickers: ['TOST'],
-    date: new Date('2022-08-12'),
-    details: [],
-    stats: [
-      {
-        name: 'Location served',
-        value: 68000,
-        changeRate: 0.4,
-        timeFrame: TimeFrame.yoy,
-      },
-      {
-        name: 'Revenue ($)',
-        value: 675 * MILLION,
-        changeRate: 0.58,
-        timeFrame: TimeFrame.yoy,
-      },
-      {
-        name: 'Net Loss ($)',
-        value: 54 * MILLION,
-        previousValue: 135 * MILLION,
         timeFrame: TimeFrame.yoy,
       },
     ],

@@ -12,9 +12,133 @@ import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
   {
+    title: '​特斯拉12月总共交付55796辆电动汽车​\n',
+    content:
+      '这个数字是5个月来的最低水平，但有很大原因是因为疫情导致的\n上海工厂2022总交付年化增长50%\n上海工厂目前产能过剩，在12月24日到1月2日间进行了停产\n比亚迪在12月总共交付234598辆纯电或混电汽车',
+    tags: ['tesla', 'EV'],
+    uuid: 'bc4c6cf4-f51c-4ead-ad78-0d08b984b75a',
+    date: '2023-01-05T15:50:34.363Z',
+  },
+  {
+    title:
+      'PayPal was up 4.72%, and Block was up 2.86% today after analysts upgrades',
+    content:
+      'Baird upgraded Block to Outperform, and Truist upgraded Paypal to Buy. Both predict 20%+ gain in 2023\nAnalysts believe both stocks have strong cash positions and were adequately penalized in 2022. ',
+    tags: ['Block', 'Paypal', 'Fintech'],
+    uuid: '1c931ced-86a0-40e1-b352-99ad2e74cac9',
+    date: '2023-01-04T00:00:11.585Z',
+  },
+  {
+    title: 'Wynn stock was up 3.81% today after an analyst upgrade.',
+    content:
+      'Analysts see an opportunity in the reopening of Macau, China, and its potential to improve earnings through exclusive customers.',
+    tags: ['Wynn', 'Gambling', 'China'],
+    uuid: '370eadb6-acc5-4f03-8d61-e1405ff9ada9',
+    date: '2023-01-03T23:47:34.023Z',
+  },
+  {
+    title: 'Google and Meta are losing digital advertising dominance',
+    content:
+      'Google and Meta combined US digital-ad spending market share was down to 48.4%, the first time under 50% since 2014\nAll marketers want more options, and people spent less time online in 2022\nAmazon further solidified its third place. \nTiktok and Netflix are emerging as strong competitors.',
+    tags: ['meta', 'googl', 'amzn', 'nflx'],
+    sourceLink: 'wall street journal',
+    uuid: 'fb165f43-1d48-436f-a25b-edc859fa5e61',
+    date: '2023-01-03T23:39:03.051Z',
+  },
+  {
+    title:
+      "UCLA invests $4 billion to buy Blackstone's Breit Real-Estate Fund. ",
+    content: 'Blackstone guaranteed at least 11.25% annual return ',
+    tags: ['bx'],
+    uuid: '1103af33-8c20-49cb-8337-8452e930cc77',
+    date: '2023-01-03T23:27:00.172Z',
+  },
+  {
+    title:
+      'Apple hit a new 52-week low and fell below the 2 Trillion market cap.',
+    content:
+      "\nApple experienced a production shortfall in Dec. Investors doubt those Dec demands can be fully carried forward in 2023.\nFoxconn's COVID-hit iPhone plant is almost back to full production, with its December shipments reaching about 90% of initial plans.\nApp store sales were up 1% YoY in Dec after five straight months of falling.",
+    tags: ['aapl'],
+    uuid: '52605b7c-1440-43f4-87d4-b60c696a4e2e',
+    date: '2023-01-03T23:21:08.786Z',
+  },
+  {
+    title:
+      "China's currency yuan touches a 4-month high on optimism over economic recovery. ",
+    content:
+      'The recent COVID outbreak has peaked in most cities.\nA complete return to everyday life may take several months.',
+    tags: ['china'],
+    uuid: '4f17d9df-b555-41e2-862d-c7cb0c1ef779',
+    date: '2023-01-03T22:25:49.736Z',
+  },
+  {
+    title: "Tesla's CFO exercised options expiring in 2028 to buy 13.5k shares",
+    content:
+      '* This could mean CFO thinks Tesla stock is cheap and exercising early allows him to pay lower income tax.\n* He now owns 204K shares.\n',
+    tags: ['tsla'],
+    sourceLink: 'https://twitter.com/sspencer_smb/status/1608967613534855168',
+    uuid: 'e9f50912-b024-4b9e-b812-1df7968d4a2a',
+    date: '2022-12-31T10:24:29.312Z',
+  },
+  {
+    title: 'Stocks slipped today to end a brutal 2022\n',
+    content:
+      'Dow Jones Industrial Average was down 8.8%\nS&P 500 was down 19.4%\nNasdaq was down 33.1%.\n\n',
+    tags: ['US'],
+    uuid: 'd179e694-ee48-4a95-8ba9-74f0eb4d850c',
+  },
+  {
+    title: 'CFRA double upgrades Netflix',
+    content:
+      '* Analyst Kenneth Leon double-upgraded the stock to buy from sell while raising the price target by $85 to $310, reflecting the potential for a 12% upside.\n* Ad-supported tier will Netflix achieve profitability\n',
+    tags: ['nflx'],
+    uuid: 'e5cdfce2-fea6-4d86-a54f-40cf3b1a0527',
+    date: '2022-12-29T22:27:45.967Z',
+  },
+  {
+    title:
+      'Elon Musk still believes Tesla will be the most valuable company on Earth.',
+    content:
+      'He said in a companywide email: “don’t be too bothered by stock market craziness. As we demonstrate continued excellent performance, the market will recognize that. Long-term, I believe very much that Tesla will be the most valuable company on Earth!\n\n”',
+    tags: ['tsla'],
+    uuid: '96f2c8c8-6d44-43e1-9130-d0197608dae5',
+    date: '2022-12-29T02:58:43.667Z',
+  },
+  {
+    title:
+      'Marc Benioff tells Salesforce workers that new employees are ‘facing lower productivity’',
+    content:
+      'Marc Benioff, cofounder and co-CEO of Salesforce, said in a Slack message to employees on Friday that the company’s newest workers weren’t productive enough.\n\n“Are we not building tribal knowledge with new employees without an office culture?” Benioff asked in a message viewed by CNBC.',
+    tags: ['crm', 'Marc Benioff'],
+    sourceLink:
+      'https://www.cnbc.com/2022/12/16/marc-benioff-says-newer-salesforce-employees-are-less-productive.html',
+    uuid: '8420788c-76f1-4238-88b4-bb3bc24ef1c8',
+    date: '2022-12-17T16:12:27.348Z',
+  },
+  {
+    targets: ['orcl'],
+    title:
+      'Oracle released quarterly earnings that beat both top and bottom lines ',
+    content:
+      'Total revenue grew 18% YoY \nQ2 Cloud Revenue was (IaaS plus SaaS) $3.8 billion, up 43%',
+    tags: ['orcl', ' cloud', ' oracle'],
+    rating: 'Bullish',
+    date: '2022-12-13T14:22:49.016Z',
+  },
+  {
+    title: 'Amazon will lay off more workers in 2023',
+    date: getUtcDate(2022, 11, 18),
+    details: [
+      'Amazon CEO Andy Jassy:"Our annual planning process extends into the new year, which means there will be more role reductions."',
+      '"There will be reductions in our Stores and PXT organizations)"',
+    ],
+    tags: ['amzn'],
+    source: Source.company,
+  },
+  {
     title: 'October CPI report was released',
     date: getUtcDate(2022, 11, 10),
-    content: [
+    details: [
       'CPI was up 0.4% MoM, and 7.7% YoY as shelter, gasoline, and food increased.',
     ],
     tags: ['CPI', RegionCode.us],
@@ -25,8 +149,8 @@ export const allNews: News[] = [
     takeAway: 'Economy will not be better until rates stop increasing.',
     date: getUtcDate(2022, 9, 28),
     tags: ['Credit Suisse', 'Fed Rates'],
-    type: EventType.opinions,
-    content: [
+    eventType: EventType.opinions,
+    details: [
       'Crucially, the rising share of price categories above central bank inflation target levels shows inflation is broadening out from a limited group of supply shock related drivers to more general inflation',
       'Higher rates combine with ongoing shocks to lead us to cut GDP forecasts.',
       'The euro area and UK are in recession, China is in a growth recession, and the US is flirting with recession.',
@@ -38,38 +162,20 @@ export const allNews: News[] = [
     takeAway:
       'Demand of consumer product is likely to decrease during a recession.',
     date: getUtcDate(2022, 9, 28),
-    type: EventType.stock,
-    tags: ['aapl'],
-  },
-  {
-    title:
-      'Apple ditched the plan to increase iphone production after seeing flattened demand',
-    takeAway:
-      'Demand of consumer product is likely to decrease during a recession.',
-    date: getUtcDate(2022, 9, 28),
-    type: EventType.stock,
-    tags: ['aapl'],
-  },
-  {
-    title:
-      'Apple ditched the plan to increase iphone production after seeing flattened demand',
-    takeAway:
-      'Demand of consumer product is likely to decrease during a recession.',
-    date: getUtcDate(2022, 9, 28),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['aapl'],
   },
   {
     title:
       'FTX won bid to buy bankrupt crypto lender Voyager’s assets for $1.4 billion',
     date: getUtcDate(2022, 9, 27),
-    type: EventType.industry,
+    eventType: EventType.industry,
     tags: ['crypto', 'FTX', 'Yoyager'],
   },
   {
     date: getUtcDate(2022, 9, 27),
     title: 'Cathie Wood says she is bullish on Tesla, Roku, and bitcoin',
-    type: EventType.opinions,
+    eventType: EventType.opinions,
     tags: ['Cathie Wood', 'TSLA', 'ROKU', 'Bitcoin'],
   },
   {
@@ -77,47 +183,47 @@ export const allNews: News[] = [
     title:
       'WTI crude prices climbed 3.2% as as Putin announced partial mobilization',
 
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['Crude Oil', 'War'],
   },
   {
     date: getUtcDate(2022, 9, 22),
     title:
       'Bank of England continued tightening and raised rates by 50 basis points',
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['Fed Rate', 'England'],
   },
   {
     date: getUtcDate(2022, 9, 22),
     title:
       'Japan government moved to boost yen for first time in more than 20 years',
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['Fed Rate', 'Japan'],
-    content: ['Japanese yen has fallen to a 24-year low against U.S dollar.'],
+    details: ['Japanese yen has fallen to a 24-year low against U.S dollar.'],
   },
   {
     date: getUtcDate(2022, 9, 22),
     title:
       'Qualcomm CEO announed its automotive design-win pipeline has now climbed to $30B from $19B',
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['qcom'],
-    content: ['Starting in 2023, Qualcomm will be used in Mercedes-Benz cars.'],
+    details: ['Starting in 2023, Qualcomm will be used in Mercedes-Benz cars.'],
   },
   {
     date: getUtcDate(2022, 9, 22),
     title:
       'US stock market finished Thursday with more losses after Fed handed another 75bps rate hike yesterday.',
-    type: EventType.overview,
-    content: [
+    eventType: EventType.overview,
+    details: [
       '“The chances of a soft landing are likely to diminish” said the Fed Chair J-Pow.',
     ],
   },
   {
     date: getUtcDate(2022, 9, 22),
     title: 'Costco released latest financial results that beat estimates',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     tags: ['cost'],
-    content: [
+    details: [
       'For now, Costco will not raise membership price. “There are no specific plans regarding a fee increase at this time,” said Chief Financial Officer Richard Galanti on the earnings conference call. However, he continued, “it’s a question of when, not if.”',
     ],
   },
@@ -125,9 +231,9 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 22),
     title:
       'DocuSign names former Google advertising executive Allan Thygesen as new CEO',
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['docu'],
-    content: [
+    details: [
       "Thygesen has spent past 12 years at Google and led Google's $100B+ advertising business in North and South America.",
     ],
   },
@@ -135,62 +241,62 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 21),
     title:
       'Ford lost 12% as it is facing an extra $1B inflation-related supplier costs.',
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['f', 'ev'],
-    content: ['Up to 45k vehicles, mostly trucks and SUVs have been impacted'],
+    details: ['Up to 45k vehicles, mostly trucks and SUVs have been impacted'],
   },
   {
     date: getUtcDate(2022, 9, 21),
-    type: EventType.macro,
+    eventType: EventType.macro,
     title:
       'Dollar index hit another 20-year high against other currencies since Russia started to invade Ukraine.',
     tags: ['Currency'],
   },
   {
     date: getUtcDate(2022, 9, 21),
-    type: EventType.industry,
+    eventType: EventType.industry,
     title:
       'Nasdaq plans to launch a crypto custody service as company sees increasing digital currencies demand ',
     tags: [IndustryType.crypto],
   },
   {
     date: getUtcDate(2022, 9, 21),
-    type: EventType.industry,
+    eventType: EventType.industry,
     title:
       'FTX is in talks with investors to raise up to $1B that would value company at $32B',
     tags: [IndustryType.crypto],
   },
   {
     date: getUtcDate(2022, 9, 21),
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['Russia-Ukriain War'],
     title:
       "Russia president Putin announced 'partial military mobilization' and called up 300,000 reservists for the war.",
   },
   {
     date: getUtcDate(2022, 9, 21),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['meta'],
     title:
       'Meta reportedly sets plans for 10% cost cuts and gave some workers a month to find a new role at the company.',
-    content: [],
+    details: [],
   },
   {
     date: getUtcDate(2022, 9, 21),
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['bond, treasury yield'],
     title: '2-year Treasury surges above 4.1%, highest level since 2007.',
-    content: [
+    details: [
       '2-year Treasury is now higher than 10-year Treasury (3.64%), which is a popluar indicator of a recession.',
     ],
   },
   {
     date: getUtcDate(2022, 9, 21),
-    type: EventType.overview,
+    eventType: EventType.overview,
     tags: ['fed rate'],
     title:
       'As expected, Federal Reserve boosts another 75 basis points, brining it to 3% - 3.25%, the highest point since 2008',
-    content: [
+    details: [
       'This is the third boost in a row',
       'Fed will also continue shrinking its balance sheet.',
       'The economy will begin to slow more as it is more costly for businesses to borrow money.',
@@ -200,11 +306,11 @@ export const allNews: News[] = [
   {
     uuid: 'n31',
     date: getUtcDate(2022, 9, 21),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['crm'],
     title:
       'Salesforce announced a revenue target of $50B for 2026, which represents ~17% compound annual growth.',
-    content: [
+    details: [
       'The forecast revenue for fiscal 2023 is $31B, presenting exactly ~17% growth from $26.5B in fiscal 2022.',
       'Company also aims for 25% opertaing margin in 2026.',
     ],
@@ -212,19 +318,19 @@ export const allNews: News[] = [
   {
     uuid: 'n31',
     date: getUtcDate(2022, 9, 20),
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['inflation', 'cpi', 'canada'],
     title:
       'Canada inflation rate slowed to 7% in August, faster than expected.',
-    content: ['The slowdown was largely driven by gasoline price fall'],
+    details: ['The slowdown was largely driven by gasoline price fall'],
   },
   {
     uuid: 'n31',
     date: getUtcDate(2022, 9, 20),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['nvda'],
     title: 'Nvidia unveiled new products during annual GTC conference.',
-    content: [
+    details: [
       'New cloud servicess to support AI workflows',
       'New generation of GeForce RTX GPUs',
       'First GPUs based on the new NVIDIA Ada Lovelace architecture for gamers and creators.',
@@ -237,7 +343,7 @@ export const allNews: News[] = [
   {
     uuid: 'n31',
     date: getUtcDate(2022, 9, 20),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['ual'],
     title:
       'United Airlines paused 25 Boeing 777 airplanes operation after findig them failed to perform inspection on wing panels.',
@@ -245,7 +351,7 @@ export const allNews: News[] = [
   {
     uuid: 'n31',
     date: getUtcDate(2022, 9, 20),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['bynd'],
     title:
       "Beyond Meat COO was suspended after arrest for allegedly biting man's nose.",
@@ -253,14 +359,14 @@ export const allNews: News[] = [
   {
     uuid: 'n30',
     date: getUtcDate(2022, 9, 20),
-    type: EventType.overview,
+    eventType: EventType.overview,
     title:
       'All 11 sectors of the S&P fell today as investors waiting for the Fed rate decision tomorrow.',
   },
   {
     uuid: 'n31',
     date: getUtcDate(2022, 9, 20),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['coin'],
     title:
       'Coinbase plan to increase fees for those trading less than $250m a month.',
@@ -268,7 +374,7 @@ export const allNews: News[] = [
   {
     uuid: 'n31',
     date: getUtcDate(2022, 9, 20),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['meta'],
     title:
       'Meta said that it would integrate WhatsApp with Salesforce so business can chat with their customers through WhatsApp messaging service',
@@ -276,7 +382,7 @@ export const allNews: News[] = [
   {
     uuid: 'n30',
     date: getUtcDate(2022, 9, 19),
-    type: EventType.industry,
+    eventType: EventType.industry,
     tags: ['bnpl', 'pypl', 'sq', 'afrm'],
     title:
       'The U.S. Consumer Financial Protection Bureau (CFPB) plans to start regulating "buy-now, pay-later" (BNPL) companies like Affirm due to worries that consumers are not protected enough.',
@@ -284,7 +390,7 @@ export const allNews: News[] = [
   {
     uuid: 'n30',
     date: getUtcDate(2022, 9, 19),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['panw'],
     title:
       'Palo Alto Networks is in the process of acquiring cybersecurity startup Apiiro for $600M.',
@@ -292,11 +398,11 @@ export const allNews: News[] = [
   {
     uuid: 'n30',
     date: getUtcDate(2022, 9, 19),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['open'],
     title:
       'Opendoor stock slides after a report saying it is losing money on 42% of all transactions in August',
-    content: [
+    details: [
       'This data exposed the risks of the iBuying business, which could be hugely affected by macro environment',
       'Last year, Zillow pulled out of iBuying business after concluding that home prices was too unpredictable ',
     ],
@@ -304,10 +410,10 @@ export const allNews: News[] = [
   {
     uuid: 'n30',
     date: getUtcDate(2022, 9, 19),
-    type: EventType.industry,
+    eventType: EventType.industry,
     tags: ['crypto'],
     title: 'Etherum sank near 25% last week after the Merge is completed.',
-    content: [
+    details: [
       'After the Merge, over 40% of the blocks were added by two addresses: Coinbase and Lido',
       '50% of the nodes are hosted on Amazon Web Services',
       'The result raised concerns about the decentralization as these centralized institutions controlled majority of the network.',
@@ -316,7 +422,7 @@ export const allNews: News[] = [
   {
     uuid: 'n30',
     date: getUtcDate(2022, 9, 19),
-    type: EventType.overview,
+    eventType: EventType.overview,
     title:
       'S&P moved higher around the 3900 support level after a volatile trading session as investors waiting for the Fed interest-rate decision this week.',
   },
@@ -325,14 +431,14 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 19),
     title:
       'Ford expected inflation-related supplier costs during Q3 to be $1B higher than previous estimated',
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['f', 'ev'],
   },
   {
     uuid: 'n30',
     date: getUtcDate(2022, 9, 19),
     title: 'Cruise robotaxi service to expand to Austin, Phoenix in 2022',
-    type: EventType.industry,
+    eventType: EventType.industry,
     tags: [IndustryType.selfDriving, IndustryType.ai],
   },
   {
@@ -341,7 +447,7 @@ export const allNews: News[] = [
     title:
       'The benchmark 10-year Treasury yield gained 6 basis points to 3.518%, hitting its highest level since April 2011 as mortgage rates keep moving higher.',
 
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['Treasury Yields'],
   },
   {
@@ -350,7 +456,7 @@ export const allNews: News[] = [
     title:
       "Fed's two-day meeting will begin Tuesday, with the market expecting another 75 basis point hike.",
 
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['Fed Rate'],
   },
   {
@@ -358,11 +464,11 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 19),
     title:
       'CVOID-19 vaccine stocks fell as President Biden said the pandemic is over.',
-    content: [
+    details: [
       'President Joe Biden said "We still have a problem with COVID. We are still doing a lot of work on it. But the pandemic is over.',
       'Both Moderna and Novavax dropped ~8%',
     ],
-    type: EventType.industry,
+    eventType: EventType.industry,
     tags: ['covid', 'mrna', 'nvax', 'covid'],
   },
   {
@@ -370,16 +476,16 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 15),
     title:
       'Major averages were on pace toward their fourth losing week in five after the surprisingly hot CPI report.',
-    type: EventType.overview,
+    eventType: EventType.overview,
   },
   {
     uuid: 'n29',
     date: getUtcDate(2022, 9, 15),
     title:
       'Disney CEO said ESPN is looking for a partner to do the sports gambling business.',
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['dis'],
-    content: [
+    details: [
       'He emphasized that Walt Disney Company would never enter the sports betting business by itself.',
     ],
   },
@@ -389,16 +495,16 @@ export const allNews: News[] = [
     tags: ['txn'],
     title:
       'Texas Instruments raised its dividend by 8% to $1.24 and authorized a $15B buyback',
-    type: EventType.stock,
+    eventType: EventType.stock,
   },
   {
     uuid: 'n29',
     date: getUtcDate(2022, 9, 15),
     title:
       'Roblox (NYSE:RBLX) on Thursday reported a Y/Y rise for the month of Aug. ',
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['rblx'],
-    content: [
+    details: [
       'Estimated revenue was between $208M and $211M, up 22% to 24% Y/Y.',
       'Estimated average bookings per daily active user was down 14% to 16% Y/Y.',
       'Daily active users in Aug. were 59.9M (+24% Y/Y) and hours engaged were 4.7B, up 18% Y/Y.',
@@ -409,9 +515,9 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 15),
     title:
       'Southwest Airlines noted business travel remains well below the 2019 level and narrowed revenue guidance for the third quarter.',
-    type: EventType.industry,
+    eventType: EventType.industry,
     tags: [IndustryType.airline, IndustryType.travel, 'luv'],
-    content: [
+    details: [
       'July and August 2022 managed business revenues were down approximately 26% and 32%, respectively, both compared with their respective 2019 levels',
     ],
   },
@@ -420,9 +526,9 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 15),
     title:
       "Bridgewater's Ray Dalio said that inflation rate will stay significantly above what Fed want it to be",
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['inflation', 'recession', 'bridgewater', 'ray dalio'],
-    content: [
+    details: [
       'His guesstimates is that inflation rate will stay from 4.5% to 6% for the next 10 years and  a economic contraction will be required',
       'He also estimates such a rate would have a twenty-percent negative impact on equity prices.',
     ],
@@ -432,9 +538,9 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 15),
     title:
       'Tesla plans on closing some high-cost showrooms and focusing on expanding its services in China.',
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['tsla'],
-    content: [
+    details: [
       "Tesla's job site has more than 300 service positions open right now.",
     ],
   },
@@ -443,9 +549,9 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 15),
     title:
       "Roku's SEC filing propped some investors believe that a takeover offer may be coming.",
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['roku'],
-    content: [
+    details: [
       'Roku ammended its severance benefit plan, in the event of a change control, according to an 8-K filing',
     ],
   },
@@ -454,14 +560,14 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 15),
     title:
       "30-year fixed-rate mortgage averaged 6.02% for the week ending Sep. 15, up from last week's 5.89% average and from 2.86% average a year ago",
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['housing', 'mortgage'],
   },
   {
     uuid: 'n29',
     date: getUtcDate(2022, 9, 15),
     title: 'General Motor plans to invest $491M to support EV production',
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['gm', 'ev'],
   },
   {
@@ -469,7 +575,7 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 15),
     title:
       'Bed Bath and Beyond  listed 56 locations slated for closure including locations in Stamford, Connecticut, Paramus, New Jersey, Tucson, Arizona and Sandusky, Ohio,   ',
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['bbby'],
   },
   {
@@ -477,10 +583,10 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 15),
     title:
       'Fedex dropped 15% after quarterly results that wildly missed estimates.',
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['fdx'],
 
-    content: [
+    details: [
       'Business is impacted by the softness and challenges in Asia and Europe.',
       'Fedex also withdrew its 2023 guidance and announced cost-cutting plan including 90 office closure.',
       'This warnings is dramatically from the optimitics tune two months ago.',
@@ -491,9 +597,9 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 15),
     title:
       'Adobe released earnings result and announced acquisition of Figma for $20B dollars.',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     tags: ['adbe'],
-    content: [
+    details: [
       'Quarterly Revenue increased to 4.43B, ⬆️ Up 12.7% YoY (from 3.94B)',
       'Next Quarter Revenue Forecast increased to 4.52B, ⬆️ Up 10% YoY',
       'Figma is a great company with ~90% gross margin and >150% net dollar retention rate.',
@@ -507,9 +613,9 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 14),
     title:
       'Cathie Wood bought 18 different stocks after the huge selloff on Tuesday.',
-    type: EventType.investor,
+    eventType: EventType.investor,
     tags: ['cathie wood', 'arkk'],
-    content: [
+    details: [
       'The ARK Innovation ETF purchased 1M shares of various stocks, led by Roku (ROKU) and Zoom (ZM).',
     ],
   },
@@ -517,18 +623,18 @@ export const allNews: News[] = [
     uuid: 'n27',
     date: getUtcDate(2022, 9, 14),
     title: 'Twilio announced to layoff 11% of workforce',
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['twlo', 'layoff'],
-    content: ['It has also reaffirmed third quarter guidance.'],
+    details: ['It has also reaffirmed third quarter guidance.'],
   },
   {
     uuid: 'n26',
     date: getUtcDate(2022, 9, 14),
     title:
       'Biden announced the approval of $900M funding for EV charging infrastructure',
-    type: EventType.industry,
+    eventType: EventType.industry,
     tags: [IndustryType.ev],
-    content: [
+    details: [
       'The funding is part of the $1T infrastructure law approved in 2021',
     ],
   },
@@ -537,16 +643,16 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 14),
     title:
       'Stocks rebounded today after the worst day since 2020 due to hot CPI report.',
-    type: EventType.overview,
+    eventType: EventType.overview,
     tags: ['sp500', 'nasdaq'],
   },
   {
     uuid: 'n25',
     date: getUtcDate(2022, 9, 14),
     title: 'Ethereum price outpaces Bitcoin with its merge process coming',
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['eth', 'ethereum', 'crypto', 'bitcoin'],
-    content: [
+    details: [
       'The merge process would reduce ethereum energy consumption by 99%',
     ],
   },
@@ -555,17 +661,17 @@ export const allNews: News[] = [
     date: getUtcDate(2022, 9, 14),
     title:
       'Netflix estimated that its ad-supported tier will reach 40M viewers by 2023Q3. Currently, Netflix has 220M subscribers',
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['nflx'],
   },
   {
     uuid: 'n23',
     date: getUtcDate(2022, 9, 14),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['tsla'],
     title:
       'Tesla’s Gigafactory expansion in Germany has been delayed indefinitely',
-    content: [
+    details: [
       'City committee has removed the voting plan from the committee agenda',
       'Expansion plan could be paused by Tesla itself due to falling demand',
     ],
@@ -573,32 +679,32 @@ export const allNews: News[] = [
   {
     uuid: 'n23',
     date: getUtcDate(2022, 9, 13),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['aapl'],
     title: 'Apple plans to sell ads in new spots in the App Store - CNBC',
-    content: [
+    details: [
       'Apple has been planning to double its digital advertising business workforce.',
     ],
   },
   {
     uuid: 'n22',
     date: getUtcDate(2022, 9, 13),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['hood', 'crypto', 'bitcoin'],
     title:
       'Bitcoin is the most popular recurring investment on Robinhood, according to its CEO',
-    content: [
+    details: [
       'This indicates that retail investors view Bitcoin as a long-term investment',
     ],
   },
   {
     uuid: 'n21',
     date: getUtcDate(2022, 9, 13),
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['inflation', 'CPI'],
     title:
       'CPI climbs 8.3% YoY in August, which is equivalvent to +0.1% compared to previous month.',
-    content: [
+    details: [
       'All indices increased except energy commodities and apparel compared to previous month',
     ],
     stats: [
@@ -619,10 +725,10 @@ export const allNews: News[] = [
   {
     uuid: 'n20',
     date: getUtcDate(2022, 9, 13),
-    type: EventType.industry,
+    eventType: EventType.industry,
     tags: [IndustryType.semi, 'nvda', 'amd', 'mu', 'intc'],
     title: 'Chips stock plunged today after hot CPI report',
-    content: [
+    details: [
       'Nvidia was down 9.47%, hit a new 52 week low',
       'AMD was down 8.99%',
       'Intel was down 7.19%',
@@ -632,7 +738,7 @@ export const allNews: News[] = [
   {
     uuid: 'n19',
     date: getUtcDate(2022, 9, 13),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['twtr', 'elon musk'],
     title:
       "Twitter got 98.6% shareholder vote approval of Elon Musk's $44B acquisition deal.",
@@ -640,14 +746,14 @@ export const allNews: News[] = [
   {
     uuid: 'n19',
     date: getUtcDate(2022, 9, 12),
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['arkk', 'inflation', 'cathie wood'],
     title: 'Cathie Wood warns of deflation ahead of this week’s key price data',
   },
   {
     uuid: 'n19',
     date: getUtcDate(2022, 9, 12),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['aapl'],
     title:
       "iPhone 14 pre-order demand is 'robust,' tracking 'slightly ahead' of iPhone 13: Wedbush",
@@ -655,7 +761,7 @@ export const allNews: News[] = [
   {
     uuid: 'n19',
     date: getUtcDate(2022, 9, 12),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['gs'],
     title:
       'Goldman Sachs gets ready to lay off workers as deal activity cools - NYT',
@@ -663,14 +769,14 @@ export const allNews: News[] = [
   {
     uuid: 'n19',
     date: getUtcDate(2022, 9, 12),
-    type: EventType.stock,
+    eventType: EventType.stock,
     tags: ['mu'],
     title:
       'Micron CEO says company breaking ground on $15B Idaho factory, more plants coming: report',
   },
   {
     uuid: 'n19',
-    type: EventType.stock,
+    eventType: EventType.stock,
     date: getUtcDate(2022, 9, 12),
     tags: ['GM'],
     title:
@@ -678,7 +784,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n19',
-    type: EventType.industry,
+    eventType: EventType.industry,
     date: getUtcDate(2022, 9, 12),
     tags: ['crypto', 'bitcoin'],
     title:
@@ -686,7 +792,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n18',
-    type: EventType.stock,
+    eventType: EventType.stock,
     date: getUtcDate(2022, 9, 12),
     tickers: ['Googl'],
     sourceLink:
@@ -696,7 +802,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n17',
-    type: EventType.macro,
+    eventType: EventType.macro,
     date: getUtcDate(2022, 9, 12),
     tags: [Index.nasdaq, Index.sp500],
     title:
@@ -704,7 +810,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n16',
-    type: EventType.stock,
+    eventType: EventType.stock,
     date: getUtcDate(2022, 9, 12),
     tickers: ['PTON'],
     title:
@@ -712,7 +818,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n15',
-    type: EventType.macro,
+    eventType: EventType.macro,
     date: getUtcDate(2022, 9, 9),
     tags: [Index.sp500, Index.nasdaq],
     title:
@@ -720,7 +826,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n15',
-    type: EventType.stock,
+    eventType: EventType.stock,
     date: getUtcDate(2022, 9, 9),
     tickers: ['hood'],
     title:
@@ -728,28 +834,28 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n13',
-    type: EventType.stock,
+    eventType: EventType.stock,
     date: getUtcDate(2022, 9, 9),
     tickers: ['oxy'],
     title: 'Warren Buffet increased Occidental ownership to 26.8% from 20%.',
   },
   {
     uuid: 'n13',
-    type: EventType.stock,
+    eventType: EventType.stock,
     date: convertDateToUTC(new Date('2022-09-08')),
     tickers: ['tsla'],
     title: 'Tesla triples deliveries of China-made cars in August.',
   },
   {
     uuid: 'n13',
-    type: EventType.stock,
+    eventType: EventType.stock,
     date: convertDateToUTC(new Date('2022-09-08')),
     tickers: ['shop'],
     title: 'Shopify hires new finance chief.',
   },
   {
     uuid: 'n12',
-    type: EventType.stock,
+    eventType: EventType.stock,
     date: convertDateToUTC(new Date('2022-09-08')),
     tickers: ['rivn'],
     title:
@@ -757,14 +863,14 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n11',
-    type: EventType.stock,
+    eventType: EventType.stock,
     date: convertDateToUTC(new Date('2022-09-08')),
     tickers: ['twtr'],
     title: 'Twitter reached $7M settlement with whistleblower complaints',
   },
   {
     uuid: 'n11',
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['currency'],
     date: convertDateToUTC(new Date('2022-09-08')),
     title:
@@ -772,7 +878,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n10',
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['stock'],
     date: convertDateToUTC(new Date('2022-09-08')),
     title:
@@ -780,7 +886,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n10',
-    type: EventType.macro,
+    eventType: EventType.macro,
     tags: ['fed'],
     date: convertDateToUTC(new Date('2022-09-08')),
     title:
@@ -788,7 +894,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n9',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     date: convertDateToUTC(new Date('2022-09-08')),
     title:
       'Zscaler reported quarterly earnings results and revenue growth continued to be strong.',
@@ -796,21 +902,21 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n9',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     date: convertDateToUTC(new Date('2022-09-08')),
     title: 'DocuSign reported Q2 earnings results',
     tickers: ['docu'],
   },
   {
     uuid: 'n8',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     date: convertDateToUTC(new Date('2022-09-07')),
     title: 'NIO reported 2022 earnings results',
     tickers: ['nio'],
   },
   {
     uuid: 'n8',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     date: convertDateToUTC(new Date('2022-09-07')),
     title:
       'GameStop stock was up 11% during after hour after announces partnership with crypto exchange FTX',
@@ -818,7 +924,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n7',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     date: convertDateToUTC(new Date('2022-09-01')),
     title:
       'Lululemon released earnings results that beat estimates. 📊 Next Quarter Revenue Forecast increased to 1.79B, ⬆️ Up 23.6% (from 1.45B)',
@@ -826,7 +932,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n6',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     date: convertDateToUTC(new Date('2022-09-01')),
     title:
       'Broadcom released earnings results that beat estimates. 📊 Next Quarter Revenue Forecast increased to 8.9B, ⬆️ Up 20.2% (from 7.41B)',
@@ -834,7 +940,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n5',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     date: convertDateToUTC(new Date('2022-08-31')),
     title:
       'Okta released financial results that beat estimates. However next quarter revenue growth forecast slows down to 33% (vs 43.4% this quarter).',
@@ -842,7 +948,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n6',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     date: convertDateToUTC(new Date('2022-08-31')),
     title:
       'C3.ai latest earnings results missed estimates. Next quarter revenue growth forecast is only 5.2% (vs 25.6% this quarter).',
@@ -850,7 +956,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n5',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     date: convertDateToUTC(new Date('2022-08-31')),
     title:
       'MongoDB released Q2 financial results that beat estimates. However next quarter revenue growth guidance slows down to 33% (vs 53% this quarter).',
@@ -858,7 +964,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n3',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     date: convertDateToUTC(new Date('2022-08-31')),
     title:
       'Crowdstrike released Q2 financial results that beat revenue and earnings estimates.',
@@ -867,7 +973,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n3',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     date: convertDateToUTC(new Date('2022-08-30')),
     title:
       'Chewy released 2022 Q2 financial results that missed revenue estimates with weak forecasts.',
@@ -876,7 +982,7 @@ export const allNews: News[] = [
   },
   {
     uuid: 'n3',
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     date: convertDateToUTC(new Date('2022-08-30')),
     title:
       'Chewy released 2022 Q2 financial results that missed revenue estimates with weak forecasts.',
@@ -886,11 +992,11 @@ export const allNews: News[] = [
   {
     uuid: 'n2',
     title: 'JD.com earnings results beat both revenue and earnings estimates',
-    content: [],
+    details: [],
 
     tickers: ['JD'],
     date: new Date('2022-08-22'),
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     stats: [{ name: 'Revenue ($)', value: 40 * BILLION, changeRate: 0.054 }],
 
     source: null,
@@ -901,7 +1007,7 @@ export const allNews: News[] = [
   {
     uuid: 'n1',
     title: '',
-    content: [
+    details: [
       'Revenue grew 27% year over year to $1.6 billion',
       'Billings grew 44% year over year to $2.7 billion',
       'Board of directors approved a three-for-one stock split.',
@@ -909,7 +1015,7 @@ export const allNews: News[] = [
 
     tickers: ['PANW'],
     date: new Date('2022-08-22'),
-    type: EventType.earnings,
+    eventType: EventType.earnings,
 
     source: null,
     tags: [],
@@ -919,14 +1025,14 @@ export const allNews: News[] = [
   {
     uuid: 'n10',
     title: '',
-    content: [
+    details: [
       'Second quarter GAAP operating margin of 11.1%',
       'Zoom also lowered revenue guidance for next quarter.',
     ],
 
     tickers: ['ZM'],
     date: new Date('2022-08-22'),
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     stats: [
       {
         name: 'Revenue ($)',
@@ -946,7 +1052,7 @@ export const allNews: News[] = [
       'Home sales dropped for a sixth straight month in July to the lowest since the pandemic',
     tickers: ['BILL'],
     date: new Date('2022-08-17'),
-    type: EventType.macro,
+    eventType: EventType.macro,
     source: null,
     tags: ['housing'],
     sourceLink: '',
@@ -956,7 +1062,7 @@ export const allNews: News[] = [
     title: 'Bill.com climbed 19% as earnings results beat estimates',
     tickers: ['BILL'],
     date: new Date('2022-08-17'),
-    content: [],
+    details: [],
     stats: [
       {
         name: 'Organic Core Revenue ($)',
@@ -964,7 +1070,7 @@ export const allNews: News[] = [
         timeFrame: TimeFrame.yoy,
       },
     ],
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     source: Source.OFFICIAL,
     sourceLink: '',
   },
@@ -974,7 +1080,7 @@ export const allNews: News[] = [
       'Cisco rose 4% as earnings results beat both revenue and profit estimates.',
     tickers: ['CSCO'],
     date: new Date('2022-08-17'),
-    content: [
+    details: [
       'Quarter revenue was $13.1 billion, flat year over year.',
       'Strong demand with record full year product orders and backlog.',
       'Next quarter forecast revenue growth is between 2% to 4%.',
@@ -987,7 +1093,7 @@ export const allNews: News[] = [
         timeFrame: TimeFrame.yoy,
       },
     ],
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     source: Source.OFFICIAL,
     sourceLink:
       'https://s2.q4cdn.com/951347115/files/doc_financials/2022/q4/Q4FY22-Press-Release_.pdf',
@@ -997,7 +1103,7 @@ export const allNews: News[] = [
     title: "Target's profit plunged 90% as it reduced excess inventory.",
     tickers: ['TGT'],
     date: new Date('2022-08-17'),
-    content: [
+    details: [
       'Target reiterated its full-year forecast.',
       'Revenue growth is expected in the low to mid-single digits.',
       '95% of sales were fulfilled by its stores.',
@@ -1016,7 +1122,7 @@ export const allNews: News[] = [
         timeFrame: TimeFrame.yoy,
       },
     ],
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     source: Source.OFFICIAL,
     sourceLink:
       'https://investors.target.com/static-files/b6d463d6-6af3-425f-a532-407493eb306f',
@@ -1027,7 +1133,7 @@ export const allNews: News[] = [
       'IonQ shares surged almost 30%, as it continued to grow revenue rapidly.',
     tickers: ['IONQ'],
     date: new Date('2022-08-16'),
-    content: [
+    details: [
       'IonQ Aria has increased its computational power by approximately 8x, now reaching 23 algorithmic qubits, up from 20.',
       'Aria will become available to all users of Microsoft Azure Quantum tomorrow.',
       'Announced paid contracts with Airbus and Dow.',
@@ -1047,7 +1153,7 @@ export const allNews: News[] = [
         timeFrame: TimeFrame.qoq,
       },
     ],
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     source: Source.OFFICIAL,
     sourceLink:
       'https://investors.ionq.com/news/news-details/2022/IonQ-Announces-Second-Quarter-2022-Financial-Results/default.aspx',
@@ -1058,7 +1164,7 @@ export const allNews: News[] = [
       'Tesla rival Li Auto (LI) falls short of estimates, delivering 28687 EVs on Q2',
     tickers: ['LI'],
     date: new Date('2022-08-15'),
-    content: [
+    details: [
       'The miss was mainly due to COVID lockdown in Q2',
       'Q3 is expected to deliver between 27,000 - 29,000 vehicles, up 7.5% - 15.5% YoY, lower than the estimates.',
     ],
@@ -1082,7 +1188,7 @@ export const allNews: News[] = [
         timeFrame: TimeFrame.yoy,
       },
     ],
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     source: Source.OFFICIAL,
   },
   {
@@ -1090,7 +1196,7 @@ export const allNews: News[] = [
     title: 'LegalZoom.com share was up 18% on beating estimates',
     tickers: ['LZ'],
     date: new Date('2022-08-12'),
-    content: [
+    details: [
       'Future subscription revenue is expected to grow 20% year-over-year',
     ],
     stats: [
@@ -1113,7 +1219,7 @@ export const allNews: News[] = [
         timeFrame: TimeFrame.yoy,
       },
     ],
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     source: Source.OFFICIAL,
   },
   {
@@ -1121,7 +1227,7 @@ export const allNews: News[] = [
     title: 'Toast share was up 8% as revenue grew 58%',
     tickers: ['TOST'],
     date: new Date('2022-08-12'),
-    content: [],
+    details: [],
     stats: [
       {
         name: 'Location served',
@@ -1142,7 +1248,7 @@ export const allNews: News[] = [
         timeFrame: TimeFrame.yoy,
       },
     ],
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     source: Source.OFFICIAL,
   },
   {
@@ -1151,7 +1257,7 @@ export const allNews: News[] = [
       'Rivian lost $1.7 billion in the second quarter as production ramps up.',
     tickers: ['RIVN'],
     date: new Date('2022-08-11'),
-    content: ['Revenue beat the expectations while earnings missed estimates.'],
+    content: 'Revenue beat the expectations while earnings missed estimates.',
     stats: [
       {
         name: 'Cash and equivalents remaining',
@@ -1172,7 +1278,7 @@ export const allNews: News[] = [
         timeFrame: TimeFrame.qoq,
       },
     ],
-    type: EventType.earnings,
+    eventType: EventType.earnings,
     source: Source.OFFICIAL,
   },
 ];

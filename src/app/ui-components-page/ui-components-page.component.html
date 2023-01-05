@@ -1,4 +1,9 @@
 <app-card>
+  <app-add-news-form (newsUuid)="updateNewsUuid($event)"></app-add-news-form>
+  <app-add-note [parentUuid]="newsUuid"></app-add-note>
+</app-card>
+
+<app-card>
   <app-search></app-search>
 </app-card>
 

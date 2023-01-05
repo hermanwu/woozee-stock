@@ -11,6 +11,7 @@ import { Opinion } from './opinion.interface';
 })
 export class OpinionDisplayComponent implements OnInit, OnChanges {
   @Input() opinion: Opinion;
+  @Input() shortVersion: boolean;
 
   readonly ratingEnum = Rating;
   readonly termEnum = Term;

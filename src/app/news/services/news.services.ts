@@ -14,4 +14,8 @@ export class NewsService {
   getNewsByDate(date: Date): News[] {
     return this.news.filter((item) => item.date >= convertDateToUTC(date));
   }
+
+  getNewsByTags(tags: string[]) {
+    return this.news.filter((item) => item.tags?.some((t) => tags.includes(t)));
+  }
 }

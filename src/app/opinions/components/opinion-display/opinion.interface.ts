@@ -6,14 +6,19 @@ import { Rating } from '../../../stock/models/rating.model';
 export interface Opinion {
   userUuid?: string;
   name?: string;
-  rating?: Rating;
-  term?: Term;
+  rating?: Rating | string;
+  term?: Term | string;
   emojis?: EmojiUnicode[];
+  title?: string;
   content?: string;
-  details?: string[];
   targets?: string[];
   links?: { name: string; value: string }[];
-  date?: Date;
+  date?: Date | string;
   factType?: FactType;
   actions?: string[];
+  tags?: string[];
+  parentUuid?: string;
+  uuid?: string;
+
+  details?: string[]; // to retire
 }

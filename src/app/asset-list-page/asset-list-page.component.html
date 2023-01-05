@@ -1,0 +1,19 @@
+<app-title-menu>
+  <div header-1>Assets</div>
+</app-title-menu>
+
+<app-card>
+  <div *ngFor="let item of assets">
+    <app-badge>
+      <app-region-display [region]="item.regionType"></app-region-display>
+    </app-badge>
+
+    <app-badge>
+      {{ item.type }}
+    </app-badge>
+
+    <span>
+      {{ item.name }}
+    </span>
+  </div>
+</app-card>

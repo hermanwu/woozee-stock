@@ -9,4 +9,5 @@ export enum FactType {
   challenges = 'Challenges',
   risks = 'Risks',
   event = 'Event',
+  management = 'Management',
 }

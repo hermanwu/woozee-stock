@@ -1,6 +1,6 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
-import { MILLION } from 'src/app/shared/numbers/number.model';
+import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const okta: StockAnalysis = {
@@ -11,9 +11,28 @@ export const okta: StockAnalysis = {
   irAddress: 'https://investor.okta.com/',
   industries: [IndustryType.saas],
   shortName: 'Okta',
+  marketCap: 8.1 * BILLION,
 
   // Earnings Report:
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 3,
+      totalRevenue: 481 * MILLION,
+      grossProfit: 343.389 * MILLION,
+      operatingIncome: -206.599 * MILLION,
+      netIncome: -208.897 * MILLION,
+      forecastRevenueTop: 490 * MILLION,
+      forecastRevenueBottom: 488 * MILLION,
+      date: convertDateToUTC(new Date('2022-11-30')),
+      links: [
+        {
+          name: 'Financial News Release',
+          value:
+            'https://investor.okta.com/news-releases/news-release-details/okta-announces-third-quarter-fiscal-year-2023-financial-results',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 2,

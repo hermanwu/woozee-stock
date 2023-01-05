@@ -13,7 +13,7 @@ export const snowflakeRisks: Risk[] = [
 ];
 
 export const snow: StockAnalysis = {
-  marketCap: 42.24 * BILLION,
+  marketCap: 45 * BILLION,
   riskUuids: snowflakeRisks.map((r) => r.uuid),
   business: {
     overview: [
@@ -31,6 +31,24 @@ export const snow: StockAnalysis = {
   },
 
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 3,
+      totalRevenue: 557.028 * MILLION,
+      grossProfit: 366.307 * MILLION,
+      operatingIncome: -206.019 * MILLION,
+      netIncome: -201.442 * MILLION,
+      forecastRevenueTop: 535 * MILLION,
+      forecastRevenueBottom: 540 * MILLION,
+      date: convertDateToUTC(new Date('2022-11-30')),
+      links: [
+        {
+          name: 'Earnings Release',
+          value:
+            'https://investors.snowflake.com/news/news-details/2022/Snowflake-Reports-Financial-Results-for-the-Third-Quarter-of-Fiscal-2023/default.aspx',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 2,
@@ -70,7 +88,7 @@ export const snow: StockAnalysis = {
     {
       year: 2021,
       quarter: 4,
-      totalRevenue: 383 * MILLION,
+      totalRevenue: 383.77 * MILLION,
       costOfRevenue: 134 * MILLION,
       grossProfit: 249 * MILLION,
       sellingGeneralAndAdministrative: 278 * MILLION,

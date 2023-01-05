@@ -15,6 +15,29 @@ export const crwd: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
+      quarter: 3,
+      date: convertDateToUTC(new Date('2022-11-30')),
+      totalRevenue: 580.882 * MILLION,
+      grossProfit: 422.654 * MILLION,
+      operatingIncome: -56.422 * MILLION,
+      netIncome: -54.631 * MILLION,
+      forecastRevenueTop: 628.2 * MILLION,
+      forecastRevenueBottom: 619.1 * MILLION,
+      links: [
+        {
+          name: 'Q2 Financial Results',
+          value:
+            'https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-reports-second-quarter-fiscal-year-2023-financial',
+        },
+        {
+          name: 'Form 10-Q',
+          value:
+            'https://ir.crowdstrike.com/static-files/49137c3e-100d-4ad7-8487-b64d33d3fa41',
+        },
+      ],
+    },
+    {
+      year: 2022,
       quarter: 2,
       date: convertDateToUTC(new Date('2022-08-31')),
       totalRevenue: 535.153 * MILLION,

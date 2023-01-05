@@ -19,6 +19,7 @@ export class NewsPageComponent implements OnInit {
   news: NewsWithDetails[];
   stocks: StockAnalysis[];
   markets: Industry[];
+  showAddNotesSection = false;
 
   constructor(
     private risksDataService: riskService,
@@ -41,4 +42,13 @@ export class NewsPageComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  openAddNewsDialog() {
+    this.showAddNotesSection = true;
+    // this.dialogService.open<AddNoteComponent>(AddNoteComponent, {
+    //   maxHeight: '90vh', //you can adjust the value as per your view
+    //   data: {},
+    //   panelClass: 'medium-modal-panel',
+    // });
+  }
 }

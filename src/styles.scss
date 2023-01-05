@@ -59,3 +59,11 @@ ul {
 .large-modal-panel {
   width: 1000px;
 }
+
+.show-next-line {
+  white-space: pre-line;
+
+  &:before {
+    content: "🔶 ";
+  }
+}

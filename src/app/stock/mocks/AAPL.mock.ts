@@ -1,12 +1,15 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
-import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
+import {
+  BILLION,
+  MILLION,
+  TRILLION,
+} from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
-import { capMock } from './market-cap.mock';
 
 export const aapl: StockAnalysis = {
   uuid: 'aapl',
-  marketCap: capMock.aapl,
+  marketCap: 2.3 * TRILLION,
   name: 'Apple',
   shortName: 'Apple',
   description: [],

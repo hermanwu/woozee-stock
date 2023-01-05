@@ -10,7 +10,7 @@ export class RankingsPageComponent implements OnInit {
   readonly stocksRoute = 'stocks';
   readonly industriesRoute = 'industries';
   readonly regionsRoute = 'markets';
-  readonly assetsRoute = 'assetsRoute';
+  readonly assetsRoute = 'assets';
   activeRoute: string;
 
   constructor(private router: Router) {}

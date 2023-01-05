@@ -64,7 +64,6 @@ export class MockCompareDialogComponent implements OnInit {
   }
 
   private generateToCompareList(stock, portfolio) {
-    console.log(stock);
     const stack = [];
     const queue = [];
     const result = [];

@@ -4,10 +4,10 @@ import { EventType } from '../../../stock/models/news.model';
 export interface InstagramNewsDisplayDialogInput {
   title: string;
   links?: any[];
-  type: EventType;
+  eventType: EventType;
   tags?: string[];
   stats?: StatsDisplay[];
-  content?: string[];
+  content?: string;
   imageLinks?: string[];
-  date?: Date;
+  date?: Date | string;
 }

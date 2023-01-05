@@ -19,6 +19,8 @@ import { Rating } from '../stock/models/rating.model';
   styleUrls: ['./ui-components-page.component.scss'],
 })
 export class UiComponentsPageComponent implements OnInit {
+  newsUuid: string;
+
   mockRanks = ['tsla', 'aapl', 'meta', 'amzn'];
   mockItem = 'aapl';
   higherItem = 'meta';
@@ -119,5 +121,9 @@ export class UiComponentsPageComponent implements OnInit {
 
   mockRankLower() {
     this.mockResult = rankLower(this.lowerItem, this.mockItem, this.mockRanks);
+  }
+
+  updateNewsUuid(newsUuid: string) {
+    this.newsUuid = newsUuid;
   }
 }

@@ -67,8 +67,6 @@ export class UserServices {
     }
 
     for (let stock of updatedStocks) {
-      console.log(stock);
-
       stock.rank = stockRankMap[stock.ticker.toLowerCase()];
     }
 

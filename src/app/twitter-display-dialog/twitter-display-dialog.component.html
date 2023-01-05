@@ -2,9 +2,7 @@
 
 <div class="title">⚡NEWS {{ dialogData?.title }}</div>
 
-<ul>
-  <li *ngFor="let item of dialogData?.content">🔸 {{ item }}</li>
-</ul>
+<app-content-display [content]="dialogData?.content"></app-content-display>
 
 <ul>
   <li *ngFor="let item of dialogData?.stats">

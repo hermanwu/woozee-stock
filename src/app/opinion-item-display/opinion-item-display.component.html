@@ -1,28 +1,39 @@
+<div>
+  {{ opinion.title }}
+
+  <span
+    class="more-button"
+    *ngIf="opinion?.content || opinion?.links"
+    (click)="expanded = !expanded"
+    >more</span
+  >
+</div>
+
+<div *ngIf="expanded" class="pre-line">
+  {{ opinion.content }}
+
+  <app-links-display [links]="opinion?.links"></app-links-display>
+</div>
+
 <app-title-menu>
-  <div header-3>Herman</div>
+  <div header-5>
+    <span class="margin-right-5">
+      <app-date-display [date]="opinion?.date"></app-date-display>
+    </span>
+
+    <app-opinion-display
+      *ngIf="opinion"
+      [opinion]="opinion"
+    ></app-opinion-display>
+
+    <span *ngIf="opinion.targets && opinion.rating"> on </span>
+
+    <app-tags-display [tags]="opinion?.targets"> </app-tags-display>
+  </div>
 
   <button buttons mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>more_horiz</mat-icon>
+
+    <mat-menu #menu="matMenu"> </mat-menu>
   </button>
-
-  <mat-menu #menu="matMenu"> </mat-menu>
 </app-title-menu>
-
-<div>
-  <app-opinion-display
-    *ngIf="opinion"
-    [opinion]="opinion"
-  ></app-opinion-display>
-</div>
-
-<!-- <div *ngFor="let item of opinion.content">
-  {{ item }}
-</div> -->
-
-<div *ngIf="opinion.links">
-  <app-links-display [links]="opinion.links"></app-links-display>
-</div>
-
-<div>
-  <app-tags-display [tags]="opinion.targets"> </app-tags-display>
-</div>

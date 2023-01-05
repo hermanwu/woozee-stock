@@ -1,18 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Opinion } from '../opinions/components/opinion-display/opinion.interface';
 import { EmojiUnicode } from '../shared/data/enum/emoji.enum';
 import { RegionCode } from '../shared/data/enum/region.enum';
 import { Rating } from '../stock/models/rating.model';
 
-export const opinions = [
+export const macroOpinions: Opinion[] = [
   {
-    title: 'US companies are laying off employees',
-    tags: ['job market'],
-    opinion: {
-      rating: Rating.Bearish,
-      emojis: [EmojiUnicode.thumbDown],
-    },
-    regions: [RegionCode.us],
-    content: [
+    content: 'US companies are laying off employees',
+    targets: ['job market', 'us'],
+    rating: Rating.Bearish,
+    emojis: [EmojiUnicode.thumbDown],
+    details: [
       'Companies that has been announced layoff: Snap (20%), Carvana - 12%, Netflix, Robinhood (30%), Goldman Sach - 10%, Shopify - 10%, Twilio - 10%',
     ],
   },
@@ -71,11 +68,3 @@ export const opinions = [
     regions: [RegionCode.global],
   },
 ];
-@Injectable({
-  providedIn: 'root',
-})
-export class MacroServices {
-  getMacros() {
-    return opinions;
-  }
-}

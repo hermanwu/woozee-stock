@@ -7,7 +7,7 @@ import { RegionCode, RegionMap } from '../../data/enum/region.enum';
   styleUrls: ['./region-display.component.scss'],
 })
 export class RegionDisplayComponent implements OnChanges {
-  @Input() region: string;
+  @Input() region: RegionCode;
 
   readonly regionCode = RegionCode;
   readonly regionMap = RegionMap;

@@ -21,6 +21,22 @@ export const msft: StockAnalysis = {
   shortName: 'Microsoft',
   earningsReports: [
     {
+      year: 2023,
+      quarter: 1,
+      totalRevenue: 50.1 * BILLION,
+      grossProfit: 34.67 * BILLION,
+      operatingIncome: 21.5 * BILLION,
+      netIncome: 17.6 * BILLION,
+      date: convertDateToUTC(new Date('2022-10-25')),
+      links: [
+        {
+          name: 'FY23 Q1 Press Release',
+          value:
+            'https://www.microsoft.com/en-us/Investor/earnings/FY-2023-Q1/press-release-webcast',
+        },
+      ],
+    },
+    {
       year: 2022,
       quarter: 4,
       totalRevenue: 51.865 * BILLION,
@@ -43,6 +59,7 @@ export const msft: StockAnalysis = {
       costOfRevenue: 15.615 * BILLION,
       operatingIncome: 20.314 * BILLION,
       netIncome: 16.728 * BILLION,
+      date: convertDateToUTC(new Date('2022-07-15')),
     },
     {
       pressReleaseLink:

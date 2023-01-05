@@ -1,0 +1,46 @@
+<app-title-menu>
+  <div header-1>{{ regionCode }}</div>
+</app-title-menu>
+
+<div>
+  <app-card>
+    <app-title-menu>
+      <div header-2>Opinions</div>
+
+      <div buttons>
+        <button buttons mat-icon-button [matMenuTriggerFor]="opinionMenu">
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+
+        <mat-menu #opinionMenu="matMenu"> </mat-menu>
+      </div>
+    </app-title-menu>
+
+    <app-card *ngFor="let opinion of opinions">
+      <div>
+        <app-opinion-display [opinion]="opinion"></app-opinion-display>
+      </div>
+
+      <!-- <div *ngFor="let item of opinion.content">
+        {{ item }}
+      </div> -->
+    </app-card>
+  </app-card>
+</div>
+
+<div>
+  <app-card>
+    <app-title-menu>
+      <div header-2>News</div>
+    </app-title-menu>
+
+    <div class="grid grid-list">
+      <app-card *ngFor="let item of news">
+        <app-news-display
+          [shortVersion]="'true'"
+          [news]="item"
+        ></app-news-display>
+      </app-card>
+    </div>
+  </app-card>
+</div>

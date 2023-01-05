@@ -15,9 +15,9 @@
         {{ item.rank }}
       </div>
       <div>
-        <app-badge
-          ><app-region-display [region]="item.code"></app-region-display
-        ></app-badge>
+        <a [routerLink]="['/regions', item.code]">
+          <app-region-display [region]="item.code"></app-region-display>
+        </a>
       </div>
       <div>
         <app-opinion-display

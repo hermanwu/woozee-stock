@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { DisplayType } from 'src/app/shared/components/stats-display/stats-display.interface';
-import { StockAnalysis } from '../../models/stock-analysis.model';
+import { EarningsReport } from '../../models/earnings.model';
 import { StockServices } from '../../services/objective-data.service';
 import { StockMetric } from './stock-metric.enum';
 
@@ -10,8 +10,8 @@ import { StockMetric } from './stock-metric.enum';
   styleUrls: ['./stock-metric-display.component.scss'],
 })
 export class StockMetricDisplayComponent implements OnInit, OnChanges {
-  @Input() stock: StockAnalysis;
   @Input() displayMetrics: StockMetric[] = [];
+  @Input() pastTwoYearsEarningsReports: EarningsReport[];
   arrayToDisplay = [];
 
   constructor(private stockServices: StockServices) {}
@@ -19,8 +19,6 @@ export class StockMetricDisplayComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   ngOnChanges(): void {
-    this.stock = this.stockServices.getStockByTicker(this.stock.ticker);
-
     this.arrayToDisplay = [];
     for (let metric of this.displayMetrics) {
       this.arrayToDisplay.push(this.calcualteMetric(metric));
@@ -28,15 +26,14 @@ export class StockMetricDisplayComponent implements OnInit, OnChanges {
   }
 
   calcualteMetric(metric: StockMetric) {
-    const pastTwoYearsEarningsReports = this.stock.earningsReports;
-    const latestEarningsReport = pastTwoYearsEarningsReports[0];
+    const latestEarningsReport = this.pastTwoYearsEarningsReports[0];
 
     switch (metric) {
       case StockMetric.quarterlyRevenue:
         return {
           name: ' Quarterly Revenue',
           value: latestEarningsReport.totalRevenue,
-          previousValue: pastTwoYearsEarningsReports[4]?.totalRevenue,
+          previousValue: this.pastTwoYearsEarningsReports[4]?.totalRevenue,
         };
 
       case StockMetric.forecastQuarterlyRevenue:
@@ -44,7 +41,7 @@ export class StockMetricDisplayComponent implements OnInit, OnChanges {
           ? (latestEarningsReport.forecastRevenueTop +
               latestEarningsReport.forecastRevenueBottom) /
             2
-          : pastTwoYearsEarningsReports[3]?.totalRevenue *
+          : this.pastTwoYearsEarningsReports[3]?.totalRevenue *
             (1 +
               (latestEarningsReport.forecastQuarterlyGrowthRateTop +
                 latestEarningsReport.forecastQuarterlyGrowthRateBottom) /
@@ -53,7 +50,7 @@ export class StockMetricDisplayComponent implements OnInit, OnChanges {
         return {
           name: ' Next Quarter Revenue Forecast',
           value: forecastRevenue,
-          previousValue: pastTwoYearsEarningsReports[3]?.totalRevenue,
+          previousValue: this.pastTwoYearsEarningsReports[3]?.totalRevenue,
         };
 
       case StockMetric.operatingMargin:
@@ -72,8 +69,8 @@ export class StockMetricDisplayComponent implements OnInit, OnChanges {
             latestEarningsReport.grossProfit -
             latestEarningsReport.operatingIncome,
           previousValue:
-            pastTwoYearsEarningsReports[4]?.grossProfit -
-            pastTwoYearsEarningsReports[4]?.operatingIncome,
+            this.pastTwoYearsEarningsReports[4]?.grossProfit -
+            this.pastTwoYearsEarningsReports[4]?.operatingIncome,
         };
     }
   }

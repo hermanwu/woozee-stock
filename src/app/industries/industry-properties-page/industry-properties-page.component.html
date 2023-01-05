@@ -3,22 +3,55 @@
 </app-title-menu>
 
 <div>
-  <app-title-menu>
-    <div header-2>Stocks</div>
-  </app-title-menu>
+  <app-card>
+    <app-title-menu>
+      <div header-2>Stocks</div>
+    </app-title-menu>
 
-  <app-stock-badge-list
-    [stocks]="stocks"
-    [isLink]="'true'"
-  ></app-stock-badge-list>
+    <app-stock-badge-list
+      [stocks]="stocks"
+      [isLink]="'true'"
+    ></app-stock-badge-list>
+  </app-card>
 </div>
 
-<app-title-menu>
-  <div header-2>Bear Says</div>
-</app-title-menu>
-<app-risk-list [risks]="risks"></app-risk-list>
+<div>
+  <app-card>
+    <app-title-menu>
+      <div header-2>Opinions</div>
 
-<app-title-menu>
-  <div header-2>Bull Says</div>
-</app-title-menu>
-<app-catalyst-list [catalysts]="catalysts"></app-catalyst-list>
+      <div buttons>
+        <button buttons mat-icon-button [matMenuTriggerFor]="opinionMenu">
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+
+        <mat-menu #opinionMenu="matMenu"> </mat-menu>
+      </div>
+    </app-title-menu>
+
+    <app-card *ngFor="let opinion of opinions">
+      <div>
+        <app-opinion-item-display
+          [opinion]="opinion"
+        ></app-opinion-item-display>
+      </div>
+    </app-card>
+  </app-card>
+</div>
+
+<div>
+  <app-card>
+    <app-title-menu>
+      <div header-2>News</div>
+    </app-title-menu>
+
+    <div class="grid grid-list">
+      <app-card *ngFor="let item of news">
+        <app-news-display
+          [shortVersion]="'true'"
+          [news]="item"
+        ></app-news-display>
+      </app-card>
+    </div>
+  </app-card>
+</div>

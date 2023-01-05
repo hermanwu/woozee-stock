@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserServices } from 'src/app/accounts/services/user.services';
+import { NewsService } from 'src/app/news/services/news.services';
 import { Opinion } from 'src/app/opinions/components/opinion-display/opinion.interface';
 import { OpinionServices } from 'src/app/opinions/services/opinion.services';
 import { companyRisks } from 'src/app/risks/data/risks/component-risks-defination';
@@ -39,9 +40,11 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   stockAnalysis: StockAnalysis;
   stockTicker: string;
   catalysts = [];
+  news = [];
   rank$: Observable<number>;
-
   opinions: Opinion[] = [];
+  shortTermScore = 0;
+  longTermScore = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -49,7 +52,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
     private titleService: Title,
     private objectiveDataService: StockServices,
     private opinionServices: OpinionServices,
-    private userServices: UserServices
+    private userServices: UserServices,
+    private newsService: NewsService
   ) {}
 
   ngOnInit(): void {
@@ -65,6 +69,9 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
           this.stockAnalysis
         );
 
+        [this.shortTermScore, this.longTermScore] =
+          this.opinionServices.getOpinionScore(this.opinions);
+
         this.titleService.setTitle(this.stockAnalysis.name);
       } else {
         this.stockAnalysis = null;
@@ -77,6 +84,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
             : null;
         })
       );
+
+      this.news = this.newsService.getNewsByTags([this.stockTicker]);
     });
   }
 

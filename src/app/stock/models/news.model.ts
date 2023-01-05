@@ -1,36 +1,38 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
+import { Opinion } from 'src/app/opinions/components/opinion-display/opinion.interface';
+import { Fact } from 'src/app/risks/models/fact.model';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { StatsDisplay } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { Note } from 'src/app/shared/data/note.interface';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { Source } from '../models/news-source.enum';
 
-export interface News {
+export interface News extends Fact, Opinion {
   uuid?: string;
   catalystUuids?: string[];
   riskUuids?: string[];
-  type?: EventType;
+  eventType?: EventType;
   title?: string;
-  content?: string[];
   imageLinks?: string[];
+  content?: string;
 
   source?: Source;
-  date?: Date;
+  date?: Date | string;
   author?: string;
   sourceLink?: string;
   notes?: Note[];
 
-  markets?: IndustryType[];
   tickers?: string[];
 
   tags?: (IndustryType | string)[];
-  isBullish?: boolean;
   stats?: StatsDisplay[];
 
   quotes?: string[];
   people?: string[];
 
   takeAway?: string;
+
+  details?: string[]; // to retire
 }
 
 export enum EventType {

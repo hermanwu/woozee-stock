@@ -1,0 +1,57 @@
+<form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+  <mat-button-toggle-group
+    #ratingToggleGroup="matButtonToggleGroup"
+    (change)="setRating(ratingToggleGroup.value)"
+  >
+    <mat-button-toggle [value]="ratingEnum.VeryBullish"
+      >Very Bullish</mat-button-toggle
+    >
+    <mat-button-toggle [value]="ratingEnum.Bullish">Bullish</mat-button-toggle>
+    <mat-button-toggle [value]="ratingEnum.Neutral">Neutral</mat-button-toggle>
+    <mat-button-toggle [value]="ratingEnum.Bearish">Bearish</mat-button-toggle>
+    <mat-button-toggle [value]="ratingEnum.VeryBearish"
+      >Very Bearish</mat-button-toggle
+    >
+  </mat-button-toggle-group>
+
+  <span> on </span>
+
+  <mat-form-field>
+    <mat-label>targets</mat-label>
+    <input matInput formControlName="targets" />
+  </mat-form-field>
+
+  <div>
+    <div><mat-label>title</mat-label></div>
+    <div>
+      <textarea rows="5" cols="40" formControlName="title"></textarea>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <mat-label>content</mat-label>
+    </div>
+    <div>
+      <textarea rows="8" cols="40" formControlName="content"></textarea>
+    </div>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>tags</mat-label>
+      <input matInput formControlName="tags" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>source</mat-label>
+      <input matInput formControlName="source" />
+    </mat-form-field>
+  </div>
+
+  <button matSuffix mat-button aria-label="Go" type="submit">Submit</button>
+
+  {{ noteFormValue | json }}
+</form>

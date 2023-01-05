@@ -15,6 +15,7 @@ import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AssetListPageComponent } from './asset-list-page/asset-list-page.component';
 import { BoosterComponent } from './catalyst/booster/booster.component';
 import { CatalystListComponent } from './catalyst/components/catalyst-list/catalyst-list.component';
 import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
@@ -31,15 +32,14 @@ import { InstagramDisplayComponent } from './instagram-display/instagram-display
 import { MarketDisplayComponent } from './markets/components/market-display/market-display.component';
 import { MarketListComponent } from './markets/components/market-list/market-list.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
-import { MarketPropertiesPageComponent } from './markets/components/market-properties-page/market-properties-page.component';
 import { MockCompareDialogComponent } from './mock-compare-dialog/mock-compare-dialog.component';
 import { DailyMediumReportDisplayDialogComponent } from './news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { MediaLinkComponent } from './news/components/media-link/media-link.component';
 import { InstagramNewsDisplayDialogComponent } from './news/components/news-display-dialog/news-display-dialog.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
 import { OpinionItemDisplayComponent } from './opinion-item-display/opinion-item-display.component';
-import { BlogPageComponent } from './opinions/components/blog-page/blog-page.component';
 import { OpinionDisplayComponent } from './opinions/components/opinion-display/opinion-display.component';
+import { OpinionPageComponent } from './opinions/components/opinion-page/blog-page.component';
 import { ThumbnailComponent } from './presentation/components/thumbnail/thumbnail.component';
 import { PresentationHeaderComponent } from './presentation/presentation-header/presentation-header.component';
 import { PresentationComponent } from './presentation/presentation.component';
@@ -49,6 +49,7 @@ import { SlideComponent } from './presentation/slide/slide/slide.component';
 import { PriceDisplayComponent } from './price-display/price-display.component';
 import { ProfitabilityComponent } from './profitability/profitability.component';
 import { RankingsPageComponent } from './rankings-page/rankings-page.component';
+import { RegionPropertiesPageComponent } from './region-properties-page/region-properties-page.component';
 import { RiskCatalystDialogComponent } from './risk-catalyst-dialog/risk-catalyst-dialog.component';
 import { RiskListComponent } from './risks/components/risk-list/risk-list.component';
 import { RiskTotalDisplayComponent } from './risks/components/risk-total-display/risk-total-display.component';
@@ -107,6 +108,9 @@ import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-g
 import { TrendComponent } from './trend/trend.component';
 import { TwitterDisplayDialogComponent } from './twitter-display-dialog/twitter-display-dialog.component';
 import { UiComponentsPageComponent } from './ui-components-page/ui-components-page.component';
+import { AddNoteComponent } from './add-note/add-note.component';
+import { AddNewsFormComponent } from './add-news-form/add-news-form.component';
+import { ContentDisplayComponent } from './content-display/content-display.component';
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
 @NgModule({
@@ -159,7 +163,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     CatalystPageComponent,
     MarketListComponent,
     MarketDisplayComponent,
-    MarketPropertiesPageComponent,
     DateDisplayComponent,
     PortfolioListComponent,
     DividerComponent,
@@ -189,7 +192,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     StockMetricDisplayComponent,
     UiComponentsPageComponent,
     TagDisplayPipe,
-    BlogPageComponent,
+    OpinionPageComponent,
     RegionDisplayComponent,
     InstagramDisplayComponent,
     OpinionDisplayComponent,
@@ -202,6 +205,11 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     IndustryListPageComponent,
     IndustryPropertiesPageComponent,
     MarketPageComponent,
+    RegionPropertiesPageComponent,
+    AssetListPageComponent,
+    AddNoteComponent,
+    AddNewsFormComponent,
+    ContentDisplayComponent,
   ],
   imports: [
     BrowserModule,

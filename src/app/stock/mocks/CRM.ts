@@ -24,6 +24,24 @@ export const crm: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
+      quarter: 3,
+      totalRevenue: 7.837 * BILLION,
+      grossProfit: 5.749 * BILLION,
+      operatingIncome: 460 * MILLION,
+      netIncome: 210 * MILLION,
+      date: convertDateToUTC(new Date('2022-10-30')),
+      forecastRevenueTop: 8.032 * BILLION,
+      forecastRevenueBottom: 7.932 * BILLION,
+      links: [
+        {
+          name: 'Press Release',
+          value:
+            'https://investor.salesforce.com/press-releases/press-release-details/2022/Salesforce-Announces-Solid-Third-Quarter-Fiscal-2023-Results/default.aspx',
+        },
+      ],
+    },
+    {
+      year: 2022,
       quarter: 2,
       totalRevenue: 7.72 * BILLION,
       grossProfit: 5.593 * BILLION,

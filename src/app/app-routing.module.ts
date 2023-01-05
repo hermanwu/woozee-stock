@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
+import { AssetListPageComponent } from './asset-list-page/asset-list-page.component';
 import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
 import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
-import { BlogPageComponent } from './opinions/components/blog-page/blog-page.component';
+import { OpinionPageComponent } from './opinions/components/opinion-page/blog-page.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
 import { RankingsPageComponent } from './rankings-page/rankings-page.component';
+import { RegionPropertiesPageComponent } from './region-properties-page/region-properties-page.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
 import { DemoPageComponent } from './shared/components/demo-page/demo-page.component';
@@ -28,6 +30,11 @@ const routes: Routes = [
       {
         path: 'news',
         component: NewsPageComponent,
+        pathMatch: 'full',
+      },
+      {
+        path: 'regions/:regionCode',
+        component: RegionPropertiesPageComponent,
         pathMatch: 'full',
       },
       {
@@ -50,6 +57,11 @@ const routes: Routes = [
             pathMatch: 'full',
           },
           {
+            path: 'assets',
+            component: AssetListPageComponent,
+            pathMatch: 'full',
+          },
+          {
             path: '**',
             redirectTo: 'stocks',
           },
@@ -63,7 +75,7 @@ const routes: Routes = [
 
       {
         path: 'opinions',
-        component: BlogPageComponent,
+        component: OpinionPageComponent,
         pathMatch: 'full',
       },
       {
@@ -71,7 +83,7 @@ const routes: Routes = [
         component: UiComponentsPageComponent,
         pathMatch: 'full',
       },
-      { path: '', redirectTo: 'blog', pathMatch: 'full' },
+      { path: '', redirectTo: 'rankings', pathMatch: 'full' },
     ],
   },
   {
@@ -125,7 +137,7 @@ const routes: Routes = [
       { path: 'slides', component: SlideDemoComponent, pathMatch: 'full' },
     ],
   },
-  { path: '**', redirectTo: 'news', pathMatch: 'full' },
+  { path: '**', redirectTo: 'rankings', pathMatch: 'full' },
 ];
 
 @NgModule({

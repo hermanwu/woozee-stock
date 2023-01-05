@@ -1,59 +1,32 @@
-<div>
-  <span *ngIf="opinion?.rating">
-    <ng-container [ngSwitch]="opinion.rating">
-      <ng-container *ngSwitchCase="ratingEnum.VeryBullish" i18n>
-        <span class="very-green">Very Bullish</span>
-      </ng-container>
+<span *ngIf="opinion?.rating">
+  <ng-container [ngSwitch]="opinion.term">
+    <ng-container *ngSwitchCase="termEnum.short" i18n>Short Term </ng-container>
 
-      <ng-container *ngSwitchCase="ratingEnum.Bullish" i18n>
-        <span class="green">Bullish</span>
-      </ng-container>
+    <ng-container *ngSwitchCase="termEnum.long" i18n>Long Term </ng-container>
 
-      <ng-container *ngSwitchCase="ratingEnum.VeryBearish" i18n>
-        <span class="very-red">Very Bearish</span>
-      </ng-container>
+    <ng-container *ngSwitchDefault i18n>Short Term </ng-container>
+  </ng-container>
 
-      <ng-container *ngSwitchCase="ratingEnum.Bearish" i18n>
-        <span class="red">Bearish</span>
-      </ng-container>
-
-      <ng-container *ngSwitchDefault i18n></ng-container>
+  <ng-container [ngSwitch]="opinion.rating">
+    <ng-container *ngSwitchCase="ratingEnum.VeryBullish" i18n>
+      <span class="very-green">Very Bullish</span>
     </ng-container>
 
-    <!-- <ng-container>
-      {{opinion?.target?.}}
-    </ng-container> -->
-
-    <ng-container [ngSwitch]="opinion.term">
-      <ng-container *ngSwitchCase="termEnum.short" i18n
-        >Short Term</ng-container
-      >
-
-      <ng-container *ngSwitchCase="termEnum.long" i18n>Long Term</ng-container>
-
-      <ng-container *ngSwitchDefault i18n></ng-container>
+    <ng-container *ngSwitchCase="ratingEnum.Bullish" i18n>
+      <span class="green">Bullish</span>
     </ng-container>
 
-    <app-badge *ngIf="opinion.factType">{{ opinion.factType }}</app-badge>
-  </span>
+    <ng-container *ngSwitchCase="ratingEnum.VeryBearish" i18n>
+      <span class="very-red">Very Bearish</span>
+    </ng-container>
 
-  <span *ngIf="opinion?.content">
-    {{ opinion.content }}
-  </span>
+    <ng-container *ngSwitchCase="ratingEnum.Bearish" i18n>
+      <span class="red">Bearish</span>
+    </ng-container>
 
-  <span
-    class="more-button"
-    *ngIf="opinion?.details && opinion.details.length > 0"
-    (click)="expanded = !expanded"
-    >more</span
-  >
-</div>
-
-<div *ngIf="expanded">
-  <div *ngFor="let item of opinion?.details">
-    {{ item }}
-  </div>
-</div>
+    <ng-container *ngSwitchDefault i18n></ng-container>
+  </ng-container>
+</span>
 
 <!-- <span>
     {{ emojis }}

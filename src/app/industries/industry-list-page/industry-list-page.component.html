@@ -2,12 +2,18 @@
   <div header-1 i18n>Industries</div>
 
   <div buttons>
-    <button mat-icon-button type="button" (click)="sort()" disabled>
-      <mat-icon>sort</mat-icon>
+    <button mat-icon-button [matMenuTriggerFor]="industryMenu">
+      <mat-icon>more_horiz</mat-icon>
     </button>
-    <button mat-icon-button (click)="showTools = !showTools" disabled>
-      <mat-icon>filter_alt</mat-icon>
-    </button>
+
+    <mat-menu #industryMenu="matMenu">
+      <button mat-menu-item type="button" (click)="sort()" disabled>
+        <mat-icon>sort</mat-icon>
+      </button>
+      <button mat-menu-item (click)="showTools = !showTools" disabled>
+        <mat-icon>filter_alt</mat-icon>
+      </button>
+    </mat-menu>
   </div>
 </app-title-menu>
 

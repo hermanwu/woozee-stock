@@ -1,54 +1,70 @@
-<app-title-menu>
-  <div header-3>WOOZEE News</div>
+<ng-container *ngIf="shortVersion; else fullVersion">
+  <div>
+    {{ news.title }}
 
-  <button
-    buttons
-    mat-icon-button
-    [matMenuTriggerFor]="menu"
-    *ngIf="!environment.production"
-  >
-    <mat-icon>more_horiz</mat-icon>
-  </button>
+    <span
+      class="more-button"
+      *ngIf="news?.content && news.content.length > 0"
+      (click)="expanded = !expanded"
+      >more</span
+    >
+  </div>
+  <div *ngIf="expanded" class="show-next-line">
+    {{ news.content }}
+  </div>
 
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item type="button" (click)="showDetails = !showDetails">
-      More
-      <mat-icon *ngIf="showDetails">expand_less</mat-icon>
-      <mat-icon *ngIf="!showDetails">expand_more</mat-icon>
-    </button>
+  <div>
+    <span class="margin-right-5">
+      <app-date-display [date]="news?.date"></app-date-display>
+    </span>
 
-    <button mat-menu-item (click)="openDialog()">Twitter</button>
-
-    <button mat-menu-item (click)="openInstagramDialog()">Instagram</button>
-  </mat-menu>
-</app-title-menu>
-
-<app-stock-image-display [tag]="stock?.ticker"></app-stock-image-display>
-
-<div>🎙️ {{ news.title }}</div>
-
-<ng-container [ngSwitch]="news.type">
-  <ng-container *ngSwitchCase="eventType.macro" i18n> </ng-container>
-
-  <ng-container *ngSwitchCase="eventType.industry" i18n> </ng-container>
-
-  <ng-container *ngSwitchCase="eventType.industry" i18n> </ng-container>
-
-  <ng-container *ngSwitchDefault i18n> </ng-container>
+    <app-tags-display [tags]="news?.tags"> </app-tags-display>
+  </div>
 </ng-container>
 
-<ul>
-  <li *ngFor="let item of news.stats">
-    <app-stats-display [statsDisplay]="item"></app-stats-display>
-  </li>
-</ul>
+<ng-template #fullVersion>
+  <app-title-menu>
+    <div header-3>{{ news?.source || "WOOZEE News" }}</div>
 
-<ul>
-  <li *ngFor="let item of news.content">🔸 {{ item }}</li>
-</ul>
+    <button
+      buttons
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      *ngIf="!environment.production"
+    >
+      <mat-icon>more_horiz</mat-icon>
+    </button>
 
-<div>
-  <app-date-display [date]="news?.date"></app-date-display>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item type="button" (click)="showDetails = !showDetails">
+        More
+        <mat-icon *ngIf="showDetails">expand_less</mat-icon>
+        <mat-icon *ngIf="!showDetails">expand_more</mat-icon>
+      </button>
 
-  <app-tags-display [tags]="news?.tags"> </app-tags-display>
-</div>
+      <button mat-menu-item (click)="openDialog()">Twitter</button>
+
+      <button mat-menu-item (click)="openInstagramDialog()">Instagram</button>
+    </mat-menu>
+  </app-title-menu>
+
+  <app-stock-image-display [tag]="stock?.ticker"></app-stock-image-display>
+
+  <div>🎙️ {{ news.title }}</div>
+
+  <ul>
+    <li *ngFor="let item of news.stats">
+      <app-stats-display [statsDisplay]="item"></app-stats-display>
+    </li>
+  </ul>
+
+  <app-content-display [content]="news.content"></app-content-display>
+
+  <div>
+    <span class="margin-right-5">
+      <app-date-display [date]="news?.date"></app-date-display>
+    </span>
+
+    <app-tags-display [tags]="news?.tags"> </app-tags-display>
+  </div>
+</ng-template>

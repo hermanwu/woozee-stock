@@ -48,6 +48,24 @@ export const bili: StockAnalysis = {
       date: convertDateToUTC(new Date('2022-09-08')),
       links: [
         {
+          name: 'Financial Results',
+          value:
+            'https://ir.bilibili.com/media/vbhaxpxs/q3-2022-bilibili-earnings-release-en.pdf',
+        },
+      ],
+    },
+    {
+      year: 2022,
+      quarter: 2,
+      totalRevenue: 4.908931 * BILLION * rmbToDollar,
+      grossProfit: 738.285 * MILLION * rmbToDollar,
+      operatingIncome: -2.191062 * BILLION * rmbToDollar,
+      netIncome: -2.010445 * BILLION * rmbToDollar,
+      forecastRevenueTop: 5.8 * BILLION * rmbToDollar,
+      forecastRevenueBottom: 5.6 * BILLION * rmbToDollar,
+      date: convertDateToUTC(new Date('2022-09-08')),
+      links: [
+        {
           name: 'Press Release',
           value:
             'https://ir.bilibili.com/static-files/48c81ef3-7d59-4d30-85d4-919a77ded9b4',

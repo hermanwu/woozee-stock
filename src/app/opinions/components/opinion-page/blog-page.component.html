@@ -1,0 +1,71 @@
+<app-title-menu>
+  <div header-1 i18n>Thoughts</div>
+</app-title-menu>
+
+<mat-tab-group>
+  <mat-tab label="Opinions">
+    <app-title-menu>
+      <div header-1 i18n>Opinions</div>
+
+      <div buttons>
+        <button mat-icon-button [matMenuTriggerFor]="newsMenu">
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+
+        <mat-menu #newsMenu="matMenu">
+          <button mat-menu-item (click)="openAddNewsDialog()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-menu>
+      </div>
+    </app-title-menu>
+
+    <div class="opinion-card" *ngFor="let opinion of myOpinions">
+      <app-card>
+        <app-opinion-item-display
+          [opinion]="opinion"
+        ></app-opinion-item-display>
+      </app-card>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Tips">
+    <app-title-menu>
+      <div header-1 i18n>Tips</div>
+
+      <div buttons>
+        <button mat-icon-button [matMenuTriggerFor]="newsMenu">
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+
+        <mat-menu #newsMenu="matMenu">
+          <button mat-menu-item (click)="openAddNewsDialog()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-menu>
+      </div>
+    </app-title-menu>
+
+    <app-card *ngFor="let item of toDo">{{ item.title }}</app-card>
+  </mat-tab>
+
+  <mat-tab label="Mistakes">
+    <app-title-menu>
+      <div header-1 i18n>Mistakes</div>
+
+      <div buttons>
+        <button mat-icon-button [matMenuTriggerFor]="newsMenu">
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+
+        <mat-menu #newsMenu="matMenu">
+          <button mat-menu-item (click)="openAddNewsDialog()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-menu>
+      </div>
+    </app-title-menu>
+
+    <app-card *ngFor="let item of toAvoid">{{ item.title }}</app-card>
+  </mat-tab>
+</mat-tab-group>

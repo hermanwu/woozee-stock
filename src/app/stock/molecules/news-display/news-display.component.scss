@@ -38,3 +38,16 @@ h1 {
 h2 {
   font-weight: 400 !important;
 }
+
+.more-button {
+  color: gray;
+  padding: 5px;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.margin-right-5 {
+  margin-right: 5px;
+}

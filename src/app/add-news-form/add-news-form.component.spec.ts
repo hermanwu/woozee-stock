@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BlogPageComponent } from './blog-page.component';
+import { AddNewsFormComponent } from './add-news-form.component';
 
-describe('BlogPageComponent', () => {
-  let component: BlogPageComponent;
-  let fixture: ComponentFixture<BlogPageComponent>;
+describe('AddNewsFormComponent', () => {
+  let component: AddNewsFormComponent;
+  let fixture: ComponentFixture<AddNewsFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BlogPageComponent ]
+      declarations: [ AddNewsFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BlogPageComponent);
+    fixture = TestBed.createComponent(AddNewsFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

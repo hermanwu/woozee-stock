@@ -23,11 +23,14 @@
       </button>
 
       <mat-menu #stockMenu="matMenu">
+        <button mat-menu-item [disabled]="">Add to Portfolio</button>
+
         <button
           class="buttons"
           mat-menu-item
           aria-label="Organize widgets"
           matTooltip="Organize Widgets"
+          disabled
         >
           <mat-icon>sort</mat-icon>
         </button>
@@ -38,6 +41,7 @@
           [matMenuTriggerFor]="menu"
           aria-label="navigate to sections"
           matTooltip="Navigator"
+          disabled
         >
           <mat-icon>link</mat-icon>
         </button>
@@ -54,7 +58,7 @@
     <div class="padding-1rem" *ngIf="opinions?.length > 0">
       <app-card>
         <app-title-menu>
-          <div header-1>Opinions</div>
+          <div header-2>Opinions</div>
 
           <div buttons>
             <button buttons mat-icon-button [matMenuTriggerFor]="opinionMenu">
@@ -84,18 +88,13 @@
           </div>
         </app-title-menu>
 
-        <div
-          class="grid grid-list"
-          *ngIf="displayMode === displayModeEnum.list"
-        >
-          <app-card *ngFor="let opinion of opinions">
+        <div class="grid">
+          <app-card *ngFor="let opinion of opinions" class="opinion-display">
             <div>
-              <app-opinion-display [opinion]="opinion"></app-opinion-display>
+              <app-opinion-item-display
+                [opinion]="opinion"
+              ></app-opinion-item-display>
             </div>
-
-            <!-- <div *ngFor="let item of opinion.content">
-              {{ item }}
-            </div> -->
           </app-card>
         </div>
 
@@ -129,11 +128,39 @@
       </app-card>
     </div>
 
+    <div class="padding-1rem" *ngIf="news?.length > 0">
+      <app-card>
+        <app-title-menu>
+          <div header-2>News</div>
+        </app-title-menu>
+
+        <div *ngFor="let item of news">
+          <app-card>
+            <app-news-display
+              [shortVersion]="'true'"
+              [news]="item"
+            ></app-news-display>
+          </app-card>
+        </div>
+      </app-card>
+    </div>
+
     <div class="padding-1rem">
       <app-card>
         <app-earnings-report
           [stock]="stockAnalysis"
           [pastTwoYearsEarningsReports]="stockAnalysis?.earningsReports"
+        ></app-earnings-report>
+      </app-card>
+    </div>
+
+    <div class="padding-1rem">
+      <app-card>
+        <app-earnings-report
+          [stock]="stockAnalysis"
+          [pastTwoYearsEarningsReports]="
+            stockAnalysis?.earningsReports?.slice(1)
+          "
         ></app-earnings-report>
       </app-card>
     </div>

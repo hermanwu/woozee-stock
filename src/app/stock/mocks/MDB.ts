@@ -4,7 +4,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
 export const mdb: StockAnalysis = {
-  marketCap: 18.69 * BILLION,
+  marketCap: 13.5 * BILLION,
   logo: '',
   name: 'Mongodb Inc',
   description: [],
@@ -15,6 +15,24 @@ export const mdb: StockAnalysis = {
   secFilings:
     'https://investors.mongodb.com/financial-information/sec-filings/default.aspx',
   earningsReports: [
+    {
+      year: 2022,
+      quarter: 3,
+      date: convertDateToUTC(new Date('2022-12-06')),
+      totalRevenue: 333.6 * MILLION,
+      grossProfit: 239.969 * MILLION,
+      operatingIncome: -82.923 * MILLION,
+      netIncome: -84.841 * MILLION,
+      forecastRevenueTop: 337 * MILLION,
+      forecastRevenueBottom: 334 * MILLION,
+      links: [
+        {
+          name: 'Third Quarter Fiscal 2023 Financial Results',
+          value:
+            'https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-third-quarter-fiscal-2023-financial',
+        },
+      ],
+    },
     {
       year: 2022,
       quarter: 2,

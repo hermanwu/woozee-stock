@@ -19,8 +19,9 @@ import { NewsDisplay } from './news-display.interface';
   styleUrls: ['./news-display.component.scss'],
 })
 export class NewsDisplayComponent implements OnChanges {
-  @Input() expanded: boolean;
+  @Input() shortVersion: boolean;
   @Input() news: NewsDisplay;
+  expanded: boolean;
 
   readonly industryEmojiMap = industryEmojiMap;
   readonly eventType = EventType;
@@ -74,7 +75,7 @@ export class NewsDisplayComponent implements OnChanges {
     const data: InstagramNewsDisplayDialogInput = {
       title: this.news.title,
       links: this.stock?.earningsReports?.[0]?.links,
-      type: this.news.type,
+      eventType: this.news.eventType,
       tags: [...this.news.tags, ...stockTagsMock],
       content: this.news.content,
       stats: this.news.stats,

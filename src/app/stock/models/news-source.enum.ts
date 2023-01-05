@@ -20,4 +20,5 @@ export enum Source {
   ibd = "Investor's Business Daily",
   electrek = 'Electrek',
   laborStatistics = 'U.S. Bureau Of Labor Statistics',
+  company = 'Company',
 }

@@ -73,5 +73,18 @@ export class UserServices {
     return updatedStocks;
   }
 
+  getLanguage() {
+    return (
+      this.currentUser.defaultLanguage ||
+      localStorage.getItem('woozee-language') ||
+      'en'
+    );
+  }
+
+  setLanguage(language: string) {
+    this.currentUser.defaultLanguage = language;
+    localStorage.setItem('woozee-language', language);
+  }
+
   // updateStockRanks(stock: Stock, lowerRanks: Stock) {}
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { UserServices } from 'src/app/accounts/services/user.services';
 import { ImageServices } from 'src/app/images/services/images.services';
 import { InstagramNewsDisplayDialogInput } from 'src/app/news/components/news-display-dialog/news-display-dialog-input.interface';
 import { InstagramNewsDisplayDialogComponent } from 'src/app/news/components/news-display-dialog/news-display-dialog.component';
@@ -34,7 +35,8 @@ export class NewsDisplayComponent implements OnChanges {
   constructor(
     private imageServices: ImageServices,
     private stockServices: StockServices,
-    private dialogService: MatDialog
+    private dialogService: MatDialog,
+    private userService: UserServices
   ) {}
 
   ngOnChanges(): void {

@@ -23,14 +23,9 @@
 <div *ngIf="showTools"></div>
 
 <div class="news-card" *ngFor="let item of news">
-  <app-card *ngIf="item.targets; else fact">
-    <app-opinion-item-display [opinion]="item"></app-opinion-item-display>
+  <app-card>
+    <app-news-display [news]="item" [expanded]="true"></app-news-display>
   </app-card>
-  <ng-template #fact>
-    <app-card>
-      <app-news-display [news]="item" [expanded]="true"></app-news-display>
-    </app-card>
-  </ng-template>
 </div>
 
 <!-- <button type="button" mat-button disabled>

@@ -137,7 +137,7 @@ const routes: Routes = [
       { path: 'slides', component: SlideDemoComponent, pathMatch: 'full' },
     ],
   },
-  { path: '**', redirectTo: 'rankings', pathMatch: 'full' },
+  { path: '**', redirectTo: 'news', pathMatch: 'full' },
 ];
 
 @NgModule({

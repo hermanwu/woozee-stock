@@ -7,6 +7,7 @@ import { getUtcDate } from 'src/app/shared/functions/getUtcDate.function';
 import { Rating } from 'src/app/stock/models/rating.model';
 
 export const currentUserMock: {
+  defaultLanguage?: string;
   userUuid?: string;
   userName?: string;
   portfolios: any[];

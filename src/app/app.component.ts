@@ -7,8 +7,6 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = '投资品';
-
   showFiller = false;
   constructor(private store: AngularFirestore) {}
 }

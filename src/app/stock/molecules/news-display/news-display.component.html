@@ -24,7 +24,7 @@
 
 <ng-template #fullVersion>
   <app-title-menu>
-    <div header-3>{{ news?.source || "News" }}</div>
+    <h2 header-3>{{ news?.source || "News" }}</h2>
 
     <button
       buttons
@@ -50,7 +50,7 @@
 
   <app-stock-image-display [tag]="stock?.ticker"></app-stock-image-display>
 
-  <div>⚡ {{ news.title }}</div>
+  <h3>⚡ {{ news.title }}</h3>
 
   <ul>
     <li *ngFor="let item of news.stats">

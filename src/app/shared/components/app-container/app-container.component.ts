@@ -12,12 +12,27 @@ export class AppContainerComponent implements OnInit {
   aboutPage = 'https://mailchi.mp/5377c7dfbe07/about';
 
   showSearchBar: boolean;
+  language: string;
 
-  constructor(private userServices: UserServices) {}
+  constructor(private userServices: UserServices) {
+    this.language = this.userServices.getLanguage();
+  }
 
   ngOnInit(): void {}
 
   searchIconClicked(): void {
     this.showSearchBar = true;
+  }
+
+  updateLanguage(): void {
+    if (this.language === 'en') {
+      this.userServices.setLanguage('cn');
+      this.language = 'cn';
+    } else {
+      this.userServices.setLanguage('en');
+      this.language = 'en';
+    }
+
+    window.location.reload();
   }
 }

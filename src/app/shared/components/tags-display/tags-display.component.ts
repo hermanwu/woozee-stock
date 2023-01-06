@@ -50,7 +50,7 @@ export class TagsDisplayComponent implements OnChanges {
     if (str) {
       return str
         .split(' ')
-        .map((word) => word.trim()[0].toUpperCase() + word.slice(1))
+        .map((word) => word.trim()?.[0]?.toUpperCase() + word.slice(1))
         .join('');
     }
   }

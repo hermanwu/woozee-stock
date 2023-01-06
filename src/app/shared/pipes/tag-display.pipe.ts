@@ -25,7 +25,7 @@ export class TagDisplayPipe implements PipeTransform {
     if (str) {
       return str
         .split(' ')
-        .map((word) => word[0].toUpperCase() + word.slice(1))
+        .map((word) => word?.[0]?.toUpperCase() + word?.slice(1))
         .join(' ');
     }
   }

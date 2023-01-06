@@ -19,6 +19,10 @@
 
   <span class="spacer"></span>
 
+  <button mat-button (click)="updateLanguage()">
+    <span>{{ language === "cn" ? "English" : "中文" }}</span>
+  </button>
+
   <button mat-icon-button [matMenuTriggerFor]="accountMenu">
     <mat-icon>account_circle</mat-icon>
   </button>

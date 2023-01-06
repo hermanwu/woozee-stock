@@ -28,7 +28,6 @@ export class MockCompareDialogComponent implements OnInit {
       dialogData.portfolio
     );
 
-    console.log(this.toCompareList);
     this.pickedToCompare = this.toCompareList.shift();
   }
 

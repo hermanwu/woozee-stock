@@ -44,21 +44,6 @@ export class riskService {
     for (let market of this.markets) {
       this.marketMap.set(market.type, market);
     }
-
-    this.newsWithDetails = this.newsWithDetails.map((item) => ({
-      ...item,
-      catalysts: item?.catalystUuids?.map((uuid) => this.catalystMap.get(uuid)),
-      risks: item?.riskUuids?.map((uuid) => this.riskMap.get(uuid)),
-    }));
-
-    // Sort all risks by their updated time.
-    // this.risks.sort(
-    //   (a, b) => b.updatedTime.getTime() - a.updatedTime.getTime()
-    // );
-  }
-
-  getNewsDetails(): NewsWithDetails[] {
-    return this.newsWithDetails;
   }
 
   getRisksByUuids(uuids: string[]): Risk[] {

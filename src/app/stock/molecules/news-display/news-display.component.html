@@ -48,23 +48,31 @@
     </mat-menu>
   </app-title-menu>
 
-  <app-stock-image-display [tag]="stock?.ticker"></app-stock-image-display>
+  <div class="square">
+    <div>
+      <app-stock-image-display
+        [tag]="news?.tags?.[0]"
+      ></app-stock-image-display>
+    </div>
 
-  <h3>⚡ {{ news.title }}</h3>
+    <div class="content">
+      <h3>⚡ {{ news.title }}</h3>
 
-  <ul>
-    <li *ngFor="let item of news.stats">
-      <app-stats-display [statsDisplay]="item"></app-stats-display>
-    </li>
-  </ul>
+      <ul>
+        <li *ngFor="let item of news.stats">
+          <app-stats-display [statsDisplay]="item"></app-stats-display>
+        </li>
+      </ul>
 
-  <app-content-display [content]="news.content"></app-content-display>
+      <app-content-display [content]="news.content"></app-content-display>
 
-  <div>
-    <span class="margin-right-5">
-      <app-date-display [date]="news?.date"></app-date-display>
-    </span>
+      <div>
+        <span class="margin-right-5">
+          <app-date-display [date]="news?.date"></app-date-display>
+        </span>
 
-    <app-tags-display [tags]="news?.tags"> </app-tags-display>
+        <app-tags-display [tags]="news?.tags"> </app-tags-display>
+      </div>
+    </div>
   </div>
 </ng-template>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -17,6 +17,8 @@ export interface StateGroup {
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
+  @Input() enableAutoFocus: boolean;
+
   searchForm: FormGroup;
   filteredOptions: Observable<string[]>;
   stateGroups: StateGroup[] = [

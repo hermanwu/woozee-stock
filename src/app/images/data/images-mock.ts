@@ -1,6 +1,7 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 
 export const images = new Map<string, string[]>([
+  ['ai', ['']],
   [
     'cost',
     ['https://i.ibb.co/ctB2mHm/Screen-Shot-2022-09-22-at-4-14-07-PM.png'],

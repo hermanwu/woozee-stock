@@ -12,6 +12,77 @@ import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
   {
+    title: '火币网宣布裁员20%',
+    content:
+      '由FTX破产造成的币圈信任危机继续发酵\n火币网原生币下跌7%\n昨天Genesis宣布裁员30%, Silvergate宣布裁员40%',
+    tags: ['crypto', ' huobi', ' gensis'],
+    sourceLink:
+      'https://www.coindesk.com/business/2023/01/05/crypto-layoffs-heres-the-grim-count-since-april/',
+    uuid: 'bea7b139-16e9-4a68-a93a-96638bbe5599',
+    date: '2023-01-06T23:30:39.475Z',
+  },
+  {
+    title:
+      'FTX原CEO Sam Bankman-Fried由律师发表声明说他需要用他Robinhood的持股来支付律师费',
+    content:
+      '他拥有的Robinhood股票目前价值4亿5千万美元\n理论上来说，这些股票属于Sam和他的FTX共同创始人\n已破产的FTX和BlockFi债务人也同时希望得到这些股票来处理赔偿\n同时美国司法部也希望扣押这些股票',
+    tags: ['hood', 'ftx', 'crypto', 'blockfi'],
+    sourceLink:
+      'https://finance.yahoo.com/news/sam-bankman-fried-lawyers-just-151904468.html',
+    uuid: '4f5b2339-5c84-4787-81e2-3781a9b0a8b0',
+    date: '2023-01-06T23:24:15.322Z',
+  },
+  {
+    title: '由于持续的通胀压力，Party City准备申请破产',
+    content:
+      '股价下跌58%,目前只有15美分\n昨天，另一家实体店零售商Bed Bath & Beyong也在考虑申请破产',
+    tags: ['retail'],
+    sourceLink:
+      'https://nypost.com/2023/01/06/party-city-plans-bankruptcy-filing-within-weeks-report/',
+    uuid: '09f71da1-90f0-458d-b895-ee9daa1c209f',
+    date: '2023-01-06T22:55:35.571Z',
+  },
+  {
+    title: 'Costco在12月的营收同比上涨7%，远好于预期。',
+    content:
+      '2022年时间较晚的节日假期可能导致消费者有更多的时间进行消费。\nCostco的报告对其他大型超市，比如沃尔玛，Target,有积极意义。\nCostco股价今天大涨7.26%',
+    tags: ['cost', 'grocery'],
+    sourceLink:
+      'https://seekingalpha.com/news/3922705-costco-stock-surges-on-stronger-than-expected-sales-report',
+    uuid: 'a3d5b6ba-7b98-4cff-8826-e8e544feb291',
+    date: '2023-01-06T22:43:44.497Z',
+  },
+  {
+    title: '美国劳动部发布12月就业报告显示就业市场继续火热。',
+    content:
+      '12月美国失业率下跌至3.5%，并且新增高于预期的223000个岗位（预期新增200000个岗位）\n但报告中的薪资增速放缓对降低通胀实现经济软着陆有积极意义。\n美股三大指数上涨2%+。纳斯达克上涨2.56%,标普500上涨2.28%。',
+    tags: ['jobs', 'us'],
+    sourceLink:
+      'https://seekingalpha.com/news/3922595-dow-sp-and-nasdaq-remain-muted-ahead-of-nonfarm-payrolls-report',
+    uuid: '52a1b8d7-b9b1-4738-973d-c85af6cd396a',
+    date: '2023-01-06T22:35:10.655Z',
+  },
+  {
+    title: '梅西百货警告第四季度营收将低于预期',
+    content:
+      '梅西百货CEO指出消费者在节日假期的消费需求仍然强劲，但在平时的消费力继续下滑\n预计接下去一年对零售行业将更加具有挑战\n梅西百货股价盘后下跌4.2%',
+    tags: ['m', ' retail'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/06/macys-cuts-holiday-quarter-forecast-citing-squeeze-on-shoppers-wallets.html',
+    uuid: '0538fb67-5bf2-4b9f-bba3-314a1954abc2',
+    date: '2023-01-06T22:21:23.234Z',
+  },
+  {
+    title: '美国食品药品监督管理局FDA批准了Biogen(BIIB)的阿尔茨海默氏症药物',
+    content:
+      'Biogen药物Lecanemab在对轻度阿尔茨海默氏症病人的临床试验中显示有减缓认知衰退的作用\n但同时该药物有导致脑部肿胀充血的风险\n该药物一年疗程在美国定价为一年$26,500美元\nBiogen今天上涨2.82%',
+    tags: ['medicine', 'BIIB'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/06/alzheimers-disease-fda-decision-on-biogen-eisai-treatment-lecanemab.html',
+    uuid: '4dd5f2b6-fdff-42ee-bb21-2bc4dfad50d1',
+    date: '2023-01-06T22:02:41.000Z',
+  },
+  {
     title:
       '爆红人工智能软件ChatGPT的母公司，OpenAI考虑接受新一轮的投资。估值达到2021年的两倍',
     content:

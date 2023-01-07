@@ -12,6 +12,7 @@ import {
   sortPortoflioBasedOnRanking,
   updateGlobalRankBasedOnPortfolio,
 } from '../shared/functions/ranking.function';
+import { News } from '../stock/models/news.model';
 import { Rating } from '../stock/models/rating.model';
 @Component({
   selector: 'app-ui-components-page',
@@ -26,6 +27,12 @@ export class UiComponentsPageComponent implements OnInit {
   higherItem = 'meta';
   lowerItem = 'amzn';
   mockResult;
+  mockNews: News = {
+    title: 'this is a mock title',
+    content: 'this is a mock news\n new line\n new line\n',
+    tags: ['aapl'],
+    date: new Date(),
+  };
 
   tagsMock = ['tsla', 'tesla', 'elon musk'];
   selectedPortfolio;

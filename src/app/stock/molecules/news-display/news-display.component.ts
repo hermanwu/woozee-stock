@@ -22,7 +22,7 @@ import { NewsDisplay } from './news-display.interface';
 export class NewsDisplayComponent implements OnChanges {
   @Input() shortVersion: boolean;
   @Input() news: NewsDisplay;
-  expanded: boolean;
+  @Input() expanded: boolean;
 
   readonly industryEmojiMap = industryEmojiMap;
   readonly eventType = EventType;

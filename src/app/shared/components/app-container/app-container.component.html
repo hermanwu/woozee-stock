@@ -1,6 +1,6 @@
 <mat-toolbar>
   <span *ngIf="showSearchBar; else appName">
-    <app-search> </app-search>
+    <app-search enableAutoFocus="'true'"> </app-search>
   </span>
   <ng-template #appName>
     <div>

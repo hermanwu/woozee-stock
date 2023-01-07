@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment';
 import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
+import { AddNewsFormComponent } from './add-news-form/add-news-form.component';
+import { AddNoteComponent } from './add-note/add-note.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AssetListPageComponent } from './asset-list-page/asset-list-page.component';
@@ -22,6 +24,7 @@ import { CatalystPageComponent } from './catalyst/components/catalyst-page/catal
 import { CatalystTotalDisplayComponent } from './catalyst/components/catalyst-total-display/catalyst-total-display.component';
 import { CatalystComponent } from './catalyst/components/catalyst/catalyst.component';
 import { ComparisionDisplayComponent } from './comparision-display/comparision-display.component';
+import { ContentDisplayComponent } from './content-display/content-display.component';
 import { DecisionDashboardComponent } from './decision-dashboard/decision-dashboard.component';
 import { FactComponent } from './facts/components/fact/fact.component';
 import { GrowthDetailsComponent } from './growth-details/growth-details.component';
@@ -108,9 +111,6 @@ import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-g
 import { TrendComponent } from './trend/trend.component';
 import { TwitterDisplayDialogComponent } from './twitter-display-dialog/twitter-display-dialog.component';
 import { UiComponentsPageComponent } from './ui-components-page/ui-components-page.component';
-import { AddNoteComponent } from './add-note/add-note.component';
-import { AddNewsFormComponent } from './add-news-form/add-news-form.component';
-import { ContentDisplayComponent } from './content-display/content-display.component';
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
 @NgModule({

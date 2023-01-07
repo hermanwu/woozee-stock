@@ -15,6 +15,7 @@ export class StockImageDisplayComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   ngOnChanges(): void {
+    console.log(this.tag);
     this.imageLink = this.imageServices.getImage(this.tag);
   }
 }

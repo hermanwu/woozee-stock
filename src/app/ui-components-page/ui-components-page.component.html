@@ -4,6 +4,18 @@
 </app-card>
 
 <app-card>
+  <app-news-display [news]="mockNews" [expanded]="true"></app-news-display>
+</app-card>
+
+<app-stock-image-display [tag]="'AAPL'"></app-stock-image-display>
+
+<app-image-display
+  [imageLink]="
+    'https://pbs.twimg.com/media/Fck1g5TakAIU9mR?format=png&name=large'
+  "
+></app-image-display>
+
+<app-card>
   <app-search></app-search>
 </app-card>
 
@@ -126,11 +138,6 @@
   <app-title-menu>
     <div header-3>This is a header-3 Title</div>
   </app-title-menu>
-</app-card>
-
-<app-card>
-  <h1>Instagram Display</h1>
-  <app-instagram-display></app-instagram-display>
 </app-card>
 
 <app-card>

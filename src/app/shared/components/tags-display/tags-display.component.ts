@@ -34,8 +34,8 @@ export class TagsDisplayComponent implements OnChanges {
       for (let tag of tagsCopy) {
         set.add(
           tag.length > 4
-            ? `#${this.capitalizeFirstCharacter(tag)}`
-            : `#${tag.toUpperCase()}`
+            ? `#${this.capitalizeFirstCharacter(tag.trim())}`
+            : `#${tag.trim().toUpperCase()}`
         );
       }
 

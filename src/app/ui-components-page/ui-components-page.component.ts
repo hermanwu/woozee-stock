@@ -29,7 +29,8 @@ export class UiComponentsPageComponent implements OnInit {
   mockResult;
   mockNews: News = {
     title: 'this is a mock title',
-    content: 'this is a mock news\n new line\n new line\n',
+    content:
+      'this is a mock news\n new line\n new line\nthis is a mock news\n new line\n new line\nthis is a mock news\n new line\n new line\nthis is a mock news\n new line\n new line\n',
     tags: ['aapl'],
     date: new Date(),
   };

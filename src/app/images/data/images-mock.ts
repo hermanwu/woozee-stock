@@ -127,4 +127,20 @@ export const images = new Map<string, string[]>([
     'adbe',
     ['https://i.ibb.co/4SYMyDp/Screen-Shot-2022-09-15-at-7-23-14-AM.png'],
   ],
+  [
+    'baba',
+    ['https://i.ibb.co/HgsK1Hj/Screen-Shot-2023-01-09-at-2-56-42-PM.png'],
+  ],
+  [
+    'real estate',
+    ['https://i.ibb.co/8YJYnfN/Screen-Shot-2023-01-09-at-2-58-02-PM.png'],
+  ],
+  [
+    'pfe',
+    ['https://i.ibb.co/1LSXMqb/Screen-Shot-2023-01-09-at-2-59-05-PM.png'],
+  ],
+  [
+    'cpi',
+    ['https://i.ibb.co/WvqHRF0/Screen-Shot-2023-01-09-at-3-00-38-PM.png'],
+  ],
 ]);

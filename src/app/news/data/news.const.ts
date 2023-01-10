@@ -12,6 +12,64 @@ import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
   {
+    title: '消费者对住房市场的信心有所回升。',
+    content:
+      'Fannie Mae的月度住房情绪指数显示情绪从11月到 12 月有所改善。\n21%的受访者表示现在是购房好时机，高于11月的16%。\n大多数消费者认为房价将在未来12个月内会下跌，但房屋贷款利率将会下降。',
+    tags: ['real estate', ' housing', ''],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/09/consumer-confidence-in-housing-rises-as-prices-fall.html',
+    uuid: 'c436aea5-fb06-4ec7-847d-033344669c3a',
+    date: '2023-01-09T22:55:30.337Z',
+  },
+  {
+    title: '辉瑞CEO：2022 年是我们公司历史上最成功的年份之一',
+    content: '目前正在把Paxlovid送往中国\n未来18个月将生产19个新产品',
+    tags: ['pfe'],
+    sourceLink:
+      'https://www.cnbc.com/video/2023/01/09/pfizer-ceo-2022-was-one-of-the-most-successful-years-in-our-corporate-history.html',
+    uuid: '80b754e1-e5b3-4201-8c13-b4e2acce8764',
+    date: '2023-01-09T22:46:08.838Z',
+  },
+  {
+    title: '马云将放弃了对蚂蚁集团的控制权',
+    content:
+      '该消息显示出中国政府可能放松对科技行业的监管力度\n高盛将阿里巴巴列入坚定买入名单,认为阿里巴巴最差的日子已经过去，目前价格合理，接下来公司将享受广告业务，金融科技，和云业务带来的增长。\n阿里巴巴周一上涨3%',
+    tags: ['baba', 'fintech', 'china'],
+    sourceLink:
+      'https://www.barrons.com/articles/alibaba-hong-kong-stock-price-jack-ma-ant-51673253910',
+    uuid: 'ad50e989-1814-4777-a042-9037c5c3b044',
+    date: '2023-01-09T22:15:41.199Z',
+  },
+  {
+    title: 'Lululemon下调第四季度利率指引,大跌近10%。',
+    content:
+      'Lululemon 表示，预计第四季度毛利率将下降 90-110 个基点，而此前预期为增长 10-20 个基点。\n不过，该公司将其第四季度净收入预期上调了0.5亿美元。\nLululemon库存继续增加显示经济衰退影响对富有消费者也开始产生影响。',
+    tags: ['lulu', 'retail'],
+    sourceLink:
+      'https://finance.yahoo.com/news/lululemon-athletica-raises-fourth-quarter-115148722.html',
+    uuid: '3e599c50-a47e-4e45-8c05-a1d6a2ef4c3c',
+    date: '2023-01-09T22:07:55.821Z',
+  },
+  {
+    title: '美股高开低走。市场期待这周的CPI报告和银行股的财报。',
+    content:
+      '科技股领涨，纳斯达克上涨0.63%。\n卫生保健，消费必需品领跌，标普500下跌0.08%。\n周四12月CPI指数即将发布。\n周五银行股将率先发布财报开启财报季。',
+    tags: ['cpi'],
+    sourceLink:
+      'https://seekingalpha.com/news/3923039-sp500-dow-jones-nasdaq-stock-market-tech-stocks-rally-cpi-data',
+    uuid: 'c4933c5e-c5df-4cad-961e-1bf154b8aa1e',
+    date: '2023-01-09T21:46:39.004Z',
+  },
+
+  {
+    title: 'Compass is cutting more labor',
+    content:
+      '* Compass CEO does not think the price will crash.\n* Excluding the luxury market, inventory is down year over year.',
+    tags: ['COMP'],
+    uuid: '0dca3183-b644-4161-b7a8-5a3f4031be08',
+    date: '2023-01-09T15:36:33.710Z',
+  },
+  {
     title: '火币网宣布裁员20%',
     content:
       '由FTX破产造成的币圈信任危机继续发酵\n火币网原生币下跌7%\n昨天Genesis宣布裁员30%, Silvergate宣布裁员40%',

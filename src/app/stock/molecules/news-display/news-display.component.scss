@@ -39,6 +39,10 @@ h2 {
   font-weight: 400 !important;
 }
 
+.h3 {
+  font-size: large;
+}
+
 .more-button {
   color: gray;
   padding: 5px;
@@ -70,5 +74,12 @@ h2 {
     display: flex;
     justify-content: center;
     flex-direction: column;
+  }
+}
+
+.source-link {
+  a {
+    margin-left: 5px;
+    color: gray;
   }
 }

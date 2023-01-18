@@ -7,7 +7,8 @@ import { images } from '../data/images-mock';
 export class ImageServices {
   getImage(tag: string) {
     if (tag) {
-      return images.get(tag.toLowerCase())?.[0];
+      const imageArray = images.get(tag.toLowerCase());
+      return imageArray?.[Math.floor(Math.random() * imageArray.length)];
     }
   }
 }

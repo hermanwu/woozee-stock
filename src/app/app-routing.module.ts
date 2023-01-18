@@ -83,7 +83,7 @@ const routes: Routes = [
         component: UiComponentsPageComponent,
         pathMatch: 'full',
       },
-      { path: '', redirectTo: 'rankings', pathMatch: 'full' },
+      { path: '', redirectTo: 'news', pathMatch: 'full' },
     ],
   },
   {

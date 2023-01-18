@@ -27,7 +27,7 @@ export class NewsPageComponent implements OnInit {
   ) {
     this.news = newsService.getAllNews();
 
-    this.news = this.news.slice(0, 30);
+    this.news = this.news.slice(0, 15);
   }
 
   openDailyReportDialog() {

@@ -9,14 +9,19 @@ import { ImageServices } from '../../../images/services/images.services';
 export class StockImageDisplayComponent implements OnInit, OnChanges {
   @Input() tag;
 
-  imageLink: string;
+  @Input() imageLinks;
+  imageLink;
   constructor(private imageServices: ImageServices) {}
 
   ngOnInit(): void {}
 
   ngOnChanges(): void {
-    this.imageLink =
-      this.imageServices.getImage(this.tag) ||
-      'https://i.ibb.co/BTr3F4C/Screen-Shot-2023-01-07-at-11-16-38-AM.png';
+    if (this.imageLinks) {
+      this.imageLink = this.imageLinks[0];
+    } else {
+      this.imageLink =
+        this.imageServices.getImage(this.tag) ||
+        'https://i.ibb.co/BTr3F4C/Screen-Shot-2023-01-07-at-11-16-38-AM.png';
+    }
   }
 }

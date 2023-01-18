@@ -36,11 +36,7 @@
     </button>
 
     <mat-menu #menu="matMenu">
-      <button mat-menu-item type="button" (click)="showDetails = !showDetails">
-        More
-        <mat-icon *ngIf="showDetails">expand_less</mat-icon>
-        <mat-icon *ngIf="!showDetails">expand_more</mat-icon>
-      </button>
+      <button mat-menu-item [cdkCopyToClipboard]="news.uuid">Copy UUID</button>
 
       <button mat-menu-item (click)="openDialog()">Twitter</button>
 
@@ -51,12 +47,13 @@
   <div class="square">
     <div class="news-image">
       <app-stock-image-display
+        [imageLinks]="news?.imageLinks"
         [tag]="news?.tags?.[0]"
       ></app-stock-image-display>
     </div>
 
     <div class="content">
-      <h3>⚡ {{ news.title }}</h3>
+      <div class="h3">⚡ {{ news.title }}</div>
 
       <ul>
         <li *ngFor="let item of news.stats">
@@ -72,6 +69,16 @@
         </span>
 
         <app-tags-display [tags]="news?.tags"> </app-tags-display>
+
+        <span class="source-link">
+          <a
+            *ngIf="news?.sourceLink"
+            href="{{ news.sourceLink }}"
+            target="_blank"
+          >
+            read more
+          </a>
+        </span>
       </div>
     </div>
   </div>

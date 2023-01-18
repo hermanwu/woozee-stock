@@ -6,11 +6,490 @@ import {
   convertDateToUTC,
   getUtcDate,
 } from 'src/app/shared/functions/getUtcDate.function';
-import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { Source } from 'src/app/stock/models/news-source.enum';
 import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
+  {
+    title:
+      '三大指数涨跌不一，纳斯达克连续第七天上涨。市场对高盛和摩根史丹利财报反应截然相反。',
+    content:
+      '纳斯达克收盘上涨0.1%，特斯拉大涨7.43%。\n标普500下跌0.2%，11个板块中有6个板块收低。\n道指受高盛(GS)和旅行家集团(TRV)影响，下跌1.1%。\n高盛下跌6.44%, 摩根士丹利上涨5.91%。',
+    tags: ['news'],
+    uuid: '08171464-fc95-4e6c-9cde-7b1687722ab9',
+    date: '2023-01-17T23:48:08.803Z',
+  },
+  {
+    title: '摩根士丹利Morgan Stanley第四季度收益好于华尔街预期。\n',
+    content:
+      '营收为127亿美元，同比下降12.5%。但财富管理收入从一年前的63亿美元增至66亿美元。\n净收入下降了近40%。本季度信贷损失准备金为8500万美元，而去年同期仅为500万美元。\n摩根士丹利今天大涨近6%。',
+    tags: ['ms'],
+    uuid: '0d9e546b-70fd-4c5f-835d-c9ad15cf8461',
+    date: '2023-01-17T23:30:54.414Z',
+  },
+  {
+    title: '高盛Goldman Sachs交出近十年来最差的财报，收入和盈利均不及预期。',
+    content:
+      '营收同比下降16.2%。资产与财富管理收入较上年同期下降27%。\n盈利大幅低于华尔街预期。由于薪酬，福利，及交易费用增加，高盛营业支出猛增 11%。像大部分银行一样，高盛本季度信贷损失准备金从去年同期3.44亿美元飙升到9.72亿美元。\n高盛今天股价大跌6.44%。\n',
+    tags: ['gs'],
+    sourceLink:
+      'https://seekingalpha.com/news/3924604-goldman-sachs-q4-earnings-drop',
+    uuid: 'e663c9b3-f8a3-407b-a0a8-45a2dfe8f11b',
+    date: '2023-01-17T23:17:06.068Z',
+  },
+  {
+    title:
+      'Apple released new MacBook Pro and Mac mini, equipped with the latest M2 Pro and M2 Max chips.',
+    content:
+      "Mac mini will no longer be equipped with Intel chips, which means that Mac Pro is Apple's last computer with Intel processors.\nThe new Mac mini starts at $599. The new 14-inch MacBook Pro starts at $1,999. The new 16-inch MacBook Pro starts at $2,499.",
+    tags: ['aapl'],
+    imageLinks: [
+      'https://i.ibb.co/4TW3Y0p/Screenshot-2023-01-17-at-2-44-06-PM.png',
+    ],
+    uuid: 'f5cd5c06-c66d-4dc5-a5d3-19736387af95',
+    date: '2023-01-17T22:52:33.694Z',
+  },
+  {
+    title: 'Apple发布新款MacBook Pro和Mac mini, 配备最新M2 Pro和 M2 Max芯片。',
+    content:
+      'Mac mini将不再配备英特尔Intel芯片，这意味着 Mac Pro是苹果最后一款可以配置Intel处理器的电脑。\n新Mac mini售价599美元起。新14英寸MacBook Pro售价1999美元起。 新16英寸MacBook Pro售价2499美元起。',
+    tags: ['aapl'],
+    imageLinks: [
+      'https://i.ibb.co/4TW3Y0p/Screenshot-2023-01-17-at-2-44-06-PM.png',
+    ],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/17/apple-announces-new-mac-mini-macbook-pro-with-m2-pro-and-m2-max.html',
+    uuid: '6713765b-2e46-4130-9a10-b7214062f416',
+    date: '2023-01-17T22:39:28.701Z',
+  },
+  {
+    title:
+      'Moderna said their RSV vaccine is 83.7% effective in preventing lower respiratory diseases in people aged 60+.',
+    content:
+      'The vaccine uses the same RNA technology as the Covid vaccine. No RSV vaccine is currently approved by the FDA.\n Application for FDA approval will be submitted first half of this year. \nMorgan Stanley predicts that the RSV vaccine market will be worth $7-$10 billion.',
+    tags: ['mrna'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/17/moderna-says-rsv-vaccine-is-84percent-effective-at-preventing-disease-in-older-adults.html',
+    uuid: '47358c25-768e-4a3c-9a08-d24a49c0007b',
+    date: '2023-01-17T22:23:06.760Z',
+  },
+  {
+    title: '莫德纳Moderna宣称新研发的RSV疫苗对老年人有显著作用。',
+    content:
+      '疫苗在预防60岁以上人群的下呼吸道疾病时的有效性为83.7%。该疫苗使用了与Covid新冠疫苗相同的RNA技术。\nModerna计划在今年上半年向美国食品和药物管理局FDA提交批准申请。目前FDA没有批准过任何RSV疫苗。\n大摩预测RSV疫苗市场规模在$70-$100亿间。',
+    tags: ['MRNA'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/17/moderna-says-rsv-vaccine-is-84percent-effective-at-preventing-disease-in-older-adults.html',
+    uuid: '3989157e-b61b-4c41-a3cb-e4d41e568d63',
+    date: '2023-01-17T22:08:32.599Z',
+  },
+  {
+    title: '高票价无法阻挡强劲的需求，美联航第四季度财报及2023年前瞻均超预期。',
+    content:
+      '消费者坐飞机的需求远大于航空公司的现有供给。\n第四季度营收为124亿美元(+51.4% Y/Y)。飞行时间和2019年同期相比减少了9%，但营收增加14%。\n第四季度利润为8.43亿美元。营业利润率为11.1%。\n2023第一季度和全年收益预测均远超预期。',
+    tags: ['ual'],
+    sourceLink:
+      'https://seekingalpha.com/news/3925187-united-airlines-stock-soars-after-big-bottom-line-beat-bullish-forecast',
+    uuid: '9e938017-f09f-4906-b775-c89d285597aa',
+    date: '2023-01-17T21:37:34.417Z',
+  },
+  {
+    title: '周五关注',
+    content:
+      'Ally Bank发布财报。\n2023蒙特利尔国际车展开幕。大量品牌将发布2023车型。特斯拉Tesla也会参展',
+    tags: ['tsla'],
+    uuid: 'fc3ba54a-d473-44f4-aa26-1ac4ad963342',
+    date: '2023-01-16T23:49:10.083Z',
+  },
+  {
+    title: '周四关注',
+    content:
+      '奈飞Netflix，宝洁P&G将发布财报。\n保洁财报将对其他化妆消费品公司财报起到指引作用（比如沃尔玛，联合利华, e.l.f. Beauty)。\nArk基金将召开第四季度webinar。',
+    tags: ['pg'],
+    uuid: 'b5003bf4-a319-4076-816d-6206087010aa',
+    date: '2023-01-16T23:44:35.770Z',
+  },
+  {
+    title: '周三关注',
+    content:
+      '金融公司Charles Schwab，Discovery，PNC将发布财报。\n12月生产商价格指数producer price index。\n12月零售消费报告retail sales report。',
+    tags: ['schw'],
+    uuid: '8d6f5ae4-3bdd-474f-9fb2-8df280ec27ab',
+    date: '2023-01-16T23:34:59.470Z',
+  },
+  {
+    title: '周二关注',
+    content:
+      '高盛，摩根士丹利，美联航将发布财报。\n游戏商Roblox发布每月预定数据。\nOPEC发布每月石油市场报告。\n达沃斯世界经济论坛将在瑞士召开。\n',
+    tags: ['gs'],
+    uuid: '2fabc819-9f1a-4fb4-b991-813c82974ff1',
+    date: '2023-01-16T23:30:13.456Z',
+  },
+  {
+    title: '财报季正式开启：高盛，奈飞Netflix等将发布财报。',
+    content:
+      '高盛和摩根士丹利将在周二公布第四季度财报，重点关注投行们是否能在投资业务低迷的时期继续保持高盈利。\n奈飞Netflix将在周四发布财报，重点关注奈飞打击密码共享的成果。\n',
+    tags: ['earnings'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/16/earnings-playbook-netflix-and-goldman-sachs-headline-another-big-week-of-reports.html',
+    uuid: '2080567a-28eb-4a64-af40-374a0b0a6e26',
+    date: '2023-01-16T19:44:30.733Z',
+    imageLinks: [''],
+  },
+  {
+    title: '周五三大指数在开盘下跌后强力反弹。纳斯达克连续六天上涨。\n',
+    content:
+      '标普500上涨0.40%至3999点，离4000点整数关还有一步之遥。\n科技股为主的纳斯达克上涨0.71%，本周累计上涨 4.82%。\n标普500和纳斯达克都已连续第二周上涨，并创下去年11月以来的最佳单周表现。',
+    tags: ['news'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/12/stock-market-futures-open-to-close-news.html',
+    uuid: 'dff84ac2-f241-42af-9c89-b3d9c62a8a65',
+    date: '2023-01-14T14:24:41.410Z',
+  },
+  {
+    title: '苹果首席执行官Tim Cook要求大幅削减他的薪酬\n',
+    content:
+      '为了回应股东的批评，苹果薪酬委员会和Tim Cook决定将他2023年的年度薪酬减少40%。\n他的300万美元基本工资和600万美元奖金将保持不变。\n股权奖励总额将从7500万美元减少到4000万美元。\n与业绩相关的股权奖励将占总股权奖励的75%，高于2022年的50%。这将使Tim Cook的收入与公司业绩更紧密得结合在一起。',
+    tags: ['aapl'],
+    sourceLink:
+      'https://seekingalpha.com/news/3924410-apple-ceo-tim-cook-asks-for-a-big-cut-in-compensation',
+    uuid: 'beed23ba-8c25-4a42-840c-e48ede538d78',
+    date: '2023-01-14T14:15:54.324Z',
+  },
+  {
+    title: '台积电第四季度营收低于预期，但确认将削减2023年支出。',
+    content:
+      '营收为199.3亿美元，同比增长 26.6%，但低于209.2亿美元预期。\n每股盈利1.82美元，高于预期的1.77美元。\n由于需求下降,2023年的支出最多可以减少12.5%。\n上个月，台积电开始生产号称“需求非常强劲”的3纳米芯片，目前7纳米及以下高端产品收入占晶圆总收入的54%。\n',
+    tags: ['tsm'],
+    sourceLink:
+      'https://seekingalpha.com/news/3924192-taiwan-semiconductor-confirms-will-cut-2023-spending',
+    uuid: '5f69d765-5c1f-4bcc-ad68-2325d449c35e',
+    date: '2023-01-14T14:10:30.813Z',
+  },
+  {
+    title: '美国银行Bank of America第四季度营收盈利均高于预期。',
+    content:
+      '第四季度每股收益为0.85美元，高于0.77美元预期。\n营收为240亿美元，同比增长11.2%，\n信贷损失准备金增减到11亿美元。与去年同期相比，增加了16亿美元\nCEO强调有机成长和高利率使存款业务成为本季度重点。',
+    tags: ['boa'],
+    sourceLink:
+      'https://seekingalpha.com/news/3924335-bank-of-america-q4-earnings',
+    uuid: '161e390f-cf00-4720-8665-d0af1c8bfaa4',
+    date: '2023-01-14T13:59:17.708Z',
+  },
+  {
+    title: '摩根大通JPMorgan Chase第四季度财报营收利润均高于预期。',
+    content:
+      '每股收益为3.57美元，高于3.07 美元的预期。\n营收为340.5亿美元，同比上涨17.9%。平均客户贷款额增长6%。\n本季度公布了23亿美元的信贷损失准备金用来应对客户的信用卡贷款增长。这个数字比第三季度增加了49%。\nChase认为宏观经济将面临“温和衰退”',
+    tags: ['jpm'],
+    uuid: '2279cf13-f0de-499e-9aa4-7276c1526ca0',
+    date: '2023-01-14T13:39:30.266Z',
+  },
+  {
+    title: '特斯拉宣布在美国和欧洲大幅降价，正式开始价格战。',
+    content:
+      '降价幅度从6%到20%不等，这将使Model Y在2023年获得美国政府7500美元的税收抵扣。预计降价将刺激需求增加12%-15%。\n这可能是朱晓彤开始负责北美生产销售后的第一个大动作。',
+    tags: ['tsla'],
+    uuid: 'c39ac6b6-3198-4276-8f47-cf70c1cf1d84',
+    date: '2023-01-14T13:24:00.598Z',
+  },
+  {
+    title: '快餐连锁Wendy’s公布第四季度初步业绩,股价大涨近6%',
+    content:
+      '第四季度收入初步报告为5.365亿美元，高于预期的 5.1725亿美元，较上年同期增长13.4%。\nCEO: “全球同店销售额连续两年实现两位数增长，第四季度利润率比第一季度增长近300个基点，我们在全球新开设了超过275家店”',
+    tags: ['wen', 'restaurants'],
+    sourceLink:
+      'https://seekingalpha.com/news/3924455-wendys-pre-announces-above-consensus-sales-bolsters-buyback-program',
+    uuid: '261f15cf-9126-47d6-82e8-c429d1a4de45',
+    date: '2023-01-14T05:55:53.530Z',
+  },
+  {
+    title:
+      'Virgin Galatic is expected to start commercial services in the second quarter',
+    content:
+      'Shares of Virgin Galactic (SPCE) rose 7.46% on Thursday and are up more than 32% this year, but it is still below their 50-day, 100-day, and 200-day moving averages.',
+    tags: ['spce'],
+    uuid: 'e5b52394-4aa7-4c67-930c-330493baf11d',
+    date: '2023-01-13T05:17:20.913Z',
+  },
+  {
+    title:
+      'Luxury EV maker Lucid is producing more cars than expected in 2022.',
+    content:
+      'Nearly 3,500 Lucid Airs were produced in Q4, the highest quarterly production to date.\nA total of 7180 cars were produced in 2022, exceeding the guideline released in August.\nLucid shares rose nearly 5% today.',
+    tags: ['lcid'],
+    uuid: '293a50a0-e179-483f-816c-7cec86bd916b',
+    date: '2023-01-13T05:16:55.094Z',
+  },
+  {
+    title: 'Tesla is looking for the next Gigafactory in Indonesia',
+    content:
+      'According to Bloomberg, Tesla will finalize a deal to locate the next Gigafactory in Indonesia.\nA big reason is that Indonesia has nearly 25% of the world’s nickel reserves. Nickel is necessary to make batteries.\n',
+    tags: ['tsla'],
+    uuid: '749cf606-3f21-4169-90de-390553e6d883',
+    date: '2023-01-13T05:16:27.514Z',
+  },
+  {
+    title: 'Disney board faces a proxy fight from activist investor Peltz.\n\n',
+    content:
+      'Peltz believes that Disney’s management is in disarray and spent too much money on the acquisition of Fox. All of this has caused Disney’s stock price to hover at an eight-year low.\nPeltz hopes to gain a seat on the board of directors through the proxy battle.\nDisney elected Mike Parker, the executive chairman of Nike, as the new chairman, and suggested that shareholders vote to reject Peltz from joining the board of directors.',
+    tags: ['dis'],
+    uuid: '64e7828f-23c8-4a2e-a73c-fcfe7de624fe',
+    date: '2023-01-13T05:16:01.012Z',
+  },
+  {
+    title: 'Food inflation heats up again in CPI report: Egg prices up 60% YoY',
+    content:
+      'Food prices in December rose 10.4% year-on-year and 0.3% month-on-month.\nCereal +13.0% YoY, Flour +23.4% YoY, Poultry +12.2% YoY, Lettuce +24.9% YoY, Bakery products +16.3% YoY, Coffee +14.3% YoY',
+    tags: ['cpi'],
+    uuid: '2a0a3a54-7d17-4a2d-b808-104c8d78a05a',
+    date: '2023-01-13T05:15:24.435Z',
+  },
+  {
+    title:
+      'Stocks continued to move higher on Thursday. December CPI index fell 0.1% month-on-month, in line with economists’ expectations. Investors believed the data could prompt the Fed to slow rate hikes.',
+    content:
+      'Nasdaq closed up 0.64%, rising for five consecutive days. The S&P 500 rose 0.34%.\nThe core CPI excluding food and energy rose by 0.3% month-on-month, also in line with expectations. The biggest reason for the inflation slowdown was a sharp 16.6% month-on-month drop in oil prices.\nCompared with last year, CPI increased by 6.5% year-on-year, and core CPI increased by 5.7% year-on-year.',
+    tags: ['news'],
+    uuid: '7e616c72-984e-4af2-b4bb-3aaf2b978dc0',
+    date: '2023-01-13T05:14:49.714Z',
+  },
+  {
+    title: '迪斯尼董事会面临主动投资人Peltz的委托书争夺战（proxy fight）。',
+    content:
+      'Peltz认为迪士尼管理层混乱，在对福克斯的并购上存在决策问题，这些都导致股价现在在8年来的最低点。\nPeltz希望通过委托书争夺战（proxy fight)为自己在董事会获得一个席位。\n迪士尼则推举耐克执行董事长Mike Parker成为新董事长，并建议股东投票拒绝Peltz加入董事会。',
+    tags: ['dis', 'nke'],
+    sourceLink:
+      'https://finance.yahoo.com/news/bob-igers-next-big-challenge-at-disney-is-activist-investor-nelson-peltz-230245478.html',
+    uuid: '43c7c463-f694-4b29-b450-e22481cb26bc',
+    date: '2023-01-12T23:49:50.877Z',
+  },
+  {
+    title: '特斯拉正在印度尼西亚寻找下一个电动汽车工厂',
+    content:
+      '彭博社消息，特斯拉将敲定在印度尼西亚建设下一个超级工厂。 \n一大原因是印度尼西亚拥有全球近25%的镍储量。镍是用来制造电池的必需品',
+    tags: ['tsla'],
+    sourceLink:
+      'https://seekingalpha.com/news/3923667-tesla-eyes-indonesia-for-next-electric-vehicle-plant',
+    uuid: 'd3158592-19a4-437d-852a-7ef8e75bf703',
+    date: '2023-01-12T23:34:31.822Z',
+  },
+  {
+    title: 'CPI报告中的食品通胀再次升温: 鸡蛋价格同比上涨60%',
+    content:
+      '12月食品价格较同比上涨 10.4%，环比上涨0.3%。 \n麦片同比+13.0%，面粉同比+23.4%，家禽同比+12.2%，生菜同比+24.9%，烘焙产品同比+16.3%，咖啡同比+14.3%',
+    tags: ['cpi', 'us'],
+    sourceLink:
+      'https://seekingalpha.com/news/3924135-food-inflation-runs-hot-again-in-cpi-report-including-egg-prices-up-60',
+    uuid: 'f9e310fc-2049-43c7-9e2f-49a12a4550fc',
+    date: '2023-01-12T23:19:16.588Z',
+  },
+  {
+    title: '维珍银河Virgin Galatic预计第二季度开始开始商业化服务',
+    content:
+      '维珍银河(SPCE)的股价周四上涨7.46%，今年至今涨幅超过32%，但仍低于50天，100天和200天移动平均线。',
+    tags: ['spce'],
+    sourceLink:
+      'https://seekingalpha.com/news/3924309-virgin-galactic-expects-commercial-service-to-begin-in-q2',
+    uuid: '927fbab3-edba-4989-bf08-d36059d98e69',
+    date: '2023-01-12T23:14:34.794Z',
+  },
+  {
+    title: '电动豪华汽车制造商Lucid2022年生产的汽车数量超过预期。',
+    content:
+      '第四季度生产了近3500辆Lucid Air，这是到目前为止最高的季度产量。\n2022年总共生产了7180辆汽车，超过8月发布的预期。\nLucid今天上涨近5%。',
+    tags: ['lcid', 'ev'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/12/lucid-lcid-2022-ev-production-exceeds-expectations.html',
+    uuid: '2cc9fc76-db1e-465d-a2cf-95fecc412b6a',
+    date: '2023-01-12T22:35:56.529Z',
+  },
+  {
+    title:
+      '周四股市继续收高。12月CPI指数环比下跌0.1%，符合经济学家预期。​投资人认为该数据可促使美联储放缓加息。',
+    content:
+      '剔除食品和能源的核心CPI环比上涨0.3%，也符合预期。通胀放缓的最大原因是油价环比大幅下跌16.6%。\n与去年相比，CPI同比上涨 6.5%，核心CPI同比上涨5.7%。\n纳斯达克收涨0.64%,连续五天上涨。标普500上涨0.34%\n',
+    tags: ['news', 'cpi', 'inflation', 'us', 'fed'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/12/consumer-prices-fell-0point1percent-in-december-in-line-with-economists-expectations.html',
+    uuid: '77ba2453-c39e-48e9-a844-6d9d4ae2a0d5',
+    date: '2023-01-12T21:58:05.654Z',
+  },
+  {
+    title:
+      'As the macro economy continues to deteriorate, Ubisoft cuts its net booking target and cancels three games',
+    content:
+      'The 2022 full-year net booking target has been reduced by 10%. The previous forecast was a 10% rise.\nCEO stated that “We are clearly disappointed by our recent performance,”, "We are facing contrasted market dynamics as the industry continues to shift towards mega-brands and everlasting live games, in the context of worsening economic conditions affecting consumer spending."',
+    tags: ['ubi', 'gaming'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/11/ubisoft-cancels-three-games-slashes-targets-on-worsening-conditions.html',
+    uuid: '71f01d80-fba1-40bf-85cb-eaf5d97d9a09',
+    date: '2023-01-12T06:49:45.530Z',
+  },
+  {
+    title:
+      '因宏观经济继续恶化，育碧游戏公司削减预定量目标并取消了三个游戏的开发，',
+    content:
+      '2022全年预定量目标（net bookings)下调10%。之前的预测是上涨10%\nCEO表示“在经济状况恶化并影响消费者支出的背景下，整个行业变得更加重视大品牌和现场游戏直播”，“我们对自己的变现感到失望”',
+    tags: ['ubi', 'gaming'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/11/ubisoft-cancels-three-games-slashes-targets-on-worsening-conditions.html',
+    uuid: '0e86be91-273f-4cd1-97e9-2e3dc16a7295',
+    date: '2023-01-12T06:46:22.288Z',
+  },
+  {
+    title:
+      'Binance will expand hiring by 15% to 30% in 2023, CEO Zhao said at the Crypto Finance Conference in Switzerland\n',
+    content:
+      "Binance's hiring plan is the exact opposite of the mass layoffs that most cryptocurrency companies are doing right now.\nAccording to CEO, Binance more than doubled its headcount last year, from 3,000 to nearly 8,000.",
+    tags: ['binance', 'crypto'],
+    sourceLink:
+      'https://finance.yahoo.com/news/binance-says-plans-expand-hiring-041426149.html',
+    uuid: '4414c145-689d-4907-8132-bb14184eeccc',
+    date: '2023-01-12T06:04:43.736Z',
+  },
+  {
+    title: '币安将在2023年将招聘人数扩大15%到30%',
+    content:
+      '币安的招聘计划与绝大多数加密货币公司正在进行的大规模裁员截然相反。\n币安去年的员工人数增加了一倍多，从 3,000 人增加到近 8,000 人。',
+    tags: ['binance', 'crypto'],
+    sourceLink:
+      'https://finance.yahoo.com/news/binance-says-plans-expand-hiring-041426149.html',
+    uuid: '0028e468-e235-47e4-88e5-5cb67cabf108',
+    date: '2023-01-12T05:57:50.219Z',
+  },
+  {
+    title:
+      'According to Bloomberg News, Apple may release a MacBook Pro laptop with a touch screen as soon as 2025',
+    content:
+      'This is a reversal of Apple\'s comment in 2018 that "lifting your arm up to poke a screen (on a laptop) is a pretty fatiguing thing to do"\nApple\'s Mac product line sales have performed well after the release of self-developed chips. Since 2020, sales have increased by 40%.',
+    tags: ['aapl'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/11/apple-reportedly-considering-touchscreen-mac-laptop-for-2025.html',
+    uuid: '4240717d-7d1a-41ed-b96d-6732948ee164',
+    date: '2023-01-12T05:45:02.168Z',
+  },
+  {
+    title:
+      '据彭博社消息，苹果最快可能在2025年发布带触摸屏的MacBook Pro笔记本电脑',
+    content:
+      '苹果在2018年曾明确表示触摸屏笔记本电脑在人体工程学方面较差：“抬起你的手臂来戳屏幕是一件非常累人的事情”\n苹果Mac产品线销量在发布自研芯片后表现出色。自2020年以来，销量增长了40%。',
+    tags: ['aapl'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/11/apple-reportedly-considering-touchscreen-mac-laptop-for-2025.html',
+    uuid: 'f9e34da3-72f2-4085-81c4-683d689c1e65',
+    date: '2023-01-12T05:37:56.898Z',
+  },
+  {
+    title:
+      "The market is optimistic about Thursday's CPI report, and the three major indexes closed higher.",
+    content:
+      'The Nasdaq Composite closed up 1.8%, achieving a four-day winning strike, the S&P 500 closed up 1.3%, and the Dow closed up 0.8%.\nAll 11 S&P sectors rose. Real estate rose 3.6 percent, while consumer staples rose 2.7 percent.\nIf data shows that the CPI slows down, it may prompt the Fed to slow down the pace of raising interest rates.',
+    tags: ['cpi', 'us', 'fed'],
+    sourceLink:
+      'https://seekingalpha.com/news/3923887-wall-street-shows-optimism-ahead-of-cpi-data-dow-sp-500-nasdaq-rise',
+    uuid: 'a0967096-5bfd-4b27-a78b-fe0b2d93dcff',
+    date: '2023-01-12T03:28:54.652Z',
+  },
+  {
+    title: '市场看好周四的CPI报告, 三大指数集体收高。',
+    content:
+      '纳斯达克综收盘上涨 1.8%，连续第4天上涨，标普500收盘上涨 1.3%，道指收盘上涨 0.8%。\n标普11个板块全部上涨。房地产板块上涨3.6%，消费品板块上涨 2.7%。\n如果数据显示CPI放缓，可能促使美联储放缓加息脚步。',
+    tags: ['cpi', 'us', 'fed'],
+    sourceLink:
+      'https://seekingalpha.com/news/3923887-wall-street-shows-optimism-ahead-of-cpi-data-dow-sp-500-nasdaq-rise',
+    uuid: '1d423563-7830-4b81-a8a3-ea72c368d2ac',
+    date: '2023-01-12T01:16:29.560Z',
+  },
+  {
+    title:
+      'The largest mortgage player in the United States, Wells Fargo, decided to scale down its mortgage business',
+    content:
+      "Moving forward, Wells Fargo plans to provide mortgage services only to bank clients, wealth management customers, and borrowers from minority communities.\nWells Fargo's third-party loan acquisition business will be closed and assets related to mortgage services will be sold.\nManagement said that regulatory pressure and high interest rates were the main reasons for this decision.\n",
+    tags: ['housing', 'wfe'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/10/wells-fargo-once-the-no-1-player-in-mortgages-is-stepping-back-from-the-housing-market.html',
+    uuid: '6fdf0d67-4da8-4dd7-9e7f-039e89172387',
+    date: '2023-01-11T06:29:33.322Z',
+  },
+  {
+    title: 'Coinbase is laying off another 950 staff.\n\n',
+    content:
+      'CEO Armstrong: "As we examined our 2023 scenarios, it became clear that we would need to reduce expenses to increase our chances of doing well in every scenario. While it is always painful to part ways with our fellow colleagues, there was no way to reduce our expenses significantly enough, without considering changes to headcount,"\nThe layoff is about 20% of the total workforce, and it is expected to save 25% of operating expenses.\n',
+    tags: ['coin', 'crypto'],
+    uuid: 'e9b1cf34-464b-4a73-8b8f-a034bbaba65d',
+    date: '2023-01-11T06:20:26.550Z',
+  },
+  {
+    title:
+      'Bed Bath & Beyond released its earnings on Tuesday: Both revenue and profit fell short of expectations',
+    content:
+      'The quarterly loss was $393 million, 42% more than last year\'s.\nThe CEO admitted that the company did not achieve the original goals but made progress on reducing expenses, including closing 150 stores.\nBed Bath & Beyond "squeezed" up nearly 30% today and rose another 17% during the after-hour.',
+    tags: ['bbby', 'retail'],
+    uuid: 'a591f751-6b5c-4ca5-a55d-bcf7cf63c92c',
+    date: '2023-01-11T06:16:59.265Z',
+  },
+  {
+    title:
+      'The S&P 500 was up 0.7%, and the Nasdaq was up 1.01%, achieving a three-day winning streak.',
+    content:
+      'Federal Reserve Chairman Powell emphasized on Tuesday that “Price stability is the bedrock of a healthy economy and provides the public with immeasurable benefits over time."\nThe Fed\'s primary task is to control inflation and stabilize prices. It can "require measures that are not popular in the short term as we raise interest rates to slow the economy"\nBut Powell did not disclose any information about the future interest rate.\n\n',
+    tags: ['fed', ' interest rate'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/10/powell-stresses-need-for-feds-political-independence-while-tackling-inflation.html',
+    uuid: '26e3800e-c229-4486-b9b1-00fabd8f34e9',
+    date: '2023-01-11T05:44:10.569Z',
+  },
+  {
+    title:
+      '美股在周二午后开始上涨。标普500收盘上涨0.7%，纳斯达克实现三天连涨，收盘上涨1.01%。',
+    content:
+      '美联储主席鲍威尔周二强调，稳定的物价是经济健康的基石。美联储的首要任务是控制通胀和稳定物价，而不是被政治因素所左右。因此有些不够”政治正确”措施是无法避免的，比如提高利率。\n但鲍威尔没有对未来的加息计划透露任何信息。',
+    tags: ['fed'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/10/powell-stresses-need-for-feds-political-independence-while-tackling-inflation.html',
+    uuid: '97c6db5c-f5b8-43c9-bfd0-109229abfa02',
+    date: '2023-01-11T02:50:02.249Z',
+  },
+  {
+    title: '实体连锁Bed Bath & Beyond周二发布财报，营收和利润均不及预期',
+    content:
+      '季度亏损达到3.93亿美元；同比亏损增加42%。\nCEO承认公司没有实现达成本来的季度目标，但做出了很多改进来减少支出，包括关闭150家门店。\nBed Bath & Beyond今天盘中暴涨近30%，盘后再涨17%。',
+    tags: ['bbby', 'retail'],
+    sourceLink:
+      'https://www.nbcnews.com/business/business-news/bed-bath-reports-wider-expected-loss-quarterly-earnings-rcna65080',
+    uuid: '72d1ce6a-f57d-4fe4-9253-b3d9e7a1d82b',
+    date: '2023-01-11T02:06:04.644Z',
+  },
+  {
+    title: '苹果的应用商店增长可能正在放缓',
+    content:
+      '苹果在2022年支付了3200亿美元给开发者，同比增长23%。根据苹果的支付公式，估计应用商店的营收同比增长在0%-21%之间（700亿美元-850亿美元）。\n2022订阅服务到达9亿次，同比增长20%。\n2022服务营收为780亿美元，同比增长14%，但远低于去年的27%的增长率。',
+    tags: ['aapl'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/10/apple-app-store-revenue-update-shows-slowing-growth-.html',
+    uuid: '4749ee7d-1502-48d5-8ce5-175e172e97f2',
+    date: '2023-01-11T01:05:07.792Z',
+  },
+  {
+    title: 'Coinbase再裁950人',
+    content:
+      'CEO在声明中写到“我们在审视2023年可能遇到的不同境况后，得出一个显而易见的结论，就是我们需要减少开支以保证在任何境况下都能运营下去”。\n被裁员工数占总员工数的20%，预计可以节省25%运营支出。\n',
+    tags: ['coin', 'crypto'],
+    sourceLink:
+      'https://www.npr.org/2023/01/10/1148163220/coinbase-layoffs-crypto-winter-bitcoin',
+    uuid: '68c67378-ad2d-4293-b4b3-87e532826297',
+    date: '2023-01-11T00:35:37.725Z',
+  },
+  {
+    title: '美国最大房贷银行：富国银行，决定大规模缩减房贷业务',
+    content:
+      '富国银行准备只向银行，理财客户，和一些少数族裔社区提供住房贷款服务，而不是“所有人”。\n富国银行的第三方贷款收购业务将关闭，大部分贷款相关资产也将卖出。\n管理层表示监管压力和高利率是促使这个决定的主要原因。',
+    tags: ['housing', 'wfc'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/10/wells-fargo-once-the-no-1-player-in-mortgages-is-stepping-back-from-the-housing-market.html',
+    uuid: 'ad6cee43-f83a-4bf1-b419-9924e96e81da',
+    date: '2023-01-11T00:21:15.854Z',
+  },
   {
     title: '消费者对住房市场的信心有所回升。',
     content:
@@ -1138,264 +1617,5 @@ export const allNews: News[] = [
     title:
       'MongoDB released Q2 financial results that beat estimates. However next quarter revenue growth guidance slows down to 33% (vs 53% this quarter).',
     tickers: ['mdb'],
-  },
-  {
-    uuid: 'n3',
-    eventType: EventType.earnings,
-    date: convertDateToUTC(new Date('2022-08-31')),
-    title:
-      'Crowdstrike released Q2 financial results that beat revenue and earnings estimates.',
-
-    tickers: ['crwd'],
-  },
-  {
-    uuid: 'n3',
-    eventType: EventType.earnings,
-    date: convertDateToUTC(new Date('2022-08-30')),
-    title:
-      'Chewy released 2022 Q2 financial results that missed revenue estimates with weak forecasts.',
-
-    tickers: ['chwy'],
-  },
-  {
-    uuid: 'n3',
-    eventType: EventType.earnings,
-    date: convertDateToUTC(new Date('2022-08-30')),
-    title:
-      'Chewy released 2022 Q2 financial results that missed revenue estimates with weak forecasts.',
-
-    tickers: ['chwy'],
-  },
-  {
-    uuid: 'n2',
-    title: 'JD.com earnings results beat both revenue and earnings estimates',
-    details: [],
-
-    tickers: ['JD'],
-    date: new Date('2022-08-22'),
-    eventType: EventType.earnings,
-    stats: [{ name: 'Revenue ($)', value: 40 * BILLION, changeRate: 0.054 }],
-
-    source: null,
-    tags: [],
-    sourceLink:
-      'https://investors.zoom.us/news-releases/news-release-details/zoom-video-communications-reports-financial-results-second',
-  },
-  {
-    uuid: 'n1',
-    title: '',
-    details: [
-      'Revenue grew 27% year over year to $1.6 billion',
-      'Billings grew 44% year over year to $2.7 billion',
-      'Board of directors approved a three-for-one stock split.',
-    ],
-
-    tickers: ['PANW'],
-    date: new Date('2022-08-22'),
-    eventType: EventType.earnings,
-
-    source: null,
-    tags: [],
-    sourceLink:
-      'https://investors.zoom.us/news-releases/news-release-details/zoom-video-communications-reports-financial-results-second',
-  },
-  {
-    uuid: 'n10',
-    title: '',
-    details: [
-      'Second quarter GAAP operating margin of 11.1%',
-      'Zoom also lowered revenue guidance for next quarter.',
-    ],
-
-    tickers: ['ZM'],
-    date: new Date('2022-08-22'),
-    eventType: EventType.earnings,
-    stats: [
-      {
-        name: 'Revenue ($)',
-        value: 1099.5 * MILLION,
-        changeRate: 0.08,
-        timeFrame: TimeFrame.yoy,
-      },
-    ],
-    source: null,
-    tags: [],
-    sourceLink:
-      'https://investors.zoom.us/news-releases/news-release-details/zoom-video-communications-reports-financial-results-second',
-  },
-  {
-    uuid: 'n9',
-    title:
-      'Home sales dropped for a sixth straight month in July to the lowest since the pandemic',
-    tickers: ['BILL'],
-    date: new Date('2022-08-17'),
-    eventType: EventType.macro,
-    source: null,
-    tags: ['housing'],
-    sourceLink: '',
-  },
-  {
-    uuid: 'n8',
-    title: 'Bill.com climbed 19% as earnings results beat estimates',
-    tickers: ['BILL'],
-    date: new Date('2022-08-17'),
-    details: [],
-    stats: [
-      {
-        name: 'Organic Core Revenue ($)',
-        changeRate: 0.71,
-        timeFrame: TimeFrame.yoy,
-      },
-    ],
-    eventType: EventType.earnings,
-    source: Source.OFFICIAL,
-    sourceLink: '',
-  },
-  {
-    uuid: 'n7',
-    title:
-      'Cisco rose 4% as earnings results beat both revenue and profit estimates.',
-    tickers: ['CSCO'],
-    date: new Date('2022-08-17'),
-    details: [
-      'Quarter revenue was $13.1 billion, flat year over year.',
-      'Strong demand with record full year product orders and backlog.',
-      'Next quarter forecast revenue growth is between 2% to 4%.',
-    ],
-    stats: [
-      {
-        name: 'Net Income ($)',
-        value: 2.815 * BILLION,
-        previousValue: 3.009 * BILLION,
-        timeFrame: TimeFrame.yoy,
-      },
-    ],
-    eventType: EventType.earnings,
-    source: Source.OFFICIAL,
-    sourceLink:
-      'https://s2.q4cdn.com/951347115/files/doc_financials/2022/q4/Q4FY22-Press-Release_.pdf',
-  },
-  {
-    uuid: 'n6',
-    title: "Target's profit plunged 90% as it reduced excess inventory.",
-    tickers: ['TGT'],
-    date: new Date('2022-08-17'),
-    details: [
-      'Target reiterated its full-year forecast.',
-      'Revenue growth is expected in the low to mid-single digits.',
-      '95% of sales were fulfilled by its stores.',
-    ],
-    stats: [
-      {
-        name: 'Revenue ($)',
-        value: 26.037 * BILLION,
-        previousValue: 25.16 * BILLION,
-        timeFrame: TimeFrame.yoy,
-      },
-      {
-        name: 'Operating Income ($)',
-        value: 0.321 * BILLION,
-        previousValue: 2.467 * BILLION,
-        timeFrame: TimeFrame.yoy,
-      },
-    ],
-    eventType: EventType.earnings,
-    source: Source.OFFICIAL,
-    sourceLink:
-      'https://investors.target.com/static-files/b6d463d6-6af3-425f-a532-407493eb306f',
-  },
-  {
-    uuid: 'n34',
-    title:
-      'IonQ shares surged almost 30%, as it continued to grow revenue rapidly.',
-    tickers: ['IONQ'],
-    date: new Date('2022-08-16'),
-    details: [
-      'IonQ Aria has increased its computational power by approximately 8x, now reaching 23 algorithmic qubits, up from 20.',
-      'Aria will become available to all users of Microsoft Azure Quantum tomorrow.',
-      'Announced paid contracts with Airbus and Dow.',
-      'IonQ has identified a facility in Seattle, Washington to host its first assembly lines for manufacturing quantum computers.',
-    ],
-    stats: [
-      {
-        name: 'Revenue ($)',
-        value: 2.6 * MILLION,
-        previousValue: 93000,
-        timeFrame: TimeFrame.yoy,
-      },
-      {
-        name: 'Next Quarter Forecast Revenue ($)',
-        value: 2.75 * MILLION,
-        previousValue: 2.6 * MILLION,
-        timeFrame: TimeFrame.qoq,
-      },
-    ],
-    eventType: EventType.earnings,
-    source: Source.OFFICIAL,
-    sourceLink:
-      'https://investors.ionq.com/news/news-details/2022/IonQ-Announces-Second-Quarter-2022-Financial-Results/default.aspx',
-  },
-  {
-    uuid: 'n33',
-    title:
-      'Tesla rival Li Auto (LI) falls short of estimates, delivering 28687 EVs on Q2',
-    tickers: ['LI'],
-    date: new Date('2022-08-15'),
-    details: [
-      'The miss was mainly due to COVID lockdown in Q2',
-      'Q3 is expected to deliver between 27,000 - 29,000 vehicles, up 7.5% - 15.5% YoY, lower than the estimates.',
-    ],
-    stats: [
-      {
-        name: 'Vehicle Deliveries',
-        value: 28687,
-        previousValue: 17575,
-        timeFrame: TimeFrame.yoy,
-      },
-      {
-        name: 'Total Revenues ($)',
-        value: 1.3 * BILLION,
-        changeRate: 0.733,
-        timeFrame: TimeFrame.yoy,
-      },
-      {
-        name: 'Gross Profit',
-        value: 280.4 * MILLION,
-        changeRate: 0.971,
-        timeFrame: TimeFrame.yoy,
-      },
-    ],
-    eventType: EventType.earnings,
-    source: Source.OFFICIAL,
-  },
-  {
-    uuid: 'n32',
-    title:
-      'Rivian lost $1.7 billion in the second quarter as production ramps up.',
-    tickers: ['RIVN'],
-    date: new Date('2022-08-11'),
-    content: 'Revenue beat the expectations while earnings missed estimates.',
-    stats: [
-      {
-        name: 'Cash and equivalents remaining',
-        value: 15.5 * BILLION,
-        previousValue: 17 * BILLION,
-        timeFrame: TimeFrame.qoq,
-      },
-      {
-        name: 'Preorders',
-        value: 98000,
-        previousValue: 90000,
-        timeFrame: TimeFrame.qoq,
-      },
-      {
-        name: 'Vehicle Produced',
-        value: 4401,
-        previousValue: 2553,
-        timeFrame: TimeFrame.qoq,
-      },
-    ],
-    eventType: EventType.earnings,
-    source: Source.OFFICIAL,
   },
 ];

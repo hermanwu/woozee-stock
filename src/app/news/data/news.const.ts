@@ -11,6 +11,102 @@ import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
   {
+    title: 'Nordstrom公布悲观假期销售数据并下调盈利预期。',
+    content:
+      '由于大幅降价，截至到2022年底的九周假期季，净销售额相较于去年同比下降3.5%。\nCEO: “假期促销力度很大，但销售额仍然低于疫情前水平...很明显，鉴于宏观环境，消费者变得更加挑剔。”\nNordstrom品牌净销售下降1.7%，Nordstrom Rack净销售下降7.6%。\nNordstrom盘后下跌近7%。',
+    tags: ['jwn'],
+    uuid: '07795edc-d0c6-4bf3-9dcb-d318cf517213',
+    date: '2023-01-19T21:47:21.200Z',
+  },
+  {
+    title:
+      "Netflix's profit fell short of expectations, but it added 7.66 million new subscribers.",
+    content:
+      'Revenue was US$7.85 billion, up 1.9% YoY, in line with expectations. Earnings per share were 12 cents, missing estimates of 45 cents.\nAdded 7.66 million new subscribers, much higher than the predicted 4.57 million subscribers.\nco-CEO and co-founder Reed Hastings stepped back as Executive Chairman.\nOutlook for the next quarter: revenue +3.9% YoY, operating margin was 19.9%, and moderate new user growth.',
+    tags: ['nflx'],
+    uuid: 'c9b19e82-20df-464d-a52a-3622b799cc19',
+    date: '2023-01-19T21:29:04.105Z',
+  },
+  {
+    title: '奈飞Netflix盈利不及预期，但新增订阅用户766万。',
+    content:
+      '营收78.5亿美元，同比增长1.9%，符合预期。每股收益12美分，低于45美分预期。\n新增766万订阅用户，远高于预测的457万订阅用户。\nCEO和创始人Reed Hastings退居为执行董事长。\n下季度前瞻：营收同比增长3.9%，运营利润率19.9%，新用户增速缓和。',
+    tags: ['nflx'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/19/netflix-nflx-earnings-q4-2022.html',
+    uuid: '2faa958b-c446-4b87-80ce-23b6a2cf3f0e',
+    date: '2023-01-19T21:23:15.744Z',
+  },
+  {
+    title: '宝洁财报营收超过预期，但销量下降令人担忧。',
+    content:
+      '营收208亿美元，同比下降0.7%，但超过预期。\n每股收益$1.59(Non-GAAP)，符合预期。\n有机销售额(organic sales)增长5%，得益于本季度10%的价格上涨。但是销量却同比下跌6%，远高于下跌2.6%的预期。\n',
+    tags: ['PG'],
+    sourceLink:
+      'https://seekingalpha.com/news/3925796-procter-gamble-non-gaap-eps-of-159-in-line-revenue-of-208b-beats-by-50m-raises-fy2023-sales-outlook',
+    uuid: 'f215ebb4-31f5-429c-8654-49fac2f51d06',
+    date: '2023-01-19T21:04:48.679Z',
+  },
+  {
+    title:
+      '周四三大指数收低，标普500及道琼斯连续第三个交易日下跌；奈飞宝洁发布财报；',
+    content:
+      '纳斯达克下跌-1.0%，标普500下跌-0.8%，道指下跌-0.8%。\n标普11个板块中有八个下跌，工业板块和非必需消费品板块领跌。能源、通讯服务和医疗保健板块上涨。',
+    tags: ['news'],
+    imageLinks: [
+      'https://i.ibb.co/vXKNyMP/Screenshot-2023-01-19-at-2-09-27-PM.png',
+    ],
+    uuid: 'a0c34c21-d311-493c-b7ce-24031d3144f9',
+    date: '2023-01-19T20:52:09.808Z',
+  },
+  {
+    title: '亚马逊将在2月砍掉其有着10年历史的AmazonSmile慈善捐赠项目',
+    content:
+      'AmazonSmile会捐出接近用户账单总值的0.5%给用户选择的慈善机构。\n亚马逊表示这个项目的作用太过分散，将在未来集中投资更有意义的项目。但投资者认为这是亚马逊“不惜一切“减少支出的一个佐证。\n',
+    tags: ['amzn'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/18/amazon-discontinues-amazonsmile-charity-donation-program-amid-cost-cuts.html',
+    uuid: '4c6134d4-eaa1-4f86-b56d-eb2c89830dff',
+    date: '2023-01-19T20:17:35.513Z',
+  },
+  {
+    title: '周三美股三大指数高开低走，收盘全部下跌超1%，纳斯达克终止七天连涨。',
+    content:
+      '纳斯达克收盘-1.2%，标普500收盘-1.6%，道指收盘-1.8%。标普11个板块全部下跌。\n生产商价格指数PPI下跌0.5%，远高于预期的0.1%，显示通胀继续下降。\n和CPI类似，PPI下降的主要原因是能源价格下降。\n由于通胀数据下降，投资者认为美联储将在两周后会议上仅加息25个基点。\n零售价格下跌1.1%，高于预期的1%。\n12月份的批发通胀率放缓至 6.2%，低于预测的 6.8%。上个月这个数据为 7.3%。',
+    tags: ['news'],
+    imageLinks: [
+      'https://i.ibb.co/ZxpmMpg/Screenshot-2023-01-18-at-3-05-39-PM.png',
+    ],
+    uuid: '6ea0a2bd-c01f-4030-b08f-ecad43e5df34',
+    date: '2023-01-18T22:30:20.134Z',
+  },
+  {
+    title: 'Discover Financial财报营收盈利均超预期。',
+    content:
+      '第四季度每股收益为3.77美元，高出0.15美元预期。\n营收37.3亿美元，同比上涨26.9%\nDiscover也提高了信贷损失准备金，显示经济可能继续走弱。\n贷款总额同比增长 20%，环比增长 7%。\n信用卡贷款为同比增长 21%。',
+    tags: ['dfs'],
+    uuid: '4dc980cf-cd73-4f04-9e66-2845e2522718',
+    date: '2023-01-18T22:05:29.970Z',
+  },
+  {
+    title: '美国假日季零售数据低于行业预期。',
+    content:
+      '11月和12月的销售额同比增长 5.3% 至 9363 亿美元，低于预期的6%-8%。但这个数据包含通胀所带来的影响。\n线上和非实体店销售额同比增幅最大，达到9.5%。\n电子和电器实体店的销售额同比下降5.7%。',
+    tags: ['retail'],
+    uuid: 'bfbd4c56-d3bd-42d1-b78d-f804404cb571',
+    date: '2023-01-18T21:54:42.018Z',
+  },
+  {
+    title: '微软和亚马逊周三开始新一轮裁员计划',
+    content:
+      '微软将裁10000名员工，占总员工数4.5%。\nCEO表示:“微软将为此花费12亿美元包括高于市场的遣散费，优化公司硬件和办公室租赁的费用”。\nCEO:“我们现在看到客户在减少优化他们的支出，以更少的钱做更多的事情。”\n亚马逊也在周三向员工宣布开始裁员18000人。这是亚马逊28年历史上最大的一次裁员。',
+    tags: ['msft', 'amzn'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/18/amazon-set-to-begin-new-round-of-layoffs-affecting-over-18000-people.html',
+    uuid: 'e7692cfa-c48d-4ab5-bae0-4f4d1acad08e',
+    date: '2023-01-18T21:42:41.811Z',
+  },
+  {
     title:
       '三大指数涨跌不一，纳斯达克连续第七天上涨。市场对高盛和摩根史丹利财报反应截然相反。',
     content:

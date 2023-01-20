@@ -3,9 +3,7 @@
     {
       "target": "woozee-stock",
       "public": "dist/woozee-stock",
-      "ignore": [
-        "**/.*"
-      ],
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "headers": [
         {
           "source": "*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].+(css|js)",
@@ -19,8 +17,12 @@
       ],
       "rewrites": [
         {
-          "source": "**",
-          "destination": "/index.html"
+          "source": "/en/**",
+          "destination": "/en/index.html"
+        },
+        {
+          "source": "/zh/**",
+          "destination": "/zh/index.html"
         }
       ]
     }

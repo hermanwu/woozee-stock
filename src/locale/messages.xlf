@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="312afa7dbe72f0b2522d9934347b1d38f5c25c4a" datatype="html">
+        <source>Industries</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/industries/industry-list-page/industry-list-page.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rankings-page/rankings-page.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f25a30ceb7658cc7d2c84bce5b07e19010c6a104" datatype="html">
+        <source>Short Term </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/opinions/components/opinion-display/opinion-display.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/opinions/components/opinion-display/opinion-display.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6dee0b6c0bda92409de9b20e940e0e342a3015d3" datatype="html">
+        <source>Long Term </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/opinions/components/opinion-display/opinion-display.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6060dffb6c20cb7914a4237539d7f2be990ecc5a" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;very-green&quot;&gt;"/>Very Bullish 📈<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/opinions/components/opinion-display/opinion-display.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3e325e32323ae5feec3e7080237b71f2e2e8b4e5" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;green&quot;&gt;"/>Bullish 📈<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/opinions/components/opinion-display/opinion-display.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cee208005db072a9eb8e7705a1b9613988761713" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;very-red&quot;&gt;"/>Very Bearish 📉<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/opinions/components/opinion-display/opinion-display.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6008194de59ad6a28454439f328aecd4c1e686f4" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;red&quot;&gt;"/>Bearish 📉<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/opinions/components/opinion-display/opinion-display.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e7e049a4e33b97ec4824d588071fe82fcba2edf0" datatype="html">
+        <source>Opinions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/opinions/components/opinion-page/blog-page.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="aaaa56bb140743832df1abc0b1c9edcbf0d11820" datatype="html">
+        <source>Tips</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/opinions/components/opinion-page/blog-page.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="853332cee2a7e2b15af9f68978aa1e106be50e88" datatype="html">
+        <source>Mistakes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/opinions/components/opinion-page/blog-page.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="93391be31d8753e93490af29e7406ffce159fad2" datatype="html">
+        <source>Stocks / ETFs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rankings-page/rankings-page.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/pages/stock-list-page/stock-list-page.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="85780db87ac6c9f202615ac63754551c061e7236" datatype="html">
+        <source>Regions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rankings-page/rankings-page.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ee8f8008bae6ce3a49840c4e1d39b4af23d4c263" datatype="html">
+        <source>Assets</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rankings-page/rankings-page.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ffc991a98994d027e82037fd046edbf5fc73cde7" datatype="html">
+        <source><x id="START_TAG_APP_TITLE_MENU" ctype="x-app_title_menu" equiv-text="&lt;app-title-menu&gt;"/><x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div header-1&gt;"/>Profitability Risks<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/><x id="CLOSE_TAG_APP_TITLE_MENU" ctype="x-app_title_menu" equiv-text="&lt;/app-title-menu&gt;"/><x id="START_TAG_APP_RISK_LIST" ctype="x-app_risk_list" equiv-text="&lt;app-risk-list [risks]=&quot;risks&quot;&gt;"/><x id="CLOSE_TAG_APP_RISK_LIST" ctype="x-app_risk_list" equiv-text="&lt;/app-risk-list&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/risk-catalyst-dialog/risk-catalyst-dialog.component.html</context>
+          <context context-type="linenumber">3,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9bdf57d6d260212902cf52bfe6ca0c5740f8b05a" datatype="html">
+        <source><x id="START_TAG_APP_TITLE_MENU" ctype="x-app_title_menu" equiv-text="&lt;app-title-menu&gt;"/><x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div header-1&gt;"/>Growth Risks<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/><x id="CLOSE_TAG_APP_TITLE_MENU" ctype="x-app_title_menu" equiv-text="&lt;/app-title-menu&gt;"/><x id="START_TAG_APP_RISK_LIST" ctype="x-app_risk_list" equiv-text="&lt;app-risk-list [risks]=&quot;risks&quot;&gt;"/><x id="CLOSE_TAG_APP_RISK_LIST" ctype="x-app_risk_list" equiv-text="&lt;/app-risk-list&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/risk-catalyst-dialog/risk-catalyst-dialog.component.html</context>
+          <context context-type="linenumber">10,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8a4a991e03e758b3fa986b0b1ebe560359f02851" datatype="html">
+        <source><x id="START_TAG_APP_TITLE_MENU" ctype="x-app_title_menu" equiv-text="&lt;app-title-menu&gt;"/><x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div header&gt;"/>Market Risks<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/><x id="CLOSE_TAG_APP_TITLE_MENU" ctype="x-app_title_menu" equiv-text="&lt;/app-title-menu&gt;"/><x id="START_TAG_DIV_1" ctype="x-div_1" equiv-text="&lt;div *ngFor=&quot;let market of markets&quot;&gt;"/><x id="START_TAG_APP_MARKET_DISPLAY" ctype="x-app_market_display" equiv-text="&lt;app-market-display [marketType]=&quot;market.type&quot;&gt;"/><x id="CLOSE_TAG_APP_MARKET_DISPLAY" ctype="x-app_market_display" equiv-text="&lt;/app-market-display&gt;"/><x id="START_TAG_APP_RISK_LIST" ctype="x-app_risk_list" equiv-text="&lt;app-risk-list [risks]=&quot;market.risks&quot;&gt;"/><x id="CLOSE_TAG_APP_RISK_LIST" ctype="x-app_risk_list" equiv-text="&lt;/app-risk-list&gt;"/><x id="START_TAG_APP_CATALYST_LIST" ctype="x-app_catalyst_list" equiv-text="&lt;app-catalyst-list [catalysts]=&quot;market.catalysts&quot;&gt;"/><x id="CLOSE_TAG_APP_CATALYST_LIST" ctype="x-app_catalyst_list" equiv-text="&lt;/app-catalyst-list&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/risk-catalyst-dialog/risk-catalyst-dialog.component.html</context>
+          <context context-type="linenumber">17,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/risk-catalyst-dialog/risk-catalyst-dialog.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/note-dialog/note-dialog.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/components/comparison-dialog/comparison-dialog.component.html</context>
+          <context context-type="linenumber">195</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="741259231630f647cebb33c0613b2bfb0a46c93b" datatype="html">
+        <source>Woozee</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/app-container/app-container.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="db32eeb1684f3d9d5cfe4452afe94c169966e65b" datatype="html">
+        <source> Portfolios </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/app-container/app-container.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c19df76e4d9f2ee2fec4aeca41fef6a087c8c542" datatype="html">
+        <source>Rankings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/app-container/app-container.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fcde58253a4cfd52c228eebdae74e1be7a1ab714" datatype="html">
+        <source>Notes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/app-container/app-container.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1d0974afae70914072a4fbf19e53328e517bae73" datatype="html">
+        <source>News</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/app-container/app-container.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cf777a23395968440a0320629800a24d1fb70c8e" datatype="html">
+        <source> UI </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/app-container/app-container.component.html</context>
+          <context context-type="linenumber">69,71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1309f9fb3ff996cf4b666d01e1e94ad6fb6d814e" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;badge&quot;&gt;"/>Growth<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/fact-type-display/fact-type-display.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3ad23b58ba0c86764257bce5defc84dbbbbe4b22" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;badge&quot;&gt;"/>Profitability<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/fact-type-display/fact-type-display.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="322467d15c84bdd12b8b7b723a08532802111326" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;badge&quot;&gt;"/>Oppprtunities<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/fact-type-display/fact-type-display.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a24cf06530da8113c026f5cce90c70a757fae8d1" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;badge&quot;&gt;"/>Valuation<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/fact-type-display/fact-type-display.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="95a5647012f238d34394742058386fed04cd57d5" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;badge&quot;&gt;"/>Event<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/fact-type-display/fact-type-display.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="56b3495a1d3b3476fa2163b77cbec476d9972d9d" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ dialogData.title ? dialogData.title : &quot;Details&quot; }}"/>
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/note-dialog/note-dialog.component.html</context>
+          <context context-type="linenumber">1,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c671316078503fccbb4a99c5d6c0f291bcfd0667" datatype="html">
+        <source> was <x id="INTERPOLATION" equiv-text="{{
+          statsDisplay?.value | siUnit: 3 | percent: &quot;1.1-2&quot; | undefined
+        }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/stats-display/stats-display.component.html</context>
+          <context context-type="linenumber">6,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0e1ad2efb9140f7b6113c8d56efc67c922ec76f1" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span
+          *ngIf=&quot;
+            statsDisplay &amp;&amp;
+            statsDisplay?.value &amp;&amp;
+            (statsDisplay?.changeRate ||
+              statsDisplay?.value &gt; statsDisplay?.previousValue)
+          &quot;
+        &gt;"/> increased to <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span
+          *ngIf=&quot;
+            statsDisplay &amp;&amp;
+            statsDisplay?.value &amp;&amp;
+            (statsDisplay?.changeRate &lt; 0 ||
+              statsDisplay?.value &lt; statsDisplay?.previousValue)
+          &quot;
+        &gt;"/> decreased to <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_2" ctype="x-span_2" equiv-text="&lt;span *ngIf=&quot;statsDisplay?.value&quot;&gt;"/> <x id="INTERPOLATION" equiv-text="{{ statsDisplay.value | siUnit: 2 | undefined }}"/>, <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_APP_MOVEMENT_DISPLAY" ctype="x-app_movement_display" equiv-text="&lt;app-movement-display
+          *ngIf=&quot;
+            (statsDisplay?.value &amp;&amp; statsDisplay?.previousValue) ||
+            statsDisplay?.changeRate
+          &quot;
+          [previousData]=&quot;statsDisplay?.previousValue&quot;
+          [currentData]=&quot;statsDisplay?.value&quot;
+          [changePercent]=&quot;statsDisplay?.changeRate&quot;
+        &gt;"/><x id="CLOSE_TAG_APP_MOVEMENT_DISPLAY" ctype="x-app_movement_display" equiv-text="&lt;/app-movement-display
+        &gt;"/><x id="START_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;ng-container [ngSwitch]=&quot;statsDisplay.timeFrame&quot;&gt;"/><x id="START_TAG_SPAN_3" ctype="x-span_3" equiv-text="&lt;span *ngSwitchDefault&gt;"/>YoY<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_4" ctype="x-span_4" equiv-text="&lt;span *ngSwitchCase=&quot;TimeFrameEnum.qoq&quot;&gt;"/>QoQ<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_5" ctype="x-span_5" equiv-text="&lt;span *ngSwitchCase=&quot;TimeFrameEnum.mtm&quot;&gt;"/>MoM<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="CLOSE_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;/ng-container&gt;"/><x id="START_TAG_NG_CONTAINER_1" ctype="x-ng_container_1" equiv-text="&lt;ng-container *ngIf=&quot;statsDisplay.previousValue&quot;&gt;"/> (from <x id="INTERPOLATION_1" equiv-text="{{ statsDisplay.previousValue | siUnit: 2 | undefined }}"/>) <x id="CLOSE_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;/ng-container&gt;"/><x id="START_TAG_SPAN_6" ctype="x-span_6" equiv-text="&lt;span *ngIf=&quot;statsDisplay?.expectedChangeRate&quot;
+          &gt;"/>,<x id="INTERPOLATION_2" equiv-text="{{
+            statsDisplay?.expectedChangeRate &lt; statsDisplay?.changeRate
+              ? &quot;above expectations of&quot;
+              : &quot;below expectations of&quot;
+          }}"/><x id="INTERPOLATION_3" equiv-text="{{
+            statsDisplay?.expectedChangeRate
+              | siUnit: 3
+              | percent: &quot;1.1-2&quot;
+              | undefined
+          }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_7" ctype="x-span_7" equiv-text="&lt;span *ngIf=&quot;statsDisplay?.expectedValue&quot;
+          &gt;"/>, <x id="INTERPOLATION_4" equiv-text="{{
+            statsDisplay?.expectedValue &lt; statsDisplay?.value
+              ? &quot;above expectations of&quot;
+              : &quot;below expectations of&quot;
+          }}"/> <x id="INTERPOLATION_5" equiv-text="{{ statsDisplay?.expectedValue | siUnit: 2 | undefined }}"/> <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/stats-display/stats-display.component.html</context>
+          <context context-type="linenumber">14,76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="248ca89e04d4679ba61e59f510e5723de4a5d18a" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ portfolio.name }}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/pages/stock-list-page/stock-list-page.component.html</context>
+          <context context-type="linenumber">20,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="96ec38abadc2584e583084ad0e93cb614f31a5a9" datatype="html">
+        <source> Following </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/pages/stock-list-page/stock-list-page.component.html</context>
+          <context context-type="linenumber">24,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="315d6dfe9aceae6c157e5b74ebe3b6eaa4ba04dc" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span
+        &gt;"/><x id="INTERPOLATION" equiv-text="{{ stockAnalysis.shortName || stockAnalysis.name }}"/> (<x id="INTERPOLATION_1" equiv-text="{{
+          stockAnalysis?.ticker | uppercase
+        }}"/>)<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span
+      &gt;"/><x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span *ngIf=&quot;rank$ | async; else followButton&quot;&gt;"/> - Rank <x id="INTERPOLATION_2" equiv-text="{{ rank$ | async | undefined }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span
+      &gt;"/><x id="START_TAG_SPAN_2" ctype="x-span_2" equiv-text="&lt;span *ngIf=&quot;stockAnalysis.price&quot;&gt;"/> - <x id="INTERPOLATION_3" equiv-text="{{ stockAnalysis.price | undefined }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span
+      &gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/pages/stock-properties-page/stock-properties-page.component.html</context>
+          <context context-type="linenumber">8,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2de428eee27258b8f0a50c7341463e7f9ae31ae2" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ portfolio.name }}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui-components-page/ui-components-page.component.html</context>
+          <context context-type="linenumber">73,75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b8fc58e36ff843addb629ace3e90b398cd534ef1" datatype="html">
+        <source> Following </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui-components-page/ui-components-page.component.html</context>
+          <context context-type="linenumber">77,79</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

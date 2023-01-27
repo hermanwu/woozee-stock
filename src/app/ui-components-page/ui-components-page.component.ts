@@ -35,6 +35,15 @@ export class UiComponentsPageComponent implements OnInit {
     date: new Date(),
   };
 
+  mockOpinion: Opinion = {
+    authorName: 'Justin Patterson',
+    organizationName: 'KeyBanc',
+    title: 'this is a mock title',
+    rating: Rating.Bullish,
+    targets: ['lyft'],
+    content: 'this is a mock opinion',
+  };
+
   tagsMock = ['tsla', 'tesla', 'elon musk'];
   selectedPortfolio;
   mockPortfolios = currentUserMock.portfolios;

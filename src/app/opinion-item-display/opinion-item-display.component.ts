@@ -8,7 +8,10 @@ import { Opinion } from '../opinions/components/opinion-display/opinion.interfac
 })
 export class OpinionItemDisplayComponent implements OnInit {
   @Input() opinion: Opinion;
-  expanded: boolean;
+  @Input() expanded: boolean;
+
+  authorNameImageLink: string;
+  organizationImageLink: string;
 
   constructor() {}
 

@@ -24,5 +24,8 @@ export class OpinionDisplayComponent implements OnInit, OnChanges {
     if (this.opinion.parentUuid) {
       // get parent info.
     }
+
+    if (this.expanded) {
+    }
   }
 }

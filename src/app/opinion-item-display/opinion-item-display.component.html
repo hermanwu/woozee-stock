@@ -1,43 +1,64 @@
-<div>
+<!-- <div>
   {{ opinion.parentUuid }}
-</div>
+</div> -->
 
-<div>
-  🚨 {{ opinion.title }}
+<ng-container *ngIf="expanded; else shortVersion">
+  <div>
+    <div>
+      <app-image-display [imageLink]="authorNameImageLink"></app-image-display>
+    </div>
 
-  <span
-    class="more-button"
-    *ngIf="opinion?.content || opinion?.links"
-    (click)="expanded = !expanded"
-    >more</span
-  >
-</div>
-
-<div *ngIf="expanded" class="pre-line">
-  {{ opinion.content }}
-
-  <app-links-display [links]="opinion?.links"></app-links-display>
-</div>
-
-<app-title-menu>
-  <div header-5>
-    <span class="margin-right-5">
-      <app-date-display [date]="opinion?.date"></app-date-display>
-    </span>
-
-    <app-opinion-display
-      *ngIf="opinion"
-      [opinion]="opinion"
-    ></app-opinion-display>
-
-    <span *ngIf="opinion.targets && opinion.rating"> on </span>
-
-    <app-tags-display [tags]="opinion?.targets"> </app-tags-display>
+    <div>{{ opinion.authorName }}</div>
+    <div>{{ opinion.organizationName }}</div>
+    <div>
+      <app-image-display
+        [imageLink]="organizationImageLink"
+      ></app-image-display>
+    </div>
   </div>
 
-  <button buttons mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_horiz</mat-icon>
+  <div>
+    <ng-container *ngIf="opinion.type === 'rating'"></ng-container>
 
-    <mat-menu #menu="matMenu"> </mat-menu>
-  </button>
-</app-title-menu>
+    <span *ngFor="let item of opinion?.targets">{{ item }},</span> -
+    {{ opinion.rating }}
+  </div>
+
+  <div class="h3">⚡ {{ opinion.title }}</div>
+
+  {{ opinion.content }}
+
+  <app-title-menu>
+    <div header-5>
+      <span class="margin-right-5">
+        <app-date-display [date]="opinion?.date"></app-date-display>
+      </span>
+
+      <app-tags-display [tags]="opinion?.targets"> </app-tags-display>
+    </div>
+
+    <button buttons mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_horiz</mat-icon>
+
+      <mat-menu #menu="matMenu"> </mat-menu>
+    </button>
+  </app-title-menu>
+</ng-container>
+<ng-template #shortVersion>
+  <div>
+    🚨 {{ opinion.title }}
+
+    <span
+      class="more-button"
+      *ngIf="opinion?.content || opinion?.links"
+      (click)="expanded = !expanded"
+      >more</span
+    >
+  </div>
+
+  <div *ngIf="expanded" class="pre-line">
+    {{ opinion.content }}
+
+    <app-links-display [links]="opinion?.links"></app-links-display>
+  </div>
+</ng-template>

@@ -48,11 +48,8 @@
   </button>
 
   <mat-menu #menu="matMenu">
-    <button mat-menu-item [routerLink]="['/rankings']" i18n>Rankings</button>
-
-    <button [routerLink]="['/opinions']" mat-menu-item i18n>Notes</button>
-
-    <button [routerLink]="['/news']" mat-menu-item i18n>News</button>
+    <button [routerLink]="['/news']" mat-menu-item i18n>Home</button>
+    <button [routerLink]="['/me']" mat-menu-item i18n>Me</button>
 
     <!-- <button mat-menu-item disabled>
       <a [routerLink]="['/stocks']">Stocks</a>

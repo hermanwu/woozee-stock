@@ -2,14 +2,249 @@ import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Index } from 'src/app/macro/macro.enum';
 import { TimeFrame } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { RegionCode } from 'src/app/shared/data/enum/region.enum';
-import {
-  convertDateToUTC,
-  getUtcDate,
-} from 'src/app/shared/functions/getUtcDate.function';
+import { getUtcDate } from 'src/app/shared/functions/getUtcDate.function';
 import { Source } from 'src/app/stock/models/news-source.enum';
 import { EventType, News } from 'src/app/stock/models/news.model';
 
 export const allNews: News[] = [
+  {
+    title:
+      '美国第四季度GDP增长2.9%；申请失业救济人数降至22 年4月以来的最低水平\n',
+    imageLinks: [
+      'https://i.ibb.co/6yjkJLx/Screenshot-2023-01-26-at-1-45-36-PM.png',
+    ],
+    content:
+      '商务部周四报告称，第四季度GDP增长率为2.9%，高于预期的2.7%，但略低于第三季度3.2%的增速。\n占GDP约68%的消费支出同期增长2.1%。私企库存，政府支出和非住宅固定投资的增加也帮助提升了GDP数据。\n住宅固定投资暴跌26.7%，反映了住房市场的急剧下滑，拖累了增长数字。房价下跌使总体 GDP数据减少了约1.3%',
+    tags: ['gdp'],
+    uuid: 'b6e30780-323d-481d-a323-07aaf38b44b9',
+    date: '2023-01-26T21:49:59.186Z',
+  },
+  {
+    title: '酩悦·轩尼诗－路易·威登集团（LVMH）对中国充满信心',
+    content:
+      'CEO表示国内消费者强劲回归，LVMH门店很多都爆满。\nLVMH财报显示销售额和利润连续第二年创历史新高。\n2022年收入增长23%至79.2欧元，利润增长17%至140亿欧元。\nLVMH同时警告称，虽然1月份的反弹势头强劲，但还没有回到2019年的水平，公司还有很长的路要走。\n\n\n',
+    tags: ['lvmh'],
+    uuid: '0e269b31-88fe-493a-85b3-2ea4c782b821',
+    date: '2023-01-26T21:44:16.138Z',
+  },
+  {
+    title: '周四美股三大指数集体收涨；特斯拉上涨近11%',
+    imageLinks: [
+      'https://i.ibb.co/2WY3J72/Screenshot-2023-01-26-at-2-12-05-PM.png',
+    ],
+    content:
+      '道指上涨0.61%，标普500上涨1.10%，纳斯达克上涨2.7%，有望创下自去年7月以来的最佳月表现。美国GDP在第四季度增长2.9%，使市场认为美国不太会经历更糟的熊市。\n马斯克表示特斯拉在经历有史以来最强劲的订单量，订单几乎是生产率的两倍”\n\n',
+    tags: ['news'],
+    uuid: '61fdf0e0-4497-4c55-9ca7-b8a81dc46ce5',
+    date: '2023-01-26T21:33:40.426Z',
+  },
+  {
+    title: '英特尔Intel，Visa，西南航空Southwest Airline发布财报。',
+    content:
+      'Visa每股收益为2.18美元，高出预期0.17美元。第一季度营收为79亿美元，同比增长11.9%。按固定美元汇率计算，跨境总交易量在本季度增长了22%。\n英特尔财报指引严重低于预期。客户端计算收入同比下降36%。数据中心和人工智能收入下降33%。\n西南航空第四季度每股亏损0.38 美元，大大高于华尔街预期的每股亏损0.11美元。12月的航班延误和取消导致了8亿美元损失。',
+    tags: ['intc'],
+    uuid: 'd5ea6e72-4a49-4d66-9406-bb66fd21088b',
+    date: '2023-01-26T22:00:56.143Z',
+  },
+  {
+    title: '周三美股三大指数低开高走，“无视”微软疲软财报',
+    imageLinks: [
+      'https://i.ibb.co/grwYMc0/Screenshot-2023-01-25-at-5-23-29-PM.png',
+    ],
+    content:
+      '纳斯达克收盘下跌0.2%，标普500下跌0.02%，道指上涨0.03%，市场等待今天盘后的特斯拉财报。\nShopify宣布上涨产品价格33%；这是公司在十多年来首次上涨价格。Shopify今天股价上涨10.87% 。\n马斯克在财报会议上强调特斯拉需求远远大于目前产能，财报会议后特斯拉股价上涨5%。',
+    tags: ['news'],
+    uuid: 'b741f75c-c813-4f86-b1b7-d57213119ab6',
+    date: '2023-01-25T23:34:42.174Z',
+  },
+  {
+    title: 'AT&T财报显示订阅人数增长超预期，',
+
+    content:
+      'AT&T所有部门用户总数增加了2.17亿，超过2.15亿预期。\n每股收益0.61美元，超出预期0.04美元。\n新增电话订阅人数超过对手Verizon，但落后于T-Mobile。\nCEO对整个通信行业表示乐观。AT&T今天大涨6%至7月以来的最高点。',
+    tags: ['t'],
+    uuid: '83f1e435-ef31-4f85-ab7c-b49e42ef29ec',
+    date: '2023-01-25T22:33:45.907Z',
+  },
+  {
+    title: '阿斯麦ASML第四季度营收盈利均超预期',
+    content:
+      '第四季度GAAP每股收益4.60欧元，高出预测0.27欧元。\n营收64亿欧元，同比增加28.5%。\nASML预计半导体行业将在2023年下半年有所改善，全年营收增长25%以上，与预期持平，毛利率将好于2022年。\nASML在制造销售极紫外光刻机领域仍旧处于垄断地位。',
+    tags: ['asml'],
+    uuid: 'bba6d3b4-d425-4149-b470-1f4f930dc2b2',
+    date: '2023-01-25T22:03:09.862Z',
+  },
+  {
+    title: '波音第四季度财报营收盈利均不及预期。',
+
+    content:
+      '第四季度Non-GAAP每股损失1.75美元，远低于预期。\n营收接近200亿美元，同比增长35.1%，商用飞机部门销售额为92亿美元，同比增长94%。\n尽管飞机的销售和交付出现反弹，高劳动力成本和供应链问题导致亏损。\n预计今年将产生30亿至50亿美元自由现金流。\n',
+    tags: ['ba'],
+    uuid: '686b9b93-e64b-40be-ab63-b5c9d57767b9',
+    date: '2023-01-25T21:50:16.356Z',
+  },
+  {
+    title: '特斯拉第四季度财报营收盈利均超过预期。',
+    imageLinks: [
+      'https://i.ibb.co/HG8DxLk/Screenshot-2023-01-25-at-4-02-27-PM.png',
+      'https://i.ibb.co/mFH4Sm1/Screenshot-2023-01-25-at-4-28-49-PM.png',
+    ],
+    content:
+      '第四季度汽车收入为213亿美元，同比增长33%。\n2022全年交付量约为131万辆。\n2023预计交付180万辆，同比增长约37%。\n汽车毛利率为 25.9%，为过去五个季度以来的最低水平。\n管理层表示未来多年将保持50%复合年增长率(CAGR)目标，尽管不一定是每年一次。\n1月份降价以来，订单数量几乎是生产能力的两倍； 尽管汽车市场整体疲软，特斯拉需求仍将良好。\n重申Cybertruck将于今年开始生产。\n将在2023年3月1日投资者日公布下一代汽车平台细节。',
+    tags: ['tsla'],
+    uuid: 'e3b7bf5d-3702-4fa1-802f-a5edceb34757',
+    date: '2023-01-25T21:21:04.831Z',
+  },
+  {
+    title: '微软财报营收下滑超预期，周三盘前三大指数期货均下跌。',
+    content:
+      '微软在财报公布后由于盈利超预期最初股价上涨，但财报会议上提供的未来指引不及预期，营收增速继续放缓，股价目前下跌2.6%。\n道指期货-0.7%。 纳斯达克期货-1.2%，标普500期货-0.8%。\n今天盘前波音，AT&T，ASML等将发布财报，盘后Tesla，ServiceNow， IBM等将发布财报。\n',
+    tags: ['msft'],
+    uuid: '27e4e53f-39c7-4fbc-82e5-25bf98096050',
+    date: '2023-01-25T11:39:26.529Z',
+  },
+  {
+    title: '德州仪器Texas Instruments财报营收盈利超预期',
+    content:
+      '第四季度GAAP美股收益2.13美元，超过预期0.15美元。\n营收为46.7亿美元，同比下降3.3%。\n”公司今年的87亿美元运营现金流和59亿美元自由现金流（占营收30%）体现了公司商业模式的优势“。\n公司下调了下季度营收盈利指引。',
+    tags: ['txn'],
+    uuid: 'f074591a-f341-42d2-9813-4ad760e89ae6',
+    date: '2023-01-24T23:29:06.774Z',
+  },
+  {
+    title: '强生第四季度营收不及预期,但盈利超预期',
+    content:
+      '营收237亿美元，同比下降4.4％。\n公司表示，与上一年相比，不利外汇和新冠疫苗销售减少是营收下降的主要原因。 不包括新冠疫苗的营收同比增加4.6％。\n国际市场上，新冠疫苗销量下跌-57.4％。',
+    tags: ['jnj'],
+    uuid: '923f9bb1-5d23-48b3-b640-03b55f97a643',
+    date: '2023-01-24T23:14:28.092Z',
+  },
+  {
+    title: '洛克希德马丁营收盈利超预期，股价周二上涨1.8%',
+    content:
+      '营收为190亿美元，同比增长7.1%。\nNon-GAAP每股收益7.79美元，比预期高0.42美元。\n2023前瞻符合预期。\n洛克希德马丁和另一家军工企业雷神指出，尽管他们收到创纪录武器订单，但由于供应链瓶颈，他们无法将产量提升。',
+    tags: ['lmt'],
+    uuid: 'd2aeda6d-bfff-4498-828d-a20492e1f44b',
+    date: '2023-01-24T22:37:42.840Z',
+  },
+  {
+    title:
+      '直觉手术公司Intuitive Surgical在第四季度盈利未达预期，盘后股价下跌近10%',
+    content:
+      '营收为16.6亿美元，同比增长7.1%，符合预期。\n第四季度净收入受运营费用影响下降12%。\n运营费用同比增长21%，其中研发费用增长了33%，达到 2.441亿美元。\n公司的达芬奇手术系统安装数增至7544套，同比增长12%。',
+    tags: ['isrg'],
+    sourceLink:
+      'https://seekingalpha.com/news/3927398-intuitive-surgical-non-gaap-eps-of-1_23-misses-0_02-revenue-of-1_66b-in-line',
+    uuid: 'b4128203-1869-4bfa-8d04-e973be42deeb',
+    date: '2023-01-24T22:24:03.392Z',
+  },
+  {
+    title: '周二美股三大指数涨跌不一，公司财报表现参差不齐',
+    imageLinks: [
+      'https://i.ibb.co/g3y0VHn/Screenshot-2023-01-24-at-3-35-37-PM.png',
+    ],
+    content:
+      '纳斯达克收跌0.3%。标普500收跌-0.1%，没有一个板块浮动超过1%。道指+0.3%。\n纽约证券交易所在开盘前出现系统问题导致众多股票交易暂停，包括3M，摩根士丹利，麦当劳。纽交所将在周二收盘后对一些异常价格进行清整。\n',
+    tags: ['news'],
+    uuid: '4bfeade2-a00b-4850-9deb-0e2c6be8abf4',
+    date: '2023-01-24T22:16:52.246Z',
+  },
+  {
+    title: '微软财报盈利超预期，但营收增速持续下滑',
+    content:
+      '营收增长2%，是自2016年以来最慢增速。\n智能云部门营收增长18%，其中Azure云服务增长31%。\n生产力和商业流程部门（Microsoft 365，LinkedIn，Dynamics）实现了 170 亿美元的收入，同比增长 7%。\nWindows OEM部门营收下跌39%，显示出PC市场在疫情后快速萎缩，但CEO称Windows的用户使用率在提高。\n管理层同时表示12月业务增长不及预期，下季度营收增长将继续放缓。',
+    tags: ['msft'],
+    uuid: 'd5777c60-7ccf-45ff-94c2-d209b4314648',
+    date: '2023-01-24T21:24:29.829Z',
+  },
+  {
+    title:
+      '明天多家大型公司发布财报，将涵盖不同行业，给投资人提供更多经济信息。',
+    imageLinks: [
+      'https://i.ibb.co/D57YHw5/Screenshot-2023-01-23-at-2-31-51-PM.png',
+    ],
+    content:
+      '微软 Microsoft 科技软件 \n 直觉手术公司 Intuitive Surgical 医疗器材 \n强生 Johnson & Johnson 药品制造\n 洛克希德马丁 Lockheed Martin 军工\n德州仪器 Texas Instrument 半导体\n第一资本 Capital One 银行\n\n',
+    tags: ['news'],
+    uuid: 'ea4c6113-2559-4f5e-bfc5-75908c4d3efa',
+    date: '2023-01-23T22:38:22.854Z',
+  },
+  {
+    title: '微软宣布对OpenAI进行新的一轮价值数十亿美元的投资。',
+    content:
+      '此次投资是微软在2019年和2021年两次投资之后的第三次投资合作。微软方面拒绝提供具体金额，但有消息称投资额高达100亿美元。\nOpenAI开发了近期火爆的ChatGPT人工智能对话软件。微软表示，新的合作伙伴关系将加速人工智能发展及商业化。\n微软的Azure云服务将继续作为OpenAI的独家供应商。',
+    tags: ['msft'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/23/microsoft-announces-multibillion-dollar-investment-in-chatgpt-maker-openai.html',
+    uuid: '08a27d63-dd98-407d-b9e2-9f20c0bcac6f',
+    date: '2023-01-23T22:18:58.793Z',
+  },
+  {
+    title: '音乐流媒体公司Spotify周一宣布将裁员6%,约600人',
+    content:
+      'Spotify周一向员工发送了一份内部备忘录，宣布裁员。CEO承认他对一些投资过于乐观，并表示对这次裁员负责。\nCEO: “过去几年我们在提高速度方面取得了很大进步，但我们并没有专注于提高效率...在充满挑战的经济环境中，效率变得更加重要。因此，为了提高效率，控制成本，加快决策速度，我们得进行重组”。',
+    tags: ['spot'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/23/spotify-to-cut-6percent-of-its-workforce-as-tech-layoffs-continue.html',
+    uuid: '7b410542-adc6-4d9b-877c-e1f3a29f710e',
+    date: '2023-01-23T22:09:10.438Z',
+  },
+  {
+    title: '周一股市大幅走高，投资者期待本周财报',
+    imageLinks: [
+      'https://i.ibb.co/x6tK6YD/Screenshot-2023-01-23-at-1-16-10-PM.png',
+    ],
+    content:
+      '纳斯达克上涨2.01%，标普500上涨1.19%，站上4000点整数关。道指上涨 0.76%。在所有已发布财报公司里，63%的公司财报击败预期。\n电动车板块在Tesla财报前大涨，Rivian +11.52%，Lucid +12.79%，法拉第未来+50.64%，蔚来NIO +8.94%，理想+6.84%，小鹏+7.45%. \n另一个大涨的板块是半导体: AMD+9.22%（被花旗上调评级），Nvidia+7.59%.。',
+    tags: ['news'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/22/stock-market-futures-open-to-close-news.html',
+    uuid: '6263c2fe-84c4-40b6-9317-53ebac991afd',
+    date: '2023-01-23T21:33:21.207Z',
+  },
+  {
+    title: '下周微软，特斯拉， Visa等将发布财报',
+    imageLinks: [
+      'https://i.ibb.co/TvJ4q4D/Screenshot-2023-01-20-at-2-09-09-PM.png',
+    ],
+    content:
+      '周二财报：微软，Johnson&Johnson，洛克希德马丁，德州仪器\n周三财报：特斯拉，波音，IBM\n周四财报：美国航空，英特尔，Visa，Mastercard',
+    tags: ['calendar event'],
+    uuid: '0c5d4b4e-df9a-4892-96cd-aefca53e8d7b',
+    date: '2023-01-20T22:10:04.195Z',
+  },
+  {
+    title: '🏮新年到，周五美股强势上扬',
+    imageLinks: [
+      'https://i.ibb.co/c8RbWqQ/Screenshot-2023-01-20-at-2-12-37-PM.png',
+    ],
+    content:
+      '道指数上涨1%。标普500上涨1.89%，标普11个板块全部上涨。纳指在奈飞Netflix和谷歌Alphabet的帮助下上涨 2.66%。\n纳指本周表现出色，上涨0.55%，连续第三周上涨。 道指本周下跌2.70%，标普500本周下跌0.66%。\n奈飞在发布超预期订阅数后上涨8.5%。Alphabet股价今天上涨超过5%。',
+    tags: ['news'],
+    uuid: 'ff8017a9-10ea-41b7-8b6c-ee2fecf65aa2',
+    date: '2023-01-20T21:50:30.974Z',
+  },
+  {
+    title: '美联储理事Waller支持在下次FOMC会议上加息25个基点，符合市场预期。',
+    content:
+      'Waller认为根据目前已有数据，通胀趋于稳定，但他目前会继续支持紧缩货币政策。\n最近几位美联储发言人表态都相对鸽派，Wallers是明确表示支持加息25个基点的最高级别FOMC成员。\n但他也表示降低通胀将是一个缓慢艰难的过程，因此美联储必须在长时间内保持较高利率，而不是在年底前开始降息。\n',
+    tags: ['inflation'],
+    imageLinks: [
+      'https://i.ibb.co/z5Y6d5C/Screenshot-2023-01-20-at-2-40-55-PM.png',
+    ],
+    uuid: 'b298767c-3154-4c33-9906-341382196754',
+    date: '2023-01-20T21:41:30.388Z',
+  },
+  {
+    title: '谷歌宣布将立即开始裁员12000人',
+    content:
+      'CEO Sundar Pichai承认过去两年招聘过多。这次裁员决定是在对已有产品和岗位进行调研后的结果，以保证公司能继续专注于优先任务和目标。\n裁员将跨越发生在公司的不同领域、职能、层级和区域。\n另一家知名电商Wayfair也宣布裁员1750人。',
+    tags: ['googl'],
+    sourceLink:
+      'https://www.cnbc.com/2023/01/20/google-to-lay-off-12000-people-memo-from-ceo-sundar-pichai-says.html',
+    uuid: 'aecb7977-c4e3-42b7-8bef-f8716dc76c00',
+    date: '2023-01-20T21:18:04.955Z',
+  },
   {
     title: 'Nordstrom公布悲观假期销售数据并下调盈利预期。',
     content:
@@ -874,7 +1109,6 @@ export const allNews: News[] = [
     content:
       'Total revenue grew 18% YoY \nQ2 Cloud Revenue was (IaaS plus SaaS) $3.8 billion, up 43%',
     tags: ['orcl', ' cloud', ' oracle'],
-    rating: 'Bullish',
     date: '2022-12-13T14:22:49.016Z',
   },
   {
@@ -1575,143 +1809,5 @@ export const allNews: News[] = [
     tags: [Index.sp500, Index.nasdaq],
     title:
       'Stock market rallied on Friday and snapped a three-week losing streak wtih a strong performance. Nasdaq was up 4.14% and S&P 500 gained 3.65% for the week.',
-  },
-  {
-    uuid: 'n15',
-    eventType: EventType.stock,
-    date: getUtcDate(2022, 9, 9),
-    tickers: ['hood'],
-    title:
-      'Robinhood is working on enabling Cardano (ADA) cryptocurrency transfers on its platform.',
-  },
-  {
-    uuid: 'n13',
-    eventType: EventType.stock,
-    date: getUtcDate(2022, 9, 9),
-    tickers: ['oxy'],
-    title: 'Warren Buffet increased Occidental ownership to 26.8% from 20%.',
-  },
-  {
-    uuid: 'n13',
-    eventType: EventType.stock,
-    date: convertDateToUTC(new Date('2022-09-08')),
-    tickers: ['tsla'],
-    title: 'Tesla triples deliveries of China-made cars in August.',
-  },
-  {
-    uuid: 'n13',
-    eventType: EventType.stock,
-    date: convertDateToUTC(new Date('2022-09-08')),
-    tickers: ['shop'],
-    title: 'Shopify hires new finance chief.',
-  },
-  {
-    uuid: 'n12',
-    eventType: EventType.stock,
-    date: convertDateToUTC(new Date('2022-09-08')),
-    tickers: ['rivn'],
-    title:
-      'Rivian announced partnership with Mercedes Benz Vans to build new EV production together.',
-  },
-  {
-    uuid: 'n11',
-    eventType: EventType.stock,
-    date: convertDateToUTC(new Date('2022-09-08')),
-    tickers: ['twtr'],
-    title: 'Twitter reached $7M settlement with whistleblower complaints',
-  },
-  {
-    uuid: 'n11',
-    eventType: EventType.macro,
-    tags: ['currency'],
-    date: convertDateToUTC(new Date('2022-09-08')),
-    title:
-      'Chinese currency continued devaluating, which could have significant impact on Asian-heavy companies',
-  },
-  {
-    uuid: 'n10',
-    eventType: EventType.macro,
-    tags: ['stock'],
-    date: convertDateToUTC(new Date('2022-09-08')),
-    title:
-      'S&P 500 +0.66% and Nasdaq +0.60% today, as they are on pace to snap a 3-week losing streak.',
-  },
-  {
-    uuid: 'n10',
-    eventType: EventType.macro,
-    tags: ['fed'],
-    date: convertDateToUTC(new Date('2022-09-08')),
-    title:
-      'Federal Reserve Chair Jerome Powell gave a hawish speech that he is strongly committed to fight inflation.',
-  },
-  {
-    uuid: 'n9',
-    eventType: EventType.earnings,
-    date: convertDateToUTC(new Date('2022-09-08')),
-    title:
-      'Zscaler reported quarterly earnings results and revenue growth continued to be strong.',
-    tickers: ['zs'],
-  },
-  {
-    uuid: 'n9',
-    eventType: EventType.earnings,
-    date: convertDateToUTC(new Date('2022-09-08')),
-    title: 'DocuSign reported Q2 earnings results',
-    tickers: ['docu'],
-  },
-  {
-    uuid: 'n8',
-    eventType: EventType.earnings,
-    date: convertDateToUTC(new Date('2022-09-07')),
-    title: 'NIO reported 2022 earnings results',
-    tickers: ['nio'],
-  },
-  {
-    uuid: 'n8',
-    eventType: EventType.earnings,
-    date: convertDateToUTC(new Date('2022-09-07')),
-    title:
-      'GameStop stock was up 11% during after hour after announces partnership with crypto exchange FTX',
-    tickers: ['gme'],
-  },
-  {
-    uuid: 'n7',
-    eventType: EventType.earnings,
-    date: convertDateToUTC(new Date('2022-09-01')),
-    title:
-      'Lululemon released earnings results that beat estimates. 📊 Next Quarter Revenue Forecast increased to 1.79B, ⬆️ Up 23.6% (from 1.45B)',
-    tickers: ['lulu'],
-  },
-  {
-    uuid: 'n6',
-    eventType: EventType.earnings,
-    date: convertDateToUTC(new Date('2022-09-01')),
-    title:
-      'Broadcom released earnings results that beat estimates. 📊 Next Quarter Revenue Forecast increased to 8.9B, ⬆️ Up 20.2% (from 7.41B)',
-    tickers: ['avgo'],
-  },
-  {
-    uuid: 'n5',
-    eventType: EventType.earnings,
-    date: convertDateToUTC(new Date('2022-08-31')),
-    title:
-      'Okta released financial results that beat estimates. However next quarter revenue growth forecast slows down to 33% (vs 43.4% this quarter).',
-    tickers: ['okta'],
-  },
-  {
-    uuid: 'n6',
-    eventType: EventType.earnings,
-    date: convertDateToUTC(new Date('2022-08-31')),
-    title:
-      'C3.ai latest earnings results missed estimates. Next quarter revenue growth forecast is only 5.2% (vs 25.6% this quarter).',
-    tickers: ['ai'],
-  },
-  {
-    uuid: 'n5',
-    eventType: EventType.earnings,
-    date: convertDateToUTC(new Date('2022-08-31')),
-    title:
-      'MongoDB released Q2 financial results that beat estimates. However next quarter revenue growth guidance slows down to 33% (vs 53% this quarter).',
-    tickers: ['mdb'],
   },
 ];

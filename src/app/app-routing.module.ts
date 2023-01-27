@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
+import { ActionsListPageComponent } from './actions-list-page/actions-list-page.component';
 import { AssetListPageComponent } from './asset-list-page/asset-list-page.component';
 import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
 import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
+import { ListComponent } from './list/list.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
-import { OpinionPageComponent } from './opinions/components/opinion-page/blog-page.component';
+import { NotesListPageComponent } from './notes-list-page/notes-list-page.component';
+import { MePageComponent } from './opinions/components/opinion-page/blog-page.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
-import { RankingsPageComponent } from './rankings-page/rankings-page.component';
 import { RegionPropertiesPageComponent } from './region-properties-page/region-properties-page.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
@@ -38,45 +40,55 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       {
-        path: 'rankings',
-        component: RankingsPageComponent,
-        children: [
-          {
-            path: 'stocks',
-            component: StockListPageComponent,
-            pathMatch: 'full',
-          },
-          {
-            path: 'industries',
-            component: IndustryListPageComponent,
-            pathMatch: 'full',
-          },
-          {
-            path: 'markets',
-            component: MarketPageComponent,
-            pathMatch: 'full',
-          },
-          {
-            path: 'assets',
-            component: AssetListPageComponent,
-            pathMatch: 'full',
-          },
-          {
-            path: '**',
-            redirectTo: 'stocks',
-          },
-        ],
+        path: 'lists/stocks',
+        component: StockListPageComponent,
+        pathMatch: 'full',
       },
+      {
+        path: 'lists/industries',
+        component: IndustryListPageComponent,
+        pathMatch: 'full',
+      },
+      {
+        path: 'lists/regions',
+        component: MarketPageComponent,
+        pathMatch: 'full',
+      },
+      {
+        path: 'lists/assets',
+        component: AssetListPageComponent,
+        pathMatch: 'full',
+      },
+
       {
         path: 'about',
         component: AboutComponent,
         pathMatch: 'full',
       },
-
       {
-        path: 'opinions',
-        component: OpinionPageComponent,
-        pathMatch: 'full',
+        path: 'me',
+        component: MePageComponent,
+        children: [
+          {
+            path: 'notes',
+            component: NotesListPageComponent,
+            pathMatch: 'full',
+          },
+          {
+            path: 'lists',
+            component: ListComponent,
+            pathMatch: 'full',
+          },
+          {
+            path: 'actions',
+            component: ActionsListPageComponent,
+            pathMatch: 'full',
+          },
+          {
+            path: '**',
+            redirectTo: 'notes',
+          },
+        ],
       },
       {
         path: 'ui-components',

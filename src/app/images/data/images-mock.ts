@@ -2,6 +2,37 @@ import { IndustryType } from 'src/app/facts/data/area.enum';
 
 export const images = new Map<string, string[]>([
   [
+    'intc',
+    ['https://i.ibb.co/RYGgQJW/Screenshot-2023-01-26-at-2-16-36-PM.png'],
+  ],
+  [
+    'lvmh',
+    ['https://i.ibb.co/ys8P3NL/Screenshot-2023-01-26-at-2-08-57-PM.png'],
+  ],
+  [
+    'asml',
+    ['https://i.ibb.co/VgXLqNQ/asml-wins-semi-americas-award-for-euv.jpg'],
+  ],
+  ['ba', ['https://i.ibb.co/RPpQjdM/Screenshot-2023-01-25-at-5-25-27-PM.png']],
+  ['jnj', ['https://i.ibb.co/crCSrLq/Screenshot-2023-01-24-at-3-32-56-PM.png']],
+  ['txn', ['https://i.ibb.co/VBRtd8w/Screenshot-2023-01-24-at-3-32-14-PM.png']],
+  ['txn', ['https://i.ibb.co/VBRtd8w/Screenshot-2023-01-24-at-3-32-14-PM.png']],
+  [
+    'isrg',
+    ['https://i.ibb.co/RcY6wrK/Screenshot-2023-01-24-at-3-35-05-PM.png'],
+  ],
+  [
+    'lmt',
+    [
+      'https://i.ibb.co/dmhv70D/1ae0080f-0218-44df-91f2-fbc977b48746-LM-logo.webp',
+    ],
+  ],
+
+  [
+    'spot',
+    ['https://i.ibb.co/NsnSRkw/Screenshot-2023-01-23-at-2-51-01-PM.png'],
+  ],
+  [
     'amzn',
     ['https://i.ibb.co/4jYF8wZ/Screenshot-2023-01-19-at-2-12-07-PM.png'],
   ],
@@ -218,7 +249,10 @@ export const images = new Map<string, string[]>([
   ['pg', ['https://i.ibb.co/P5Rwhqn/Screenshot-2023-01-16-at-4-01-31-PM.png']],
   [
     'msft',
-    ['https://i.ibb.co/tcWqmsY/Screenshot-2023-01-18-at-3-15-51-PM.png'],
+    [
+      'https://i.ibb.co/yNkjnXR/Screenshot-2023-01-25-at-3-42-24-AM.png',
+      'https://i.ibb.co/tcWqmsY/Screenshot-2023-01-18-at-3-15-51-PM.png',
+    ],
   ],
   ['dfs', ['https://i.ibb.co/s6XFk1T/Screenshot-2023-01-18-at-3-17-08-PM.png']],
 ]);

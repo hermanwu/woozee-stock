@@ -7,7 +7,16 @@
   <app-news-display [news]="mockNews" [expanded]="true"></app-news-display>
 </app-card>
 
-<app-stock-image-display [tag]="'AAPL'"></app-stock-image-display>
+<app-card>
+  <app-opinion-item-display
+    [expanded]="'true'"
+    [opinion]="mockOpinion"
+  ></app-opinion-item-display>
+</app-card>
+
+<app-card>
+  <app-stock-image-display [tag]="'AAPL'"></app-stock-image-display>
+</app-card>
 
 <app-image-display
   [imageLink]="

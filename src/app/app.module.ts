@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment';
 import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
+import { ActionsListPageComponent } from './actions-list-page/actions-list-page.component';
 import { AddNewsFormComponent } from './add-news-form/add-news-form.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +33,7 @@ import { ImageDisplayComponent } from './images/components/image-display/image-d
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
 import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
 import { InstagramDisplayComponent } from './instagram-display/instagram-display.component';
+import { ListComponent } from './list/list.component';
 import { MarketDisplayComponent } from './markets/components/market-display/market-display.component';
 import { MarketListComponent } from './markets/components/market-list/market-list.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
@@ -40,9 +42,10 @@ import { DailyMediumReportDisplayDialogComponent } from './news/components/daily
 import { MediaLinkComponent } from './news/components/media-link/media-link.component';
 import { InstagramNewsDisplayDialogComponent } from './news/components/news-display-dialog/news-display-dialog.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
+import { NotesListPageComponent } from './notes-list-page/notes-list-page.component';
 import { OpinionItemDisplayComponent } from './opinion-item-display/opinion-item-display.component';
 import { OpinionDisplayComponent } from './opinions/components/opinion-display/opinion-display.component';
-import { OpinionPageComponent } from './opinions/components/opinion-page/blog-page.component';
+import { MePageComponent } from './opinions/components/opinion-page/blog-page.component';
 import { ThumbnailComponent } from './presentation/components/thumbnail/thumbnail.component';
 import { PresentationHeaderComponent } from './presentation/presentation-header/presentation-header.component';
 import { PresentationComponent } from './presentation/presentation.component';
@@ -51,7 +54,6 @@ import { SlideFooterComponent } from './presentation/slide/slide-footer/slide-fo
 import { SlideComponent } from './presentation/slide/slide/slide.component';
 import { PriceDisplayComponent } from './price-display/price-display.component';
 import { ProfitabilityComponent } from './profitability/profitability.component';
-import { RankingsPageComponent } from './rankings-page/rankings-page.component';
 import { RegionPropertiesPageComponent } from './region-properties-page/region-properties-page.component';
 import { RiskCatalystDialogComponent } from './risk-catalyst-dialog/risk-catalyst-dialog.component';
 import { RiskListComponent } from './risks/components/risk-list/risk-list.component';
@@ -192,14 +194,13 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     StockMetricDisplayComponent,
     UiComponentsPageComponent,
     TagDisplayPipe,
-    OpinionPageComponent,
+    MePageComponent,
     RegionDisplayComponent,
     InstagramDisplayComponent,
     OpinionDisplayComponent,
     DragDropRankDialogComponent,
     MockCompareDialogComponent,
     ComparisionDisplayComponent,
-    RankingsPageComponent,
     StockBadgeListComponent,
     OpinionItemDisplayComponent,
     IndustryListPageComponent,
@@ -210,6 +211,9 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     AddNoteComponent,
     AddNewsFormComponent,
     ContentDisplayComponent,
+    ListComponent,
+    ActionsListPageComponent,
+    NotesListPageComponent,
   ],
   imports: [
     BrowserModule,

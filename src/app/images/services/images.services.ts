@@ -11,4 +11,8 @@ export class ImageServices {
       return imageArray?.[Math.floor(Math.random() * imageArray.length)];
     }
   }
+
+  getAutherImageLink(authorName: string) {}
+
+  getOrganizationImageLink(organizationName: string) {}
 }

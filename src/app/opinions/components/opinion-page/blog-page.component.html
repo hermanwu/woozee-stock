@@ -1,67 +1,28 @@
-<mat-tab-group>
-  <mat-tab label="Opinions">
-    <app-title-menu>
-      <div header-1 i18n>Opinions</div>
+<nav mat-tab-nav-bar>
+  <a
+    mat-tab-link
+    [routerLink]="[notesRoute]"
+    [active]="activeRoute === notesRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+    >Notes</a
+  >
+  <a
+    mat-tab-link
+    [routerLink]="[actionsRoute]"
+    [active]="activeRoute === actionsRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+    >Actions</a
+  >
 
-      <div buttons>
-        <button mat-icon-button [matMenuTriggerFor]="newsMenu">
-          <mat-icon>more_horiz</mat-icon>
-        </button>
-
-        <mat-menu #newsMenu="matMenu">
-          <button mat-menu-item (click)="openAddNewsDialog()">
-            <mat-icon>add</mat-icon>
-          </button>
-        </mat-menu>
-      </div>
-    </app-title-menu>
-
-    <div class="opinion-card" *ngFor="let opinion of myOpinions">
-      <app-card>
-        <app-opinion-item-display
-          [opinion]="opinion"
-        ></app-opinion-item-display>
-      </app-card>
-    </div>
-  </mat-tab>
-
-  <mat-tab label="Tips">
-    <app-title-menu>
-      <div header-1 i18n>Tips</div>
-
-      <div buttons>
-        <button mat-icon-button [matMenuTriggerFor]="newsMenu">
-          <mat-icon>more_horiz</mat-icon>
-        </button>
-
-        <mat-menu #newsMenu="matMenu">
-          <button mat-menu-item (click)="openAddNewsDialog()">
-            <mat-icon>add</mat-icon>
-          </button>
-        </mat-menu>
-      </div>
-    </app-title-menu>
-
-    <app-card *ngFor="let item of toDo">{{ item.title }}</app-card>
-  </mat-tab>
-
-  <mat-tab label="Mistakes">
-    <app-title-menu>
-      <div header-1 i18n>Mistakes</div>
-
-      <div buttons>
-        <button mat-icon-button [matMenuTriggerFor]="newsMenu">
-          <mat-icon>more_horiz</mat-icon>
-        </button>
-
-        <mat-menu #newsMenu="matMenu">
-          <button mat-menu-item (click)="openAddNewsDialog()">
-            <mat-icon>add</mat-icon>
-          </button>
-        </mat-menu>
-      </div>
-    </app-title-menu>
-
-    <app-card *ngFor="let item of toAvoid">{{ item.title }}</app-card>
-  </mat-tab>
-</mat-tab-group>
+  <a
+    mat-tab-link
+    [routerLink]="[listRoute]"
+    [active]="activeRoute === listRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+    >Lists</a
+  >
+</nav>
+<router-outlet></router-outlet>

@@ -80,6 +80,13 @@
           </a>
         </span>
       </div>
+
+      <div *ngFor="let item of news?.imageLinks?.slice(1)">
+        <app-stock-image-display
+          [imageLinks]="[item]"
+          [tag]="news?.tags?.[0]"
+        ></app-stock-image-display>
+      </div>
     </div>
   </div>
 </ng-template>

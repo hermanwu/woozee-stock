@@ -8,9 +8,7 @@ import { UserServices } from 'src/app/accounts/services/user.services';
 import { NewsService } from 'src/app/news/services/news.services';
 import { Opinion } from 'src/app/opinions/components/opinion-display/opinion.interface';
 import { OpinionServices } from 'src/app/opinions/services/opinion.services';
-import { companyRisks } from 'src/app/risks/data/risks/component-risks-defination';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { NoteDialogComponent } from 'src/app/shared/components/note-dialog/note-dialog.component';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
 import { environment } from 'src/environments/environment';
@@ -95,18 +93,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
 
   openAll(): void {
     this.isAllCardOpen = true;
-  }
-
-  openRiskInfoDialog(): void {
-    this.dialog.open<NoteDialogComponent>(NoteDialogComponent, {
-      data: {
-        title: 'Company Risk Definitions',
-        notes: companyRisks,
-        isExpanded: false,
-        isActionButtonsHidden: false,
-      },
-      panelClass: 'medium-modal-panel',
-    });
   }
 
   setDisplayMode(displayMode: DisplayMode) {

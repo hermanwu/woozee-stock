@@ -3,7 +3,7 @@ import { Note } from 'src/app/shared/data/note.interface';
 import { FactType } from './fact-type.enum';
 import { Term } from './risk-level.model';
 
-export interface Risk extends Note {
+export interface Risk {
   uuid?: string;
   stockId?: string;
   newsUuid?: string;
@@ -13,7 +13,7 @@ export interface Risk extends Note {
 
   // TO RETIRE:
   name?: string;
-  notes?: Note[];
+  notes?: any[];
   createdTime?: Date;
   updatedTime?: Date;
   endTime?: Date;
@@ -22,4 +22,5 @@ export interface Risk extends Note {
 
   vote?: number;
   tickers?: string[];
+  content?: string;
 }

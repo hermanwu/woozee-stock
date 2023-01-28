@@ -7,14 +7,6 @@
     i18n
     >Notes</a
   >
-  <a
-    mat-tab-link
-    [routerLink]="[actionsRoute]"
-    [active]="activeRoute === actionsRoute"
-    (click)="onAnchorLinkClicked($event.target)"
-    i18n
-    >Actions</a
-  >
 
   <a
     mat-tab-link
@@ -23,6 +15,15 @@
     (click)="onAnchorLinkClicked($event.target)"
     i18n
     >Lists</a
+  >
+
+  <a
+    mat-tab-link
+    [routerLink]="[actionsRoute]"
+    [active]="activeRoute === actionsRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+    >Actions</a
   >
 </nav>
 <router-outlet></router-outlet>

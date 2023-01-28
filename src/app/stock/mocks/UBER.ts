@@ -3,12 +3,7 @@ import { Risk } from 'src/app/risks/models/risk.model';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 
-export const uberRisks: Risk[] = [
-  {
-    uuid: 'risk-uber-1',
-    content: 'Delivery gross booking only increase 12% Y/Y',
-  },
-];
+export const uberRisks: Risk[] = [];
 
 export const uber: StockAnalysis = {
   marketCap: 46.32 * BILLION,

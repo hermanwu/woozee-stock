@@ -58,16 +58,6 @@ export const team: StockAnalysis = {
             'https://s28.q4cdn.com/541786762/files/doc_financials/2023/q1/TEAM-Q1-2023-Shareholder-Letter.pdf',
         },
       ],
-      quotes: [
-        {
-          content:
-            'Subscription revenue grew by 50% year-over-year. Cloud revenue grew by 49% year-over-year and Data Center revenue grew by 54% year-over-year.',
-        },
-        {
-          content:
-            'we also saw the growth of paid users from existing customers slow in the second half of Q1, largely due to customers slowing their rate of hiring.',
-        },
-      ],
     },
     {
       year: 2022,

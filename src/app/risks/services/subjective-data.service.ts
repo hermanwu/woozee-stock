@@ -3,10 +3,10 @@ import { catalysts } from 'src/app/catalyst/data/catalyst.mock';
 import { IndustryType } from 'src/app/facts/data/area.enum';
 import { allMarkets } from 'src/app/markets/data/all-markets.const';
 import { allNews } from 'src/app/news/data/news.const';
+import { Note } from 'src/app/shared/data/note.interface';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { Industry } from 'src/app/stock/models/industry.model';
-import { NewsWithDetails } from 'src/app/stock/models/news.model';
 import { allRisks } from '../data/global-risk.const';
 import { Risk } from '../models/risk.model';
 
@@ -16,7 +16,7 @@ import { Risk } from '../models/risk.model';
 export class riskService {
   risks: Risk[];
   catalysts: Catalyst[];
-  newsWithDetails: NewsWithDetails[];
+  newsWithDetails: Note[];
   markets: Industry[];
 
   catalystMap: Map<string, Catalyst> = new Map();
@@ -25,7 +25,7 @@ export class riskService {
 
   constructor() {
     this.risks = cloneDeep(allRisks);
-    this.newsWithDetails = cloneDeep(allNews) as NewsWithDetails[];
+    this.newsWithDetails = cloneDeep(allNews);
     this.catalysts = cloneDeep(catalysts);
     this.markets = cloneDeep(allMarkets);
 

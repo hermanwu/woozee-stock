@@ -17,18 +17,6 @@ export const coinRisks: Risk[] = [
     content: 'New user and revenue growth slows down',
     level: Term.short,
     type: FactType.growth,
-    notes: [
-      {
-        content:
-          'decline in crypto asset volatility and crypt asset price compared to all-time high levels in Q4 2021',
-      },
-      {
-        content: 'Crypt market capitalize n is down over 20%',
-      },
-      {
-        content: ' lower trading volume per retail MTU trends to date in QA',
-      },
-    ],
   },
   {
     uuid: 'coin-r-2',

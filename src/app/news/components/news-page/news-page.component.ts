@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DailyMediumReportDisplayDialogComponent } from 'src/app/news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
+import { Note } from 'src/app/shared/data/note.interface';
 import { Industry } from 'src/app/stock/models/industry.model';
-import { EventType, NewsWithDetails } from 'src/app/stock/models/news.model';
+import { EventType } from 'src/app/stock/models/news.model';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
 import { environment } from 'src/environments/environment';
 import { NewsService } from '../../services/news.services';
@@ -16,8 +17,9 @@ export class NewsPageComponent implements OnInit {
   environment = environment;
   readonly eventType = EventType;
   showTools: boolean = false;
-  news: NewsWithDetails[];
+  news: Note[];
   stocks: StockAnalysis[];
+  notes: Note[];
   markets: Industry[];
   showAddNotesSection = false;
 

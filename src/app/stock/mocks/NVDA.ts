@@ -84,12 +84,6 @@ export const nvda: StockAnalysis = {
         'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/0ec16816-55e2-4812-8f77-75cab5909247.pdf',
       pressReleaseLink:
         'https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2023',
-      notes: [
-        { content: 'Gaming: 3.42B +37%' },
-        { content: 'Professional Visualization: 3.26B +71%' },
-        { content: 'Virtual: 643M +109%' },
-        { content: 'Automotive and Robotics: 125M -14%' },
-      ],
       year: 2022,
       quarter: 4,
       totalRevenue: 7643 * MILLION,

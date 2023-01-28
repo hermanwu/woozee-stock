@@ -6,6 +6,8 @@
       <mat-chip>Quote</mat-chip>
       <mat-chip>Opinion</mat-chip>
       <mat-chip>Advice</mat-chip>
+      <mat-chip>Fact</mat-chip>
+      <mat-chip>Match</mat-chip>
     </mat-chip-list>
   </div>
 
@@ -24,7 +26,10 @@
 
 <div class="opinion-card" *ngFor="let opinion of myOpinions">
   <app-card>
-    <app-opinion-item-display [opinion]="opinion"></app-opinion-item-display>
+    <app-opinion-item-display
+      [expanded]="'true'"
+      [opinion]="opinion"
+    ></app-opinion-item-display>
   </app-card>
 </div>
 

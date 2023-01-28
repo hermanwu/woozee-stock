@@ -31,11 +31,6 @@ export const disneyRisks: Risk[] = [
   {
     uuid: 'dis-r-1',
     content: 'COVID impact in Asia, specifically lockdown in China.',
-    notes: [
-      {
-        content: 'Parks have been closed in Shanghai and Hongkong.',
-      },
-    ],
     level: Term.long,
   },
   {

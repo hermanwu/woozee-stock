@@ -6,7 +6,7 @@ import { NewsService } from '../news/services/news.services';
 import { Opinion } from '../opinions/components/opinion-display/opinion.interface';
 import { OpinionServices } from '../opinions/services/opinion.services';
 import { RegionCode } from '../shared/data/enum/region.enum';
-import { News } from '../stock/models/news.model';
+import { Note } from '../shared/data/note.interface';
 
 @Component({
   selector: 'app-region-properties-page',
@@ -17,7 +17,7 @@ export class RegionPropertiesPageComponent implements OnInit, OnDestroy {
   routeSub: Subscription;
   regionCode: RegionCode;
   opinions: Opinion[];
-  news: News[];
+  news: Note[];
   marketType: string;
 
   constructor(

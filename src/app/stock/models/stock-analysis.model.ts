@@ -1,5 +1,4 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
-import { Note } from 'src/app/shared/data/note.interface';
 import { Business } from '../components/business-overview/business.model';
 import { EarningsReport } from './earnings.model';
 import { MyScore } from './herman-score.model';
@@ -22,7 +21,7 @@ export interface StockAnalysis {
   logo?: string;
   name?: any;
   shortName?: string;
-  description?: Note[];
+  description?: any[];
   ticker: string;
   ceoQuote?: string[];
   advantage?: string[];
@@ -70,9 +69,9 @@ export interface StockAnalysis {
   score?: MyScore;
   lastUpdated?: Date;
   source?: any;
-  companyOfficialDocs?: Note[];
-  usefulVideos?: Note[];
-  news?: News[] | Note[];
+  companyOfficialDocs?: any[];
+  usefulVideos?: any[];
+  news?: News[] | any[];
   myRating?: Rating;
-  note?: Note;
+  note?: any;
 }

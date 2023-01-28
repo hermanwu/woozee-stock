@@ -1,12 +1,48 @@
-import { IndustryType } from 'src/app/facts/data/area.enum';
-import { Index } from 'src/app/macro/macro.enum';
-import { TimeFrame } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { RegionCode } from 'src/app/shared/data/enum/region.enum';
+import { Note } from 'src/app/shared/data/note.interface';
 import { getUtcDate } from 'src/app/shared/functions/getUtcDate.function';
 import { Source } from 'src/app/stock/models/news-source.enum';
-import { EventType, News } from 'src/app/stock/models/news.model';
 
-export const allNews: News[] = [
+export const allNews: Note[] = [
+  {
+    title:
+      '其他：电动车公司LUCID今天上涨43%，有传言声称该公司可能被沙特主权基金收购。',
+    content:
+      '运通AMEX在发布好于预期的2023指引后，股价上上涨11%。同时公司将股息提高15%。\n英特尔财报不及预期，今天下跌近7%。营收连续四个季度下滑且无好转迹象。\n玩具制造商Hasbro警告假期季度业绩疲弱，并表示将裁员1000人。今天股价下跌6.7%。',
+    tags: ['lcid'],
+    uuid: 'fb13fc17-a85f-4a2c-8d30-e4332b96c55e',
+    date: '2023-01-27T21:52:28.523Z',
+    type: 'fact',
+    noteType: 'fact',
+  },
+  {
+    imageLinks: [
+      'https://i.ibb.co/mSYKGP1/Screenshot-2023-01-27-at-1-41-25-PM.png',
+    ],
+    title: '周五美股三大指数再次上涨；PCE数据显示通胀继续放缓。',
+    content:
+      '纳指上涨0.95%，连续第四周上涨。标普500上涨0.25%，道指上涨0.08%。特斯拉周五上涨11%，本周涨幅接近35%。2023年股市一改颓势，到目前为止，道指上涨 2.5%，标普上涨 6%，纳斯达克上涨11%。\n下周继续是繁忙的一周：苹果，亚马逊，谷歌等科技巨头将发布财报，美联储也将在下周召开会议公布加息利率。\n\n',
+    tags: ['news'],
+    uuid: 'daf1589b-7fe2-44c6-9183-a82579af46e5',
+    date: '2023-01-27T21:39:07.026Z',
+    type: 'fact',
+    noteType: 'fact',
+  },
+  {
+    imageLinks: [
+      'https://i.ibb.co/wLx48HR/Screenshot-2023-01-27-at-1-14-16-PM.png',
+    ],
+    title:
+      '核心PCE（Personal Consumption Expenditures）同比增长4.4%，为2021年10月以来的最小年度增幅。\n',
+    content:
+      '根据商务部周五数据，核心PCE（不包括食品和能源的个人消费支出）同比增长 4.4%，低于 11 月份的 4.7%。环比增长0.3%，也符合预期。消费者支出下降了0.2%，连续第二个月下降。核心PCE是美联储的首选通胀指标之一。\n',
+    tags: ['inflation'],
+    sourceLink:
+      'https://www.investors.com/news/economy/fed-key-inflation-rate-may-trip-up-the-sp-500/',
+    uuid: '46bcce70-688b-4819-bf43-cc09a982cc10',
+    date: '2023-01-27T21:18:48.565Z',
+    noteType: 'fact',
+  },
   {
     title:
       '美国第四季度GDP增长2.9%；申请失业救济人数降至22 年4月以来的最低水平\n',
@@ -18,6 +54,7 @@ export const allNews: News[] = [
     tags: ['gdp'],
     uuid: 'b6e30780-323d-481d-a323-07aaf38b44b9',
     date: '2023-01-26T21:49:59.186Z',
+    noteType: 'fact',
   },
   {
     title: '酩悦·轩尼诗－路易·威登集团（LVMH）对中国充满信心',
@@ -26,6 +63,7 @@ export const allNews: News[] = [
     tags: ['lvmh'],
     uuid: '0e269b31-88fe-493a-85b3-2ea4c782b821',
     date: '2023-01-26T21:44:16.138Z',
+    noteType: 'fact',
   },
   {
     title: '周四美股三大指数集体收涨；特斯拉上涨近11%',
@@ -37,6 +75,7 @@ export const allNews: News[] = [
     tags: ['news'],
     uuid: '61fdf0e0-4497-4c55-9ca7-b8a81dc46ce5',
     date: '2023-01-26T21:33:40.426Z',
+    noteType: 'fact',
   },
   {
     title: '英特尔Intel，Visa，西南航空Southwest Airline发布财报。',
@@ -45,6 +84,7 @@ export const allNews: News[] = [
     tags: ['intc'],
     uuid: 'd5ea6e72-4a49-4d66-9406-bb66fd21088b',
     date: '2023-01-26T22:00:56.143Z',
+    noteType: 'fact',
   },
   {
     title: '周三美股三大指数低开高走，“无视”微软疲软财报',
@@ -56,6 +96,7 @@ export const allNews: News[] = [
     tags: ['news'],
     uuid: 'b741f75c-c813-4f86-b1b7-d57213119ab6',
     date: '2023-01-25T23:34:42.174Z',
+    noteType: 'fact',
   },
   {
     title: 'AT&T财报显示订阅人数增长超预期，',
@@ -65,6 +106,7 @@ export const allNews: News[] = [
     tags: ['t'],
     uuid: '83f1e435-ef31-4f85-ab7c-b49e42ef29ec',
     date: '2023-01-25T22:33:45.907Z',
+    noteType: 'fact',
   },
   {
     title: '阿斯麦ASML第四季度营收盈利均超预期',
@@ -73,6 +115,7 @@ export const allNews: News[] = [
     tags: ['asml'],
     uuid: 'bba6d3b4-d425-4149-b470-1f4f930dc2b2',
     date: '2023-01-25T22:03:09.862Z',
+    noteType: 'fact',
   },
   {
     title: '波音第四季度财报营收盈利均不及预期。',
@@ -82,6 +125,7 @@ export const allNews: News[] = [
     tags: ['ba'],
     uuid: '686b9b93-e64b-40be-ab63-b5c9d57767b9',
     date: '2023-01-25T21:50:16.356Z',
+    noteType: 'fact',
   },
   {
     title: '特斯拉第四季度财报营收盈利均超过预期。',
@@ -94,6 +138,7 @@ export const allNews: News[] = [
     tags: ['tsla'],
     uuid: 'e3b7bf5d-3702-4fa1-802f-a5edceb34757',
     date: '2023-01-25T21:21:04.831Z',
+    noteType: 'fact',
   },
   {
     title: '微软财报营收下滑超预期，周三盘前三大指数期货均下跌。',
@@ -102,6 +147,7 @@ export const allNews: News[] = [
     tags: ['msft'],
     uuid: '27e4e53f-39c7-4fbc-82e5-25bf98096050',
     date: '2023-01-25T11:39:26.529Z',
+    noteType: 'fact',
   },
   {
     title: '德州仪器Texas Instruments财报营收盈利超预期',
@@ -110,6 +156,7 @@ export const allNews: News[] = [
     tags: ['txn'],
     uuid: 'f074591a-f341-42d2-9813-4ad760e89ae6',
     date: '2023-01-24T23:29:06.774Z',
+    noteType: 'fact',
   },
   {
     title: '强生第四季度营收不及预期,但盈利超预期',
@@ -118,6 +165,7 @@ export const allNews: News[] = [
     tags: ['jnj'],
     uuid: '923f9bb1-5d23-48b3-b640-03b55f97a643',
     date: '2023-01-24T23:14:28.092Z',
+    noteType: 'fact',
   },
   {
     title: '洛克希德马丁营收盈利超预期，股价周二上涨1.8%',
@@ -126,6 +174,7 @@ export const allNews: News[] = [
     tags: ['lmt'],
     uuid: 'd2aeda6d-bfff-4498-828d-a20492e1f44b',
     date: '2023-01-24T22:37:42.840Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -137,6 +186,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3927398-intuitive-surgical-non-gaap-eps-of-1_23-misses-0_02-revenue-of-1_66b-in-line',
     uuid: 'b4128203-1869-4bfa-8d04-e973be42deeb',
     date: '2023-01-24T22:24:03.392Z',
+    noteType: 'fact',
   },
   {
     title: '周二美股三大指数涨跌不一，公司财报表现参差不齐',
@@ -148,6 +198,7 @@ export const allNews: News[] = [
     tags: ['news'],
     uuid: '4bfeade2-a00b-4850-9deb-0e2c6be8abf4',
     date: '2023-01-24T22:16:52.246Z',
+    noteType: 'fact',
   },
   {
     title: '微软财报盈利超预期，但营收增速持续下滑',
@@ -156,6 +207,7 @@ export const allNews: News[] = [
     tags: ['msft'],
     uuid: 'd5777c60-7ccf-45ff-94c2-d209b4314648',
     date: '2023-01-24T21:24:29.829Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -168,6 +220,7 @@ export const allNews: News[] = [
     tags: ['news'],
     uuid: 'ea4c6113-2559-4f5e-bfc5-75908c4d3efa',
     date: '2023-01-23T22:38:22.854Z',
+    noteType: 'fact',
   },
   {
     title: '微软宣布对OpenAI进行新的一轮价值数十亿美元的投资。',
@@ -178,6 +231,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/23/microsoft-announces-multibillion-dollar-investment-in-chatgpt-maker-openai.html',
     uuid: '08a27d63-dd98-407d-b9e2-9f20c0bcac6f',
     date: '2023-01-23T22:18:58.793Z',
+    noteType: 'fact',
   },
   {
     title: '音乐流媒体公司Spotify周一宣布将裁员6%,约600人',
@@ -188,6 +242,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/23/spotify-to-cut-6percent-of-its-workforce-as-tech-layoffs-continue.html',
     uuid: '7b410542-adc6-4d9b-877c-e1f3a29f710e',
     date: '2023-01-23T22:09:10.438Z',
+    noteType: 'fact',
   },
   {
     title: '周一股市大幅走高，投资者期待本周财报',
@@ -201,6 +256,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/22/stock-market-futures-open-to-close-news.html',
     uuid: '6263c2fe-84c4-40b6-9317-53ebac991afd',
     date: '2023-01-23T21:33:21.207Z',
+    noteType: 'fact',
   },
   {
     title: '下周微软，特斯拉， Visa等将发布财报',
@@ -212,6 +268,7 @@ export const allNews: News[] = [
     tags: ['calendar event'],
     uuid: '0c5d4b4e-df9a-4892-96cd-aefca53e8d7b',
     date: '2023-01-20T22:10:04.195Z',
+    noteType: 'fact',
   },
   {
     title: '🏮新年到，周五美股强势上扬',
@@ -223,6 +280,7 @@ export const allNews: News[] = [
     tags: ['news'],
     uuid: 'ff8017a9-10ea-41b7-8b6c-ee2fecf65aa2',
     date: '2023-01-20T21:50:30.974Z',
+    noteType: 'fact',
   },
   {
     title: '美联储理事Waller支持在下次FOMC会议上加息25个基点，符合市场预期。',
@@ -234,6 +292,7 @@ export const allNews: News[] = [
     ],
     uuid: 'b298767c-3154-4c33-9906-341382196754',
     date: '2023-01-20T21:41:30.388Z',
+    noteType: 'fact',
   },
   {
     title: '谷歌宣布将立即开始裁员12000人',
@@ -244,6 +303,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/20/google-to-lay-off-12000-people-memo-from-ceo-sundar-pichai-says.html',
     uuid: 'aecb7977-c4e3-42b7-8bef-f8716dc76c00',
     date: '2023-01-20T21:18:04.955Z',
+    noteType: 'fact',
   },
   {
     title: 'Nordstrom公布悲观假期销售数据并下调盈利预期。',
@@ -252,6 +312,7 @@ export const allNews: News[] = [
     tags: ['jwn'],
     uuid: '07795edc-d0c6-4bf3-9dcb-d318cf517213',
     date: '2023-01-19T21:47:21.200Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -261,6 +322,7 @@ export const allNews: News[] = [
     tags: ['nflx'],
     uuid: 'c9b19e82-20df-464d-a52a-3622b799cc19',
     date: '2023-01-19T21:29:04.105Z',
+    noteType: 'fact',
   },
   {
     title: '奈飞Netflix盈利不及预期，但新增订阅用户766万。',
@@ -271,6 +333,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/19/netflix-nflx-earnings-q4-2022.html',
     uuid: '2faa958b-c446-4b87-80ce-23b6a2cf3f0e',
     date: '2023-01-19T21:23:15.744Z',
+    noteType: 'fact',
   },
   {
     title: '宝洁财报营收超过预期，但销量下降令人担忧。',
@@ -281,6 +344,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3925796-procter-gamble-non-gaap-eps-of-159-in-line-revenue-of-208b-beats-by-50m-raises-fy2023-sales-outlook',
     uuid: 'f215ebb4-31f5-429c-8654-49fac2f51d06',
     date: '2023-01-19T21:04:48.679Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -293,6 +357,7 @@ export const allNews: News[] = [
     ],
     uuid: 'a0c34c21-d311-493c-b7ce-24031d3144f9',
     date: '2023-01-19T20:52:09.808Z',
+    noteType: 'fact',
   },
   {
     title: '亚马逊将在2月砍掉其有着10年历史的AmazonSmile慈善捐赠项目',
@@ -303,6 +368,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/18/amazon-discontinues-amazonsmile-charity-donation-program-amid-cost-cuts.html',
     uuid: '4c6134d4-eaa1-4f86-b56d-eb2c89830dff',
     date: '2023-01-19T20:17:35.513Z',
+    noteType: 'fact',
   },
   {
     title: '周三美股三大指数高开低走，收盘全部下跌超1%，纳斯达克终止七天连涨。',
@@ -314,6 +380,7 @@ export const allNews: News[] = [
     ],
     uuid: '6ea0a2bd-c01f-4030-b08f-ecad43e5df34',
     date: '2023-01-18T22:30:20.134Z',
+    noteType: 'fact',
   },
   {
     title: 'Discover Financial财报营收盈利均超预期。',
@@ -322,6 +389,7 @@ export const allNews: News[] = [
     tags: ['dfs'],
     uuid: '4dc980cf-cd73-4f04-9e66-2845e2522718',
     date: '2023-01-18T22:05:29.970Z',
+    noteType: 'fact',
   },
   {
     title: '美国假日季零售数据低于行业预期。',
@@ -330,6 +398,7 @@ export const allNews: News[] = [
     tags: ['retail'],
     uuid: 'bfbd4c56-d3bd-42d1-b78d-f804404cb571',
     date: '2023-01-18T21:54:42.018Z',
+    noteType: 'fact',
   },
   {
     title: '微软和亚马逊周三开始新一轮裁员计划',
@@ -340,6 +409,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/18/amazon-set-to-begin-new-round-of-layoffs-affecting-over-18000-people.html',
     uuid: 'e7692cfa-c48d-4ab5-bae0-4f4d1acad08e',
     date: '2023-01-18T21:42:41.811Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -349,6 +419,7 @@ export const allNews: News[] = [
     tags: ['news'],
     uuid: '08171464-fc95-4e6c-9cde-7b1687722ab9',
     date: '2023-01-17T23:48:08.803Z',
+    noteType: 'fact',
   },
   {
     title: '摩根士丹利Morgan Stanley第四季度收益好于华尔街预期。\n',
@@ -357,6 +428,7 @@ export const allNews: News[] = [
     tags: ['ms'],
     uuid: '0d9e546b-70fd-4c5f-835d-c9ad15cf8461',
     date: '2023-01-17T23:30:54.414Z',
+    noteType: 'fact',
   },
   {
     title: '高盛Goldman Sachs交出近十年来最差的财报，收入和盈利均不及预期。',
@@ -367,6 +439,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3924604-goldman-sachs-q4-earnings-drop',
     uuid: 'e663c9b3-f8a3-407b-a0a8-45a2dfe8f11b',
     date: '2023-01-17T23:17:06.068Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -379,6 +452,7 @@ export const allNews: News[] = [
     ],
     uuid: 'f5cd5c06-c66d-4dc5-a5d3-19736387af95',
     date: '2023-01-17T22:52:33.694Z',
+    noteType: 'fact',
   },
   {
     title: 'Apple发布新款MacBook Pro和Mac mini, 配备最新M2 Pro和 M2 Max芯片。',
@@ -392,6 +466,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/17/apple-announces-new-mac-mini-macbook-pro-with-m2-pro-and-m2-max.html',
     uuid: '6713765b-2e46-4130-9a10-b7214062f416',
     date: '2023-01-17T22:39:28.701Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -403,6 +478,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/17/moderna-says-rsv-vaccine-is-84percent-effective-at-preventing-disease-in-older-adults.html',
     uuid: '47358c25-768e-4a3c-9a08-d24a49c0007b',
     date: '2023-01-17T22:23:06.760Z',
+    noteType: 'fact',
   },
   {
     title: '莫德纳Moderna宣称新研发的RSV疫苗对老年人有显著作用。',
@@ -413,6 +489,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/17/moderna-says-rsv-vaccine-is-84percent-effective-at-preventing-disease-in-older-adults.html',
     uuid: '3989157e-b61b-4c41-a3cb-e4d41e568d63',
     date: '2023-01-17T22:08:32.599Z',
+    noteType: 'fact',
   },
   {
     title: '高票价无法阻挡强劲的需求，美联航第四季度财报及2023年前瞻均超预期。',
@@ -423,6 +500,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3925187-united-airlines-stock-soars-after-big-bottom-line-beat-bullish-forecast',
     uuid: '9e938017-f09f-4906-b775-c89d285597aa',
     date: '2023-01-17T21:37:34.417Z',
+    noteType: 'fact',
   },
   {
     title: '周五关注',
@@ -431,6 +509,7 @@ export const allNews: News[] = [
     tags: ['tsla'],
     uuid: 'fc3ba54a-d473-44f4-aa26-1ac4ad963342',
     date: '2023-01-16T23:49:10.083Z',
+    noteType: 'fact',
   },
   {
     title: '周四关注',
@@ -439,6 +518,7 @@ export const allNews: News[] = [
     tags: ['pg'],
     uuid: 'b5003bf4-a319-4076-816d-6206087010aa',
     date: '2023-01-16T23:44:35.770Z',
+    noteType: 'fact',
   },
   {
     title: '周三关注',
@@ -447,6 +527,7 @@ export const allNews: News[] = [
     tags: ['schw'],
     uuid: '8d6f5ae4-3bdd-474f-9fb2-8df280ec27ab',
     date: '2023-01-16T23:34:59.470Z',
+    noteType: 'fact',
   },
   {
     title: '周二关注',
@@ -455,6 +536,7 @@ export const allNews: News[] = [
     tags: ['gs'],
     uuid: '2fabc819-9f1a-4fb4-b991-813c82974ff1',
     date: '2023-01-16T23:30:13.456Z',
+    noteType: 'fact',
   },
   {
     title: '财报季正式开启：高盛，奈飞Netflix等将发布财报。',
@@ -466,6 +548,7 @@ export const allNews: News[] = [
     uuid: '2080567a-28eb-4a64-af40-374a0b0a6e26',
     date: '2023-01-16T19:44:30.733Z',
     imageLinks: [''],
+    noteType: 'fact',
   },
   {
     title: '周五三大指数在开盘下跌后强力反弹。纳斯达克连续六天上涨。\n',
@@ -476,6 +559,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/12/stock-market-futures-open-to-close-news.html',
     uuid: 'dff84ac2-f241-42af-9c89-b3d9c62a8a65',
     date: '2023-01-14T14:24:41.410Z',
+    noteType: 'fact',
   },
   {
     title: '苹果首席执行官Tim Cook要求大幅削减他的薪酬\n',
@@ -486,6 +570,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3924410-apple-ceo-tim-cook-asks-for-a-big-cut-in-compensation',
     uuid: 'beed23ba-8c25-4a42-840c-e48ede538d78',
     date: '2023-01-14T14:15:54.324Z',
+    noteType: 'fact',
   },
   {
     title: '台积电第四季度营收低于预期，但确认将削减2023年支出。',
@@ -496,6 +581,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3924192-taiwan-semiconductor-confirms-will-cut-2023-spending',
     uuid: '5f69d765-5c1f-4bcc-ad68-2325d449c35e',
     date: '2023-01-14T14:10:30.813Z',
+    noteType: 'fact',
   },
   {
     title: '美国银行Bank of America第四季度营收盈利均高于预期。',
@@ -506,6 +592,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3924335-bank-of-america-q4-earnings',
     uuid: '161e390f-cf00-4720-8665-d0af1c8bfaa4',
     date: '2023-01-14T13:59:17.708Z',
+    noteType: 'fact',
   },
   {
     title: '摩根大通JPMorgan Chase第四季度财报营收利润均高于预期。',
@@ -514,6 +601,7 @@ export const allNews: News[] = [
     tags: ['jpm'],
     uuid: '2279cf13-f0de-499e-9aa4-7276c1526ca0',
     date: '2023-01-14T13:39:30.266Z',
+    noteType: 'fact',
   },
   {
     title: '特斯拉宣布在美国和欧洲大幅降价，正式开始价格战。',
@@ -522,6 +610,7 @@ export const allNews: News[] = [
     tags: ['tsla'],
     uuid: 'c39ac6b6-3198-4276-8f47-cf70c1cf1d84',
     date: '2023-01-14T13:24:00.598Z',
+    noteType: 'fact',
   },
   {
     title: '快餐连锁Wendy’s公布第四季度初步业绩,股价大涨近6%',
@@ -532,6 +621,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3924455-wendys-pre-announces-above-consensus-sales-bolsters-buyback-program',
     uuid: '261f15cf-9126-47d6-82e8-c429d1a4de45',
     date: '2023-01-14T05:55:53.530Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -541,6 +631,7 @@ export const allNews: News[] = [
     tags: ['spce'],
     uuid: 'e5b52394-4aa7-4c67-930c-330493baf11d',
     date: '2023-01-13T05:17:20.913Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -550,6 +641,7 @@ export const allNews: News[] = [
     tags: ['lcid'],
     uuid: '293a50a0-e179-483f-816c-7cec86bd916b',
     date: '2023-01-13T05:16:55.094Z',
+    noteType: 'fact',
   },
   {
     title: 'Tesla is looking for the next Gigafactory in Indonesia',
@@ -558,6 +650,7 @@ export const allNews: News[] = [
     tags: ['tsla'],
     uuid: '749cf606-3f21-4169-90de-390553e6d883',
     date: '2023-01-13T05:16:27.514Z',
+    noteType: 'fact',
   },
   {
     title: 'Disney board faces a proxy fight from activist investor Peltz.\n\n',
@@ -566,6 +659,7 @@ export const allNews: News[] = [
     tags: ['dis'],
     uuid: '64e7828f-23c8-4a2e-a73c-fcfe7de624fe',
     date: '2023-01-13T05:16:01.012Z',
+    noteType: 'fact',
   },
   {
     title: 'Food inflation heats up again in CPI report: Egg prices up 60% YoY',
@@ -574,6 +668,7 @@ export const allNews: News[] = [
     tags: ['cpi'],
     uuid: '2a0a3a54-7d17-4a2d-b808-104c8d78a05a',
     date: '2023-01-13T05:15:24.435Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -583,6 +678,7 @@ export const allNews: News[] = [
     tags: ['news'],
     uuid: '7e616c72-984e-4af2-b4bb-3aaf2b978dc0',
     date: '2023-01-13T05:14:49.714Z',
+    noteType: 'fact',
   },
   {
     title: '迪斯尼董事会面临主动投资人Peltz的委托书争夺战（proxy fight）。',
@@ -593,6 +689,7 @@ export const allNews: News[] = [
       'https://finance.yahoo.com/news/bob-igers-next-big-challenge-at-disney-is-activist-investor-nelson-peltz-230245478.html',
     uuid: '43c7c463-f694-4b29-b450-e22481cb26bc',
     date: '2023-01-12T23:49:50.877Z',
+    noteType: 'fact',
   },
   {
     title: '特斯拉正在印度尼西亚寻找下一个电动汽车工厂',
@@ -603,6 +700,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3923667-tesla-eyes-indonesia-for-next-electric-vehicle-plant',
     uuid: 'd3158592-19a4-437d-852a-7ef8e75bf703',
     date: '2023-01-12T23:34:31.822Z',
+    noteType: 'fact',
   },
   {
     title: 'CPI报告中的食品通胀再次升温: 鸡蛋价格同比上涨60%',
@@ -613,6 +711,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3924135-food-inflation-runs-hot-again-in-cpi-report-including-egg-prices-up-60',
     uuid: 'f9e310fc-2049-43c7-9e2f-49a12a4550fc',
     date: '2023-01-12T23:19:16.588Z',
+    noteType: 'fact',
   },
   {
     title: '维珍银河Virgin Galatic预计第二季度开始开始商业化服务',
@@ -623,6 +722,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3924309-virgin-galactic-expects-commercial-service-to-begin-in-q2',
     uuid: '927fbab3-edba-4989-bf08-d36059d98e69',
     date: '2023-01-12T23:14:34.794Z',
+    noteType: 'fact',
   },
   {
     title: '电动豪华汽车制造商Lucid2022年生产的汽车数量超过预期。',
@@ -633,6 +733,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/12/lucid-lcid-2022-ev-production-exceeds-expectations.html',
     uuid: '2cc9fc76-db1e-465d-a2cf-95fecc412b6a',
     date: '2023-01-12T22:35:56.529Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -644,6 +745,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/12/consumer-prices-fell-0point1percent-in-december-in-line-with-economists-expectations.html',
     uuid: '77ba2453-c39e-48e9-a844-6d9d4ae2a0d5',
     date: '2023-01-12T21:58:05.654Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -655,6 +757,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/11/ubisoft-cancels-three-games-slashes-targets-on-worsening-conditions.html',
     uuid: '71f01d80-fba1-40bf-85cb-eaf5d97d9a09',
     date: '2023-01-12T06:49:45.530Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -666,6 +769,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/11/ubisoft-cancels-three-games-slashes-targets-on-worsening-conditions.html',
     uuid: '0e86be91-273f-4cd1-97e9-2e3dc16a7295',
     date: '2023-01-12T06:46:22.288Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -677,6 +781,7 @@ export const allNews: News[] = [
       'https://finance.yahoo.com/news/binance-says-plans-expand-hiring-041426149.html',
     uuid: '4414c145-689d-4907-8132-bb14184eeccc',
     date: '2023-01-12T06:04:43.736Z',
+    noteType: 'fact',
   },
   {
     title: '币安将在2023年将招聘人数扩大15%到30%',
@@ -687,6 +792,7 @@ export const allNews: News[] = [
       'https://finance.yahoo.com/news/binance-says-plans-expand-hiring-041426149.html',
     uuid: '0028e468-e235-47e4-88e5-5cb67cabf108',
     date: '2023-01-12T05:57:50.219Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -698,6 +804,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/11/apple-reportedly-considering-touchscreen-mac-laptop-for-2025.html',
     uuid: '4240717d-7d1a-41ed-b96d-6732948ee164',
     date: '2023-01-12T05:45:02.168Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -709,6 +816,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/11/apple-reportedly-considering-touchscreen-mac-laptop-for-2025.html',
     uuid: 'f9e34da3-72f2-4085-81c4-683d689c1e65',
     date: '2023-01-12T05:37:56.898Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -720,6 +828,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3923887-wall-street-shows-optimism-ahead-of-cpi-data-dow-sp-500-nasdaq-rise',
     uuid: 'a0967096-5bfd-4b27-a78b-fe0b2d93dcff',
     date: '2023-01-12T03:28:54.652Z',
+    noteType: 'fact',
   },
   {
     title: '市场看好周四的CPI报告, 三大指数集体收高。',
@@ -730,6 +839,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3923887-wall-street-shows-optimism-ahead-of-cpi-data-dow-sp-500-nasdaq-rise',
     uuid: '1d423563-7830-4b81-a8a3-ea72c368d2ac',
     date: '2023-01-12T01:16:29.560Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -741,6 +851,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/10/wells-fargo-once-the-no-1-player-in-mortgages-is-stepping-back-from-the-housing-market.html',
     uuid: '6fdf0d67-4da8-4dd7-9e7f-039e89172387',
     date: '2023-01-11T06:29:33.322Z',
+    noteType: 'fact',
   },
   {
     title: 'Coinbase is laying off another 950 staff.\n\n',
@@ -749,6 +860,7 @@ export const allNews: News[] = [
     tags: ['coin', 'crypto'],
     uuid: 'e9b1cf34-464b-4a73-8b8f-a034bbaba65d',
     date: '2023-01-11T06:20:26.550Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -758,6 +870,7 @@ export const allNews: News[] = [
     tags: ['bbby', 'retail'],
     uuid: 'a591f751-6b5c-4ca5-a55d-bcf7cf63c92c',
     date: '2023-01-11T06:16:59.265Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -769,6 +882,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/10/powell-stresses-need-for-feds-political-independence-while-tackling-inflation.html',
     uuid: '26e3800e-c229-4486-b9b1-00fabd8f34e9',
     date: '2023-01-11T05:44:10.569Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -780,6 +894,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/10/powell-stresses-need-for-feds-political-independence-while-tackling-inflation.html',
     uuid: '97c6db5c-f5b8-43c9-bfd0-109229abfa02',
     date: '2023-01-11T02:50:02.249Z',
+    noteType: 'fact',
   },
   {
     title: '实体连锁Bed Bath & Beyond周二发布财报，营收和利润均不及预期',
@@ -790,6 +905,7 @@ export const allNews: News[] = [
       'https://www.nbcnews.com/business/business-news/bed-bath-reports-wider-expected-loss-quarterly-earnings-rcna65080',
     uuid: '72d1ce6a-f57d-4fe4-9253-b3d9e7a1d82b',
     date: '2023-01-11T02:06:04.644Z',
+    noteType: 'fact',
   },
   {
     title: '苹果的应用商店增长可能正在放缓',
@@ -800,6 +916,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/10/apple-app-store-revenue-update-shows-slowing-growth-.html',
     uuid: '4749ee7d-1502-48d5-8ce5-175e172e97f2',
     date: '2023-01-11T01:05:07.792Z',
+    noteType: 'fact',
   },
   {
     title: 'Coinbase再裁950人',
@@ -810,6 +927,7 @@ export const allNews: News[] = [
       'https://www.npr.org/2023/01/10/1148163220/coinbase-layoffs-crypto-winter-bitcoin',
     uuid: '68c67378-ad2d-4293-b4b3-87e532826297',
     date: '2023-01-11T00:35:37.725Z',
+    noteType: 'fact',
   },
   {
     title: '美国最大房贷银行：富国银行，决定大规模缩减房贷业务',
@@ -820,6 +938,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/10/wells-fargo-once-the-no-1-player-in-mortgages-is-stepping-back-from-the-housing-market.html',
     uuid: 'ad6cee43-f83a-4bf1-b419-9924e96e81da',
     date: '2023-01-11T00:21:15.854Z',
+    noteType: 'fact',
   },
   {
     title: '消费者对住房市场的信心有所回升。',
@@ -830,6 +949,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/09/consumer-confidence-in-housing-rises-as-prices-fall.html',
     uuid: 'c436aea5-fb06-4ec7-847d-033344669c3a',
     date: '2023-01-09T22:55:30.337Z',
+    noteType: 'fact',
   },
   {
     title: '辉瑞CEO：2022 年是我们公司历史上最成功的年份之一',
@@ -839,6 +959,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/video/2023/01/09/pfizer-ceo-2022-was-one-of-the-most-successful-years-in-our-corporate-history.html',
     uuid: '80b754e1-e5b3-4201-8c13-b4e2acce8764',
     date: '2023-01-09T22:46:08.838Z',
+    noteType: 'fact',
   },
   {
     title: '马云将放弃了对蚂蚁集团的控制权',
@@ -849,6 +970,7 @@ export const allNews: News[] = [
       'https://www.barrons.com/articles/alibaba-hong-kong-stock-price-jack-ma-ant-51673253910',
     uuid: 'ad50e989-1814-4777-a042-9037c5c3b044',
     date: '2023-01-09T22:15:41.199Z',
+    noteType: 'fact',
   },
   {
     title: 'Lululemon下调第四季度利率指引,大跌近10%。',
@@ -859,6 +981,7 @@ export const allNews: News[] = [
       'https://finance.yahoo.com/news/lululemon-athletica-raises-fourth-quarter-115148722.html',
     uuid: '3e599c50-a47e-4e45-8c05-a1d6a2ef4c3c',
     date: '2023-01-09T22:07:55.821Z',
+    noteType: 'fact',
   },
   {
     title: '美股高开低走。市场期待这周的CPI报告和银行股的财报。',
@@ -869,6 +992,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3923039-sp500-dow-jones-nasdaq-stock-market-tech-stocks-rally-cpi-data',
     uuid: 'c4933c5e-c5df-4cad-961e-1bf154b8aa1e',
     date: '2023-01-09T21:46:39.004Z',
+    noteType: 'fact',
   },
 
   {
@@ -878,6 +1002,7 @@ export const allNews: News[] = [
     tags: ['COMP'],
     uuid: '0dca3183-b644-4161-b7a8-5a3f4031be08',
     date: '2023-01-09T15:36:33.710Z',
+    noteType: 'fact',
   },
   {
     title: '火币网宣布裁员20%',
@@ -888,6 +1013,7 @@ export const allNews: News[] = [
       'https://www.coindesk.com/business/2023/01/05/crypto-layoffs-heres-the-grim-count-since-april/',
     uuid: 'bea7b139-16e9-4a68-a93a-96638bbe5599',
     date: '2023-01-06T23:30:39.475Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -899,6 +1025,7 @@ export const allNews: News[] = [
       'https://finance.yahoo.com/news/sam-bankman-fried-lawyers-just-151904468.html',
     uuid: '4f5b2339-5c84-4787-81e2-3781a9b0a8b0',
     date: '2023-01-06T23:24:15.322Z',
+    noteType: 'fact',
   },
   {
     title: '由于持续的通胀压力，Party City准备申请破产',
@@ -909,6 +1036,7 @@ export const allNews: News[] = [
       'https://nypost.com/2023/01/06/party-city-plans-bankruptcy-filing-within-weeks-report/',
     uuid: '09f71da1-90f0-458d-b895-ee9daa1c209f',
     date: '2023-01-06T22:55:35.571Z',
+    noteType: 'fact',
   },
   {
     title: 'Costco在12月的营收同比上涨7%，远好于预期。',
@@ -919,6 +1047,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3922705-costco-stock-surges-on-stronger-than-expected-sales-report',
     uuid: 'a3d5b6ba-7b98-4cff-8826-e8e544feb291',
     date: '2023-01-06T22:43:44.497Z',
+    noteType: 'fact',
   },
   {
     title: '美国劳动部发布12月就业报告显示就业市场继续火热。',
@@ -929,6 +1058,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3922595-dow-sp-and-nasdaq-remain-muted-ahead-of-nonfarm-payrolls-report',
     uuid: '52a1b8d7-b9b1-4738-973d-c85af6cd396a',
     date: '2023-01-06T22:35:10.655Z',
+    noteType: 'fact',
   },
   {
     title: '梅西百货警告第四季度营收将低于预期',
@@ -939,6 +1069,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/06/macys-cuts-holiday-quarter-forecast-citing-squeeze-on-shoppers-wallets.html',
     uuid: '0538fb67-5bf2-4b9f-bba3-314a1954abc2',
     date: '2023-01-06T22:21:23.234Z',
+    noteType: 'fact',
   },
   {
     title: '美国食品药品监督管理局FDA批准了Biogen(BIIB)的阿尔茨海默氏症药物',
@@ -949,6 +1080,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/06/alzheimers-disease-fda-decision-on-biogen-eisai-treatment-lecanemab.html',
     uuid: '4dd5f2b6-fdff-42ee-bb21-2bc4dfad50d1',
     date: '2023-01-06T22:02:41.000Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -960,6 +1092,7 @@ export const allNews: News[] = [
       'https://seekingalpha.com/news/3922500-chatgpt-creator-openai-in-talks-for-tender-offer-at-29b-valuation-report',
     uuid: '07673046-13d4-49a1-8415-11f50845116f',
     date: '2023-01-05T21:34:29.386Z',
+    noteType: 'fact',
   },
   {
     title: '零售商Bed Bath & Beyond考虑申请破产保护',
@@ -969,6 +1102,7 @@ export const allNews: News[] = [
     sourceLink: 'https://www.cnbc.com/quotes/BBBY',
     uuid: '5c61fcb6-fbaf-42dc-8e2e-22a55d78f762',
     date: '2023-01-05T21:20:33.129Z',
+    noteType: 'fact',
   },
   {
     title: '加密货币银行Silvergate宣布本季度用户资产较三个月前下跌60%',
@@ -979,6 +1113,7 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2023/01/05/silvergate-capital-tanks-40percent-after-crypto-bank-discloses-massive-q4-withdrawals.html',
     uuid: '68be3051-1f87-478b-8796-96a920bb55c3',
     date: '2023-01-05T21:08:36.765Z',
+    noteType: 'fact',
   },
   {
     title: '亚马逊将超预期裁员18000人\n\n',
@@ -989,6 +1124,7 @@ export const allNews: News[] = [
       'https://www.aboutamazon.com/news/company-news/update-from-ceo-andy-jassy-on-role-eliminations',
     uuid: 'cd00fe45-9ddc-4ae6-87d8-0da05f9c0aef',
     date: '2023-01-05T20:58:47.875Z',
+    noteType: 'fact',
   },
   {
     title: '微软CEO：未来两年可能是科技行业最具挑战的两年\n',
@@ -996,6 +1132,7 @@ export const allNews: News[] = [
     tags: ['msft'],
     uuid: '72cb28ec-61ae-4134-b924-7074dd05a58c',
     date: '2023-01-05T20:52:25.731Z',
+    noteType: 'fact',
   },
 
   {
@@ -1005,6 +1142,7 @@ export const allNews: News[] = [
     tags: ['tesla', 'EV'],
     uuid: 'bc4c6cf4-f51c-4ead-ad78-0d08b984b75a',
     date: '2023-01-05T15:50:34.363Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -1014,6 +1152,7 @@ export const allNews: News[] = [
     tags: ['Block', 'Paypal', 'Fintech'],
     uuid: '1c931ced-86a0-40e1-b352-99ad2e74cac9',
     date: '2023-01-04T00:00:11.585Z',
+    noteType: 'fact',
   },
   {
     title: 'Wynn stock was up 3.81% today after an analyst upgrade.',
@@ -1022,6 +1161,7 @@ export const allNews: News[] = [
     tags: ['Wynn', 'Gambling', 'China'],
     uuid: '370eadb6-acc5-4f03-8d61-e1405ff9ada9',
     date: '2023-01-03T23:47:34.023Z',
+    noteType: 'fact',
   },
   {
     title: 'Google and Meta are losing digital advertising dominance',
@@ -1031,6 +1171,7 @@ export const allNews: News[] = [
     sourceLink: 'wall street journal',
     uuid: 'fb165f43-1d48-436f-a25b-edc859fa5e61',
     date: '2023-01-03T23:39:03.051Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -1039,6 +1180,7 @@ export const allNews: News[] = [
     tags: ['bx'],
     uuid: '1103af33-8c20-49cb-8337-8452e930cc77',
     date: '2023-01-03T23:27:00.172Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -1048,6 +1190,7 @@ export const allNews: News[] = [
     tags: ['aapl'],
     uuid: '52605b7c-1440-43f4-87d4-b60c696a4e2e',
     date: '2023-01-03T23:21:08.786Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -1057,6 +1200,7 @@ export const allNews: News[] = [
     tags: ['china'],
     uuid: '4f17d9df-b555-41e2-862d-c7cb0c1ef779',
     date: '2023-01-03T22:25:49.736Z',
+    noteType: 'fact',
   },
   {
     title: "Tesla's CFO exercised options expiring in 2028 to buy 13.5k shares",
@@ -1066,6 +1210,7 @@ export const allNews: News[] = [
     sourceLink: 'https://twitter.com/sspencer_smb/status/1608967613534855168',
     uuid: 'e9f50912-b024-4b9e-b812-1df7968d4a2a',
     date: '2022-12-31T10:24:29.312Z',
+    noteType: 'fact',
   },
   {
     title: 'Stocks slipped today to end a brutal 2022\n',
@@ -1073,6 +1218,7 @@ export const allNews: News[] = [
       'Dow Jones Industrial Average was down 8.8%\nS&P 500 was down 19.4%\nNasdaq was down 33.1%.\n\n',
     tags: ['US'],
     uuid: 'd179e694-ee48-4a95-8ba9-74f0eb4d850c',
+    noteType: 'fact',
   },
   {
     title: 'CFRA double upgrades Netflix',
@@ -1081,6 +1227,7 @@ export const allNews: News[] = [
     tags: ['nflx'],
     uuid: 'e5cdfce2-fea6-4d86-a54f-40cf3b1a0527',
     date: '2022-12-29T22:27:45.967Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -1090,6 +1237,7 @@ export const allNews: News[] = [
     tags: ['tsla'],
     uuid: '96f2c8c8-6d44-43e1-9130-d0197608dae5',
     date: '2022-12-29T02:58:43.667Z',
+    noteType: 'fact',
   },
   {
     title:
@@ -1101,15 +1249,16 @@ export const allNews: News[] = [
       'https://www.cnbc.com/2022/12/16/marc-benioff-says-newer-salesforce-employees-are-less-productive.html',
     uuid: '8420788c-76f1-4238-88b4-bb3bc24ef1c8',
     date: '2022-12-17T16:12:27.348Z',
+    noteType: 'fact',
   },
   {
-    targets: ['orcl'],
     title:
       'Oracle released quarterly earnings that beat both top and bottom lines ',
     content:
       'Total revenue grew 18% YoY \nQ2 Cloud Revenue was (IaaS plus SaaS) $3.8 billion, up 43%',
     tags: ['orcl', ' cloud', ' oracle'],
     date: '2022-12-13T14:22:49.016Z',
+    noteType: 'fact',
   },
   {
     title: 'Amazon will lay off more workers in 2023',
@@ -1120,6 +1269,7 @@ export const allNews: News[] = [
     ],
     tags: ['amzn'],
     source: Source.company,
+    noteType: 'fact',
   },
   {
     title: 'October CPI report was released',
@@ -1128,686 +1278,6 @@ export const allNews: News[] = [
       'CPI was up 0.4% MoM, and 7.7% YoY as shelter, gasoline, and food increased.',
     ],
     tags: ['CPI', RegionCode.us],
-  },
-  {
-    title:
-      'Credit Suisse issued warning about economic outlook:‘The worst is yet to come’',
-    takeAway: 'Economy will not be better until rates stop increasing.',
-    date: getUtcDate(2022, 9, 28),
-    tags: ['Credit Suisse', 'Fed Rates'],
-    eventType: EventType.opinions,
-    details: [
-      'Crucially, the rising share of price categories above central bank inflation target levels shows inflation is broadening out from a limited group of supply shock related drivers to more general inflation',
-      'Higher rates combine with ongoing shocks to lead us to cut GDP forecasts.',
-      'The euro area and UK are in recession, China is in a growth recession, and the US is flirting with recession.',
-    ],
-  },
-  {
-    title:
-      'Apple ditched the plan to increase iphone production after seeing flattened demand',
-    takeAway:
-      'Demand of consumer product is likely to decrease during a recession.',
-    date: getUtcDate(2022, 9, 28),
-    eventType: EventType.stock,
-    tags: ['aapl'],
-  },
-  {
-    title:
-      'FTX won bid to buy bankrupt crypto lender Voyager’s assets for $1.4 billion',
-    date: getUtcDate(2022, 9, 27),
-    eventType: EventType.industry,
-    tags: ['crypto', 'FTX', 'Yoyager'],
-  },
-  {
-    date: getUtcDate(2022, 9, 27),
-    title: 'Cathie Wood says she is bullish on Tesla, Roku, and bitcoin',
-    eventType: EventType.opinions,
-    tags: ['Cathie Wood', 'TSLA', 'ROKU', 'Bitcoin'],
-  },
-  {
-    date: getUtcDate(2022, 9, 22),
-    title:
-      'WTI crude prices climbed 3.2% as as Putin announced partial mobilization',
-
-    eventType: EventType.macro,
-    tags: ['Crude Oil', 'War'],
-  },
-  {
-    date: getUtcDate(2022, 9, 22),
-    title:
-      'Bank of England continued tightening and raised rates by 50 basis points',
-    eventType: EventType.macro,
-    tags: ['Fed Rate', 'England'],
-  },
-  {
-    date: getUtcDate(2022, 9, 22),
-    title:
-      'Japan government moved to boost yen for first time in more than 20 years',
-    eventType: EventType.macro,
-    tags: ['Fed Rate', 'Japan'],
-    details: ['Japanese yen has fallen to a 24-year low against U.S dollar.'],
-  },
-  {
-    date: getUtcDate(2022, 9, 22),
-    title:
-      'Qualcomm CEO announed its automotive design-win pipeline has now climbed to $30B from $19B',
-    eventType: EventType.stock,
-    tags: ['qcom'],
-    details: ['Starting in 2023, Qualcomm will be used in Mercedes-Benz cars.'],
-  },
-  {
-    date: getUtcDate(2022, 9, 22),
-    title:
-      'US stock market finished Thursday with more losses after Fed handed another 75bps rate hike yesterday.',
-    eventType: EventType.overview,
-    details: [
-      '“The chances of a soft landing are likely to diminish” said the Fed Chair J-Pow.',
-    ],
-  },
-  {
-    date: getUtcDate(2022, 9, 22),
-    title: 'Costco released latest financial results that beat estimates',
-    eventType: EventType.earnings,
-    tags: ['cost'],
-    details: [
-      'For now, Costco will not raise membership price. “There are no specific plans regarding a fee increase at this time,” said Chief Financial Officer Richard Galanti on the earnings conference call. However, he continued, “it’s a question of when, not if.”',
-    ],
-  },
-  {
-    date: getUtcDate(2022, 9, 22),
-    title:
-      'DocuSign names former Google advertising executive Allan Thygesen as new CEO',
-    eventType: EventType.stock,
-    tags: ['docu'],
-    details: [
-      "Thygesen has spent past 12 years at Google and led Google's $100B+ advertising business in North and South America.",
-    ],
-  },
-  {
-    date: getUtcDate(2022, 9, 21),
-    title:
-      'Ford lost 12% as it is facing an extra $1B inflation-related supplier costs.',
-    eventType: EventType.stock,
-    tags: ['f', 'ev'],
-    details: ['Up to 45k vehicles, mostly trucks and SUVs have been impacted'],
-  },
-  {
-    date: getUtcDate(2022, 9, 21),
-    eventType: EventType.macro,
-    title:
-      'Dollar index hit another 20-year high against other currencies since Russia started to invade Ukraine.',
-    tags: ['Currency'],
-  },
-  {
-    date: getUtcDate(2022, 9, 21),
-    eventType: EventType.industry,
-    title:
-      'Nasdaq plans to launch a crypto custody service as company sees increasing digital currencies demand ',
-    tags: [IndustryType.crypto],
-  },
-  {
-    date: getUtcDate(2022, 9, 21),
-    eventType: EventType.industry,
-    title:
-      'FTX is in talks with investors to raise up to $1B that would value company at $32B',
-    tags: [IndustryType.crypto],
-  },
-  {
-    date: getUtcDate(2022, 9, 21),
-    eventType: EventType.macro,
-    tags: ['Russia-Ukriain War'],
-    title:
-      "Russia president Putin announced 'partial military mobilization' and called up 300,000 reservists for the war.",
-  },
-  {
-    date: getUtcDate(2022, 9, 21),
-    eventType: EventType.stock,
-    tags: ['meta'],
-    title:
-      'Meta reportedly sets plans for 10% cost cuts and gave some workers a month to find a new role at the company.',
-    details: [],
-  },
-  {
-    date: getUtcDate(2022, 9, 21),
-    eventType: EventType.macro,
-    tags: ['bond, treasury yield'],
-    title: '2-year Treasury surges above 4.1%, highest level since 2007.',
-    details: [
-      '2-year Treasury is now higher than 10-year Treasury (3.64%), which is a popluar indicator of a recession.',
-    ],
-  },
-  {
-    date: getUtcDate(2022, 9, 21),
-    eventType: EventType.overview,
-    tags: ['fed rate'],
-    title:
-      'As expected, Federal Reserve boosts another 75 basis points, brining it to 3% - 3.25%, the highest point since 2008',
-    details: [
-      'This is the third boost in a row',
-      'Fed will also continue shrinking its balance sheet.',
-      'The economy will begin to slow more as it is more costly for businesses to borrow money.',
-      'Fed now expected to see rates going to nearly 4.5% by the end of the year.',
-    ],
-  },
-  {
-    uuid: 'n31',
-    date: getUtcDate(2022, 9, 21),
-    eventType: EventType.stock,
-    tags: ['crm'],
-    title:
-      'Salesforce announced a revenue target of $50B for 2026, which represents ~17% compound annual growth.',
-    details: [
-      'The forecast revenue for fiscal 2023 is $31B, presenting exactly ~17% growth from $26.5B in fiscal 2022.',
-      'Company also aims for 25% opertaing margin in 2026.',
-    ],
-  },
-  {
-    uuid: 'n31',
-    date: getUtcDate(2022, 9, 20),
-    eventType: EventType.macro,
-    tags: ['inflation', 'cpi', 'canada'],
-    title:
-      'Canada inflation rate slowed to 7% in August, faster than expected.',
-    details: ['The slowdown was largely driven by gasoline price fall'],
-  },
-  {
-    uuid: 'n31',
-    date: getUtcDate(2022, 9, 20),
-    eventType: EventType.stock,
-    tags: ['nvda'],
-    title: 'Nvidia unveiled new products during annual GTC conference.',
-    details: [
-      'New cloud servicess to support AI workflows',
-      'New generation of GeForce RTX GPUs',
-      'First GPUs based on the new NVIDIA Ada Lovelace architecture for gamers and creators.',
-      'Grace CPU and Grace Hopper Superchip for enterprises',
-      'New Thor superchip for Autonomous Vehicles, Robotics, Medical Instruments and More',
-    ],
-    sourceLink:
-      'https://blogs.nvidia.com/blog/2022/09/20/keynote-gtc-nvidia-ceo/',
-  },
-  {
-    uuid: 'n31',
-    date: getUtcDate(2022, 9, 20),
-    eventType: EventType.stock,
-    tags: ['ual'],
-    title:
-      'United Airlines paused 25 Boeing 777 airplanes operation after findig them failed to perform inspection on wing panels.',
-  },
-  {
-    uuid: 'n31',
-    date: getUtcDate(2022, 9, 20),
-    eventType: EventType.stock,
-    tags: ['bynd'],
-    title:
-      "Beyond Meat COO was suspended after arrest for allegedly biting man's nose.",
-  },
-  {
-    uuid: 'n30',
-    date: getUtcDate(2022, 9, 20),
-    eventType: EventType.overview,
-    title:
-      'All 11 sectors of the S&P fell today as investors waiting for the Fed rate decision tomorrow.',
-  },
-  {
-    uuid: 'n31',
-    date: getUtcDate(2022, 9, 20),
-    eventType: EventType.stock,
-    tags: ['coin'],
-    title:
-      'Coinbase plan to increase fees for those trading less than $250m a month.',
-  },
-  {
-    uuid: 'n31',
-    date: getUtcDate(2022, 9, 20),
-    eventType: EventType.stock,
-    tags: ['meta'],
-    title:
-      'Meta said that it would integrate WhatsApp with Salesforce so business can chat with their customers through WhatsApp messaging service',
-  },
-  {
-    uuid: 'n30',
-    date: getUtcDate(2022, 9, 19),
-    eventType: EventType.industry,
-    tags: ['bnpl', 'pypl', 'sq', 'afrm'],
-    title:
-      'The U.S. Consumer Financial Protection Bureau (CFPB) plans to start regulating "buy-now, pay-later" (BNPL) companies like Affirm due to worries that consumers are not protected enough.',
-  },
-  {
-    uuid: 'n30',
-    date: getUtcDate(2022, 9, 19),
-    eventType: EventType.stock,
-    tags: ['panw'],
-    title:
-      'Palo Alto Networks is in the process of acquiring cybersecurity startup Apiiro for $600M.',
-  },
-  {
-    uuid: 'n30',
-    date: getUtcDate(2022, 9, 19),
-    eventType: EventType.stock,
-    tags: ['open'],
-    title:
-      'Opendoor stock slides after a report saying it is losing money on 42% of all transactions in August',
-    details: [
-      'This data exposed the risks of the iBuying business, which could be hugely affected by macro environment',
-      'Last year, Zillow pulled out of iBuying business after concluding that home prices was too unpredictable ',
-    ],
-  },
-  {
-    uuid: 'n30',
-    date: getUtcDate(2022, 9, 19),
-    eventType: EventType.industry,
-    tags: ['crypto'],
-    title: 'Etherum sank near 25% last week after the Merge is completed.',
-    details: [
-      'After the Merge, over 40% of the blocks were added by two addresses: Coinbase and Lido',
-      '50% of the nodes are hosted on Amazon Web Services',
-      'The result raised concerns about the decentralization as these centralized institutions controlled majority of the network.',
-    ],
-  },
-  {
-    uuid: 'n30',
-    date: getUtcDate(2022, 9, 19),
-    eventType: EventType.overview,
-    title:
-      'S&P moved higher around the 3900 support level after a volatile trading session as investors waiting for the Fed interest-rate decision this week.',
-  },
-  {
-    uuid: 'n30',
-    date: getUtcDate(2022, 9, 19),
-    title:
-      'Ford expected inflation-related supplier costs during Q3 to be $1B higher than previous estimated',
-    eventType: EventType.stock,
-    tags: ['f', 'ev'],
-  },
-  {
-    uuid: 'n30',
-    date: getUtcDate(2022, 9, 19),
-    title: 'Cruise robotaxi service to expand to Austin, Phoenix in 2022',
-    eventType: EventType.industry,
-    tags: [IndustryType.selfDriving, IndustryType.ai],
-  },
-  {
-    uuid: 'n30',
-    date: getUtcDate(2022, 9, 19),
-    title:
-      'The benchmark 10-year Treasury yield gained 6 basis points to 3.518%, hitting its highest level since April 2011 as mortgage rates keep moving higher.',
-
-    eventType: EventType.macro,
-    tags: ['Treasury Yields'],
-  },
-  {
-    uuid: 'n30',
-    date: getUtcDate(2022, 9, 19),
-    title:
-      "Fed's two-day meeting will begin Tuesday, with the market expecting another 75 basis point hike.",
-
-    eventType: EventType.macro,
-    tags: ['Fed Rate'],
-  },
-  {
-    uuid: 'n30',
-    date: getUtcDate(2022, 9, 19),
-    title:
-      'CVOID-19 vaccine stocks fell as President Biden said the pandemic is over.',
-    details: [
-      'President Joe Biden said "We still have a problem with COVID. We are still doing a lot of work on it. But the pandemic is over.',
-      'Both Moderna and Novavax dropped ~8%',
-    ],
-    eventType: EventType.industry,
-    tags: ['covid', 'mrna', 'nvax', 'covid'],
-  },
-  {
-    uuid: 'n29',
-    date: getUtcDate(2022, 9, 15),
-    title:
-      'Major averages were on pace toward their fourth losing week in five after the surprisingly hot CPI report.',
-    eventType: EventType.overview,
-  },
-  {
-    uuid: 'n29',
-    date: getUtcDate(2022, 9, 15),
-    title:
-      'Disney CEO said ESPN is looking for a partner to do the sports gambling business.',
-    eventType: EventType.stock,
-    tags: ['dis'],
-    details: [
-      'He emphasized that Walt Disney Company would never enter the sports betting business by itself.',
-    ],
-  },
-  {
-    uuid: 'n29',
-    date: getUtcDate(2022, 9, 15),
-    tags: ['txn'],
-    title:
-      'Texas Instruments raised its dividend by 8% to $1.24 and authorized a $15B buyback',
-    eventType: EventType.stock,
-  },
-  {
-    uuid: 'n29',
-    date: getUtcDate(2022, 9, 15),
-    title:
-      'Roblox (NYSE:RBLX) on Thursday reported a Y/Y rise for the month of Aug. ',
-    eventType: EventType.stock,
-    tags: ['rblx'],
-    details: [
-      'Estimated revenue was between $208M and $211M, up 22% to 24% Y/Y.',
-      'Estimated average bookings per daily active user was down 14% to 16% Y/Y.',
-      'Daily active users in Aug. were 59.9M (+24% Y/Y) and hours engaged were 4.7B, up 18% Y/Y.',
-    ],
-  },
-  {
-    uuid: 'n29',
-    date: getUtcDate(2022, 9, 15),
-    title:
-      'Southwest Airlines noted business travel remains well below the 2019 level and narrowed revenue guidance for the third quarter.',
-    eventType: EventType.industry,
-    tags: [IndustryType.airline, IndustryType.travel, 'luv'],
-    details: [
-      'July and August 2022 managed business revenues were down approximately 26% and 32%, respectively, both compared with their respective 2019 levels',
-    ],
-  },
-  {
-    uuid: 'n29',
-    date: getUtcDate(2022, 9, 15),
-    title:
-      "Bridgewater's Ray Dalio said that inflation rate will stay significantly above what Fed want it to be",
-    eventType: EventType.macro,
-    tags: ['inflation', 'recession', 'bridgewater', 'ray dalio'],
-    details: [
-      'His guesstimates is that inflation rate will stay from 4.5% to 6% for the next 10 years and  a economic contraction will be required',
-      'He also estimates such a rate would have a twenty-percent negative impact on equity prices.',
-    ],
-  },
-  {
-    uuid: 'n29',
-    date: getUtcDate(2022, 9, 15),
-    title:
-      'Tesla plans on closing some high-cost showrooms and focusing on expanding its services in China.',
-    eventType: EventType.stock,
-    tags: ['tsla'],
-    details: [
-      "Tesla's job site has more than 300 service positions open right now.",
-    ],
-  },
-  {
-    uuid: 'n29',
-    date: getUtcDate(2022, 9, 15),
-    title:
-      "Roku's SEC filing propped some investors believe that a takeover offer may be coming.",
-    eventType: EventType.stock,
-    tags: ['roku'],
-    details: [
-      'Roku ammended its severance benefit plan, in the event of a change control, according to an 8-K filing',
-    ],
-  },
-  {
-    uuid: 'n29',
-    date: getUtcDate(2022, 9, 15),
-    title:
-      "30-year fixed-rate mortgage averaged 6.02% for the week ending Sep. 15, up from last week's 5.89% average and from 2.86% average a year ago",
-    eventType: EventType.macro,
-    tags: ['housing', 'mortgage'],
-  },
-  {
-    uuid: 'n29',
-    date: getUtcDate(2022, 9, 15),
-    title: 'General Motor plans to invest $491M to support EV production',
-    eventType: EventType.stock,
-    tags: ['gm', 'ev'],
-  },
-  {
-    uuid: 'n29',
-    date: getUtcDate(2022, 9, 15),
-    title:
-      'Bed Bath and Beyond  listed 56 locations slated for closure including locations in Stamford, Connecticut, Paramus, New Jersey, Tucson, Arizona and Sandusky, Ohio,   ',
-    eventType: EventType.stock,
-    tags: ['bbby'],
-  },
-  {
-    uuid: 'n29',
-    date: getUtcDate(2022, 9, 15),
-    title:
-      'Fedex dropped 15% after quarterly results that wildly missed estimates.',
-    eventType: EventType.stock,
-    tags: ['fdx'],
-
-    details: [
-      'Business is impacted by the softness and challenges in Asia and Europe.',
-      'Fedex also withdrew its 2023 guidance and announced cost-cutting plan including 90 office closure.',
-      'This warnings is dramatically from the optimitics tune two months ago.',
-    ],
-  },
-  {
-    uuid: 'n28',
-    date: getUtcDate(2022, 9, 15),
-    title:
-      'Adobe released earnings result and announced acquisition of Figma for $20B dollars.',
-    eventType: EventType.earnings,
-    tags: ['adbe'],
-    details: [
-      'Quarterly Revenue increased to 4.43B, ⬆️ Up 12.7% YoY (from 3.94B)',
-      'Next Quarter Revenue Forecast increased to 4.52B, ⬆️ Up 10% YoY',
-      'Figma is a great company with ~90% gross margin and >150% net dollar retention rate.',
-      "Figma is expected to add $200M to $400M ARR to Adobe, which is only 1% - 2% of Adobe's annual revenue.",
-      'Adobe paid $20B for $200M - $400M annual revenue, equivalent to 50 - 100 P/S ratio, is too high under current market condition.',
-      'However, the Adobe-Figma deal will eliminate competition and remove the possibility of other SaaS giants such as Microsoft or Salesforce, acquiring Figma.',
-    ],
-  },
-  {
-    uuid: 'n28',
-    date: getUtcDate(2022, 9, 14),
-    title:
-      'Cathie Wood bought 18 different stocks after the huge selloff on Tuesday.',
-    eventType: EventType.investor,
-    tags: ['cathie wood', 'arkk'],
-    details: [
-      'The ARK Innovation ETF purchased 1M shares of various stocks, led by Roku (ROKU) and Zoom (ZM).',
-    ],
-  },
-  {
-    uuid: 'n27',
-    date: getUtcDate(2022, 9, 14),
-    title: 'Twilio announced to layoff 11% of workforce',
-    eventType: EventType.stock,
-    tags: ['twlo', 'layoff'],
-    details: ['It has also reaffirmed third quarter guidance.'],
-  },
-  {
-    uuid: 'n26',
-    date: getUtcDate(2022, 9, 14),
-    title:
-      'Biden announced the approval of $900M funding for EV charging infrastructure',
-    eventType: EventType.industry,
-    tags: [IndustryType.ev],
-    details: [
-      'The funding is part of the $1T infrastructure law approved in 2021',
-    ],
-  },
-  {
-    uuid: 'n25',
-    date: getUtcDate(2022, 9, 14),
-    title:
-      'Stocks rebounded today after the worst day since 2020 due to hot CPI report.',
-    eventType: EventType.overview,
-    tags: ['sp500', 'nasdaq'],
-  },
-  {
-    uuid: 'n25',
-    date: getUtcDate(2022, 9, 14),
-    title: 'Ethereum price outpaces Bitcoin with its merge process coming',
-    eventType: EventType.stock,
-    tags: ['eth', 'ethereum', 'crypto', 'bitcoin'],
-    details: [
-      'The merge process would reduce ethereum energy consumption by 99%',
-    ],
-  },
-  {
-    uuid: 'n24',
-    date: getUtcDate(2022, 9, 14),
-    title:
-      'Netflix estimated that its ad-supported tier will reach 40M viewers by 2023Q3. Currently, Netflix has 220M subscribers',
-    eventType: EventType.stock,
-    tags: ['nflx'],
-  },
-  {
-    uuid: 'n23',
-    date: getUtcDate(2022, 9, 14),
-    eventType: EventType.stock,
-    tags: ['tsla'],
-    title:
-      'Tesla’s Gigafactory expansion in Germany has been delayed indefinitely',
-    details: [
-      'City committee has removed the voting plan from the committee agenda',
-      'Expansion plan could be paused by Tesla itself due to falling demand',
-    ],
-  },
-  {
-    uuid: 'n23',
-    date: getUtcDate(2022, 9, 13),
-    eventType: EventType.stock,
-    tags: ['aapl'],
-    title: 'Apple plans to sell ads in new spots in the App Store - CNBC',
-    details: [
-      'Apple has been planning to double its digital advertising business workforce.',
-    ],
-  },
-  {
-    uuid: 'n22',
-    date: getUtcDate(2022, 9, 13),
-    eventType: EventType.stock,
-    tags: ['hood', 'crypto', 'bitcoin'],
-    title:
-      'Bitcoin is the most popular recurring investment on Robinhood, according to its CEO',
-    details: [
-      'This indicates that retail investors view Bitcoin as a long-term investment',
-    ],
-  },
-  {
-    uuid: 'n21',
-    date: getUtcDate(2022, 9, 13),
-    eventType: EventType.macro,
-    tags: ['inflation', 'CPI'],
-    title:
-      'CPI climbs 8.3% YoY in August, which is equivalvent to +0.1% compared to previous month.',
-    details: [
-      'All indices increased except energy commodities and apparel compared to previous month',
-    ],
-    stats: [
-      { name: 'Core Inflation', changeRate: 0.006, timeFrame: TimeFrame.mtm },
-      { name: 'Food', changeRate: 0.008, timeFrame: TimeFrame.mtm },
-      { name: 'Shelter', changeRate: 0.007, timeFrame: TimeFrame.mtm },
-      {
-        name: 'Medical care services',
-        changeRate: 0.008,
-        timeFrame: TimeFrame.mtm,
-      },
-    ],
-    imageLinks: [
-      'https://pbs.twimg.com/media/Fck1g5TakAIU9mR?format=png&name=large',
-      'https://pbs.twimg.com/media/Fck1g5SaUAAJGu2?format=jpg&name=large',
-    ],
-  },
-  {
-    uuid: 'n20',
-    date: getUtcDate(2022, 9, 13),
-    eventType: EventType.industry,
-    tags: [IndustryType.semi, 'nvda', 'amd', 'mu', 'intc'],
-    title: 'Chips stock plunged today after hot CPI report',
-    details: [
-      'Nvidia was down 9.47%, hit a new 52 week low',
-      'AMD was down 8.99%',
-      'Intel was down 7.19%',
-      'Micron was down 7.46%',
-    ],
-  },
-  {
-    uuid: 'n19',
-    date: getUtcDate(2022, 9, 13),
-    eventType: EventType.stock,
-    tags: ['twtr', 'elon musk'],
-    title:
-      "Twitter got 98.6% shareholder vote approval of Elon Musk's $44B acquisition deal.",
-  },
-  {
-    uuid: 'n19',
-    date: getUtcDate(2022, 9, 12),
-    eventType: EventType.macro,
-    tags: ['arkk', 'inflation', 'cathie wood'],
-    title: 'Cathie Wood warns of deflation ahead of this week’s key price data',
-  },
-  {
-    uuid: 'n19',
-    date: getUtcDate(2022, 9, 12),
-    eventType: EventType.stock,
-    tags: ['aapl'],
-    title:
-      "iPhone 14 pre-order demand is 'robust,' tracking 'slightly ahead' of iPhone 13: Wedbush",
-  },
-  {
-    uuid: 'n19',
-    date: getUtcDate(2022, 9, 12),
-    eventType: EventType.stock,
-    tags: ['gs'],
-    title:
-      'Goldman Sachs gets ready to lay off workers as deal activity cools - NYT',
-  },
-  {
-    uuid: 'n19',
-    date: getUtcDate(2022, 9, 12),
-    eventType: EventType.stock,
-    tags: ['mu'],
-    title:
-      'Micron CEO says company breaking ground on $15B Idaho factory, more plants coming: report',
-  },
-  {
-    uuid: 'n19',
-    eventType: EventType.stock,
-    date: getUtcDate(2022, 9, 12),
-    tags: ['GM'],
-    title:
-      "GM's Cruise preps for rideshare service launch, eyes $1B in revenue",
-  },
-  {
-    uuid: 'n19',
-    eventType: EventType.industry,
-    date: getUtcDate(2022, 9, 12),
-    tags: ['crypto', 'bitcoin'],
-    title:
-      'Fidelity Investments is considering to allow individual investors to trade bitcoin on its brokerage platform',
-  },
-  {
-    uuid: 'n18',
-    eventType: EventType.stock,
-    date: getUtcDate(2022, 9, 12),
-    tickers: ['Googl'],
-    sourceLink:
-      'https://www.theverge.com/2022/9/12/23348999/google-pixelbook-canceled-team-shut-down',
-    title:
-      'Google canceled the next version of its Pixelbook computer and has closed down the team that was building it',
-  },
-  {
-    uuid: 'n17',
-    eventType: EventType.macro,
-    date: getUtcDate(2022, 9, 12),
-    tags: [Index.nasdaq, Index.sp500],
-    title:
-      'Stocks close higher for fourth straight session. S&P500 was up 0.71% and ',
-  },
-  {
-    uuid: 'n16',
-    eventType: EventType.stock,
-    date: getUtcDate(2022, 9, 12),
-    tickers: ['PTON'],
-    title:
-      'Peloton Cofounders, John Foley and Hisao Kushi, are leaving the company',
-  },
-  {
-    uuid: 'n15',
-    eventType: EventType.macro,
-    date: getUtcDate(2022, 9, 9),
-    tags: [Index.sp500, Index.nasdaq],
-    title:
-      'Stock market rallied on Friday and snapped a three-week losing streak wtih a strong performance. Nasdaq was up 4.14% and S&P 500 gained 3.65% for the week.',
+    noteType: 'fact',
   },
 ];

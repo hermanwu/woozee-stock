@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { UserServices } from 'src/app/accounts/services/user.services';
+import { Note } from 'src/app/shared/data/note.interface';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
-import { News } from 'src/app/stock/models/news.model';
 import { allNews } from '../data/news.const';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NewsService {
-  news: News[] = allNews;
+  news: Note[] = allNews;
 
   constructor(private userServices: UserServices) {}
 
@@ -20,12 +20,12 @@ export class NewsService {
     return this.news.filter((item) => !item.title.match(/[\u3400-\u9FBF]/));
   }
 
-  getAllNews(): News[] {
+  getAllNews(): Note[] {
     const language = this.userServices.getLanguage();
     return this.getNewsByLanguage(language);
   }
 
-  getNewsByDate(date: Date): News[] {
+  getNewsByDate(date: Date): Note[] {
     return this.news.filter((item) => item.date >= convertDateToUTC(date));
   }
 

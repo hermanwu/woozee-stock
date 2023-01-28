@@ -18,13 +18,10 @@
       </ng-template>
 
       <span *ngIf="note.createdDate" class="note-date">{{
-        note.date | date: "shortDate":"GMT"
+        note.date | date : "shortDate" : "GMT"
       }}</span>
 
-      <app-media-link
-        [link]="note.link"
-        [source]="note.source"
-      ></app-media-link>
+      <app-media-link [source]="note.source"></app-media-link>
     </div>
   </div>
 

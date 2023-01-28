@@ -7,8 +7,8 @@ import { IndustriesService } from 'src/app/markets/services/industries.service';
 import { NewsService } from 'src/app/news/services/news.services';
 import { Opinion } from 'src/app/opinions/components/opinion-display/opinion.interface';
 import { OpinionServices } from 'src/app/opinions/services/opinion.services';
+import { Note } from 'src/app/shared/data/note.interface';
 import { Industry } from 'src/app/stock/models/industry.model';
-import { News } from 'src/app/stock/models/news.model';
 import { Stock } from 'src/app/stock/models/stock.model';
 import { StockServices } from 'src/app/stock/services/objective-data.service';
 
@@ -26,7 +26,7 @@ export class IndustryPropertiesPageComponent implements OnInit, OnDestroy {
 
   stocks: Stock[];
   opinions: Opinion[];
-  news: News[];
+  news: Note[];
 
   constructor(
     private route: ActivatedRoute,

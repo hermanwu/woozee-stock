@@ -17,7 +17,7 @@
         - {{ stockAnalysis.price | undefined }}</span
       >
     </div>
-    <div buttons>
+    <div right-items>
       <button mat-icon-button [matMenuTriggerFor]="stockMenu">
         <mat-icon>more_horiz</mat-icon>
       </button>
@@ -60,8 +60,12 @@
         <app-title-menu>
           <div header-2>Opinions</div>
 
-          <div buttons>
-            <button buttons mat-icon-button [matMenuTriggerFor]="opinionMenu">
+          <div right-items>
+            <button
+              right-items
+              mat-icon-button
+              [matMenuTriggerFor]="opinionMenu"
+            >
               <mat-icon>more_horiz</mat-icon>
             </button>
 

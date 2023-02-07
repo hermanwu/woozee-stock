@@ -37,7 +37,16 @@ export const googl: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
-      quarter: 2,
+      quarter: 4,
+      totalRevenue: 75325 * MILLION,
+      costOfRevenue: 30104 * MILLION,
+      operatingIncome: 19453 * MILLION,
+      netIncome: 16002 * MILLION,
+      date: convertDateToUTC(new Date('2022-10-25')),
+    },
+    {
+      year: 2022,
+      quarter: 3,
       totalRevenue: 69685 * MILLION,
       costOfRevenue: 30104 * MILLION,
       operatingIncome: 19453 * MILLION,

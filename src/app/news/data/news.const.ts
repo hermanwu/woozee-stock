@@ -5,6 +5,378 @@ import { Source } from 'src/app/stock/models/news-source.enum';
 
 export const allNews: Note[] = [
   {
+    title: "ABC's Good Morning America program",
+    authorUuid: '1234',
+    content:
+      "You don't have a recession when you have 500,000 jobs and the lowest unemployment rate in more than 50 years\nWhat I see is a path in which inflation is declining significantly and the economy is remaining strong.\nAmerica has paid all of its bills on time since 1789, and not to do so would produce an economic and financial catastrophe\n" +
+      'Every responsible member of Congress must agree to raise the debt ceiling.',
+    tags: [],
+    uuid: '6c79d034-cd9e-4396-8c96-d97b272c1279',
+    noteType: 'quote',
+    date: '2023-02-07T03:25:03.924Z',
+  },
+  {
+    title: '财报：动视暴雪，Take-Two Interactive',
+    content:
+      'Activation Blizzard财报营收盈利超预期。营收23.34亿美元，同比增加仅8%，但净预定量为35.7亿美元，同比增加43.4%。微软收购动视暴雪的计划仍在进行，双方将努力在微软2023财年结束前完成收购。\n' +
+      'Take-Two Interactive财报不及预期。营收为14.1亿美元，同比增长56.1%。净预定量为13.8亿美元，同比增加60%。',
+    tags: ['atvi'],
+    uuid: '74478cb2-44f2-4006-8cd9-3fe5385bf30d',
+    noteType: 'fact',
+    date: '2023-02-06T21:32:23.836Z',
+    sourceLink:
+      'https://www.cnbc.com/2023/02/03/jobs-report-january-2023-.html',
+  },
+  {
+    title: '财报：Pinterest，Chegg',
+    content:
+      'Pinterest财报录得1700万盈利，但营收同比增加4%，不及预期。其中欧洲营收下跌7%。公司宣布了5亿美元股票回购计划，同时CFO将辞职。\n' +
+      'Chegg第四季度营收2.052亿美元，同比下降1.1%。订阅用户为500万，同比增加8%。但是公司下季度前瞻远不及预期导致盘后暴跌。\n',
+
+    uuid: '74478cb2-44f2-4006-8cd9-3fe5385bf30d',
+    noteType: 'fact',
+    date: '2023-02-06T21:32:23.836Z',
+    tags: ['pins'],
+  },
+  {
+    title: '美股周一继续下调，美债继续上涨',
+    imageLinks: [
+      'https://i.ibb.co/TPwqZFL/Screenshot-2023-02-06-at-1-54-04-PM.png',
+    ],
+    content:
+      '道指下跌0.1%，标普500下跌0.61%，纳斯达克下跌近1%。\n基准10年期国债收益率上涨11个基点至3.64%，2年期国债收益率上涨18个基点至4.48%。' +
+      '\n财政部长耶伦发表讲话，表示经济强劲而有韧性，仍然有机会避免衰退。她认为上周五发布的强劲就业报告是一个很好的证据。',
+    tags: ['news'],
+    uuid: '36a4bc3c-5877-4d5f-a3b1-459a50274b18',
+    noteType: 'fact',
+    date: '2023-02-06T21:29:52.146Z',
+  },
+  {
+    title:
+      '谷歌将在周三美东早上8：30举办一场名为"Live from Paris"的直播活动，发布关于新的搜索产品的信息。',
+    content:
+      '活动描述中称“我们正重新构想搜索信息以及与信息互动的方式，使人们能更自然直观地找到所需要的”， “通过搜索，地图以及更多其他方式，得到更多信息”。\n在上周财报会议上，谷歌CEO声称将会在未来几周或几月里，向公众发布大型语言模型工具。这次直播被猜测可能透露更多关于谷歌如何应对ChatGPT的线索。',
+    tags: ['googl'],
+    uuid: '4e903efd-768c-47f2-be4d-608da05fd940',
+    noteType: 'fact',
+    imageLinks: [
+      'https://i.ibb.co/XLCPkMD/Screenshot-2023-02-05-at-2-48-00-PM.png',
+    ],
+    date: '2023-02-05T22:19:02.769Z',
+  },
+  {
+    title: '下周财报关注 2/6 - 2/10',
+    content:
+      '周一: 缤趣Pinterest，动视暴雪，Take-Two Interactive。 \n ' +
+      '周二: BP石油，Chipotle，Fortinet，杜邦DuPont，皇家加勒比游轮， Hertz。 \n ' +
+      '周三: 迪士尼Disney，优步Uber，百盛Yum! Brands，CVS，Under Armour，Affirm， 罗宾逊。\n ' +
+      '周四: 百事，Paypal，Lyft，Cloudflare，Expedia，希尔顿，拉夫劳伦，丰田Toyota，Corsair Gaming。',
+    tags: ['news'],
+    uuid: '958db851-55ba-4f8d-902c-80cab6bb252e',
+    noteType: 'fact',
+    date: '2023-02-05T20:27:09.912Z',
+    imageLinks: [
+      'https://i.ibb.co/WvHTzxJ/Screenshot-2023-02-05-at-7-46-20-AM.png',
+    ],
+  },
+  {
+    title: 'Apple Earnings Call',
+    question: 'How do you think about your supply chain',
+    content:
+      "We're now at a point where production is what we need it to be. And so the problem is behind us.\nWe have had a very resilient supply chain in the aggregate.\nWe're in decent supply on most products for the quarter currently.",
+    tags: ['apple'],
+    uuid: 'e00df9b2-61e3-4b00-bced-cdca718eb146',
+    noteType: 'quote',
+    date: '2023-02-04T04:55:45.680Z',
+  },
+  {
+    title: 'Luka Quote',
+    content:
+      'Operating expenses of $14.3 billion were significantly below the guidance range we provided at the beginning of the quarter and grew at a slower pace than in the past as we took actions to respond to the current macro environment.\nWe returned over $25 billion to shareholders during the December quarter as our business continues to generate very strong cash flow.',
+    tags: [],
+    uuid: 'efb50e65-3ce1-43d3-aaaa-ce55be2a2004',
+    noteType: 'quote',
+    date: '2023-02-04T04:52:32.758Z',
+  },
+  {
+    title: 'Apple Earnings Report',
+    content:
+      'Let me discuss the 3 factors that impacted our revenue performance during the quarter ... The first was foreign exchange headwinds, which had a nearly 800 basis point impact. ... The second factor ... was COVID-19-related challenges, which significantly impacted the supply of iPhone 14 Pro and iPhone 14 Pro Max. ... The third factor was a challenging macroeconomic environment\n' +
+      "The installed base is now over 2 billion active devices. [It is] up over 150 million year-over-year. We also saw strong double-digit in several of the emerging markets, which is very important to us. For example, India and Brazil as just 2 examples. So very, very strong. And obviously, it bodes well for the future.'",
+    tags: [],
+    uuid: 'e4d6dfc4-e0da-415d-a8f6-cd716c0234ad',
+    noteType: 'quote',
+    date: '2023-02-04T01:15:00.250Z',
+  },
+  {
+    title: '新闻：电动车，国债收益率',
+    content:
+      '财政部扩大SUV的定义，凯迪拉克Lyriq，野马Mach-E，特斯拉Model Y都将重新归类为SUV。只要是价格8万以下的SUV，都能享有7500美元的税收抵免。\n因担心美联储继续加息，周五国债收益率飙升。两年期国债收益率在本周早些时候触及年内低点后上涨了19个基点。美元指数周五录得去年9月底以来最大涨幅。\n服务指数US Service Gauge在1月创3年最大涨幅显示服务业迅速回暖，消费者需求复苏。\n',
+    tags: ['f'],
+    uuid: '8b0a0f2c-9154-4a74-9421-57c5e282a60d',
+    noteType: 'fact',
+    date: '2023-02-03T21:59:53.565Z',
+  },
+  {
+    title: '周五美股回调终止三连涨，非农就业数据给减缓通胀带来压力',
+    imageLinks: [
+      'https://i.ibb.co/b2gVh5s/Screenshot-2023-02-03-at-1-29-41-PM.png',
+    ],
+    content:
+      '纳斯达克下跌1.6%，标普500下跌1.0%，道指下跌0.4%。盘中指数试图延续昨天上涨趋势，但均告失败。\n非农就业数据出乎意料得好，创53年来新低。一方面投资者认为这是美国实现经济软着陆的信号；另一方面又担心过热的就业市场不利于降低通胀，促使美联储继续加息。',
+    tags: ['news'],
+    uuid: '18bac6fd-984a-4499-9419-270692046921',
+    noteType: 'fact',
+    date: '2023-02-03T21:29:17.262Z',
+  },
+  {
+    title: '新闻：非农就业报告',
+    imageLinks: [
+      'https://i.ibb.co/YyHvTS8/Screenshot-2023-02-03-at-2-51-08-PM.png',
+    ],
+    content:
+      '1月就业报告远高于所有预期：失业率降至3.4%，低于预期的3.6%，创53年新低。\n' +
+      '非农就业人数增加51.7万，远高于市场预期的18.7万。\n' +
+      '平均每小时工资同比增加4.4%，环比增加0.3%。平均每周工作时长增加0.3小时至34.7小时。\n',
+    tags: ['jobs', ' 工作'],
+    uuid: 'c19724db-cace-4490-8731-276f0964bffd',
+    noteType: 'fact',
+    date: '2023-02-03T21:07:27.246Z',
+  },
+  {
+    title: 'January jobs report shows the unemployment rate hit 53-year low.\n',
+    content:
+      'nonfarm payrolls increased by 517,000, far higher than the 187,000 market estimate.\nUhe unemployment rate fell to 3.4%, lower than the estimate of 3.6%.\nLeisure and hospitality added 128,000 jobs while professional and business services lose 82,000 jobs.',
+    tags: ['jobs', ' us'],
+    sourceLink:
+      'https://www.cnbc.com/2023/02/03/jobs-report-january-2023-.html',
+    uuid: '99fa19e3-a144-435c-8e84-366097a90759',
+    noteType: 'fact',
+    date: '2023-02-03T15:59:51.444Z',
+  },
+  {
+    title: 'Google release earnings',
+    content:
+      'Our Q4 consolidated revenues were $76 billion, up 1% year over year, \nGoogle ad revenue was down 3.6% YoY\nYoutube revenue was down 7.8% YoY',
+    uuid: '41034db3-163b-4ff4-9656-c026edb89ab2',
+    noteType: 'fact',
+    date: '2023-02-02T21:29:43.448Z',
+  },
+  {
+    title: 'Amazon releases earnings',
+    content:
+      'Net sales increased 9% to $149.2 billion in the fourth quarter\nNorth America sales increased 13%\nOperating income decreased to $2.7 billion in the fourth quarter, compared with $3.5 billion in fourth quarter 2021.\nAWS segment sales increased 20% year-over-year to $21.4 billion.',
+    uuid: '1ef36aba-5b0e-451e-8591-d23cb486a96e',
+    noteType: 'fact',
+    date: '2023-02-02T21:12:07.638Z',
+    sourceLink:
+      'https://ir.aboutamazon.com/files/doc_financials/2022/q4/Q4-2022-Amazon-Earnings-Release.pdf',
+  },
+  {
+    title: '财报：星巴克，高通，福特汽车',
+    content:
+      '星巴克财报不及预期。营收同比增加8.2%, 全球门店营收同比增加5%，美国门店营收同比增加10%，国内门店营收同比下滑29%。 会员人数增长15%，达到3040万。\n' +
+      '高通Qualcomm财报喜忧参半。由于手机需求下降，营收同比下降11%，不及预期。\n' +
+      '福特汽车盈利低于预期。营收同比增加16.7%，但福特汽车的营收盈利均不如两天前通用汽车的财报。',
+    uuid: 'f9995d69-2291-483a-bd56-efd1504f2be6',
+    noteType: 'fact',
+    tags: ['sbux'],
+    date: '2023-02-02T21:04:22.796Z',
+  },
+  {
+    title: '财报：苹果，亚马逊，谷歌',
+    content:
+      '苹果7年来首次财报不及预期。营收同比下降5.5%，除了iPad以外，所有硬件产品收入均同比下降。服务收入同比上涨6.3%。管理层称下季度营收将继续下滑，但利润率会提升。\n' +
+      '亚马逊营收超预期。收入同比增长9%，其中北美强劲增长13%。但AWS营收不及预期，仅为20%。CEO称AWS营收在未来几个季度会继续下滑。\n' +
+      '谷歌财报不及预期，营收同比上涨1%。广告收入3年来首次下降3.6%，其中油管收入下降7.8%。谷歌云收入同比增长32%。管理层称未来会更注重效率。\n',
+    uuid: '3e8d9f78-8aef-4925-9d14-f19cc2520f94',
+    imageLinks: [
+      'https://i.ibb.co/PrY8nxM/Screenshot-2023-02-02-at-3-18-22-PM.png',
+    ],
+    noteType: 'fact',
+    date: '2023-02-02T21:01:59.414Z',
+  },
+  {
+    title: '新闻：房地产，利率，央行，Whole Foods',
+    imageLinks: [
+      'https://i.ibb.co/mGcQPTQ/Screenshot-2023-02-02-at-3-07-49-PM.png',
+    ],
+    content:
+      '美国房地产抵押贷款利率自9月以来首次降至5%区间。30年期固定利率抵押贷款的平均利率为5.99%。自利率开始回落以来，房屋建筑相关股票一直在上涨。\n' +
+      '英国央行周四将基准利率上调50个基点，符合市场预期。\n' +
+      '因为通胀数据放缓，亚马逊的全食超市Whole Foods在最近开始要求供应商降低价格。',
+    tags: [''],
+    uuid: 'ea1aec3b-97bd-485a-a6e6-09af27500b2f',
+    date: '2023-02-02T19:57:40.389Z',
+    noteType: 'fact',
+  },
+  {
+    title: '周四纳斯达克大涨3.1%，但盘后差强人意的财报可能给明天的美股降温',
+    content:
+      '今天在科技股的带领下，标普500上涨1.47%，达到5个月来最高点。其中Meta上涨23%，谷歌和亚马逊涨幅均超7%。\n' +
+      '市场对昨天美联储的发言持乐观态度，认为美联储有能力控制通胀，实现经济软着陆。\n' +
+      '三大科技股谷歌，苹果，亚马逊均在盘后财报后下跌。',
+    imageLinks: [
+      'https://pbs.twimg.com/media/Fn_nCCNaMAAIbx6?format=jpg&name=4096x4096',
+    ],
+    tags: [''],
+    uuid: 'ea1aec3b-97bd-485a-a6e6-09af27500b2f',
+    date: '2023-02-02T19:57:40.389Z',
+    noteType: 'fact',
+  },
+  {
+    title: '新闻：蔚来，理想，小鹏，能源，Costco等',
+    imageLinks: [
+      'https://ir.lixiang.com/system/files-encrypted/nasdaq_kms/inline-images/New%20-%20First%20Picture%20%281%29_0.jpg',
+    ],
+    content:
+      '电车三剑客发布1月汽车交付量：蔚来交付8506辆，同比下降12%；理想交付15141辆，同比增加23%；小鹏交付5218辆，同比下降60%； \n' +
+      '原油价格持续下跌至三周低点，能源板块今天成唯一下跌板块。 \n' +
+      'Costco宣布1月份的销售额增长6.9%至168亿美元，但电商收入同比下降15.4%。\n' +
+      '由于需求下降，联邦快递FedEx计划裁去10%管理人员。\n',
+    uuid: '68e56d4f-2668-4bad-8963-9959a3fb9929',
+    tags: ['nio', 'xpev', 'li', 'costco', 'fedex', 'oil'],
+    date: '2023-02-01T21:57:18.140Z',
+    noteType: 'fact',
+  },
+  {
+    title: '财报：Meta， Peloton， elf Beauty',
+    content:
+      'Meta Platforms财报超预期并公布了400亿美元的股票回购计划，盘后一度大涨18%。第四季度营收321.7亿美元，同比下降4.5%。日活跃用户同比增加5%。CEO强调2023将着重提升公司效率，首要发展AI，短视频而不是Metaverse。\n' +
+      'Peloton营收下降30%，但订阅收入增加22%。订阅收入连续三季度高于硬件收入。股价今天上涨26%。\n' +
+      '美妆公司e.l.f. Beauty财报每股收益翻倍，营收同比增加49%，同时上调指引。盘后股价上涨11%。',
+    tags: ['meta', 'peloton', 'elf'],
+    uuid: 'c682ac1a-ac7d-4ffc-8db4-2c699fafbabc',
+    date: '2023-02-01T21:51:19.217Z',
+    noteType: 'fact',
+  },
+  {
+    title: '周三美股由跌转涨，美联储加息25个基点并表示通缩已经开始',
+    imageLinks: [
+      'https://pbs.twimg.com/media/Fn6YeJOaEAEzlpr?format=jpg&name=4096x4096',
+    ],
+    content:
+      '标普500收盘上涨 1.05%，日内扭转了近1%的跌幅。纳斯达克上涨2%，道指上涨0.02%。\n' +
+      '美联储主席鲍威尔表示财政政策取得成效：“我们可以第一次说通货紧缩已经开始“。在多次被问到关于加息计划的问题时，鲍威尔没给出明确答复，但市场普遍认为其态度偏鸽派。',
+    tags: ['news', 'fed'],
+    uuid: '0f19094a-4bfc-49c9-bdeb-16c3f15bc749',
+    date: '2023-02-01T21:37:26.415Z',
+    noteType: 'fact',
+  },
+  {
+    title: '鲍威尔召开美联储新闻发布会',
+    content:
+      '"我们现在可以第一次说通缩过程已经开始"\n”现在说我们战胜通胀还为时尚早“\n”我们看到工资在下降“\n“委员会目前不考虑暂时暂停加息”\n',
+    tags: ['fed'],
+    uuid: '3118cf65-2097-406a-8041-c72d87d318b9',
+    date: '2023-02-01T20:02:28.144Z',
+    noteType: 'fact',
+  },
+  {
+    title: '盘后财报：AMD，SNAP',
+    content:
+      'AMD营收盈利均超预期，营收为56亿美元，同比增加16%。其中数据中心收入同比增长42%，游戏业务同比收入下降7%，个人电脑芯片销售同比下降51%，嵌入式系统收入同比增长1868%（得益于Xilinx收购）。AMD预计下季度营收同比下降10%。盘后股价+1.32%。' +
+      '\nSnap营收同比持平，但不及预期。每日活跃用户同比增长17%至3.75亿，但下季度营收预计将继续下滑2%-10%。盘后股价一度下跌14%。',
+    tags: ['amd'],
+    uuid: 'c57f93ca-9bc7-443b-a777-7002d0086ff2',
+    date: '2023-01-31T21:43:05.988Z',
+    noteType: 'fact',
+  },
+  {
+    title: '盘前财报：通用汽车，UPS，麦当劳',
+    content:
+      '通用汽车(GM)财报超预期。营收431亿美元，同比增加28%，Non-GAAP每股盈利2.12美元。CFO表示需求依旧强劲。股价今天上涨8.35%。GM还宣布投资6.5亿美元给锂矿公司Lithium Americas Corp。股价今天+8.35%' +
+      '\nUPS盈利超预期，但营收同比下降2.7%至270亿美元，不及预期。国内收入同比增长3%，国际收入同比下降8%。2023营收前瞻继续低于预期。股价今天+4.67%' +
+      '\n麦当劳营收盈利均超预期，但营收同比下降1.2%。',
+    tags: ['gm'],
+    uuid: 'a8155e92-eb4d-4867-9875-ef162c1389de',
+    date: '2023-01-31T21:35:52.396Z',
+    noteType: 'fact',
+  },
+
+  {
+    title: '周二股市上涨，纳斯达克创下2001年以来的最佳1月表现',
+    imageLinks: [
+      'https://pbs.twimg.com/media/Fn1Rcf2akAAH9mD?format=jpg&name=4096x4096',
+    ],
+    content:
+      '道指上涨1.09%，标普500上涨1.46%，纳斯达克上涨 1.67%。除了纳斯达克，标普500也创下4年来最佳1月表现。\nCathy Wood的方舟基金(ARKK)今天上涨 3.7%，1月份累涨27.8%，创下自成立以来最好单月表现。' +
+      '\nPayPal CEO称宏观经济环境充满挑战，计划裁员2000人，约占员工总数的7%。',
+    tags: ['news'],
+    uuid: '80a8e8b5-41b4-47cd-bcc6-98f48393e37e',
+    date: '2023-01-31T21:20:25.608Z',
+    noteType: 'fact',
+  },
+  {
+    title: '观点：苹果，Salesforce',
+    content:
+      '天风国际分析师郭明錤预计苹果将在2024年推出折叠式iPad。行业分析公司CCS Insight也表示目前苹果应该会先避开制造折叠iPhone，并先推出更有意义的可折叠iPad。\n多数分析师认为由于个人电脑和智能手机市场不景气，本周的苹果财报将出现营收下滑。\n摩根士丹利分析师Keith Weiss看涨Salesforce，认为在未来几年Salesforce会更注重盈利并以20%速度增长每股收益，风险收益比不错。\n',
+    tags: ['aapl', 'crm', ''],
+    uuid: 'd3128088-bab6-4de4-add3-1d7e0b008b74',
+    date: '2023-01-30T22:38:30.535Z',
+    noteType: 'opinion',
+  },
+  {
+    title: '新闻：福特, SoFi, 百度',
+    content:
+      '在特斯拉一月宣布幅降价后，福特今天也宣布下调了其电动野马Mach-E的价格，平均降价4500美元。\n金融科技公司SoFi财报及2023指引均好于预期，用户数新增48万，同比增加51%。SoFi今天上涨12.46%。\n据路透社报道，百度计划推出类似于OpenAI的 ChatGPT人工智能聊天机器人服务，并整合进其搜索引擎。\n',
+    tags: ['f', 'bidu'],
+    uuid: '3dfd17e0-6839-4a3b-a151-c15a979d2b20',
+    date: '2023-01-30T22:14:23.610Z',
+    noteType: 'fact',
+  },
+  {
+    title: '周一美股“获利回吐”，终止了上周的涨势',
+    imageLinks: [
+      'https://i.ibb.co/KXHqzqW/Screenshot-2023-01-30-at-3-01-07-PM.png',
+    ],
+    content:
+      '道指下跌0.77%，标普500下跌1.3%，纳斯达克下跌1.96%。美联储在本周三预计宣布加息0.25%。\nCFRA加拿大金融研究协会首席策略师Sam Stovall认为1月份的股市上涨可能是个好兆头。如果市场在1月上涨，那么它在接下去11个月中有超过85%的时间继续上涨，平均涨幅可达到11.5%。',
+    tags: ['news'],
+    uuid: '0c7d2673-4e11-4c45-b42e-d230625215ef',
+    date: '2023-01-30T21:43:32.082Z',
+    noteType: 'fact',
+  },
+  {
+    imageLinks: [
+      'https://i.ibb.co/CQ56yqh/Screenshot-2023-01-29-at-4-48-55-PM.png',
+    ],
+    title: '明天美股将迎来2023年到目前为止最繁忙一周',
+    content:
+      '苹果，亚马逊，谷歌，Meta等科技巨头将发布财报，全方位展示经济现状和各领域发展趋势，包括消费电子产品，供应链，电商，人工智能，广告服务，虚拟现实等。\n美联储将公布新的联邦利率并召开新闻发布会，看看接下去加息步伐是否有可能减缓，停止甚至反转。\n新的1月劳动市场就业报告也将在周五发布。\n',
+    tags: ['aapl', 'amzn', 'goog'],
+    uuid: 'f7d7735e-e7f3-41e2-8fd2-7aff166fe9f6',
+    date: '2023-01-30T02:07:36.723Z',
+    noteType: 'fact',
+  },
+  {
+    title: '周四关注',
+    content:
+      '盘前财报：索尼(SONY)，Merck(MRK)，Eli Lilly(LLY)\n盘后财报：苹果(AAPL)，亚马逊(AMZN)，谷歌(GOOG)，星巴克(SBUX)，高通Qualcomm(QCOM)，福特(F)',
+    tags: ['AAPL', 'AMZN', 'GOOG', 'SBUX'],
+    uuid: '9730ee0f-292f-4e4f-b0dc-9c170f3d8687',
+    date: '2023-01-30T01:52:08.689Z',
+    noteType: 'fact',
+  },
+  {
+    title: '周三关注',
+    content:
+      '纽约时间下午2:00，联邦公开市场委员(FOMC)将发表利率声明。纽约时间下午2:30，美联储主席鲍威尔将召开新闻发布会。\n电车三剑客蔚来(NIO)，理想(LI)和小鹏(XPEV)将发布月度交付报告。\n盘前财报：Peloton(PTON)，T-Mobile(TMUS)\n盘后财报：Meta(META)，McKesson(MCK)',
+    tags: ['NIO', 'LI', 'XPEV', 'Meta', 'PTON'],
+    uuid: '973b537f-bbe9-45de-bdf0-2839145dfac3',
+    date: '2023-01-30T01:36:02.670Z',
+    noteType: 'fact',
+  },
+  {
+    title: '周二关注',
+    content:
+      '盘前财报：ExxonMobil(XOM)，UPS(UPS)，通用汽车(GM)，辉瑞Pfizer(PFE)，Caterpillar(CAT)，麦当劳(MCD)\n盘后财报：AMD(AMD)，Snap(SNAP)，Amgen(AMGN)，Electronic Arts(EA)\n\n',
+    tags: ['AMD', 'PFE', 'SNAP', 'MCD', 'EA'],
+    uuid: '5969ceed-2f30-45eb-9acb-00e1e48177ce',
+    date: '2023-01-30T00:58:30.458Z',
+    noteType: 'fact',
+  },
+  {
     title:
       '其他：电动车公司LUCID今天上涨43%，有传言声称该公司可能被沙特主权基金收购。',
     content:

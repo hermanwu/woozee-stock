@@ -1,5 +1,17 @@
 <form [formGroup]="newsForm" (ngSubmit)="onSubmit()">
-  <h3>Create News</h3>
+  <h3>New Note</h3>
+
+  <div>
+    <mat-button-toggle-group
+      #noteTypeGroup="matButtonToggleGroup"
+      (change)="setNote(noteTypeGroup.value)"
+      [value]="noteType.Fact"
+    >
+      <mat-button-toggle [value]="noteType.Fact">Fact</mat-button-toggle>
+      <mat-button-toggle [value]="noteType.Opinion">Opinion</mat-button-toggle>
+      <mat-button-toggle [value]="noteType.Quote">Quote</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
 
   <div>
     <div><mat-label>title</mat-label></div>
@@ -15,6 +27,7 @@
     <div>
       <textarea rows="8" cols="40" formControlName="content"></textarea>
     </div>
+    <div>Content Size: {{ newsForm.value?.content?.length || 0 }}</div>
   </div>
 
   <div>

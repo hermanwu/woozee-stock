@@ -1,20 +1,17 @@
-<!-- <div>
-  {{ opinion.parentUuid }}
-</div> -->
-
 <ng-container *ngIf="expanded; else shortVersion">
-  <div>
-    <div>
+  <div class="flow-display">
+    <div *ngIf="authorNameImageLink">
       <app-image-display [imageLink]="authorNameImageLink"></app-image-display>
     </div>
 
     <div>{{ opinion.authorName }}</div>
-    <div>{{ opinion.organizationName }}</div>
-    <div>
+
+    <div *ngIf="organizationImageLink">
       <app-image-display
         [imageLink]="organizationImageLink"
       ></app-image-display>
     </div>
+    <div>{{ opinion.organizationName }}</div>
   </div>
 
   <div>
@@ -37,7 +34,7 @@
       <app-tags-display [tags]="opinion?.targets"> </app-tags-display>
     </div>
 
-    <button buttons mat-icon-button [matMenuTriggerFor]="menu">
+    <button right-items mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_horiz</mat-icon>
 
       <mat-menu #menu="matMenu"> </mat-menu>

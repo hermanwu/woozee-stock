@@ -6,6 +6,7 @@ import { RegionCode } from 'src/app/shared/data/enum/region.enum';
 import { Rating } from 'src/app/stock/models/rating.model';
 import { Stock } from 'src/app/stock/models/stock.model';
 import { Opinion } from '../components/opinion-display/opinion.interface';
+import { opinions } from '../data/mock-opinions.data';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +16,10 @@ export class OpinionServices {
 
   constructor(private userServices: UserServices) {
     this.opinions = this.userServices.getOpinions();
+  }
+
+  getAllOpinions() {
+    return opinions;
   }
 
   getOpinionsByStock(stock: Stock): Opinion[] {

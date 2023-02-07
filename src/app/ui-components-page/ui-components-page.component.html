@@ -4,6 +4,12 @@
 </app-card>
 
 <app-card>
+  Investor Display
+
+  <app-investor-display [authorUuid]="'123'"></app-investor-display>
+</app-card>
+
+<app-card>
   <app-news-display [news]="mockNews" [expanded]="true"></app-news-display>
 </app-card>
 
@@ -132,6 +138,18 @@
   <h1>Card</h1>
 
   <app-card>This is a card demo</app-card>
+
+  <h2>Square</h2>
+</app-card>
+
+<app-card>
+  <app-square-container
+    ><app-image-display
+      [imageLink]="
+        'https://i.ibb.co/CJzQF3G/Screenshot-2023-02-06-at-5-15-45-PM.png'
+      "
+    ></app-image-display
+  ></app-square-container>
 </app-card>
 
 <app-card>
@@ -146,6 +164,11 @@
 
   <app-title-menu>
     <div header-3>This is a header-3 Title</div>
+  </app-title-menu>
+
+  <app-title-menu>
+    <button left-items>Left Buttons</button>
+    <button right-items>Right Buttons</button>
   </app-title-menu>
 </app-card>
 

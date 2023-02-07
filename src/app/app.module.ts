@@ -113,6 +113,9 @@ import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-g
 import { TrendComponent } from './trend/trend.component';
 import { TwitterDisplayDialogComponent } from './twitter-display-dialog/twitter-display-dialog.component';
 import { UiComponentsPageComponent } from './ui-components-page/ui-components-page.component';
+import { QuoteDisplayComponent } from './quote-display/quote-display.component';
+import { InvestorDisplayComponent } from './investor-display/investor-display.component';
+import { SquareContainerComponent } from './square-container/square-container.component';
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
 @NgModule({
@@ -214,6 +217,9 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     ListComponent,
     ActionsListPageComponent,
     NotesListPageComponent,
+    QuoteDisplayComponent,
+    InvestorDisplayComponent,
+    SquareContainerComponent,
   ],
   imports: [
     BrowserModule,

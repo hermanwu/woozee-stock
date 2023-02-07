@@ -1,6 +1,5 @@
 <span *ngIf="showDefaultTags">
   {{ defaultTags }}
 </span>
-<span *ngIf="allTagStrings">
-  {{ allTagStrings }}
-</span>
+
+<span *ngFor="let item of tags">{{ item }}</span>

@@ -1,8 +1,18 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { v4 as generateUuid } from 'uuid';
+import { NoteType } from '../shared/data/note.interface';
+import { TagServices } from '../shared/services/tag.services';
 import { News } from '../stock/models/news.model';
 
+const tags = {
+  亚马逊: 'amzn',
+  元: 'meta',
+  科技: 'technology',
+  互联网: 'internet',
+  美联储: 'fed',
+};
+const tagSet = new Set([...Object.values(tags), ...Object.keys(tags)]);
 @Component({
   selector: 'app-add-news-form',
   templateUrl: './add-news-form.component.html',
@@ -13,8 +23,12 @@ export class AddNewsFormComponent implements OnInit {
 
   newsForm: FormGroup;
   news: News;
+  noteType = NoteType;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private tagServices: TagServices
+  ) {}
 
   ngOnInit(): void {
     const newsUuid = generateUuid();
@@ -27,6 +41,7 @@ export class AddNewsFormComponent implements OnInit {
       sourceLink: [],
       rating: [],
       uuid: [newsUuid],
+      noteType: [NoteType.Fact],
     });
   }
 
@@ -34,9 +49,19 @@ export class AddNewsFormComponent implements OnInit {
    * Submit the form
    */
   onSubmit(): void {
+    let tags = this.newsForm.value.tags
+      ? this.newsForm.value.tags.split(',')
+      : [];
+
+    const autoTags =
+      this.tagServices.getTags(
+        this.newsForm.value.content + ' ' + this.newsForm.value.title
+      ) || [];
+
     const news = {
       ...this.newsForm.value,
-      tags: this.newsForm.value.tags?.split(','),
+      tags: [...tags, ...autoTags],
+
       targets: this.newsForm.value.targets
         ?.split(',')
         .map((target) => target.trim()),
@@ -50,5 +75,9 @@ export class AddNewsFormComponent implements OnInit {
     }
 
     this.news = news;
+  }
+
+  setNote(noteType: NoteType) {
+    this.newsForm.patchValue({ noteType });
   }
 }

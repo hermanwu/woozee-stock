@@ -41,9 +41,10 @@ export class AddNoteComponent implements OnInit {
    * Submit the form
    */
   onSubmit(): void {
+    console.log('tyest');
     const opinion = {
       ...this.noteForm.value,
-      tags: this.noteForm.value.tags?.split(','),
+      tags: [...this.noteForm.value.tags?.split(',')],
       targets: this.noteForm.value.targets?.split(','),
       date: new Date(),
     };

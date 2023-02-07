@@ -23,27 +23,6 @@
 </ng-container>
 
 <ng-template #fullVersion>
-  <app-title-menu>
-    <h2 header-3>{{ news?.source || "News" }}</h2>
-
-    <button
-      buttons
-      mat-icon-button
-      [matMenuTriggerFor]="menu"
-      *ngIf="!environment.production"
-    >
-      <mat-icon>more_horiz</mat-icon>
-    </button>
-
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item [cdkCopyToClipboard]="news.uuid">Copy UUID</button>
-
-      <button mat-menu-item (click)="openDialog()">Twitter</button>
-
-      <button mat-menu-item (click)="openInstagramDialog()">Instagram</button>
-    </mat-menu>
-  </app-title-menu>
-
   <div class="square">
     <div class="news-image">
       <app-stock-image-display
@@ -62,24 +41,6 @@
       </ul>
 
       <app-content-display [content]="news.content"></app-content-display>
-
-      <div>
-        <span class="margin-right-5">
-          <app-date-display [date]="news?.date"></app-date-display>
-        </span>
-
-        <app-tags-display [tags]="news?.tags"> </app-tags-display>
-
-        <span class="source-link">
-          <a
-            *ngIf="news?.sourceLink"
-            href="{{ news.sourceLink }}"
-            target="_blank"
-          >
-            read more
-          </a>
-        </span>
-      </div>
 
       <div *ngFor="let item of news?.imageLinks?.slice(1)">
         <app-stock-image-display

@@ -1,5 +1,7 @@
 <div class="title-menu">
-  <div class="title-container">
+  <div class="left-items">
+    <ng-content select="[left-items]"></ng-content>
+
     <div class="header-1">
       <ng-content select="[header-1]"></ng-content>
     </div>
@@ -17,7 +19,9 @@
     </div>
   </div>
 
-  <div class="buttons">
-    <ng-content select="[buttons]"></ng-content>
+  <div class="fill-space"></div>
+
+  <div class="right-items">
+    <ng-content select="[right-items]"></ng-content>
   </div>
 </div>

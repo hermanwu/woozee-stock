@@ -14,3 +14,10 @@
 .pre-line {
   white-space: pre-line;
 }
+
+.flow-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+}

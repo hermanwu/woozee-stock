@@ -1,6 +1,22 @@
 import { IndustryType } from 'src/app/facts/data/area.enum';
 
 export const images = new Map<string, string[]>([
+  ['atvi', ['https://i.ibb.co/yScSfZ5/header-0120-1920x1080.webp']],
+  [
+    'pins',
+    ['https://i.ibb.co/vhZsrYx/Screenshot-2023-02-06-at-2-28-58-PM.png'],
+  ],
+  [
+    'sbux',
+    ['https://pbs.twimg.com/media/Fn_w1jtaIAA66bO?format=png&name=900x900'],
+  ],
+  ['gm', ['https://pbs.twimg.com/media/Fn1aE0PaYAARx9Z?format=jpg&name=small']],
+  ['f', ['https://i.ibb.co/NNVPJv2/Screenshot-2023-01-30-at-3-00-35-PM.png']],
+  ['nio', ['https://i.ibb.co/myr0HdZ/Screenshot-2023-01-29-at-6-15-49-PM.png']],
+  [
+    'amd',
+    ['https://pbs.twimg.com/media/Fn1ieV6aEAA3XvI?format=jpg&name=4096x4096'],
+  ],
   [
     'intc',
     ['https://i.ibb.co/RYGgQJW/Screenshot-2023-01-26-at-2-16-36-PM.png'],
@@ -42,6 +58,10 @@ export const images = new Map<string, string[]>([
     'mrna',
     ['https://i.ibb.co/9yvC2Qd/Screenshot-2023-01-17-at-2-10-28-PM.png'],
   ],
+  [
+    'meta',
+    ['https://pbs.twimg.com/media/Fn6rEkuaMAAwhWQ?format=jpg&name=medium'],
+  ],
   ['ual', ['https://i.ibb.co/FW0RjWM/Screenshot-2023-01-17-at-2-11-21-PM.png']],
   ['wen', ['https://i.ibb.co/t47Wg89/Screenshot-2023-01-14-at-7-09-59-AM.png']],
   ['tsm', ['https://i.ibb.co/qdmWf3J/Screenshot-2023-01-14-at-6-27-22-AM.png']],
@@ -75,7 +95,7 @@ export const images = new Map<string, string[]>([
   ],
   [
     'cost',
-    ['https://i.ibb.co/ctB2mHm/Screen-Shot-2022-09-22-at-4-14-07-PM.png'],
+    ['https://pbs.twimg.com/media/Fn6onglagAA1raR?format=jpg&name=medium'],
   ],
   [
     'dis'.toLowerCase(),

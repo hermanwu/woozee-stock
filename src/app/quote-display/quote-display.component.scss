@@ -1,0 +1,26 @@
+.quote-icon {
+  margin-right: 10px;
+}
+
+.quote {
+  font-size: large;
+}
+
+.h3 {
+  font-size: medium;
+  margin: 10px 0;
+}
+
+.question {
+  color: gray;
+}
+
+.quote-font {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  gap: 10px;
+  // > * {
+  //   flex-grow: 1;
+  // }
+}

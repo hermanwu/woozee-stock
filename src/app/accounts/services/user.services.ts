@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { IndustryType } from 'src/app/facts/data/area.enum';
-import { Opinion } from 'src/app/opinions/components/opinion-display/opinion.interface';
+import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { StockData } from 'src/app/stock/services/stock-data.model';
 import { currentUserMock } from '../data/user.mock';
 

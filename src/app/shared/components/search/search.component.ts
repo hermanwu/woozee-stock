@@ -3,8 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { IndustryType } from 'src/app/facts/data/area.enum';
-import { stocksMap } from 'src/app/stock/mocks/stock-list.const';
+import { stocksMap } from 'src/app/mock-data/mocks/stock-list.const';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { NavigationServices } from '../../services/navgiation.services';
 
 export interface StateGroup {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { IndustryType } from 'src/app/facts/data/area.enum';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { calculateIncreasePercentage } from 'src/app/shared/functions/math.function';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { Industry } from 'src/app/stock/models/industry.model';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
 import { StockServices } from 'src/app/stock/services/objective-data.service';

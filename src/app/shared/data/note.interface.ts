@@ -1,5 +1,5 @@
-import { Opinion } from 'src/app/opinions/components/opinion-display/opinion.interface';
-import { Quote } from 'src/app/opinions/data/mock-opinions.data';
+import { Quote } from 'src/app/mock-data/mock-opinions.data';
+import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { Fact } from 'src/app/risks/models/fact.model';
 
 /**

@@ -1,6 +1,6 @@
-import { IndustryType } from 'src/app/facts/data/area.enum';
 import { StatsDisplay } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { Note } from 'src/app/shared/data/note.interface';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { Source } from '../models/news-source.enum';
 
 export interface News {

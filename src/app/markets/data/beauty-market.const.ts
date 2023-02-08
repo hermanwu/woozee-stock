@@ -1,6 +1,6 @@
-import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Risk } from 'src/app/risks/models/risk.model';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { Industry } from 'src/app/stock/models/industry.model';
 
 export const beautyCatalysts: Catalyst[] = [

@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { IndustryType } from 'src/app/facts/data/area.enum';
 import { IndustriesService } from 'src/app/markets/services/industries.service';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 import { StockData } from '../../services/stock-data.model';
 

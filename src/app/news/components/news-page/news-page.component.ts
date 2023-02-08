@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DailyMediumReportDisplayDialogComponent } from 'src/app/news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
-import { OpinionServices } from 'src/app/opinions/services/opinion.services';
+import { OpinionServices } from 'src/app/notes/services/opinion.services';
 import { Note } from 'src/app/shared/data/note.interface';
 import { Industry } from 'src/app/stock/models/industry.model';
 import { EventType } from 'src/app/stock/models/news.model';
@@ -36,8 +36,6 @@ export class NewsPageComponent implements OnInit {
     this.news = [...opinions, ...news]
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .slice(0, 15);
-
-    console.log(this.news);
   }
 
   openDailyReportDialog() {

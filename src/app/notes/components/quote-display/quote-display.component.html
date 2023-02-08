@@ -1,0 +1,19 @@
+<app-investor-display
+  *ngIf="quote?.authorUuid"
+  [authorUuid]="quote.authorUuid"
+></app-investor-display>
+
+<div class="h3" *ngIf="quote?.title">🎙️ {{ quote.title }}</div>
+
+<div class="h3 question" *ngIf="quote?.question">
+  ❓ <i>{{ quote.question }}</i>
+</div>
+
+<ul class="quote-font">
+  <li *ngFor="let line of lines">
+    <span class="quote-icon">💬</span>
+    <span class="quote">"</span>
+    <i>{{ line }}</i>
+    <span class="quote">"</span>
+  </li>
+</ul>

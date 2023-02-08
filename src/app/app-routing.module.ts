@@ -2,18 +2,20 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
-import { ActionsListPageComponent } from './actions-list-page/actions-list-page.component';
-import { AssetListPageComponent } from './asset-list-page/asset-list-page.component';
-import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
+import { ActionsListPageComponent } from './actions/components/actions-list-page/actions-list-page.component';
+import { AssetListPageComponent } from './assets/components/asset-list-page/asset-list-page.component';
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
 import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
 import { ListComponent } from './list/list.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
+import { RegionPropertiesPageComponent } from './markets/components/region-properties-page/region-properties-page.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
-import { NotesListPageComponent } from './notes-list-page/notes-list-page.component';
-import { MePageComponent } from './opinions/components/opinion-page/blog-page.component';
+import { AddNewsFormComponent } from './notes/components/add-news-form/add-news-form.component';
+import { CatalystPageComponent } from './notes/components/catalyst/components/catalyst-page/catalyst-page.component';
+import { NotesListPageComponent } from './notes/components/notes-list-page/notes-list-page.component';
+import { MePageComponent } from './notes/components/opinion-page/blog-page.component';
+import { AddPersonFormComponent } from './people/components/add-person-form/add-person-form.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
-import { RegionPropertiesPageComponent } from './region-properties-page/region-properties-page.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
 import { DemoPageComponent } from './shared/components/demo-page/demo-page.component';
@@ -22,7 +24,7 @@ import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
-import { UiComponentsPageComponent } from './ui-components-page/ui-components-page.component';
+import { UiComponentsPageComponent } from './ui/components/ui-components-page/ui-components-page.component';
 
 const routes: Routes = [
   {
@@ -93,7 +95,18 @@ const routes: Routes = [
       {
         path: 'ui-components',
         component: UiComponentsPageComponent,
-        pathMatch: 'full',
+        children: [
+          {
+            path: 'note-form',
+            pathMatch: 'full',
+            component: AddNewsFormComponent,
+          },
+          {
+            path: 'add-person',
+            pathMatch: 'full',
+            component: AddPersonFormComponent,
+          },
+        ],
       },
       { path: '', redirectTo: 'news', pathMatch: 'full' },
     ],

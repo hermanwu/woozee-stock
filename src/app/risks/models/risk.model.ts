@@ -1,5 +1,5 @@
-import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Note } from 'src/app/shared/data/note.interface';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { FactType } from './fact-type.enum';
 import { Term } from './risk-level.model';
 

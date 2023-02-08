@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { IndustryType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { Risk } from '../../models/risk.model';
 
 @Component({

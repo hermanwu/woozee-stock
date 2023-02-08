@@ -6,7 +6,7 @@ import { InstagramNewsDisplayDialogInput } from 'src/app/news/components/news-di
 import { InstagramNewsDisplayDialogComponent } from 'src/app/news/components/news-display-dialog/news-display-dialog.component';
 import { stockTagsMock } from 'src/app/shared/data/const/tag.mock';
 import { industryEmojiMap } from 'src/app/shared/data/enum/emoji.enum';
-import { TwitterDisplayDialogComponent } from 'src/app/twitter-display-dialog/twitter-display-dialog.component';
+import { TwitterDisplayDialogComponent } from 'src/app/ui/components/twitter-display-dialog/twitter-display-dialog.component';
 import { environment } from 'src/environments/environment';
 import { StockMetric } from '../../components/stock-metric-display/stock-metric.enum';
 import { EventType } from '../../models/news.model';

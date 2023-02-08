@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { IndustryType } from 'src/app/facts/data/area.enum';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
-import { stocksMap } from '../mocks/stock-list.const';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
+import { stocksMap } from '../../mock-data/mocks/stock-list.const';
 import { EarningsReport } from '../models/earnings.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { StockData } from './stock-data.model';

@@ -13,54 +13,50 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment';
 import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
-import { ActionsListPageComponent } from './actions-list-page/actions-list-page.component';
-import { AddNewsFormComponent } from './add-news-form/add-news-form.component';
-import { AddNoteComponent } from './add-note/add-note.component';
+import { ActionsListPageComponent } from './actions/components/actions-list-page/actions-list-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AssetListPageComponent } from './asset-list-page/asset-list-page.component';
-import { BoosterComponent } from './catalyst/booster/booster.component';
-import { CatalystListComponent } from './catalyst/components/catalyst-list/catalyst-list.component';
-import { CatalystPageComponent } from './catalyst/components/catalyst-page/catalyst-page.component';
-import { CatalystTotalDisplayComponent } from './catalyst/components/catalyst-total-display/catalyst-total-display.component';
-import { CatalystComponent } from './catalyst/components/catalyst/catalyst.component';
-import { ComparisionDisplayComponent } from './comparision-display/comparision-display.component';
-import { ContentDisplayComponent } from './content-display/content-display.component';
-import { DecisionDashboardComponent } from './decision-dashboard/decision-dashboard.component';
-import { FactComponent } from './facts/components/fact/fact.component';
-import { GrowthDetailsComponent } from './growth-details/growth-details.component';
+import { AssetListPageComponent } from './assets/components/asset-list-page/asset-list-page.component';
 import { ImageDisplayComponent } from './images/components/image-display/image-display.component';
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
 import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
-import { InstagramDisplayComponent } from './instagram-display/instagram-display.component';
+import { ListPropertiesPageComponent } from './list/components/list-properties-page/list-properties-page.component';
 import { ListComponent } from './list/list.component';
 import { MarketDisplayComponent } from './markets/components/market-display/market-display.component';
 import { MarketListComponent } from './markets/components/market-list/market-list.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
-import { MockCompareDialogComponent } from './mock-compare-dialog/mock-compare-dialog.component';
+import { RegionPropertiesPageComponent } from './markets/components/region-properties-page/region-properties-page.component';
 import { DailyMediumReportDisplayDialogComponent } from './news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { MediaLinkComponent } from './news/components/media-link/media-link.component';
 import { InstagramNewsDisplayDialogComponent } from './news/components/news-display-dialog/news-display-dialog.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
-import { NotesListPageComponent } from './notes-list-page/notes-list-page.component';
-import { OpinionItemDisplayComponent } from './opinion-item-display/opinion-item-display.component';
-import { OpinionDisplayComponent } from './opinions/components/opinion-display/opinion-display.component';
-import { MePageComponent } from './opinions/components/opinion-page/blog-page.component';
+import { AddNewsFormComponent } from './notes/components/add-news-form/add-news-form.component';
+import { AddNoteComponent } from './notes/components/add-note/add-note.component';
+import { BoosterComponent } from './notes/components/catalyst/booster/booster.component';
+import { CatalystListComponent } from './notes/components/catalyst/components/catalyst-list/catalyst-list.component';
+import { CatalystPageComponent } from './notes/components/catalyst/components/catalyst-page/catalyst-page.component';
+import { CatalystTotalDisplayComponent } from './notes/components/catalyst/components/catalyst-total-display/catalyst-total-display.component';
+import { CatalystComponent } from './notes/components/catalyst/components/catalyst/catalyst.component';
+import { ComparisionDisplayComponent } from './notes/components/comparision-display/comparision-display.component';
+import { ContentDisplayComponent } from './notes/components/content-display/content-display.component';
+import { NotesListPageComponent } from './notes/components/notes-list-page/notes-list-page.component';
+import { OpinionDisplayComponent } from './notes/components/opinion-display/opinion-display.component';
+import { OpinionItemDisplayComponent } from './notes/components/opinion-item-display/opinion-item-display.component';
+import { MePageComponent } from './notes/components/opinion-page/blog-page.component';
+import { QuoteDisplayComponent } from './notes/components/quote-display/quote-display.component';
+import { AddPersonFormComponent } from './people/components/add-person-form/add-person-form.component';
+import { InvestorDisplayComponent } from './people/components/investor-display/investor-display.component';
 import { ThumbnailComponent } from './presentation/components/thumbnail/thumbnail.component';
 import { PresentationHeaderComponent } from './presentation/presentation-header/presentation-header.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
 import { SlideFooterComponent } from './presentation/slide/slide-footer/slide-footer.component';
 import { SlideComponent } from './presentation/slide/slide/slide.component';
-import { PriceDisplayComponent } from './price-display/price-display.component';
-import { ProfitabilityComponent } from './profitability/profitability.component';
-import { RegionPropertiesPageComponent } from './region-properties-page/region-properties-page.component';
-import { RiskCatalystDialogComponent } from './risk-catalyst-dialog/risk-catalyst-dialog.component';
+import { RiskCatalystDialogComponent } from './risks/components/risk-catalyst-dialog/risk-catalyst-dialog.component';
 import { RiskListComponent } from './risks/components/risk-list/risk-list.component';
 import { RiskTotalDisplayComponent } from './risks/components/risk-total-display/risk-total-display.component';
 import { RiskComponent } from './risks/components/risk/risk.component';
 import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
-import { SentimentDisplayComponent } from './sentiment-display/sentiment-display.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
 import { BadgeComponent } from './shared/components/badge/badge.component';
 import { CardComponent } from './shared/components/card/card.component';
@@ -75,6 +71,7 @@ import { NoteDialogComponent } from './shared/components/note-dialog/note-dialog
 import { NoteComponent } from './shared/components/note/note.component';
 import { RegionDisplayComponent } from './shared/components/region-display/region-display.component';
 import { SearchComponent } from './shared/components/search/search.component';
+import { SentimentDisplayComponent } from './shared/components/sentiment-display/sentiment-display.component';
 import { SliderComponent } from './shared/components/slider/slider.component';
 import { StatsDisplayComponent } from './shared/components/stats-display/stats-display.component';
 import { TagsDisplayComponent } from './shared/components/tags-display/tags-display.component';
@@ -88,10 +85,14 @@ import { AppMaterialModule } from './shared/styles/app-material.module';
 import { BusinessOverviewComponent } from './stock/components/business-overview/business-overview.component';
 import { ComparisonDialogComponent } from './stock/components/comparison-dialog/comparison-dialog.component';
 import { EarningsReportComponent } from './stock/components/earnings-report/earnings-report.component';
+import { FactComponent } from './stock/components/facts/components/fact/fact.component';
+import { GrowthDetailsComponent } from './stock/components/growth-details/growth-details.component';
 import { GrowthComponent } from './stock/components/growth/growth.component';
 import { LinksComponent } from './stock/components/links/links.component';
 import { MovementDisplayComponent } from './stock/components/movement-display/movement-display.component';
+import { PriceDisplayComponent } from './stock/components/price-display/price-display.component';
 import { ProfitabilityDetailsComponent } from './stock/components/profitability-details/profitability-details.component';
+import { ProfitabilityComponent } from './stock/components/profitability/profitability.component';
 import { RevenueCompositionDisplayComponent } from './stock/components/revenue-composition-display/revenue-composition-display.component';
 import { RevenueDisplayComponent } from './stock/components/revenue-display/revenue-display.component';
 import { StockBadgeListComponent } from './stock/components/stock-badge-list/stock-badge-list.component';
@@ -108,14 +109,14 @@ import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/tho
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
 import { StockDisplayComponent } from './stock/stock-display/stock-display.component';
-import { TitleMenuComponent } from './title-menu/title-menu.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
-import { TwitterDisplayDialogComponent } from './twitter-display-dialog/twitter-display-dialog.component';
-import { UiComponentsPageComponent } from './ui-components-page/ui-components-page.component';
-import { QuoteDisplayComponent } from './quote-display/quote-display.component';
-import { InvestorDisplayComponent } from './investor-display/investor-display.component';
-import { SquareContainerComponent } from './square-container/square-container.component';
+import { MockCompareDialogComponent } from './ui/components/mock-compare-dialog/mock-compare-dialog.component';
+import { SquareContainerComponent } from './ui/components/square-container/square-container.component';
+import { TitleMenuComponent } from './ui/components/title-menu/title-menu.component';
+import { TwitterDisplayDialogComponent } from './ui/components/twitter-display-dialog/twitter-display-dialog.component';
+import { UiComponentsPageComponent } from './ui/components/ui-components-page/ui-components-page.component';
+
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
 @NgModule({
@@ -176,11 +177,9 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     DemoPageComponent,
     RiskTotalDisplayComponent,
     CatalystTotalDisplayComponent,
-    DecisionDashboardComponent,
     EarningsReportComponent,
     RevenueCompositionDisplayComponent,
     RevenueDisplayComponent,
-    GrowthDetailsComponent,
     SentimentDisplayComponent,
     MovementDisplayComponent,
     ProfitabilityDetailsComponent,
@@ -199,7 +198,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     TagDisplayPipe,
     MePageComponent,
     RegionDisplayComponent,
-    InstagramDisplayComponent,
     OpinionDisplayComponent,
     DragDropRankDialogComponent,
     MockCompareDialogComponent,
@@ -220,6 +218,9 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     QuoteDisplayComponent,
     InvestorDisplayComponent,
     SquareContainerComponent,
+    AddPersonFormComponent,
+    ListPropertiesPageComponent,
+    GrowthDetailsComponent,
   ],
   imports: [
     BrowserModule,

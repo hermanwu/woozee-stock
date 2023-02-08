@@ -1,0 +1,226 @@
+<nav mat-tab-nav-bar>
+  <a
+    mat-tab-link
+    [routerLink]="[noteFormRoute]"
+    [active]="activeRoute === noteFormRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+  >
+    Add Note
+  </a>
+  <a
+    mat-tab-link
+    [routerLink]="[addPersonRoute]"
+    [active]="activeRoute === addPersonRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+  >
+    Add Person
+  </a>
+</nav>
+<router-outlet></router-outlet>
+
+<app-card>
+  Investor Display
+
+  <app-investor-display [authorUuid]="'123'"></app-investor-display>
+</app-card>
+
+<app-card>
+  <app-news-display [news]="mockNews" [expanded]="true"></app-news-display>
+</app-card>
+
+<app-card>
+  <app-opinion-item-display
+    [expanded]="'true'"
+    [opinion]="mockOpinion"
+  ></app-opinion-item-display>
+</app-card>
+
+<app-card>
+  <app-stock-image-display [tag]="'AAPL'"></app-stock-image-display>
+</app-card>
+
+<app-image-display
+  [imageLink]="
+    'https://pbs.twimg.com/media/Fck1g5TakAIU9mR?format=png&name=large'
+  "
+></app-image-display>
+
+<app-card>
+  <app-search></app-search>
+</app-card>
+
+<app-card>
+  <div>Function Test</div>
+
+  <div>Mock Ranks: {{ mockRanks }}</div>
+
+  <div>Item: {{ mockItem }}</div>
+
+  <div>Higher: {{ higherItem }}</div>
+  <div>Lower: {{ lowerItem }}</div>
+
+  <div>Result: {{ mockResult }}</div>
+
+  <button (click)="mockRankHigher()">Rank Higher</button>
+
+  <button (click)="mockRankLower()">Rank Lower</button>
+</app-card>
+
+<app-card>
+  <h1>Data Comparsion Display</h1>
+
+  <div>
+    <div>INPUT:</div>
+    <div>items: {{ mockStocks | json }}</div>
+    <div>OUTPUT:</div>
+    <div>{{ rankedStocks | json }}</div>
+
+    <app-comparision-display
+      [items]="mockStocks"
+      (selectAction)="rankedStocks = $event"
+    >
+      <div note>
+        This is a super super super super super super super super long text
+      </div>
+      <div item-1>Test 1</div>
+      <div item-2>Test 2</div>
+    </app-comparision-display>
+  </div>
+</app-card>
+
+<app-card>
+  <h1>Drop Down</h1>
+
+  <div>Selected Portfolio: {{ selectedPortfolio }}</div>
+
+  <button mat-stroked-button [matMenuTriggerFor]="menu">
+    {{ selectedPortfolio ? selectedPortfolio : "All Stocks" }}
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <div *ngFor="let portfolio of mockPortfolios">
+      <button mat-menu-item i18n (click)="changePortfolio(portfolio)">
+        {{ portfolio.name }}
+      </button>
+    </div>
+    <button mat-menu-item i18n (click)="changePortfolio(null)">
+      Following
+    </button>
+  </mat-menu>
+</app-card>
+
+<app-card>
+  <h1>Ranking Stocks</h1>
+
+  <div>Global Ranking: {{ globalRanking | json }}</div>
+
+  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let stock of mockPortfolio" cdkDrag>
+      {{ stock }}
+      <button mat-stroked-button (click)="compareStock(stock)">compare</button>
+    </div>
+  </div>
+
+  <button mat-stroked-button (click)="saveRank()">Save Rank</button>
+</app-card>
+
+<app-card>
+  <h1>Badge</h1>
+
+  <app-badge>Test</app-badge>
+</app-card>
+
+<app-card>
+  <h1>Region Display</h1>
+
+  <app-region-display [region]="'CN'">Test</app-region-display>
+</app-card>
+
+<app-card>
+  <h1>Opinion Display</h1>
+
+  <app-opinion-display [opinion]="opinionMock"></app-opinion-display>
+</app-card>
+
+<app-card>
+  <h1>Tag Display</h1>
+
+  <app-tags-display [tags]="tagsMock"></app-tags-display>
+</app-card>
+
+<app-card>
+  <h1>Card</h1>
+
+  <app-card>This is a card demo</app-card>
+
+  <h2>Square</h2>
+</app-card>
+
+<app-card>
+  <app-square-container
+    ><app-image-display
+      [imageLink]="
+        'https://i.ibb.co/CJzQF3G/Screenshot-2023-02-06-at-5-15-45-PM.png'
+      "
+    ></app-image-display
+  ></app-square-container>
+</app-card>
+
+<app-card>
+  <h1>Title Menu Component</h1>
+  <app-title-menu>
+    <div header-1>This is a header-1 Title</div>
+  </app-title-menu>
+
+  <app-title-menu>
+    <div header-2>This is a header-2 Title</div>
+  </app-title-menu>
+
+  <app-title-menu>
+    <div header-3>This is a header-3 Title</div>
+  </app-title-menu>
+
+  <app-title-menu>
+    <button left-items>Left Buttons</button>
+    <button right-items>Right Buttons</button>
+  </app-title-menu>
+</app-card>
+
+<app-card>
+  <h1>Card With Limit</h1>
+</app-card>
+
+<app-card>
+  <h1>Table</h1>
+  <div class="table">
+    <div class="table-row">
+      <div>Col 1</div>
+      <div>Col 2</div>
+      <div>Col 3</div>
+      <div>Col 4</div>
+      <div>Col 5</div>
+      <div>Col 6</div>
+    </div>
+
+    <div class="table-row">
+      <div>Col 1</div>
+      <div>Col 2</div>
+      <div>Col 3</div>
+      <div>Col 4</div>
+      <div>Col 5</div>
+      <div>Col 6</div>
+    </div>
+
+    <div class="table-row">
+      <div>Col 1 long long long long long long long</div>
+      <div>Col 2</div>
+      <div>Col 3</div>
+      <div>Col 4</div>
+      <div>Col 5</div>
+      <div>Col 6</div>
+    </div>
+  </div>
+</app-card>

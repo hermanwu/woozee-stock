@@ -2,12 +2,12 @@ import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import { IndustryType } from 'src/app/facts/data/area.enum';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import {
   rankHigher,
   rankLower,
 } from 'src/app/shared/functions/ranking.function';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { environment } from 'src/environments/environment';
 import { Industry } from '../../models/industry.model';
 import { StockAnalysis } from '../../models/stock-analysis.model';

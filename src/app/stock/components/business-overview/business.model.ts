@@ -1,6 +1,6 @@
-import { IndustryType } from 'src/app/facts/data/area.enum';
-import { Strategy } from 'src/app/facts/data/stratgies.enum';
 import { Note } from 'src/app/shared/data/note.interface';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
+import { Strategy } from 'src/app/stock/components/facts/data/stratgies.enum';
 
 export enum BenefitType {
   accessibility = 'Accessibility',

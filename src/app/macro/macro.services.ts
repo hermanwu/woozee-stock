@@ -1,4 +1,4 @@
-import { Opinion } from '../opinions/components/opinion-display/opinion.interface';
+import { Opinion } from '../notes/components/opinion-display/opinion.interface';
 import { EmojiUnicode } from '../shared/data/enum/emoji.enum';
 import { RegionCode } from '../shared/data/enum/region.enum';
 import { Rating } from '../stock/models/rating.model';

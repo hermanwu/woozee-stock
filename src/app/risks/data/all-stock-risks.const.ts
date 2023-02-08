@@ -1,12 +1,12 @@
-import { abnbRisks } from 'src/app/stock/mocks/abnb';
-import { afrmRisks } from 'src/app/stock/mocks/afrm';
-import { amznRisks } from 'src/app/stock/mocks/amzn.mock';
-import { coinRisks } from 'src/app/stock/mocks/coin';
-import { disneyRisks } from 'src/app/stock/mocks/dis.mock';
-import { snowflakeRisks } from 'src/app/stock/mocks/snow';
-import { blockRisks } from 'src/app/stock/mocks/sq.mock';
-import { tslaRisks } from 'src/app/stock/mocks/TSLA.mock';
-import { ultaRisks } from 'src/app/stock/mocks/ULTA';
+import { abnbRisks } from 'src/app/mock-data/mocks/abnb';
+import { afrmRisks } from 'src/app/mock-data/mocks/afrm';
+import { amznRisks } from 'src/app/mock-data/mocks/amzn.mock';
+import { coinRisks } from 'src/app/mock-data/mocks/coin';
+import { disneyRisks } from 'src/app/mock-data/mocks/dis.mock';
+import { snowflakeRisks } from 'src/app/mock-data/mocks/snow';
+import { blockRisks } from 'src/app/mock-data/mocks/sq.mock';
+import { tslaRisks } from 'src/app/mock-data/mocks/TSLA.mock';
+import { ultaRisks } from 'src/app/mock-data/mocks/ULTA';
 
 export const allStockRisks = [
   ...blockRisks,

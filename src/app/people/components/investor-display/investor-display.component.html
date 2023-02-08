@@ -1,0 +1,26 @@
+<app-title-menu>
+  <div left-items class="left-items">
+    <div>
+      <app-square-container>
+        <app-image-display [imageLink]="author?.imageLink"></app-image-display>
+      </app-square-container>
+      <div class="text-center large-text">{{ author?.displayName }}</div>
+    </div>
+  </div>
+
+  <div right-items class="right-items">
+    <div>
+      <div *ngIf="organization?.logoLink" class="image-display">
+        <app-square-container>
+          <app-image-display
+            [imageLink]="organization.logoLink"
+          ></app-image-display>
+        </app-square-container>
+      </div>
+
+      <div *ngIf="title" class="text-center">
+        {{ title }} @ {{ organization?.displayName }}
+      </div>
+    </div>
+  </div>
+</app-title-menu>

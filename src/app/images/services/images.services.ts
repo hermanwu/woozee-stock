@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { images } from '../data/images-mock';
+import { images } from 'src/app/mock-data/images-mock';
 
 @Injectable({
   providedIn: 'root',

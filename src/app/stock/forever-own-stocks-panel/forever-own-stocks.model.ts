@@ -1,11 +1,11 @@
-import { aapl } from '../mocks/aapl.mock';
-import { baba } from '../mocks/baba';
-import { googl } from '../mocks/googl.mock';
-import { meta } from '../mocks/meta';
-import { msft } from '../mocks/msft';
-import { pltr } from '../mocks/pltr';
-import { snow } from '../mocks/snow';
-import { tsla } from '../mocks/TSLA.mock';
+import { aapl } from '../../mock-data/mocks/aapl.mock';
+import { baba } from '../../mock-data/mocks/baba';
+import { googl } from '../../mock-data/mocks/googl.mock';
+import { meta } from '../../mock-data/mocks/meta';
+import { msft } from '../../mock-data/mocks/msft';
+import { pltr } from '../../mock-data/mocks/pltr';
+import { snow } from '../../mock-data/mocks/snow';
+import { tsla } from '../../mock-data/mocks/TSLA.mock';
 
 export const foreverOwnStocks = [tsla, googl, aapl, msft];
 export const lowRiskStocks = [baba, meta, pltr];

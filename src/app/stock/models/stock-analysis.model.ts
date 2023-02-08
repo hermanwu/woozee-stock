@@ -1,4 +1,4 @@
-import { IndustryType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { Business } from '../components/business-overview/business.model';
 import { EarningsReport } from './earnings.model';
 import { MyScore } from './herman-score.model';

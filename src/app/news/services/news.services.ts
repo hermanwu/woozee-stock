@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { Note } from 'src/app/shared/data/note.interface';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
-import { allNews } from '../data/news.const';
+import { allNews } from '../../mock-data/news.const';
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { IndustryType } from '../../../facts/data/area.enum';
+import { IndustryType } from '../../../stock/components/facts/data/area.enum';
 
 @Component({
   selector: 'app-market-display',

@@ -1,5 +1,5 @@
-import { IndustryType } from 'src/app/facts/data/area.enum';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 
 export const semiconductorCatalysts: Catalyst[] = [
   {

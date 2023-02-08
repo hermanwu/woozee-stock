@@ -1,5 +1,5 @@
 import { portfolioRisks } from 'src/app/accounts/ mock-data/portoflio-risks.const';
-import { IndustryType } from 'src/app/facts/data/area.enum';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { FactType } from '../models/fact-type.enum';
 import { Term } from '../models/risk-level.model';
 import { Risk } from '../models/risk.model';

@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { catalysts } from 'src/app/catalyst/data/catalyst.mock';
-import { IndustryType } from 'src/app/facts/data/area.enum';
 import { allMarkets } from 'src/app/markets/data/all-markets.const';
-import { allNews } from 'src/app/news/data/news.const';
+import { allNews } from 'src/app/mock-data/news.const';
+import { catalysts } from 'src/app/notes/components/catalyst/data/catalyst.mock';
 import { Note } from 'src/app/shared/data/note.interface';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { Industry } from 'src/app/stock/models/industry.model';
 import { allRisks } from '../data/global-risk.const';
 import { Risk } from '../models/risk.model';

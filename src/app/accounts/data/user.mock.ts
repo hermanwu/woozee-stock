@@ -1,9 +1,9 @@
 import { Asset } from 'src/app/assets/asset-type.enum';
-import { IndustryType } from 'src/app/facts/data/area.enum';
-import { Opinion } from 'src/app/opinions/components/opinion-display/opinion.interface';
+import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { RegionCode } from 'src/app/shared/data/enum/region.enum';
 import { getUtcDate } from 'src/app/shared/functions/getUtcDate.function';
+import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { Rating } from 'src/app/stock/models/rating.model';
 
 export const currentUserMock: {

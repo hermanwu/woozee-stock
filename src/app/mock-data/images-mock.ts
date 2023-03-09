@@ -1,6 +1,40 @@
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 
 export const images = new Map<string, string[]>([
+  [
+    'rivian',
+    ['https://i.ibb.co/345KRvB/Screenshot-2023-03-07-at-6-00-17-PM.png'],
+  ],
+  ['crowdstrike', ['https://i.ibb.co/1GxdTx2/6-L-z-G5oq-400x400.jpg']],
+  [
+    'snap',
+    ['https://i.ibb.co/dbFmD02/Screenshot-2023-03-06-at-1-32-35-PM.png'],
+  ],
+  [
+    'bynd',
+    ['https://i.ibb.co/jh4CnVv/Screenshot-2023-02-23-at-6-20-36-PM.png'],
+  ],
+  [
+    'nvda',
+    ['https://i.ibb.co/GQZ8nYG/Screenshot-2023-02-23-at-4-47-32-PM.png'],
+  ],
+  ['w', ['https://i.ibb.co/qWSzcDC/Screenshot-2023-02-23-at-4-31-25-PM.png']],
+  [
+    'dash',
+    ['https://i.ibb.co/7Gbj2Pf/Screenshot-2023-02-16-at-2-29-35-PM.png'],
+  ],
+  [
+    'lyft',
+    ['https://i.ibb.co/6BsxZgW/Screenshot-2023-02-09-at-1-29-45-PM.png'],
+  ],
+  [
+    'pypl',
+    ['https://i.ibb.co/SsPV0hQ/Screenshot-2023-02-09-at-1-03-54-PM.png'],
+  ],
+  [
+    'pep',
+    ['https://i.ibb.co/RpJwShH/Screenshot-2023-02-09-at-12-15-41-PM.png'],
+  ],
   ['atvi', ['https://i.ibb.co/yScSfZ5/header-0120-1920x1080.webp']],
   [
     'pins',
@@ -99,7 +133,7 @@ export const images = new Map<string, string[]>([
   ],
   [
     'dis'.toLowerCase(),
-    ['https://i.ibb.co/mHxTLx6/Screenshot-2023-01-12-at-3-51-25-PM.png'],
+    ['https://i.postimg.cc/s25v9Rj1/Screenshot-2023-02-08-at-1-55-43-PM.png'],
   ],
   [
     'WMT'.toLowerCase(),

@@ -17,6 +17,26 @@ export const dash: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
+      quarter: 3,
+      totalRevenue: 1818 * MILLION,
+      costOfRevenue: 1014 * MILLION,
+      operatingIncome: -370 * MILLION,
+      netIncome: -305 * MILLION,
+
+      date: convertDateToUTC(new Date('2023-02-16')),
+    },
+    {
+      year: 2022,
+      quarter: 3,
+      totalRevenue: 1701 * MILLION,
+      costOfRevenue: 931 * MILLION,
+      operatingIncome: -308 * MILLION,
+      netIncome: -301 * MILLION,
+
+      date: convertDateToUTC(new Date('2022-11-03')),
+    },
+    {
+      year: 2022,
       quarter: 2,
       totalRevenue: 1608 * MILLION,
       costOfRevenue: 880 * MILLION,

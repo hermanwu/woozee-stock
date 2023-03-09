@@ -2,8 +2,6 @@ import { Component, Input, OnChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { ImageServices } from 'src/app/images/services/images.services';
-import { InstagramNewsDisplayDialogInput } from 'src/app/news/components/news-display-dialog/news-display-dialog-input.interface';
-import { InstagramNewsDisplayDialogComponent } from 'src/app/news/components/news-display-dialog/news-display-dialog.component';
 import { stockTagsMock } from 'src/app/shared/data/const/tag.mock';
 import { industryEmojiMap } from 'src/app/shared/data/enum/emoji.enum';
 import { TwitterDisplayDialogComponent } from 'src/app/ui/components/twitter-display-dialog/twitter-display-dialog.component';
@@ -68,27 +66,6 @@ export class NewsDisplayComponent implements OnChanges {
           takeAway: this.news.takeAway,
           stats: this.news.stats,
         },
-        panelClass: 'medium-modal-panel',
-      }
-    );
-  }
-
-  openInstagramDialog() {
-    const data: InstagramNewsDisplayDialogInput = {
-      title: this.news.title,
-      links: this.stock?.earningsReports?.[0]?.links,
-      eventType: this.news.eventType,
-      tags: [...this.news.tags, ...stockTagsMock],
-      content: this.news.content,
-      stats: this.news.stats,
-      date: this.news.date,
-      imageLinks: this.news.imageLinks,
-    };
-
-    this.dialogService.open<InstagramNewsDisplayDialogComponent>(
-      InstagramNewsDisplayDialogComponent,
-      {
-        data: data,
         panelClass: 'medium-modal-panel',
       }
     );

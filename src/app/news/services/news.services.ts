@@ -14,10 +14,10 @@ export class NewsService {
 
   getNewsByLanguage(language: string) {
     if (language === 'cn') {
-      return this.news.filter((item) => item.title.match(/[\u3400-\u9FBF]/));
+      return this.news.filter((item) => item.title?.match(/[\u3400-\u9FBF]/));
     }
 
-    return this.news.filter((item) => !item.title.match(/[\u3400-\u9FBF]/));
+    return this.news.filter((item) => !item.title?.match(/[\u3400-\u9FBF]/));
   }
 
   getAllNews(): Note[] {

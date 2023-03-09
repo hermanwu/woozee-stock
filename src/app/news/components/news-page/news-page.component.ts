@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { UserServices } from 'src/app/accounts/services/user.services';
 import { DailyMediumReportDisplayDialogComponent } from 'src/app/news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { OpinionServices } from 'src/app/notes/services/opinion.services';
 import { Note } from 'src/app/shared/data/note.interface';
@@ -8,6 +9,7 @@ import { EventType } from 'src/app/stock/models/news.model';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
 import { environment } from 'src/environments/environment';
 import { NewsService } from '../../services/news.services';
+import { InstagramNewsDisplayDialogComponent } from '../news-display-dialog/news-display-dialog.component';
 
 @Component({
   selector: 'app-news-page',
@@ -24,10 +26,13 @@ export class NewsPageComponent implements OnInit {
   markets: Industry[];
   showAddNotesSection = false;
 
+  savedNoteUuids = new Set();
+
   constructor(
     private newsService: NewsService,
     private opinionService: OpinionServices,
-    private dialogService: MatDialog
+    private dialogService: MatDialog,
+    private userServices: UserServices
   ) {
     const opinions = opinionService
       .getAllOpinions()
@@ -36,6 +41,10 @@ export class NewsPageComponent implements OnInit {
     this.news = [...opinions, ...news]
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .slice(0, 15);
+
+    this.userServices
+      .getSavedNotes()
+      .map((uuid) => this.savedNoteUuids.add(uuid));
   }
 
   openDailyReportDialog() {
@@ -51,12 +60,13 @@ export class NewsPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openAddNewsDialog() {
-    this.showAddNotesSection = true;
-    // this.dialogService.open<AddNoteComponent>(AddNoteComponent, {
-    //   maxHeight: '90vh', //you can adjust the value as per your view
-    //   data: {},
-    //   panelClass: 'medium-modal-panel',
-    // });
+  openInstagramDialog(note: Note) {
+    this.dialogService.open<InstagramNewsDisplayDialogComponent>(
+      InstagramNewsDisplayDialogComponent,
+      {
+        data: note,
+        panelClass: 'medium-modal-panel',
+      }
+    );
   }
 }

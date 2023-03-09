@@ -1,6 +1,7 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { currentUserMock } from '../../../accounts/data/user.mock';
 import { UserServices } from '../../../accounts/services/user.services';
 import { Opinion } from '../../../notes/components/opinion-display/opinion.interface';
@@ -11,7 +12,6 @@ import {
   sortPortoflioBasedOnRanking,
   updateGlobalRankBasedOnPortfolio,
 } from '../../../shared/functions/ranking.function';
-import { News } from '../../../stock/models/news.model';
 import { Rating } from '../../../stock/models/rating.model';
 import { MockCompareDialogComponent } from '../mock-compare-dialog/mock-compare-dialog.component';
 @Component({
@@ -22,6 +22,10 @@ import { MockCompareDialogComponent } from '../mock-compare-dialog/mock-compare-
 export class UiComponentsPageComponent implements OnInit {
   readonly noteFormRoute = 'note-form';
   readonly addPersonRoute = 'add-person';
+  readonly uiAtomsRoute = 'ui-atoms';
+  readonly uiMoleculesRoute = 'ui-molecules';
+  readonly uiOrganismsRoute = 'ui-organisms';
+  readonly uiTemplatesRoute = 'ui-templates';
 
   activeRoute: string = this.noteFormRoute;
 
@@ -32,13 +36,6 @@ export class UiComponentsPageComponent implements OnInit {
   higherItem = 'meta';
   lowerItem = 'amzn';
   mockResult;
-  mockNews: News = {
-    title: 'this is a mock title',
-    content:
-      'this is a mock news\n new line\n new line\nthis is a mock news\n new line\n new line\nthis is a mock news\n new line\n new line\nthis is a mock news\n new line\n new line\n',
-    tags: ['aapl'],
-    date: new Date(),
-  };
 
   mockOpinion: Opinion = {
     authorName: 'Justin Patterson',
@@ -77,6 +74,7 @@ export class UiComponentsPageComponent implements OnInit {
   ];
 
   constructor(
+    private router: Router,
     private userServices: UserServices,
     private dialogService: MatDialog
   ) {}
@@ -86,6 +84,10 @@ export class UiComponentsPageComponent implements OnInit {
       this.userServices.getPortfolioByName('Mock').stocks,
       this.globalRanking
     );
+
+    setTimeout(() => {
+      this.activeRoute = this.getLastSegmentOfUrl(this.router.url);
+    }, 0);
   }
 
   changePortfolio(portfolio: string) {

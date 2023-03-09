@@ -1,0 +1,15 @@
+.comparison-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  > div {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+.first-column {
+  text-align: left;
+}

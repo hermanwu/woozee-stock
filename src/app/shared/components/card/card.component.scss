@@ -16,11 +16,11 @@
 .square {
   border: none;
   max-width: 400px;
-  width: 100%;
-  aspect-ratio: 1 / 1;
   padding: 10px;
   display: flex;
   flex-direction: column;
   margin: auto;
   overflow: scroll;
+  height: 100%;
+  aspect-ratio: 1 / 1;
 }

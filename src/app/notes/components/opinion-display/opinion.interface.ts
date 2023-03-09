@@ -7,6 +7,7 @@ export interface Opinion {
   userUuid?: string;
   authorName?: string;
   organizationName?: string;
+  organizationUuid?: string;
   rating?: Rating | string;
   term?: Term | string;
   emojis?: EmojiUnicode[];

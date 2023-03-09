@@ -14,33 +14,27 @@
     <div>{{ opinion.organizationName }}</div>
   </div>
 
-  <div>
-    <ng-container *ngIf="opinion.type === 'rating'"></ng-container>
+  <div class="large-text">
+    <span class="strong" *ngIf="authorName">{{ authorName }} of</span>
 
-    <span *ngFor="let item of opinion?.targets">{{ item }},</span> -
-    {{ opinion.rating }}
+    <span class="strong">{{ organizationName }}</span>
+
+    <span> 🎙️ </span>
+
+    <span>
+      <app-opinion-display [opinion]="opinion"></app-opinion-display>
+    </span>
+
+    <span> ➡️ </span>
+
+    <span class="strong large-text">{{ targetNames }}</span>
   </div>
 
   <div class="h3">⚡ {{ opinion.title }}</div>
 
-  {{ opinion.content }}
-
-  <app-title-menu>
-    <div header-5>
-      <span class="margin-right-5">
-        <app-date-display [date]="opinion?.date"></app-date-display>
-      </span>
-
-      <app-tags-display [tags]="opinion?.targets"> </app-tags-display>
-    </div>
-
-    <button right-items mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>more_horiz</mat-icon>
-
-      <mat-menu #menu="matMenu"> </mat-menu>
-    </button>
-  </app-title-menu>
+  <app-content-display [content]="opinion.content"></app-content-display>
 </ng-container>
+
 <ng-template #shortVersion>
   <div>
     🚨 {{ opinion.title }}

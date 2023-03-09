@@ -24,6 +24,10 @@ import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
+import { UiAtomsComponent } from './ui-atoms/ui-atoms.component';
+import { UiMoleculesComponent } from './ui-molecules/ui-molecules.component';
+import { UiOrganismComponent } from './ui-organism/ui-organism.component';
+import { UiTemplatesComponent } from './ui-templates/ui-templates.component';
 import { UiComponentsPageComponent } from './ui/components/ui-components-page/ui-components-page.component';
 
 const routes: Routes = [
@@ -105,6 +109,30 @@ const routes: Routes = [
             path: 'add-person',
             pathMatch: 'full',
             component: AddPersonFormComponent,
+          },
+          {
+            path: 'ui-atoms',
+            pathMatch: 'full',
+            component: UiAtomsComponent,
+          },
+          {
+            path: 'ui-molecules',
+            pathMatch: 'full',
+            component: UiMoleculesComponent,
+          },
+          {
+            path: 'ui-organisms',
+            pathMatch: 'full',
+            component: UiOrganismComponent,
+          },
+          {
+            path: 'ui-templates',
+            pathMatch: 'full',
+            component: UiTemplatesComponent,
+          },
+          {
+            path: '**',
+            redirectTo: 'note-form',
           },
         ],
       },

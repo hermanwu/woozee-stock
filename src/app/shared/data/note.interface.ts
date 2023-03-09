@@ -10,8 +10,15 @@ export enum NoteType {
   Fact = 'fact',
   Opinion = 'opinion',
   Quote = 'quote',
+  Vote = 'vote',
+  List = 'list',
 }
-export interface Note extends Fact, Opinion, Quote {
+
+export interface List {
+  content?: string;
+  title?: string;
+}
+export interface Note extends Fact, Opinion, Quote, List {
   noteType: string | NoteType;
   createdDate?: Date;
   updatedDate?: Date;

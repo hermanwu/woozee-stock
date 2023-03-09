@@ -10,7 +10,16 @@
       <mat-button-toggle [value]="noteType.Fact">Fact</mat-button-toggle>
       <mat-button-toggle [value]="noteType.Opinion">Opinion</mat-button-toggle>
       <mat-button-toggle [value]="noteType.Quote">Quote</mat-button-toggle>
+      <mat-button-toggle [value]="noteType.Vote">Vote</mat-button-toggle>
+      <mat-button-toggle [value]="noteType.List">List</mat-button-toggle>
     </mat-button-toggle-group>
+  </div>
+
+  <div *ngIf="newsForm.value.noteType === noteType.Quote">
+    <mat-form-field>
+      <mat-label>Author</mat-label>
+      <input matInput formControlName="authorUuid" />
+    </mat-form-field>
   </div>
 
   <div *ngIf="newsForm.value.noteType === noteType.Opinion">
@@ -52,12 +61,12 @@
 
   <div>
     <div>
-      <mat-label>content</mat-label>
+      <mat-label>content</mat-label>:
+      <span> {{ newsForm.value?.content?.length || 0 }}</span>
     </div>
     <div>
-      <textarea rows="8" cols="40" formControlName="content"></textarea>
+      <textarea rows="40" cols="50" formControlName="content"></textarea>
     </div>
-    <div>Content Size: {{ newsForm.value?.content?.length || 0 }}</div>
   </div>
 
   <div>

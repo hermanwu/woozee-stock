@@ -23,31 +23,29 @@
 </ng-container>
 
 <ng-template #fullVersion>
-  <div class="square">
-    <div class="news-image">
+  <div class="news-image">
+    <app-stock-image-display
+      [imageLinks]="news?.imageLinks"
+      [tag]="news?.tags?.[0]"
+    ></app-stock-image-display>
+  </div>
+
+  <div class="content">
+    <div class="h3">⚡ {{ news.title }}</div>
+
+    <ul>
+      <li *ngFor="let item of news.stats">
+        <app-stats-display [statsDisplay]="item"></app-stats-display>
+      </li>
+    </ul>
+
+    <app-content-display [content]="news.content"></app-content-display>
+
+    <div *ngFor="let item of news?.imageLinks?.slice(1)">
       <app-stock-image-display
-        [imageLinks]="news?.imageLinks"
+        [imageLinks]="[item]"
         [tag]="news?.tags?.[0]"
       ></app-stock-image-display>
-    </div>
-
-    <div class="content">
-      <div class="h3">⚡ {{ news.title }}</div>
-
-      <ul>
-        <li *ngFor="let item of news.stats">
-          <app-stats-display [statsDisplay]="item"></app-stats-display>
-        </li>
-      </ul>
-
-      <app-content-display [content]="news.content"></app-content-display>
-
-      <div *ngFor="let item of news?.imageLinks?.slice(1)">
-        <app-stock-image-display
-          [imageLinks]="[item]"
-          [tag]="news?.tags?.[0]"
-        ></app-stock-image-display>
-      </div>
     </div>
   </div>
 </ng-template>

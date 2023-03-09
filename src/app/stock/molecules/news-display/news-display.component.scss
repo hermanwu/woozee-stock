@@ -51,3 +51,13 @@ h2 {
     text-decoration: underline;
   }
 }
+
+.news-image {
+  display: flex;
+  max-height: 200px;
+  justify-content: center;
+}
+
+.content {
+  margin-top: 5px;
+}

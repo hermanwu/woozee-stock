@@ -45,6 +45,7 @@ export class AddNewsFormComponent implements OnInit {
       rating: [],
       uuid: [newsUuid],
       noteType: [NoteType.Fact],
+      authorUuid: [],
     });
   }
 

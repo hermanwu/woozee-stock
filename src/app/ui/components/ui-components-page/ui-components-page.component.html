@@ -17,18 +17,44 @@
   >
     Add Person
   </a>
+  <a
+    mat-tab-link
+    [routerLink]="[uiAtomsRoute]"
+    [active]="activeRoute === uiAtomsRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+  >
+    Atoms</a
+  >
+  <a
+    mat-tab-link
+    [routerLink]="[uiMoleculesRoute]"
+    [active]="activeRoute === uiMoleculesRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+  >
+    Molecules</a
+  >
+  <a
+    mat-tab-link
+    [routerLink]="[uiOrganismsRoute]"
+    [active]="activeRoute === uiOrganismsRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+  >
+    Organisms</a
+  >
+  <a
+    mat-tab-link
+    [routerLink]="[uiTemplatesRoute]"
+    [active]="activeRoute === uiTemplatesRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+  >
+    Templates</a
+  >
 </nav>
 <router-outlet></router-outlet>
-
-<app-card>
-  Investor Display
-
-  <app-investor-display [authorUuid]="'123'"></app-investor-display>
-</app-card>
-
-<app-card>
-  <app-news-display [news]="mockNews" [expanded]="true"></app-news-display>
-</app-card>
 
 <app-card>
   <app-opinion-item-display
@@ -140,12 +166,6 @@
 </app-card>
 
 <app-card>
-  <h1>Opinion Display</h1>
-
-  <app-opinion-display [opinion]="opinionMock"></app-opinion-display>
-</app-card>
-
-<app-card>
   <h1>Tag Display</h1>
 
   <app-tags-display [tags]="tagsMock"></app-tags-display>
@@ -191,36 +211,4 @@
 
 <app-card>
   <h1>Card With Limit</h1>
-</app-card>
-
-<app-card>
-  <h1>Table</h1>
-  <div class="table">
-    <div class="table-row">
-      <div>Col 1</div>
-      <div>Col 2</div>
-      <div>Col 3</div>
-      <div>Col 4</div>
-      <div>Col 5</div>
-      <div>Col 6</div>
-    </div>
-
-    <div class="table-row">
-      <div>Col 1</div>
-      <div>Col 2</div>
-      <div>Col 3</div>
-      <div>Col 4</div>
-      <div>Col 5</div>
-      <div>Col 6</div>
-    </div>
-
-    <div class="table-row">
-      <div>Col 1 long long long long long long long</div>
-      <div>Col 2</div>
-      <div>Col 3</div>
-      <div>Col 4</div>
-      <div>Col 5</div>
-      <div>Col 6</div>
-    </div>
-  </div>
 </app-card>

@@ -1,0 +1,12 @@
+<div class="comparison-display">
+  <div *ngFor="let column of comparisonData">
+    <div *ngFor="let item of column; first as firstColumn">
+      <div *ngIf="firstColumn; else regularColumn" class="first-column">
+        {{ item }}
+      </div>
+      <ng-template #regularColumn>
+        {{ item }}
+      </ng-template>
+    </div>
+  </div>
+</div>

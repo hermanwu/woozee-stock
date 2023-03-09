@@ -38,6 +38,10 @@ export class UserServices {
     return this.currentUser.opinions;
   }
 
+  getSavedNotes(): string[] {
+    return this.currentUser.savedNotes;
+  }
+
   getPortfolioByName(name: string): {
     name: string;
     stocks: string[];

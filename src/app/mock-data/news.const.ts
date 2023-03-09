@@ -2,8 +2,603 @@ import { RegionCode } from 'src/app/shared/data/enum/region.enum';
 import { Note } from 'src/app/shared/data/note.interface';
 import { getUtcDate } from 'src/app/shared/functions/getUtcDate.function';
 import { Source } from 'src/app/stock/models/news-source.enum';
+import { FactType } from '../risks/models/fact-type.enum';
+import { IndustryType } from '../stock/components/facts/data/area.enum';
+import { Rating } from '../stock/models/rating.model';
 
 export const allNews: Note[] = [
+  {
+    title: 'Goldman Sachs is bullish on Amazon',
+    content:
+      'Pessimistic talks about AWS growth have peaked. Cloud computing would still be a potential key tailwind in the coming quarters.\n\nE-commerce margins would improve in 2023',
+    tags: ['amazon'],
+    uuid: '0c3d78c5-1b48-4a5f-8d53-099018a2e1b4',
+    noteType: 'opinion',
+    rating: Rating.Bullish,
+    date: '2023-03-08T06:37:15.657Z',
+    authorUuid: '',
+    organizationUuid: 'goldmansachs',
+    targets: ['amzn'],
+  },
+  {
+    title:
+      'CrowdStrike reported better-than-expected Q4 earnings and an upbeat revenue growth forecast',
+    content:
+      '48% increase in total revenue to $637.4 million. 48% year-over-year growth in annual recurring revenue (ARR) to reach $2.56 billion. \n\nSubscription customer base grew by 41% year-over-year, reaching 23,019 subscription \n\nReported a GAAP loss from operations of $61.5 million but a record free cash flow of $209 million\n\nFor Q1 forecast, Non-GAAP income is between 50 cents and 51 cents per share, with revenue in the range of $674.9M to $678.2M',
+    uuid: '553c96eb-feb9-463e-838a-da022cbeed1b',
+    noteType: 'fact',
+    date: '2023-03-08T00:04:06.893Z',
+    tags: ['crowdstrike'],
+  },
+  {
+    title: 'Rivian plans to raise $1.3 billion via selling bonds\n',
+    content:
+      'Rivian plans to raise $1.3 billion in cash via a sale of convertible notes to fund the development and launch of its upcoming R2 vehicles, now expected in 2026.\n\nThe company has been laying off 6% of its workforce earlier this year and reducing operating costs in the fourth quarter.\n\nRivian stock was down over 14% after the news.\n\n',
+    tags: ['rivian'],
+    uuid: '8f536a8b-4d14-43b0-bb94-9894bdadefaf',
+    noteType: 'fact',
+    date: '2023-03-07T23:27:38.086Z',
+  },
+  {
+    title: 'Fed Chair Powell testifies before Congress',
+    content:
+      'The latest economic data have come in stronger than expected, which suggests that the ultimate level of interest rates is likely to be higher than previously anticipated\n\nIf the totality of the data were to indicate that faster tightening is warranted, we would be prepared to increase the pace of rate hikes\n\nAlthough inflation has been moderating in recent months, the process of getting inflation back down to 2% has a long way to go and is likely to be bumpy',
+    uuid: 'b497afd5-6f3a-4cb6-ae04-5ed4c37337ab',
+    noteType: 'quote',
+    authorUuid: 'powell',
+    date: '2023-03-07T22:51:30.139Z',
+    tags: ['fed', 'rates'],
+  },
+  {
+    title: '2023 Q1 Top Three Picks',
+    content:
+      'Name || Reasons \n Tesla || Visionary CEO, AI, High Margin, No Competitors\nMicrosoft || Top B2B Software, ChatGPT, Productivity Ecosystem\nPinduoduo || High Growth, No Red Flag, China \n ',
+    tags: ['pdd'],
+    uuid: '7511f9b3-8bb1-4c54-a015-c35cea1f7288',
+    noteType: 'list',
+    date: '2023-03-05T22:42:16.336Z',
+  },
+  {
+    title: 'Snap stock was up 10%+ as US lawmakers plan to ban TikTok',
+    content:
+      'Mark Warner, US Senate Intelligence Committee Chairman, said he plans to introduce a bill to systematically ban Chinese technology, including TikTok.\n\nThis is a "broad bipartisan bill" co-sponsored by Republican John Thune of South Dakota.\n\nA TikTok ban could benefit digital ad companies such as Meta, Snap and Google.',
+    tags: ['snap', 'meta', 'googl'],
+    sourceLink:
+      'https://www.bloomberg.com/news/articles/2023-03-06/us-lawmakers-step-up-push-to-ban-tiktok-with-bill-this-week',
+    uuid: '5d0ea3b5-b55d-486d-9821-ca02209701d7',
+    noteType: 'fact',
+    date: '2023-03-06T20:16:58.462Z',
+  },
+  {
+    title:
+      '2/24/23: Stocks logged worst week in 2023 after hot inflation report',
+    content:
+      'Dow and S&P 500 dropped 1%; Nasdaq was down 1.7%.\n\nJanuary personal consumption expenditures price index, which is Federal Reserve’s preferred measure, showed inflation rose 5.4% YoY or 0.6 MoM, first increase since June last year.\n\nAdobe dropped 7% after the report that Department of Justice could block the Figma acquisition.\n\nBlock rose 4% today as earnings revenue exceeded expectations.',
+    tags: [],
+    uuid: '42a0f1f2-1481-4974-9977-97424f9b6ef9',
+    noteType: 'fact',
+    date: '2023-02-24T22:55:35.618Z',
+    imageLinks: [
+      'https://i.ibb.co/W5X9BSX/Screenshot-2023-02-24-at-2-39-56-PM.png',
+    ],
+  },
+  {
+    title: 'Nvidia 2023 Q4 earnings call',
+    content:
+      "The cumulation of technology breakthroughs has brought AI to an inflection point\n\nGenerative AI's versatility and capability has triggered a sense of urgency at enterprises around the world to develop and deploy AI strategies\n\n" +
+      'NVIDIA AI is essentially the operating system of AI systems today.\n\n' +
+      'By using NVIDIA AI, your entire machine learning operations is more efficient, and it is more cost effective. You save money by using accelerated software \n\n' +
+      'The activity around the AI infrastructure that we build Hopper and the activity around inferencing using Hopper and Ampere to inference large language models, has just gone through the roof in the last 60 days.',
+    tags: ['nvda', 'technology'],
+    uuid: '8f357063-4125-4a3c-ae5e-3831812f4fbe',
+    noteType: 'quote',
+    authorUuid: 'JensenHuang',
+    date: '2023-02-24T04:37:25.079Z',
+  },
+  {
+    title: 'Beyond Meat reports quarterly earnings results',
+    content:
+      'Net revenues were $79.9 million, down 20.6% YoY.\nGross profit was a loss of $2.9 million.\n\nNet loss was $66.9 million, equivalent to -83.6% profit margin.\n\nCEO: "We are making solid progress in our transition to a sustainable growth model, one that emphasizes the achievement of cash flow positive operations within the second half of 2023"',
+    tags: ['bynd'],
+    uuid: 'b74b0572-ccc2-454c-938d-d8dc4348e1ec',
+    noteType: 'fact',
+    date: '2023-02-24T02:16:50.140Z',
+  },
+  {
+    title: 'Wayfair posted a wider-than-expected loss',
+    content:
+      'Revenue was $3.1 billion, down 4.6% YoY.\n\nInternational net revenue was $415 million, down 19.7% YoY.\n\nActive customers were 22.1 million, down 19% YoY.\n\nNet loss was $351 million and Non-GAAP Adjusted EBITDA was ($71) million.\n\nCEO: “Although the short-term macroeconomic picture is unpredictable, we are confident in our ability to navigate its challenges."',
+    tags: ['w'],
+    uuid: '21d715e1-0ac2-4d5e-8723-9ab2018111d2',
+    noteType: 'fact',
+    date: '2023-02-24T00:30:25.272Z',
+  },
+  {
+    title: 'Stock market stopped a four-day losing streak. \n',
+    content:
+      'S&P 500 was up 0.53%, Dow was up 0.33%, and Nasdaq was up 0.72%. 7 out of 11 S&P sectors was higher today.\n\n' +
+      'Nvidia was up 14% after earnings beat estimates\n' +
+      'Wayfair was down 23% after reporting wider than expected loss.',
+    tags: [],
+    uuid: '35c0efa2-8125-46d9-a797-c68548d19fb8',
+    noteType: 'fact',
+    date: '2023-02-24T00:23:55.900Z',
+  },
+  {
+    title:
+      'Nvidia shares rose sharply after earnings beat both top and bottom lines. \n',
+    content:
+      'Revenue was $6.05 billion, down 21% YoY .\n\n' +
+      'Operating income was $2.97 billion, down 58% YoY.\n\n' +
+      'Data center revenue including AI chips, was up 11% YoY.\n\n' +
+      'CEO: "AI is at an inflection point, setting up for broad adoption reaching into every industry...From startups to major enterprises, we are seeing accelerated interest in the versatility and capabilities of generative AI."',
+    tags: ['nvda'],
+    uuid: '12a7f5fb-3824-4d2d-83d8-43985129091f',
+    noteType: 'fact',
+    date: '2023-02-23T23:29:03.019Z',
+  },
+  {
+    title: 'BYD vs Tesla',
+    content:
+      '2022 Annual || Revenue || Revenue Growth || Net Profit || Net Profit Margin || PE\n\nTesla || 81.5B\t|| +51.4% || 12.56B || 15.41% || 55.79\n\nBYD (Estimated) || 63.0B || +94.4% || 2.45B || 3.8% || 60.21\n',
+    tags: ['tsla', ' byd'],
+    uuid: '997ed6a3-3f67-46e8-80c2-26b750083ef7',
+    noteType: 'vote',
+    date: '2023-02-17T04:20:55.519Z',
+  },
+  {
+    title: 'YouTube CEO Susan Wojcicki says she’s stepping down\n',
+    content:
+      'In her blog: “Today, after nearly 25 years here, I’ve decided to step back (and) start a new chapter focused on my family, health, and personal projects I’m passionate about” \n\nNeal Mohan, chief product officer, will take the lead as the head of YouTube.\n\nWojcicki will take on an advisory role at Google/Alphabet.',
+    tags: ['googl'],
+    uuid: 'af064bd8-c894-4189-91c6-ee4c6d9ccb22',
+    noteType: 'fact',
+    date: '2023-02-16T23:23:43.466Z',
+  },
+  {
+    title:
+      'Tesla recalls 362,758 vehicles as its full self-driving software may cause crashes.',
+    content:
+      'According to nhtsa.gov (National Highway Traffic Safety Administration), FSD Beta may allow the vehicle to act unsafe around intersections such as:\n "Traveling straight through an intersection while in a turn-only lane"\n ' +
+      '"Entering a stop sign-controlled intersection without coming to a complete stop"\n ' +
+      '"Proceeding into an intersection during a steady yellow traffic signal without due caution"\n' +
+      '"Respond insufficiently to changes in posted speed limits"\n Tesla will release an over-the-air (OTA) software update to address the issue.',
+    tags: ['tsla'],
+    uuid: 'ee393bfb-df5c-46c1-9d2e-56e0f62b9a7c',
+    noteType: 'fact',
+    date: '2023-02-16T22:47:04.599Z',
+  },
+  {
+    title: 'DoorDash top line beats estimates but misses the bottom line ',
+    content:
+      'Revenue increased to 1.82B, up 39.8% YoY (from $1.3B)\n\nQ4 EPS of -$1.65 is worser than the estimates. DoorDash claimed the loss was related to the acquisition and stock-based compensation.\n' +
+      'Operating expenses increased to $1.17B, up 43.3% YoY. Operating margin was -20.4%.\n\nDoorDash also authorized a stock buyback of up to $750M.\n\nPresident and COO Christopher Payne will retire.\n',
+    tags: ['dash'],
+    uuid: 'deee44e4-03c9-49c1-8ff6-f6b9fa07998d',
+    noteType: 'fact',
+    date: '2023-02-16T22:24:51.555Z',
+  },
+
+  {
+    title: 'Airbnb earnings beat estimates',
+    imageLinks: [
+      'https://i.ibb.co/dGzLJs2/Screenshot-2023-02-14-at-4-11-18-PM.png',
+    ],
+    content:
+      'Quarterly Revenue increased to 1.9B, ⬆️ Up 24.2% YoY (from 1.53B)\nNext Quarter Revenue Forecast increased to 1.79B, ⬆️ Up 18.3% YoY (from 1.51B)\nOperating Expenses increased to 1.32B, ⬆️ Up 41.2% YoY (from 936M)\nOperating Margin was 12.4%\n\nHead count is down 5% while revenue is up 75% compared with 2019.\n\nCFO: "Demand is remaining resilient so far this year, with travelers booking trips further in advance"',
+    tags: ['abnb'],
+    uuid: 'fea7d5c7-6daa-4e9c-a234-8929f0bf8dd7',
+    noteType: 'fact',
+    date: '2023-02-15T00:08:34.585Z',
+  },
+  {
+    title: 'Meta’s chief business officer is leaving after 13 years.',
+    content:
+      "Chief Business Officer Marne Levine is stepping down and this role would be filled by Meta's existing executives.\n\nShe was the chief operating officer at Instagram.",
+    tags: ['meta'],
+    uuid: '5c562ad9-9146-4de3-bd4d-9a72b32e7f30',
+    noteType: 'fact',
+    date: '2023-02-14T04:40:08.607Z',
+  },
+  {
+    imageLinks: [
+      'https://i.ibb.co/ZN5RNZ0/Screenshot-2023-02-13-at-3-52-23-PM.png',
+    ],
+    title: 'Palantir reported its first profitable quarter',
+    content:
+      'CEO Alex Karp: "This is a significant moment for us and our supporters."\nFourth-quarter earnings beat both top and bottom lines.\n\nFirst ever positive GAAP income of $31 million and expects 2023 to be the first profitable year\n\n Revenue was up 18% YoY to $509 million; Government revenue was up 23% YoY to $293 million; Commercial revenue was up 11% YoY to $215 million\n\n\nCustomer count was up 55% YoY; US commercial customer count was up 79% YoY, growing from 80 customers to 143.\n\nHowever, 2023 revenue forecast was between $2.18 billion and $2.23 billion, below estimates.\n\n',
+    tags: ['pltr'],
+    uuid: '9ce920fc-5757-47bd-a3eb-01d062124848',
+    noteType: 'fact',
+    date: '2023-02-13T23:48:10.730Z',
+  },
+  {
+    imageLinks: [
+      'https://i.ibb.co/zS7L4cY/Screenshot-2023-02-10-at-3-25-59-PM.png',
+    ],
+    title: '周五美股涨跌不一，市场期待下周CPI',
+    content:
+      '纳斯达克连续第三天下跌 (-0.6%)，但道琼斯指数 (+0.5%) 和标普500 (+0.2%) 收盘上涨。\n费城美联储官员Patrick Harker表示赞成再多次加息25个基点：“我们可以慢慢来。看看接下去(通胀)如何发展”。\nLyft财报低于预期且远不如其竞争对手Uber (Uber盈利近6亿美元，而Lyft亏损近6亿)。\nExpedia财报不如预期。公司营收仅增长15%，但利润下降36%。\n下周前瞻：CPI报告；Palantir、Airbnb、Shopify、DoorDash财报。',
+    tags: ['news'],
+    uuid: '1e3d0178-374f-4973-a807-368773de61cf',
+    noteType: 'fact',
+    date: '2023-02-10T23:37:48.486Z',
+  },
+  {
+    imageLinks: [
+      'https://i.ibb.co/zS7L4cY/Screenshot-2023-02-10-at-3-25-59-PM.png',
+    ],
+    title: 'Stock market posted the worst week of 2023.',
+    content:
+      'Nasdaq ended with its third consecutive decline day (-0.6%) while Dow (+0.5%) and S&P 500 (+0.2%) closed positive.\n\nPhiladelphia Fed chief, Patrick Harker, said he favors “a couple more” quarter-point hikes: "We just can take our time. See how things work out again".\n\nLyft tanked more than 36% after earnings missed expectations and much worse than competitor Uber. \n\nExpedia fell more than 8% after earnings missed expectations. Company revenue grew only 15% while profit decreased 36%.\n\nFord and Chinese company CATL(宁德时代) plan to build a battery plant in Michigan.\n\nNext week catalysts: CPI report; Palantir, Airbnb, Shopify, DoorDash earnings.',
+    tags: ['news', 'fed'],
+    uuid: 'ccbaf2f3-9f1c-4eef-b5bf-a66094cfda31',
+    noteType: 'fact',
+    date: '2023-02-10T23:23:02.900Z',
+  },
+  {
+    title: 'Expedia earnings missed expectations.',
+    content:
+      'Q4 Revenue was $2.618B, +15% YoY, missed by $80M.\nNon-GAAP EPS of $1.26, misses by $0.44.\nNet income was $177M, -36% YoY \nGross bookings +17% YoY\nBooked and stayed room nights +19% YoY\n\nCEO Peter Kern: "While our Q4 results were negatively impacted by severe weather, demand was otherwise strong and accelerating, and has been markedly stronger since the start of the year", "We continue to see that people are prioritizing travel over just about everything", "So far, demand continues to be quite robust and we’re really pleased with how ’23 is starting."',
+    tags: ['expe'],
+    uuid: 'dcb3eb62-38c9-49d7-971b-28c3bd443b8f',
+    noteType: 'fact',
+    date: '2023-02-10T18:57:18.877Z',
+    imageLinks: [
+      'https://i.ibb.co/9w2sySj/Screenshot-2023-02-10-at-10-59-30-AM.png',
+    ],
+  },
+  {
+    imageLinks: [
+      'https://i.ibb.co/FgNFCp7/Screenshot-2023-02-09-at-2-48-08-PM.png',
+    ],
+    title: '周四美股高开低走；贝宝Lyft发布财报\n',
+    content:
+      '纳斯达克收盘-1.0%，标普500收盘-0.9%，道琼斯收盘-0.7%。标准普尔 11 个板块全部下跌。\n贝宝财报超预期。营收增长至74亿美元，同比增长 6.9%。CEO Dan Schulman宣布计划年底退休。\n Lyft财报收益低于预期。收入增长至12亿美元，同比增长 21%，但亏损近6亿美元。下季度营收预计9.75亿美元，同比增长仅为11%。盘后Lyft下跌近30%。\n 百事集团财报超预期。净销售额同比增长10.9%至280亿美元。但通胀也导致需求下降，食品类产品销量下降2%。\n 在Disney CEO昨天公布削减支出及重组计划后，投资人Nelson Peltz宣布放弃与迪士尼的代理权争夺战：“Now Disney plans to do everything we wanted them to do”。\n 马斯克的SpaceX今天成功进行了星舰Starship的助推器点火测试。\n 雅虎宣布将裁员超过20%，约1600人。',
+    tags: [],
+    uuid: '05ed528d-1d9a-4145-a2d4-eac5c43db7e6',
+    noteType: 'fact',
+    date: '2023-02-09T23:05:10.005Z',
+  },
+
+  {
+    imageLinks: [
+      'https://i.ibb.co/FgNFCp7/Screenshot-2023-02-09-at-2-48-08-PM.png',
+    ],
+    title: 'Thursday: stocks pushing lower for the second consecutive day',
+    content:
+      "Nasdaq closed -1.0%, S&P 500 ended -0.9% and the Dow finished -0.7%. all 11 S&P sectors ended in the red.\n\nPayPal earnings beat estimates. Revenue grew to $7.4B (+6.9% YoY). Total Payment Volume (TPV) of $357.4B (+5% YoY). Venmo processed $62.5B in TPV (+3% YoY). CEO Dan Schulman will retire at year end.\n\nLyft's earnings missed estimates. Revenue grew to $1.2 billion (+21% YoY). Next quarter's revenue is estimated to be $975 million, indicating an 11% growth YoY.\n\nPepsiCo Q4 earnings beat estimates. Net sales rose 10.9% to $28 billion. Volume falls 2% worldwide as higher prices hurt demands.\n\nActivist investor Nelson Peltz dropped his proxy fight against Disney after CEO Bob Iger unveiled cost-reduction plans. Peltz: “Now Disney plans to do everything we wanted them to do”.\n\nCrypto exchange Kraken settles with SEC for $30 million and will close U.S. staking operation. Coinbase CEO warns such move would hurt crypto businesses.\n\nTesla was over $200 today, which is doubled compared to the lowest price in 2023. Elon's SpaceX also successfully performed the Starship booster test today.\n\nYahoo will lay off more than 20% of staff, or around 1,600 workers,\n",
+    tags: [],
+    uuid: 'd4124b77-b562-4504-8e5b-6ec944cd4a26',
+    noteType: 'fact',
+    date: '2023-02-09T22:46:39.871Z',
+  },
+  {
+    title: 'PayPal earnings beat estimates.',
+    content:
+      'CEO Dan Schulman will retire at year end.\n' +
+      "Revenue of $7.4B (+6.9% YoY) beats by $10M.\n\nGAAP EPS of $0.81 compared to $0.68 in Q4'21\n\nTransactions grew 13% YoY, surpassing 6B transactions.\n\nTotal Payment Volume (TPV) of $357.4B (+5% YoY). \n\nVenmo processed $62.5B in TPV (+3% YoY)\n\nQ1'23 Guidance: Revenues expected to grow ~7.5% YoY",
+    tags: ['pypl'],
+    uuid: 'dcb8739b-fa2d-4e96-9293-8a8530eafb2a',
+    noteType: 'fact',
+    date: '2023-02-09T21:44:57.482Z',
+  },
+  {
+    title: "Lyft's earnings missed estimates",
+    content:
+      'Revenue of $1.2 billion grew 21 percent from $969.9 million in Q4 2021.\n\nActive riders was 20,358K, up 8.7% Y/Y. \n\nRevenue per active rider was $57.72, up 11.5% Y/Y.\n\nNet loss of $588.1 million vs net loss of $283.2 million in Q4 2021.\n\nFor Q1 2023, estimated revenue of $975 million, indicating an 11% growth YoY.\n',
+    tags: ['lyft'],
+    uuid: '8b69e3e9-4453-4c70-9784-dbafe5f1a935',
+    noteType: 'fact',
+    date: '2023-02-09T21:27:30.624Z',
+  },
+  {
+    title: 'PepsiCo releases Q4 earnings that beat estimates',
+    content:
+      'Net sales rose 10.9% to $28 billion. \nVolume falls 2% across food business worldwide as higher prices hurt demands. \nPepsi Zero Sugar volume climb 26%.\nPepsi estimates 6% organic revenue growth in 2023 during "mild" recession.\nAnnounces a 10 percent increase in our annualized dividend',
+    tags: ['pep'],
+    uuid: '9a71e356-0021-4660-9e68-41c5c14ae0e3',
+    noteType: 'fact',
+    date: '2023-02-09T20:12:00.761Z',
+  },
+  {
+    title: "What is Uber's moat (competitive advantage )?",
+    content:
+      "for us in Delivery, we're benefiting from the power of the platform, very cheap audience, from our Rides business. Remember, we get more new eaters, from our rides app than we do from Google and Facebook and Instagram, combined at about a quarter of a cost. So that is a very significant structural advantage that is assisting our Delivery business.\n\nJohn is that I've never seen a permanent competitive advantage in my life, and we don't expect to.\n\nwe're using the power of our platform with membership to win category position the right way. \n\nSo right now, we are seeing kind of the positive feedback loop of more driver supply leading to more demand, leading to more data so that we can target that demand so that we can match the right driver to the right rider\n\nwe don't consider spending more money a strategy. \n\nAs we increase the number of members in our member base and the coverage of members who tend to buy more, who tend to buy more frequently\n\nthe power of the platform. We are constantly cross-promoting between Mobility and Delivery, and essentially sending free or cheaper traffic from one platform to the other in a personalized targeted way as well. And so you should expect more opportunities for us to upsell and cross-sell in an intelligent way driven by AI and machine learning.\n\nThe third is the breadth of the product that we offer.",
+    tags: ['uber', 'google'],
+    uuid: 'a9aa0c11-058b-4552-b75c-c350c56cef33',
+    noteType: 'quote',
+    date: '2023-02-09T04:20:32.400Z',
+  },
+  {
+    authorUuid: 'DaraKhosrowshahi',
+    title: "Uber CEO's quotes during earnings call",
+    content:
+      "Despite macroeconomic uncertainty, I'm more confident than ever in our prospects. We're entering the year with great momentum. Mobility trip growth is accelerating and Delivery remains resilient.\nWe delivered our strongest quarter ever in Q4, with gross bookings of 26% year-on-year on a constant currency basis. Adjusted EBITDA of $665 million exceeded the high-end of our guidance for the sixth quarter in a row and we delivered strong incremental adjusted EBITDA margin of 12%.\n",
+    tags: ['uber'],
+    uuid: '946f6f22-1e23-4592-9cac-549cda9cac52',
+    noteType: 'quote',
+    date: '2023-02-09T01:30:30.831Z',
+  },
+  {
+    title: '周三美股全线回调，回吐了昨天的部分涨幅',
+    imageLinks: [
+      'https://i.postimg.cc/kX1DCn10/Screenshot-2023-02-08-at-3-58-09-PM.png',
+    ],
+    content:
+      '纳斯达克收盘-1.7%，标普500收盘-1.1%，道指收盘-0.6%。标普11 个板块全部收低，其中通信服务板块下跌4%。\n' +
+      '马斯克宣布特斯拉将于3月1日的Investor Day发布“Master计划”的第三部分: "Master Plan 3, the path to a fully sustainable energy future for Earth"。\n' +
+      '谷歌在今天发布了几项令人失望的产品服务后下跌7%，市值跌去约1000亿美元。ChatGPT竞争者，Bard AI在现场展示中给出了一个明显错误的答案。\n' +
+      '迪士尼财报盈利营收双双超预期。但Disney+订阅者第一次下降，减少近1%。CEO计划削减55亿美元支出，包括裁员7000人。\n' +
+      'Affirm财报营收同比增长10.8%。下季度及全年营收前瞻均远低于预期，股价盘后下跌近20%。公司同时宣布裁员19%，约500人。\n',
+    tags: ['news'],
+    uuid: '81b0f8f9-3e6e-4858-ab1b-3e3414459211',
+    noteType: 'fact',
+    date: '2023-02-08T23:40:03.502Z',
+  },
+  {
+    authorUuid: 'bobIger',
+    title: 'Bob Iger speaks about company reforming at Disney earnings call ',
+    content:
+      "I've always believed that the best way to spur great creativity is to make sure the people who are managing the creative processes feel empowered ... Therefore, our new structure is aimed at returning greater authority to our creative leaders and making them accountable for how their content performs, financially. Our former structure severed that link and it must be restored.",
+    tags: ['dis'],
+    uuid: '8ca2236c-b2ea-4ebf-a15c-e292a372032a',
+    noteType: 'quote',
+    date: '2023-02-08T22:06:19.016Z',
+  },
+  {
+    targets: ['tsla'],
+    title: "Tesla's CFO might think Tesla stock is cheap enough",
+    rating: 'Bullish',
+    parentUuid: 'e9f50912-b024-4b9e-b812-1df7968d4a2a',
+    uuid: '2c19200a-1f75-4086-acf0-7e6a4f957c83',
+    date: '2022-12-29T18:57:32.191Z',
+    noteType: 'opinion',
+  },
+  {
+    targets: ['US'],
+    title: 'Consecutive down years are rare for U.S. stocks.',
+    content:
+      "* after this year's drop, there's only a low probability they will decline again in 2023\n* markets tend to bottom before a recession starts",
+    tags: null,
+    rating: 'Bullish',
+    parentUuid: 'd179e694-ee48-4a95-8ba9-74f0eb4d850c',
+    uuid: '46581a5a-8ebc-44a5-aee9-f35a547ab18f',
+    date: '2022-12-29T18:57:32.191Z',
+    noteType: 'opinion',
+  },
+  {
+    targets: ['EV'],
+    title: 'EV is a better product than combustion engine.',
+    tags: ['EV'],
+    rating: 'Bullish',
+    uuid: '06554f1e-7329-41b2-8ce8-5a7b16cebf9e',
+    date: '2022-12-29T18:57:32.191Z',
+    noteType: 'opinion',
+  },
+  {
+    targets: ['EV'],
+    title: 'Most governments require all vehicles to become EVs in the future.',
+    tags: ['EV'],
+    rating: 'Bullish',
+    uuid: '06554f1e-7329-41b2-8ce8-5a7b16cebf9f',
+    date: '2022-12-29T18:57:32.191Z',
+    noteType: 'opinion',
+  },
+  {
+    targets: ['tsla'],
+    title:
+      'The demand for Tesla continues to decrease as the global recession worsens\n\n\n',
+    content: "* Elon Musk's political behaviors are damaging the brand.",
+    tags: ['tsla'],
+    rating: 'Bearish',
+    uuid: '9cfb1487-d35a-43ff-84ff-e2347115248a',
+    date: '2022-12-27T20:13:24.360Z',
+    noteType: 'opinion',
+  },
+  {
+    targets: ['crm'],
+    title:
+      'Productivity is an issue for a company that allows work permanently from home',
+    tags: ['crm'],
+    rating: 'Bearish',
+    parentUuid: '8420788c-76f1-4238-88b4-bb3bc24ef1c8',
+    uuid: '4aeed3d3-acf8-4f52-bcee-cc4d9ea677b1',
+    date: '2022-12-17T16:15:52.391Z',
+    noteType: 'opinion',
+  },
+  {
+    targets: ['CRWD'],
+    title: 'Operating expense grew quicker than the revenue growth ',
+    content: null,
+    tags: ['crwd'],
+    rating: 'Bearish',
+    noteType: 'opinion',
+  },
+  {
+    title: 'P/E ratio is much higher than other big tech.',
+    targets: ['AMZN'],
+    rating: Rating.Bearish,
+    date: getUtcDate(2022, 10, 19),
+    factType: FactType.profit,
+    noteType: 'opinion',
+  },
+  {
+    title: 'P/E ratio is much higher than other big tech.',
+    targets: ['AMZN'],
+    rating: Rating.Bearish,
+    date: getUtcDate(2022, 10, 19),
+    factType: FactType.profit,
+    noteType: 'opinion',
+  },
+  {
+    title:
+      'Three key of a business: value proposition, ecosystem, business model.',
+    content:
+      'Value proposition is how to bring 10x value to the user. Ecosystem is about how to create moat/network effect. It includes all users: free users, preimum users, power users, companies. Business model is about how to make money.',
+    noteType: 'opinion',
+  },
+  {
+    title: 'Investing the Future — High Growth Industries and Stocks',
+    details: [],
+    links: [
+      {
+        name: '',
+        value: 'https://woozee.medium.com/investing-the-future-c672dd6c2716',
+      },
+    ],
+    noteType: 'opinion',
+  },
+  {
+    title: 'Top Growth Stocks To Own In 2022',
+    links: [
+      {
+        name: 'Top Growth Stocks To Own In 2022',
+        value:
+          'https://woozee.medium.com/top-stocks-with-30-growth-rates-938eeac88e23',
+      },
+    ],
+    noteType: 'opinion',
+  },
+  {
+    title: 'Top Profitable Companies To Own In 2022',
+    links: [
+      {
+        name: 'Top Profitable Companies To Own In 2022',
+        value:
+          'https://woozee.medium.com/top-10-public-companies-to-own-that-are-not-losing-money-6520862c3c9',
+      },
+    ],
+    noteType: 'opinion',
+  },
+  {
+    title:
+      'US will continue block high-end semiconductor chips to be sell in China',
+    details: [],
+    targets: [IndustryType.semi, 'China'],
+    rating: Rating.Bearish,
+    noteType: 'opinion',
+  },
+  {
+    title:
+      'In Q3, Tesla began to transit a more even regional mix of vehicle builds each week, which makes it hard to secure vehicle transportation capacity and at a reasonable cost during peak logistics weeks.',
+
+    targets: ['TSLA'],
+    rating: Rating.Neutral,
+    date: getUtcDate(2022, 10, 19),
+    noteType: 'opinion',
+  },
+  {
+    title:
+      'Tesla is a profit machine. Latest quarterly revenue grew 55.9% YoY, while the operating expense only grew 2.3 YoY.',
+    details: [
+      'Apple quarterly revenue growth is 1.9%, while the operating expense grew 15.1% YoY',
+      'Microsoft quarterly revenue growth is 12.4%, while the operating expense grew 14.1% YoY',
+      'Google quarterly revenue growth is 12.6%%, while the operating expense grew 23.5% YoY',
+    ],
+    targets: ['TSLA'],
+    rating: Rating.VeryBullish,
+    date: getUtcDate(2022, 10, 19),
+    noteType: 'opinion',
+  },
+  {
+    title:
+      'More growth catalysts are coming, including energy, semi-truck, robotaxi, optimus robot.',
+    details: [
+      'Elon Musk said he sees a potential path for Tesla to be worth more than Apple and Saudi Aramco combined.',
+    ],
+    targets: ['TSLA'],
+    rating: Rating.VeryBullish,
+    date: getUtcDate(2022, 10, 19),
+    noteType: 'opinion',
+  },
+  {
+    title: 'Revenue estimate was missed in 2022Q3',
+    targets: ['TSLA'],
+    rating: Rating.Bearish,
+    date: getUtcDate(2022, 10, 19),
+    noteType: 'opinion',
+  },
+  {
+    title: 'Automotive gross margin was not growing.',
+    targets: ['TSLA'],
+    rating: Rating.Bearish,
+    date: getUtcDate(2022, 10, 19),
+    factType: FactType.profit,
+    noteType: 'opinion',
+  },
+  {
+    title: 'Ziglu acquisition will help Robinhood expand to Europe',
+    targets: ['HOOD'],
+    rating: Rating.Bullish,
+    date: getUtcDate(2022, 10, 19),
+    factType: FactType.growth,
+    noteType: 'opinion',
+  },
+  {
+    title: 'No moat to keep users from leaving the platform',
+    targets: ['HOOD'],
+    rating: Rating.Bearish,
+    date: getUtcDate(2022, 10, 19),
+    factType: FactType.moats,
+    noteType: 'opinion',
+  },
+  {
+    title: 'AWS growth rate dip below 30%',
+    targets: ['AMZN'],
+    rating: Rating.Bearish,
+    date: getUtcDate(2022, 10, 19),
+    factType: FactType.growth,
+    noteType: 'opinion',
+  },
+  {
+    targets: ['AMZN'],
+    rating: Rating.Bearish,
+    date: getUtcDate(2022, 10, 19),
+    factType: FactType.profit,
+    details: ['P/E ratio is much higher than other big tech.'],
+    noteType: 'opinion',
+  },
+  {
+    title: 'Fullfillment Center are costing too much money',
+    targets: ['AMZN'],
+    rating: Rating.Bearish,
+    date: getUtcDate(2022, 10, 19),
+    factType: FactType.challenges,
+    noteType: 'opinion',
+  },
+  {
+    title:
+      'Meta 10x next year earning valuation is too low and could pop due to any good news such as Tiktok Ban',
+    targets: ['META'],
+    actions: ['Sell put and use the money to buy long term call.'],
+    date: getUtcDate(2022, 10, 19),
+    noteType: 'opinion',
+  },
+  {
+    title: 'Post pandemics decreases the demand for food delivery',
+    targets: [IndustryType.foodDelivery],
+    date: getUtcDate(2022, 10, 23),
+    noteType: 'opinion',
+  },
+
+  {
+    title: '迪士尼财报营收盈利均超预期',
+    content:
+      '第一季度营收为235.1亿美元，同比上涨7.7%。\n' +
+      'Non-GAAP每股收益为0.99美元，高出预期0.20美元。\n' +
+      '这次财报是CEO Bob Iger在去年11月重返Disney后，第一次发布财报。他计划重组业务，降低成本，提高效率。\n' +
+      '公司将重组为三个部门：电视/电影娱乐部门，ESPN体育网络部门，及包括游轮和消费品在内的公园部门。\n' +
+      '同时公司计划节省约55亿美元支出，其中包括裁员7000人，并试图在今年恢复股息。\n' +
+      '迪士尼流媒体Disney+本季度失去1%订阅用户，亏损较上年同期翻倍，到达10.5亿美元，但好于预期。\n' +
+      '乐园部门的营收增长21%至87亿美元，收益增长25%至30.5亿美元。\n' +
+      '传统广播和有线电视/ESPN业务营收下降16%至12.6亿美元。',
+
+    tags: ['dis'],
+    uuid: '901e651e-ecd0-4d64-a6fa-ad3a80374221',
+    noteType: 'fact',
+    date: '2023-02-08T21:53:13.186Z',
+  },
   {
     title:
       '周二美股收盘大幅上涨，但三大指数在美联储主席鲍威尔发表讲话时大幅波动。',

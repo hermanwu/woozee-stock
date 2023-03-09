@@ -1,5 +1,12 @@
 export const people = [
   {
+    uuid: 'bobIger',
+    displayName: 'Bob Iger',
+    organizationUuidTitles: [['dis', 'CEO']],
+    imageLink:
+      'https://i.postimg.cc/rmczfYsj/Screenshot-2023-02-08-at-2-07-51-PM.png',
+  },
+  {
     uuid: '123',
     displayName: 'Tim Cook',
     organizationUuidTitles: [['aapl', 'CEO']],
@@ -21,5 +28,19 @@ export const people = [
     organizationUuidTitles: [['FederalReserve', 'Chairman']],
     imageLink:
       'https://i.ibb.co/vZkxTYp/Screenshot-2023-02-07-at-1-06-29-PM.png',
+  },
+  {
+    uuid: 'DaraKhosrowshahi',
+    displayName: 'Dara Khosrowshahi',
+    organizationUuidTitles: [['uber', 'CEO']],
+    imageLink:
+      'https://i.postimg.cc/cLq4MZhY/Screenshot-2023-02-08-at-5-33-11-PM.png',
+  },
+  {
+    uuid: 'JensenHuang',
+    displayName: 'Jensen Huang',
+    organizationUuidTitles: [['nvidia', 'CEO']],
+    imageLink:
+      'https://i.ibb.co/P4LXKRP/Screenshot-2023-02-23-at-8-11-07-PM.png',
   },
 ];

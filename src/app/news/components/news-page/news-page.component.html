@@ -23,82 +23,93 @@
 <div *ngIf="showTools"></div>
 
 <div class="news-card" *ngFor="let item of news">
-  <ng-container [ngSwitch]="item.noteType">
-    <app-card>
-      <app-title-menu>
-        <div left-items>
-          <div>
-            <h3 class="inline-display">{{ item.noteType | uppercase }}</h3>
+  <app-card>
+    <app-title-menu>
+      <div left-items>
+        <div>
+          <h3 class="inline-display">{{ item.noteType | uppercase }}</h3>
 
-            <span class="margin-left-5"> by Woozee </span>
+          <span *ngIf="item?.sourceLink"
+            >📍<app-media-link [link]="item.sourceLink"></app-media-link
+          ></span>
 
-            <span class="margin-left-5">
-              <app-date-display [date]="item?.date"></app-date-display>
-            </span>
+          <span class="margin-left-5">📝 by Woozee </span>
 
-            <app-tags-display
-              class="margin-left-5"
-              [tags]="item?.tags"
-              [content]="item?.content"
-            >
-            </app-tags-display>
-          </div>
-        </div>
+          <span class="margin-left-5">
+            <app-date-display [date]="item?.date"></app-date-display>
+          </span>
 
-        <div right-items>
-          <button
-            right-items
-            mat-icon-button
-            [matMenuTriggerFor]="menu"
-            *ngIf="!environment.production"
+          <app-tags-display
+            class="margin-left-5"
+            [tags]="item?.tags"
+            [content]="item?.content"
           >
-            <mat-icon>more_horiz</mat-icon>
+          </app-tags-display>
+        </div>
+      </div>
+
+      <div right-items>
+        <button mat-icon-button>
+          <ng-container
+            *ngIf="savedNoteUuids.has(item?.uuid); else notSavedNote"
+            >⭐</ng-container
+          >
+          <ng-template #notSavedNote>☆</ng-template>
+        </button>
+        <button
+          right-items
+          mat-icon-button
+          [matMenuTriggerFor]="menu"
+          *ngIf="!environment.production"
+        >
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item *ngIf="item?.sourceLink">
+            <a href="{{ item.sourceLink }}" target="_blank"> read more </a>
           </button>
 
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-              <a
-                *ngIf="item?.sourceLink"
-                href="{{ item.sourceLink }}"
-                target="_blank"
-              >
-                read more
-              </a>
-            </button>
+          <button mat-menu-item [cdkCopyToClipboard]="news.uuid">
+            Copy UUID
+          </button>
 
-            <button mat-menu-item [cdkCopyToClipboard]="news.uuid">
-              Copy UUID
-            </button>
+          <button mat-menu-item (click)="openDialog()">Twitter</button>
 
-            <button mat-menu-item (click)="openDialog()">Twitter</button>
+          <button mat-menu-item (click)="openInstagramDialog(item)">
+            Instagram
+          </button>
+        </mat-menu>
+      </div>
+    </app-title-menu>
 
-            <button mat-menu-item (click)="openInstagramDialog()">
-              Instagram
-            </button>
-          </mat-menu>
-        </div>
-      </app-title-menu>
-
-      <app-card [isSquare]="'true'">
-        <app-news-display
-          *ngSwitchCase="'fact'"
-          [news]="item"
-          [expanded]="true"
-        ></app-news-display>
-        <app-opinion-item-display
-          *ngSwitchCase="'opinion'"
-          [opinion]="item"
-          [expanded]="true"
-        ></app-opinion-item-display>
-        <app-quote-display
-          *ngSwitchCase="'quote'"
-          [quote]="item"
-          [expanded]="true"
-        >
-        </app-quote-display>
+    <div class="news-display">
+      <app-card>
+        <ng-container [ngSwitch]="item.noteType">
+          <app-news-display
+            *ngSwitchCase="'fact'"
+            [news]="item"
+            [expanded]="true"
+          ></app-news-display>
+          <app-opinion-item-display
+            *ngSwitchCase="'opinion'"
+            [opinion]="item"
+            [expanded]="true"
+          ></app-opinion-item-display>
+          <app-quote-display
+            *ngSwitchCase="'quote'"
+            [quote]="item"
+            [expanded]="true"
+          >
+          </app-quote-display>
+          <app-list-display *ngSwitchCase="'list'" [list]="item">
+          </app-list-display>
+          <app-comparison-note *ngSwitchCase="'vote'" [comparisonData]="item">
+          </app-comparison-note>
+        </ng-container>
       </app-card>
-    </app-card>
-  </ng-container>
+    </div>
+  </app-card>
 </div>
 
 <!-- <button type="button" mat-button disabled>

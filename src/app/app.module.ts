@@ -17,9 +17,11 @@ import { ActionsListPageComponent } from './actions/components/actions-list-page
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AssetListPageComponent } from './assets/components/asset-list-page/asset-list-page.component';
+import { ComparisonNoteComponent } from './comparison-note/comparison-note.component';
 import { ImageDisplayComponent } from './images/components/image-display/image-display.component';
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
 import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
+import { ListDisplayComponent } from './list-display/list-display.component';
 import { ListPropertiesPageComponent } from './list/components/list-properties-page/list-properties-page.component';
 import { ListComponent } from './list/list.component';
 import { MarketDisplayComponent } from './markets/components/market-display/market-display.component';
@@ -111,6 +113,12 @@ import { StockPropertiesPageComponent } from './stock/pages/stock-properties-pag
 import { StockDisplayComponent } from './stock/stock-display/stock-display.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
+import { UiAtomsComponent } from './ui-atoms/ui-atoms.component';
+import { UiComparisonComponent } from './ui-comparison/ui-comparison.component';
+import { UiListComponent } from './ui-list/ui-list.component';
+import { UiMoleculesComponent } from './ui-molecules/ui-molecules.component';
+import { UiOrganismComponent } from './ui-organism/ui-organism.component';
+import { UiTemplatesComponent } from './ui-templates/ui-templates.component';
 import { MockCompareDialogComponent } from './ui/components/mock-compare-dialog/mock-compare-dialog.component';
 import { SquareContainerComponent } from './ui/components/square-container/square-container.component';
 import { TitleMenuComponent } from './ui/components/title-menu/title-menu.component';
@@ -221,6 +229,14 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     AddPersonFormComponent,
     ListPropertiesPageComponent,
     GrowthDetailsComponent,
+    UiTemplatesComponent,
+    UiAtomsComponent,
+    UiMoleculesComponent,
+    UiOrganismComponent,
+    UiListComponent,
+    ListDisplayComponent,
+    UiComparisonComponent,
+    ComparisonNoteComponent,
   ],
   imports: [
     BrowserModule,

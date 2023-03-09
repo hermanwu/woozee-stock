@@ -1,33 +1,22 @@
-<div class="square">
-  <div class="instagram-top">
-    <app-date-display [date]="dialogData?.date"></app-date-display>
-    {{ dialogData.eventType }} News
-  </div>
-
-  <div class="image">
-    <app-stock-image-display
-      [tag]="dialogData?.tags?.[0]"
-    ></app-stock-image-display>
-
-    <app-image-display
-      [imageLink]="dialogData?.imageLinks?.[0]"
-    ></app-image-display>
-  </div>
-
-  <div class="title">
-    🎙️
-    {{ dialogData?.title }}
-  </div>
-
-  <ul>
-    <li *ngFor="let item of dialogData?.content">🔸 {{ item }}</li>
-  </ul>
-
-  <ul>
-    <li *ngFor="let item of dialogData?.stats">
-      <app-stats-display [statsDisplay]="item"></app-stats-display>
-    </li>
-  </ul>
-</div>
-
-<app-tags-display [tags]="dialogData?.tags"> </app-tags-display>
+<app-card [isSquare]="'true'">
+  <ng-container [ngSwitch]="dialogData.noteType">
+    <app-news-display
+      *ngSwitchCase="'fact'"
+      [news]="dialogData"
+      [expanded]="true"
+    ></app-news-display>
+    <app-opinion-item-display
+      *ngSwitchCase="'opinion'"
+      [opinion]="dialogData"
+      [expanded]="true"
+    ></app-opinion-item-display>
+    <app-quote-display
+      *ngSwitchCase="'quote'"
+      [quote]="dialogData"
+      [expanded]="true"
+    >
+    </app-quote-display>
+    <app-list-display *ngSwitchCase="'list'" [list]="dialogData">
+    </app-list-display>
+  </ng-container>
+</app-card>

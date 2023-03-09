@@ -74,6 +74,17 @@ export const abnb: StockAnalysis = {
   earningsReports: [
     {
       year: 2022,
+      quarter: 4,
+      totalRevenue: 1.902 * BILLION,
+      costOfRevenue: 0.345 * BILLION,
+      operatingIncome: 0.235 * BILLION,
+      netIncome: 0.319 * BILLION,
+      date: getUtcDate(2022, 2, 14),
+      forecastRevenueTop: 1.82 * BILLION,
+      forecastRevenueBottom: 1.75 * BILLION,
+    },
+    {
+      year: 2022,
       quarter: 3,
       totalRevenue: 2.884 * BILLION,
       costOfRevenue: 401.149 * MILLION,

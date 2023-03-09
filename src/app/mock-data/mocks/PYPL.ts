@@ -5,13 +5,14 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const pypl: StockAnalysis = {
   marketCap: 106 * BILLION,
   logo: '',
-  name: 'Paypal',
+  name: 'PayPal',
   description: [],
   ticker: 'pypl',
   lastUpdated: new Date('2021-08-22'),
   business: {
     markets: [IndustryType.fintech],
   },
+  irAddress: 'https://investor.pypl.com/home/default.aspx',
 
   earningsReports: [
     {

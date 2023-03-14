@@ -7,19 +7,19 @@
 
   <ng-container [ngSwitch]="opinion.rating">
     <ng-container *ngSwitchCase="ratingEnum.VeryBullish" i18n>
-      <span class="very-green">Very Bullish 📈</span>
+      <span class="very-green">Very Bullish</span>
     </ng-container>
 
     <ng-container *ngSwitchCase="ratingEnum.Bullish" i18n>
-      <span class="green">Bullish 📈</span>
+      <span class="green">Bullish</span>
     </ng-container>
 
     <ng-container *ngSwitchCase="ratingEnum.VeryBearish" i18n>
-      <span class="very-red">Very Bearish 📉</span>
+      <span class="very-red">Very Bearish</span>
     </ng-container>
 
     <ng-container *ngSwitchCase="ratingEnum.Bearish" i18n>
-      <span class="red">Bearish 📉</span>
+      <span class="red">Bearish</span>
     </ng-container>
 
     <ng-container *ngSwitchDefault i18n></ng-container>

@@ -1,33 +1,32 @@
 <ng-container *ngIf="expanded; else shortVersion">
   <div class="flow-display">
-    <div *ngIf="authorNameImageLink">
-      <app-image-display [imageLink]="authorNameImageLink"></app-image-display>
+    <div *ngIf="author">
+      <app-image-display [imageLink]="author?.imageLink"></app-image-display>
     </div>
 
-    <div>{{ opinion.authorName }}</div>
-
-    <div *ngIf="organizationImageLink">
+    <div *ngIf="organization">
       <app-image-display
-        [imageLink]="organizationImageLink"
+        [imageLink]="organization?.logoLink"
       ></app-image-display>
     </div>
-    <div>{{ opinion.organizationName }}</div>
   </div>
 
   <div class="large-text">
-    <span class="strong" *ngIf="authorName">{{ authorName }} of</span>
+    <span class="xl-text">{{ author?.displayName }}</span>
 
-    <span class="strong">{{ organizationName }}</span>
+    <span *ngIf="author && organization"> of </span>
 
-    <span> 🎙️ </span>
+    <span class="xl-text">{{ organization?.displayName }}</span>
 
-    <span>
+    <span> is </span>
+
+    <span class="xxl-text">
       <app-opinion-display [opinion]="opinion"></app-opinion-display>
     </span>
 
-    <span> ➡️ </span>
+    <span> on </span>
 
-    <span class="strong large-text">{{ targetNames }}</span>
+    <span class="<span" class="xl-text">{{ targetNames }}</span>
   </div>
 
   <div class="h3">⚡ {{ opinion.title }}</div>

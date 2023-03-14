@@ -1,4 +1,6 @@
 <span *ngIf="showDefaultTags">
   {{ defaultTags }}
 </span>
-<span *ngFor="let item of tags">{{ item }}</span>
+<span *ngFor="let item of tags" (click)="navigate(item)">
+  {{ item }}
+</span>

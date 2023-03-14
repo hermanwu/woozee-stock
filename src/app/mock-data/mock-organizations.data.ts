@@ -40,12 +40,12 @@ export const organizations: Organization[] = [
   {
     uuid: 'goldmansachs',
     displayName: 'Goldman Sachs',
-    logoLink: '',
+    logoLink: 'https://i.ibb.co/SXprQts/Goldman-Sachs-svg.png',
   },
 
   {
     uuid: 'amzn',
     displayName: 'Amazon',
-    logoLink: '',
+    logoLink: 'https://ibb.co/Kq1YrP8',
   },
 ];

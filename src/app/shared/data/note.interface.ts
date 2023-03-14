@@ -25,4 +25,5 @@ export interface Note extends Fact, Opinion, Quote, List {
   sourceLink?: string;
   imageLinks?: string[];
   authorUuid?: string;
+  creatorUuid?: string;
 }

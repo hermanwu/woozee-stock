@@ -68,6 +68,17 @@ export class IndustriesService {
     }
   }
 
+  getIndustryByType(type: IndustryType): Industry {
+    if (this.marketTypeToMarketMap.has(type) === false) {
+      this.marketTypeToMarketMap.set(type, this.populateIndustryData(type));
+    }
+    return this.marketTypeToMarketMap.get(type);
+  }
+
+  getIndustryByUuid(uuid: string): Industry {
+    return;
+  }
+
   /**
    * Get average revenue growth of a market.
    */

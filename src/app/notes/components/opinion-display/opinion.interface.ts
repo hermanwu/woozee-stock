@@ -4,7 +4,8 @@ import { EmojiUnicode } from '../../../shared/data/enum/emoji.enum';
 import { Rating } from '../../../stock/models/rating.model';
 
 export interface Opinion {
-  userUuid?: string;
+  authorUuid?: string;
+  creatorUuid?: string;
   authorName?: string;
   organizationName?: string;
   organizationUuid?: string;

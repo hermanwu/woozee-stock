@@ -8,6 +8,16 @@ import { Rating } from '../stock/models/rating.model';
 
 export const allNews: Note[] = [
   {
+    targets: ['stocks', 'SPY'],
+    title: 'SPY is showing a head shoulder pattern',
+    tags: [],
+    rating: 'Bearish',
+    uuid: 'ac8f3abc-8831-4647-a670-461d05f16d4f',
+    noteType: 'opinion',
+    date: '2023-03-10T02:30:44.577Z',
+    creatorUuid: 'herman.wrt@gmail.com',
+  },
+  {
     title: 'Goldman Sachs is bullish on Amazon',
     content:
       'Pessimistic talks about AWS growth have peaked. Cloud computing would still be a potential key tailwind in the coming quarters.\n\nE-commerce margins would improve in 2023',

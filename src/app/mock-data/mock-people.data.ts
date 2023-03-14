@@ -1,3 +1,10 @@
+export const users = [
+  {
+    uuid: 'herman.wrt@gmail.com',
+    displayName: 'Herman',
+  },
+];
+
 export const people = [
   {
     uuid: 'bobIger',

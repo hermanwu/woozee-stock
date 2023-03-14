@@ -56,6 +56,10 @@ export class StockServices {
     );
   }
 
+  getStockByUuid(uuid: string): StockAnalysis {
+    return this.dataMap.get(uuid.toLowerCase());
+  }
+
   getStockByTicker(ticker: string): StockAnalysis {
     return stocksMap[ticker.toLowerCase()];
   }

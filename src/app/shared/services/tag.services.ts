@@ -31,7 +31,6 @@ export class TagServices {
   }
 
   getTags(content: string): string[] {
-    console.log(content);
     const tagsCount = {};
 
     const tags = content

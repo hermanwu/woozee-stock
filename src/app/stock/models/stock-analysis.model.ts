@@ -21,6 +21,7 @@ export interface StockAnalysis {
   logo?: string;
   name?: any;
   shortName?: string;
+  displayName?: string;
   description?: any[];
   ticker: string;
   ceoQuote?: string[];

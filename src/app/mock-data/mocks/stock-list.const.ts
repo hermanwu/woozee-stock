@@ -295,4 +295,8 @@ export const stocksMap = {
   cxm,
   ual,
   cost,
+  spy: {
+    uuid: 'spy',
+    displayName: 'SPDR S&P 500 ETF trust',
+  },
 };

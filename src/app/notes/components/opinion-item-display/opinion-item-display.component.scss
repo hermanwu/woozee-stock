@@ -17,7 +17,18 @@
 
 .flow-display {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 100%;
+  max-height: 200px;
+
+  > div {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.xl-text {
+  font-size: 1.3rem;
+}
+
+.xxl-text {
+  font-size: 1.4rem;
 }

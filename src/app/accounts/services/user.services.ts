@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { users } from 'src/app/mock-data/mock-people.data';
 import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
@@ -11,6 +12,7 @@ import { currentUserMock } from '../data/user.mock';
 })
 export class UserServices {
   currentUser = currentUserMock;
+  users = users;
   rankings = new BehaviorSubject<string[]>(this.currentUser.rankings);
   marketRankings = new BehaviorSubject<string[]>(
     this.currentUser.marketRankings
@@ -28,6 +30,10 @@ export class UserServices {
 
   getCurrentUser() {
     return this.currentUser;
+  }
+
+  getUserByUuid(uuid: string) {
+    return this.users.find((user) => user.uuid === uuid);
   }
 
   getPortfolios() {

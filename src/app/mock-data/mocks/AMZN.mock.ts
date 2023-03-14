@@ -137,6 +137,7 @@ export const amznCatalysts = [
 export const amzn: StockAnalysis = {
   ticker: 'amzn',
   name: 'Amazon',
+  displayName: 'Amazon',
   description: [],
   logo: 'http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',

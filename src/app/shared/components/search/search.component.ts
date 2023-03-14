@@ -25,10 +25,10 @@ export class SearchComponent implements OnInit {
     {
       label: 'Stock',
       names: Object.values(stocksMap).map(
-        (stock) =>
-          (stock.shortName || stock.name) +
+        (stock: any) =>
+          (stock.displayName || stock.shortName || stock.name) +
           ' (' +
-          stock.ticker.toUpperCase() +
+          stock.ticker?.toUpperCase() +
           ')'
       ),
     },

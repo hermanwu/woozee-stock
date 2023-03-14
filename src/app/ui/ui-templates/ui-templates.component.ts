@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { News } from '../stock/models/news.model';
+import { News } from 'src/app/stock/models/news.model';
 
 @Component({
   selector: 'app-ui-templates',

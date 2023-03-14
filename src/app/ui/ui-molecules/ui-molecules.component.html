@@ -1,0 +1,47 @@
+<h1>Images Display</h1>
+<app-ui-images-display></app-ui-images-display>
+<app-divider></app-divider>
+
+<h1>Media Link</h1>
+<app-media-link [link]="sourceLink"></app-media-link>
+<app-divider></app-divider>
+
+<h1>Opinion Display</h1>
+<app-opinion-display [opinion]="opinionMock"></app-opinion-display>
+<app-divider></app-divider>
+
+<h1>Opinion Item Display</h1>
+
+<app-opinion-item-display
+  [expanded]="'true'"
+  [opinion]="opinionMock"
+></app-opinion-item-display>
+
+<app-divider></app-divider>
+
+<h1>Stock Image Display</h1>
+<app-stock-image-display [tag]="'AAPL'"></app-stock-image-display>
+
+<app-divider></app-divider>
+
+<h1>App Search</h1>
+<app-search></app-search>
+
+<app-divider></app-divider>
+
+<app-card>
+  <div>Function Test</div>
+
+  <div>Mock Ranks: {{ mockRanks }}</div>
+
+  <div>Item: {{ mockItem }}</div>
+
+  <div>Higher: {{ higherItem }}</div>
+  <div>Lower: {{ lowerItem }}</div>
+
+  <div>Result: {{ mockResult }}</div>
+
+  <button (click)="mockRankHigher()">Rank Higher</button>
+
+  <button (click)="mockRankLower()">Rank Lower</button>
+</app-card>

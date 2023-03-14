@@ -1,0 +1,69 @@
+<app-card>
+  <div>list</div>
+  <app-ui-list [data]="listData"></app-ui-list>
+</app-card>
+
+<app-card>
+  <div>Column Display</div>
+  <app-ui-comparison [comparisonNote]="listData"></app-ui-comparison>
+</app-card>
+
+<app-divider></app-divider>
+<app-card>
+  <h1>Data Comparsion Display</h1>
+
+  <div>
+    <div>INPUT:</div>
+    <div>items: {{ mockStocks | json }}</div>
+    <div>OUTPUT:</div>
+    <div>{{ rankedStocks | json }}</div>
+
+    <app-comparision-display
+      [items]="mockStocks"
+      (selectAction)="rankedStocks = $event"
+    >
+      <div note>
+        This is a super super super super super super super super long text
+      </div>
+      <div item-1>Test 1</div>
+      <div item-2>Test 2</div>
+    </app-comparision-display>
+  </div>
+</app-card>
+
+<app-card>
+  <h1>Drop Down</h1>
+
+  <div>Selected Portfolio: {{ selectedPortfolio }}</div>
+
+  <button mat-stroked-button [matMenuTriggerFor]="menu">
+    {{ selectedPortfolio ? selectedPortfolio : "All Stocks" }}
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <div *ngFor="let portfolio of mockPortfolios">
+      <button mat-menu-item i18n (click)="changePortfolio(portfolio)">
+        {{ portfolio.name }}
+      </button>
+    </div>
+    <button mat-menu-item i18n (click)="changePortfolio(null)">
+      Following
+    </button>
+  </mat-menu>
+</app-card>
+
+<app-card>
+  <h1>Ranking Stocks</h1>
+
+  <div>Global Ranking: {{ globalRanking | json }}</div>
+
+  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let stock of mockPortfolio" cdkDrag>
+      {{ stock }}
+      <button mat-stroked-button (click)="compareStock(stock)">compare</button>
+    </div>
+  </div>
+
+  <button mat-stroked-button (click)="saveRank()">Save Rank</button>
+</app-card>

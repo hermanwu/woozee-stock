@@ -113,17 +113,18 @@ import { StockPropertiesPageComponent } from './stock/pages/stock-properties-pag
 import { StockDisplayComponent } from './stock/stock-display/stock-display.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
-import { UiAtomsComponent } from './ui-atoms/ui-atoms.component';
-import { UiComparisonComponent } from './ui-comparison/ui-comparison.component';
-import { UiListComponent } from './ui-list/ui-list.component';
-import { UiMoleculesComponent } from './ui-molecules/ui-molecules.component';
-import { UiOrganismComponent } from './ui-organism/ui-organism.component';
-import { UiTemplatesComponent } from './ui-templates/ui-templates.component';
 import { MockCompareDialogComponent } from './ui/components/mock-compare-dialog/mock-compare-dialog.component';
 import { SquareContainerComponent } from './ui/components/square-container/square-container.component';
 import { TitleMenuComponent } from './ui/components/title-menu/title-menu.component';
 import { TwitterDisplayDialogComponent } from './ui/components/twitter-display-dialog/twitter-display-dialog.component';
 import { UiComponentsPageComponent } from './ui/components/ui-components-page/ui-components-page.component';
+import { UiAtomsComponent } from './ui/ui-atoms/ui-atoms.component';
+import { UiComparisonComponent } from './ui/ui-comparison/ui-comparison.component';
+import { UiImagesDisplayComponent } from './ui/ui-images-display/ui-images-display.component';
+import { UiListComponent } from './ui/ui-list/ui-list.component';
+import { UiMoleculesComponent } from './ui/ui-molecules/ui-molecules.component';
+import { UiOrganismComponent } from './ui/ui-organism/ui-organism.component';
+import { UiTemplatesComponent } from './ui/ui-templates/ui-templates.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -237,6 +238,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     ListDisplayComponent,
     UiComparisonComponent,
     ComparisonNoteComponent,
+    UiImagesDisplayComponent,
   ],
   imports: [
     BrowserModule,

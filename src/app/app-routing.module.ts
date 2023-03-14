@@ -24,11 +24,11 @@ import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
-import { UiAtomsComponent } from './ui-atoms/ui-atoms.component';
-import { UiMoleculesComponent } from './ui-molecules/ui-molecules.component';
-import { UiOrganismComponent } from './ui-organism/ui-organism.component';
-import { UiTemplatesComponent } from './ui-templates/ui-templates.component';
 import { UiComponentsPageComponent } from './ui/components/ui-components-page/ui-components-page.component';
+import { UiAtomsComponent } from './ui/ui-atoms/ui-atoms.component';
+import { UiMoleculesComponent } from './ui/ui-molecules/ui-molecules.component';
+import { UiOrganismComponent } from './ui/ui-organism/ui-organism.component';
+import { UiTemplatesComponent } from './ui/ui-templates/ui-templates.component';
 
 const routes: Routes = [
   {

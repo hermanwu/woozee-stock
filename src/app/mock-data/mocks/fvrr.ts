@@ -7,7 +7,7 @@ export const fvrr: StockAnalysis = {
   name: 'Fiverr International Ltd',
   description: [],
   ticker: 'fvrr',
-  shortName: 'Fiverr',
+  displayName: 'Fiverr',
   irAddress: 'https://investors.fiverr.com/investor-overview/default.aspx',
 
   earningsReports: [

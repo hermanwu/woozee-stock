@@ -36,9 +36,11 @@ export function sortByCatalystRiskDifference(
   });
 }
 
-export function sortByShortName(items: { shortName?: string }[]) {
+export function sortBydisplayName(items: { displayName?: string }[]) {
   const itemCopy = cloneDeep(items);
   return itemCopy.sort((a, b) =>
-    a.shortName && b.shortName ? (a.shortName as any) - (b.shortName as any) : 0
+    a.displayName && b.displayName
+      ? (a.displayName as any) - (b.displayName as any)
+      : 0
   );
 }

@@ -6,7 +6,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const chwy: StockAnalysis = {
   logo: '',
   name: 'CHEWY, INC.',
-  shortName: 'Chewy',
+  displayName: 'Chewy',
   description: [],
   ticker: 'chwy',
   irAddress: 'https://investor.chewy.com/overview/default.aspx',

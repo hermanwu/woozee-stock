@@ -1,0 +1,17 @@
+<ng-container [ngSwitch]="note.noteType">
+  <app-news-display
+    *ngSwitchCase="'fact'"
+    [news]="note"
+    [expanded]="true"
+  ></app-news-display>
+  <app-opinion-item-display
+    *ngSwitchCase="'opinion'"
+    [opinion]="note"
+    [expanded]="true"
+  ></app-opinion-item-display>
+  <app-quote-display *ngSwitchCase="'quote'" [quote]="note" [expanded]="true">
+  </app-quote-display>
+  <app-list-display *ngSwitchCase="'list'" [list]="note"> </app-list-display>
+  <app-comparison-note *ngSwitchCase="'vote'" [comparisonData]="note">
+  </app-comparison-note>
+</ng-container>

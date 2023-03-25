@@ -5,7 +5,7 @@ export const sofi: StockAnalysis = {
   name: 'SoFi',
   description: [],
   ticker: 'sofi',
-  shortName: 'SoFi',
+  displayName: 'SoFi',
 
   // Earnings Report:
   earnings: {

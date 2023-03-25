@@ -26,6 +26,21 @@ export class UiMoleculesComponent implements OnInit {
   lowerItem = 'amzn';
   mockResult;
 
+  mockImages = [
+    {
+      link: 'https://i.ibb.co/zhWrySv/Screenshot-2023-02-23-at-8-38-05-PM.png',
+      title: 'Nvidia',
+    },
+    {
+      link: 'https://i.ibb.co/zhWrySv/Screenshot-2023-02-23-at-8-38-05-PM.png',
+      title: 'Nvidia',
+    },
+    {
+      link: 'https://i.ibb.co/SXprQts/Goldman-Sachs-svg.png',
+      title: 'Goldman Sachs',
+    },
+  ];
+
   constructor() {}
 
   ngOnInit(): void {}

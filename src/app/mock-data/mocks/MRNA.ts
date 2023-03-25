@@ -7,7 +7,7 @@ export const mrna: StockAnalysis = {
   name: 'Moderna, Inc.',
   description: [],
   ticker: 'mrna',
-  shortName: 'Moderna',
+  displayName: 'Moderna',
   irAddress: 'https://investors.modernatx.com/',
 
   // Earnings Report:

@@ -11,7 +11,7 @@ export const aapl: StockAnalysis = {
   uuid: 'aapl',
   marketCap: 2.3 * TRILLION,
   name: 'Apple',
-  shortName: 'Apple',
+  displayName: 'Apple',
   description: [],
   trends: [],
   logo: '',

@@ -9,7 +9,7 @@ export const nflx: StockAnalysis = {
   name: 'Netflix',
   description: [],
   ticker: 'NFLX',
-  shortName: 'Netflix',
+  displayName: 'Netflix',
   irAddress: 'https://ir.netflix.net/ir-overview/profile/default.aspx',
   business: {
     products: [

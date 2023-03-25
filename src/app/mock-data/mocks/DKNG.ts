@@ -7,7 +7,7 @@ export const dkng: StockAnalysis = {
   name: 'DRAFTKINGS INC',
   description: [],
   ticker: 'dkng',
-  shortName: 'DraftKings',
+  displayName: 'DraftKings',
 
   earningsReports: [
     {

@@ -10,6 +10,7 @@ export class MePageComponent implements OnInit {
   readonly notesRoute = 'notes';
   readonly actionsRoute = 'actions';
   readonly listRoute = 'lists';
+  readonly opinionsRoute = 'opinions';
   activeRoute: string = this.notesRoute;
 
   constructor(private router: Router) {}

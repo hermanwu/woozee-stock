@@ -7,7 +7,7 @@ export const ai: StockAnalysis = {
   logo: '',
   name: 'C3.ai',
   description: [],
-  shortName: 'C3.ai',
+  displayName: 'C3.ai',
   ticker: 'ai',
   irAddress: 'https://ir.c3.ai/',
   earningsReports: [

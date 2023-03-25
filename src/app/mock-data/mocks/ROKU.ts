@@ -7,7 +7,7 @@ export const roku: StockAnalysis = {
   name: 'roku, INC.',
   description: [],
   ticker: 'roku',
-  shortName: 'Roku',
+  displayName: 'Roku',
   irAddress: 'https://www.roku.com/investor',
 
   // Earnings Report:

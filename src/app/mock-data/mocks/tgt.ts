@@ -8,7 +8,7 @@ export const tgt: StockAnalysis = {
   name: { English: 'TARGET CORPORATION' },
   description: [],
   ticker: 'TGT',
-  shortName: 'Target',
+  displayName: 'Target',
   industries: [IndustryType.discountStores],
 
   // Earnings Report:

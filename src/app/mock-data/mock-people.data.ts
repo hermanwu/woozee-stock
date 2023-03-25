@@ -1,10 +1,3 @@
-export const users = [
-  {
-    uuid: 'herman.wrt@gmail.com',
-    displayName: 'Herman',
-  },
-];
-
 export const people = [
   {
     uuid: 'bobIger',
@@ -49,5 +42,12 @@ export const people = [
     organizationUuidTitles: [['nvidia', 'CEO']],
     imageLink:
       'https://i.ibb.co/P4LXKRP/Screenshot-2023-02-23-at-8-11-07-PM.png',
+  },
+
+  {
+    uuid: 'AndyJassy',
+    displayName: 'Andy Jassy',
+    organizationUuidTitles: [['amazon', 'CEO']],
+    imageLink: 'https://i.ibb.co/7CC4LLQ/andy-mug-1.jpg',
   },
 ];

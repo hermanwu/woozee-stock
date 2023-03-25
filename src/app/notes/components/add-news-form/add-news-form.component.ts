@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { UserServices } from 'src/app/accounts/services/user.services';
 import { v4 as generateUuid } from 'uuid';
 import { NoteType } from '../../../shared/data/note.interface';
 import { TagServices } from '../../../shared/services/tag.services';
@@ -29,7 +30,8 @@ export class AddNewsFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private tagServices: TagServices
+    private tagServices: TagServices,
+    private userServices: UserServices
   ) {}
 
   ngOnInit(): void {
@@ -46,6 +48,7 @@ export class AddNewsFormComponent implements OnInit {
       uuid: [newsUuid],
       noteType: [NoteType.Fact],
       authorUuid: [],
+      creatorUuid: 'hwu1106@gmail.com',
     });
   }
 
@@ -71,6 +74,10 @@ export class AddNewsFormComponent implements OnInit {
         .map((target) => target.trim()),
       date: new Date(),
     };
+
+    if (news.type === NoteType.Opinion) {
+      news.creatorUuid = this.userServices.getRandomUser().uuid;
+    }
 
     for (let key in news) {
       if (news[key] === null || news[key] === undefined) {

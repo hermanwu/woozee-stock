@@ -17,7 +17,7 @@ export const currentUserMock: {
 } = {
   userUuid: 'herman.wrt@gmail.com',
   userName: 'Herman',
-  savedNotes: ['af064bd8-c894-4189-91c6-ee4c6d9ccb22'],
+  savedNotes: ['69ebf096-c688-4e7f-8d37-c3966581a499'],
   portfolios: [
     { name: 'Favorites', stocks: ['crwd', 'aapl', 'snow'] },
     {

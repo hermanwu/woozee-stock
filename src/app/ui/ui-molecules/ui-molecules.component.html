@@ -1,5 +1,24 @@
 <h1>Images Display</h1>
-<app-ui-images-display></app-ui-images-display>
+<div class="max-height">
+  <div class="grid-display">
+    <div class="images" *ngFor="let item of mockImages">
+      <div class="image">
+        <img [src]="item.link" />
+      </div>
+      <div>{{ item.title }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="max-height">
+  <app-ui-images-display [images]="mockImages"></app-ui-images-display>
+</div>
+
+<app-ui-images-display
+  class="max-height"
+  [images]="[mockImages[0]]"
+></app-ui-images-display>
+
 <app-divider></app-divider>
 
 <h1>Media Link</h1>

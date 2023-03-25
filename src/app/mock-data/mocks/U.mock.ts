@@ -9,7 +9,7 @@ export const u: StockAnalysis = {
   ticker: 'u',
   ceoQuote: [],
   advantage: [],
-  shortName: 'Unity',
+  displayName: 'Unity',
   irAddress: 'https://investors.unity.com/overview/default.aspx',
   business: {
     markets: [IndustryType.gaming, IndustryType.vr],

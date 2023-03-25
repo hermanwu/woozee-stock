@@ -7,7 +7,7 @@ export const gs: StockAnalysis = {
   name: 'The Goldman Sachs Group, Inc.',
   description: [],
   ticker: 'gs',
-  shortName: 'Goldman Sachs',
+  displayName: 'Goldman Sachs',
   irAddress: 'https://www.goldmansachs.com/investor-relations/',
 
   earningsReports: [

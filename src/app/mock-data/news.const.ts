@@ -8,6 +8,109 @@ import { Rating } from '../stock/models/rating.model';
 
 export const allNews: Note[] = [
   {
+    title: 'Salesforce is considering more job cuts amid profit push',
+    content:
+      'Salesforce Inc. could see another round of job cuts and focus on improving profitability, said Chief Operating Officer.\n\n“The structure of the organization — if we feel like it needs to change and reshape — we’re going to make those moves to drive the efficiencies.”\n\nMeta Platforms Inc., Amazon Inc., and Twilio Inc. announced additional rounds of major cuts in recent weeks, amounting to more than 21,000 workers. ',
+    tags: ['amazon'],
+    sourceLink:
+      'https://www.bloomberg.com/news/articles/2023-03-24/salesforce-considers-more-job-cuts-amid-profit-push-coo-says?srnd=technology-vp',
+    uuid: '4381a62f-e676-4281-a0cf-d9c71780996c',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-03-24T23:28:19.347Z',
+  },
+  {
+    title:
+      'Deposits at US lenders posted the biggest decline in nearly a year during the week',
+    content:
+      'Bank deposits fell by $98.4 billion to $17.5 trillion in the week ended March 15, according to data released Friday by the Federal Reserve.\n\nDeposits at small banks slumped $120 billion, while those for 25 largest firms rose almost $67 billion.\n\nMany depositors plowed into money-market funds. More than $117 billion poured into those accounts in the week ended March 22, according to data from the Investment Company Institute.',
+    tags: ['bank'],
+    sourceLink:
+      'https://www.bloomberg.com/news/articles/2023-03-24/us-bank-deposits-fell-98-4-billion-during-week-of-svb-collapse?srnd=premium',
+    uuid: '3d2cf49e-ef4a-47ba-af19-7ce291ceaf78',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-03-24T23:22:42.381Z',
+  },
+  {
+    targets: ['sq'],
+    title:
+      "Hindenburg claims Block's Cash App facilities crime and lacks compliance controls.",
+    tags: [],
+    rating: 'Bearish',
+    uuid: 'd8c710cd-162f-4519-8dd4-aa57558f803c',
+    noteType: 'opinion',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-03-23T22:55:06.715Z',
+  },
+  {
+    targets: ['Meta'],
+    title: 'TikTok is facing scrutiny in the US',
+    tags: [],
+    rating: 'Bullish',
+    uuid: '38e3e099-cb49-457e-b54e-977db6d6fa42',
+    noteType: 'opinion',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-03-23T22:39:11.780Z',
+  },
+  {
+    targets: ['msft', 'nvda', 'ai-group'],
+    title: 'ChatGPT could improve productivity for businesses. ',
+    content: 'It has a lot of users.',
+    tags: [],
+    rating: 'Bullish',
+    uuid: '69ebf096-c688-4e7f-8d37-c3966581a499',
+    noteType: 'opinion',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-03-23T21:37:01.238Z',
+  },
+  {
+    targets: ['coin', 'crypto'],
+    content:
+      'Jerome Powell mentioned that bank deposit withdrawal process has slowed down. ',
+    tags: [],
+    rating: 'Bearish',
+    uuid: '0277787d-317c-49cb-b493-900043513844',
+    noteType: 'opinion',
+    creatorUuid: 'jessica.jn.le@gmail.com',
+    date: '2023-03-22T22:29:05.195Z',
+    parentUuid: 'd434cb20-d424-4778-bb42-63e54e4f8d49',
+  },
+  {
+    title: 'Jerome Powell comments during news conference after FOMC meeting',
+    content:
+      'What I’m saying is you’ve seen that we have the tools to protect depositors when there is a threat of serious harm to the economy or to the financial system, and we’re prepared to use those tools. I think depositors should assume that their deposits are safe',
+    tags: [],
+    uuid: 'd434cb20-d424-4778-bb42-63e54e4f8d49',
+    noteType: 'quote',
+    authorUuid: 'powell',
+    creatorUuid: 'herman.wrt@gmail.com',
+    date: '2023-03-22T21:43:02.926Z',
+  },
+  {
+    targets: ['Banking'],
+    title: 'Bank faces a trust issue as more banks are "bailed" out.',
+    tags: [],
+    rating: 'Bearish',
+    uuid: '943c1191-3c66-4a53-a1bf-cdbac8be581e',
+    noteType: 'opinion',
+    creatorUuid: 'herman.wrt@gmail.com',
+    date: '2023-03-20T21:57:26.508Z',
+  },
+  {
+    title:
+      'Update from CEO Andy Jassy on Amazon’s operating plan and additional role eliminations',
+    content:
+      'I’m writing to share that we intend to eliminate about 9,000 more positions in the next few weeks—mostly in AWS, PXT, Advertising, and Twitch.\n\n\nHowever, given the uncertain economy in which we reside, and the uncertainty that exists in the near future, we have chosen to be more streamlined in our costs and headcount.',
+    tags: [],
+    sourceLink:
+      'https://www.aboutamazon.com/news/company-news/update-from-ceo-andy-jassy-on-amazons-operating-plan-and-additional-role-eliminations',
+    uuid: 'd21d2917-6911-432f-bf52-500e239da6a5',
+    noteType: 'quote',
+    authorUuid: 'AndyJassy',
+    date: '2023-03-20T19:03:20.044Z',
+  },
+  {
     targets: ['stocks', 'SPY'],
     title: 'SPY is showing a head shoulder pattern',
     tags: [],

@@ -1,7 +1,11 @@
-<app-investor-display
+<!-- <app-investor-display
   *ngIf="quote?.authorUuid"
   [authorUuid]="quote.authorUuid"
-></app-investor-display>
+></app-investor-display> -->
+
+<div class="image-display">
+  <app-ui-images-display [images]="imageLinks"></app-ui-images-display>
+</div>
 
 <div class="h3" *ngIf="quote?.title">🎙️ {{ quote.title }}</div>
 

@@ -9,7 +9,7 @@ export const intu: StockAnalysis = {
   name: 'Intuit',
   description: [],
   ticker: 'intu',
-  shortName: 'Intuit',
+  displayName: 'Intuit',
   irAddress: 'https://www.investors.intuit.com',
 
   earningsReports: [

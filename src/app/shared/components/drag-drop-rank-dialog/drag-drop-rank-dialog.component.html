@@ -8,7 +8,7 @@
   <div class="example-box" *ngFor="let stock of stocks; let i = index" cdkDrag>
     #{{ i + 1 }}
 
-    {{ stock.shortName || stock.name }}
+    {{ stock.displayName || stock.name }}
 
     <mat-icon class="drag-indicator"> drag_indicator </mat-icon>
   </div>

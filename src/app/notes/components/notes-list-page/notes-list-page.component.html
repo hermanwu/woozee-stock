@@ -24,6 +24,12 @@
   </div>
 </app-title-menu>
 
+<div *ngFor="let opinion of opinions">
+  <app-card>
+    <app-note-container [note]="opinion"></app-note-container>
+  </app-card>
+</div>
+
 <div class="opinion-card" *ngFor="let opinion of myOpinions">
   <app-card>
     <app-opinion-item-display

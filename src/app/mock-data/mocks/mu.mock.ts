@@ -9,7 +9,7 @@ export const mu: StockAnalysis = {
   name: 'Micron Technology, Inc.',
   description: [],
   ticker: 'mu',
-  shortName: 'Micron',
+  displayName: 'Micron',
   business: {
     markets: [IndustryType.semi, IndustryType.hardware],
     products: [

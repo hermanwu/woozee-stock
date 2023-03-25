@@ -8,7 +8,7 @@ export const amc: StockAnalysis = {
   name: 'AMC ENTERTAINMENT HOLDINGS, INC.',
   description: [],
   ticker: 'amc',
-  shortName: 'AMC',
+  displayName: 'AMC',
   irAddress: 'https://investor.amctheatres.com/corporate-overview/default.aspx',
   // Earnings Report:
   earningsReports: [

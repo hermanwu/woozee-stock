@@ -19,7 +19,7 @@ export const crm: StockAnalysis = {
       action: PredicationAction.Sell,
     },
   ],
-  shortName: 'Salesforce',
+  displayName: 'Salesforce',
   irAddress: 'https://investor.salesforce.com/overview/default.aspx',
   earningsReports: [
     {

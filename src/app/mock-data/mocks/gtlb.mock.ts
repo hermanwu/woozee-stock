@@ -3,7 +3,7 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const gtlb: StockAnalysis = {
-  shortName: 'GitLab',
+  displayName: 'GitLab',
   ticker: 'gtlb',
   irAddress: 'https://ir.gitlab.com/',
   marketCap: 8.37 * BILLION,

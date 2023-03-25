@@ -7,7 +7,7 @@ export const bynd: StockAnalysis = {
   name: 'Beyond Meat, Inc.',
   description: [],
   ticker: 'bynd',
-  shortName: 'Beyond Meat',
+  displayName: 'Beyond Meat',
   irAddress: 'https://investors.beyondmeat.com/',
 
   earningsReports: [

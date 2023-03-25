@@ -6,7 +6,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const panw: StockAnalysis = {
   logo: '',
   name: 'Palo Alto Networks',
-  shortName: 'Palo Alto Networks',
+  displayName: 'Palo Alto Networks',
 
   description: [],
   ticker: 'PANW',

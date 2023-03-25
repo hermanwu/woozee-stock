@@ -76,7 +76,7 @@ const routes: Routes = [
         component: MePageComponent,
         children: [
           {
-            path: 'notes',
+            path: 'opinions',
             component: NotesListPageComponent,
             pathMatch: 'full',
           },
@@ -92,7 +92,7 @@ const routes: Routes = [
           },
           {
             path: '**',
-            redirectTo: 'notes',
+            redirectTo: 'opinions',
           },
         ],
       },

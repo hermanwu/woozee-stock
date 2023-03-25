@@ -9,7 +9,7 @@ export const mttr: StockAnalysis = {
   name: 'Matterport, Inc.',
   description: [],
   ticker: 'mttr',
-  shortName: 'Matterport',
+  displayName: 'Matterport',
   business: {
     markets: [IndustryType.vr],
   },

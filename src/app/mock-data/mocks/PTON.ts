@@ -3,7 +3,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const pton: StockAnalysis = {
   logo: '',
   name: 'Peloton',
-  shortName: 'Peloton',
+  displayName: 'Peloton',
   description: [],
   ticker: 'pton',
   irAddress: 'https://investor.onepeloton.com/',

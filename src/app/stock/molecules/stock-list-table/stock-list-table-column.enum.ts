@@ -2,7 +2,7 @@ export enum StockListTableColumn {
   index = 'index',
   marketCap = 'marketCap',
   ticker = 'ticker',
-  shortName = 'Short Name',
+  displayName = 'Short Name',
 
   // revenue
   ttmRevenue = 'ttmRevenue',

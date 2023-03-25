@@ -4,7 +4,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const mrvl: StockAnalysis = {
   logo: '',
   name: 'Marvell Technology, Inc.',
-  shortName: 'Marvell Technology',
+  displayName: 'Marvell Technology',
   irAddress: 'https://investor.marvell.com/',
   marketCap: 48 * BILLION,
   ticker: 'mrvl',

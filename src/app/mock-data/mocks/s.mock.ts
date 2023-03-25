@@ -4,7 +4,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const s: StockAnalysis = {
   logo: '',
-  shortName: 'SentinelOne',
+  displayName: 'SentinelOne',
   ticker: 's',
   irAddress: 'https://investors.sentinelone.com/overview/default.aspx',
   earningsReports: [

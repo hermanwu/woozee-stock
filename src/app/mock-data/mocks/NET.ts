@@ -16,7 +16,7 @@ export const net: StockAnalysis = {
   description: [],
   ticker: 'net',
   irAddress: 'https://www.cloudflare.net/home/default.aspx',
-  shortName: 'Cloudflare',
+  displayName: 'Cloudflare',
 
   earningsReports: [
     {

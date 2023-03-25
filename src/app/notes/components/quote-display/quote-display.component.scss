@@ -18,9 +18,12 @@
 .quote-font {
   display: flex;
   flex-direction: column;
-  min-height: 200px;
   gap: 10px;
   // > * {
   //   flex-grow: 1;
   // }
+}
+
+.image-display {
+  max-height: 200px;
 }

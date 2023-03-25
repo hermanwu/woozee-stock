@@ -10,7 +10,7 @@ export const okta: StockAnalysis = {
   ticker: 'OKTA',
   irAddress: 'https://investor.okta.com/',
   industries: [IndustryType.saas],
-  shortName: 'Okta',
+  displayName: 'Okta',
   marketCap: 8.1 * BILLION,
 
   // Earnings Report:

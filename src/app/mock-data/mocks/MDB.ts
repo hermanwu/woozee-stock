@@ -9,7 +9,7 @@ export const mdb: StockAnalysis = {
   name: 'Mongodb Inc',
   description: [],
   ticker: 'mdb',
-  shortName: 'MongoDB',
+  displayName: 'MongoDB',
   industries: [IndustryType.saas],
   irAddress: 'https://investors.mongodb.com/corporate-profile/default.aspx',
   secFilings:

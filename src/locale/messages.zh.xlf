@@ -297,7 +297,7 @@
       </trans-unit>
       <trans-unit id="315d6dfe9aceae6c157e5b74ebe3b6eaa4ba04dc" datatype="html">
         <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span
-        &gt;"/><x id="INTERPOLATION" equiv-text="{{ stockAnalysis.shortName || stockAnalysis.name }}"/> (<x id="INTERPOLATION_1" equiv-text="{{
+        &gt;"/><x id="INTERPOLATION" equiv-text="{{ stockAnalysis.displayName || stockAnalysis.name }}"/> (<x id="INTERPOLATION_1" equiv-text="{{
           stockAnalysis?.ticker | uppercase
         }}"/>)<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span
       &gt;"/><x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span *ngIf=&quot;rank$ | async; else followButton&quot;&gt;"/> - Rank <x id="INTERPOLATION_2" equiv-text="{{ rank$ | async | undefined }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span

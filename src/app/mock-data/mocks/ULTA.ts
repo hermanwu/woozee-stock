@@ -42,7 +42,7 @@ export const ulta: StockAnalysis = {
   name: { English: null },
   description: [],
   ticker: 'ULTA',
-  shortName: 'Ulta Beauty',
+  displayName: 'Ulta Beauty',
   marketCap: 22 * BILLION,
   catalystUuids: ultaCatalysts.map((c) => c.uuid),
   riskUuids: ultaRisks.map((r) => r.uuid),

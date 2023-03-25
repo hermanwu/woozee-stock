@@ -6,7 +6,7 @@
           Ranking
         </ng-container>
 
-        <ng-container *ngSwitchCase="stockListTableColumn.shortName">
+        <ng-container *ngSwitchCase="stockListTableColumn.displayName">
           <div>Name</div>
         </ng-container>
 
@@ -74,8 +74,8 @@
           </div>
         </ng-container>
 
-        <ng-container *ngSwitchCase="stockListTableColumn.shortName">
-          <div>{{ stock.shortName }}</div>
+        <ng-container *ngSwitchCase="stockListTableColumn.displayName">
+          <div>{{ stock.displayName }}</div>
         </ng-container>
 
         <ng-container *ngSwitchCase="stockListTableColumn.ticker">
@@ -93,7 +93,9 @@
         <ng-container *ngSwitchCase="stockListTableColumn.quarterRevenueGrowth">
           <div class="number-display">
             <span>
-              {{ stock.quarterRevenueGrowth | siUnit: 2 | percent | undefined }}
+              {{
+                stock.quarterRevenueGrowth | siUnit : 2 | percent | undefined
+              }}
             </span>
           </div>
         </ng-container>
@@ -101,7 +103,7 @@
         <ng-container *ngSwitchCase="stockListTableColumn.marketCap">
           <div class="number-display">
             <span>
-              {{ stock.marketCap | siUnit: 2 | undefined }}
+              {{ stock.marketCap | siUnit : 2 | undefined }}
             </span>
           </div>
         </ng-container>

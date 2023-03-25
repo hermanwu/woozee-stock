@@ -3,7 +3,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const wmt: StockAnalysis = {
   industries: [IndustryType.ecommerce],
-  shortName: 'Walmart',
+  displayName: 'Walmart',
   ticker: 'WMT',
   irAddress:
     'https://stock.walmart.com/financials/quarterly-results/default.aspx',

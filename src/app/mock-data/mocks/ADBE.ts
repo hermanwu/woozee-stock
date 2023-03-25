@@ -45,7 +45,7 @@ export const adbe: StockAnalysis = {
   irAddress: 'https://www.adobe.com/investor-relations.html',
   logo: '',
   name: 'Adobe',
-  shortName: 'Adobe',
+  displayName: 'Adobe',
   description: [],
   ticker: 'adbe',
 

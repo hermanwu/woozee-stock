@@ -11,7 +11,7 @@ export const uber: StockAnalysis = {
   name: 'Uber',
   description: [],
   ticker: 'uber',
-  shortName: 'Uber',
+  displayName: 'Uber',
   irAddress: 'https://investor.uber.com/home/default.aspx',
 
   business: {

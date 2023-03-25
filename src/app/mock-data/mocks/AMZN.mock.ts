@@ -139,10 +139,9 @@ export const amzn: StockAnalysis = {
   name: 'Amazon',
   displayName: 'Amazon',
   description: [],
-  logo: 'http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG',
+  logoUrl: 'https://i.ibb.co/qsZzrS2/download-3.png',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
   marketCap: 1 * TRILLION,
-  shortName: 'Amazon',
   industries: [
     IndustryType.ecommerce,
     IndustryType.cloudService,

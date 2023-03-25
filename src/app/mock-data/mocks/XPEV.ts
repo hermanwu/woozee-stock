@@ -7,7 +7,7 @@ export const xpev: StockAnalysis = {
   name: 'XPENG INC.',
   description: [],
   ticker: 'XPEV',
-  shortName: 'XPENG',
+  displayName: 'XPENG',
   marketCap: 24 * BILLION,
   irAddress: 'https://ir.xiaopeng.com/overview/default.aspx',
   earningsReports: [

@@ -14,7 +14,7 @@ export class TagDisplayPipe implements PipeTransform {
     const stock = this.stockService.getStockByTicker(value);
     if (stock) {
       return `${this.capitalizeFirstCharacter(
-        stock?.shortName
+        stock?.displayName
       )} (${value.toUpperCase()})`;
     } else {
       return this.capitalizeFirstCharacter(value);

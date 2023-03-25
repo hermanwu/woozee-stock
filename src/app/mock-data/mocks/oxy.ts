@@ -6,7 +6,7 @@ export const oxy: StockAnalysis = {
   name: 'Occidental Petroleum Corporation',
   description: [],
   ticker: 'oxy',
-  shortName: 'Occidental Petroleum',
+  displayName: 'Occidental Petroleum',
   marketCap: 51.61 * BILLION,
   irAddress: 'https://www.oxy.com/investors/',
 

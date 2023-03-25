@@ -16,19 +16,17 @@
 }
 
 .flow-display {
-  display: flex;
   max-height: 200px;
-
-  > div {
-    display: flex;
-    justify-content: center;
-  }
 }
 
 .xl-text {
-  font-size: 1.3rem;
+  font-size: medium;
 }
 
 .xxl-text {
   font-size: 1.4rem;
+}
+
+.image-display {
+  max-height: 150px;
 }

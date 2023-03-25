@@ -7,7 +7,7 @@ export const spot: StockAnalysis = {
   name: 'Spotify Technology S.A.',
   description: [],
   ticker: 'spot',
-  shortName: 'Spotify',
+  displayName: 'Spotify',
   irAddress: 'https://investors.spotify.com/home/default.aspx',
 
   // Earnings Report:

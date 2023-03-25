@@ -21,7 +21,7 @@ export class StockListTableComponent implements OnChanges {
   displayColumns = [
     StockListTableColumn.index,
     StockListTableColumn.ticker,
-    StockListTableColumn.shortName,
+    StockListTableColumn.displayName,
     StockListTableColumn.quarterRevenueGrowth,
     StockListTableColumn.latestEarningsDate,
     StockListTableColumn.actionsButton,

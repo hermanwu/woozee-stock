@@ -5,7 +5,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const cost: StockAnalysis = {
   uuid: 'us-cost',
   name: 'Costco',
-  shortName: 'Costco',
+  displayName: 'Costco',
   ticker: 'COST',
   irAddress: 'https://investor.costco.com/',
   marketCap: 215.8 * BILLION,

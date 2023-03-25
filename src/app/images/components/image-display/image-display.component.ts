@@ -11,4 +11,11 @@ export class ImageDisplayComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  ngOnChanges(): void {
+    if (!this.imageLink) {
+      this.imageLink =
+        'https://i.ibb.co/BTr3F4C/Screen-Shot-2023-01-07-at-11-16-38-AM.png';
+    }
+  }
 }

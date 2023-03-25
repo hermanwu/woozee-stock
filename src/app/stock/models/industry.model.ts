@@ -12,4 +12,5 @@ export interface Industry {
   riskUuids?: string[];
   catalystUuids?: string[];
   rank?: number;
+  logoUrl?: string;
 }

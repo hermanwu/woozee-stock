@@ -4,7 +4,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const csco: StockAnalysis = {
   logo: '',
   name: 'Cisco Systems',
-  shortName: 'Cisco',
+  displayName: 'Cisco',
   description: [],
   ticker: 'CSCO',
   industries: [IndustryType.itSolution],

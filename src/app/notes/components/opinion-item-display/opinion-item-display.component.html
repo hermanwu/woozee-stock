@@ -1,37 +1,39 @@
 <ng-container *ngIf="expanded; else shortVersion">
-  <div class="flow-display">
-    <div *ngIf="author">
-      <app-image-display [imageLink]="author?.imageLink"></app-image-display>
-    </div>
-
-    <div *ngIf="organization">
-      <app-image-display
-        [imageLink]="organization?.logoLink"
-      ></app-image-display>
-    </div>
+  <div class="image-display">
+    <app-ui-images-display [images]="imageLinks"></app-ui-images-display>
   </div>
 
-  <div class="large-text">
-    <span class="xl-text">{{ author?.displayName }}</span>
+  <div class="xl-text">
+    <span>🚨 {{ author?.displayName }}</span>
 
     <span *ngIf="author && organization"> of </span>
 
-    <span class="xl-text">{{ organization?.displayName }}</span>
+    <span>{{ organization?.displayName }}</span>
 
     <span> is </span>
 
-    <span class="xxl-text">
+    <span>
       <app-opinion-display [opinion]="opinion"></app-opinion-display>
     </span>
 
     <span> on </span>
 
-    <span class="<span" class="xl-text">{{ targetNames }}</span>
+    <span *ngFor="let item of targetNames">{{ item }}; </span>
   </div>
 
-  <div class="h3">⚡ {{ opinion.title }}</div>
+  <div class="h3" *ngIf="opinion.title">⚡ {{ opinion.title }}</div>
 
   <app-content-display [content]="opinion.content"></app-content-display>
+
+  <span class="more-button" *ngIf="opinion?.parentUuid" (click)="showParent()"
+    >more facts</span
+  >
+
+  <div *ngIf="parentExpanded">
+    <app-card>
+      <app-note-container [note]="parentNote"> </app-note-container>
+    </app-card>
+  </div>
 </ng-container>
 
 <ng-template #shortVersion>

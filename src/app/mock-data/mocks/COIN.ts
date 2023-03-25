@@ -76,7 +76,8 @@ export const coinCatalysts: Catalyst[] = [
 ];
 
 export const coin: StockAnalysis = {
-  uuid: 'us-coin',
+  uuid: 'coin',
+  displayName: 'Coinbase',
   marketCap: 15 * BILLION,
   riskUuids: coinRisks.map((r) => r.uuid),
   catalystUuids: coinCatalysts.map((c) => c.uuid),
@@ -320,7 +321,6 @@ export const coin: StockAnalysis = {
 
   logo: '',
   name: 'Coinbase',
-  shortName: 'Coinbase',
   description: [
     {
       content: 'Our mission is to increase economic freedom in the world.',

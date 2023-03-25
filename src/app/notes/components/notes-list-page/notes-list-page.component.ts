@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NewsService } from 'src/app/news/services/news.services';
+import { Note } from 'src/app/shared/data/note.interface';
 import { UserServices } from '../../../accounts/services/user.services';
 import { Opinion } from '../opinion-display/opinion.interface';
 
@@ -9,6 +11,7 @@ import { Opinion } from '../opinion-display/opinion.interface';
   styleUrls: ['./notes-list-page.component.scss'],
 })
 export class NotesListPageComponent implements OnInit {
+  notes: Note[];
   opinions: Opinion[];
   showAddNotesSection = false;
   myOpinions: Opinion[];
@@ -36,8 +39,16 @@ export class NotesListPageComponent implements OnInit {
     },
   ];
 
-  constructor(private userServices: UserServices, private router: Router) {
+  constructor(
+    private userServices: UserServices,
+    private newsService: NewsService,
+    private router: Router
+  ) {
     this.myOpinions = userServices.getOpinions();
+
+    this.opinions = this.newsService.getNotesByUuids(
+      this.userServices.getSavedNoteUuids()
+    );
   }
 
   ngOnInit(): void {}

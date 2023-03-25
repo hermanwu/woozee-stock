@@ -6,7 +6,7 @@ export const iac: StockAnalysis = {
   name: 'IAC/INTERACTIVECORP',
   description: [],
   ticker: 'iac',
-  shortName: 'IAC',
+  displayName: 'IAC',
   irAddress: 'https://ir.iac.com/',
   marketCap: 9.62 * BILLION,
 

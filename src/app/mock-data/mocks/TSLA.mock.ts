@@ -59,7 +59,7 @@ export const tsla: StockAnalysis = {
   logo: 'https://www.carlogos.org/car-logos/tesla-logo-2200x2800.png',
   name: 'Tesla',
   ticker: 'TSLA',
-  shortName: 'Tesla',
+  displayName: 'Tesla',
   irAddress: 'https://ir.tesla.com/',
   marketCap: capMock.tsla,
   secFilings: 'https://ir.tesla.com/sec-filings',

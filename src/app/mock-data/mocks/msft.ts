@@ -11,14 +11,15 @@ export const msftRisks = [
 ];
 
 export const msft: StockAnalysis = {
-  uuid: 'us-msft-1',
+  uuid: 'msft',
   marketCap: capMock.msft,
   logo: '',
   name: 'MICROSOFT CORPORATION',
   description: [],
+
   ticker: 'msft',
   irAddress: 'https://www.microsoft.com/en-us/investor',
-  shortName: 'Microsoft',
+  displayName: 'Microsoft',
   earningsReports: [
     {
       year: 2023,

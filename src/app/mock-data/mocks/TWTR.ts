@@ -84,7 +84,7 @@ export const twtr: StockAnalysis = {
   name: 'Twitter, Inc.',
   description: [],
   ticker: 'twtr',
-  shortName: 'Twitter',
+  displayName: 'Twitter',
   irAddress: 'https://investor.twitterinc.com/home/default.aspx',
 
   // Earnings Report:

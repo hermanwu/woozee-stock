@@ -6,7 +6,7 @@ export const rtx: StockAnalysis = {
   description: [],
   ticker: 'RTX',
   irAddress: 'http://investors.rtx.com/',
-  shortName: 'Raytheon',
+  displayName: 'Raytheon',
 
   // Earnings Report:
   earnings: {

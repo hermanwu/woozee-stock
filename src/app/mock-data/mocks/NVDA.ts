@@ -38,6 +38,8 @@ export const nvdaRisks = [
 ];
 
 export const nvda: StockAnalysis = {
+  uuid: 'nvda',
+  displayName: 'Nvidia',
   marketCap: 461 * BILLION,
 
   // predications: [
@@ -215,7 +217,6 @@ export const nvda: StockAnalysis = {
 
   logo: '',
   name: 'Nvidia',
-  shortName: 'Nvidia',
   description: [
     {
       content: 'competitors',

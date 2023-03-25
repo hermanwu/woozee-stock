@@ -7,7 +7,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const zs: StockAnalysis = {
   logo: '',
   name: 'Zscaler',
-  shortName: 'Zscaler',
+  displayName: 'Zscaler',
   description: [],
   ticker: 'ZS',
   myRating: Rating.Neutral,

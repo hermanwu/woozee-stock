@@ -85,28 +85,7 @@
 
     <div class="news-display">
       <app-card>
-        <ng-container [ngSwitch]="item.noteType">
-          <app-news-display
-            *ngSwitchCase="'fact'"
-            [news]="item"
-            [expanded]="true"
-          ></app-news-display>
-          <app-opinion-item-display
-            *ngSwitchCase="'opinion'"
-            [opinion]="item"
-            [expanded]="true"
-          ></app-opinion-item-display>
-          <app-quote-display
-            *ngSwitchCase="'quote'"
-            [quote]="item"
-            [expanded]="true"
-          >
-          </app-quote-display>
-          <app-list-display *ngSwitchCase="'list'" [list]="item">
-          </app-list-display>
-          <app-comparison-note *ngSwitchCase="'vote'" [comparisonData]="item">
-          </app-comparison-note>
-        </ng-container>
+        <app-note-container [note]="item"></app-note-container>
       </app-card>
     </div>
   </app-card>

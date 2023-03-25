@@ -5,7 +5,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const avgo: StockAnalysis = {
   logo: '',
   name: 'BROADCOM INC.',
-  shortName: 'Broadcom',
+  displayName: 'Broadcom',
   description: [],
   ticker: 'avgo',
   irAddress: 'https://investors.broadcom.com/',

@@ -51,7 +51,7 @@ export const dis: StockAnalysis = {
   riskUuids: disneyRisks.map((r) => r.uuid),
   catalystUuids: disneyCatalysts.map((c) => c.uuid),
   name: 'Disney',
-  shortName: 'Disney',
+  displayName: 'Disney',
   description: [],
   trends: [],
   logo: '',

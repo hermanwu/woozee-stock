@@ -6,7 +6,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const cxm: StockAnalysis = {
   logo: '',
   name: 'Sprinklr',
-  shortName: 'Sprinklr',
+  displayName: 'Sprinklr',
   description: [],
   ticker: 'cxm',
   irAddress: 'https://investors.sprinklr.com/',

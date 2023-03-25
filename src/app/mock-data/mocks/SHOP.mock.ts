@@ -34,7 +34,7 @@ export const shop: StockAnalysis = {
 
   logo: '',
   name: 'SHOPIFY INC.',
-  shortName: 'Shopify',
+  displayName: 'Shopify',
   ticker: 'shop',
   irAddress: 'https://investors.shopify.com/home/default.aspx',
   secFilings:

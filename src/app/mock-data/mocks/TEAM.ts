@@ -34,7 +34,7 @@ export const team: StockAnalysis = {
   name: 'Atlassian Corporation Plc',
   description: [],
   ticker: 'team',
-  shortName: 'Atlassian',
+  displayName: 'Atlassian',
   irAddress: 'https://investors.atlassian.com/',
   business: {
     markets: [IndustryType.saas],

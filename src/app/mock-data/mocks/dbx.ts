@@ -8,7 +8,7 @@ export const dbx: StockAnalysis = {
   ticker: 'dbx',
   irAddress: 'https://dropbox.gcs-web.com/',
   secFilings: 'https://dropbox.gcs-web.com/financial-information/sec-filings',
-  shortName: 'Dropbox',
+  displayName: 'Dropbox',
 
   earningsReports: [
     {

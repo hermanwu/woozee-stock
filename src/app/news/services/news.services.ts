@@ -32,4 +32,12 @@ export class NewsService {
   getNewsByTags(tags: string[]) {
     return this.news.filter((item) => item.tags?.some((t) => tags.includes(t)));
   }
+
+  getNewsByUuid(uuid: string) {
+    return this.news.find((item) => item.uuid === uuid);
+  }
+
+  getNotesByUuids(uuids: string[]) {
+    return this.news.filter((item) => uuids.includes(item.uuid));
+  }
 }

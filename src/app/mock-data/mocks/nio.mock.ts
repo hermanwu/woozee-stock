@@ -13,7 +13,7 @@ export const nio: StockAnalysis = {
     },
   ],
   name: 'NIO Inc,',
-  shortName: 'NIO',
+  displayName: 'NIO',
   ticker: 'NIO',
   irAddress: 'https://ir.nio.com/financials/quarterly-results',
   industries: [IndustryType.ev],

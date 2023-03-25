@@ -5,7 +5,7 @@ export const isrg: StockAnalysis = {
   marketCap: 95 * BILLION,
   logo: '',
   name: 'Intuitive Surgical, Inc',
-  shortName: 'Intuitive Surgical',
+  displayName: 'Intuitive Surgical',
   description: [],
   ticker: 'isrg',
   irAddress: 'https://isrg.intuitive.com/',

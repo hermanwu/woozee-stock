@@ -32,7 +32,7 @@ export const docu: StockAnalysis = {
   description: [],
   ticker: 'docu',
   irAddress: 'https://investor.docusign.com/investors/home/default.aspx',
-  shortName: 'DocuSign',
+  displayName: 'DocuSign',
 
   earningsReports: [
     {

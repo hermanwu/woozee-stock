@@ -19,7 +19,7 @@ export class TickerDisplayComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     if (this.stock) {
-      this.name = this.stock?.shortName || this.stock?.name;
+      this.name = this.stock?.displayName || this.stock?.name;
       this.ticker = this.stock?.ticker;
     }
   }

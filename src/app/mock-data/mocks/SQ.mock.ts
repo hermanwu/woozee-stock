@@ -72,7 +72,7 @@ export const sq: StockAnalysis = {
   logo: 'https://lh3.googleusercontent.com/pw/ACtC-3dVUwpnglNTwsN6ZkweBVX9VgZhM9aJL6oQ0Cn9Ofk62gCDq1R8DwwkrzUb-HBxX9B3FA_C5ZqbfYT9UIKdPFLqpxeBLj4Dis4Z1DZ6oakHj-YOZqNdUclAkdW9Q8XkXOoz-nkQfOYeEFRK0eatm9bc=w614-h548-no?authuser=3',
   name: 'Block, Inc.',
   ticker: 'sq',
-  shortName: 'Block',
+  displayName: 'Block',
   propertiesPageEnabled: true,
   irAddress: 'https://investors.block.xyz/overview/default.aspx',
   secFilings: 'https://investors.block.xyz/financials/sec-filings/default.aspx',

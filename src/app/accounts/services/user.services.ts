@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { users } from 'src/app/mock-data/mock-people.data';
+import { users } from 'src/app/mock-data/mock-users.data';
 import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
@@ -32,6 +32,10 @@ export class UserServices {
     return this.currentUser;
   }
 
+  getRandomUser() {
+    return this.users[Math.floor(Math.random() * this.users.length)];
+  }
+
   getUserByUuid(uuid: string) {
     return this.users.find((user) => user.uuid === uuid);
   }
@@ -44,9 +48,17 @@ export class UserServices {
     return this.currentUser.opinions;
   }
 
+  getSavedNoteUuids(): string[] {
+    return this.currentUser.savedNotes;
+  }
+
   getSavedNotes(): string[] {
     return this.currentUser.savedNotes;
   }
+
+  // getMyNotes(): string[] {
+
+  // }
 
   getPortfolioByName(name: string): {
     name: string;

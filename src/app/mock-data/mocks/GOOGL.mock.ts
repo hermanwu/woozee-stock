@@ -16,7 +16,7 @@ export const googl: StockAnalysis = {
   marketCap: capMock.googl,
   logo: '',
   name: 'Alphabet',
-  shortName: 'Alphabet',
+  displayName: 'Alphabet',
   ticker: 'googl',
   ceoQuote: [],
   advantage: [],

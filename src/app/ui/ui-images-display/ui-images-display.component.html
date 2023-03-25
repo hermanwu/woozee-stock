@@ -1,1 +1,7 @@
-<p>ui-images-display works!</p>
+<div class="images" *ngFor="let item of images">
+  <div class="image">
+    <!-- <img [src]="item.link" /> -->
+    <app-image-display [imageLink]="item.link"></app-image-display>
+  </div>
+  <div class="title">{{ item.title }}</div>
+</div>

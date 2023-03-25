@@ -217,7 +217,7 @@ export const snow: StockAnalysis = {
 
   logo: '',
   name: 'Snowflake',
-  shortName: 'Snowflake',
+  displayName: 'Snowflake',
   description: [],
   ticker: 'snow',
   irAddress: 'https://investors.snowflake.com/overview/default.aspx',

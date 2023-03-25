@@ -39,7 +39,7 @@ export const abnb: StockAnalysis = {
   marketCap: 61 * BILLION,
   riskUuids: abnbRisks.map((r) => r.uuid),
   catalystUuids: abnbCatalysts.map((c) => c.uuid),
-  shortName: 'Airbnb',
+  displayName: 'Airbnb',
   logo: '',
   name: 'Airbnb',
   description: [

@@ -1,0 +1,34 @@
+.max-height {
+  max-height: 100px;
+}
+
+.grid-display {
+  height: inherit;
+  max-height: inherit;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+
+  > div {
+    height: inherit;
+    max-height: inherit;
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+    align-self: center;
+    justify-self: center;
+
+    > div {
+      height: 100%;
+      max-height: inherit;
+      width: 100%;
+      overflow: scroll;
+      text-align: center;
+    }
+  }
+}
+
+img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}

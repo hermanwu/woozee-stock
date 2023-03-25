@@ -55,7 +55,7 @@ export const gme: StockAnalysis = {
   name: 'GameStop Corp.',
   description: [],
   ticker: 'gme',
-  shortName: 'GameStop',
+  displayName: 'GameStop',
   irAddress: 'https://investor.gamestop.com/home',
   catalystUuids: gmeCatalysts.map((g) => g.uuid),
 

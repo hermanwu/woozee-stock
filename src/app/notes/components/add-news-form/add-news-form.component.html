@@ -15,7 +15,12 @@
     </mat-button-toggle-group>
   </div>
 
-  <div *ngIf="newsForm.value.noteType === noteType.Quote">
+  <div
+    *ngIf="
+      newsForm.value.noteType === noteType.Quote ||
+      newsForm.value.noteType === noteType.Opinion
+    "
+  >
     <mat-form-field>
       <mat-label>Author</mat-label>
       <input matInput formControlName="authorUuid" />

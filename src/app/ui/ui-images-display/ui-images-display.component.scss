@@ -1,0 +1,32 @@
+:host {
+  height: inherit;
+  max-height: inherit;
+  max-width: inherit;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+
+  > div {
+    height: inherit;
+    max-height: inherit;
+    max-width: inherit;
+    display: grid;
+    grid-template-rows: 6fr 1fr;
+    align-self: center;
+    justify-self: center;
+
+    > div {
+      height: 100%;
+      width: 100%;
+      max-height: inherit;
+      max-width: inherit;
+      overflow: scroll;
+      text-align: center;
+    }
+  }
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 500;
+}

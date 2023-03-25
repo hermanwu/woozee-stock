@@ -233,7 +233,7 @@ export const crwd: StockAnalysis = {
   ],
   logo: '',
   name: 'Crowdstrike',
-  shortName: 'Crowdstrike',
+  displayName: 'Crowdstrike',
   description: [],
   ticker: 'crwd',
   irAddress: 'https://ir.crowdstrike.com/',

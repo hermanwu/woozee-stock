@@ -5,7 +5,7 @@ export const intc: StockAnalysis = {
   logo: '',
   name: { English: 'Intel' },
   description: [],
-  shortName: 'Intel',
+  displayName: 'Intel',
   ticker: 'INTC',
   myRating: Rating.Bullish,
 

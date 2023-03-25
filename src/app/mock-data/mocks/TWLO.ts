@@ -4,7 +4,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const twlo: StockAnalysis = {
   marketCap: 21 * BILLION,
-  shortName: 'Twilio',
+  displayName: 'Twilio',
 
   predications: [
     {

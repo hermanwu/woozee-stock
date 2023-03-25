@@ -9,7 +9,7 @@ export const estc: StockAnalysis = {
   ticker: 'estc',
   irAddress: 'https://ir.elastic.co/home/default.aspx',
 
-  shortName: 'Elastic',
+  displayName: 'Elastic',
 
   earningsReports: [
     {

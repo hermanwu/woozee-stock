@@ -1,5 +1,5 @@
 <div class="flex-display">
-  <app-badge>{{ stock.shortName }}</app-badge>
+  <app-badge>{{ stock.displayName }}</app-badge>
 
   <span>🆚</span>
 
@@ -95,7 +95,7 @@
     </div>
 
     <div item-1>
-      <div class="sub-label">{{ stock.shortName || stock.name }}</div>
+      <div class="sub-label">{{ stock.displayName || stock.name }}</div>
 
       <div class="label">
         {{ stock.ticker | uppercase }}
@@ -131,7 +131,7 @@
 
     <div item-2 *ngIf="toCompareList[0]">
       <div class="sub-label">
-        {{ toCompareList[0]?.shortName || stock.name }}
+        {{ toCompareList[0]?.displayName || stock.name }}
       </div>
 
       <div class="label">

@@ -8,7 +8,7 @@ export const zm: StockAnalysis = {
   name: 'Zoom Video Communications, Inc.',
   description: [],
   ticker: 'zm',
-  shortName: 'Zoom Video',
+  displayName: 'Zoom Video',
   irAddress: 'https://investors.zoom.us/',
   industries: [IndustryType.digitalTransformation],
 

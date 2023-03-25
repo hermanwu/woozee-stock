@@ -222,7 +222,7 @@ export const snap: StockAnalysis = {
 
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Snapchat--Logo.png/1024px-Snapchat--Logo.png',
   name: 'Snap Inc.',
-  shortName: 'Snap',
+  displayName: 'Snap',
   description: [
     {
       content:

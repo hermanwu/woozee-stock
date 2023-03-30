@@ -4,6 +4,7 @@ import { UserServices } from 'src/app/accounts/services/user.services';
 import { ImageServices } from 'src/app/images/services/images.services';
 import { stockTagsMock } from 'src/app/shared/data/const/tag.mock';
 import { industryEmojiMap } from 'src/app/shared/data/enum/emoji.enum';
+import { TagServices } from 'src/app/shared/services/tag.services';
 import { TwitterDisplayDialogComponent } from 'src/app/ui/components/twitter-display-dialog/twitter-display-dialog.component';
 import { environment } from 'src/environments/environment';
 import { StockMetric } from '../../components/stock-metric-display/stock-metric.enum';
@@ -26,7 +27,7 @@ export class NewsDisplayComponent implements OnChanges {
   readonly eventType = EventType;
   environment = environment;
 
-  imageLink: string;
+  imageLinks = [];
   stock: StockAnalysis;
   showDetails = false;
 
@@ -34,14 +35,18 @@ export class NewsDisplayComponent implements OnChanges {
     private imageServices: ImageServices,
     private stockServices: StockServices,
     private dialogService: MatDialog,
-    private userService: UserServices
+    private userService: UserServices,
+    private tagService: TagServices
   ) {}
 
   ngOnChanges(): void {
-    if (this.news?.tickers?.length) {
-      const ticker = this.news.tickers[0];
-      this.imageLink = this.imageServices.getImage(ticker);
-      this.stock = this.stockServices.getStockByTicker(ticker);
+    if (this.news?.tags?.length) {
+      for (let tag of this.news.tags) {
+        const tagData = this.tagService.getTagRelatedDataByUuid(tag);
+        if (tagData) {
+          this.imageLinks.push(tagData);
+        }
+      }
     }
   }
 

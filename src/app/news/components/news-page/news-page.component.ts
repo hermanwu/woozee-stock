@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { DailyMediumReportDisplayDialogComponent } from 'src/app/news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { OpinionServices } from 'src/app/notes/services/opinion.services';
-import { Note } from 'src/app/shared/data/note.interface';
+import { Note, NoteType } from 'src/app/shared/data/note.interface';
 import { Industry } from 'src/app/stock/models/industry.model';
 import { EventType } from 'src/app/stock/models/news.model';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
@@ -17,16 +17,18 @@ import { InstagramNewsDisplayDialogComponent } from '../news-display-dialog/news
   styleUrls: ['./news-page.component.scss'],
 })
 export class NewsPageComponent implements OnInit {
-  environment = environment;
+  readonly NoteType = NoteType;
   readonly eventType = EventType;
-  showTools: boolean = false;
-  news: Note[];
-  stocks: StockAnalysis[];
-  notes: Note[];
-  markets: Industry[];
-  showAddNotesSection = false;
 
+  chips = new Set();
+  environment = environment;
+  markets: Industry[];
+  notes: Note[];
+  filteredNotes: Note[];
   savedNoteUuids = new Set();
+  showAddNotesSection = false;
+  showTools: boolean = false;
+  stocks: StockAnalysis[];
 
   constructor(
     private newsService: NewsService,
@@ -34,18 +36,15 @@ export class NewsPageComponent implements OnInit {
     private dialogService: MatDialog,
     private userServices: UserServices
   ) {
-    const opinions = opinionService
-      .getAllOpinions()
-      .map((opinion) => ({ ...opinion, noteType: 'opinion' }));
-    const news = newsService.getAllNews();
-    this.news = [...opinions, ...news]
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-      .slice(0, 15);
+    this.notes = newsService.getAllNews();
+    this.filteredNotes = this.filteredNotesByTypes(undefined, [...this.notes]);
 
     this.userServices
       .getSavedNotes()
       .map((uuid) => this.savedNoteUuids.add(uuid));
   }
+
+  ngOnInit(): void {}
 
   openDailyReportDialog() {
     this.dialogService.open<DailyMediumReportDisplayDialogComponent>(
@@ -58,8 +57,6 @@ export class NewsPageComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {}
-
   openInstagramDialog(note: Note) {
     this.dialogService.open<InstagramNewsDisplayDialogComponent>(
       InstagramNewsDisplayDialogComponent,
@@ -69,4 +66,30 @@ export class NewsPageComponent implements OnInit {
       }
     );
   }
+
+  toggleChip = (chip: any) => {
+    const addChip = () => {
+      this.chips.add(chip);
+    };
+    const removeChip = () => {
+      this.chips.delete(chip);
+    };
+
+    this.chips.has(chip) ? removeChip() : addChip();
+
+    this.filteredNotes = this.filteredNotesByTypes(
+      Array.from(this.chips.keys()) as NoteType[],
+      this.notes
+    );
+  };
+
+  filteredNotesByTypes = (types: (NoteType | string)[], notes: Note[]) => {
+    let filteredNotes = [...notes];
+    if (types?.length > 0) {
+      filteredNotes = notes.filter((note) => types.includes(note.noteType));
+    }
+    return filteredNotes
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, 15);
+  };
 }

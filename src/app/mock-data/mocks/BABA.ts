@@ -5,11 +5,13 @@ import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const baba: StockAnalysis = {
+  uuid: 'baba',
   marketCap: 277.39 * BILLION,
-  logo: '',
   name: 'Alibaba',
   displayName: 'Alibaba',
   description: [],
+  logoLink:
+    'https://i.ibb.co/PCs6DM8/316943607-10160101339785073-6829330401069941678-n.jpg',
   ticker: 'baba',
   irAddress: 'https://www.alibabagroup.com/en/ir/home',
   business: {

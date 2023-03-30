@@ -5,6 +5,8 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const lulu: StockAnalysis = {
   name: 'Lululemon',
   ticker: 'lulu',
+  displayName: 'Lululemon',
+  logoLink: 'https://i.ibb.co/hgdjS2g/download-4.png',
   irAddress: 'https://corporate.lululemon.com/investors',
   earningsReports: [
     {

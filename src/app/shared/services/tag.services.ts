@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
+import { GroupsServices } from 'src/app/industries/services/groups.services';
+import { PeopleServices } from 'src/app/people/services/people.services';
+import { StockServices } from 'src/app/stock/services/objective-data.service';
+import { Tag, TagType } from '../data/tag.model';
 
-export enum TagType {
-  Investor = 'Investor',
-  Stock = 'Stock',
-  Market = 'Market',
-  Industry = 'Industry',
-}
 const tags = {
   谷歌: 'Google',
   亚马逊: 'Amazon',
@@ -24,7 +22,11 @@ const tagSet = new Set([
   providedIn: 'root',
 })
 export class TagServices {
-  constructor() {}
+  constructor(
+    private stockServices: StockServices,
+    private peopleServices: PeopleServices,
+    private groupServices: GroupsServices
+  ) {}
 
   getAllTags(): { type: TagType; url: string; keyword: string }[] {
     return [];
@@ -73,6 +75,44 @@ export class TagServices {
         .split(' ')
         .map((word) => word.trim()?.[0]?.toUpperCase() + word.slice(1))
         .join('');
+    }
+  }
+
+  getTagRelatedDataByUuid(tagUuid: string): Tag {
+    let cleanedTagUuid = tagUuid.trim()?.toLowerCase();
+
+    let stock = this.stockServices.getStockByUuid(cleanedTagUuid);
+
+    if (stock) {
+      return {
+        uuid: tagUuid,
+        displayName: stock.displayName,
+        imageLink: stock.logoLink,
+        type: TagType.Stock,
+      };
+    }
+
+    let person = this.peopleServices.getPersonByUuid(cleanedTagUuid);
+
+    if (person) {
+      return {
+        uuid: tagUuid,
+        displayName: person.displayName,
+        imageLink: person.imageLink,
+        type: TagType.People,
+      };
+    }
+
+    let group = this.groupServices.getGroupByUuid(cleanedTagUuid);
+
+    if (group) {
+      return {
+        uuid: tagUuid,
+        link: group.logoLink,
+        displayName: group.displayName,
+        imageLink: group.logoLink,
+        type: TagType.Group,
+      };
     }
   }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { people } from '../../mock-data/mock-people.data';
+import { Person } from '../components/investor-display/investor-display.component';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class PeopleServices {
     }
   }
 
-  getPersonByUuid(uuid: string) {
+  getPersonByUuid(uuid: string): Person {
     return this.peopleMap.get(uuid);
   }
 }

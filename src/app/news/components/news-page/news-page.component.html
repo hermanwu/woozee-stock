@@ -1,5 +1,21 @@
 <app-title-menu>
-  <div header-1>Trending</div>
+  <div left-items class="inline-display">
+    <h1>Trending</h1>
+
+    <mat-chip-list class="chip-list" [multiple]="true" selectable>
+      <mat-chip
+        (click)="toggleChip(NoteType.Fact)"
+        [selected]="chips.has(NoteType.Fact)"
+        >Facts</mat-chip
+      >
+      <mat-chip
+        (click)="toggleChip(NoteType.Opinion)"
+        [selected]="chips.has(NoteType.Opinion)"
+        >Opinions</mat-chip
+      >
+    </mat-chip-list>
+  </div>
+
   <div right-items>
     <button mat-icon-button [matMenuTriggerFor]="newsMenu">
       <mat-icon>more_horiz</mat-icon>
@@ -22,7 +38,7 @@
 
 <div *ngIf="showTools"></div>
 
-<div class="news-card" *ngFor="let item of news">
+<div class="news-card" *ngFor="let item of filteredNotes">
   <app-card>
     <app-title-menu>
       <div left-items>
@@ -41,7 +57,7 @@
 
           <app-tags-display
             class="margin-left-5"
-            [tags]="item?.tags"
+            [tagUuids]="item?.tags"
             [content]="item?.content"
           >
           </app-tags-display>
@@ -70,7 +86,7 @@
             <a href="{{ item.sourceLink }}" target="_blank"> read more </a>
           </button>
 
-          <button mat-menu-item [cdkCopyToClipboard]="news.uuid">
+          <button mat-menu-item [cdkCopyToClipboard]="item.uuid">
             Copy UUID
           </button>
 

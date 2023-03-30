@@ -18,16 +18,13 @@
       <app-date-display [date]="news?.date"></app-date-display>
     </span>
 
-    <app-tags-display [tags]="news?.tags"> </app-tags-display>
+    <app-tags-display [tagUuids]="news?.tags"> </app-tags-display>
   </div>
 </ng-container>
 
 <ng-template #fullVersion>
   <div class="news-image">
-    <app-stock-image-display
-      [imageLinks]="news?.imageLinks"
-      [tag]="news?.tags?.[0]"
-    ></app-stock-image-display>
+    <app-ui-images-display [images]="imageLinks"></app-ui-images-display>
   </div>
 
   <div class="content">

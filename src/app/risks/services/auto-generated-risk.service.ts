@@ -4,8 +4,6 @@ import { FactType } from '../models/fact-type.enum';
 import { Term } from '../models/risk-level.model';
 import { Risk } from '../models/risk.model';
 
-export class Tag {}
-
 @Injectable({
   providedIn: 'root',
 })

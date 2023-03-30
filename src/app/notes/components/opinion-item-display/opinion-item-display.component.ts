@@ -6,13 +6,12 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import { GroupsServices } from 'src/app/industries/services/groups.services';
-import { IndustriesService } from 'src/app/markets/services/industries.service';
 import { NewsService } from 'src/app/news/services/news.services';
 import { OrganizationServices } from 'src/app/organizations/services/organization.services';
 import { PeopleServices } from 'src/app/people/services/people.services';
 import { Note } from 'src/app/shared/data/note.interface';
-import { StockServices } from 'src/app/stock/services/objective-data.service';
+import { Tag } from 'src/app/shared/data/tag.model';
+import { TagServices } from 'src/app/shared/services/tag.services';
 import { Opinion } from '../opinion-display/opinion.interface';
 
 @Component({
@@ -28,14 +27,12 @@ export class OpinionItemDisplayComponent implements OnInit, OnChanges {
   imageLinks = [];
   organization: any;
   parentExpanded = false;
-  targetNames: string[] = [];
   parentNote: Note;
+  targets: Tag[] = [];
 
   constructor(
     private organizationServices: OrganizationServices,
-    private stockServices: StockServices,
-    private industriesServices: IndustriesService,
-    private groupsServices: GroupsServices,
+    private tagServices: TagServices,
     private userService: UserServices,
     private peopleService: PeopleServices,
     private newsServices: NewsService
@@ -66,22 +63,19 @@ export class OpinionItemDisplayComponent implements OnInit, OnChanges {
       });
     }
 
-    if (this.opinion.targets) {
-      for (let target of this.opinion.targets) {
-        const targetItem =
-          this.stockServices.getStockByUuid(target) ||
-          this.groupsServices.getGroupByUuid(target);
-
-        if (targetItem) {
-          this.targetNames.push(targetItem.displayName);
-
-          if (targetItem.logoUrl) {
-            this.imageLinks.push({
-              link: targetItem.logoUrl,
-              title: targetItem.displayName,
-            });
-          }
+    if (this.opinion.tags) {
+      for (let tag of this.opinion.tags) {
+        const imageInfos = this.tagServices.getTagRelatedDataByUuid(tag);
+        if (imageInfos) {
+          this.imageLinks.push(imageInfos);
         }
+      }
+    }
+
+    if (this.opinion.targets) {
+      for (let targetUuid of this.opinion.targets) {
+        const target = this.tagServices.getTagRelatedDataByUuid(targetUuid);
+        this.targets.push(target);
       }
     }
   }

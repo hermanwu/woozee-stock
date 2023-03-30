@@ -18,8 +18,8 @@ export interface Product {
 }
 export interface StockAnalysis {
   uuid?: string;
+  logoLink?: string;
   logo?: string;
-  logoUrl?: string;
   name?: any;
   displayName?: string;
   description?: any[];

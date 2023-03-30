@@ -13,6 +13,7 @@ export const aapl: StockAnalysis = {
   name: 'Apple',
   displayName: 'Apple',
   description: [],
+  logoLink: 'https://i.ibb.co/Jm8hW9K/Screenshot-2023-03-29-at-3-07-34-PM.png',
   trends: [],
   logo: '',
   ticker: 'aapl',

@@ -5,6 +5,9 @@ export const EA: StockAnalysis = {
   name: { English: 'ELECTRONIC ARTS INC.' },
   description: [],
   ticker: 'EA',
+  uuid: 'ea',
+  displayName: 'EA Games',
+  logoLink: 'https://i.ibb.co/n6R2WTM/Screenshot-2023-03-29-at-2-34-47-PM.png',
 
   // Earnings Report:
   earnings: {

@@ -8,6 +8,70 @@ import { Rating } from '../stock/models/rating.model';
 
 export const allNews: Note[] = [
   {
+    targets: ['aapl'],
+    title: "Haven't seen a new product from Apple for a long time!",
+    tags: ['aapl'],
+    rating: 'Bullish',
+    uuid: '8dc5e6e0-2a7e-4137-8795-c6cc2df2ca5d',
+    noteType: 'opinion',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-03-29T22:12:51.867Z',
+  },
+  {
+    title: 'Apple plans to unveil Mixed-Reality Headset on June 5 at WWDC 23',
+    content:
+      'WWDC is Apple’s biggest conference of the year. Free for all developers, WWDC23 will spotlight the latest iOS, iPadOS, macOS, watchOS, and tvOS advancements.\n\nVP of developer relations: “WWDC23 is going to be our biggest and most exciting yet, and we can’t wait to see many of you online and in person at this very special event!” ',
+    tags: ['aapl'],
+    uuid: '9176222c-0ddc-4c59-bcc5-3edb82de7cb8',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-03-29T22:06:40.263Z',
+  },
+  {
+    title: 'Electronic Arts is cutting about 800 jobs, or 6% of workforce',
+    content:
+      'CEO “As we drive greater focus across our portfolio, we are moving away from projects that do not contribute to our strategy, reviewing our real estate footprint, and restructuring some of our teams”',
+    tags: ['ea'],
+    uuid: '5233885a-57f8-45b0-b542-00903768a42b',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-03-29T21:18:23.991Z',
+  },
+  {
+    targets: ['baba'],
+    title: 'Breaking into smaller companies should improve efficiency',
+    tags: ['baba'],
+    rating: 'Bullish',
+    uuid: '04362bad-1a1a-4220-8e2b-607c2a663d53',
+    noteType: 'opinion',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-03-29T20:56:11.559Z',
+    parentUuid: '83cbbee2-a404-42ed-9322-0c4c90beb25e',
+  },
+  {
+    title: 'Lululemon posted strong earnings and upbeat guidance',
+    content:
+      "Total net revenue increased 30%\tto $2.8\tbillion.\n\nOperating income was $314.4 million, or 11.3% operating margin, which is lower than 27.7% margin of Q4 2021.\n\nNext quarter's revenue growth is expected to be around 19%.\nInventories at the end of 2022 increased 50% YoY to $1.4 billion. ",
+    tags: ['lulu'],
+    uuid: '7460d0f3-3b94-4ec5-9049-2cec17f6c06c',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-03-29T15:34:14.935Z',
+  },
+  {
+    title:
+      'Alibaba said it will split its company into six units, each with the ability to go public.',
+    content:
+      'According to Alibaba, this move is “designed to unlock shareholder value and foster market competitiveness.” and “will empower all businesses to become more agile, enhance decision-making, and enable faster responses to market changes”\nSix units including: Taobao Tmall Commerce, Cloud Intelligence, Local Services, Cainiao Smart Logistics, Global Digital Commerce, Digital Media and Entertainment\nTaobao Tmall Commerce Group will remain wholly-owned by Alibaba.',
+    tags: ['baba', ' jackma'],
+    sourceLink:
+      'https://www.cnbc.com/2023/03/28/alibaba-says-it-will-split-into-6-units-that-can-raise-funds-and-ipo.html',
+    uuid: '83cbbee2-a404-42ed-9322-0c4c90beb25e',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-03-28T15:00:55.223Z',
+  },
+  {
     title: 'Salesforce is considering more job cuts amid profit push',
     content:
       'Salesforce Inc. could see another round of job cuts and focus on improving profitability, said Chief Operating Officer.\n\n“The structure of the organization — if we feel like it needs to change and reshape — we’re going to make those moves to drive the efficiencies.”\n\nMeta Platforms Inc., Amazon Inc., and Twilio Inc. announced additional rounds of major cuts in recent weeks, amounting to more than 21,000 workers. ',

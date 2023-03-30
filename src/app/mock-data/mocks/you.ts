@@ -1,7 +1,6 @@
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const you: StockAnalysis = {
-  logo: '',
   name: { English: 'CLEAR SECURE, INC.' },
   description: [],
   ticker: 'YOU',

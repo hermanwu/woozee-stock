@@ -139,7 +139,7 @@ export const amzn: StockAnalysis = {
   name: 'Amazon',
   displayName: 'Amazon',
   description: [],
-  logoUrl: 'https://i.ibb.co/qsZzrS2/download-3.png',
+  logoLink: 'https://i.ibb.co/qsZzrS2/download-3.png',
   irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
   marketCap: 1 * TRILLION,
   industries: [

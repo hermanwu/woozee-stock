@@ -12,3 +12,11 @@
   max-width: 420px;
   margin: 5px auto;
 }
+
+.inline-display {
+  display: flex;
+
+  .chip-list {
+    margin-left: 10px;
+  }
+}

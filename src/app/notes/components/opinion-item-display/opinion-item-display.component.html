@@ -18,7 +18,9 @@
 
     <span> on </span>
 
-    <span *ngFor="let item of targetNames">{{ item }}; </span>
+    <span *ngFor="let item of targets">{{ item?.displayName }} </span>
+
+    <span> 🚀 </span>
   </div>
 
   <div class="h3" *ngIf="opinion.title">⚡ {{ opinion.title }}</div>

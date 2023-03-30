@@ -1,6 +1,7 @@
 import { Quote } from 'src/app/mock-data/mock-opinions.data';
 import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { Fact } from 'src/app/risks/models/fact.model';
+import { Tag } from './tag.model';
 
 /**
  * Interface for a general notes structure
@@ -26,4 +27,5 @@ export interface Note extends Fact, Opinion, Quote, List {
   imageLinks?: string[];
   authorUuid?: string;
   creatorUuid?: string;
+  tag?: Tag[];
 }

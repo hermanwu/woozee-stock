@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { Term } from 'src/app/risks/models/risk-level.model';
-import { RegionCode } from 'src/app/shared/data/enum/region.enum';
-import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { Rating } from 'src/app/stock/models/rating.model';
-import { Stock } from 'src/app/stock/models/stock.model';
-import { opinions } from '../../mock-data/mock-opinions.data';
 import { Opinion } from '../components/opinion-display/opinion.interface';
 
 @Injectable({
@@ -14,40 +10,7 @@ import { Opinion } from '../components/opinion-display/opinion.interface';
 export class OpinionServices {
   opinions: Opinion[] = null;
 
-  constructor(private userServices: UserServices) {
-    this.opinions = this.userServices.getOpinions();
-  }
-
-  getAllOpinions() {
-    return opinions;
-  }
-
-  getOpinionsByStock(stock: Stock): Opinion[] {
-    return this.opinions.filter(
-      (opinion) =>
-        opinion?.targets?.filter(
-          (tag) => tag.toLowerCase() === stock.ticker.toLowerCase()
-        ).length > 0
-    );
-  }
-
-  getOpinionsByIndustry(industry: IndustryType): Opinion[] {
-    return this.opinions.filter(
-      (opinion) =>
-        opinion?.targets?.filter(
-          (tag) => tag.toLowerCase() === industry.toLowerCase()
-        ).length > 0
-    );
-  }
-
-  getOpinionsByRegionCode(regionCode: RegionCode): Opinion[] {
-    return this.opinions.filter(
-      (opinion) =>
-        opinion?.targets?.filter(
-          (tag) => tag.toLowerCase() === regionCode.toLowerCase()
-        ).length > 0
-    );
-  }
+  constructor(private userServices: UserServices) {}
 
   getOpinionScore(opinions: Opinion[]): [number, number] {
     let shortTermScore = 0;

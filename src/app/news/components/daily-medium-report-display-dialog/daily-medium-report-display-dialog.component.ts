@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventType } from 'src/app/stock/models/news.model';
 import { StatsDisplay } from '../../../shared/components/stats-display/stats-display.interface';
 import { getUtcDate } from '../../../shared/functions/getUtcDate.function';
-import { NewsService } from '../../services/news.services';
+import { NotesServices } from '../../services/news.services';
 
 @Component({
   selector: 'app-daily-medium-report-display-dialog',
@@ -56,7 +56,7 @@ export class DailyMediumReportDisplayDialogComponent implements OnInit {
   overviewNews = [];
   investorNews = [];
 
-  constructor(private newsService: NewsService) {
+  constructor(private newsService: NotesServices) {
     this.allNews = this.newsService.getNewsByDate(new Date(2022, 8, 22));
     const tags = [];
     for (let news of this.allNews) {

@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IndustriesService } from 'src/app/markets/services/industries.service';
-import { NewsService } from 'src/app/news/services/news.services';
+import { NotesServices } from 'src/app/news/services/news.services';
 import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { OpinionServices } from 'src/app/notes/services/opinion.services';
 import { Note } from 'src/app/shared/data/note.interface';
@@ -34,7 +34,7 @@ export class IndustryPropertiesPageComponent implements OnInit, OnDestroy {
     private marketService: IndustriesService,
     private stockServices: StockServices,
     private opinionService: OpinionServices,
-    private newsService: NewsService
+    private newsService: NotesServices
   ) {}
 
   ngOnInit(): void {
@@ -45,10 +45,6 @@ export class IndustryPropertiesPageComponent implements OnInit, OnDestroy {
       this.market = this.marketService.getMarketsByTypes([this.marketType])[0];
 
       this.stocks = this.stockServices.getStocksByIndustryType(this.marketType);
-
-      this.opinions = this.opinionService.getOpinionsByIndustry(
-        this.marketType
-      );
 
       this.news = this.newsService.getNewsByTags([this.marketType]);
     });

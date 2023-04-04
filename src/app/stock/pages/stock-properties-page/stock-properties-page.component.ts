@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import { NewsService } from 'src/app/news/services/news.services';
+import { NotesServices } from 'src/app/news/services/news.services';
 import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { OpinionServices } from 'src/app/notes/services/opinion.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
@@ -51,7 +51,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
     private objectiveDataService: StockServices,
     private opinionServices: OpinionServices,
     private userServices: UserServices,
-    private newsService: NewsService
+    private newsService: NotesServices
   ) {}
 
   ngOnInit(): void {
@@ -63,10 +63,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         .get(this.stockTicker);
 
       if (this.stockAnalysis) {
-        this.opinions = this.opinionServices.getOpinionsByStock(
-          this.stockAnalysis
-        );
-
         [this.shortTermScore, this.longTermScore] =
           this.opinionServices.getOpinionScore(this.opinions);
 

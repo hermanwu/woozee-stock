@@ -7,7 +7,7 @@ import { allNews } from '../../mock-data/news.const';
 @Injectable({
   providedIn: 'root',
 })
-export class NewsService {
+export class NotesServices {
   news: Note[] = allNews;
 
   constructor(private userServices: UserServices) {}
@@ -39,5 +39,9 @@ export class NewsService {
 
   getNotesByUuids(uuids: string[]) {
     return this.news.filter((item) => uuids.includes(item.uuid));
+  }
+
+  getNotesByCreatorUuid(uuid: string) {
+    return this.news.filter((item) => item.creatorUuid === uuid);
   }
 }

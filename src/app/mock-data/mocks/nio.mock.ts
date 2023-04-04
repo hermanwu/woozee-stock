@@ -13,6 +13,7 @@ export const nio: StockAnalysis = {
     },
   ],
   name: 'NIO Inc,',
+  logoLink: 'https://i.ibb.co/j3ZmyNB/nio-600.png',
   displayName: 'NIO',
   ticker: 'NIO',
   irAddress: 'https://ir.nio.com/financials/quarterly-results',

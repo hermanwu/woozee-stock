@@ -1,27 +1,26 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import { v4 as generateUuid } from 'uuid';
-import { NoteType } from '../../../shared/data/note.interface';
+import { Note, NoteType } from '../../../shared/data/note.interface';
 import { TagServices } from '../../../shared/services/tag.services';
 import { News } from '../../../stock/models/news.model';
 import { Rating } from '../../../stock/models/rating.model';
-
-const tags = {
-  亚马逊: 'amzn',
-  元: 'meta',
-  科技: 'technology',
-  互联网: 'internet',
-  美联储: 'fed',
-};
-const tagSet = new Set([...Object.values(tags), ...Object.keys(tags)]);
 @Component({
   selector: 'app-add-news-form',
   templateUrl: './add-news-form.component.html',
   styleUrls: ['./add-news-form.component.scss'],
 })
-export class AddNewsFormComponent implements OnInit {
-  @Output() newsUuid = new EventEmitter<string>();
+export class AddNewsFormComponent implements OnInit, OnChanges {
+  @Output() newNote = new EventEmitter<Note>();
+  @Input() note: Note;
 
   newsForm: FormGroup;
   news: News;
@@ -34,10 +33,18 @@ export class AddNewsFormComponent implements OnInit {
     private userServices: UserServices
   ) {}
 
-  ngOnInit(): void {
-    const newsUuid = generateUuid();
-    this.newsUuid.emit(newsUuid);
+  ngOnInit(): void {}
 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.newsForm);
+    if (changes.note && !this.newsForm) {
+      this.createForm();
+      this.newsForm.patchValue({ uuid: changes.note.currentValue.uuid });
+      console.log(this.newsForm);
+    }
+  }
+
+  createForm() {
     this.newsForm = this.formBuilder.group({
       targets: [],
       title: [],
@@ -45,11 +52,12 @@ export class AddNewsFormComponent implements OnInit {
       tags: [],
       sourceLink: [],
       rating: [],
-      uuid: [newsUuid],
+      uuid: [],
       noteType: [NoteType.Fact],
       authorUuid: [],
       creatorUuid: 'hwu1106@gmail.com',
     });
+    console.log(this.newsForm);
   }
 
   /**
@@ -75,7 +83,7 @@ export class AddNewsFormComponent implements OnInit {
       date: new Date(),
     };
 
-    if (news.type === NoteType.Opinion) {
+    if (news.noteType === NoteType.Opinion) {
       news.creatorUuid = this.userServices.getRandomUser().uuid;
     }
 
@@ -86,6 +94,10 @@ export class AddNewsFormComponent implements OnInit {
     }
 
     this.news = news;
+
+    console.log(this.newsForm);
+
+    this.newNote.emit(news);
   }
 
   setNote(noteType: NoteType) {

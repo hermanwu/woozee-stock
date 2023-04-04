@@ -10,7 +10,7 @@ import { ListComponent } from './list/list.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
 import { RegionPropertiesPageComponent } from './markets/components/region-properties-page/region-properties-page.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
-import { AddNewsFormComponent } from './notes/components/add-news-form/add-news-form.component';
+import { NoteFormListComponent } from './note-form-list/note-form-list.component';
 import { CatalystPageComponent } from './notes/components/catalyst/components/catalyst-page/catalyst-page.component';
 import { NotesListPageComponent } from './notes/components/notes-list-page/notes-list-page.component';
 import { MePageComponent } from './notes/components/opinion-page/blog-page.component';
@@ -103,7 +103,7 @@ const routes: Routes = [
           {
             path: 'note-form',
             pathMatch: 'full',
-            component: AddNewsFormComponent,
+            component: NoteFormListComponent,
           },
           {
             path: 'add-person',

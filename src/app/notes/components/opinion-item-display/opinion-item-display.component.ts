@@ -6,7 +6,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import { NewsService } from 'src/app/news/services/news.services';
+import { NotesServices } from 'src/app/news/services/news.services';
 import { OrganizationServices } from 'src/app/organizations/services/organization.services';
 import { PeopleServices } from 'src/app/people/services/people.services';
 import { Note } from 'src/app/shared/data/note.interface';
@@ -35,7 +35,7 @@ export class OpinionItemDisplayComponent implements OnInit, OnChanges {
     private tagServices: TagServices,
     private userService: UserServices,
     private peopleService: PeopleServices,
-    private newsServices: NewsService
+    private newsServices: NotesServices
   ) {}
 
   ngOnInit(): void {}

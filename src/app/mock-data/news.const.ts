@@ -8,13 +8,84 @@ import { Rating } from '../stock/models/rating.model';
 
 export const allNews: Note[] = [
   {
+    title: 'My Tip',
+    content:
+      'Use large in money call to represent a position.\n\nBuy short term out of money call or put to hedge large jump.\n\nSell covered calls because you will never loss money.',
+    tags: [],
+    uuid: 'ad5b7920-8376-4893-8ebb-26c0455026db',
+    noteType: 'quote',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-04-03T20:28:41.578Z',
+  },
+  {
+    title: 'My Mistakes',
+    content:
+      'Avoid bet too much on one stock. Tesla could drop 40% within a month.\n\nAvoid sell naked puts. Avoid selling more than one put option on the same stock.',
+    tags: [],
+    uuid: '1a8c9118-b0b9-4622-b880-cb36577b9a1f',
+    noteType: 'quote',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-04-03T20:27:42.180Z',
+  },
+  {
+    targets: ['LI'],
+    title:
+      "Numbers don't lie. Chinese prefer Li Auto's battery + fuel tank strategy.",
+    tags: ['LI'],
+    rating: 'Bullish',
+    uuid: 'e7d11b7c-901f-4543-95bc-c9f4321becfa',
+    noteType: 'opinion',
+    creatorUuid: 'herman.wrt@gmail.com',
+    date: '2023-04-03T06:33:56.035Z',
+  },
+  {
+    title: 'Chinese EV startups released quarterly deliveries',
+    content:
+      'Li Auto delivered 52,584 vehicles, up 66% YoY\n\nNio delivered 31,041 vehicles, up 20.5% YoY\n\nXpeng delivered 18,230 vehicles, down 47% YoY\n\nIn comparison, BYD sold 264,647 vehicles, up 80% YoY',
+    tags: ['li', 'xpev', 'nio'],
+    uuid: 'd5424ccc-051f-4fe0-a9a6-a62a63d52aa4',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-04-03T06:31:02.987Z',
+  },
+  {
+    title: 'Tesla 2023 first quarter deliveries was 422,875, 36% growth YoY',
+    content:
+      'The number was inline with the estimates.\n\nTesla has slashed prices early this year to boost demand.\nElon Musk said Tesla aims to make 1.8 million to 2 million vehicles this year. \n',
+    tags: ['tsla'],
+    uuid: 'aa65d334-8c3d-40ca-943c-06eaaa5f02c5',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-04-02T23:01:36.835Z',
+  },
+  {
+    title: 'Roku to slash 200 jobs, or 6% of the workforce',
+    content:
+      'Company described the round of layoffs as a "restructuring plan" to "lower the Company\'s year-over-year operating expense growth and prioritize projects that the Company believes will have a higher return on investment"',
+    tags: ['Roku'],
+    uuid: '1e7d78b5-30ec-4e0b-96ab-f82f4626b555',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-03-31T17:01:42.187Z',
+  },
+  {
+    title: 'The Fed’s Preferred Inflation Metric is lower than expected\n',
+    content:
+      'The personal consumption expenditures price index excluding food and energy increased 0.3% for the month, according to the Commerce Department reported. \nIt is below the 0.4% estimate and lower than the 0.5% January increase.',
+    tags: ['spy'],
+    uuid: '3854119c-585b-45e8-aa8e-c6ab94978ebc',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-03-31T16:55:50.867Z',
+  },
+  {
     targets: ['aapl'],
     title: "Haven't seen a new product from Apple for a long time!",
     tags: ['aapl'],
     rating: 'Bullish',
     uuid: '8dc5e6e0-2a7e-4137-8795-c6cc2df2ca5d',
     noteType: 'opinion',
-    creatorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'herman.wrt@gmail.com',
     date: '2023-03-29T22:12:51.867Z',
   },
   {
@@ -44,7 +115,7 @@ export const allNews: Note[] = [
     rating: 'Bullish',
     uuid: '04362bad-1a1a-4220-8e2b-607c2a663d53',
     noteType: 'opinion',
-    creatorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'herman.wrt@gmail.com',
     date: '2023-03-29T20:56:11.559Z',
     parentUuid: '83cbbee2-a404-42ed-9322-0c4c90beb25e',
   },
@@ -104,7 +175,7 @@ export const allNews: Note[] = [
     rating: 'Bearish',
     uuid: 'd8c710cd-162f-4519-8dd4-aa57558f803c',
     noteType: 'opinion',
-    creatorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'herman.wrt@gmail.com',
     date: '2023-03-23T22:55:06.715Z',
   },
   {
@@ -114,7 +185,7 @@ export const allNews: Note[] = [
     rating: 'Bullish',
     uuid: '38e3e099-cb49-457e-b54e-977db6d6fa42',
     noteType: 'opinion',
-    creatorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'herman.wrt@gmail.com',
     date: '2023-03-23T22:39:11.780Z',
   },
   {
@@ -125,7 +196,7 @@ export const allNews: Note[] = [
     rating: 'Bullish',
     uuid: '69ebf096-c688-4e7f-8d37-c3966581a499',
     noteType: 'opinion',
-    creatorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'herman.wrt@gmail.com',
     date: '2023-03-23T21:37:01.238Z',
   },
   {

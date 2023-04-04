@@ -3,11 +3,11 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const xpev: StockAnalysis = {
-  logo: '',
+  logoLink: 'https://i.ibb.co/mtkLgbD/download-5.png',
   name: 'XPENG INC.',
   description: [],
   ticker: 'XPEV',
-  displayName: 'XPENG',
+  displayName: 'Xpeng',
   marketCap: 24 * BILLION,
   irAddress: 'https://ir.xiaopeng.com/overview/default.aspx',
   earningsReports: [

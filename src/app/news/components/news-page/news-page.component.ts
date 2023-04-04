@@ -8,7 +8,7 @@ import { Industry } from 'src/app/stock/models/industry.model';
 import { EventType } from 'src/app/stock/models/news.model';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
 import { environment } from 'src/environments/environment';
-import { NewsService } from '../../services/news.services';
+import { NotesServices } from '../../services/news.services';
 import { InstagramNewsDisplayDialogComponent } from '../news-display-dialog/news-display-dialog.component';
 
 @Component({
@@ -31,7 +31,7 @@ export class NewsPageComponent implements OnInit {
   stocks: StockAnalysis[];
 
   constructor(
-    private newsService: NewsService,
+    private newsService: NotesServices,
     private opinionService: OpinionServices,
     private dialogService: MatDialog,
     private userServices: UserServices

@@ -32,8 +32,9 @@ import { DailyMediumReportDisplayDialogComponent } from './news/components/daily
 import { MediaLinkComponent } from './news/components/media-link/media-link.component';
 import { InstagramNewsDisplayDialogComponent } from './news/components/news-display-dialog/news-display-dialog.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
+import { NoteContainerComponent } from './note-container/note-container.component';
+import { NoteFormListComponent } from './note-form-list/note-form-list.component';
 import { AddNewsFormComponent } from './notes/components/add-news-form/add-news-form.component';
-import { AddNoteComponent } from './notes/components/add-note/add-note.component';
 import { BoosterComponent } from './notes/components/catalyst/booster/booster.component';
 import { CatalystListComponent } from './notes/components/catalyst/components/catalyst-list/catalyst-list.component';
 import { CatalystPageComponent } from './notes/components/catalyst/components/catalyst-page/catalyst-page.component';
@@ -125,7 +126,6 @@ import { UiListComponent } from './ui/ui-list/ui-list.component';
 import { UiMoleculesComponent } from './ui/ui-molecules/ui-molecules.component';
 import { UiOrganismComponent } from './ui/ui-organism/ui-organism.component';
 import { UiTemplatesComponent } from './ui/ui-templates/ui-templates.component';
-import { NoteContainerComponent } from './note-container/note-container.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -219,7 +219,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     MarketPageComponent,
     RegionPropertiesPageComponent,
     AssetListPageComponent,
-    AddNoteComponent,
     AddNewsFormComponent,
     ContentDisplayComponent,
     ListComponent,
@@ -241,6 +240,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     ComparisonNoteComponent,
     UiImagesDisplayComponent,
     NoteContainerComponent,
+    NoteFormListComponent,
   ],
   imports: [
     BrowserModule,

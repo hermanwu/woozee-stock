@@ -4,7 +4,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const roku: StockAnalysis = {
   marketCap: 13 * BILLION,
   logo: '',
-  name: 'roku, INC.',
+  uuid: 'roku',
   description: [],
   ticker: 'roku',
   displayName: 'Roku',

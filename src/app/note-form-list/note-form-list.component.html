@@ -1,0 +1,18 @@
+<div>
+  <button mat-button (click)="addNewNote()">New Note</button>
+</div>
+
+<mat-divider></mat-divider>
+
+<div *ngFor="let item of notes; trackBy: trackByUuid">
+  {{ item | json }}
+
+  <div>
+    <app-add-news-form
+      [note]="item"
+      (newNote)="update($event)"
+    ></app-add-news-form>
+  </div>
+
+  <mat-divider></mat-divider>
+</div>

@@ -56,6 +56,7 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
       noteType: [NoteType.Fact],
       authorUuid: [],
       creatorUuid: 'hwu1106@gmail.com',
+      parentUuid: [],
     });
     console.log(this.newsForm);
   }

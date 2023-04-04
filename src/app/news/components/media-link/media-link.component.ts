@@ -19,12 +19,15 @@ export class MediaLinkComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     if (this.link) {
-      this.domain = this.getDomainFromUrl(this.link);
+      this.domain = this.getDomainAndSuffix(this.link);
     }
   }
 
-  private getDomainFromUrl(url: string): string {
-    const domain = url.split('/')[2].split('.')[1];
-    return domain;
+  getDomainAndSuffix(url: string): string {
+    const parsedUrl = new URL(url);
+    const domainParts = parsedUrl.hostname.split('.');
+    const suffix = domainParts.pop()!;
+    const domain = domainParts.pop()!;
+    return domain + '.' + suffix;
   }
 }

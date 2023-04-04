@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserServices } from '../../../accounts/services/user.services';
-import { Opinion } from '../../../notes/components/opinion-display/opinion.interface';
-import { EmojiUnicode } from '../../../shared/data/enum/emoji.enum';
-import { Rating } from '../../../stock/models/rating.model';
+import { opinionMock } from '../../ui-molecules/ui-molecules.component';
 @Component({
   selector: 'app-ui-components-page',
   templateUrl: './ui-components-page.component.html',
@@ -20,10 +18,7 @@ export class UiComponentsPageComponent implements OnInit {
   activeRoute: string = this.noteFormRoute;
 
   newsUuid: string;
-  opinionMock: Opinion = {
-    rating: Rating.Bearish,
-    emojis: [EmojiUnicode.thumbDown],
-  };
+  opinionMock = opinionMock;
   mockPortfolio;
   rankedStocks;
   globalRanking = this.userServices.getGlobalRanking();

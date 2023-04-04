@@ -45,4 +45,8 @@
       ></app-stock-image-display>
     </div>
   </div>
+
+  <div class="source" *ngIf="news?.sourceLink">
+    📍<app-media-link [link]="news.sourceLink"></app-media-link>
+  </div>
 </ng-template>

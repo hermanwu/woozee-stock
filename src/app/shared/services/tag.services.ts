@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GroupsServices } from 'src/app/industries/services/groups.services';
+import { TopicServices } from 'src/app/industries/services/topic.services';
 import { PeopleServices } from 'src/app/people/services/people.services';
 import { StockServices } from 'src/app/stock/services/objective-data.service';
 import { Tag, TagType } from '../data/tag.model';
@@ -25,7 +25,7 @@ export class TagServices {
   constructor(
     private stockServices: StockServices,
     private peopleServices: PeopleServices,
-    private groupServices: GroupsServices
+    private topicServices: TopicServices
   ) {}
 
   getAllTags(): { type: TagType; url: string; keyword: string }[] {
@@ -92,7 +92,10 @@ export class TagServices {
       };
     }
 
+    console.log(cleanedTagUuid);
+
     let person = this.peopleServices.getPersonByUuid(cleanedTagUuid);
+    console.log(person);
 
     if (person) {
       return {
@@ -103,14 +106,13 @@ export class TagServices {
       };
     }
 
-    let group = this.groupServices.getGroupByUuid(cleanedTagUuid);
+    let topic = this.topicServices.getTopicByUuid(cleanedTagUuid);
 
-    if (group) {
+    if (topic) {
       return {
         uuid: tagUuid,
-        link: group.logoLink,
-        displayName: group.displayName,
-        imageLink: group.logoLink,
+        displayName: topic.displayName,
+        imageLink: topic.imageLink,
         type: TagType.Group,
       };
     }

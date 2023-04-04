@@ -20,3 +20,13 @@
     margin-left: 10px;
   }
 }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center vertically */
+}
+
+.buttons {
+  flex: 0 0 80px; /* Set the width of the fixed-width item to 200px */
+}

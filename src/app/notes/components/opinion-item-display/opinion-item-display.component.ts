@@ -6,10 +6,11 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { UserServices } from 'src/app/accounts/services/user.services';
+import { Quote } from 'src/app/mock-data/quote.model';
 import { NotesServices } from 'src/app/news/services/news.services';
 import { OrganizationServices } from 'src/app/organizations/services/organization.services';
 import { PeopleServices } from 'src/app/people/services/people.services';
-import { Note } from 'src/app/shared/data/note.interface';
+import { Fact } from 'src/app/risks/models/fact.model';
 import { Tag } from 'src/app/shared/data/tag.model';
 import { TagServices } from 'src/app/shared/services/tag.services';
 import { Opinion } from '../opinion-display/opinion.interface';
@@ -27,7 +28,7 @@ export class OpinionItemDisplayComponent implements OnInit, OnChanges {
   imageLinks = [];
   organization: any;
   parentExpanded = false;
-  parentNote: Note;
+  parentNote: Quote | Fact | Opinion;
   targets: Tag[] = [];
 
   constructor(

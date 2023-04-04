@@ -15,6 +15,6 @@ export class PeopleServices {
   }
 
   getPersonByUuid(uuid: string): Person {
-    return this.peopleMap.get(uuid);
+    return this.peopleMap.get(uuid.toLowerCase());
   }
 }

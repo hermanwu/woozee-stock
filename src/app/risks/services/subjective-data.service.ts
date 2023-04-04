@@ -1,13 +1,15 @@
+import { Quote } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { allMarkets } from 'src/app/markets/data/all-markets.const';
 import { allNews } from 'src/app/mock-data/news.const';
 import { catalysts } from 'src/app/notes/components/catalyst/data/catalyst.mock';
-import { Note } from 'src/app/shared/data/note.interface';
+import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { Industry } from 'src/app/stock/models/industry.model';
 import { allRisks } from '../data/global-risk.const';
+import { Fact } from '../models/fact.model';
 import { Risk } from '../models/risk.model';
 
 @Injectable({
@@ -16,7 +18,7 @@ import { Risk } from '../models/risk.model';
 export class riskService {
   risks: Risk[];
   catalysts: Catalyst[];
-  newsWithDetails: Note[];
+  newsWithDetails: (Quote | Fact | Opinion)[];
   markets: Industry[];
 
   catalystMap: Map<string, Catalyst> = new Map();

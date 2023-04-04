@@ -21,3 +21,7 @@
     <span class="quote">"</span>
   </li>
 </ul>
+
+<div class="source" *ngIf="quote?.sourceLink">
+  📍<app-media-link [link]="quote.sourceLink"></app-media-link>
+</div>

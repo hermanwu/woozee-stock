@@ -89,7 +89,10 @@ export class NewsPageComponent implements OnInit {
       filteredNotes = notes.filter((note) => types.includes(note.noteType));
     }
     return filteredNotes
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .sort(
+        (a, b) =>
+          new Date(b.createdDate).getTime() - new Date(a.createdDate).getTime()
+      )
       .slice(0, 15);
   };
 }

@@ -1,9 +1,10 @@
 import { FactType } from 'src/app/risks/models/fact-type.enum';
+import { Note } from 'src/app/shared/data/note.interface';
 import { Term } from '../../../risks/models/risk-level.model';
 import { EmojiUnicode } from '../../../shared/data/enum/emoji.enum';
 import { Rating } from '../../../stock/models/rating.model';
 
-export interface Opinion {
+export interface Opinion extends Note {
   authorUuid?: string;
   creatorUuid?: string;
   authorName?: string;
@@ -22,7 +23,6 @@ export interface Opinion {
   actions?: string[];
   tags?: string[];
   parentUuid?: string;
-  uuid?: string;
   organization?: string;
   type?: string;
 

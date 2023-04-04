@@ -7,6 +7,12 @@ import {
 } from 'src/app/shared/functions/ranking.function';
 import { Rating } from 'src/app/stock/models/rating.model';
 
+export const opinionMock: Opinion = {
+  uuid: 'test-uuid',
+  noteType: 'test-note-type',
+  rating: Rating.Bearish,
+  emojis: [EmojiUnicode.thumbDown],
+};
 @Component({
   selector: 'app-ui-molecules',
   templateUrl: './ui-molecules.component.html',
@@ -15,16 +21,12 @@ import { Rating } from 'src/app/stock/models/rating.model';
 export class UiMoleculesComponent implements OnInit {
   sourceLink = 'https://www.bloomberg.com';
 
-  opinionMock: Opinion = {
-    rating: Rating.Bearish,
-    emojis: [EmojiUnicode.thumbDown],
-  };
-
   mockRanks = ['tsla', 'aapl', 'meta', 'amzn'];
   mockItem = 'aapl';
   higherItem = 'meta';
   lowerItem = 'amzn';
   mockResult;
+  opinionMock = opinionMock;
 
   mockImages = [
     {

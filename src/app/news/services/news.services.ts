@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import { Note } from 'src/app/shared/data/note.interface';
+import { Quote } from 'src/app/mock-data/quote.model';
+import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
+import { Fact } from 'src/app/risks/models/fact.model';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { allNews } from '../../mock-data/news.const';
 
@@ -8,7 +10,7 @@ import { allNews } from '../../mock-data/news.const';
   providedIn: 'root',
 })
 export class NotesServices {
-  news: Note[] = allNews;
+  news: (Fact | Quote | Opinion)[] = allNews;
 
   constructor(private userServices: UserServices) {}
 
@@ -20,17 +22,21 @@ export class NotesServices {
     return this.news.filter((item) => !item.title?.match(/[\u3400-\u9FBF]/));
   }
 
-  getAllNews(): Note[] {
+  getAllNews() {
     const language = this.userServices.getLanguage();
     return this.getNewsByLanguage(language);
   }
 
-  getNewsByDate(date: Date): Note[] {
-    return this.news.filter((item) => item.date >= convertDateToUTC(date));
+  getNewsByDate(date: Date) {
+    return this.news.filter(
+      (item) => new Date(item.createdDate) >= convertDateToUTC(date)
+    );
   }
 
   getNewsByTags(tags: string[]) {
-    return this.news.filter((item) => item.tags?.some((t) => tags.includes(t)));
+    return this.news.filter((item) =>
+      item.tagUuids?.some((t) => tags.includes(t))
+    );
   }
 
   getNewsByUuid(uuid: string) {

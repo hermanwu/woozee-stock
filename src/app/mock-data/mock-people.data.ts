@@ -50,4 +50,11 @@ export const people = [
     organizationUuidTitles: [['amazon', 'CEO']],
     imageLink: 'https://i.ibb.co/7CC4LLQ/andy-mug-1.jpg',
   },
+
+  {
+    uuid: 'jamiedimon',
+    displayName: 'Jamie Dimon',
+    imageLink:
+      'https://i.ibb.co/zNjf0gn/Screenshot-2023-04-04-at-2-44-02-PM.png',
+  },
 ];

@@ -1,46 +1,14 @@
-import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { Term } from 'src/app/risks/models/risk-level.model';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { StrategyType } from 'src/app/stock/components/facts/data/stratgies.enum';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
-export const nvdaRisks = [
-  {
-    type: FactType.growth,
-    level: Term.short,
-    name: 'Automotive and Robotic business slows down',
-    notes: [
-      {
-        content:
-          'Fourth-quarter Automotive revenue was $125 million, down 14 percent from a year ago and down 7 percent from the previous quarter. Fiscal-year revenue rose 6 percent to $566 million.',
-      },
-    ],
-  },
-  {
-    type: FactType.valuation,
-    level: Term.short,
-    name: 'P/S and P/E are relatively high',
-    notes: [
-      {
-        content:
-          'Revenue growth will slow down and operating margin does not have much space to grow.',
-      },
-      {
-        content: 'More than double of some of its competitors (AMD) ',
-      },
-      {
-        content: 'Even 200 dollars is a reasonable price in short term',
-      },
-    ],
-  },
-];
-
 export const nvda: StockAnalysis = {
   uuid: 'nvda',
   displayName: 'Nvidia',
   marketCap: 461 * BILLION,
+  logoLink: 'https://i.ibb.co/9yMZysX/Screenshot-2023-04-05-at-8-12-55-AM.png',
 
   // predications: [
   //   {

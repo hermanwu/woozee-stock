@@ -13,8 +13,9 @@ export const googleCatalysts: Catalyst[] = [
 ];
 
 export const googl: StockAnalysis = {
+  uuid: 'googl',
   marketCap: capMock.googl,
-  logo: '',
+  logoLink: 'https://i.ibb.co/yBM2VVB/Screenshot-2023-04-05-at-8-10-06-AM.png',
   name: 'Alphabet',
   displayName: 'Alphabet',
   ticker: 'googl',

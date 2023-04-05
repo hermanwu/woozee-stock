@@ -57,17 +57,17 @@ export class OpinionItemDisplayComponent implements OnInit, OnChanges {
       this.organization = this.organizationServices.getOrganizationByUuid(
         this.opinion.organizationUuid
       );
-
-      this.imageLinks.push({
-        link: this.organization.logoLink,
-        title: this.organization.displayName,
-      });
     }
 
-    if (this.opinion.tags) {
-      for (let tag of this.opinion.tags) {
+    //   this.imageLinks.push({
+    //     link: this.organization.logoLink,
+    //     title: this.organization.displayName,
+    //   });
+
+    if (this.opinion.tagUuids) {
+      for (let tag of this.opinion.tagUuids) {
         const imageInfos = this.tagServices.getTagRelatedDataByUuid(tag);
-        if (imageInfos) {
+        if (imageInfos?.imageLink) {
           this.imageLinks.push(imageInfos);
         }
       }

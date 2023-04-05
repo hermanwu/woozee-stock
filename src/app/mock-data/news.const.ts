@@ -6,8 +6,21 @@ import { Quote } from './quote.model';
 export const allNews: (Quote | Opinion | Fact)[] = [
   {
     title:
+      "Google said its custom chip is faster than Nvidia's chip to train AI models",
+    content:
+      "According to Google research paper, fourth-generation Tensor Processing Units, or TPUs are faster and more power-efficient than Nvidia's A100 chips when training its artificial intelligence models\n\nThe custom chips are between 1.2 and 1.7 times faster than Nvidia's A100 chips, with up to 1.9 times more power efficient",
+    tagUuids: ['googl', ' nvda'],
+    sourceLink:
+      'https://seekingalpha.com/news/3954671-nvidia-slips-google-touts-own-custom-chips',
+    uuid: '5c83c00a-7add-4933-b0f9-ae95b7f627ce',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    date: '2023-04-05T15:06:00.412Z',
+  },
+  {
+    title:
       'All banks will focus on minimizing the risks instead of bringing value to shareholders',
-    tags: ['banking'],
+    tagUuids: ['banking'],
     targets: ['banking'],
     rating: 'Bearish',
     uuid: '11d9b4c8-fb4b-406e-a7d3-e76b7faee78f',
@@ -31,10 +44,10 @@ export const allNews: (Quote | Opinion | Fact)[] = [
   },
   {
     title:
-      'Marko Kolanovic, JPMorgan’s chief global markets strategist says market gains make little sense, S&P 500 to retest lows',
+      'JPMorgan’s chief global markets strategist, Marko Kolanovic says S&P 500 will retest lows',
     content:
-      'For a rational investor, we think this makes little sense and that most of the inflows over the past 2 weeks were driven by systematic investors, short squeeze and a decline in VIX,”\n\n“Any decline in yields is not a sign that the Fed is about to bring a punch bowl for tech stocks, in our view, but rather a sign that recession probability has increased,”\n\n“We expect a reversal in risk sentiment and the market re-testing last year’s low over the coming months.”\n\n“The impact of the monetary tightening historically worked with a lag, and we never had a sustained rally before the Fed has even stopped hiking,”',
-    tagUuids: ['gs', 'fed', 'fed'],
+      'For a rational investor, we think this makes little sense and that most of the inflows over the past 2 weeks were driven by systematic investors, short squeeze and a decline in VIX\n\nAny decline in yields is not a sign that the Fed is about to bring a punch bowl for tech stocks, in our view, but rather a sign that recession probability has increased\n\nWe expect a reversal in risk sentiment and the market re-testing last year’s low over the coming months.\n\nThe impact of the monetary tightening historically worked with a lag, and we never had a sustained rally before the Fed has even stopped hiking',
+    tagUuids: ['jpm'],
     sourceLink:
       'https://www.cnbc.com/2023/04/04/jpmorgans-marko-kolanovic-stock-gains-make-little-sense-sp-500-to-retest-lows.html',
     uuid: 'c44eba44-3583-4f1f-afb9-5c877d0bebcf',

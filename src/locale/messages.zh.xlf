@@ -142,7 +142,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="741259231630f647cebb33c0613b2bfb0a46c93b" datatype="html">
-        <source>Woozee</source>
+        <source>Invesdea</source>
         <target>无极投资</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/app-container/app-container.component.html</context>

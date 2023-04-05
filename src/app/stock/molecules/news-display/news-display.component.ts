@@ -1,8 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { UserServices } from 'src/app/accounts/services/user.services';
-import { ImageServices } from 'src/app/images/services/images.services';
-import { stockTagsMock } from 'src/app/shared/data/const/tag.mock';
+import { Fact } from 'src/app/risks/models/fact.model';
 import { industryEmojiMap } from 'src/app/shared/data/enum/emoji.enum';
 import { TagServices } from 'src/app/shared/services/tag.services';
 import { TwitterDisplayDialogComponent } from 'src/app/ui/components/twitter-display-dialog/twitter-display-dialog.component';
@@ -10,8 +8,6 @@ import { environment } from 'src/environments/environment';
 import { StockMetric } from '../../components/stock-metric-display/stock-metric.enum';
 import { EventType } from '../../models/news.model';
 import { StockAnalysis } from '../../models/stock-analysis.model';
-import { StockServices } from '../../services/objective-data.service';
-import { NewsDisplay } from './news-display.interface';
 
 @Component({
   selector: 'app-news-display',
@@ -20,7 +16,7 @@ import { NewsDisplay } from './news-display.interface';
 })
 export class NewsDisplayComponent implements OnChanges {
   @Input() shortVersion: boolean;
-  @Input() news: NewsDisplay;
+  @Input() news: Fact;
   @Input() expanded: boolean;
 
   readonly industryEmojiMap = industryEmojiMap;
@@ -32,18 +28,15 @@ export class NewsDisplayComponent implements OnChanges {
   showDetails = false;
 
   constructor(
-    private imageServices: ImageServices,
-    private stockServices: StockServices,
     private dialogService: MatDialog,
-    private userService: UserServices,
     private tagService: TagServices
   ) {}
 
   ngOnChanges(): void {
-    if (this.news?.tags?.length) {
-      for (let tag of this.news.tags) {
+    if (this.news?.tagUuids?.length) {
+      for (let tag of this.news.tagUuids) {
         const tagData = this.tagService.getTagRelatedDataByUuid(tag);
-        if (tagData) {
+        if (tagData?.imageLink) {
           this.imageLinks.push(tagData);
         }
       }
@@ -66,10 +59,6 @@ export class NewsDisplayComponent implements OnChanges {
             StockMetric.operatingExpense,
             StockMetric.operatingMargin,
           ],
-          tags: [...(this.news?.tags ? this.news.tags : []), ...stockTagsMock],
-          content: this.news.content,
-          takeAway: this.news.takeAway,
-          stats: this.news.stats,
         },
         panelClass: 'medium-modal-panel',
       }

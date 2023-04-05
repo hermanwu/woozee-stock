@@ -1,7 +1,7 @@
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const jpm: StockAnalysis = {
-  logo: '',
+  logoLink: 'https://i.ibb.co/Jm6LMxp/9cb5qd-Vk-400x400.png',
   name: 'JPMorgan Chase & Co.',
   displayName: 'JP Morgan',
   description: [],

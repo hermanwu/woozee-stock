@@ -13,7 +13,7 @@ export const users = [
   },
   {
     uuid: 'hwu1106@gmail.com',
-    displayName: 'Woozee',
+    displayName: 'Invesdea',
   },
   {
     uuid: 'john.smith@example.com',

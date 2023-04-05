@@ -17,12 +17,8 @@
       ],
       "rewrites": [
         {
-          "source": "/en/**",
-          "destination": "/en/index.html"
-        },
-        {
-          "source": "/zh/**",
-          "destination": "/zh/index.html"
+          "source": "**",
+          "destination": "/index.html"
         }
       ]
     }

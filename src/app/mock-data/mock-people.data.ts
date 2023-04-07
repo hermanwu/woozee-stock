@@ -57,4 +57,11 @@ export const people = [
     imageLink:
       'https://i.ibb.co/zNjf0gn/Screenshot-2023-04-04-at-2-44-02-PM.png',
   },
+
+  {
+    uuid: 'reidhoffman',
+    displayName: 'Reid Hoffman',
+    imageLink:
+      'https://i.ibb.co/XV448gg/Screenshot-2023-04-05-at-3-39-29-PM.png',
+  },
 ];

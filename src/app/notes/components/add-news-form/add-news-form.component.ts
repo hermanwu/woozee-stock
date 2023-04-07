@@ -69,19 +69,20 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
       ? this.newsForm.value.tags.split(',')
       : [];
 
-    const autoTags =
-      this.tagServices.getTags(
-        this.newsForm.value.content + ' ' + this.newsForm.value.title
-      ) || [];
-
     const news = {
-      ...this.newsForm.value,
-      tags: [...tags, ...autoTags],
-
+      title: this.newsForm.value.title,
+      content: this.newsForm.value.content,
+      tagUuids: [...tags],
+      sourceLink: this.newsForm.value.sourceLink,
+      rating: this.newsForm.value.rating,
+      uuid: this.newsForm.value.uuid,
+      noteType: this.newsForm.value.noteType,
+      authorUuid: this.newsForm.value.authorUuid,
+      creatorUuid: this.newsForm.value.creatorUuid,
       targets: this.newsForm.value.targets
         ?.split(',')
         .map((target) => target.trim()),
-      date: new Date(),
+      createdDate: new Date(),
     };
 
     if (news.noteType === NoteType.Opinion) {
@@ -95,8 +96,6 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
     }
 
     this.news = news;
-
-    console.log(this.newsForm);
 
     this.newNote.emit(news);
   }

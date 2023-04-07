@@ -17,7 +17,7 @@ export interface List {
 export interface Note {
   authorUuid?: string;
   content?: string;
-  createdDate?: string;
+  createdDate?: Date | string;
   creatorUuid?: string;
   imageLinks?: string[];
   noteType: string | NoteType;

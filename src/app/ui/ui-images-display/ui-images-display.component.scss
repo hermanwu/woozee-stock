@@ -2,26 +2,33 @@
   height: inherit;
   max-height: inherit;
   max-width: inherit;
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 1rem;
+  display: flex;
+  gap: 5%;
+  align-items: stretch;
 
-  > div {
+  .image-column {
+    flex: 1;
+
     height: inherit;
     max-height: inherit;
     max-width: inherit;
-    display: grid;
-    grid-template-rows: 1fr 6fr;
-    align-self: center;
-    justify-self: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-items: center;
 
-    > div {
-      height: 100%;
-      width: 100%;
-      max-height: inherit;
-      max-width: inherit;
+    .image {
+      flex-basis: 80%;
+      flex-grow: 4;
       overflow: scroll;
       text-align: center;
+    }
+
+    .title {
+      flex-basis: 20%;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
     }
   }
 }

@@ -3,12 +3,13 @@ import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const cost: StockAnalysis = {
-  uuid: 'us-cost',
+  uuid: 'cost',
   name: 'Costco',
   displayName: 'Costco',
   ticker: 'COST',
   irAddress: 'https://investor.costco.com/',
   marketCap: 215.8 * BILLION,
+  logoLink: 'https://i.ibb.co/wStmBR0/Screenshot-2023-04-05-at-1-47-05-PM.png',
 
   earningsReports: [
     {

@@ -7,7 +7,7 @@
   <app-ui-images-display [images]="imageLinks"></app-ui-images-display>
 </div>
 
-<div class="h3" *ngIf="quote?.title">🎙️ {{ quote.title }}</div>
+<b class="h3" *ngIf="quote?.title">🎙️ {{ quote.title }}</b>
 
 <div class="h3 question" *ngIf="quote?.question">
   ❓ <i>{{ quote.question }}</i>
@@ -23,5 +23,7 @@
 </ul>
 
 <div class="source" *ngIf="quote?.sourceLink">
-  📍<app-media-link [link]="quote.sourceLink"></app-media-link>
+  📍<a target="_blank" href="{{ quote.sourceLink }}"
+    ><app-media-link [link]="quote.sourceLink"></app-media-link
+  ></a>
 </div>

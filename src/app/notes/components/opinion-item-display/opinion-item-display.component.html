@@ -4,7 +4,9 @@
   </div>
 
   <div class="xl-text">
-    <span>🚨 {{ author?.displayName }}</span>
+    <span class="emoji-display">🎙️</span>
+
+    <span>{{ author?.displayName }}</span>
 
     <span *ngIf="author && organization"> of </span>
 
@@ -20,10 +22,12 @@
 
     <span *ngFor="let item of targets">{{ item?.displayName }} </span>
 
-    <span> 🚀 </span>
+    <span class="emoji-display">
+      <app-emoji-display [emotion]="opinion.rating"> </app-emoji-display>
+    </span>
   </div>
 
-  <div class="h3" *ngIf="opinion.title">⚡ {{ opinion.title }}</div>
+  <div class="h3" *ngIf="opinion.title">📌 {{ opinion.title }}</div>
 
   <app-content-display [content]="opinion.content"></app-content-display>
 

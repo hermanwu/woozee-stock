@@ -5,6 +5,84 @@ import { Quote } from './quote.model';
 
 export const allNews: (Quote | Opinion | Fact)[] = [
   {
+    title: "Binance Australia's Derivatives License is Cancelled by Regulator",
+    content:
+      'The Australian Securities and Investments Commission (ASIC) stated that Binance misclassified retail and wholesale clients, giving retail clients the opportunity to purchase risky products that should only have been available to wholesale clients.\n\nAccording to Binance CEO, The platform had only 104 users and its spot crypto exchange will continue to operate in Australia ',
+    tagUuids: ['crypto', ' binance'],
+    sourceLink:
+      'https://www.coindesk.com/business/2023/04/06/binance-australias-derivatives-license-cancelled-by-regulator/',
+    uuid: 'a763556e-01fd-4ce0-835b-11dedc483ccb',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-06T21:32:16.332Z',
+  },
+  {
+    title: 'Quotes from OpenAI founding investor, Reid Hoffman',
+    question:
+      'How can we address the challenges and uncertainties GPT-4 will catalyze?',
+    content:
+      'Our path forward won’t always be smooth and predictable.\n\nFacing such uncertainty, it’s only natural to have concerns.\n\nHuman progress has always required risk, planning, daring, resolve, and especially, hope. \n\nFacing uncertainty with hope and confidence is the first step toward progress, because it’s only when you have hope that you see opportunities, potential first steps, a new path forward.\n\n\n\n\n\n\n\n',
+    tagUuids: ['ai-group', 'ReidHoffman', 'chatgpt'],
+    sourceLink:
+      'https://greylock.com/greymatter/amplifying-humanity-through-ai/',
+    uuid: '4fc9548b-095c-4181-98eb-e0e88cd35867',
+    noteType: 'quote',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-05T23:32:35.578Z',
+  },
+  {
+    title:
+      'ChatGPT\'s answer to "How should human beings view and interact with you, a powerful large language model?"',
+    content:
+      'Human beings should view a powerful large language model (LLM) as a tool, not as a source of truth, authority, or intelligence. A powerful LLM is a complex statistical system that can generate natural language texts based on its training data, parameters, and inputs, but it does not necessarily understand, reason, or reflect the meaning, context, or implications of what it produces or receives. It may produce texts that are coherent, informative, or persuasive, but also texts that are inaccurate, misleading, or harmful, depending on the quality and diversity of its data, the design and limitations of its architecture, and the goals and biases of its users and developers.',
+    tagUuids: ['chatgpt', 'ReidHoffman', ' ai-group'],
+    sourceLink:
+      'https://greylock.com/greymatter/amplifying-humanity-through-ai/',
+    uuid: 'bc1cde2c-b8cd-487a-8668-c18aafb9c0a0',
+    noteType: 'quote',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-05T23:22:42.131Z',
+  },
+  {
+    title:
+      'Quotes about GPT-4 from podcast "Amplifying Our Humanity Through AI" by OpenAI\'s founding investor and LinkedIn founder, Reid Hoffman',
+    content:
+      'GPT-4’s often-remarkable simulations of cognitive proficiency are just that: simulations. GPT-4 is not a conscious, self-aware, sentient AI entity\n\nWhile GPT-4 (and other LLMs like it) aren’t conscious, they are reaching a point where their capacity to produce appropriate generations in so many different contexts is improving so fast that they can increasingly appear to possess human-like intelligence.\n\nGPT-4 does in fact operate in ways that are not entirely fixed, consistent, or predictable. In this way, it actually is like a human. It makes mistakes. It changes its “mind.” It can be fairly arbitrary.\n\nEssentially, GPT-4 arranges vast, unstructured arrays of human knowledge and expression into a more connected and interoperable network, thus amplifying humanity’s ability to compound its collective ideas and impact.',
+    tagUuids: ['chatgpt', 'ReidHoffman'],
+    sourceLink:
+      'https://greylock.com/greymatter/amplifying-humanity-through-ai/',
+    uuid: '2d29785c-a111-44d3-be84-872d713410f5',
+    noteType: 'quote',
+    authorUuid: 'REIDHOFFMAN',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-05T22:32:40.616Z',
+  },
+  {
+    targets: ['cost'],
+    title:
+      'Big decline in e-commerce sales shows that Costco has trouble finding a new growth engine.',
+    content: '',
+    tagUuids: ['cost'],
+    rating: 'Bearish',
+    uuid: 'dbee5461-1c8a-4ba2-b3ee-ea170cfe1ff9',
+    noteType: 'opinion',
+    creatorUuid: 'john.smith@example.com',
+    parentUuid: '4c374e5e-76a4-4de0-a48a-4f09f1ba490f',
+    createdDate: '2023-04-05T20:51:53.307Z',
+  },
+  {
+    title: 'Costco March U.S. comparable sales fell 1.5%',
+    content:
+      'March net sales of $21.71B, up 0.5% YoY. Comparable sales fell 1.1%. International comparable sales rose 2%. E-commerce comparable sales fell 12.7%.\n\nComparable sales excluding the impacts from changes in gasoline prices and foreign exchange rose 2.6%, consisting of U.S. +0.9%, International +7.6%. E-commerce comparable sales were -11.6%.',
+    tagUuids: ['cost'],
+    sourceLink:
+      'https://seekingalpha.com/news/3954800-costco-march-comparable-sales-slips-marginally-net-sales-increases-slightly',
+    uuid: '4c374e5e-76a4-4de0-a48a-4f09f1ba490f',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-05T20:45:39.324Z',
+  },
+  {
     title:
       "Google said its custom chip is faster than Nvidia's chip to train AI models",
     content:
@@ -15,7 +93,7 @@ export const allNews: (Quote | Opinion | Fact)[] = [
     uuid: '5c83c00a-7add-4933-b0f9-ae95b7f627ce',
     noteType: 'fact',
     creatorUuid: 'hwu1106@gmail.com',
-    date: '2023-04-05T15:06:00.412Z',
+    createdDate: '2023-04-05T15:06:00.412Z',
   },
   {
     title:
@@ -27,7 +105,7 @@ export const allNews: (Quote | Opinion | Fact)[] = [
     noteType: 'opinion',
     creatorUuid: 'emily.nguyen@example.com',
     parentUuid: '108edff8-df7b-4d40-bda1-c5fadbb1fc42',
-    date: '2023-04-04T22:06:37.134Z',
+    createdDate: '2023-04-04T22:06:37.134Z',
   },
   {
     title: 'Jamie Dimon says the banking crisis is not over',

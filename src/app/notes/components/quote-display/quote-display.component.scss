@@ -7,7 +7,7 @@
 }
 
 .h3 {
-  font-size: medium;
+  font-size: 700;
   margin: 10px 0;
 }
 
@@ -25,7 +25,9 @@
 }
 
 .image-display {
+  display: flex;
   max-height: 200px;
+  justify-content: center;
 }
 
 .source {

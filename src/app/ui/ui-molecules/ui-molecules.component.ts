@@ -34,11 +34,11 @@ export class UiMoleculesComponent implements OnInit {
       title: 'Nvidia',
     },
     {
-      link: 'https://i.ibb.co/zhWrySv/Screenshot-2023-02-23-at-8-38-05-PM.png',
+      link: 'https://i.ibb.co/wRSMW2S/Screenshot-2023-04-05-at-3-59-27-PM.png',
       title: 'Nvidia',
     },
     {
-      link: 'https://i.ibb.co/SXprQts/Goldman-Sachs-svg.png',
+      link: 'https://i.ibb.co/JqzwMhY/Screenshot-2023-04-05-at-4-35-44-PM.png',
       title: 'Goldman Sachs',
     },
   ];

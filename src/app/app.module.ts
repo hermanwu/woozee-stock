@@ -126,6 +126,7 @@ import { UiListComponent } from './ui/ui-list/ui-list.component';
 import { UiMoleculesComponent } from './ui/ui-molecules/ui-molecules.component';
 import { UiOrganismComponent } from './ui/ui-organism/ui-organism.component';
 import { UiTemplatesComponent } from './ui/ui-templates/ui-templates.component';
+import { EmojiDisplayComponent } from './emoji-display/emoji-display.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -241,6 +242,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     UiImagesDisplayComponent,
     NoteContainerComponent,
     NoteFormListComponent,
+    EmojiDisplayComponent,
   ],
   imports: [
     BrowserModule,

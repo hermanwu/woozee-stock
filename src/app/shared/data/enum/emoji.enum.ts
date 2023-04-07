@@ -24,6 +24,7 @@ export enum EmojiUnicode {
   pencil = '✏️',
   memo = '📝',
   vs = '🆚',
+  bear = '🐻',
 }
 
 export const BullishEmoji = ['🚀', '😆', '🙂', '👍', '🤑', '😲'];

@@ -19,7 +19,7 @@
 
   <span class="spacer"></span>
 
-  <button mat-button (click)="updateLanguage()">
+  <button ngIf="!environment.production" mat-button (click)="updateLanguage()">
     <span>{{ language === "cn" ? "English" : "中文" }}</span>
   </button>
 
@@ -33,14 +33,6 @@
     </button> -->
     <button mat-menu-item disabled>Login</button>
     <button mat-menu-item disabled>Signup</button>
-    <button
-      [routerLink]="['/woozee/portfolios']"
-      mat-menu-item
-      i18n
-      [disabled]="environment.production"
-    >
-      Portfolios
-    </button>
   </mat-menu>
 
   <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -48,8 +40,15 @@
   </button>
 
   <mat-menu #menu="matMenu">
-    <button [routerLink]="['/news']" mat-menu-item i18n>Home</button>
-    <button [routerLink]="['/me']" mat-menu-item i18n>Me</button>
+    <button [routerLink]="['/news']" mat-menu-item i18n>Trending</button>
+    <button
+      [routerLink]="['/me']"
+      [disabled]="environment.production"
+      mat-menu-item
+      i18n
+    >
+      Notebook
+    </button>
 
     <!-- <button mat-menu-item disabled>
       <a [routerLink]="['/stocks']">Stocks</a>

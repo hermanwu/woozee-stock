@@ -16,7 +16,6 @@ import { NotesListPageComponent } from './notes/components/notes-list-page/notes
 import { MePageComponent } from './notes/components/opinion-page/blog-page.component';
 import { AddPersonFormComponent } from './people/components/add-person-form/add-person-form.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
-import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
 import { DemoPageComponent } from './shared/components/demo-page/demo-page.component';
 import { ForeverOwnStocksPanelComponent } from './stock/forever-own-stocks-panel/forever-own-stocks-panel.component';
@@ -147,10 +146,6 @@ const routes: Routes = [
         path: 'demo',
         pathMatch: 'full',
         component: DemoPageComponent,
-      },
-      {
-        path: 'risks',
-        component: RiskListPageComponent,
       },
       {
         path: 'catalysts',

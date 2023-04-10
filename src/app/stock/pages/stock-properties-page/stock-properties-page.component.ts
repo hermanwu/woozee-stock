@@ -5,12 +5,13 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import { NotesServices } from 'src/app/news/services/news.services';
+import { NotesServices } from 'src/app/news/services/notes.services';
 import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { OpinionServices } from 'src/app/notes/services/opinion.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
+import { NoteType } from 'src/app/shared/data/note.interface';
 import { environment } from 'src/environments/environment';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 import { StockServices } from '../../services/objective-data.service';
@@ -36,7 +37,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   // Determine what state to be displayed;
   routeSub: Subscription;
   stockAnalysis: StockAnalysis;
-  stockTicker: string;
+  stockUuid: string;
   catalysts = [];
   news = [];
   rank$: Observable<number>;
@@ -56,11 +57,11 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
-      this.stockTicker = params[this.stockId].toLowerCase();
+      this.stockUuid = params[this.stockId].toLowerCase();
 
       this.stockAnalysis = this.objectiveDataService
         .getDataMap()
-        .get(this.stockTicker);
+        .get(this.stockUuid);
 
       if (this.stockAnalysis) {
         [this.shortTermScore, this.longTermScore] =
@@ -73,13 +74,16 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
 
       this.rank$ = this.userServices.rankings$.pipe(
         map((ranks: string[]): number => {
-          return ranks.indexOf(this.stockTicker) >= 0
-            ? ranks.indexOf(this.stockTicker) + 1
+          return ranks.indexOf(this.stockUuid) >= 0
+            ? ranks.indexOf(this.stockUuid) + 1
             : null;
         })
       );
 
-      this.news = this.newsService.getNewsByTags([this.stockTicker]);
+      this.news = this.newsService
+        .getNewsByTags([this.stockUuid])
+        .filter((item) => item.noteType === NoteType.Fact)
+        .slice(0, 5);
     });
   }
 

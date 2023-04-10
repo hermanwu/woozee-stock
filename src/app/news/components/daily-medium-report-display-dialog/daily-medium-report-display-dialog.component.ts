@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventType } from 'src/app/stock/models/news.model';
 import { StatsDisplay } from '../../../shared/components/stats-display/stats-display.interface';
 import { getUtcDate } from '../../../shared/functions/getUtcDate.function';
-import { NotesServices } from '../../services/news.services';
+import { NotesServices } from '../../services/notes.services';
 
 @Component({
   selector: 'app-daily-medium-report-display-dialog',

@@ -22,9 +22,9 @@
         </a></span
       >
 
-      <span *ngIf="rank$ | async; else followButton">
+      <!-- <span *ngIf="rank$ | async; else followButton">
         - Rank {{ rank$ | async | undefined }}</span
-      >
+      > -->
       <span *ngIf="stockAnalysis.price">
         - {{ stockAnalysis.price | undefined }}</span
       >
@@ -35,8 +35,6 @@
       </button>
 
       <mat-menu #stockMenu="matMenu">
-        <button mat-menu-item [disabled]="">Add to Portfolio</button>
-
         <button
           class="buttons"
           mat-menu-item
@@ -147,16 +145,14 @@
     <div class="padding-1rem" *ngIf="news?.length > 0">
       <app-card>
         <app-title-menu>
-          <div header-2>News</div>
+          <div header-2>Facts</div>
         </app-title-menu>
 
         <div *ngFor="let item of news">
-          <app-card>
-            <app-news-display
-              [shortVersion]="'true'"
-              [news]="item"
-            ></app-news-display>
-          </app-card>
+          <app-news-display
+            [shortVersion]="'true'"
+            [news]="item"
+          ></app-news-display>
         </div>
       </app-card>
     </div>

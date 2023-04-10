@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AssetListPageComponent } from './assets/components/asset-list-page/asset-list-page.component';
 import { ComparisonNoteComponent } from './comparison-note/comparison-note.component';
+import { EmojiDisplayComponent } from './emoji-display/emoji-display.component';
 import { ImageDisplayComponent } from './images/components/image-display/image-display.component';
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
 import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
@@ -59,7 +60,6 @@ import { RiskCatalystDialogComponent } from './risks/components/risk-catalyst-di
 import { RiskListComponent } from './risks/components/risk-list/risk-list.component';
 import { RiskTotalDisplayComponent } from './risks/components/risk-total-display/risk-total-display.component';
 import { RiskComponent } from './risks/components/risk/risk.component';
-import { RiskListPageComponent } from './risks/pages/risk-list-page/risk-list-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
 import { BadgeComponent } from './shared/components/badge/badge.component';
 import { CardComponent } from './shared/components/card/card.component';
@@ -126,7 +126,6 @@ import { UiListComponent } from './ui/ui-list/ui-list.component';
 import { UiMoleculesComponent } from './ui/ui-molecules/ui-molecules.component';
 import { UiOrganismComponent } from './ui/ui-organism/ui-organism.component';
 import { UiTemplatesComponent } from './ui/ui-templates/ui-templates.component';
-import { EmojiDisplayComponent } from './emoji-display/emoji-display.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -145,7 +144,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     StockListTableComponent,
     SlideDemoComponent,
     SlideComponent,
-    RiskListPageComponent,
     SlideFooterComponent,
     RiskComponent,
     NoteComponent,

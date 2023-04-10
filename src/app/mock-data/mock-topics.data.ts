@@ -6,6 +6,11 @@ export interface Topic {
 
 export const topics: Topic[] = [
   {
+    uuid: 'semi',
+    displayName: 'Semiconductors',
+    imageLink: '',
+  },
+  {
     uuid: 'banking',
     displayName: 'Banks',
     imageLink:

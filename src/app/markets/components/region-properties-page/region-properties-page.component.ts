@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { NotesServices } from '../../../news/services/news.services';
+import { NotesServices } from '../../../news/services/notes.services';
 import { Opinion } from '../../../notes/components/opinion-display/opinion.interface';
 import { OpinionServices } from '../../../notes/services/opinion.services';
 import { RegionCode } from '../../../shared/data/enum/region.enum';

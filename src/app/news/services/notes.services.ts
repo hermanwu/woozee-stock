@@ -10,16 +10,16 @@ import { allNews } from '../../mock-data/news.const';
   providedIn: 'root',
 })
 export class NotesServices {
-  news: (Fact | Quote | Opinion)[] = allNews;
+  notes: (Fact | Quote | Opinion)[] = allNews;
 
   constructor(private userServices: UserServices) {}
 
   getNewsByLanguage(language: string) {
     if (language === 'cn') {
-      return this.news.filter((item) => item.title?.match(/[\u3400-\u9FBF]/));
+      return this.notes.filter((item) => item.title?.match(/[\u3400-\u9FBF]/));
     }
 
-    return this.news.filter((item) => !item.title?.match(/[\u3400-\u9FBF]/));
+    return this.notes.filter((item) => !item.title?.match(/[\u3400-\u9FBF]/));
   }
 
   getAllNews() {
@@ -28,26 +28,26 @@ export class NotesServices {
   }
 
   getNewsByDate(date: Date) {
-    return this.news.filter(
+    return this.notes.filter(
       (item) => new Date(item.createdDate) >= convertDateToUTC(date)
     );
   }
 
   getNewsByTags(tags: string[]) {
-    return this.news.filter((item) =>
+    return this.notes.filter((item) =>
       item.tagUuids?.some((t) => tags.includes(t))
     );
   }
 
   getNewsByUuid(uuid: string) {
-    return this.news.find((item) => item.uuid === uuid);
+    return this.notes.find((item) => item.uuid === uuid);
   }
 
   getNotesByUuids(uuids: string[]) {
-    return this.news.filter((item) => uuids.includes(item.uuid));
+    return this.notes.filter((item) => uuids.includes(item.uuid));
   }
 
   getNotesByCreatorUuid(uuid: string) {
-    return this.news.filter((item) => item.creatorUuid === uuid);
+    return this.notes.filter((item) => item.creatorUuid === uuid);
   }
 }

@@ -19,7 +19,7 @@
 
   <span class="spacer"></span>
 
-  <button ngIf="!environment.production" mat-button (click)="updateLanguage()">
+  <button *ngIf="!environment.production" mat-button (click)="updateLanguage()">
     <span>{{ language === "cn" ? "English" : "中文" }}</span>
   </button>
 

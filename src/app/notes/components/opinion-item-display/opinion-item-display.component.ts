@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { Quote } from 'src/app/mock-data/quote.model';
-import { NotesServices } from 'src/app/news/services/news.services';
+import { NotesServices } from 'src/app/news/services/notes.services';
 import { OrganizationServices } from 'src/app/organizations/services/organization.services';
 import { PeopleServices } from 'src/app/people/services/people.services';
 import { Fact } from 'src/app/risks/models/fact.model';

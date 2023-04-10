@@ -1,6 +1,10 @@
 <ng-container *ngIf="shortVersion; else fullVersion">
   <div>
-    {{ news.title }}
+    📌 {{ news.title }}
+
+    <span class="date-display">
+      <app-date-display [date]="news?.createdDate"></app-date-display>
+    </span>
 
     <span
       class="more-button"
@@ -9,23 +13,22 @@
       >more</span
     >
   </div>
-  <div *ngIf="expanded" class="show-next-line">
-    {{ news.content }}
+  <div *ngIf="expanded">
+    <app-content-display [content]="news.content"></app-content-display>
   </div>
 
-  <div>
-    <span class="margin-right-5">
-      <app-date-display [date]="news?.date"></app-date-display>
-    </span>
-
-    <app-tags-display [tagUuids]="news?.tags"> </app-tags-display>
-  </div>
+  <mat-divider></mat-divider>
 </ng-container>
 
 <ng-template #fullVersion>
-  <div class="news-image">
-    <app-ui-images-display [images]="imageLinks"></app-ui-images-display>
+  <div *ngIf="news?.imageLinks; else tagImages">
+    <app-image-display [imageLink]="news.imageLinks[0]"></app-image-display>
   </div>
+  <ng-template #tagImages>
+    <div class="news-image">
+      <app-ui-images-display [images]="imageLinks"></app-ui-images-display>
+    </div>
+  </ng-template>
 
   <div class="content">
     <div class="h3">📌 {{ news.title }}</div>
@@ -47,6 +50,8 @@
   </div>
 
   <div class="source" *ngIf="news?.sourceLink">
-    📍<app-media-link [link]="news.sourceLink"></app-media-link>
+    📍<a target="_blank" href="{{ news.sourceLink }}"
+      ><app-media-link [link]="news.sourceLink"></app-media-link
+    ></a>
   </div>
 </ng-template>

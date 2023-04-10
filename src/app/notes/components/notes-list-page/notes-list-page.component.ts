@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NotesServices } from 'src/app/news/services/news.services';
+import { NotesServices } from 'src/app/news/services/notes.services';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
 import { UserServices } from '../../../accounts/services/user.services';
 import { Opinion } from '../opinion-display/opinion.interface';

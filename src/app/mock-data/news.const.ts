@@ -5,6 +5,83 @@ import { Quote } from './quote.model';
 
 export const allNews: (Quote | Opinion | Fact)[] = [
   {
+    title:
+      "Apple's worldwide computer shipments fell 40.5% YoY in Q1 2023, with a 2.8 million drop in shipments.",
+    content:
+      "According to IDC data, Apple's PC market share dropped from 8.6% to 7.2% between Q1 2022 and Q1 2023.\n\nAll major computer manufacturers, including Apple, saw double-digit shipment drops due to weaker demand and inventory issues.\n\nIDC predicts PC manufacturers will suffer in the short term, but growth is expected to increase by the year's end.",
+    tagUuids: ['aapl', ' semi'],
+    sourceLink:
+      'https://www.cnbc.com/2023/04/10/apples-mac-shipments-fall-more-than-40percent-worse-than-major-rivals-idc.html',
+    uuid: 'f5da60af-ad9f-4f48-9276-d77f77c85be4',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-10T21:40:39.728Z',
+  },
+  {
+    title:
+      'Tesla has released Master Plan Part 3, outlining its vision for a sustainable future with a diversified fleet of electric vehicles.',
+    content:
+      'The company is developing a smaller and more affordable compact car with a 53 kWh LFP battery pack and a starting price of around $25,000.\n\nTesla also plans to develop commercial and passenger vans and a bus, all powered by sustainable battery technology.\n\nTesla emphasizes the importance of battery innovation will be required to replace the global fleet of ICE vehicles with electric alternatives.\n',
+    tagUuids: ['tsla'],
+    uuid: 'c8090c8e-80e4-44a6-8898-771e374624bc',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-10T18:57:51.997Z',
+  },
+  {
+    title: 'Tesla plans to build a new battery factory in Shanghai, China',
+    content:
+      "Tesla will manufacture its Megapack large-scale energy-storage units, which are intended to help stabilize energy grids in Shanghai, China. \n\nThe factory will add to Tesla's existing factory for electric vehicles in Shanghai and is scheduled to begin construction in Q3 of this year, with production starting in Q2 2024. \n\nThe announcement further cements China's place at the top of the global energy storage supply chain. ",
+    tagUuids: ['tsla', ' china'],
+    sourceLink:
+      'https://www.bloomberg.com/news/articles/2023-04-09/tesla-to-build-megapack-battery-factory-in-shanghai-xinhua',
+    uuid: 'ce1c68b7-ea72-4936-9745-3c328145bb87',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-10T18:50:00.197Z',
+  },
+  {
+    title: 'Bond yields decline in March suggested a recession.',
+    content:
+      "The bond market's dramatic decline in yields and volatility suggested an impending recession.\n\nHowever, it has not been matched in equities and credit markets, leading to questions about whether the bond market is overreacting. \n\nThe gap led to a debate over the future economy: Some believe the yield drop was a false alarm, while others warn it could be a signal for a recession.",
+    tagUuids: ['bond', ' economy'],
+    sourceLink:
+      'https://www.bloomberg.com/news/articles/2023-04-09/bond-market-flashes-us-recession-warning-while-other-investors-call-false-alarm',
+    uuid: 'bb2c2ddc-ecbc-433a-a13a-278358fc5e0f',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-10T16:53:54.770Z',
+  },
+  {
+    title:
+      'Tesla cuts US prices of All Models for the Second Time This Year.\n',
+    content:
+      'Higher-volume Model 3 and Y electric vehicles were discounted by at least $1,000\n\nModel S and Model X were lowered by $5,000 each, bringing the cost to $84,990 and $94,990, respectively.\n\nTesla also introduced a new base Model Y in April, starting at $49,990.\n',
+    tagUuids: ['tsla'],
+    sourceLink:
+      'https://www.bloomberg.com/news/articles/2023-04-07/tesla-cuts-model-s-and-x-prices-for-third-time-this-year?re_source=boa_related',
+    uuid: '62ddbb83-0586-4075-b66c-73916f5b2584',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-07T22:35:47.939Z',
+  },
+  {
+    title:
+      'Nonfarm payrolls rose at a moderate pace as unemployment rate fell, giving mixed signals to the Federal Reserve',
+    content:
+      'The US added 236,000 jobs in March, which is close to the Dow Jones estimate for 238,000 and lower than February’s upwardly revised 326,000, indicating a slowdown in hiring pace.\n\nThe unemployment rate dropped to 3.5% from 3.6%, with the decrease due to labor force participation rate increasing to its highest level since before the Covid pandemic.\n\nAverage hourly earnings increased by 0.3%, pushing the 12-month increase to 4.2%, the lowest level since June 2021.\n\nHourly earnings increased by 4.2% from a year ago, below estimates and at the slowest pace since June 2021. \n',
+    tagUuids: ['job-market'],
+    sourceLink:
+      'https://www.bloomberg.com/news/articles/2023-04-07/us-payroll-growth-cools-wages-climb-in-mixed-signal-for-fed?srnd=premium',
+    uuid: '8a384870-01d5-4d1d-8892-07fa4ea0c580',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-07T14:53:56.639Z',
+    imageLinks: [
+      'https://i.ibb.co/zm69Fvw/Screenshot-2023-04-07-at-9-12-54-AM.png',
+    ],
+  },
+  {
     title: "Binance Australia's Derivatives License is Cancelled by Regulator",
     content:
       'The Australian Securities and Investments Commission (ASIC) stated that Binance misclassified retail and wholesale clients, giving retail clients the opportunity to purchase risky products that should only have been available to wholesale clients.\n\nAccording to Binance CEO, The platform had only 104 users and its spot crypto exchange will continue to operate in Australia ',

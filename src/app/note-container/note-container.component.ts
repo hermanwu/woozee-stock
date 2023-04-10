@@ -8,6 +8,7 @@ import { Note } from '../shared/data/note.interface';
 })
 export class NoteContainerComponent implements OnInit {
   @Input() note: Note;
+  @Input() shortVersion: boolean;
 
   constructor() {}
 

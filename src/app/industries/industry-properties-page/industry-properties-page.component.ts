@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IndustriesService } from 'src/app/markets/services/industries.service';
-import { NotesServices } from 'src/app/news/services/news.services';
+import { NotesServices } from 'src/app/news/services/notes.services';
 import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { OpinionServices } from 'src/app/notes/services/opinion.services';
 import { Note } from 'src/app/shared/data/note.interface';

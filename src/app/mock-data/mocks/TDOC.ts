@@ -1,5 +1,5 @@
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
-import { Rating } from '../../stock/models/rating.model';
+import { OpinionEnum } from '../../stock/models/opinion-type.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const tdoc: StockAnalysis = {
@@ -15,7 +15,7 @@ export const tdoc: StockAnalysis = {
   name: 'Teladoc Health',
   description: [],
   ticker: 'tdoc',
-  myRating: Rating.Bullish,
+  myRating: OpinionEnum.Bullish,
   displayName: 'Teladoc',
   irAddress: 'https://ir.teladochealth.com/investors/default.aspx',
 

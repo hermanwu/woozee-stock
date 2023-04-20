@@ -1,13 +1,13 @@
 import { Opinion } from '../notes/components/opinion-display/opinion.interface';
 import { EmojiUnicode } from '../shared/data/enum/emoji.enum';
 import { RegionCode } from '../shared/data/enum/region.enum';
-import { Rating } from '../stock/models/rating.model';
+import { OpinionEnum } from '../stock/models/opinion-type.model';
 
 export const macroOpinions: Opinion[] = [
   {
     content: 'US companies are laying off employees',
     targets: ['job market', 'us'],
-    rating: Rating.Bearish,
+    rating: OpinionEnum.Bearish,
     emojis: [EmojiUnicode.thumbDown],
     details: [
       'Companies that has been announced layoff: Snap (20%), Carvana - 12%, Netflix, Robinhood (30%), Goldman Sach - 10%, Shopify - 10%, Twilio - 10%',
@@ -17,7 +17,7 @@ export const macroOpinions: Opinion[] = [
     title: 'US consumer spending decreases',
     tags: ['consumer spending'],
     opinion: {
-      rating: Rating.Bearish,
+      rating: OpinionEnum.Bearish,
       emojis: [EmojiUnicode.thumbDown],
     },
     regions: [RegionCode.us],
@@ -25,7 +25,7 @@ export const macroOpinions: Opinion[] = [
   {
     title: 'Labor Shortage',
     opinion: {
-      rating: Rating.Bearish,
+      rating: OpinionEnum.Bearish,
       emojis: [EmojiUnicode.thumbDown],
     },
     tags: ['labor shortage'],
@@ -34,7 +34,7 @@ export const macroOpinions: Opinion[] = [
   {
     title: 'Fed rate increases could potentially cause recession.',
     opinion: {
-      rating: Rating.Bearish,
+      rating: OpinionEnum.Bearish,
       emojis: [EmojiUnicode.thumbDown],
     },
     tags: ['Fed Rate'],
@@ -43,7 +43,7 @@ export const macroOpinions: Opinion[] = [
   {
     title: 'Russian-Ukraine war',
     opinion: {
-      rating: Rating.Bearish,
+      rating: OpinionEnum.Bearish,
       emojis: [EmojiUnicode.thumbDown],
     },
     tags: ['war'],
@@ -52,7 +52,7 @@ export const macroOpinions: Opinion[] = [
   {
     title: 'COVID',
     opinion: {
-      rating: Rating.Bearish,
+      rating: OpinionEnum.Bearish,
       emojis: [EmojiUnicode.thumbDown],
     },
     tags: ['covid'],
@@ -61,7 +61,7 @@ export const macroOpinions: Opinion[] = [
   {
     title: 'Inflation is very high.',
     opinion: {
-      rating: Rating.Bearish,
+      rating: OpinionEnum.Bearish,
       emojis: [EmojiUnicode.thumbDown],
     },
     tags: ['inflation', 'CPI'],

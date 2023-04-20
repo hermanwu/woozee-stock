@@ -9,6 +9,8 @@ export const gs: StockAnalysis = {
   ticker: 'gs',
   displayName: 'Goldman Sachs',
   irAddress: 'https://www.goldmansachs.com/investor-relations/',
+  uuid: 'gs',
+  logoLink: 'https://i.ibb.co/Kbp830y/a-Vc-RRQWG-400x400.jpg',
 
   earningsReports: [
     {

@@ -37,7 +37,10 @@ export class NewsPageComponent implements OnInit {
     private userServices: UserServices
   ) {
     this.notes = newsService.getAllNews();
-    this.filteredNotes = this.filteredNotesByTypes(undefined, [...this.notes]);
+    this.filteredNotes = this.filteredNotesByTypes(
+      [NoteType.Opinion],
+      [...this.notes]
+    );
 
     this.userServices
       .getSavedNotes()

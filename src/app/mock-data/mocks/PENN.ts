@@ -1,4 +1,4 @@
-import { Rating } from '../../stock/models/rating.model';
+import { OpinionEnum } from '../../stock/models/opinion-type.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const PENN: StockAnalysis = {
@@ -6,7 +6,7 @@ export const PENN: StockAnalysis = {
   name: { English: 'PENN NATIONAL GAMING, INC.' },
   description: [],
   ticker: 'PENN',
-  myRating: Rating.Bullish,
+  myRating: OpinionEnum.Bullish,
 
   // Earnings Report:
   earnings: {

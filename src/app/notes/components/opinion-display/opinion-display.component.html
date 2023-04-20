@@ -1,31 +1,29 @@
-<span *ngIf="opinion?.rating">
+<span *ngIf="opinion?.term">
   <ng-container [ngSwitch]="opinion.term">
     <ng-container *ngSwitchCase="termEnum.short" i18n>Short Term </ng-container>
 
     <ng-container *ngSwitchCase="termEnum.long" i18n>Long Term </ng-container>
   </ng-container>
+</span>
 
-  <ng-container [ngSwitch]="opinion.rating">
-    <ng-container *ngSwitchCase="ratingEnum.VeryBullish" i18n>
+<span *ngIf="opinionType">
+  <ng-container [ngSwitch]="opinionType">
+    <ng-container *ngSwitchCase="opinionTypeEnum.VeryBullish" i18n>
       <span class="very-green">Very Bullish</span>
     </ng-container>
 
-    <ng-container *ngSwitchCase="ratingEnum.Bullish" i18n>
-      <span class="green">Bullish</span>
+    <ng-container *ngSwitchCase="opinionTypeEnum.Bullish" i18n>
+      <span class="green">{{ emojiUnicode.rocket }} Bullish </span>
     </ng-container>
 
-    <ng-container *ngSwitchCase="ratingEnum.VeryBearish" i18n>
+    <ng-container *ngSwitchCase="opinionTypeEnum.VeryBearish" i18n>
       <span class="very-red">Very Bearish</span>
     </ng-container>
 
-    <ng-container *ngSwitchCase="ratingEnum.Bearish" i18n>
-      <span class="red">Bearish</span>
+    <ng-container *ngSwitchCase="opinionTypeEnum.Bearish" i18n>
+      <span class="red">{{ emojiUnicode.bear }} Bearish</span>
     </ng-container>
 
     <ng-container *ngSwitchDefault i18n></ng-container>
   </ng-container>
 </span>
-
-<!-- <span>
-    {{ emojis }}
-  </span> -->

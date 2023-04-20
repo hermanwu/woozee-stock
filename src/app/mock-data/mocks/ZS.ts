@@ -1,7 +1,7 @@
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { MILLION } from 'src/app/shared/numbers/number.model';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
-import { Rating } from '../../stock/models/rating.model';
+import { OpinionEnum } from '../../stock/models/opinion-type.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const zs: StockAnalysis = {
@@ -10,7 +10,7 @@ export const zs: StockAnalysis = {
   displayName: 'Zscaler',
   description: [],
   ticker: 'ZS',
-  myRating: Rating.Neutral,
+  myRating: OpinionEnum.Neutral,
   irAddress: 'https://ir.zscaler.com/',
   business: {
     markets: [IndustryType.cybersecurity],

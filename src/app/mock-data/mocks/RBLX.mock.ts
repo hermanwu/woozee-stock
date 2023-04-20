@@ -1,6 +1,6 @@
 import { getUtcDate } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
-import { Rating } from '../../stock/models/rating.model';
+import { OpinionEnum } from '../../stock/models/opinion-type.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const rblxRisks = [];
@@ -15,7 +15,7 @@ export const rblx: StockAnalysis = {
   ticker: 'rblx',
   ceoQuote: [],
   advantage: [],
-  myRating: Rating.Bullish,
+  myRating: OpinionEnum.Bullish,
   propertiesPageEnabled: true,
   irAddress: 'https://ir.roblox.com/overview/default.aspx',
   riskUuids: rblxRisks.map((r) => r.uuid),

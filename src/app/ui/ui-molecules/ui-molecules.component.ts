@@ -5,12 +5,12 @@ import {
   rankHigher,
   rankLower,
 } from 'src/app/shared/functions/ranking.function';
-import { Rating } from 'src/app/stock/models/rating.model';
+import { OpinionEnum } from 'src/app/stock/models/opinion-type.model';
 
 export const opinionMock: Opinion = {
   uuid: 'test-uuid',
   noteType: 'test-note-type',
-  rating: Rating.Bearish,
+  rating: OpinionEnum.Bearish,
   emojis: [EmojiUnicode.thumbDown],
 };
 @Component({

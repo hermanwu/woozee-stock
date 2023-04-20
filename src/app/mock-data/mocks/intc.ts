@@ -1,4 +1,4 @@
-import { Rating } from '../../stock/models/rating.model';
+import { OpinionEnum } from '../../stock/models/opinion-type.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const intc: StockAnalysis = {
@@ -7,7 +7,7 @@ export const intc: StockAnalysis = {
   description: [],
   displayName: 'Intel',
   ticker: 'INTC',
-  myRating: Rating.Bullish,
+  myRating: OpinionEnum.Bullish,
 
   // Earnings Report:
   earnings: {

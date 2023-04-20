@@ -54,4 +54,9 @@ export const organizations: Organization[] = [
     displayName: 'Amazon',
     logoLink: 'https://i.ibb.co/qsZzrS2/download-3.png',
   },
+  {
+    uuid: 'pipersandler',
+    displayName: 'Piper Sandler',
+    logoLink: 'https://i.ibb.co/P9j9ts8/5l-CBn4v-U-400x400.jpg',
+  },
 ];

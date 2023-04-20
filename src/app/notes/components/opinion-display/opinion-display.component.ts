@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
 import { Term } from '../../../risks/models/risk-level.model';
-import { Rating } from '../../../stock/models/rating.model';
+import { OpinionEnum } from '../../../stock/models/opinion-type.model';
 import { Opinion } from './opinion.interface';
 
 @Component({
@@ -9,23 +10,18 @@ import { Opinion } from './opinion.interface';
   styleUrls: ['./opinion-display.component.scss'],
 })
 export class OpinionDisplayComponent implements OnInit, OnChanges {
-  @Input() opinion: Opinion;
   @Input() shortVersion: boolean;
+  @Input() opinion: Opinion;
+  @Input() opinionType: OpinionEnum;
 
-  readonly ratingEnum = Rating;
+  readonly opinionTypeEnum = OpinionEnum;
   readonly termEnum = Term;
+  readonly emojiUnicode = EmojiUnicode;
   expanded: boolean;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  ngOnChanges(): void {
-    if (this.opinion.parentUuid) {
-      // get parent info.
-    }
-
-    if (this.expanded) {
-    }
-  }
+  ngOnChanges(): void {}
 }

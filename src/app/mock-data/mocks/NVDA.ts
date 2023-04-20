@@ -8,7 +8,7 @@ export const nvda: StockAnalysis = {
   uuid: 'nvda',
   displayName: 'Nvidia',
   marketCap: 461 * BILLION,
-  logoLink: 'https://i.ibb.co/9yMZysX/Screenshot-2023-04-05-at-8-12-55-AM.png',
+  logoLink: 'https://i.ibb.co/K7kfDPB/U4lx-VYEw-400x400.png',
 
   // predications: [
   //   {
@@ -183,7 +183,6 @@ export const nvda: StockAnalysis = {
     },
   ],
 
-  logo: '',
   name: 'Nvidia',
   description: [
     {

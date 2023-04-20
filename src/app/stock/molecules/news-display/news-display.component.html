@@ -14,6 +14,15 @@
     >
   </div>
   <div *ngIf="expanded">
+    <div *ngIf="news?.imageLinks; else tagImages">
+      <app-image-display [imageLink]="news.imageLinks[0]"></app-image-display>
+    </div>
+    <ng-template #tagImages>
+      <div class="news-image">
+        <app-ui-images-display [images]="imageLinks"></app-ui-images-display>
+      </div>
+    </ng-template>
+
     <app-content-display [content]="news.content"></app-content-display>
   </div>
 

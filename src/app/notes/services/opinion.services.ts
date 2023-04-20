@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { Term } from 'src/app/risks/models/risk-level.model';
-import { Rating } from 'src/app/stock/models/rating.model';
+import { OpinionEnum } from 'src/app/stock/models/opinion-type.model';
 import { Opinion } from '../components/opinion-display/opinion.interface';
 
 @Injectable({
@@ -18,23 +18,23 @@ export class OpinionServices {
 
     for (let opinion of opinions) {
       if (opinion.term === Term.long) {
-        if (opinion.rating === Rating.Bearish) {
+        if (opinion.rating === OpinionEnum.Bearish) {
           longTermScore -= 1;
-        } else if (opinion.rating === Rating.VeryBearish) {
+        } else if (opinion.rating === OpinionEnum.VeryBearish) {
           longTermScore -= 2;
-        } else if (opinion.rating === Rating.Bullish) {
+        } else if (opinion.rating === OpinionEnum.Bullish) {
           longTermScore += 1;
-        } else if (opinion.rating === Rating.VeryBullish) {
+        } else if (opinion.rating === OpinionEnum.VeryBullish) {
           longTermScore += 2;
         }
       } else {
-        if (opinion.rating === Rating.Bearish) {
+        if (opinion.rating === OpinionEnum.Bearish) {
           shortTermScore -= 1;
-        } else if (opinion.rating === Rating.VeryBearish) {
+        } else if (opinion.rating === OpinionEnum.VeryBearish) {
           shortTermScore -= 2;
-        } else if (opinion.rating === Rating.Bullish) {
+        } else if (opinion.rating === OpinionEnum.Bullish) {
           shortTermScore += 1;
-        } else if (opinion.rating === Rating.VeryBullish) {
+        } else if (opinion.rating === OpinionEnum.VeryBullish) {
           shortTermScore += 2;
         }
       }

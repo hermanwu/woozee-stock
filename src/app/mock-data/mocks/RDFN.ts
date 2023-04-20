@@ -1,4 +1,4 @@
-import { Rating } from '../../stock/models/rating.model';
+import { OpinionEnum } from '../../stock/models/opinion-type.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const RDFN: StockAnalysis = {
@@ -7,7 +7,7 @@ export const RDFN: StockAnalysis = {
   description: [],
   ticker: 'RDFN',
   marketCap: 5.28 * 1e9,
-  myRating: Rating.Bullish,
+  myRating: OpinionEnum.Bullish,
 
   // Earnings Report:
   earnings: {

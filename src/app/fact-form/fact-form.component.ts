@@ -9,16 +9,17 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import { Note, NoteType } from '../../../shared/data/note.interface';
-import { TagServices } from '../../../shared/services/tag.services';
-import { News } from '../../../stock/models/news.model';
-import { OpinionEnum } from '../../../stock/models/opinion-type.model';
+import { Note, NoteType } from '../shared/data/note.interface';
+import { TagServices } from '../shared/services/tag.services';
+import { News } from '../stock/models/news.model';
+import { OpinionEnum } from '../stock/models/opinion-type.model';
+
 @Component({
-  selector: 'app-add-news-form',
-  templateUrl: './add-news-form.component.html',
-  styleUrls: ['./add-news-form.component.scss'],
+  selector: 'app-fact-form',
+  templateUrl: './fact-form.component.html',
+  styleUrls: ['./fact-form.component.scss'],
 })
-export class AddNewsFormComponent implements OnInit, OnChanges {
+export class FactFormComponent implements OnInit, OnChanges {
   @Output() newNote = new EventEmitter<Note>();
   @Input() note: Note;
 
@@ -36,9 +37,11 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.newsForm);
     if (changes.note && !this.newsForm) {
       this.createForm();
       this.newsForm.patchValue({ uuid: changes.note.currentValue.uuid });
+      console.log(this.newsForm);
     }
   }
 
@@ -51,12 +54,12 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
       sourceLink: [],
       rating: [],
       uuid: [],
-      noteType: [NoteType.Opinion],
-      authorUuid: ['hwu1106@gmail.com'],
+      noteType: [NoteType.Fact],
+      authorUuid: [],
       creatorUuid: 'hwu1106@gmail.com',
       parentUuid: [],
-      emotions: [],
     });
+    console.log(this.newsForm);
   }
 
   /**
@@ -81,7 +84,6 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
         ?.split(',')
         .map((target) => target.trim()),
       createdDate: new Date(),
-      emotions: this.newsForm.value.emotions,
     };
 
     if (news.noteType === NoteType.Opinion) {
@@ -108,7 +110,6 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
    * @param rating
    */
   setRating(rating: OpinionEnum): void {
-    console.log(rating);
-    this.newsForm.patchValue({ emotions: [rating] });
+    this.newsForm.patchValue({ rating });
   }
 }

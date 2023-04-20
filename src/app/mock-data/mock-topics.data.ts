@@ -52,4 +52,10 @@ export const topics: Topic[] = [
     imageLink:
       'https://i.ibb.co/qm8ZchN/eb2349c3-b2f8-4a93-a286-8f86a62ea9d8.png',
   },
+
+  {
+    uuid: 'bond',
+    displayName: ' US Bonds',
+    imageLink: '',
+  },
 ];

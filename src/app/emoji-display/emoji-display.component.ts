@@ -1,13 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { EmojiUnicode } from '../shared/data/enum/emoji.enum';
-
-export enum EmotionEnum {
-  VeryBullish = 'Very Bullish',
-  Bullish = 'Bullish',
-  Neutral = 'Neutral',
-  Bearish = 'Bearish',
-  VeryBearish = 'Very Bearish',
-}
+import { OpinionEnum } from '../stock/models/opinion-type.model';
 
 @Component({
   selector: 'app-emoji-display',
@@ -15,9 +8,9 @@ export enum EmotionEnum {
   styleUrls: ['./emoji-display.component.scss'],
 })
 export class EmojiDisplayComponent implements OnInit {
-  @Input() emotion: EmotionEnum;
+  @Input() emotion: OpinionEnum;
 
-  emotionEnum = EmotionEnum;
+  emotionEnum = OpinionEnum;
   emojiUnicode = EmojiUnicode;
 
   constructor() {}

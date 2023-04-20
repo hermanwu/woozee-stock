@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { v4 as generateUuid } from 'uuid';
+import { NoteType } from '../shared/data/note.interface';
 
 @Component({
   selector: 'app-note-form-list',
@@ -15,8 +16,11 @@ export class NoteFormListComponent implements OnInit {
   addNewNote() {
     this.notes.unshift({
       uuid: generateUuid(),
+      type: NoteType.Opinion,
     });
   }
+
+  addNewFact() {}
 
   update(note) {
     const index = this.notes.findIndex((n) => n.uuid === note.uuid);

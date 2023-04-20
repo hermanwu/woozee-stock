@@ -5,6 +5,7 @@ import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
 export const ai: StockAnalysis = {
   marketCap: 18.69 * BILLION,
   logo: '',
+  uuid: 'c3ai',
   name: 'C3.ai',
   description: [],
   displayName: 'C3.ai',

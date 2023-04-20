@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./ui-images-display.component.scss'],
 })
 export class UiImagesDisplayComponent implements OnInit {
+  @Input() imageLinks: string[];
   @Input() images: { logoLink: string; title: string; link: string }[];
 
   constructor() {}

@@ -1,4 +1,4 @@
-export enum Rating {
+export enum OpinionEnum {
   VeryBullish = 'Very Bullish',
   Bullish = 'Bullish',
   Neutral = 'Neutral',

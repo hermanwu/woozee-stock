@@ -3,8 +3,8 @@ import { Business } from '../components/business-overview/business.model';
 import { EarningsReport } from './earnings.model';
 import { MyScore } from './herman-score.model';
 import { News } from './news.model';
+import { OpinionEnum } from './opinion-type.model';
 import { Predication } from './predication.model';
-import { Rating } from './rating.model';
 import { StockStats } from './stock-stats.model';
 import { Trend } from './trend.enum';
 
@@ -73,6 +73,6 @@ export interface StockAnalysis {
   companyOfficialDocs?: any[];
   usefulVideos?: any[];
   news?: News[] | any[];
-  myRating?: Rating;
+  myRating?: OpinionEnum;
   note?: any;
 }

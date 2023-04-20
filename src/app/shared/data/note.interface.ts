@@ -27,4 +27,5 @@ export interface Note {
   title?: string;
   updatedDate?: string;
   uuid: string;
+  childrenUuids?: string[];
 }

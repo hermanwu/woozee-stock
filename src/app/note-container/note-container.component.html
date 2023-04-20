@@ -2,7 +2,7 @@
   <app-news-display
     *ngSwitchCase="'fact'"
     [news]="note"
-    [expanded]="true"
+    [shortVersion]="shortVersion"
   ></app-news-display>
   <app-opinion-item-display
     *ngSwitchCase="'opinion'"
@@ -10,7 +10,11 @@
     [expanded]="true"
     [shortVersion]="shortVersion"
   ></app-opinion-item-display>
-  <app-quote-display *ngSwitchCase="'quote'" [quote]="note" [expanded]="true">
+  <app-quote-display
+    *ngSwitchCase="'quote'"
+    [quote]="note"
+    [expanded]="!shortVersion"
+  >
   </app-quote-display>
   <app-list-display *ngSwitchCase="'list'" [list]="note"> </app-list-display>
   <app-comparison-note *ngSwitchCase="'vote'" [comparisonData]="note">

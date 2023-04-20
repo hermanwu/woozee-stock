@@ -1,4 +1,4 @@
-import { Rating } from '../../stock/models/rating.model';
+import { OpinionEnum } from '../../stock/models/opinion-type.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const ADSK: StockAnalysis = {
@@ -6,7 +6,7 @@ export const ADSK: StockAnalysis = {
   name: { English: 'AUTODESK, INC.' },
   description: [],
   ticker: 'ADSK',
-  myRating: Rating.Neutral,
+  myRating: OpinionEnum.Neutral,
 
   // Earnings Report:
   earnings: {

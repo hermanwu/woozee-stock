@@ -1,12 +1,14 @@
-import { Rating } from '../../stock/models/rating.model';
+import { OpinionEnum } from '../../stock/models/opinion-type.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const DUOL: StockAnalysis = {
   logo: '',
-  name: { English: 'Duolingo, Inc.' },
+  displayName: 'Duolingo',
   description: [],
   ticker: 'DUOL',
-  myRating: Rating.Bearish,
+  uuid: 'duol',
+  logoLink: 'https://i.ibb.co/7Rf2B2c/y-EWm1-BEl-400x400.jpg',
+  myRating: OpinionEnum.Bearish,
 
   // Earnings Report:
   earnings: {

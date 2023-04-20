@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ImageServices } from '../../../images/services/images.services';
 import { StockMetric } from '../../../stock/components/stock-metric-display/stock-metric.enum';
 import { StockAnalysis } from '../../../stock/models/stock-analysis.model';
 import { TwitterDisplayDialogInput } from './twitter-display-dialog-input.interface';
@@ -19,8 +18,7 @@ export class TwitterDisplayDialogComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    public dialogData: TwitterDisplayDialogInput,
-    private imageServices: ImageServices
+    public dialogData: TwitterDisplayDialogInput
   ) {}
 
   ngOnInit(): void {

@@ -1,9 +1,159 @@
 import { Opinion } from '../notes/components/opinion-display/opinion.interface';
 import { Fact } from '../risks/models/fact.model';
-import { Rating } from '../stock/models/rating.model';
+import { OpinionEnum } from '../stock/models/opinion-type.model';
 import { Quote } from './quote.model';
 
 export const allNews: (Quote | Opinion | Fact)[] = [
+  {
+    title:
+      'Tesla Operating System will be able to continue reducing costs and improving margins.',
+    content:
+      "Tesla's custom-built software replaces expensive 3rd party enterprise software solutions like CRM, ERP, HCM, MES, SCM, WMS & other platforms, which enables vertical integration, cost control and agility. \n\n",
+    tagUuids: ['tsla'],
+    uuid: 'afdf715a-f2c2-47c4-9e6f-f25d8589cf54',
+    noteType: 'opinion',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'zeesun.wu@gmail.com',
+    targets: ['tsla'],
+    createdDate: '2023-04-19T20:35:30.275Z',
+    emotions: [OpinionEnum.Bullish],
+    imageLinks: [
+      'https://i.ibb.co/zVsynmq/Screenshot-2023-04-19-at-1-29-55-PM.png',
+    ],
+  },
+  {
+    title: 'Operating margin continue decreasing',
+    content:
+      'Operating Margin was 11.4%, which decreased from 19.2% a year ago.\n\nFree cash flow -80% YoY\n\nTotal Revenues +24% YoY\n\nTotal deliveries +36%\n\n\n',
+    tagUuids: ['tsla'],
+    sourceLink:
+      'https://tesla-cdn.thron.com/static/ZXSBN8_TSLA_Q1_2023_Update_ABMJPG.pdf?xseo=&response-content-disposition=inline%3Bfilename%3D%22e826b065-cc14-467c-8c9c-e1feb7189ba8.pdf%22',
+    uuid: '70ec27cc-5924-4da1-ae19-2c29aa7b7e7c',
+    noteType: 'opinion',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'herman.wrt@gmail.com',
+    targets: ['tsla'],
+    createdDate: '2023-04-19T20:20:42.355Z',
+    emotions: [OpinionEnum.Bearish],
+  },
+  {
+    title: 'Apple launches its savings account with 4.15% interest rate.',
+    content:
+      'It requires no minimum deposit or balance, and can be set up from the Wallet app on their iPhones.\n\nGoldman Sachs is the bank behind the savings account.\n\n\n',
+    tagUuids: ['aapl', ' gs'],
+    sourceLink:
+      'https://www.cnbc.com/2023/04/17/apple-savings-account-announced-with-4point15percent-interest.html',
+    uuid: '0412f700-2c5e-4040-ba90-89cb463bafa2',
+    noteType: 'opinion',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'alice.williams@example.com',
+    targets: ['aapl', 'gs'],
+    createdDate: '2023-04-17T14:51:02.762Z',
+    emotions: [OpinionEnum.Bullish],
+  },
+  {
+    title:
+      'Elon Musk launched a new artificial intelligence start-up to compete with ChatGPT-maker OpenAI',
+    content:
+      'According to Nevada business records, Musk incorporated a company named X.AI on March 9.\n\nFor the new project, Musk has secured thousands of high-powered GPU processors from Nvidia, said people with knowledge of the move. ',
+    tagUuids: ['elon', ' nvda', ' tsla', ' ai'],
+    sourceLink:
+      'https://www.ft.com/content/2a96995b-c799-4281-8b60-b235e84aefe4',
+    uuid: 'a6395ed0-f76f-4c58-b16b-d6da636a41dc',
+    noteType: 'opinion',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'emily.nguyen@example.com',
+    targets: ['tsla', 'nvda'],
+    createdDate: '2023-04-15T14:52:45.461Z',
+    emotions: [OpinionEnum.Bullish],
+  },
+  {
+    title:
+      'Piper Sandler calls generative A.I. the next $100 billion tech revolution',
+    content:
+      'Piper Sandler top picks including Microsoft, Snowflake, Google, Nvidia, and Duolingo.\n\n\n“We see Generative AI as the next major revolution in technology that could have far reaching implications across both consumer and enterprise sectors,”\n\n“Rapid pace of innovation could occur at an unprecedented pace in 2023 and into 2024 with potential for [GPU] shortages emerging as one of the gating factors to broader adoption over the next 1-3 years”',
+    tagUuids: ['Msft', 'snow', 'googl', 'nvda', 'duol'],
+    sourceLink:
+      'https://www.cnbc.com/2023/04/14/piper-sandler-calls-generative-ai-the-next-100-billion-tech-revolution.html',
+    rating: 'Bullish',
+    uuid: '6a9a0b70-a5fb-4834-84f7-5f57e60024bd',
+    noteType: 'opinion',
+    authorUuid: 'pipersandler',
+    creatorUuid: 'herman.wrt@gmail.com',
+    targets: ['Msft', 'snow', 'googl', 'nvda', 'duol'],
+    createdDate: '2023-04-15T00:46:54.456Z',
+    emotions: [OpinionEnum.Bullish],
+  },
+  {
+    title:
+      'JPMorgan Chase earnings exceed expectations and raise income guidance.',
+    content:
+      'GAAP EPS of $4.10 beats by 64 cents. Revenue beats by $2.3 billion. \nQ1 total loans of $1.13T was roughly flat from the prior quarter; total deposits of $2.38T gained 1.6% Q/Q.\n\nCommercial Banking revenue of $3.51B climbed 3% Q/Q and 46% Y/Y;\n\nAsset & Wealth Management revenue of $4.78B rose 4% Q/Q and 11% Y/Y;\n\n\nCEO Jamie Dimon: “The U.S. economy continues to be on generally healthy footings — consumers are still spending and have strong balance sheets, and businesses are in good shape”\n\n“However, the storm clouds that we have been monitoring for the past year remain on the horizon, and the banking industry turmoil adds to these risks."',
+    tagUuids: ['jpm', ' banks', ' jamie_dimon'],
+    sourceLink:
+      'https://seekingalpha.com/news/3956713-why-did-jpmorgan-chase-stock-pop-up-today-strong-year-guide-blowout-q1',
+    rating: 'Bullish',
+    uuid: '6dd93ee6-febb-440c-956e-807aca5cb9b3',
+    noteType: 'opinion',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'emily.nguyen@example.com',
+    targets: ['jpm'],
+    createdDate: '2023-04-14T21:06:26.568Z',
+    emotions: [OpinionEnum.Bullish],
+  },
+  {
+    title:
+      'Amazon Web Services announced it would launch Bedrock, a generative AI service that’s geared toward developers',
+    content:
+      'CEO Andy Jassy also highlighted a promising growth trajectory for the cloud business in its annual letter.',
+    tagUuids: [],
+    sourceLink:
+      'https://seekingalpha.com/news/3956404-why-did-amazon-stock-accelerate-on-thursday-optimism-on-aws-from-the-ceo',
+    rating: 'Bullish',
+    uuid: 'eb3792eb-9e7a-4475-b155-5e277c2fcfd9',
+    noteType: 'opinion',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'jessica.jn.le@gmail.com',
+    targets: ['amzn'],
+    createdDate: '2023-04-14T06:16:08.142Z',
+  },
+  {
+    title: 'Credit Suisse reiterated an outperform rating for the stock',
+    content:
+      'Credit Suisse raised its price target to $188 per share from $184, which represents roughly 13% upside for investors from Thursday’s close.\n\nIt anticipates demand for iPhones was “resilient” during the period and thinks the company will increase both dividends paid to shareholders and stock repurchases.',
+    tagUuids: [],
+    sourceLink:
+      'https://www.cnbc.com/2023/04/13/-credit-suisse-is-getting-even-more-bullish-on-apple-into-earnings-.html',
+    rating: 'Bullish',
+    uuid: 'dfc4fc77-b1b4-4d84-a88e-46fca52c51b8',
+    noteType: 'opinion',
+    authorUuid: 'creditsuisse',
+    creatorUuid: 'alice.williams@example.com',
+    targets: ['aapl'],
+    createdDate: '2023-04-14T00:15:04.469Z',
+  },
+  {
+    tagUuids: [],
+    rating: 'Bearish',
+    uuid: 'e16b4827-c884-4f4b-af8c-6434eb497cb7',
+    noteType: 'opinion',
+    creatorUuid: 'hwu1106@gmail.com',
+    targets: ['aapl'],
+    createdDate: '2023-04-13T21:37:33.975Z',
+    childrenUuids: ['f5da60af-ad9f-4f48-9276-d77f77c85be4'],
+  },
+  {
+    title: 'Goldman Sachs says WeightWatchers stock will more than triple.',
+    content:
+      'Goldman Sachs upgraded the stock to buy from neutral Monday evening and raised its 12-month price target to $13. \n\nGoldman turned bullish after WW acquired Sequence, a telehealth platform that provides its subscribers with access to GLP-1 medications such as Wegovy and Ozempic.\n\n“We believe a catalyst for a turnaround has emerged with its new obesity drug on-ramp solution”\n\n“With this new service offering we expect a cohort of consumers to turn to it for help navigating what is poised to be an increasingly complex field of pharmaceutical solutions.”\n\n',
+    tagUuids: ['gs', ' ww'],
+    sourceLink:
+      'https://www.cnbc.com/2023/04/11/weightwatchers-parent-rockets-higher-by-25percent-after-goldman-says-the-stock-will-more-than-triple.html',
+    uuid: '0adeed09-46b8-4144-bdd8-d171f5b80d0c',
+    noteType: 'fact',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-11T17:14:13.905Z',
+  },
   {
     title:
       "Apple's worldwide computer shipments fell 40.5% YoY in Q1 2023, with a 2.8 million drop in shipments.",
@@ -144,7 +294,7 @@ export const allNews: (Quote | Opinion | Fact)[] = [
     uuid: 'dbee5461-1c8a-4ba2-b3ee-ea170cfe1ff9',
     noteType: 'opinion',
     creatorUuid: 'john.smith@example.com',
-    parentUuid: '4c374e5e-76a4-4de0-a48a-4f09f1ba490f',
+    childrenUuids: ['4c374e5e-76a4-4de0-a48a-4f09f1ba490f'],
     createdDate: '2023-04-05T20:51:53.307Z',
   },
   {
@@ -478,7 +628,7 @@ export const allNews: (Quote | Opinion | Fact)[] = [
     tagUuids: ['amazon'],
     uuid: '0c3d78c5-1b48-4a5f-8d53-099018a2e1b4',
     noteType: 'opinion',
-    rating: Rating.Bullish,
+    rating: OpinionEnum.Bullish,
     createdDate: '2023-03-08T06:37:15.657Z',
     authorUuid: '',
     organizationUuid: 'goldmansachs',

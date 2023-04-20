@@ -1,4 +1,4 @@
-import { Rating } from '../../stock/models/rating.model';
+import { OpinionEnum } from '../../stock/models/opinion-type.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const STEM: StockAnalysis = {
@@ -6,7 +6,7 @@ export const STEM: StockAnalysis = {
   name: { English: 'Stem' },
   description: [],
   ticker: 'STEM',
-  myRating: Rating.Bullish,
+  myRating: OpinionEnum.Bullish,
 
   // Earnings Report:
   earnings: {

@@ -56,7 +56,7 @@ export const tslaRisks: Risk[] = [
 
 export const tsla: StockAnalysis = {
   uuid: 'tsla',
-  logoLink: 'https://i.ibb.co/rGL1Cqc/Screenshot-2023-04-02-at-4-03-46-PM.png',
+  logoLink: 'https://i.ibb.co/P6jhPKW/6-Ggc4-S5n-400x400.png',
   name: 'Tesla',
   ticker: 'TSLA',
   displayName: 'Tesla',

@@ -29,6 +29,8 @@ export const snow: StockAnalysis = {
       { type: StrategyType.networkEffect },
     ],
   },
+  uuid: 'snow',
+  logoLink: 'https://i.ibb.co/jJ4wn7f/42ab-Mq-B6-400x400.jpg',
 
   earningsReports: [
     {

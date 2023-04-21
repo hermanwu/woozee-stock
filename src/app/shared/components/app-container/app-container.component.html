@@ -4,8 +4,8 @@
   </span>
   <ng-template #appName>
     <div>
-      <div i18n>💥 Invesdea 💰</div>
-      <div class="subtitle">Share Investing Ideas</div>
+      <span class="name">Invesdea</span>
+      <span i18n> - Investing Ideas</span>
     </div>
   </ng-template>
 
@@ -19,9 +19,9 @@
 
   <span class="spacer"></span>
 
-  <button *ngIf="!environment.production" mat-button (click)="updateLanguage()">
+  <!-- <button *ngIf="!environment.production" mat-button (click)="updateLanguage()">
     <span>{{ language === "cn" ? "English" : "中文" }}</span>
-  </button>
+  </button> -->
 
   <button mat-icon-button [matMenuTriggerFor]="accountMenu">
     <mat-icon>account_circle</mat-icon>

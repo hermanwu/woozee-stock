@@ -42,7 +42,6 @@ export class DragDropRankDialogComponent implements OnInit {
       this.globalRanking
     );
 
-    console.log('global ranking', this.globalRanking);
     this.userServices.setGlobalRanking(this.globalRanking);
   }
 }

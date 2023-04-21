@@ -108,7 +108,6 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
    * @param rating
    */
   setRating(rating: OpinionEnum): void {
-    console.log(rating);
     this.newsForm.patchValue({ emotions: [rating] });
   }
 }

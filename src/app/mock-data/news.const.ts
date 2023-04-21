@@ -6,6 +6,47 @@ import { Quote } from './quote.model';
 export const allNews: (Quote | Opinion | Fact)[] = [
   {
     title:
+      "Cathie Wood, CEO of Ark Invest, has updated her price target for Tesla to $2,000 by 2027, a 1,127% increase from Tesla's closing price of $162.99 on Thursday.",
+    content:
+      'Cathie believes that robotaxis business will help drive growth and generate $8 trillion to $10 trillion in revenue by 2030.\n\nTesla is the largest holding in her flagship Ark Innovation ETF (ARKK) fund, with a 9.4% weighting.',
+    tagUuids: ['cathiewood'],
+    uuid: 'f014a8fd-62b4-48d0-8a7a-7e72a4ed598d',
+    noteType: 'opinion',
+    authorUuid: 'cathiewood',
+    creatorUuid: 'jane.doe@example.com',
+    createdDate: '2023-04-21T05:42:52.535Z',
+    targets: ['tsla'],
+    emotions: ['Bullish'],
+  },
+  {
+    title: 'Alphabet reveals cost-cutting details ahead of Q1 earnings report',
+    content:
+      'Alphabet, the parent company of Google, has revealed in an SEC filing that it expects to take charges of $1.9 billion to $2.3 billion related to employee severance and related costs, with most of it recognized in the Q1 2023. \n\nThe company is also taking $0.5 billion in charges related to office-space reductions. \n\nNewly formed Google DeepMind will be reported in the unallocated corporate costs beginning in Q2.\n\nQ1 results will be announced on April 25.',
+    tagUuids: ['googl'],
+    sourceLink:
+      'https://seekingalpha.com/news/3958458-alphabet-details-charges-its-taking-for-workforce-cuts-accounting-shifts',
+    uuid: '346a379f-e832-48d5-9f9a-486a9e3cdb61',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'bob.johnson@example.com',
+    createdDate: '2023-04-20T23:29:15.411Z',
+  },
+  {
+    title:
+      'Coinbase plans to launch an offshore exchange with a Bermuda license',
+    content:
+      'Without restricted U.S. regulation, Coinbase can offer more exotic crypto-related derivatives and be better poised to compete against companies like Binance.',
+    tagUuids: ['coin', 'crypto'],
+    uuid: '884a3c84-dcca-4793-a057-41434c5b121c',
+    noteType: 'opinion',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'john.smith@example.com',
+    targets: ['coin', 'crypto'],
+    createdDate: '2023-04-20T03:43:32.542Z',
+    emotions: ['Bullish'],
+  },
+  {
+    title:
       'Tesla Operating System will be able to continue reducing costs and improving margins.',
     content:
       "Tesla's custom-built software replaces expensive 3rd party enterprise software solutions like CRM, ERP, HCM, MES, SCM, WMS & other platforms, which enables vertical integration, cost control and agility. \n\n",
@@ -2608,7 +2649,6 @@ export const allNews: (Quote | Opinion | Fact)[] = [
     content:
       'Google and Meta combined US digital-ad spending market share was down to 48.4%, the first time under 50% since 2014\nAll marketers want more options, and people spent less time online in 2022\nAmazon further solidified its third place. \nTiktok and Netflix are emerging as strong competitors.',
     tagUuids: ['meta', 'googl', 'amzn', 'nflx'],
-    sourceLink: 'wall street journal',
     uuid: 'fb165f43-1d48-436f-a25b-edc859fa5e61',
     createdDate: '2023-01-03T23:39:03.051Z',
     noteType: 'fact',

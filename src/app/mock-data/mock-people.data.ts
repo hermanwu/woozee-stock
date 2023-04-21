@@ -64,4 +64,10 @@ export const people = [
     imageLink:
       'https://i.ibb.co/XV448gg/Screenshot-2023-04-05-at-3-39-29-PM.png',
   },
+
+  {
+    uuid: 'cathiewood',
+    displayName: 'Cathie Wood',
+    imageLink: 'https://i.ibb.co/bXvQfFF/dv-Ug-Qkt8-400x400.jpg',
+  },
 ];

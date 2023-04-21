@@ -33,7 +33,6 @@ export class TagsDisplayComponent implements OnChanges {
   }
 
   navigate(tag: Tag) {
-    console.log(tag);
     this.navigationServices.navigate(tag.type, tag.uuid);
   }
 }

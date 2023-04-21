@@ -25,7 +25,7 @@ export interface Opinion extends Note {
   parentUuid?: string;
   organization?: string;
   type?: string;
-  emotions?: OpinionEnum[];
+  emotions?: OpinionEnum[] | string[];
 
   details?: string[]; // to retire
 }

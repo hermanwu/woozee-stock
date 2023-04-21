@@ -2,10 +2,11 @@
   <div class="image-column" *ngFor="let item of images">
     <!-- <div class="title">{{ item.displayName }}</div> -->
 
-    <div class="image">
-      <!-- <img [src]="item.link" /> -->
+    <!-- <div class="image-container">
       <app-image-display [imageLink]="item.imageLink"></app-image-display>
-    </div>
+    </div> -->
+
+    <img [src]="item.imageLink" [alt]="item.name" />
   </div>
 </ng-container>
 
@@ -17,5 +18,7 @@
       <!-- <img [src]="item.link" /> -->
       <app-image-display [imageLink]="item"></app-image-display>
     </div>
+
+    <!-- <img [src]="item" alt="Your Image" /> -->
   </div>
 </ng-container>

@@ -24,10 +24,12 @@ export class MediaLinkComponent implements OnInit, OnChanges {
   }
 
   getDomainAndSuffix(url: string): string {
-    const parsedUrl = new URL(url);
-    const domainParts = parsedUrl.hostname.split('.');
-    const suffix = domainParts.pop()!;
-    const domain = domainParts.pop()!;
-    return domain + '.' + suffix;
+    if (url) {
+      const parsedUrl = new URL(url);
+      const domainParts = parsedUrl.hostname.split('.');
+      const suffix = domainParts.pop()!;
+      const domain = domainParts.pop()!;
+      return domain + '.' + suffix;
+    }
   }
 }

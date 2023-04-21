@@ -1,86 +1,13 @@
-import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { Term } from 'src/app/risks/models/risk-level.model';
-import { Risk } from 'src/app/risks/models/risk.model';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
-import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
-
-export const coinRisks: Risk[] = [
-  {
-    uuid: 'coin-r-1',
-    content: 'Crypto market is not well regulated by goveronment.',
-  },
-  {
-    uuid: 'coin-r-1',
-    content: 'New user and revenue growth slows down',
-    level: Term.short,
-    type: FactType.growth,
-  },
-  {
-    uuid: 'coin-r-2',
-    name: 'Highly tied to crypto business.',
-    level: Term.long,
-  },
-  {
-    uuid: 'coin-r-2',
-    name: 'Transaction based revenue could be limited. (i.e. company like Schwab)',
-    level: Term.long,
-  },
-  {
-    uuid: 'coin-r-3',
-    name: 'Too much competition in the business, from startup to established brokerage.',
-    level: Term.long,
-  },
-  {
-    uuid: 'coin-r-5',
-    name: 'Crypto is not a good investment since it wont increase value',
-    level: Term.long,
-  },
-  {
-    uuid: 'coin-r-6',
-    name: 'Assets on the platform only grow about 10% compared to last year.',
-  },
-  {
-    uuid: 'coin-r-7',
-    content:
-      'Historical transaction revenue per user does not grow in the past 5 years.',
-    level: Term.short,
-    type: FactType.growth,
-  },
-  {
-    uuid: 'coin-r-8',
-    content: 'Forecast in Q2 does not any better.',
-    level: Term.short,
-    type: FactType.growth,
-  },
-];
-
-export const coinCatalysts: Catalyst[] = [
-  {
-    uuid: 'coin-c-1',
-    content: 'NFT market',
-    level: Term.long,
-  },
-  {
-    uuid: 'coin-c-2',
-    content: 'decentralized finance',
-    level: Term.long,
-  },
-  {
-    uuid: 'coin-c-3',
-    content: 'Coinbase is trying to diversify its revenue streams.',
-    level: Term.long,
-  },
-];
 
 export const coin: StockAnalysis = {
   uuid: 'coin',
   displayName: 'Coinbase',
   marketCap: 15 * BILLION,
-  riskUuids: coinRisks.map((r) => r.uuid),
-  catalystUuids: coinCatalysts.map((c) => c.uuid),
+  logoLink: 'https://i.ibb.co/J2Hd0Sf/A9y-Yenz3-400x400.png',
 
   business: {
     markets: [IndustryType.crypto],

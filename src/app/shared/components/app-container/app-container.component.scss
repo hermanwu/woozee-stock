@@ -32,11 +32,16 @@ mat-toolbar {
   right: 0;
   z-index: 2;
   color: white;
-  background: #343434;
+  background: #373535;
 }
 
 .content-container {
   margin-top: 64px;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.name {
+  font-size: x-large;
+  color: rgb(243, 113, 243);
 }

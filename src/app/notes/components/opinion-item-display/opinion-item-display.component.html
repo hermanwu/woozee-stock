@@ -1,10 +1,4 @@
 <ng-container *ngIf="expanded; else shortVersion">
-  <div class="news-image" *ngIf="organization">
-    <app-ui-images-display
-      [imageLinks]="[organization.logoLink]"
-    ></app-ui-images-display>
-  </div>
-
   <div class="news-image">
     <app-ui-images-display [images]="imageLinks"></app-ui-images-display>
   </div>
@@ -22,9 +16,11 @@
       <app-opinion-display [opinionType]="item"></app-opinion-display>
     </span>
 
-    <span> Thesis on </span>
+    <span> on </span>
 
-    <span *ngFor="let item of targets">{{ item?.displayName }}, </span>
+    <span *ngFor="let item of targets; last as last"
+      >{{ item?.displayName }}<span *ngIf="!last">, </span>
+    </span>
 
     <span class="emoji-display">
       <app-emoji-display [emotion]="opinion.rating"> </app-emoji-display>

@@ -1,7 +1,6 @@
 import { abnbCatalysts } from 'src/app/mock-data/mocks/abnb';
 import { afrmCatalysts } from 'src/app/mock-data/mocks/afrm';
 import { amznCatalysts } from 'src/app/mock-data/mocks/amzn.mock';
-import { coinCatalysts } from 'src/app/mock-data/mocks/coin';
 import { disneyCatalysts } from 'src/app/mock-data/mocks/dis.mock';
 import { gmeCatalysts } from 'src/app/mock-data/mocks/gme';
 import { googleCatalysts } from 'src/app/mock-data/mocks/googl.mock';
@@ -12,7 +11,6 @@ import { Catalyst } from 'src/app/shared/models/booster.interface';
 
 export const allCatalystsForStocks: Catalyst[] = [
   ...blockCatalysts,
-  ...coinCatalysts,
   ...googleCatalysts,
   ...afrmCatalysts,
   ...disneyCatalysts,

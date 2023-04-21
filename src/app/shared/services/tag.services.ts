@@ -39,7 +39,6 @@ export class TagServices {
       ?.split(' ')
       .filter((word) => tagSet.has(word.trim()?.toLowerCase()))
       .map((word) => word.trim()?.toLowerCase());
-    console.log(tags);
     // Count tags
     if (tags) {
       tags.forEach((tag) => {
@@ -92,10 +91,7 @@ export class TagServices {
       };
     }
 
-    console.log(cleanedTagUuid);
-
     let person = this.peopleServices.getPersonByUuid(cleanedTagUuid);
-    console.log(person);
 
     if (person) {
       return {

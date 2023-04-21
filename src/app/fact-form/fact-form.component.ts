@@ -37,11 +37,9 @@ export class FactFormComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.newsForm);
     if (changes.note && !this.newsForm) {
       this.createForm();
       this.newsForm.patchValue({ uuid: changes.note.currentValue.uuid });
-      console.log(this.newsForm);
     }
   }
 
@@ -59,7 +57,6 @@ export class FactFormComponent implements OnInit, OnChanges {
       creatorUuid: 'hwu1106@gmail.com',
       parentUuid: [],
     });
-    console.log(this.newsForm);
   }
 
   /**

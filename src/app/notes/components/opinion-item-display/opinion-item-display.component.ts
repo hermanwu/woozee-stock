@@ -8,10 +8,7 @@ import {
 import { Quote } from 'src/app/mock-data/quote.model';
 import { NotesServices } from 'src/app/news/services/notes.services';
 import { OrganizationServices } from 'src/app/organizations/services/organization.services';
-import {
-  Organization,
-  Person,
-} from 'src/app/people/components/investor-display/investor-display.component';
+import { Organization } from 'src/app/people/components/investor-display/investor-display.component';
 import { PeopleServices } from 'src/app/people/services/people.services';
 import { Fact } from 'src/app/risks/models/fact.model';
 import { Tag } from 'src/app/shared/data/tag.model';
@@ -27,7 +24,7 @@ export class OpinionItemDisplayComponent implements OnInit, OnChanges {
   @Input() opinion: Opinion;
   @Input() expanded: boolean;
 
-  author: Person;
+  author: Tag;
   organization: Organization;
   imageLinks = [];
   parentExpanded = false;
@@ -45,11 +42,13 @@ export class OpinionItemDisplayComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.opinion?.authorUuid) {
-      this.author = this.peopleService.getPersonByUuid(this.opinion.authorUuid);
-
-      this.organization = this.organizationServices.getOrganizationByUuid(
-        this.opinion.authorUuid
+      this.author = this.tagServices.getTagRelatedDataByUuid(
+        this.opinion?.authorUuid
       );
+
+      if (this.author) {
+        this.imageLinks.push(this.author);
+      }
     }
 
     if (this.opinion.targets) {

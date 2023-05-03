@@ -54,7 +54,9 @@
       <a [routerLink]="['/stocks']">Stocks</a>
     </button> -->
 
-    <a mat-menu-item [href]="aboutPage">About</a>
+    <a mat-menu-item [href]="aboutPage" *ngIf="!environment.production"
+      >About</a
+    >
     <!-- <button mat-menu-item [routerLink]="['/about']">About</button> -->
 
     <button

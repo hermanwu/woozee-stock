@@ -31,7 +31,9 @@
 
 <ng-template #fullVersion>
   <div *ngIf="news?.imageLinks; else tagImages">
-    <app-image-display [imageLink]="news.imageLinks[0]"></app-image-display>
+    <div *ngFor="let item of news.imageLinks">
+      <app-image-display [imageLink]="item"></app-image-display>
+    </div>
   </div>
   <ng-template #tagImages>
     <div class="news-image">
@@ -49,13 +51,6 @@
     </ul>
 
     <app-content-display [content]="news.content"></app-content-display>
-
-    <div *ngFor="let item of news?.imageLinks?.slice(1)">
-      <app-stock-image-display
-        [imageLinks]="[item]"
-        [tag]="news?.tags?.[0]"
-      ></app-stock-image-display>
-    </div>
   </div>
 
   <div class="source" *ngIf="news?.sourceLink">

@@ -1,5 +1,11 @@
 export const people = [
   {
+    uuid: 'charmath',
+    displayName: 'Chamath Palihapitiya',
+    imageLink: 'https://i.ibb.co/JpcJ6Sy/Chamath-Palihapitiya-Portrait.jpg',
+  },
+
+  {
     uuid: 'bobIger',
     displayName: 'Bob Iger',
     organizationUuidTitles: [['dis', 'CEO']],
@@ -69,5 +75,10 @@ export const people = [
     uuid: 'cathiewood',
     displayName: 'Cathie Wood',
     imageLink: 'https://i.ibb.co/bXvQfFF/dv-Ug-Qkt8-400x400.jpg',
+  },
+  {
+    uuid: 'geoffrey',
+    displayName: 'Geoffrey Hinton',
+    imageLink: 'https://i.ibb.co/bPgXKNy/f-QGCUSt0-400x400.jpg',
   },
 ];

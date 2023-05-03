@@ -1,7 +1,7 @@
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const sofi: StockAnalysis = {
-  logo: '',
+  logoLink: 'https://i.ibb.co/Xsfmtz7/Lq-QG6o-Zd-400x400.jpg',
   name: 'SoFi',
   description: [],
   ticker: 'sofi',

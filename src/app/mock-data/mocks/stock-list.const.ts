@@ -47,6 +47,7 @@ import { HD } from './HD';
 import { hood } from './hood';
 import { huya } from './huya';
 import { iac } from './iac';
+import { intc } from './intc';
 import { intu } from './intu';
 import { ionq } from './ionq.mock';
 import { isrg } from './isrg';
@@ -299,4 +300,5 @@ export const stocksMap = {
     uuid: 'spy',
     displayName: 'SPDR S&P 500 ETF trust',
   },
+  intc,
 };

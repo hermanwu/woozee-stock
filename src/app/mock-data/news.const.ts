@@ -6,6 +6,288 @@ import { Quote } from './quote.model';
 export const allNews: (Quote | Opinion | Fact)[] = [
   {
     title:
+      'Uber tops Q1 revenue estimates and projects strong bookings growth for the rest of the year.',
+    content:
+      'Revenue was $8.8B, up 29% YoY, beating expectations by $90M.\n\nOperating loss was $262M, smaller than the $482M loss a year ago.\n\nMobility Gross Bookings of $15.0 billion, up 40% YoY.\n\nDelivery Gross Bookings of $15.0 billion, up 8% YoY.\n\nCEO Dara Khosrowshahi: "We significantly accelerated Q1 trip growth to 24% from 19% last quarter, with Mobility trip growth of 32%, as a result of improved earner and consumer engagement... Looking ahead, we are focused on extending our product, scale and platform advantages to sustain market-leading top and bottom-line growth beyond 2023.”\n\nCEO Dara Khosrowshahi also said that Uber is off to a "strong start" for the year and highlighted the company\'s "significant data advantage" over its competitors that would enable the use of AI solutions on both the consumer and earner side of the business.',
+    tagUuids: ['uber'],
+    uuid: '9e1944f2-ce79-43e4-8f7d-7bc4fe0a9853',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-05-02T15:25:32.497Z',
+  },
+  {
+    title: 'SoFi Technologies reported better-than-expected Q1 earnings',
+    content:
+      'Q1 GAAP EPS of -$0.05 beats by $0.03.\n\nRevenue of $460M (+43.0% Y/Y) beats by $23.22M.\n\nThe lending segment generated a revenue of $325M, up 33% from last year. Financial services revenue more than tripled on a yearly basis to $81M, while the technology division revenue grew 28% Y/Y to ~$78M. \n\nFor Q2, adjusted net revenue is expected to be in the range of $470M-$480M, and adjusted EBITDA is estimated to be between $50M and $60M. ',
+    tagUuids: ['sofi'],
+    uuid: '535a7253-c021-4d3b-9b5a-154fd9092605',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-05-02T04:18:32.346Z',
+  },
+  {
+    title:
+      'IBM CEO has announced that the company will pause hiring for roles that could be replaced by artificial intelligence (AI) in the coming years',
+    content:
+      'He said it is affecting back-office functions like human resources and he could easily see 30% of these roles being replaced by AI and automation over a five-year period. \n\nThe move marks one of the largest workforce strategies announced in response to the rapidly advancing technology. However, IBM will continue to hire for software development and customer-facing roles.',
+    tagUuids: ['ibm'],
+    uuid: '821c8aed-7cc1-4a8a-b279-2a747c95b9c7',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'jane.doe@example.com',
+    createdDate: '2023-05-01T22:14:04.738Z',
+  },
+  {
+    title:
+      'The Nasdaq Composite closed -0.1%, the S&P 500 finished fractionally lower and the Dow ended -0.1% on Monday.',
+    content:
+      '\n\nSix of the 11 S&P sectors ended lower, led by Consumer Discretionary and Energy sectors.\n\nUber, Pfizer will report earnings before the bell, followed by Ford, Starbucks, Advanced Micro Devices after the market closes.\n\n\n',
+    tagUuids: ['daily-news'],
+    uuid: 'e9968535-a254-4343-b108-c1a2835e708d',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-05-01T22:08:21.997Z',
+    imageLinks: [
+      'https://i.ibb.co/zxQ2xW0/Screenshot-2023-05-01-at-3-47-50-PM.png',
+      'https://i.ibb.co/yPQ6XqY/Screenshot-2023-05-01-at-3-15-07-PM.png',
+    ],
+  },
+  {
+    title:
+      'Chegg (NYSE:CHGG) stock falls by 31% as ChatGPT usage increases among students.',
+    content:
+      'Chegg noted a significant spike in student interest in ChatGPT starting from March 2023, which is having a negative impact on new customer growth rate.\n\nChegg CEO Dan Rosensweig stated that the company is embracing artificial intelligence technology and prioritizing investments to meet this opportunity.\n\nQ1 2023 total revenue fell 7% YoY to $188M, and subscription services revenue declined by 3%.\n\nQ2 2023 revenue guidance is $175M to $178M, versus a $194M consensus.\n\nShares of Chegg (CHGG) fell 30.55% in post-market trading.',
+    tagUuids: ['chegg'],
+    uuid: 'd5246a01-f3a0-4315-8f72-928bcc9c429a',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-05-01T21:59:28.530Z',
+  },
+  {
+    title: 'Key events this week\n',
+    content:
+      'Tuesday: US JOLTS job openings\n\nWednesday: ADP employment, S&P global US services PMI. Jerome Powell will hold news conference following rate decision\n\nThursday: US initial jobless claims\nFriday: US unemployment, nonfarm payrolls reports',
+    tagUuids: ['us', ' jobs'],
+    uuid: '7dda641e-9335-4905-9238-2a8a54fb6d79',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-05-01T21:18:20.084Z',
+  },
+  {
+    title: 'Geoffrey Hinton left Google.',
+    content:
+      'Geoffrey Hinton, known as the "godfather of AI," has left Google to warn the world about the potential risks of AI. \n\nHinton told CNBC that he now thinks digital intelligence can “acquire hugely more knowledge than any individual biological agent.”\n\nHinton has some regrets over his life’s work, citing the near-term risks of AI taking jobs and the proliferation of fake photos, videos and text that appear real to the average person. Hinton referenced the power of GPT-4, the most-advanced large language model (LLM) from startup OpenAI, whose technology has gone viral since the chatbot ChatGPT was launched late last year.\n\n',
+    tagUuids: ['Geoffrey', ' googl'],
+    uuid: '4536958b-ace7-4bf3-b64b-258e091269aa',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-05-01T21:09:22.969Z',
+  },
+  {
+    title: 'JPMorgan Chase has acquired First Republic Bank.',
+    content:
+      'JP Morgan Chase has acquired the deposits and a "substantial majority of assets" of First Republic after the bank failed on Monday. \n\nThe takeover will add about $173bn of loans, $30bn of securities, and $92bn in deposits to JPMorgan’s balance sheet, making it even more massive. The bank will also have a one-time gain of about $2.6bn and expects to spend around $2bn on integration costs. \n\nAs part of the transaction, it is making a payment of $10.6bn to the Federal Deposit Insurance Corporation. \n\nTrading in First Republic Bank common shares has been halted on the NYSE, and the stock has dropped 97% year-to-date. Stockholders are creditors now, behind depositors, general unsecured creditors, and subordinated debt holders. \n\n\n',
+    tagUuids: ['frc'],
+    uuid: 'eede4f8b-7bb0-42cf-8bf0-a5c7d9f31bda',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-05-01T17:59:46.280Z',
+  },
+  {
+    title: 'Growth is slowing down, especially AWS\n',
+    content:
+      'AWS revenue only grew 16% YoY, while Google Cloud grew by 28% and Microsoft Azure grew 31% in constant currency. For next quarter, AWS growth will continue to slow.\nRetail business is too cyclical. Global economy is experiencing a recession.\nValuation is too high. Amazon’s P/E ratio is higher than its peers.\n',
+    tagUuids: ['amzn'],
+    uuid: 'e9cc438b-273d-4b72-95b8-9c7e4b2b0678',
+    noteType: 'opinion',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'will.smith@example.com',
+    targets: ['amzn'],
+    createdDate: '2023-04-28T23:15:25.498Z',
+    emotions: ['Bearish'],
+  },
+  {
+    title: 'Cloud and AI are trending now\n\n',
+    content:
+      'Morgan Stanley: AWS has the ability to drive and benefit from the +$2.5T public cloud opportunity.\nEvercore ISI: The AI Revolution probably won’t be televised. It certainly won’t be on-prem. It will be in the Cloud, where AWS is the market leader.\nMargin is improving: The North American shows its first positive operating margin in more than a year. Quarterly operating income increased by more than 1 billion YoY.\nAdvertising Business is growing nicely: Advertising revenue was up 23% YoY, which impled Amazon is taking market shares from competitors like Google and Meta.',
+    tagUuids: ['amzn'],
+    uuid: '4694c614-be8c-4b77-b15f-b8c98a94a06e',
+    noteType: 'opinion',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'bob.johnson@example.com',
+    targets: ['amzn'],
+    createdDate: '2023-04-28T23:14:23.223Z',
+    emotions: ['Bullish'],
+  },
+  {
+    title: 'Amazon.com Announces 2023 First Quarter Results',
+    content:
+      'Net sales was $127.4 billion, up 9% YoY\nAWS segment sales were $21.4 billion, up 16% YoY\nOperating income increased to $4.8 billion in the first quarter, compared with $3.7 billion during the same period last year.\nFor next quarter, net sales are expected to be between $127.0 billion and $133.0 billion, or to grow between 5% and 10% YoY.\nAmazon CFO: “Customers continue to evaluate ways to optimize their cloud spending in response to these tough economic conditions in the first quarter and we are seeing these optimizations continue into the second quarter with April revenue growth rates about 500 basis points lower than what we saw in Q1”',
+    tagUuids: ['amzn'],
+    uuid: 'deba8eb4-0f44-49ae-9902-89ee06837e91',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-28T23:10:44.803Z',
+  },
+  {
+    title: 'Intel posted Q1 results that beat expectations',
+    content:
+      "First-quarter revenue of $11.7 billion, down 36% year over year (YoY).\nIntel's gross margins fell by 16.2 percentage points YoY to 34.2% \n\nIntel's nascent foundry business generated $118M, down 24% YoY. \n\nCompany predicts an improving profit margin in second half",
+    tagUuids: ['intc'],
+    uuid: '8e793171-c0f2-4684-b3bc-90c6794cad61',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-28T23:02:43.385Z',
+  },
+  {
+    title:
+      'Exxon Mobil (XOM) reported a record-breaking Q1 net income of $11.43 billion, more than double that of the previous year',
+    content:
+      'The result was driven by higher production volumes which partially offset the 16% drop in oil prices.\n\nRevenues fell 4% Y/Y due to lower crude oil and natural gas realizations. \n\nThe company also remains on track to deliver $9 billion of structural cost savings by year-end 2023. ',
+    tagUuids: ['xom'],
+    uuid: 'ad1d3986-be26-4c50-88fb-a145f88c8ae5',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-28T22:56:42.274Z',
+  },
+  {
+    title: 'Shares of First Republic Bank (FRC) fell by over 50% ',
+    content:
+      "CNBC reported that Federal Deposit Insurance Corp. receivership was the most likely scenario for the struggling bank. \n\nFDIC was in talks with several banks for bids on First Republic in the event it goes into receivership. \n\nThe bank's stock ended the day down 43% at $3.51, with year-to-date stock plunging 96% after the failures of Silicon Valley Bank and Signature Bank led to customers withdrawing deposits from First Republic.",
+    tagUuids: ['frc', ' bank'],
+    uuid: '619fd947-19f9-47bb-96cc-fd3c97e99e35',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-28T22:42:48.076Z',
+  },
+  {
+    title:
+      'The Nasdaq Composite (COMP.IND) closed +0.7%, the S&P 500 (SP500) finished +0.8% and Dow (DJI) ended +0.8%.\n\n',
+    content:
+      'On April 28, 2023, the Nasdaq, S&P 500, and Dow all posted modest gains, with the Nasdaq securing its third consecutive day of gains due to strong tech earnings. \n\nNine of the 11 S&P sectors finished higher, with energy, financials, info tech, materials, and real estate each climbing more than 1%.\n\nIn economic news, the core personal consumption expenditure index climbed 0.3% in March compared to the previous month, while yields in the bond market slipped.',
+    tagUuids: ['us-market'],
+    uuid: '289a5300-8218-40db-b669-09283f9575d3',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-28T22:36:35.439Z',
+  },
+  {
+    title: "Meta's PE ratio is Meta's PE is higher than Google now.",
+    tagUuids: ['meta'],
+    uuid: '32031558-ad9a-4088-9ab8-d660994e101d',
+    noteType: 'opinion',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'jane.doe@example.com',
+    targets: ['Meta'],
+    createdDate: '2023-04-26T22:56:39.437Z',
+    emotions: ['Bearish'],
+  },
+  {
+    title: 'Roku delivers 2023 first quarter results',
+    content:
+      'Revenue was $741 million, up 1% YoY\n\nGross profit was $338 million, down 7% YoY\n\nOperating loss was 212.5 million, much higher than the 23.5 million loss a year ago.\n\nStreaming Hours were 25.1 billion, up 4.2 billion hours YoY\n\nActive Accounts were 71.6 million, a net increase of 1.6 million Active Accounts from Q4 2022\n\n',
+    tagUuids: ['roku'],
+    uuid: '7197a99f-2097-4f40-b8a0-e0d1c1c8ff74',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-26T21:34:28.889Z',
+  },
+  {
+    title: 'Teladoc Health Reports First Quarter 2023 Results',
+    content:
+      'First quarter 2023 revenue grows 11% year-over-year to $629.2 million\n\nInternational revenues was $87.6 million, up 18% YoY.\n\nNet loss was 0.42 per share, much lower than the 41.58 per share loss a year ago\n\nNext quarter guidance was in line\n\n',
+    tagUuids: ['tdoc'],
+    sourceLink:
+      'https://s21.q4cdn.com/672268105/files/doc_financials/2023/q1/Teladoc-Q1-2023-EPR-Final.pdf',
+    uuid: 'd7579c93-71ea-4d02-9b59-8e8d5004d739',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-26T21:06:02.391Z',
+  },
+  {
+    title: 'Meta Reports First Quarter 2023 Results',
+    content:
+      'Daily and monthy active people was up 5% YoY\n\nRevenue was $28.65 billion, up 3% YoY\n\nOperating margin was 25%, down from 31% last year.\n\nNet income was down 24% YoY\n\nRepurchased $9.22 billion of common stock\n\nCEO, Mark Zuckerberg: "Our AI work is driving good results across our apps and business. We\'re also becoming more efficient so we can build better products faster and put ourselves in a stronger position to deliver our long term vision."',
+    tagUuids: ['meta'],
+    sourceLink:
+      'https://investor.fb.com/investor-news/press-release-details/2023/Meta-Reports-First-Quarter-2023-Results/default.aspx',
+    uuid: 'cefc2ba9-bfef-41f5-9af0-de713ba4c4b1',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-26T20:30:41.749Z',
+    noteType: 'fact',
+  },
+  {
+    title: 'Microsoft Cloud Strength Drives Third Quarter Results\n\n',
+    content:
+      'Revenue was $52.9 billion, up 7% YoY \n\nOperating income was $22.4 billion, up 10% YoY\n\nNet income was $18.3 billion, up 9% YoY\n\nServer products and cloud services revenue was up 17%, driven by Azure and other cloud services revenue growth of 27% YoY\n\nProductivity and Business Processes was $17.5 billion, was up 11% YoY\n\nCEO: “The world\'s most advanced AI models are coming together with the world\'s most universal user interface - natural language - to create a new era of computing"..."Across the Microsoft Cloud, we are the platform of choice to help customers get the most value out of their digital spend and innovate for this next generation of AI.”',
+    tagUuids: ['msft'],
+    sourceLink:
+      'https://www.microsoft.com/en-us/investor/earnings/fy-2023-q3/press-release-webcast',
+    uuid: 'f7f45df4-0eaf-4f40-b4f7-feafa6b4c7c2',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-26T00:15:42.308Z',
+    noteType: 'fact',
+  },
+  {
+    title: 'Alphabet Announces First Quarter 2023 Results',
+    content:
+      'Revenues +3% YoY\nOperating Margin was 25%, down from 30% last year\nGoogle Cloud revenue was up 28% YoY\nGoogle Services revenue was flat\n\n\nCEO: “We are pleased with our business performance in the first quarter, with Search performing well and momentum in Cloud. We introduced important product updates anchored in deep computer science and AI. Our North Star is providing the most helpful answers for our users, and we see huge opportunities ahead, continuing our long track record of innovation.”',
+    tagUuids: ['googl'],
+    sourceLink:
+      'https://abc.xyz/investor/static/pdf/2023Q1_alphabet_earnings_release.pdf?cache=0924ccf',
+    uuid: '05de05ee-10cf-400a-8cab-063f7d9bad11',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'jane.doe@example.com',
+    createdDate: '2023-04-25T20:12:54.374Z',
+  },
+  {
+    title:
+      'First Republic Bank customer deposits plunged 41% to $104.5 billion in the first quarter, way below $137 billion estimates',
+    content:
+      "First-quarter revenue fell 13% to $1.21 billion, while net income fell 33% to $269 million. \n\nIt is reducing its workforce by as much as 25%, lowering outstanding loan balances, and cutting back on non-essential activities.\n\nFirst Republic's unrealized losses on Treasuries and other long-dated bonds on its balance sheet are reportedly far greater than its tangible common equity, leading some potential buyers to hesitate. \n\n\n\n",
+    tagUuids: ['firstRepublicBank'],
+    sourceLink:
+      'https://www.bloomberg.com/news/articles/2023-04-24/first-republic-pursues-strategic-options-as-deposits-slump?srnd=premium',
+    uuid: '4531d41e-278c-41dd-8b1d-f8026c3712c4',
+    noteType: 'fact',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'zeesun.wu@gmail.com',
+    createdDate: '2023-04-25T00:25:55.208Z',
+  },
+  {
+    title: 'Tech investor Chamath Palihapitiya: "Crypto is dead in America"',
+    content:
+      '“You had Gensler even blaming the banking crisis on crypto" Chamath commented on regulators\' increasing enforcement actions against crypto companies: "The United States authorities have firmly pointed their guns at crypto.”\n\nSecurities and Exchange Commission has ramped up its actions against crypto industry. Its chairman Gary Gensler said crypto trading platforms should abide by strict U.S. securities laws. \n',
+    tagUuids: ['charmath', ' crypto'],
+    sourceLink:
+      'https://www.cnbc.com/2023/04/24/crypto-is-dead-in-america-says-tech-investor-chamath-palihapitiya.html',
+    uuid: '9d2bb432-e00a-4600-affc-3314ddf6f894',
+    noteType: 'opinion',
+    targets: ['crypto'],
+    authorUuid: 'charmath',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-04-24T23:59:28.827Z',
+    emotions: ['Bearish'],
+  },
+  {
+    title:
       "Cathie Wood, CEO of Ark Invest, has updated her price target for Tesla to $2,000 by 2027, a 1,127% increase from Tesla's closing price of $162.99 on Thursday.",
     content:
       'Cathie believes that robotaxis business will help drive growth and generate $8 trillion to $10 trillion in revenue by 2030.\n\nTesla is the largest holding in her flagship Ark Innovation ETF (ARKK) fund, with a 9.4% weighting.',

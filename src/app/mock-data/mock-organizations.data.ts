@@ -2,6 +2,11 @@ import { Organization } from '../people/components/investor-display/investor-dis
 
 export const organizations: Organization[] = [
   {
+    uuid: 'sofi',
+    displayName: 'SoFi',
+    logoLink: 'https://i.ibb.co/Xsfmtz7/Lq-QG6o-Zd-400x400.jpg',
+  },
+  {
     uuid: 'dis',
     displayName: 'Disney',
     logoLink:
@@ -58,5 +63,25 @@ export const organizations: Organization[] = [
     uuid: 'pipersandler',
     displayName: 'Piper Sandler',
     logoLink: 'https://i.ibb.co/P9j9ts8/5l-CBn4v-U-400x400.jpg',
+  },
+  {
+    uuid: 'frc',
+    displayName: 'First Republic',
+    logoLink: 'https://i.ibb.co/zSY73c0/cwm-3-OQE-400x400.png',
+  },
+  {
+    uuid: 'xom',
+    displayName: 'Exxon Mobile',
+    logoLink: 'https://i.ibb.co/5sV9Fvp/YTOCYYnn-400x400.jpg',
+  },
+  {
+    uuid: 'chegg',
+    displayName: 'Chegg',
+    logoLink: 'https://i.ibb.co/NKXLJf6/k-QY2-Vrgf-400x400.jpg',
+  },
+  {
+    uuid: 'ibm',
+    displayName: 'IBM',
+    logoLink: 'https://i.ibb.co/G9Gn6c4/e-JTciq-MK-400x400.jpg',
   },
 ];

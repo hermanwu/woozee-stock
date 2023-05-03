@@ -51,7 +51,6 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
       sourceLink: [],
       rating: [],
       uuid: [],
-      noteType: [NoteType.Opinion],
       authorUuid: ['hwu1106@gmail.com'],
       creatorUuid: 'hwu1106@gmail.com',
       parentUuid: [],
@@ -74,7 +73,7 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
       sourceLink: this.newsForm.value.sourceLink,
       rating: this.newsForm.value.rating,
       uuid: this.newsForm.value.uuid,
-      noteType: this.newsForm.value.noteType,
+      noteType: this.note.noteType,
       authorUuid: this.newsForm.value.authorUuid,
       creatorUuid: this.newsForm.value.creatorUuid,
       targets: this.newsForm.value.targets

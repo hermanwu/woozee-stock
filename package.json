@@ -2,12 +2,13 @@
   "name": "woozee-stock",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
+    "ng": "nx",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "node ./decorate-angular-cli.js"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +23,7 @@
     "@angular/platform-browser": "~13.3.5",
     "@angular/platform-browser-dynamic": "~13.3.5",
     "@angular/router": "~13.3.5",
+    "@nrwl/angular": "14.1.11",
     "firebase": "^9.0.0",
     "lodash.clonedeep": "^4.5.0",
     "rxjs": "~6.6.0",
@@ -35,6 +37,8 @@
     "@angular/cli": "~13.3.4",
     "@angular/compiler-cli": "~13.3.5",
     "@angular/localize": "^13.3.5",
+    "@nrwl/nx-cloud": "14.7.0",
+    "@nrwl/workspace": "14.1.11",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
@@ -50,6 +54,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.7.0",
+    "nx": "14.1.11",
     "open": "^7.0.3",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",

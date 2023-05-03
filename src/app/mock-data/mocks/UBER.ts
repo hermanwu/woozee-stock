@@ -7,7 +7,7 @@ export const uberRisks: Risk[] = [];
 
 export const uber: StockAnalysis = {
   marketCap: 46.32 * BILLION,
-  logo: '',
+  logoLink: 'https://i.ibb.co/h1PC0XC/TPLLaq-YR-400x400.jpg',
   name: 'Uber',
   description: [],
   ticker: 'uber',

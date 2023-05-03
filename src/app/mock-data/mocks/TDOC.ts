@@ -15,6 +15,7 @@ export const tdoc: StockAnalysis = {
   name: 'Teladoc Health',
   description: [],
   ticker: 'tdoc',
+  logoLink: 'https://i.ibb.co/nMmcN4V/pf-VOD1-Ab-400x400.jpg',
   myRating: OpinionEnum.Bullish,
   displayName: 'Teladoc',
   irAddress: 'https://ir.teladochealth.com/investors/default.aspx',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { v4 as generateUuid } from 'uuid';
-import { NoteType } from '../shared/data/note.interface';
+import { Note, NoteType } from '../shared/data/note.interface';
 
 @Component({
   selector: 'app-note-form-list',
@@ -8,7 +8,7 @@ import { NoteType } from '../shared/data/note.interface';
   styleUrls: ['./note-form-list.component.scss'],
 })
 export class NoteFormListComponent implements OnInit {
-  notes = [];
+  notes: Note[] = [];
   constructor() {}
 
   ngOnInit(): void {}
@@ -16,14 +16,14 @@ export class NoteFormListComponent implements OnInit {
   addNewNote() {
     this.notes.unshift({
       uuid: generateUuid(),
-      type: NoteType.Opinion,
+      noteType: NoteType.Opinion,
     });
   }
 
   addNewFact() {
     this.notes.unshift({
       uuid: generateUuid(),
-      type: NoteType.Fact,
+      noteType: NoteType.Fact,
     });
   }
 

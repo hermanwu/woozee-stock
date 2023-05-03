@@ -6,7 +6,8 @@ export const intc: StockAnalysis = {
   name: { English: 'Intel' },
   description: [],
   displayName: 'Intel',
-  ticker: 'INTC',
+  ticker: 'intc',
+  uuid: 'intc',
   myRating: OpinionEnum.Bullish,
 
   // Earnings Report:
@@ -14,4 +15,5 @@ export const intc: StockAnalysis = {
     website: 'https://www.investors.intuit.com',
     latestReportQuarter: ['2021', '1'],
   },
+  logoLink: 'https://i.ibb.co/Lr2Sqmw/7d-Pe-X1g-K-400x400.png',
 };

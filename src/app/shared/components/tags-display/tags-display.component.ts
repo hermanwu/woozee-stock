@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Tag } from '../../data/tag.model';
 import { NavigationServices } from '../../services/navgiation.services';
 import { TagServices } from '../../services/tag.services';
@@ -33,6 +34,10 @@ export class TagsDisplayComponent implements OnChanges {
   }
 
   navigate(tag: Tag) {
+    if (environment.production) {
+      return;
+    }
+
     this.navigationServices.navigate(tag.type, tag.uuid);
   }
 }

@@ -9,6 +9,7 @@ export const roku: StockAnalysis = {
   ticker: 'roku',
   displayName: 'Roku',
   irAddress: 'https://www.roku.com/investor',
+  logoLink: 'https://i.ibb.co/qND1H1w/u7-ZA1-AOh-400x400.jpg',
 
   // Earnings Report:
   earningsReports: [

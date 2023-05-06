@@ -1,18 +1,4 @@
 <ng-container *ngIf="shortVersion; else fullVersion">
-  <div>
-    📌 {{ news.title }}
-
-    <span class="date-display">
-      <app-date-display [date]="news?.createdDate"></app-date-display>
-    </span>
-
-    <span
-      class="more-button"
-      *ngIf="news?.content && news.content.length > 0"
-      (click)="expanded = !expanded"
-      >more</span
-    >
-  </div>
   <div *ngIf="expanded">
     <div *ngIf="news?.imageLinks; else tagImages">
       <app-image-display [imageLink]="news.imageLinks[0]"></app-image-display>
@@ -28,6 +14,21 @@
 
   <mat-divider></mat-divider>
 </ng-container>
+
+<div>
+  📌 {{ news.title }}
+
+  <span class="date-display">
+    <app-date-display [date]="news?.createdDate"></app-date-display>
+  </span>
+
+  <span
+    class="more-button"
+    *ngIf="news?.content && news.content.length > 0"
+    (click)="expanded = !expanded"
+    >more</span
+  >
+</div>
 
 <ng-template #fullVersion>
   <div *ngIf="news?.imageLinks; else tagImages">

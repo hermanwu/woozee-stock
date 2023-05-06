@@ -26,6 +26,5 @@ export interface Opinion extends Note {
   organization?: string;
   type?: string;
   emotions?: OpinionEnum[] | string[];
-
   details?: string[]; // to retire
 }

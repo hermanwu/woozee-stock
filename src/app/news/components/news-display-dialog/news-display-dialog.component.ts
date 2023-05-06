@@ -9,6 +9,8 @@ import { ImageServices } from '../../../images/services/images.services';
   styleUrls: ['./news-display-dialog.component.scss'],
 })
 export class InstagramNewsDisplayDialogComponent implements OnInit {
+  imageUrl: string = 'https://i.ibb.co/h1PC0XC/TPLLaq-YR-400x400.jpg';
+
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public dialogData: Note,

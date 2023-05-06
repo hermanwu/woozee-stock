@@ -4,13 +4,14 @@ import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const dash: StockAnalysis = {
+  uuid: 'doordash',
   marketCap: 40 * BILLION,
-  logo: '',
   name: 'Doordash',
   description: [],
   ticker: 'dash',
   displayName: 'DoorDash',
   irAddress: 'https://ir.doordash.com/overview/default.aspx',
+  logoLink: 'https://i.ibb.co/XVGJwF6/Oav-Did-Hn-400x400.jpg',
 
   industries: [IndustryType.foodDelivery],
 

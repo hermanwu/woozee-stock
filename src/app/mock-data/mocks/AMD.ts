@@ -9,13 +9,14 @@ export const amdCatalysts = [];
 
 export const amd: StockAnalysis = {
   marketCap: 156 * BILLION,
-
+  uuid: 'amd',
   logo: '',
   name: 'AMD',
   displayName: 'AMD',
   description: [],
   ticker: 'amd',
   irAddress: 'https://ir.amd.com/',
+  logoLink: 'https://i.ibb.co/HFk1hgT/In8-IVKDB-400x400.png',
 
   business: {
     markets: [IndustryType.semi, IndustryType.datacenter],

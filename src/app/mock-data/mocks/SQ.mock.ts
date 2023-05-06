@@ -74,6 +74,8 @@ export const sq: StockAnalysis = {
   ticker: 'sq',
   displayName: 'Block',
   propertiesPageEnabled: true,
+  uuid: 'sq',
+  logoLink: 'https://i.ibb.co/QDj1JK4/OUXxd-W1-400x400.jpg',
   irAddress: 'https://investors.block.xyz/overview/default.aspx',
   secFilings: 'https://investors.block.xyz/financials/sec-filings/default.aspx',
 

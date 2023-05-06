@@ -5,6 +5,75 @@ import { Quote } from './quote.model';
 
 export const allNews: (Quote | Opinion | Fact)[] = [
   {
+    title: 'Block Announces First Quarter 2023 Results\n',
+    content:
+      'Gross profit of $1.71 billion, up 32% year over year\n\nCash App generated gross profit of $931 million, up 49% year over year\n\nSquare generated gross profit of $770 million, up 16% year over year. \n\n20 million monthly Cash App Card actives, up 34% year over year',
+    tagUuids: [],
+    uuid: 'cf0218d1-b68f-4d18-9ea6-b448459223ee',
+    noteType: 'opinion',
+    authorUuid: 'sq',
+    creatorUuid: 'emily.nguyen@example.com',
+    createdDate: '2023-05-04T21:24:59.961Z',
+  },
+  {
+    title:
+      'Apple today announced financial results for its fiscal 2023 second quarter ended April 1, 2023.',
+    content:
+      'Quarterly revenue of $94.8 billion, down 3 percent year over year\n\nQuarterly earnings per diluted share of $1.52, unchanged year over year\n\nTim Cook: “We are pleased to report an all-time record in Services and a March quarter record for iPhone despite the challenging macroeconomic environment, and to have our installed base of active devices reach an all-time high.”\n\n"Board has authorized an additional $90 billion for share repurchases. We are also raising our quarterly dividend for the eleventh year in a row." ',
+    tagUuids: [],
+    uuid: 'b35a4d3c-8eaf-43b1-b3ea-46942de67488',
+    noteType: 'opinion',
+    authorUuid: 'aapl',
+    creatorUuid: 'herman.wrt@gmail.com',
+    createdDate: '2023-05-04T20:37:47.794Z',
+  },
+  {
+    title: 'Coinbase Releases Financial Result for Q1 2023 ',
+    content:
+      '"We reduced costs, doubled down on operational excellence and risk management, and continue to drive product innovation and regulatory clarity"\n\nNet revenue grew 22% Q/Q Wto $736 million.\n\nTotal operating expenses declined 24% Q/Q,\n\nNet loss of $79 million but a return to positive Adjusted EBITDA of $284 million.',
+    tagUuids: [],
+    uuid: 'fd705b3f-78e3-4e7e-a645-c8adcc89fd26',
+    noteType: 'opinion',
+    authorUuid: 'coin',
+    creatorUuid: 'herman.wrt@gmail.com',
+    createdDate: '2023-05-04T20:31:15.695Z',
+  },
+  {
+    title: 'DoorDash Releases First Quarter 2023 Financial Results\n',
+    content:
+      'Revenue increased 40% Y/Y to $2.0 billion.\n\nTotal Orders increased 27% YoY to 512 million.\n\nMarketplace GOV increased 29% Y/Y to $15.9 billion.\n\nNet Revenue Margin increased to 12.8% from 11.8% a year ago. \n\nNet Loss was $162 million, down from $167 million a year ago.',
+    tagUuids: ['dash'],
+    uuid: 'd6d6fc1c-361c-47f4-adca-2e67fca91398',
+    noteType: 'opinion',
+    authorUuid: 'dash',
+    creatorUuid: 'jessica.jn.le@gmail.com',
+    createdDate: '2023-05-04T20:09:24.923Z',
+  },
+  {
+    title: 'AMD released financial results of Q1 2023',
+    tagUuids: ['amd'],
+    uuid: '1672bf7b-06f4-49c2-a039-d2176509d5e3',
+    noteType: 'opinion',
+    authorUuid: 'amd',
+    targets: [],
+    creatorUuid: 'jane.doe@example.com',
+    imageLinks: [
+      'https://i.ibb.co/4VbfZHH/Screenshot-2023-05-03-at-2-27-07-PM.png',
+    ],
+    createdDate: '2023-05-03T22:31:48.053Z',
+  },
+  {
+    title:
+      'The Federal Reserve has not made a firm decision on whether it will stop raising interest rates',
+    content: '“A decision on a pause was not made today” ',
+    tagUuids: ['powell', 'FederalReserve'],
+    uuid: 'ac0aec1b-89ef-4633-ab98-ecd74656e813',
+    noteType: 'opinion',
+    authorUuid: 'powell',
+    creatorUuid: 'jessica.jn.le@gmail.com',
+    createdDate: '2023-05-03T19:01:03.862Z',
+  },
+  {
     title:
       'Uber tops Q1 revenue estimates and projects strong bookings growth for the rest of the year.',
     content:

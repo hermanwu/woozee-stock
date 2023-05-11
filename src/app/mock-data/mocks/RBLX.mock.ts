@@ -19,6 +19,8 @@ export const rblx: StockAnalysis = {
   propertiesPageEnabled: true,
   irAddress: 'https://ir.roblox.com/overview/default.aspx',
   riskUuids: rblxRisks.map((r) => r.uuid),
+  logoLink:
+    'https://pbs.twimg.com/profile_images/1564281873609633793/Np6AffzF_400x400.jpg',
 
   // POTENTIALS:
 

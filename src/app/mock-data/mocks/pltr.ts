@@ -23,6 +23,7 @@ export const pltrRisks = [
 export const pltr: StockAnalysis = {
   marketCap: 15 * BILLION,
 
+  logoLink: 'https://i.ibb.co/CmgPzgs/b-CJBVt6x-400x400.jpg',
   earningsReports: [
     {
       year: 2022,

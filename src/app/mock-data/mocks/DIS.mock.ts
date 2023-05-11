@@ -1,31 +1,8 @@
 import { Term } from 'src/app/risks/models/risk-level.model';
 import { Risk } from 'src/app/risks/models/risk.model';
-import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
-
-export const disneyCatalysts: Catalyst[] = [
-  {
-    uuid: 'dis-c-2',
-    content:
-      'Disney Parks, Experiences and Products revenues grow from 3.2B to 6.7B in the latest quarter benefiting from Post-COVID recovery.',
-  },
-  {
-    uuid: 'dis-c-1',
-    content:
-      'Disney+ subscribers continue to grow and could exceeds Netflix in future.',
-    // notes: [
-    //   {
-    //     content: 'Disney+ has 138M subscribers right now.',
-    //   },
-    //   {
-    //     content:
-    //       'Disney plan to have between 230 million and 260 million global subscribers by 2024, which exceeds Netflix current 222M subscriber count.',
-    //   },
-    // ],
-  },
-];
 
 export const disneyRisks: Risk[] = [
   {
@@ -49,7 +26,6 @@ export const dis: StockAnalysis = {
   uuid: 'dis',
   marketCap: 190 * BILLION,
   riskUuids: disneyRisks.map((r) => r.uuid),
-  catalystUuids: disneyCatalysts.map((c) => c.uuid),
   name: 'Disney',
   displayName: 'Disney',
   description: [],
@@ -62,6 +38,8 @@ export const dis: StockAnalysis = {
     markets: [IndustryType.streaming, IndustryType.entertainment],
   },
   irAddress: 'https://thewaltdisneycompany.com/investor-relations/',
+  logoLink:
+    'https://pbs.twimg.com/profile_images/1624815535505522695/mhZM0n62_400x400.png',
   // POTENTIALS:
 
   // Demand:

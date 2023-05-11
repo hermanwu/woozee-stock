@@ -51,7 +51,7 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
       sourceLink: [],
       rating: [],
       uuid: [],
-      authorUuid: ['hwu1106@gmail.com'],
+      authorUuid: [],
       creatorUuid: 'hwu1106@gmail.com',
       parentUuid: [],
       emotions: [],

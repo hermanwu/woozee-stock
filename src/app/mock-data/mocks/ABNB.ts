@@ -40,7 +40,8 @@ export const abnb: StockAnalysis = {
   riskUuids: abnbRisks.map((r) => r.uuid),
   catalystUuids: abnbCatalysts.map((c) => c.uuid),
   displayName: 'Airbnb',
-  logo: '',
+  logoLink:
+    'https://pbs.twimg.com/profile_images/1604935435007901696/BpgKDmvE_400x400.jpg',
   name: 'Airbnb',
   description: [
     {

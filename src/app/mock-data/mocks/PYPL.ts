@@ -13,6 +13,7 @@ export const pypl: StockAnalysis = {
     markets: [IndustryType.fintech],
   },
   irAddress: 'https://investor.pypl.com/home/default.aspx',
+  logoLink: 'https://i.ibb.co/Cb3rcVp/PCYJMya-B-400x400.png',
 
   earningsReports: [
     {

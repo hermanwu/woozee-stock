@@ -11,6 +11,8 @@ export const u: StockAnalysis = {
   advantage: [],
   displayName: 'Unity',
   irAddress: 'https://investors.unity.com/overview/default.aspx',
+  logoLink:
+    'https://pbs.twimg.com/profile_images/1649093986852937728/TcHloZbL_400x400.jpg',
   business: {
     markets: [IndustryType.gaming, IndustryType.vr],
   },

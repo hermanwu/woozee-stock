@@ -84,4 +84,28 @@ export const organizations: Organization[] = [
     displayName: 'IBM',
     logoLink: 'https://i.ibb.co/G9Gn6c4/e-JTciq-MK-400x400.jpg',
   },
+  {
+    uuid: 'lcid',
+    displayName: 'LCUID',
+    logoLink: 'https://i.ibb.co/9hZsd7y/5h-To8-Mio-400x400.png',
+  },
+  {
+    uuid: 'rivn',
+    displayName: 'Rivian',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1199724774613606402/ZTAmKeoe_400x400.jpg',
+  },
+
+  {
+    uuid: 'dis',
+    displayName: 'Disney',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1624815535505522695/mhZM0n62_400x400.png',
+  },
+  {
+    uuid: 'u',
+    displayName: 'Unity',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1649093986852937728/TcHloZbL_400x400.jpg',
+  },
 ];

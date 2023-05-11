@@ -3,6 +3,12 @@
     <app-ui-images-display [images]="imageLinks"></app-ui-images-display>
   </div>
 
+  <div *ngIf="opinion?.imageLinks">
+    <div *ngFor="let item of opinion.imageLinks">
+      <app-image-display [imageLink]="item"></app-image-display>
+    </div>
+  </div>
+
   <div class="xl-text" *ngIf="opinion.title; else generatedTitle">
     📌 {{ opinion.title }}
   </div>
@@ -34,12 +40,6 @@
   </ng-template>
 
   <app-content-display [content]="opinion.content"></app-content-display>
-
-  <div *ngIf="opinion?.imageLinks">
-    <div *ngFor="let item of opinion.imageLinks">
-      <app-image-display [imageLink]="item"></app-image-display>
-    </div>
-  </div>
 
   <span
     class="more-button"

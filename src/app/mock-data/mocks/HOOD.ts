@@ -1,84 +1,8 @@
-import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { Term } from 'src/app/risks/models/risk-level.model';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
 import { BILLION, MILLION } from 'src/app/shared/numbers/number.model';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { UserType } from '../../stock/components/business-overview/business.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
-
-export const hoodCatalysts = [
-  {
-    name: 'Meme stocks (i.e. GME) trading becomes popular among retail investors.',
-    type: FactType.growth,
-    level: Term.short,
-    notes: [],
-    date: new Date('2022-04-18'),
-  },
-  {
-    name: 'Crypto trading market continues to grow',
-    type: FactType.growth,
-    level: Term.short,
-    date: new Date('2022-04-18'),
-    notes: [
-      {
-        content: 'Cryptocurrencies transaction revenue increased 304% Q/Q',
-      },
-    ],
-  },
-];
-
-export const hoodRisks = [
-  {
-    name: 'Revenues only increased 14% this quarter',
-    level: Term.short,
-    type: FactType.growth,
-    notes: [
-      {
-        content:
-          'This is lower than mega tech firm like Google (32%) or Microsoft (20%)',
-      },
-      {
-        content: 'tickers transaction revenue for the quarter decreased 35%',
-      },
-    ],
-  },
-  {
-    name: 'User growth is stagnating',
-    level: Term.long,
-    type: FactType.growth,
-    notes: [
-      {
-        content:
-          'Nearly no user growth in the past three quarters. Last three quarters: 22.5M, 22.4M, 22.7M',
-      },
-    ],
-  },
-  {
-    name: 'Revenue is declining in next quarter forecast',
-    level: Term.long,
-    type: FactType.growth,
-    notes: [
-      {
-        content: 'Next quarter revenue decreases 35% in the guidance',
-      },
-    ],
-  },
-  {
-    name: 'Company is losing money much faster than it can earn.',
-    type: FactType.profit,
-    level: Term.long,
-    notes: [
-      {
-        content:
-          'Operating expense in the quarter is 226% of the gross profit.',
-      },
-      {
-        content:
-          'Yearly operating expense is double the amount of gross profit.',
-      },
-    ],
-  },
-];
 
 export const hood: StockAnalysis = {
   marketCap: 9.82 * BILLION,
@@ -88,6 +12,8 @@ export const hood: StockAnalysis = {
   description: [],
   ticker: 'hood',
   irAddress: 'https://investors.robinhood.com/overview/default.aspx',
+  logoLink:
+    'https://pbs.twimg.com/profile_images/1267616128022351873/dZJpsWTD_400x400.jpg',
 
   business: {
     users: [

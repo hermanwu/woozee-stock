@@ -5,6 +5,138 @@ import { Quote } from './quote.model';
 
 export const allNews: (Quote | Opinion | Fact)[] = [
   {
+    title: 'Robinhood released 2023 Q1 earnings',
+    content:
+      'Launch 24-Hour Trading on Weekdays in Stocks and ETFs. \nTotal Net Revenue $441 million, +16% q/q\nNet Cumulative Funded Accounts 23.1 million, +120k accounts q/q\nMonthly Active Users 11.8 million, +0.4 million q/q\nAssets Under Custody 78 billion, +26% q/q\nAverage Revenue Per User $77, +16% q/q\nAdj. EBITDA $115M, +40% q/q\n\n\n',
+    tagUuids: [],
+    sourceLink: '',
+    uuid: '7ec50b09-59cb-4d5b-a996-92c1af23a208',
+    noteType: 'opinion',
+    authorUuid: 'hood',
+    creatorUuid: 'herman.wrt@gmail.com',
+    createdDate: '2023-05-10T22:55:35.134Z',
+  },
+  {
+    title: 'Walt Disney Company reported Fiscal 2023 Q2 earnings results',
+    content:
+      'Revenues for the quarter grew 13% YoY.\nDisney Parks, Experiences and Products revenue was up 17% YoY.\nDisney+ Paid Subscribers Count was decreased by 4 million, down 2% YoY.\nOperating Income was $3.285 billion, down 11% YoY\n\n',
+    tagUuids: [],
+    uuid: '7a282f0f-e6a8-424f-ad59-f334b758fc10',
+    noteType: 'opinion',
+    authorUuid: 'dis',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-05-10T21:08:26.406Z',
+  },
+  {
+    title:
+      'Google showed off new products/features during the 2023 Google I/O Conference',
+    content:
+      "Announced ChatGPT like features that are integrated with Google existing products, such as Gmail, Workspace, and Search.\nAnnounced new large language model, PaLM 2, which understands over 100 languages, with improved math, logic, and reasoning capabilities.\nAlso announced Google's first foldable phone, Pixel Fold.",
+    tagUuids: [],
+    sourceLink: '',
+    uuid: '811c900c-5bbd-4613-b684-4081de4c17df',
+    noteType: 'opinion',
+    authorUuid: 'googl',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-05-10T20:28:00.760Z',
+    imageLinks: [
+      'https://i.ibb.co/JnZ7rkL/Screenshot-2023-05-10-at-1-39-34-PM.png',
+      'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/PixelFold_All_1080x2000.width-1000.format-webp.webp',
+    ],
+  },
+  {
+    title: 'Key Market Events To Watch 5/10/23\n',
+    content:
+      "US CPI\n\nEarnings Before Open: Roblox, Wendy's, Li Auto, Toyota\n\nEarnings After Hours: Disney, Unity, Robinhood, The Trade Desk, Beyond Meat\n",
+    tagUuids: [],
+    uuid: '1b99b4f3-8eb1-4d3b-b215-063ae226f47a',
+    noteType: 'opinion',
+    creatorUuid: 'bob.johnson@example.com',
+    targets: ['dis', 'u', 'rblx', 'hood'],
+    createdDate: '2023-05-10T05:29:28.963Z',
+  },
+  {
+    title: 'Daily Stock Market Movers 5/9/23 ',
+    content:
+      'S&P 500 +0.5%\nNasdaq -0.63%\nPaypal -12.73%\nPalantir +23.39%\nUnder Armour -5.66%\nAirbnb -11.93% after hours\nRivian +5.56% after hours\nAffirm -7.97% after hours\nUpstart Holdings +39.53% after hours\nElectronic Arts +2.46% after hours\nToast +4.83% after hours\nTwilio -14.62% after hours\nDuolingo +2.08% after hours\nBlink Charging -3.80% after hours\nWynn Resorts +0.49% after hours\nGoPro -5.68% after hours\n',
+    tagUuids: [],
+    uuid: '46cf5347-0ccf-49fa-a5ae-3bfb82739d5d',
+    noteType: 'opinion',
+    authorUuid: '',
+    creatorUuid: 'jessica.jn.le@gmail.com',
+    targets: ['pypl', 'pltr', 'abnb', 'rivn'],
+    createdDate: '2023-05-10T04:33:46.811Z',
+  },
+  {
+    title: 'Twilio reported 2023 Q1 earnings',
+    content:
+      "Revenue was $1,007 million, up 15% YoY\nQ2'23 Total Revenue Guidance: $980 million to $990 million, up 4% to 5% year-over-year\nOperating Loss was $264 million, equal to -26% Operating Margin.\nStock was down 15% during after hour.",
+    tagUuids: [],
+    uuid: '31ad4aea-119d-47e8-afcb-2e57564a48e4',
+    noteType: 'opinion',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'alice.williams@example.com',
+    createdDate: '2023-05-09T22:35:29.135Z',
+  },
+  {
+    title: 'Airbnb reported 2023 Q1 earnings',
+    content:
+      'Revenue of $1.8 billion increased 20% YoY\nFirst GAAP profitable Q1 with $117 million of net income\nGross Booking Value increased 19% YoY\nGenerate $1.6 billion of free cash flow, up 32% YoY.',
+    tagUuids: [],
+    uuid: '5869c4b3-fd70-4bd9-b938-fc60f2975942',
+    noteType: 'opinion',
+    authorUuid: 'abnb',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-05-09T21:26:43.158Z',
+  },
+  {
+    title: 'Daily Summary and Tomorrow Watch',
+    content:
+      'S&P 500 rose 0.05%\nThe Nasdaq 100 rose 0.2%\nBitcoin fell 5.5% to $27,352.7\nGold fell 0.23%\nCrude Oil WTI fell 0.27%\n\nTomorrow After Bell Earnings: Airbnb, Rivian, Twilio, Affirm, Upstart\n',
+    tagUuids: [],
+    uuid: 'aac1b64f-e4b7-4c40-a2de-51ca1ab79748',
+    noteType: 'opinion',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-05-09T00:11:29.697Z',
+  },
+  {
+    title: 'Paypal released 2023 Q1 earnings',
+    content:
+      "Total Payment Volume (TPV) of $354.5 billion, growing 10% YoY\n\nNet revenues of $7.04 billion, growing 9% YoY\n\nGAAP operating income of $1.0B, growing 41% YoY\n\nQ2'23 net revenues expected to grow ~6.5%-7%\n\nQ2'23 GAAP EPS expected to be $0.81-$0.83;\n\nFY'23 share repurchases expected to reach ~$4 billion",
+    tagUuids: [],
+    uuid: '8a14f746-0519-4681-915a-0d530934678e',
+    noteType: 'opinion',
+    authorUuid: 'pypl',
+    creatorUuid: 'emily.nguyen@example.com',
+    createdDate: '2023-05-08T22:28:49.617Z',
+  },
+  {
+    title: 'Lucid Announces First Quarter 2023 Financial Results\n',
+    content:
+      'Q1 revenue was $149 million, up 159% YoY, but below $198 million estimates.\n\nProduced 2,314 vehicles during Q1 and delivered 1,406 vehicles during the same period.\n\n"We will unveil our Gravity SUV later this year ahead of its launch in 2024"',
+    tagUuids: [],
+    uuid: 'fbfb977b-43e7-4f50-9557-ab861c331d6e',
+    noteType: 'opinion',
+    authorUuid: 'lcid',
+    creatorUuid: 'zeesun.wu@gmail.com',
+    createdDate: '2023-05-08T21:56:42.537Z',
+  },
+  {
+    title:
+      'Palantir 2023 Q1 earnings topped expectations and raised full-year outlook\n\n\n',
+    content:
+      'Net income of $17 million, the second consecutive quarter of positive GAAP net income\n\nOperating income was $4 million, the first quarter of positive GAAP operating income in history.\n\nTotal revenue grew 18% year-over-year to $525 million\n\nCommercial revenue grew 15% year-over-year to $236 million\n\nGovernment revenue grew 20% year-over-year to $289 million\n\nCustomer count grew 41% year-over-year and 7% quarter-over-quarter\n',
+    tagUuids: [],
+    sourceLink: '',
+    uuid: '703d5814-cca2-4f1c-9c59-6643d462fb6a',
+    noteType: 'opinion',
+    authorUuid: 'hwu1106@gmail.com',
+    creatorUuid: 'john.smith@example.com',
+    targets: ['pltr'],
+    createdDate: '2023-05-08T21:11:06.157Z',
+  },
+  {
     title: 'Block Announces First Quarter 2023 Results\n',
     content:
       'Gross profit of $1.71 billion, up 32% year over year\n\nCash App generated gross profit of $931 million, up 49% year over year\n\nSquare generated gross profit of $770 million, up 16% year over year. \n\n20 million monthly Cash App Card actives, up 34% year over year',
@@ -2834,252 +2966,6 @@ export const allNews: (Quote | Opinion | Fact)[] = [
     tagUuids: ['COMP'],
     uuid: '0dca3183-b644-4161-b7a8-5a3f4031be08',
     createdDate: '2023-01-09T15:36:33.710Z',
-    noteType: 'fact',
-  },
-  {
-    title: '火币网宣布裁员20%',
-    content:
-      '由FTX破产造成的币圈信任危机继续发酵\n火币网原生币下跌7%\n昨天Genesis宣布裁员30%, Silvergate宣布裁员40%',
-    tagUuids: ['crypto', ' huobi', ' gensis'],
-    sourceLink:
-      'https://www.coindesk.com/business/2023/01/05/crypto-layoffs-heres-the-grim-count-since-april/',
-    uuid: 'bea7b139-16e9-4a68-a93a-96638bbe5599',
-    createdDate: '2023-01-06T23:30:39.475Z',
-    noteType: 'fact',
-  },
-  {
-    title:
-      'FTX原CEO Sam Bankman-Fried由律师发表声明说他需要用他Robinhood的持股来支付律师费',
-    content:
-      '他拥有的Robinhood股票目前价值4亿5千万美元\n理论上来说，这些股票属于Sam和他的FTX共同创始人\n已破产的FTX和BlockFi债务人也同时希望得到这些股票来处理赔偿\n同时美国司法部也希望扣押这些股票',
-    tagUuids: ['hood', 'ftx', 'crypto', 'blockfi'],
-    sourceLink:
-      'https://finance.yahoo.com/news/sam-bankman-fried-lawyers-just-151904468.html',
-    uuid: '4f5b2339-5c84-4787-81e2-3781a9b0a8b0',
-    createdDate: '2023-01-06T23:24:15.322Z',
-    noteType: 'fact',
-  },
-  {
-    title: '由于持续的通胀压力，Party City准备申请破产',
-    content:
-      '股价下跌58%,目前只有15美分\n昨天，另一家实体店零售商Bed Bath & Beyong也在考虑申请破产',
-    tagUuids: ['retail'],
-    sourceLink:
-      'https://nypost.com/2023/01/06/party-city-plans-bankruptcy-filing-within-weeks-report/',
-    uuid: '09f71da1-90f0-458d-b895-ee9daa1c209f',
-    createdDate: '2023-01-06T22:55:35.571Z',
-    noteType: 'fact',
-  },
-  {
-    title: 'Costco在12月的营收同比上涨7%，远好于预期。',
-    content:
-      '2022年时间较晚的节日假期可能导致消费者有更多的时间进行消费。\nCostco的报告对其他大型超市，比如沃尔玛，Target,有积极意义。\nCostco股价今天大涨7.26%',
-    tagUuids: ['cost', 'grocery'],
-    sourceLink:
-      'https://seekingalpha.com/news/3922705-costco-stock-surges-on-stronger-than-expected-sales-report',
-    uuid: 'a3d5b6ba-7b98-4cff-8826-e8e544feb291',
-    createdDate: '2023-01-06T22:43:44.497Z',
-    noteType: 'fact',
-  },
-  {
-    title: '美国劳动部发布12月就业报告显示就业市场继续火热。',
-    content:
-      '12月美国失业率下跌至3.5%，并且新增高于预期的223000个岗位（预期新增200000个岗位）\n但报告中的薪资增速放缓对降低通胀实现经济软着陆有积极意义。\n美股三大指数上涨2%+。纳斯达克上涨2.56%,标普500上涨2.28%。',
-    tagUuids: ['jobs', 'us'],
-    sourceLink:
-      'https://seekingalpha.com/news/3922595-dow-sp-and-nasdaq-remain-muted-ahead-of-nonfarm-payrolls-report',
-    uuid: '52a1b8d7-b9b1-4738-973d-c85af6cd396a',
-    createdDate: '2023-01-06T22:35:10.655Z',
-    noteType: 'fact',
-  },
-  {
-    title: '梅西百货警告第四季度营收将低于预期',
-    content:
-      '梅西百货CEO指出消费者在节日假期的消费需求仍然强劲，但在平时的消费力继续下滑\n预计接下去一年对零售行业将更加具有挑战\n梅西百货股价盘后下跌4.2%',
-    tagUuids: ['m', ' retail'],
-    sourceLink:
-      'https://www.cnbc.com/2023/01/06/macys-cuts-holiday-quarter-forecast-citing-squeeze-on-shoppers-wallets.html',
-    uuid: '0538fb67-5bf2-4b9f-bba3-314a1954abc2',
-    createdDate: '2023-01-06T22:21:23.234Z',
-    noteType: 'fact',
-  },
-  {
-    title: '美国食品药品监督管理局FDA批准了Biogen(BIIB)的阿尔茨海默氏症药物',
-    content:
-      'Biogen药物Lecanemab在对轻度阿尔茨海默氏症病人的临床试验中显示有减缓认知衰退的作用\n但同时该药物有导致脑部肿胀充血的风险\n该药物一年疗程在美国定价为一年$26,500美元\nBiogen今天上涨2.82%',
-    tagUuids: ['medicine', 'BIIB'],
-    sourceLink:
-      'https://www.cnbc.com/2023/01/06/alzheimers-disease-fda-decision-on-biogen-eisai-treatment-lecanemab.html',
-    uuid: '4dd5f2b6-fdff-42ee-bb21-2bc4dfad50d1',
-    createdDate: '2023-01-06T22:02:41.000Z',
-    noteType: 'fact',
-  },
-  {
-    title:
-      '爆红人工智能软件ChatGPT的母公司，OpenAI考虑接受新一轮的投资。估值达到2021年的两倍',
-    content:
-      '投资者包括风投机构Thrive Capital 和 Founders Fund\n新估值将达到290亿美元，两倍于2021年140亿估值\n已有投资人包括微软。微软希望ChatGPT能够被用于Bing搜索引擎\n',
-    tagUuids: ['msft', 'googl'],
-    sourceLink:
-      'https://seekingalpha.com/news/3922500-chatgpt-creator-openai-in-talks-for-tender-offer-at-29b-valuation-report',
-    uuid: '07673046-13d4-49a1-8415-11f50845116f',
-    createdDate: '2023-01-05T21:34:29.386Z',
-    noteType: 'fact',
-  },
-  {
-    title: '零售商Bed Bath & Beyond考虑申请破产保护',
-    content:
-      '公司声称即将用完现金，预计第三季度损失3.85亿美元\nBed Bath & Beyond今天下跌30%',
-    tagUuids: ['bbby'],
-    sourceLink: 'https://www.cnbc.com/quotes/BBBY',
-    uuid: '5c61fcb6-fbaf-42dc-8e2e-22a55d78f762',
-    createdDate: '2023-01-05T21:20:33.129Z',
-    noteType: 'fact',
-  },
-  {
-    title: '加密货币银行Silvergate宣布本季度用户资产较三个月前下跌60%',
-    content:
-      '很多用户已经不再相信机构能管理他们的资产，所以把资产都直接取出放入冷钱包\nSilvergate卖出50亿美元债务证券来填补资产流失。\n该消息导致加密货币关联股票大跌: Silvergate下跌42%，Coinbase下跌10.8%.\n',
-    tagUuids: ['crypto'],
-    sourceLink:
-      'https://www.cnbc.com/2023/01/05/silvergate-capital-tanks-40percent-after-crypto-bank-discloses-massive-q4-withdrawals.html',
-    uuid: '68be3051-1f87-478b-8796-96a920bb55c3',
-    createdDate: '2023-01-05T21:08:36.765Z',
-    noteType: 'fact',
-  },
-  {
-    title: '亚马逊将超预期裁员18000人\n\n',
-    content:
-      "主要裁员发生在Amazon Store和 Amazon's People Experience and Technology Solutions(PXT)",
-    tagUuids: ['amzn'],
-    sourceLink:
-      'https://www.aboutamazon.com/news/company-news/update-from-ceo-andy-jassy-on-role-eliminations',
-    uuid: 'cd00fe45-9ddc-4ae6-87d8-0da05f9c0aef',
-    createdDate: '2023-01-05T20:58:47.875Z',
-    noteType: 'fact',
-  },
-  {
-    title: '微软CEO：未来两年可能是科技行业最具挑战的两年\n',
-    content: 'CEO Satya Nadella指出全球很多地方正在经历经济衰退',
-    tagUuids: ['msft'],
-    uuid: '72cb28ec-61ae-4134-b924-7074dd05a58c',
-    createdDate: '2023-01-05T20:52:25.731Z',
-    noteType: 'fact',
-  },
-
-  {
-    title: '​特斯拉12月总共交付55796辆电动汽车​\n',
-    content:
-      '这个数字是5个月来的最低水平，但有很大原因是因为疫情导致的\n上海工厂2022总交付年化增长50%\n上海工厂目前产能过剩，在12月24日到1月2日间进行了停产\n比亚迪在12月总共交付234598辆纯电或混电汽车',
-    tagUuids: ['tesla', 'EV'],
-    uuid: 'bc4c6cf4-f51c-4ead-ad78-0d08b984b75a',
-    createdDate: '2023-01-05T15:50:34.363Z',
-    noteType: 'fact',
-  },
-  {
-    title:
-      'PayPal was up 4.72%, and Block was up 2.86% today after analysts upgrades',
-    content:
-      'Baird upgraded Block to Outperform, and Truist upgraded Paypal to Buy. Both predict 20%+ gain in 2023\nAnalysts believe both stocks have strong cash positions and were adequately penalized in 2022. ',
-    tagUuids: ['Block', 'Paypal', 'Fintech'],
-    uuid: '1c931ced-86a0-40e1-b352-99ad2e74cac9',
-    createdDate: '2023-01-04T00:00:11.585Z',
-    noteType: 'fact',
-  },
-  {
-    title: 'Wynn stock was up 3.81% today after an analyst upgrade.',
-    content:
-      'Analysts see an opportunity in the reopening of Macau, China, and its potential to improve earnings through exclusive customers.',
-    tagUuids: ['Wynn', 'Gambling', 'China'],
-    uuid: '370eadb6-acc5-4f03-8d61-e1405ff9ada9',
-    createdDate: '2023-01-03T23:47:34.023Z',
-    noteType: 'fact',
-  },
-  {
-    title: 'Google and Meta are losing digital advertising dominance',
-    content:
-      'Google and Meta combined US digital-ad spending market share was down to 48.4%, the first time under 50% since 2014\nAll marketers want more options, and people spent less time online in 2022\nAmazon further solidified its third place. \nTiktok and Netflix are emerging as strong competitors.',
-    tagUuids: ['meta', 'googl', 'amzn', 'nflx'],
-    uuid: 'fb165f43-1d48-436f-a25b-edc859fa5e61',
-    createdDate: '2023-01-03T23:39:03.051Z',
-    noteType: 'fact',
-  },
-  {
-    title:
-      "UCLA invests $4 billion to buy Blackstone's Breit Real-Estate Fund. ",
-    content: 'Blackstone guaranteed at least 11.25% annual return ',
-    tagUuids: ['bx'],
-    uuid: '1103af33-8c20-49cb-8337-8452e930cc77',
-    createdDate: '2023-01-03T23:27:00.172Z',
-    noteType: 'fact',
-  },
-  {
-    title:
-      'Apple hit a new 52-week low and fell below the 2 Trillion market cap.',
-    content:
-      "\nApple experienced a production shortfall in Dec. Investors doubt those Dec demands can be fully carried forward in 2023.\nFoxconn's COVID-hit iPhone plant is almost back to full production, with its December shipments reaching about 90% of initial plans.\nApp store sales were up 1% YoY in Dec after five straight months of falling.",
-    tagUuids: ['aapl'],
-    uuid: '52605b7c-1440-43f4-87d4-b60c696a4e2e',
-    createdDate: '2023-01-03T23:21:08.786Z',
-    noteType: 'fact',
-  },
-  {
-    title:
-      "China's currency yuan touches a 4-month high on optimism over economic recovery. ",
-    content:
-      'The recent COVID outbreak has peaked in most cities.\nA complete return to everyday life may take several months.',
-    tagUuids: ['china'],
-    uuid: '4f17d9df-b555-41e2-862d-c7cb0c1ef779',
-    createdDate: '2023-01-03T22:25:49.736Z',
-    noteType: 'fact',
-  },
-  {
-    title: "Tesla's CFO exercised options expiring in 2028 to buy 13.5k shares",
-    content:
-      '* This could mean CFO thinks Tesla stock is cheap and exercising early allows him to pay lower income tax.\n* He now owns 204K shares.\n',
-    tagUuids: ['tsla'],
-    sourceLink: 'https://twitter.com/sspencer_smb/status/1608967613534855168',
-    uuid: 'e9f50912-b024-4b9e-b812-1df7968d4a2a',
-    createdDate: '2022-12-31T10:24:29.312Z',
-    noteType: 'fact',
-  },
-  {
-    title: 'Stocks slipped today to end a brutal 2022\n',
-    content:
-      'Dow Jones Industrial Average was down 8.8%\nS&P 500 was down 19.4%\nNasdaq was down 33.1%.\n\n',
-    tagUuids: ['US'],
-    uuid: 'd179e694-ee48-4a95-8ba9-74f0eb4d850c',
-    noteType: 'fact',
-  },
-  {
-    title: 'CFRA double upgrades Netflix',
-    content:
-      '* Analyst Kenneth Leon double-upgraded the stock to buy from sell while raising the price target by $85 to $310, reflecting the potential for a 12% upside.\n* Ad-supported tier will Netflix achieve profitability\n',
-    tagUuids: ['nflx'],
-    uuid: 'e5cdfce2-fea6-4d86-a54f-40cf3b1a0527',
-    createdDate: '2022-12-29T22:27:45.967Z',
-    noteType: 'fact',
-  },
-  {
-    title:
-      'Elon Musk still believes Tesla will be the most valuable company on Earth.',
-    content:
-      'He said in a companywide email: “don’t be too bothered by stock market craziness. As we demonstrate continued excellent performance, the market will recognize that. Long-term, I believe very much that Tesla will be the most valuable company on Earth!\n\n”',
-    tagUuids: ['tsla'],
-    uuid: '96f2c8c8-6d44-43e1-9130-d0197608dae5',
-    createdDate: '2022-12-29T02:58:43.667Z',
-    noteType: 'fact',
-  },
-  {
-    title:
-      'Marc Benioff tells Salesforce workers that new employees are ‘facing lower productivity’',
-    content:
-      'Marc Benioff, cofounder and co-CEO of Salesforce, said in a Slack message to employees on Friday that the company’s newest workers weren’t productive enough.\n\n“Are we not building tribal knowledge with new employees without an office culture?” Benioff asked in a message viewed by CNBC.',
-    tagUuids: ['crm', 'Marc Benioff'],
-    sourceLink:
-      'https://www.cnbc.com/2022/12/16/marc-benioff-says-newer-salesforce-employees-are-less-productive.html',
-    uuid: '8420788c-76f1-4238-88b4-bb3bc24ef1c8',
-    createdDate: '2022-12-17T16:12:27.348Z',
     noteType: 'fact',
   },
 ];

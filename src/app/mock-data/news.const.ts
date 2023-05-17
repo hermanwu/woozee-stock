@@ -1,9 +1,145 @@
 import { Opinion } from '../notes/components/opinion-display/opinion.interface';
 import { Fact } from '../risks/models/fact.model';
+import {
+  Stats,
+  TimeFrame,
+} from '../shared/components/stats-display/stats-display.interface';
 import { OpinionEnum } from '../stock/models/opinion-type.model';
 import { Quote } from './quote.model';
 
-export const allNews: (Quote | Opinion | Fact)[] = [
+export const allNewsTest = [
+  {
+    type: 'stats',
+    imageLinks: [],
+    title: 'Revenue',
+    changePercent: 0.5,
+    change: -1000,
+    unit: 'dollar',
+  },
+  {
+    type: 'products',
+    imageLinks: [],
+    title: 'Bard',
+    tags: ['SaaS', 'AI', 'Chat-GPT'],
+    content: '',
+    released: 'true',
+  },
+  {
+    type: 'action',
+    imageLinks: [],
+    title: 'Bard',
+    tags: ['SaaS', 'AI', 'Chat-GPT'],
+    content: '',
+    released: 'true',
+  },
+  {
+    type: 'quote',
+    content: '',
+  },
+  {
+    type: 'questionaine',
+    title: 'Moat Questionaire',
+    content: '',
+  },
+];
+
+export const allNews: (Quote | Opinion | Fact | Stats)[] = [
+  {
+    noteType: 'action',
+    targets: ['ttwo'],
+    title: 'releases fiscal fourth-quarter earnings',
+    uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
+  },
+  {
+    noteType: 'numbers',
+    targets: ['ttwo'],
+    changeRate: 10.6,
+    title: 'Stock Price After Hours',
+    uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
+  },
+  {
+    noteType: 'numbers',
+    targets: ['ttwo'],
+    changeRate: 0.65,
+    timeFrame: TimeFrame.yoy,
+    title: 'Stock Price After Hours',
+    uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
+  },
+  {
+    noteType: 'opinion',
+    authorUuid: 'steve-cohen',
+    title: '"I’m making a prognostication — we’re going up"',
+    content:
+      'Cohen, founder of hedge fund Point72, said the burgeoning field of AI will likely create new jobs.\n"I’m actually pretty bullish"\n ',
+    uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
+  },
+  {
+    title: 'Sea Limited Released 2023 Q1 Earnings',
+    content:
+      'Price Change Today: -17.74%\nRevenue: $3 billion, +4.9% y/y \nGross Profit: $1.4 billion, +21.1% y/y\n\nE-commerce Revenue: $2.1 billion, +36.3% y/y\nDigital Entertainment Revenue: $539.7 million, -52.5% y/y\nDigital Financial Service Revenue: $412.8 million, +75% y/y\n\n',
+    tagUuids: [],
+    uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b9',
+    noteType: 'opinion',
+    creatorUuid: 'hwu1106@gmail.com',
+    targets: ['se'],
+    createdDate: '2023-05-16T21:00:37.878Z',
+  },
+
+  {
+    title: 'Daily Market Highlights 5/15/23 ',
+    content:
+      '📉 Nasdaq +0.66%\n📉 S&P500 +0.30%\n💲 Bitcoin -0.5% to $27,225.77\n🧈 Gold -0.44%\n🛢️ Crude Oil WTI -0.45%\n\n🤖 C3.ai +21.13%\n📝 Stock surges on upbeat sales updates; CEO: "Demand Is Just Exploding for Enterprise AI"\n\n🏦 Nu Holdings +6.09%\n📝 Both Q1 revenue and earnings top estimates\n\n🚗 Tesla -0.97%\n📝 Elon Musk subpoenaed by US Virgin Islands in JPMorgan Chase-Jeffrey Epstein lawsuit\n',
+    tagUuids: [],
+    uuid: 'c687078e-c239-47bb-bbf6-116a3f193adc',
+    noteType: 'opinion',
+    creatorUuid: 'bob.johnson@example.com',
+    targets: ['tsla'],
+    createdDate: '2023-05-16T10:32:57.490Z',
+  },
+  {
+    title: '📌 Daily Market Highlights \n',
+    content:
+      '📉 Nasdaq -0.35%\n📉 S&P -0.16%\n💲 Bitcoin -2%\n🧈 Gold -0.24%\n🛢️ Crude Oil WTI -1.1%\n\n🚗 Tesla -2.38%: Elon Musk named new Twitter CEO: Linda Yaccarino\n🤖 Google +0.81%: Google co-founders ad more than $18 billion to their wealth this week.\n☀️ First Solar +26.51% First Solar buys Swedish Solar firm Evolar\n🛒 Amazon -1.71%\n🏦 JPMorgan Chase -1.43%\n⚡ NextEra Energy +2.44%\n',
+    tagUuids: [],
+    uuid: '26abd009-0703-4bcf-ace2-64a4127f2ad7',
+    noteType: 'opinion',
+    creatorUuid: 'zeesun.wu@gmail.com',
+    targets: ['tsla', 'googl', 'fslr'],
+    createdDate: '2023-05-12T21:49:30.452Z',
+  },
+  {
+    title: 'Daily Market Movers 5/11/23',
+    content:
+      '🔸 PPI: +2.3% from April, \n📝 Smallest advance in two years.\n\n🔸 US Initial jobless claims: 264k \n📝 highest since October 2021\n\n🔸 S&P 500 -0.17%\n\n🔸 Nasdaq +0.18%\n\n🔸 Disney -8.73% \n📊 Disney+ Paid Subscriber: -4 million, -2% YoY\n\n🔸 Tesla +2.10% \n📝 Elon Musk announced he found new Twitter CEO\n\n🔸 Google +4.31%\n\n🔸 PacWest -22.70% \n📊 Customer Deposits: -9.5% since last week\n\n🔸 Peloton -8.90% \n📝 Recall 2.2 million bikes\n\n🔸 Beyond Meat -18.27% \n📝 Seek to raise $200 million in offering.\n\n🔸 Robinhood +5.96% \n📝 Released Q1 earnings and announced 24-hour trading feature.\n\n🔸 JD.com +7.21% \n📝 Announced Q1 earnings with revenue beats estimates. \n📊 Total Revenue +1.4% YoY \n📊 Service Revenue +34% YoY\n\n🔸 Alibaba +5.96%\n\n🔸 IonQ -11.97% after hours \n📝 Announced Q1 earnings\n📊 Revenue: $4.3 million, +$2 million YoY \n📊 Net loss: $27.3 million',
+    tagUuids: [],
+    uuid: 'bae155d3-4343-4eeb-a730-6cf7b3a14e0d',
+    noteType: 'opinion',
+    creatorUuid: 'jimmy.lee@example.com',
+    targets: ['googl', 'tsla', 'dis', 'pton'],
+    createdDate: '2023-05-11T23:09:51.567Z',
+  },
+
+  {
+    title: 'Key Market Events To Watch on Thursday 5/11/23\n',
+    content:
+      'US PPI - Producer Price Index\nUS initial jobless claims\nUK BOE rate decision, industrial production, GDP\nEarnings Before Open: JD.com, Fiverr, YETI, 1-800-Flowers.com, Tapestry\nEarnings After Hours: IonQ',
+    tagUuids: [],
+    uuid: 'dde17093-9878-49c1-bbfc-950a3a41fcdc',
+    noteType: 'opinion',
+    creatorUuid: 'bob.johnson@example.com',
+    targets: ['jd', 'ionq', 'fiverr', '1800'],
+    createdDate: '2023-05-11T07:19:18.326Z',
+  },
+  {
+    title: 'Daily Stock Market Movers 5/10/23',
+    content:
+      'US CPI in April +0.4%\n S&P 500 +0.45%\n Nasdaq +1.04%\nGoogle +4.10%\n Amazon +3.35%\nPaypal -3.83%\nPalantir +4.08%\nCarvana +10.97%\nAirbnb -10.92%\nUpstart Holding +34.63%\n\nAfter Hours:\nDisney -4.79% \nUnity Software +10.54%\nRobinhood +3.09% \nBeyond Meat -2.16%\n Trade Desk +2.6%\n\n',
+    targets: ['googl', 'amzn', ' dis', ' u'],
+    uuid: '6871520d-48e7-41af-a676-2f549ed77df0',
+    noteType: 'opinion',
+    creatorUuid: 'will.smith@example.com',
+    createdDate: '2023-05-11T06:59:43.804Z',
+  },
   {
     title: 'Robinhood released 2023 Q1 earnings',
     content:

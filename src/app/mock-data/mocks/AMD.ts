@@ -35,33 +35,6 @@ export const amd: StockAnalysis = {
       forecastRevenueBottom: 6.7 * BILLION,
       date: convertDateToUTC(new Date('2022-08-02')),
 
-      stats: [
-        {
-          name: 'Segments Revenue',
-          details: [
-            {
-              name: 'Data Center (Server CPU, datacenter GPU, Pensando, Xilinx)',
-              value: 1.5 * BILLION,
-              changeRate: 0.83,
-            },
-            {
-              name: 'Client (PC processors and chips)',
-              value: 2.2 * BILLION,
-              changeRate: 0.25,
-            },
-            {
-              name: 'Gaming (Discrete GPU and semi-custom game console)',
-              value: 1.7 * BILLION,
-              changeRate: 0.32,
-            },
-            {
-              name: 'Embedded (Xilinx)',
-              value: 1.3 * BILLION,
-              changeRate: 22.28,
-            },
-          ],
-        },
-      ],
       slidesLink:
         'https://d1io3yog0oux5.cloudfront.net/_17762bd717cfef214ea76c9f6586fc80/amd/db/778/6877/file/AMD+Q2%2722+Earnings+Slides_8.2.22.pdf',
       pressReleaseLink:

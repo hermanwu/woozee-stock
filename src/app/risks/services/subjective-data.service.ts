@@ -4,6 +4,7 @@ import { allMarkets } from 'src/app/markets/data/all-markets.const';
 import { allNews } from 'src/app/mock-data/news.const';
 import { catalysts } from 'src/app/notes/components/catalyst/data/catalyst.mock';
 import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
+import { Stats } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
@@ -18,7 +19,7 @@ import { Risk } from '../models/risk.model';
 export class riskService {
   risks: Risk[];
   catalysts: Catalyst[];
-  newsWithDetails: (Quote | Fact | Opinion)[];
+  newsWithDetails: (Quote | Fact | Opinion | Stats)[];
   markets: Industry[];
 
   catalystMap: Map<string, Catalyst> = new Map();

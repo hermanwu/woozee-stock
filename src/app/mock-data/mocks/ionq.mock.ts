@@ -6,4 +6,6 @@ export const ionq: StockAnalysis = {
   ticker: 'IONQ',
 
   industries: [IndustryType.quantumComputing],
+  logoLink:
+    'https://pbs.twimg.com/profile_images/1367971644099211266/HxdTSAg__400x400.png',
 };

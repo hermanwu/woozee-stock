@@ -91,12 +91,7 @@ export const coin: StockAnalysis = {
         'https://s27.q4cdn.com/397450999/files/doc_financials/2021/q4/Coinbase-Q421-Shareholder-Letter.pdf',
       reportLink:
         'https://d18rn0p25nwr6d.cloudfront.net/CIK-0001679788/8e5e0508-da75-434d-9505-cba99fa00147.pdf',
-      stats: [
-        {
-          name: 'subscription and service',
-          value: 200 * MILLION,
-        },
-      ],
+
       year: 2021,
       quarter: 4,
       totalRevenue: 2498 * MILLION,
@@ -140,34 +135,6 @@ export const coin: StockAnalysis = {
       netIncomeBeforeTaxes: 868 * MILLION,
       provisionForIncomeTaxes: -737 * MILLION,
       netIncome: 1606 * MILLION,
-      stats: [
-        {
-          name: 'Subscriptions and Services Revenue ($M)',
-          value: 102.6,
-        },
-        {
-          name: 'Monthly Transacting Users MTU (M)',
-          value: 8.8,
-        },
-        {
-          name: 'Trading Volume ($B)',
-          value: 462,
-          details: [
-            {
-              name: 'Retail ($B)',
-              value: 145,
-            },
-            {
-              name: 'Institutional ($B)',
-              value: 317,
-            },
-          ],
-        },
-        {
-          name: 'Asset on Platform ($B)',
-          value: 180,
-        },
-      ],
     },
     {
       year: 2021,

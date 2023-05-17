@@ -191,68 +191,6 @@ export const amzn: StockAnalysis = {
       forecastRevenueBottom: 125 * BILLION,
       forecastRevenueTop: 130 * BILLION,
       date: convertDateToUTC(new Date('2022-07-28')),
-      stats: [
-        {
-          name: 'Sale Categories',
-          details: [
-            {
-              name: 'Net Product Sales',
-              value: 56575 * MILLION,
-            },
-            {
-              name: 'Net Service Sales',
-              value: 64659 * MILLION,
-            },
-          ],
-        },
-        {
-          name: 'Segments',
-          details: [
-            {
-              name: 'North America Sales',
-              value: 74.43 * BILLION,
-            },
-            {
-              name: 'International Sales',
-              value: 27.065 * BILLION,
-            },
-            {
-              name: 'AWS Sales',
-              value: 19.739 * BILLION,
-            },
-          ],
-        },
-        {
-          name: 'Advertising Service',
-          value: 8.757 * BILLION,
-        },
-
-        {
-          name: 'Operating expenses',
-          details: [
-            {
-              name: 'Cost of sales',
-              value: 66.424 * BILLION,
-            },
-            {
-              name: 'Fulfillment',
-              value: 20.342 * BILLION,
-            },
-            {
-              name: 'Technology and content',
-              value: 18.072 * BILLION,
-            },
-            {
-              name: 'Sales and marketing',
-              value: 10.086 * BILLION,
-            },
-            {
-              name: 'General and administrative',
-              value: 2.903 * BILLION,
-            },
-          ],
-        },
-      ],
       pressReleaseLink:
         'https://s2.q4cdn.com/299287126/files/doc_financials/2022/q2/Q2-2022-Amazon-Earnings-Release.pdf',
       slidesLink:
@@ -315,68 +253,6 @@ export const amzn: StockAnalysis = {
       netIncomeBeforeTaxes: 8634 * MILLION,
       provisionForIncomeTaxes: 868 * MILLION,
       netIncome: 7778 * MILLION,
-      stats: [
-        {
-          name: 'Sale Categories',
-          details: [
-            {
-              name: 'Net Product Sales',
-              value: 58004 * MILLION,
-            },
-            {
-              name: 'Net Service Sales',
-              value: 55076 * MILLION,
-            },
-          ],
-        },
-        {
-          name: 'Segments',
-          details: [
-            {
-              name: 'North America Sales',
-              value: 67.55 * BILLION,
-            },
-            {
-              name: 'International Sales',
-              value: 30.721 * BILLION,
-            },
-            {
-              name: 'AWS Sales',
-              value: 14.809 * BILLION,
-            },
-          ],
-        },
-        {
-          name: 'Advertising Service',
-          value: 7.451 * BILLION,
-        },
-
-        {
-          name: 'Operating expenses',
-          details: [
-            {
-              name: 'Cost of sales',
-              value: 64.176 * BILLION,
-            },
-            {
-              name: 'Fulfillment',
-              value: 17.638 * BILLION,
-            },
-            {
-              name: 'Technology and content',
-              value: 13.871 * BILLION,
-            },
-            {
-              name: 'Sales and marketing',
-              value: 7.524 * BILLION,
-            },
-            {
-              name: 'General and administrative',
-              value: 2.158 * BILLION,
-            },
-          ],
-        },
-      ],
     },
     {
       year: 2021,

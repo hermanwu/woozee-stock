@@ -1,3 +1,5 @@
+import { Note, NoteType } from '../../data/note.interface';
+
 export enum DisplayType {
   numeric = 'numeric',
   percent = 'percent',
@@ -9,7 +11,9 @@ export enum TimeFrame {
   qoq = 'qoq',
 }
 
-export interface StatsDisplay {
+export interface Stats extends Note {
+  uuid: string;
+  noteType: string | NoteType;
   name?: string;
   value?: number;
   displayType?: DisplayType;
@@ -19,5 +23,9 @@ export interface StatsDisplay {
   expectedValue?: number;
   timeFrame?: TimeFrame;
 
-  details?: StatsDisplay[];
+  details?: Stats[];
+  title?: string;
+  tagUuids?: string[];
+  creatorUuid?: string;
+  createdDate?: string;
 }

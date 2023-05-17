@@ -10,4 +10,6 @@ export interface Fact extends Quote {
   targets?: string[];
   source?: string;
   author?: string;
+  changeRate?: number;
+  name?: string;
 }

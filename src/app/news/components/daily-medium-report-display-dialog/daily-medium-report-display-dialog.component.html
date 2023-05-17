@@ -1,6 +1,6 @@
 <app-tags-display [tagUuids]="allTags"></app-tags-display>
 
-<div class="index-display">
+<!-- <div class="index-display">
   <div>
     S&P 500
     <app-price-display [price]="sp500Stats"></app-price-display>
@@ -10,18 +10,18 @@
     Nasdaq Composite
     <app-price-display [price]="nasdaqStats"></app-price-display>
   </div>
-</div>
+</div> -->
 
 <app-title-menu>
   <div header-2>Macro</div>
 </app-title-menu>
 <div>
   🔶
-  <b
+  <!-- <b
     >S&P 500 <app-price-display [price]="sp500Stats"></app-price-display>
     Nasdaq
     <app-price-display [price]="nasdaqStats"></app-price-display
-  ></b>
+  ></b> -->
   ➡️ {{ overviewNews?.[0]?.title }}
 </div>
 <div *ngFor="let news of macroNews">

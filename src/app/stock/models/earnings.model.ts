@@ -1,4 +1,4 @@
-import { StatsDisplay } from 'src/app/shared/components/stats-display/stats-display.interface';
+import { Stats } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { Note } from 'src/app/shared/data/note.interface';
 
 export interface EarningsReport {
@@ -46,6 +46,6 @@ export interface EarningsReport {
   quarterHighlights?: any;
   annualHighlights?: string[];
 
-  stats?: StatsDisplay[];
+  stats?: Stats[];
   quotes?: Note[];
 }

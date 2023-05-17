@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { EventType } from 'src/app/stock/models/news.model';
-import { StatsDisplay } from '../../../shared/components/stats-display/stats-display.interface';
 import { getUtcDate } from '../../../shared/functions/getUtcDate.function';
 import { NotesServices } from '../../services/notes.services';
 
@@ -34,18 +33,6 @@ export class DailyMediumReportDisplayDialogComponent implements OnInit {
     { date: getUtcDate(2022, 9, 12), price: 12266.41 },
     { date: getUtcDate(2022, 9, 9), price: 12112.31 },
   ];
-  S;
-
-  nasdaqStats: StatsDisplay = {
-    name: 'Nasdaq',
-    value: this.nasdaqPrices[0].price,
-    previousValue: this.nasdaqPrices[1].price,
-  };
-  sp500Stats: StatsDisplay = {
-    name: 'S&P 500',
-    value: this.sp500[0].price,
-    previousValue: this.sp500[1].price,
-  };
 
   allNews;
   allTags = [];

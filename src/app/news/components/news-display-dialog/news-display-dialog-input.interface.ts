@@ -1,4 +1,4 @@
-import { StatsDisplay } from 'src/app/shared/components/stats-display/stats-display.interface';
+import { Stats } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { EventType } from '../../../stock/models/news.model';
 
 export interface InstagramNewsDisplayDialogInput {
@@ -6,7 +6,7 @@ export interface InstagramNewsDisplayDialogInput {
   links?: any[];
   eventType: EventType;
   tags?: string[];
-  stats?: StatsDisplay[];
+  stats?: Stats[];
   content?: string;
   imageLinks?: string[];
   date?: Date | string;

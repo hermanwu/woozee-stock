@@ -8,6 +8,8 @@ export const jd: StockAnalysis = {
   ticker: 'JD',
   irAddress: 'https://ir.jd.com/',
   industries: [IndustryType.ecommerce],
+  logoLink:
+    'https://pbs.twimg.com/profile_images/1283623975201865728/vqGmQsoQ_400x400.jpg',
 
   // Earnings Report:
   earningsReports: [

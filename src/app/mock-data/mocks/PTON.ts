@@ -8,6 +8,8 @@ export const pton: StockAnalysis = {
   ticker: 'pton',
   irAddress: 'https://investor.onepeloton.com/',
 
+  logoLink:
+    'https://pbs.twimg.com/profile_images/1523662705248423937/ahAS7cm8_400x400.jpg',
   // Earnings Report:
   earnings: {
     latestReportQuarter: ['2021', '2'],

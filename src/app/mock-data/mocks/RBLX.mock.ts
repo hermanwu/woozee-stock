@@ -36,46 +36,7 @@ export const rblx: StockAnalysis = {
       operatingIncome: -170.267 * MILLION,
       netIncome: -179.012 * MILLION,
       date: getUtcDate(2022, 9, 15),
-      stats: [
-        {
-          name: 'Bookings',
-          value: 639.9 * MILLION,
-          changeRate: -0.04,
-        },
-        {
-          name: 'DAU',
-          value: 52.2 * MILLION,
-          changeRate: 0.21,
-        },
-        {
-          name: 'Hours Engaged',
-          value: 11.3 * BILLION,
-          changeRate: 0.16,
-        },
-        {
-          name: 'Hours Engaged',
-          value: 11.3 * BILLION,
-          changeRate: 0.16,
-        },
-        {
-          name: 'Average Bookings per DAU (ABPDAU)',
-          value: 12.25,
-          changeRate: -0.21,
-        },
-        // {
-        //   name: 'July 2022 Key Metric Estimates',
-        //   details: [
-        //     {
-        //       name: 'Revenue',
-        //       text: 'Up 25% - 27% YoY',
-        //     },
-        //     {
-        //       name: 'Revenue',
-        //       text: 'Up 25% - 27% YoY',
-        //     },
-        //   ],
-        // },
-      ],
+
       pressReleaseLink:
         'https://s27.q4cdn.com/984876518/files/doc_financials/2022/q2/RBLX-2022.08.09-Earnings-release-FINAL.docx.pdf',
     },

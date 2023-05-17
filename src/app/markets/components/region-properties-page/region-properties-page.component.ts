@@ -34,7 +34,7 @@ export class RegionPropertiesPageComponent implements OnInit, OnDestroy {
 
       this.opinions = [];
 
-      this.news = this.newsService.getNewsByTags([this.regionCode]);
+      // this.news = this.newsService.getNewsByTags([this.regionCode]);
     });
   }
 

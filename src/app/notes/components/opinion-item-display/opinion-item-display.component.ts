@@ -70,8 +70,8 @@ export class OpinionItemDisplayComponent implements OnInit, OnChanges {
 
   showParent() {
     this.parentExpanded = !this.parentExpanded;
-    this.childrenNotes = this.notesServices.getNotesByUuids(
-      this.opinion.childrenUuids
-    );
+    // this.childrenNotes = this.notesServices.getNotesByUuids(
+    //   this.opinion.childrenUuids
+    // );
   }
 }

@@ -1,4 +1,4 @@
-import { StatsDisplay } from 'src/app/shared/components/stats-display/stats-display.interface';
+import { Stats } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { Note } from 'src/app/shared/data/note.interface';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { Source } from '../models/news-source.enum';
@@ -21,7 +21,7 @@ export interface News {
   tickers?: string[];
 
   tags?: (IndustryType | string)[];
-  stats?: StatsDisplay[];
+  stats?: Stats[];
 
   quotes?: string[];
   people?: string[];

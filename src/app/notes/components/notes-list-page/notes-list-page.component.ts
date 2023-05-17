@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NotesServices } from 'src/app/news/services/notes.services';
-import { Note, NoteType } from 'src/app/shared/data/note.interface';
+import { Note } from 'src/app/shared/data/note.interface';
 import { UserServices } from '../../../accounts/services/user.services';
 import { Opinion } from '../opinion-display/opinion.interface';
 
@@ -22,13 +22,13 @@ export class NotesListPageComponent implements OnInit {
     private router: Router
   ) {
     const userUuid = userServices.currentUser.userUuid;
-    this.myOpinions = notesServices
-      .getNotesByCreatorUuid(userUuid)
-      .filter((item) => item.noteType === NoteType.Opinion);
+    // this.myOpinions = notesServices
+    //   .getNotesByCreatorUuid(userUuid)
+    //   .filter((item) => item.noteType === NoteType.Opinion);
 
-    this.opinions = this.notesServices.getNotesByUuids(
-      this.userServices.getSavedNoteUuids()
-    );
+    // this.opinions = this.notesServices.getNotesByUuids(
+    //   this.userServices.getSavedNoteUuids()
+    // );
   }
 
   ngOnInit(): void {}

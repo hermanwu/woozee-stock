@@ -13,15 +13,10 @@ import {
 })
 export class ContentDisplayComponent implements OnInit, OnChanges {
   @Input() content: string;
-  lines: string[];
 
   constructor() {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (this.content) {
-      this.lines = this.content.split('\n').filter((line) => line.length > 0);
-    }
-  }
+  ngOnChanges(changes: SimpleChanges): void {}
 
   ngOnInit(): void {}
 }

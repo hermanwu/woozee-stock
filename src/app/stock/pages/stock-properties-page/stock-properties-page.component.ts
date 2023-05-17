@@ -7,7 +7,6 @@ import { map } from 'rxjs/operators';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { Quote } from 'src/app/mock-data/quote.model';
 import { NotesServices } from 'src/app/news/services/notes.services';
-import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { OpinionServices } from 'src/app/notes/services/opinion.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { Fact } from 'src/app/risks/models/fact.model';
@@ -42,7 +41,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   catalysts = [];
   news = [];
   rank$: Observable<number>;
-  opinions: Opinion[] = [];
+  opinions: any[] = [];
   facts: Fact[] = [];
   quotes: Quote[] = [];
   shortTermScore = 0;
@@ -89,13 +88,13 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         .filter((item) => item.noteType === NoteType.Opinion)
         .slice(0, 5);
 
-      this.facts = notes
-        .filter((item) => item.noteType === NoteType.Fact)
-        .slice(0, 5);
+      // this.facts = notes
+      //   .filter((item) => item.noteType === NoteType.Fact)
+      //   .slice(0, 5);
 
-      this.quotes = notes
-        .filter((item) => item.noteType === NoteType.Quote)
-        .slice(0, 5);
+      // this.quotes = notes
+      //   .filter((item) => item.noteType === NoteType.Quote)
+      //   .slice(0, 5);
     });
   }
 

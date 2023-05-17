@@ -108,4 +108,22 @@ export const organizations: Organization[] = [
     logoLink:
       'https://pbs.twimg.com/profile_images/1649093986852937728/TcHloZbL_400x400.jpg',
   },
+  {
+    uuid: 'fiverr',
+    displayName: 'Fiverr',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1453339438029869059/Mpk9QXje_400x400.jpg',
+  },
+  {
+    uuid: '1800',
+    displayName: '',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1543263915911438336/S_LhLnRz_400x400.jpg',
+  },
+  {
+    uuid: 'fslr',
+    displayName: 'First Solar',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1564338345714630673/FFdm-e9z_400x400.jpg',
+  },
 ];

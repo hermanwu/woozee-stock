@@ -126,4 +126,67 @@ export const organizations: Organization[] = [
     logoLink:
       'https://pbs.twimg.com/profile_images/1564338345714630673/FFdm-e9z_400x400.jpg',
   },
+  {
+    uuid: 'ttwo',
+    displayName: 'Take Two Interactive',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1564338345714630673/FFdm-e9z_400x400.jpg',
+  },
+  {
+    uuid: 'fl',
+    displayName: 'Foot Locker',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1564338345714630673/FFdm-e9z_400x400.jpg',
+  },
+  {
+    uuid: 'ms',
+    displayName: 'Morgan Stanley',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1631347869687898142/ATwo7QZZ_400x400.jpg',
+  },
+  {
+    uuid: 'dltr',
+    displayName: 'Dollar Tree',
+    logoLink: '',
+  },
+  {
+    uuid: 'bby',
+    displayName: 'Best Buy',
+    logoLink: '',
+  },
+  {
+    uuid: 'adsk',
+    displayName: 'AutoDesk',
+    logoLink: '',
+  },
+  {
+    uuid: 'kss',
+    displayName: "Kohl's",
+    logoLink: '',
+  },
+  {
+    uuid: 'aeo',
+    displayName: 'American Eagle',
+    logoLink: '',
+  },
+  {
+    uuid: 'low',
+    displayName: "Lowe's",
+    logoLink: '',
+  },
+  {
+    uuid: 'azo',
+    displayName: 'AutoZone',
+    logoLink: '',
+  },
+  {
+    uuid: 'wsm',
+    displayName: 'Williams Sonoma',
+    logoLink: '',
+  },
+  {
+    uuid: 'dks',
+    displayName: 'Dick’s Sporting Goods',
+    logoLink: '',
+  },
 ];

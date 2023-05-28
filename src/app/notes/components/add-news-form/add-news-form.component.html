@@ -66,12 +66,7 @@
     </mat-form-field>
   </div>
 
-  <div
-    *ngIf="
-      newsForm.value.noteType === noteType.Quote ||
-      newsForm.value.noteType === noteType.Opinion
-    "
-  >
+  <div *ngIf="newsForm.value.noteType === noteType.Opinion">
     <mat-form-field>
       <mat-label>Author</mat-label>
       <input matInput formControlName="authorUuid" />

@@ -34,7 +34,7 @@ export class DailyMediumReportDisplayDialogComponent implements OnInit {
     { date: getUtcDate(2022, 9, 9), price: 12112.31 },
   ];
 
-  allNews;
+  allNotes;
   allTags = [];
   macroNews = [];
   industryNews = [];
@@ -44,9 +44,9 @@ export class DailyMediumReportDisplayDialogComponent implements OnInit {
   investorNews = [];
 
   constructor(private newsService: NotesServices) {
-    this.allNews = this.newsService.getNewsByDate(new Date(2022, 8, 22));
+    this.allNotes = this.newsService.getNewsByDate(new Date(2022, 8, 22));
     const tags = [];
-    for (let news of this.allNews) {
+    for (let news of this.allNotes) {
       if (news?.tags) {
         tags.push(...news.tags);
       }

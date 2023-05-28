@@ -1,4 +1,3 @@
-import { allNews } from 'src/app/mock-data/news.const';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { Term } from 'src/app/risks/models/risk-level.model';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
@@ -348,6 +347,4 @@ export const amzn: StockAnalysis = {
     {},
     {},
   ],
-
-  news: [allNews['4']],
 };

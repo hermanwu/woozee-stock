@@ -1,12 +1,16 @@
 <ng-container *ngIf="statsDisplay.value || statsDisplay.changeRate">
   <ng-container>
-    📊 <strong *ngIf="statsDisplay?.name">{{ statsDisplay.name }} </strong>
+    📊
+    <strong *ngIf="statsDisplay?.title || statsDisplay?.name"
+      >{{ statsDisplay?.title || statsDisplay.name }}
+    </strong>
 
     <ng-container [ngSwitch]="statsDisplay.displayType">
       <ng-container *ngSwitchCase="DisplayType.percent" i18n>
         was
+
         {{
-          statsDisplay?.value | siUnit: 3 | percent: "1.1-2" | undefined
+          statsDisplay?.value | siUnit : 3 | percent : "1.1-2" | undefined
         }}</ng-container
       >
 
@@ -34,7 +38,7 @@
         </span>
 
         <span *ngIf="statsDisplay?.value">
-          {{ statsDisplay.value | siUnit: 2 | undefined }},
+          {{ statsDisplay.value | siUnit : 2 | undefined }},
         </span>
 
         <app-movement-display
@@ -47,12 +51,12 @@
           [changePercent]="statsDisplay?.changeRate"
         ></app-movement-display
         ><ng-container [ngSwitch]="statsDisplay.timeFrame">
-          <span *ngSwitchDefault>YoY</span
-          ><span *ngSwitchCase="TimeFrameEnum.qoq">QoQ</span
-          ><span *ngSwitchCase="TimeFrameEnum.mtm">MoM</span>
+          <span *ngSwitchCase="TimeFrameEnum.yoy">y/y</span
+          ><span *ngSwitchCase="TimeFrameEnum.qoq">q/q</span
+          ><span *ngSwitchCase="TimeFrameEnum.mtm">m/m</span>
         </ng-container>
         <ng-container *ngIf="statsDisplay.previousValue">
-          (from {{ statsDisplay.previousValue | siUnit: 2 | undefined }})
+          (from {{ statsDisplay.previousValue | siUnit : 2 | undefined }})
         </ng-container>
         <span *ngIf="statsDisplay?.expectedChangeRate"
           >,{{
@@ -61,8 +65,8 @@
               : "below expectations of"
           }}{{
             statsDisplay?.expectedChangeRate
-              | siUnit: 3
-              | percent: "1.1-2"
+              | siUnit : 3
+              | percent : "1.1-2"
               | undefined
           }}</span
         ><span *ngIf="statsDisplay?.expectedValue"
@@ -72,7 +76,7 @@
               ? "above expectations of"
               : "below expectations of"
           }}
-          {{ statsDisplay?.expectedValue | siUnit: 2 | undefined }}
+          {{ statsDisplay?.expectedValue | siUnit : 2 | undefined }}
         </span>
       </ng-container>
     </ng-container>

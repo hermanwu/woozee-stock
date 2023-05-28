@@ -5,13 +5,13 @@ import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interf
 import { Fact } from 'src/app/risks/models/fact.model';
 import { Stats } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { convertDateToUTC } from 'src/app/shared/functions/getUtcDate.function';
-import { allNews } from '../../mock-data/news.const';
+import { allNotes } from '../../mock-data/news.const';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NotesServices {
-  notes: (Fact | Quote | Opinion | Stats)[] = allNews;
+  notes: (Fact | Quote | Opinion | Stats)[] = allNotes;
 
   constructor(private userServices: UserServices) {}
 

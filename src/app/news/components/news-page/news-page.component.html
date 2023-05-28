@@ -5,9 +5,15 @@
 
     <mat-chip-list class="chip-list" [multiple]="true" selectable>
       <mat-chip
-        (click)="toggleChip(NoteType.Fact)"
-        [selected]="chips.has(NoteType.Fact)"
-        >Facts</mat-chip
+        (click)="toggleChip(NoteType.Stats)"
+        [selected]="chips.has(NoteType.Stats)"
+        >Numbers</mat-chip
+      >
+
+      <mat-chip
+        (click)="toggleChip(NoteType.Action)"
+        [selected]="chips.has(NoteType.Action)"
+        >Actions</mat-chip
       >
       <mat-chip
         (click)="toggleChip(NoteType.Opinion)"
@@ -40,66 +46,11 @@
 <div *ngIf="showTools"></div>
 
 <div class="news-card" *ngFor="let item of filteredNotes">
-  <app-card>
-    <div class="toolbar">
-      <div class="item">
-        <div>
-          <span class="margin-left-5">
-            📝
-            <app-date-display [date]="item?.createdDate"></app-date-display>
-            by Invesdea
-          </span>
-
-          <app-tags-display
-            class="margin-left-5"
-            [tagUuids]="item?.tagUuids"
-            [content]="item?.content"
-          >
-          </app-tags-display>
-        </div>
-      </div>
-
-      <div class="buttons">
-        <button mat-icon-button>
-          <ng-container
-            *ngIf="savedNoteUuids.has(item?.uuid); else notSavedNote"
-            >⭐</ng-container
-          >
-          <ng-template #notSavedNote>☆</ng-template>
-        </button>
-        <button
-          right-items
-          mat-icon-button
-          [matMenuTriggerFor]="menu"
-          *ngIf="!environment.production"
-        >
-          <mat-icon>more_horiz</mat-icon>
-        </button>
-
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item *ngIf="item?.sourceLink">
-            <a href="{{ item.sourceLink }}" target="_blank"> read more </a>
-          </button>
-
-          <button mat-menu-item [cdkCopyToClipboard]="item.uuid">
-            Copy UUID
-          </button>
-
-          <button mat-menu-item (click)="openDialog()">Twitter</button>
-
-          <button mat-menu-item (click)="openInstagramDialog(item)">
-            Instagram
-          </button>
-        </mat-menu>
-      </div>
-    </div>
-
-    <div class="news-display">
-      <app-card>
-        <app-note-container [note]="item"></app-note-container>
-      </app-card>
-    </div>
-  </app-card>
+  <div class="news-display">
+    <app-card>
+      <app-note-container [note]="item"></app-note-container>
+    </app-card>
+  </div>
 </div>
 
 <!-- <button type="button" mat-button disabled>

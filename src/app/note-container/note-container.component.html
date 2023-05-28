@@ -16,7 +16,120 @@
     [expanded]="!shortVersion"
   >
   </app-quote-display>
+  <ng-container *ngSwitchCase="'action'">
+    <div>
+      <span *ngFor="let item of note?.targets; let last = last"
+        ><app-tag-display [tagUuid]="item"></app-tag-display
+        ><span *ngIf="!last">, </span>
+      </span>
+      <span>
+        {{ note.title }}
+      </span>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="'number'">
+    <app-tag-display [tagUuid]="note?.targets?.[0]"></app-tag-display>
+    <app-stats-display [statsDisplay]="note"></app-stats-display>
+  </ng-container>
   <app-list-display *ngSwitchCase="'list'" [list]="note"> </app-list-display>
   <app-comparison-note *ngSwitchCase="'vote'" [comparisonData]="note">
   </app-comparison-note>
 </ng-container>
+
+<div class="toolbar">
+  <!-- <div class="item">
+    <div>
+      <span class="margin-left-5">
+        📝
+        <app-date-display [date]="note?.createdDate"></app-date-display>
+        by Invesdea
+      </span>
+
+
+      <app-tags-display
+        class="margin-left-5"
+        [tagUuids]="note?.tagUuids"
+        [content]="note?.content"
+      >
+      </app-tags-display>
+    </div>
+  </div> -->
+  <div>
+    <!-- Upvote -->
+    <!-- Bullish -->
+    <!-- Bearish -->
+    <!-- Comments count -->
+    <!-- Save -->
+    <!-- Share -->
+    <!-- <button mat-icon-button>Comment</button> -->
+  </div>
+
+  <div class="buttons">
+    <!-- <button mat-icon-button>
+      <ng-container *ngIf="savedNoteUuids.has(note?.uuid); else notSavedNote"
+        >⭐</ng-container
+      >
+      <ng-template #notSavedNote>☆</ng-template>
+    </button> -->
+    <button mat-icon-button>
+      <mat-icon> expand_more </mat-icon>
+    </button>
+    <button
+      right-items
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      *ngIf="!environment.production"
+    >
+      <mat-icon>more_horiz</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item *ngIf="note?.sourceLink">
+        <a href="{{ item.sourceLink }}" target="_blank"> read more </a>
+      </button>
+
+      <button mat-menu-item [cdkCopyToClipboard]="note.uuid">Copy UUID</button>
+
+      <button mat-menu-item (click)="openDialog()">Twitter</button>
+
+      <button mat-menu-item (click)="openInstagramDialog(note)">
+        Instagram
+      </button>
+    </mat-menu>
+  </div>
+</div>
+
+<!--Comment -->
+<div *ngIf="expanded">
+  <div>
+    <mat-chip-list class="chip-list" [multiple]="true" selectable>
+      <mat-chip
+        (click)="toggleChip(Emoji.thumbUp)"
+        [selected]="chips.has(Emoji.thumbUp)"
+        >{{ Emoji.thumbUp }}</mat-chip
+      >
+
+      <mat-chip
+        (click)="toggleChip(Emoji.rocket)"
+        [selected]="chips.has(Emoji.rocket)"
+        >{{ Emoji.rocket }}</mat-chip
+      >
+
+      <mat-chip
+        (click)="toggleChip(Emoji.shit)"
+        [selected]="chips.has(Emoji.shit)"
+        >{{ Emoji.shit }}</mat-chip
+      >
+      <mat-chip
+        (click)="toggleChip(Emoji.smile)"
+        [selected]="chips.has(Emoji.smile)"
+        >{{ Emoji.smile }}</mat-chip
+      >
+      <mat-chip
+        (click)="toggleChip(Emoji.sad)"
+        [selected]="chips.has(Emoji.sad)"
+        >{{ Emoji.sad }}</mat-chip
+      >
+    </mat-chip-list>
+  </div>
+</div>

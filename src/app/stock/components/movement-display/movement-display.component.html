@@ -1,9 +1,10 @@
 <span class="strong">
   <ng-container *ngIf="!hideMovement">
     <span *ngIf="changePercent >= 0; else down">
-      {{ emojiUnicode.arrowUp }} Up
-    </span>
-    <ng-template #down>{{ emojiUnicode.arrowDown }} Down</ng-template>
-  </ng-container>
-  {{ displayPercent | siUnit: 3 | percent: "1.0-2" | undefined }}
+      {{ emojiUnicode.arrowUp }} +</span
+    >
+    <ng-template #down
+      >{{ emojiUnicode.arrowDown }} -</ng-template
+    > </ng-container
+  >{{ displayPercent | siUnit : 3 | percent : "1.0-2" | undefined }}
 </span>

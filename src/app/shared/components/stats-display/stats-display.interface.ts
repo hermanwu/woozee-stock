@@ -11,6 +11,11 @@ export enum TimeFrame {
   qoq = 'qoq',
 }
 
+export enum UnitType {
+  dollar = 'dollar',
+  rmb = 'rmb',
+}
+
 export interface Stats extends Note {
   uuid: string;
   noteType: string | NoteType;
@@ -22,6 +27,7 @@ export interface Stats extends Note {
   expectedChangeRate?: number;
   expectedValue?: number;
   timeFrame?: TimeFrame;
+  unit?: UnitType;
 
   details?: Stats[];
   title?: string;

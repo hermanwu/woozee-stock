@@ -46,8 +46,8 @@ export class OpinionItemDisplayComponent implements OnInit, OnChanges {
         this.opinion?.authorUuid
       );
 
-      if (this.author) {
-        this.imageLinks.push(this.author);
+      if (this.author?.imageLink) {
+        this.imageLinks.push(this.author.imageLink);
       }
     }
 

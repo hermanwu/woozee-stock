@@ -1,8 +1,7 @@
 <ng-container *ngIf="statsDisplay.value || statsDisplay.changeRate">
   <ng-container>
-    📊
-    <strong *ngIf="statsDisplay?.title || statsDisplay?.name"
-      >{{ statsDisplay?.title || statsDisplay.name }}
+    <strong *ngIf="statsDisplay?.title || statsDisplay?.name">
+      {{ statsDisplay?.title || statsDisplay.name }}
     </strong>
 
     <ng-container [ngSwitch]="statsDisplay.displayType">
@@ -80,11 +79,9 @@
         </span>
       </ng-container>
     </ng-container>
-
-    <ul *ngIf="statsDisplay.details">
-      <li *ngFor="let item of statsDisplay.details">
-        <app-stats-display [statsDisplay]="item"></app-stats-display>
-      </li>
-    </ul>
   </ng-container>
+</ng-container>
+
+<ng-container *ngIf="statsDisplay.title">
+  {{ statsDisplay.title }}
 </ng-container>

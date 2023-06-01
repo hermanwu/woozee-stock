@@ -24,7 +24,6 @@ export class TagDisplayComponent implements OnInit {
   ngOnChanges() {
     if (this.tagUuid) {
       this.item = this.tagServices.getTagRelatedDataByUuid(this.tagUuid);
-      console.log(this.tagUuid);
     }
   }
 

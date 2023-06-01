@@ -5,9 +5,9 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const nflx: StockAnalysis = {
   marketCap: 81 * BILLION,
-  logo: '',
   name: 'Netflix',
   description: [],
+  uuid: 'nflx',
   ticker: 'NFLX',
   displayName: 'Netflix',
   irAddress: 'https://ir.netflix.net/ir-overview/profile/default.aspx',

@@ -10,11 +10,15 @@
   </div>
 
   <div class="xl-text" *ngIf="opinion.title; else generatedTitle">
-    📌 {{ opinion.title }}
+    🎙️ {{ opinion.title }}
   </div>
 
   <ng-template #generatedTitle>
     <div class="xl-text">
+      🎙️
+
+      <span *ngIf="opinion.name">{{ opinion.name }}</span>
+
       <span>{{ author?.displayName }}</span>
 
       <span *ngIf="author && organization"> of </span>
@@ -27,7 +31,7 @@
         <app-opinion-display [opinionType]="item"></app-opinion-display>
       </span>
 
-      <span> comments on </span>
+      <span>Opinions on </span>
 
       <span *ngFor="let item of targets; last as last"
         >{{ item?.displayName }}<span *ngIf="!last">, </span>

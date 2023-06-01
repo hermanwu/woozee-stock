@@ -20,6 +20,10 @@
         [selected]="chips.has(NoteType.Opinion)"
         >Opinions</mat-chip
       >
+
+      <mat-chip (click)="toggleChip('Group')" [selected]="chips.has('Group')"
+        >Groups</mat-chip
+      >
     </mat-chip-list>
   </div>
 

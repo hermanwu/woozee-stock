@@ -16,6 +16,10 @@ export enum UnitType {
   rmb = 'rmb',
 }
 
+export enum StatsCategory {
+  revenue = 'Revenue',
+}
+
 export interface Stats extends Note {
   uuid: string;
   noteType: string | NoteType;
@@ -28,6 +32,7 @@ export interface Stats extends Note {
   expectedValue?: number;
   timeFrame?: TimeFrame;
   unit?: UnitType;
+  statsCategory?: StatsCategory;
 
   details?: Stats[];
   title?: string;

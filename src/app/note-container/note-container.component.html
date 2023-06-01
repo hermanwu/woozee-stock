@@ -18,17 +18,18 @@
   </app-quote-display>
   <ng-container *ngSwitchCase="'action'">
     <div>
+      <span>🔸 </span>
       <span *ngFor="let item of note?.targets; let last = last"
         ><app-tag-display [tagUuid]="item"></app-tag-display
         ><span *ngIf="!last">, </span>
       </span>
-      <span>
-        {{ note.title }}
-      </span>
+
+      <span> {{ note.title }} </span>
     </div>
   </ng-container>
   <ng-container *ngSwitchCase="'number'">
-    <app-tag-display [tagUuid]="note?.targets?.[0]"></app-tag-display>
+    📊 <app-tag-display [tagUuid]="note?.targets?.[0]"></app-tag-display>
+
     <app-stats-display [statsDisplay]="note"></app-stats-display>
   </ng-container>
   <app-list-display *ngSwitchCase="'list'" [list]="note"> </app-list-display>
@@ -37,6 +38,11 @@
 </ng-container>
 
 <div class="toolbar">
+  <span class="margin-left-5">
+    📝
+    <app-date-display [date]="note?.createdDate"></app-date-display>
+    by Invesdea
+  </span>
   <!-- <div class="item">
     <div>
       <span class="margin-left-5">

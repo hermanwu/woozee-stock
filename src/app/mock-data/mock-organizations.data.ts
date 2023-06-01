@@ -189,4 +189,59 @@ export const organizations: Organization[] = [
     displayName: 'Dick’s Sporting Goods',
     logoLink: '',
   },
+  {
+    uuid: 'morningstaruuid',
+    displayName: 'Morningstar',
+    logoLink: '',
+  },
+  {
+    uuid: 'c3ai',
+    displayName: 'C3.ai',
+    logoLink: '',
+  },
+  {
+    uuid: 'nflx',
+    displayName: 'Netflix',
+    logoLink: '',
+  },
+  {
+    uuid: 'hpe',
+    displayName: 'HP Enterprise',
+    logoLink: '',
+  },
+  {
+    uuid: 'nasdaq',
+    displayName: 'Nasdaq',
+    logoLink: '',
+  },
+  {
+    uuid: 'sp500',
+    displayName: 'S&P 500',
+    logoLink: '',
+  },
+  {
+    uuid: 'dow',
+    displayName: 'Dow',
+    logoLink: '',
+  },
+  {
+    uuid: 'pltr',
+    displayName: 'Palantir',
+    logoLink: '',
+  },
+  {
+    uuid: 'oil',
+    displayName: 'Crude Oil',
+    logoLink: '',
+  },
+  {
+    uuid: 'jwn',
+    displayName: 'Nordstrom',
+    logoLink: '',
+  },
+  {
+    uuid: 'aap',
+    displayName: 'Advance Auto Parts',
+    logoLink: '',
+  },
 ];

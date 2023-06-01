@@ -22,7 +22,8 @@ export const pltrRisks = [
 
 export const pltr: StockAnalysis = {
   marketCap: 15 * BILLION,
-
+  uuid: 'pltr',
+  displayName: 'Palantir',
   logoLink: 'https://i.ibb.co/CmgPzgs/b-CJBVt6x-400x400.jpg',
   earningsReports: [
     {

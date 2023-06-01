@@ -157,72 +157,10 @@
       </app-card>
     </div>
 
-    <div class="padding-1rem" *ngIf="stockAnalysis?.earningsReports?.[0]?.date">
-      <app-card>
-        <app-earnings-report
-          [stock]="stockAnalysis"
-          [pastTwoYearsEarningsReports]="stockAnalysis?.earningsReports"
-        ></app-earnings-report>
-      </app-card>
-    </div>
-
-    <div
-      class="padding-1rem"
-      *ngIf="stockAnalysis?.earningsReports?.slice(1)?.[0]?.date"
-    >
-      <app-card>
-        <app-earnings-report
-          [stock]="stockAnalysis"
-          [pastTwoYearsEarningsReports]="
-            stockAnalysis?.earningsReports?.slice(1)
-          "
-        ></app-earnings-report>
-      </app-card>
-    </div>
-
     <div class="padding-1rem" *ngIf="stockAnalysis">
       <app-fact [factType]="factType.business" [stock]="stockAnalysis">
         <app-business-overview [stock]="stockAnalysis"></app-business-overview>
       </app-fact>
-    </div>
-
-    <div class="padding-1rem">
-      <app-fact [factType]="factType.growth" [stock]="stockAnalysis">
-        <app-growth-details [stock]="stockAnalysis"></app-growth-details>
-
-        <!-- <app-booster></app-booster> -->
-      </app-fact>
-    </div>
-
-    <div class="padding-1rem">
-      <app-fact [factType]="factType.profit" [stock]="stockAnalysis">
-        <app-profitability-details
-          [stock]="stockAnalysis"
-        ></app-profitability-details>
-      </app-fact>
-    </div>
-
-    <div class="padding-1rem">
-      <app-fact [factType]="factType.valuation" [stock]="stockAnalysis">
-        <app-valuation-details [stock]="stockAnalysis"></app-valuation-details>
-      </app-fact>
-    </div>
-
-    <div class="padding-1rem" *ngIf="stockAnalysis.predications">
-      <app-card>
-        <h2>Ratings</h2>
-
-        <div *ngIf="stockAnalysis?.predications">
-          <div>
-            Price:
-            {{ stockAnalysis.predications[0]?.price | undefined }}
-          </div>
-          <div>
-            Scores Date:
-            {{ stockAnalysis.predications[0]?.start | date }}
-          </div>
-        </div>
-      </app-card>
     </div>
   </div>
 </ng-template>

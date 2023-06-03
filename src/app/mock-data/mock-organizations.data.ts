@@ -244,4 +244,9 @@ export const organizations: Organization[] = [
     displayName: 'Advance Auto Parts',
     logoLink: '',
   },
+  {
+    uuid: 'dg',
+    displayName: 'Dollar General',
+    logoLink: '',
+  },
 ];

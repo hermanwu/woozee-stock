@@ -27,6 +27,7 @@
       <span> {{ note.title }} </span>
     </div>
   </ng-container>
+
   <ng-container *ngSwitchCase="'number'">
     📊 <app-tag-display [tagUuid]="note?.targets?.[0]"></app-tag-display>
 

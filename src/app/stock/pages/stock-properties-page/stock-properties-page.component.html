@@ -29,138 +29,85 @@
         - {{ stockAnalysis.price | undefined }}</span
       >
     </div>
-    <div right-items>
-      <button mat-icon-button [matMenuTriggerFor]="stockMenu">
-        <mat-icon>more_horiz</mat-icon>
-      </button>
-
-      <mat-menu #stockMenu="matMenu">
-        <button
-          class="buttons"
-          mat-menu-item
-          aria-label="Organize widgets"
-          matTooltip="Organize Widgets"
-          disabled
-        >
-          <mat-icon>sort</mat-icon>
-        </button>
-
-        <button
-          class="buttons"
-          mat-menu-item
-          [matMenuTriggerFor]="menu"
-          aria-label="navigate to sections"
-          matTooltip="Navigator"
-          disabled
-        >
-          <mat-icon>link</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item disabled>Business</button>
-          <button mat-menu-item disabled>Growth</button>
-          <button mat-menu-item disabled>Profit</button>
-        </mat-menu>
-      </mat-menu>
-    </div>
+    <div right-items></div>
   </app-title-menu>
 
   <div class="grid grid-dynamic">
-    <div class="padding-1rem" *ngIf="opinions?.length > 0">
-      <app-card>
-        <app-title-menu>
-          <div header-2>Opinions</div>
+    <app-card class="grid" *ngIf="numbers?.length > 0">
+      <app-title-menu>
+        <div header-2>Numbers</div>
+      </app-title-menu>
+      <div *ngFor="let note of numbers" class="opinion-display">
+        📊 <app-tag-display [tagUuid]="note?.targets?.[0]"></app-tag-display>
+        <app-stats-display [statsDisplay]="note"></app-stats-display>
+      </div>
+    </app-card>
 
-          <div right-items>
+    <app-card class="grid" *ngIf="opinions?.length > 0">
+      <app-title-menu>
+        <div header-2>Actions</div>
+
+        <div right-items>
+          <button right-items mat-icon-button [matMenuTriggerFor]="opinionMenu">
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+
+          <mat-menu #opinionMenu="matMenu">
             <button
-              right-items
-              mat-icon-button
-              [matMenuTriggerFor]="opinionMenu"
+              mat-menu-item
+              type="button"
+              (click)="setDisplayMode(displayModeEnum.list)"
             >
-              <mat-icon>more_horiz</mat-icon>
+              <mat-icon>list</mat-icon>
+            </button>
+            <button
+              mat-menu-item
+              type="button"
+              (click)="setDisplayMode(displayModeEnum.slide)"
+            >
+              <mat-icon>view_array</mat-icon>
             </button>
 
-            <mat-menu #opinionMenu="matMenu">
-              <button
-                mat-menu-item
-                type="button"
-                (click)="setDisplayMode(displayModeEnum.list)"
-              >
-                <mat-icon>list</mat-icon>
-              </button>
-              <button
-                mat-menu-item
-                type="button"
-                (click)="setDisplayMode(displayModeEnum.slide)"
-              >
-                <mat-icon>view_array</mat-icon>
-              </button>
-
-              <button mat-menu-item type="button" matTooltip="Add Risk">
-                <mat-icon>add_circle</mat-icon>
-              </button>
-            </mat-menu>
-          </div>
-        </app-title-menu>
-
-        <div class="grid">
-          <app-card *ngFor="let opinion of opinions" class="opinion-display">
-            <div>
-              <app-opinion-item-display
-                [opinion]="opinion"
-              ></app-opinion-item-display>
-            </div>
-          </app-card>
+            <button mat-menu-item type="button" matTooltip="Add Risk">
+              <mat-icon>add_circle</mat-icon>
+            </button>
+          </mat-menu>
         </div>
+      </app-title-menu>
+      <div *ngFor="let action of actions" class="opinion-display">
+        <span>🔸 </span>
+        <span *ngFor="let item of action?.targets; let last = last"
+          ><app-tag-display [tagUuid]="item"></app-tag-display
+          ><span *ngIf="!last">, </span>
+        </span>
 
-        <div *ngIf="displayMode === displayModeEnum.slide">
-          <app-carousal
-            [items]="risks"
-            (indexOfSelected)="updateDisplayItem($event)"
-          >
-            <div class="risk-slides-overview">
-              <ng-container *ngFor="let risk of risks; let i = index">
-                <span
-                  [ngClass]="{
-                    'current-risk-slide': i === carousalDisplayItemIndex
-                  }"
-                >
-                  {{ risk.type }}
-                </span>
-                <span>-></span>
-              </ng-container>
+        <span> {{ action.title }} </span>
+      </div>
+    </app-card>
 
-              <span>Conclusion</span>
-            </div>
+    <app-card class="grid" *ngIf="opinions?.length > 0">
+      <app-title-menu>
+        <div header-2>Opinions</div>
 
-            <div *ngFor="let risk of risks; let i = index">
-              <app-card *ngIf="i === carousalDisplayItemIndex">
-                <app-risk [risk]="risk"></app-risk>
-              </app-card>
-            </div>
-          </app-carousal>
+        <div right-items>
+          <button right-items mat-icon-button [matMenuTriggerFor]="opinionMenu">
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+
+          <mat-menu #opinionMenu="matMenu">
+            <button mat-menu-item type="button" matTooltip="Add Risk">
+              <mat-icon>add_circle</mat-icon>
+            </button>
+          </mat-menu>
         </div>
-      </app-card>
-    </div>
+      </app-title-menu>
 
-    <div class="padding-1rem" *ngIf="news?.length > 0">
-      <app-card>
-        <app-title-menu>
-          <div header-2>Facts</div>
-        </app-title-menu>
-
-        <div *ngFor="let item of news">
-          <app-news-display
-            [shortVersion]="'true'"
-            [news]="item"
-          ></app-news-display>
-        </div>
-      </app-card>
-    </div>
-
-    <div class="padding-1rem" *ngIf="stockAnalysis">
-      <app-fact [factType]="factType.business" [stock]="stockAnalysis">
-        <app-business-overview [stock]="stockAnalysis"></app-business-overview>
-      </app-fact>
-    </div>
+      <div *ngFor="let note of opinions" class="opinion-display">
+        <app-opinion-item-display
+          [opinion]="note"
+          [expanded]="true"
+        ></app-opinion-item-display>
+      </div>
+    </app-card>
   </div>
 </ng-template>

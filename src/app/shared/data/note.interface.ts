@@ -3,7 +3,7 @@
  */
 
 export enum NoteType {
-  Fact = 'fact',
+  Fact = 'action',
   /**
      {
     type: 'stats',
@@ -29,6 +29,7 @@ export enum NoteType {
   Opinion = 'opinion', // To Remove
   Vote = 'vote',
   List = 'list',
+
   /**
    {
     type: 'questionaine',
@@ -68,4 +69,5 @@ export interface Note {
   updatedDate?: string;
   uuid: string;
   childrenUuids?: string[];
+  targets?: string[];
 }

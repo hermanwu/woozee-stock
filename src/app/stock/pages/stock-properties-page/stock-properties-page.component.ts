@@ -5,11 +5,12 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import { Quote } from 'src/app/mock-data/quote.model';
 import { NotesServices } from 'src/app/news/services/notes.services';
+import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { OpinionServices } from 'src/app/notes/services/opinion.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { Fact } from 'src/app/risks/models/fact.model';
+import { Stats } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
 import { NoteType } from 'src/app/shared/data/note.interface';
@@ -38,14 +39,11 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   routeSub: Subscription;
   stockAnalysis: StockAnalysis;
   stockUuid: string;
-  catalysts = [];
-  news = [];
   rank$: Observable<number>;
-  opinions: any[] = [];
-  facts: Fact[] = [];
-  quotes: Quote[] = [];
-  shortTermScore = 0;
-  longTermScore = 0;
+
+  opinions: Opinion[] = [];
+  actions: Fact[] = [];
+  numbers: Stats[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -66,9 +64,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         .get(this.stockUuid);
 
       if (this.stockAnalysis) {
-        [this.shortTermScore, this.longTermScore] =
-          this.opinionServices.getOpinionScore(this.opinions);
-
         this.titleService.setTitle(this.stockAnalysis.name);
       } else {
         this.stockAnalysis = null;
@@ -82,19 +77,17 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         })
       );
 
-      const notes = this.notesServices.getNewsByTags([this.stockUuid]);
+      const notes = this.notesServices.getNotesByTargets([this.stockUuid]);
 
-      this.opinions = notes
-        .filter((item) => item.noteType === NoteType.Opinion)
-        .slice(0, 5);
-
-      // this.facts = notes
-      //   .filter((item) => item.noteType === NoteType.Fact)
-      //   .slice(0, 5);
-
-      // this.quotes = notes
-      //   .filter((item) => item.noteType === NoteType.Quote)
-      //   .slice(0, 5);
+      this.opinions = notes.filter(
+        (item) => item.noteType === NoteType.Opinion
+      ) as Opinion[];
+      this.numbers = notes.filter(
+        (item) => item.noteType === NoteType.Stats
+      ) as Stats[];
+      this.actions = notes.filter(
+        (item) => item.noteType === NoteType.Fact
+      ) as Fact[];
     });
   }
 

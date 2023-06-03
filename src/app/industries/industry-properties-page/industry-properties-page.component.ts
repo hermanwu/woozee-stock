@@ -45,8 +45,6 @@ export class IndustryPropertiesPageComponent implements OnInit, OnDestroy {
       this.market = this.marketService.getMarketsByTypes([this.marketType])[0];
 
       this.stocks = this.stockServices.getStocksByIndustryType(this.marketType);
-
-      // this.news = this.newsService.getNewsByTags([this.marketType]);
     });
   }
 

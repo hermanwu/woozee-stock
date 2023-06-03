@@ -13,4 +13,5 @@ export interface Tag {
   displayName: string;
   imageLink?: string;
   link?: string;
+  ticker?: string;
 }

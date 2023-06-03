@@ -273,14 +273,5 @@ export const tsla: StockAnalysis = {
     '	- 特斯拉涉及的产业有新能源（电池），汽车，芯片，人工智能（自动驾驶）',
     '自动驾驶是人类下一个“一定要解决的问题”，有着巨大潜力。如果自动驾驶成功，物流和出行会发生翻天覆地的变化',
   ],
-
-  stats: {
-    marketCap: '417.2B',
-    price: 2213.4,
-    PE: 1139.17,
-    PS: 16.23,
-    quickRatio: 0.9,
-    currentRatio: 1.2,
-  },
   news: [],
 };

@@ -236,11 +236,7 @@ export const bili: StockAnalysis = {
   thoughts: {
     hermanScore: 1,
   },
-  stats: {
-    price: 1,
-    revenueGrowth: 0.4,
-    margin: 0.3,
-  },
+
   score: {
     vision: 7,
     painPoint: 8,

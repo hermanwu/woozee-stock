@@ -1,1 +1,4 @@
-<span *ngIf="item" (click)="navigate(item)">{{ item.displayName }}</span>
+<span *ngIf="item" (click)="navigate(item)"
+  >{{ item.displayName }}
+  <span *ngIf="item.ticker">${{ item.ticker | uppercase }}</span></span
+>

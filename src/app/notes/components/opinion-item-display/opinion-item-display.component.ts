@@ -51,17 +51,13 @@ export class OpinionItemDisplayComponent implements OnInit, OnChanges {
       }
     }
 
-    if (this.opinion.targets) {
-      for (let tag of this.opinion.targets) {
-        const imageInfos = this.tagServices.getTagRelatedDataByUuid(tag);
+    if (this.opinion?.targets) {
+      for (let targetUuid of this.opinion.targets) {
+        const imageInfos = this.tagServices.getTagRelatedDataByUuid(targetUuid);
         if (imageInfos?.imageLink) {
           this.imageLinks.push(imageInfos);
         }
-      }
-    }
 
-    if (this.opinion.targets) {
-      for (let targetUuid of this.opinion.targets) {
         const target = this.tagServices.getTagRelatedDataByUuid(targetUuid);
         this.targets.push(target);
       }

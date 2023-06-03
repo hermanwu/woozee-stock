@@ -79,6 +79,10 @@ export class TagServices {
     }
   }
 
+  getImagesByTags(tags: string[]): any[] {
+    return [];
+  }
+
   getTagRelatedDataByUuid(tagUuid: string): Tag {
     let cleanedTagUuid = tagUuid.trim()?.toLowerCase();
 
@@ -90,6 +94,7 @@ export class TagServices {
         displayName: stock.displayName,
         imageLink: stock.logoLink,
         type: TagType.Stock,
+        ticker: stock.ticker,
       };
     }
 

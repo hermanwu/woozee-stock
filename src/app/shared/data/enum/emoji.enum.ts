@@ -32,6 +32,10 @@ export enum EmojiUnicode {
   sad = '😫',
   calendar = '🗓',
   news = '📰',
+  one = '1️⃣',
+  two = '2️⃣',
+  three = '3️⃣',
+  four = '4️⃣',
 }
 
 export const BullishEmoji = ['🚀', '😆', '🙂', '👍', '🤑', '😲'];

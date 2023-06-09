@@ -48,6 +48,8 @@ export const adbe: StockAnalysis = {
   displayName: 'Adobe',
   description: [],
   ticker: 'adbe',
+  uuid: 'adbe',
+  logoLink: 'https://i.ibb.co/8mgcJgn/tlf7-MWH-400x400.png',
 
   business: {
     markets: [

@@ -1,6 +1,5 @@
 <div>
-  <button mat-button (click)="addNewNote()">New Opinion</button>
-  <button mat-button (click)="addNewFact()">New Fact</button>
+  <button mat-button (click)="addNewNote()">New Note</button>
 </div>
 
 <mat-divider></mat-divider>
@@ -9,10 +8,10 @@
   {{ item | json }}
 
   <div>
-    <app-add-news-form
+    <app-add-note-form
       [note]="item"
       (newNote)="update($event)"
-    ></app-add-news-form>
+    ></app-add-note-form>
   </div>
 
   <mat-divider></mat-divider>

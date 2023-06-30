@@ -249,4 +249,19 @@ export const organizations: Organization[] = [
     displayName: 'Dollar General',
     logoLink: '',
   },
+  {
+    uuid: 'kr',
+    displayName: 'Kroger',
+    logoLink: '',
+  },
+  {
+    uuid: 'barclaysUuid',
+    displayName: 'Barclays',
+    logoLink: '',
+  },
+  {
+    uuid: 'nke',
+    displayName: 'Nike',
+    logoLink: '',
+  },
 ];

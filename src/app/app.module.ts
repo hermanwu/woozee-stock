@@ -35,7 +35,7 @@ import { InstagramNewsDisplayDialogComponent } from './news/components/news-disp
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
 import { NoteContainerComponent } from './note-container/note-container.component';
 import { NoteFormListComponent } from './note-form-list/note-form-list.component';
-import { AddNewsFormComponent } from './notes/components/add-news-form/add-news-form.component';
+import { AddNewsFormComponent } from './notes/components/add-note-form/add-note-form.component';
 import { BoosterComponent } from './notes/components/catalyst/booster/booster.component';
 import { CatalystListComponent } from './notes/components/catalyst/components/catalyst-list/catalyst-list.component';
 import { CatalystPageComponent } from './notes/components/catalyst/components/catalyst-page/catalyst-page.component';
@@ -112,6 +112,7 @@ import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/tho
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
 import { StockDisplayComponent } from './stock/stock-display/stock-display.component';
+import { TagDisplayComponent } from './tag-display/tag-display.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
 import { MockCompareDialogComponent } from './ui/components/mock-compare-dialog/mock-compare-dialog.component';
@@ -126,7 +127,6 @@ import { UiListComponent } from './ui/ui-list/ui-list.component';
 import { UiMoleculesComponent } from './ui/ui-molecules/ui-molecules.component';
 import { UiOrganismComponent } from './ui/ui-organism/ui-organism.component';
 import { UiTemplatesComponent } from './ui/ui-templates/ui-templates.component';
-import { TagDisplayComponent } from './tag-display/tag-display.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };

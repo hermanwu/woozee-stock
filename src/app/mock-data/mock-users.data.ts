@@ -17,7 +17,7 @@ export const users = [
   },
   {
     uuid: 'john.smith@example.com',
-    displayName: 'JohnSmith',
+    displayName: 'johnsmith',
   },
   {
     uuid: 'jane.doe@example.com',
@@ -33,7 +33,7 @@ export const users = [
   },
   {
     uuid: 'jimmy.lee@example.com',
-    displayName: 'JimmyLee',
+    displayName: 'Jimmy',
   },
   {
     uuid: 'emily.nguyen@example.com',

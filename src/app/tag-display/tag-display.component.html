@@ -1,4 +1,5 @@
-<span *ngIf="item" (click)="navigate(item)"
+<span *ngIf="item; else nameOnly" class="pointer" (click)="navigate(item)"
   >{{ item.displayName }}
   <span *ngIf="item.ticker">${{ item.ticker | uppercase }}</span></span
 >
+<ng-template #nameOnly>{{ tagUuid }}</ng-template>

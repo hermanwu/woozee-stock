@@ -1,9 +1,27 @@
+<div class="header">
+  <div>
+    <!-- Display Note Type Based on noteType-->
+    <ng-container [ngSwitch]="note.noteType">
+      <ng-container *ngSwitchCase="'opinion'"> 🎙️ Opinions: </ng-container>
+      <ng-container *ngSwitchCase="'number'"> 📊 Numbers: </ng-container>
+      <ng-container *ngSwitchCase="'action'"> 🔸 Events: </ng-container>
+    </ng-container>
+    <app-tag-display [tagUuid]="note?.targets?.[0]"></app-tag-display>
+  </div>
+
+  <div>
+    📝
+    <app-date-display [date]="note?.createdDate"></app-date-display>
+    <!-- by {{ creatorName || "invesdea" }} -->
+    by Invesdea
+  </div>
+</div>
+
+<div *ngIf="note.title">
+  <strong>{{ note.title }}</strong>
+</div>
+
 <ng-container [ngSwitch]="note.noteType">
-  <app-news-display
-    *ngSwitchCase="'fact'"
-    [news]="note"
-    [shortVersion]="shortVersion"
-  ></app-news-display>
   <app-opinion-item-display
     *ngSwitchCase="'opinion'"
     [opinion]="note"
@@ -17,21 +35,14 @@
   >
   </app-quote-display>
   <ng-container *ngSwitchCase="'action'">
-    <div>
-      <span>🔸 </span>
-      <span *ngFor="let item of note?.targets; let last = last"
-        ><app-tag-display [tagUuid]="item"></app-tag-display
-        ><span *ngIf="!last">, </span>
-      </span>
-
-      <span> {{ note.title }} </span>
-    </div>
+    <app-content-display *ngIf="note.content" [content]="note.content">
+    </app-content-display>
   </ng-container>
 
   <ng-container *ngSwitchCase="'number'">
-    📊 <app-tag-display [tagUuid]="note?.targets?.[0]"></app-tag-display>
-
-    <app-stats-display [statsDisplay]="note"></app-stats-display>
+    <div>
+      <app-stats-display [statsDisplay]="note"></app-stats-display>
+    </div>
   </ng-container>
   <app-list-display *ngSwitchCase="'list'" [list]="note"> </app-list-display>
   <app-comparison-note *ngSwitchCase="'vote'" [comparisonData]="note">
@@ -39,104 +50,65 @@
 </ng-container>
 
 <div class="toolbar">
-  <span class="margin-left-5">
-    📝
-    <app-date-display [date]="note?.createdDate"></app-date-display>
-    by Invesdea
-  </span>
-  <!-- <div class="item">
-    <div>
-      <span class="margin-left-5">
-        📝
-        <app-date-display [date]="note?.createdDate"></app-date-display>
-        by Invesdea
-      </span>
+  <button mat-button>Bullish</button>
 
+  <button mat-button>Bearish</button>
 
-      <app-tags-display
-        class="margin-left-5"
-        [tagUuids]="note?.tagUuids"
-        [content]="note?.content"
-      >
-      </app-tags-display>
-    </div>
-  </div> -->
-  <div>
-    <!-- Upvote -->
-    <!-- Bullish -->
-    <!-- Bearish -->
-    <!-- Comments count -->
-    <!-- Save -->
-    <!-- Share -->
-    <!-- <button mat-icon-button>Comment</button> -->
-  </div>
+  <button mat-button>Save</button>
 
-  <div class="buttons">
-    <!-- <button mat-icon-button>
-      <ng-container *ngIf="savedNoteUuids.has(note?.uuid); else notSavedNote"
-        >⭐</ng-container
-      >
-      <ng-template #notSavedNote>☆</ng-template>
-    </button> -->
-    <button mat-icon-button>
-      <mat-icon> expand_more </mat-icon>
+  <button mat-button (click)="expanded = !expanded">
+    😀 <mat-icon> expand_more </mat-icon>
+  </button>
+  <button
+    right-items
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    *ngIf="!environment.production"
+  >
+    <mat-icon>more_horiz</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngIf="note?.sourceLink">
+      <a href="{{ item.sourceLink }}" target="_blank"> read more </a>
     </button>
-    <button
-      right-items
-      mat-icon-button
-      [matMenuTriggerFor]="menu"
-      *ngIf="!environment.production"
+
+    <button mat-menu-item [cdkCopyToClipboard]="note.uuid">Copy UUID</button>
+
+    <button mat-menu-item (click)="openDialog()">Twitter</button>
+
+    <button mat-menu-item (click)="openInstagramDialog(note)">Instagram</button>
+  </mat-menu>
+</div>
+
+<ng-container *ngIf="expanded">
+  <mat-chip-list class="chip-list" [multiple]="true" selectable>
+    <mat-chip
+      (click)="toggleChip(Emoji.thumbUp)"
+      [selected]="chips.has(Emoji.thumbUp)"
+      >{{ Emoji.thumbUp }}</mat-chip
     >
-      <mat-icon>more_horiz</mat-icon>
-    </button>
 
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item *ngIf="note?.sourceLink">
-        <a href="{{ item.sourceLink }}" target="_blank"> read more </a>
-      </button>
+    <mat-chip
+      (click)="toggleChip(Emoji.rocket)"
+      [selected]="chips.has(Emoji.rocket)"
+      >{{ Emoji.rocket }}</mat-chip
+    >
 
-      <button mat-menu-item [cdkCopyToClipboard]="note.uuid">Copy UUID</button>
-
-      <button mat-menu-item (click)="openDialog()">Twitter</button>
-
-      <button mat-menu-item (click)="openInstagramDialog(note)">
-        Instagram
-      </button>
-    </mat-menu>
-  </div>
-</div>
-
-<!--Comment -->
-<div *ngIf="expanded">
-  <div>
-    <mat-chip-list class="chip-list" [multiple]="true" selectable>
-      <mat-chip
-        (click)="toggleChip(Emoji.thumbUp)"
-        [selected]="chips.has(Emoji.thumbUp)"
-        >{{ Emoji.thumbUp }}</mat-chip
-      >
-
-      <mat-chip
-        (click)="toggleChip(Emoji.rocket)"
-        [selected]="chips.has(Emoji.rocket)"
-        >{{ Emoji.rocket }}</mat-chip
-      >
-
-      <mat-chip
-        (click)="toggleChip(Emoji.shit)"
-        [selected]="chips.has(Emoji.shit)"
-        >{{ Emoji.shit }}</mat-chip
-      >
-      <mat-chip
-        (click)="toggleChip(Emoji.smile)"
-        [selected]="chips.has(Emoji.smile)"
-        >{{ Emoji.smile }}</mat-chip
-      >
-      <mat-chip
-        (click)="toggleChip(Emoji.sad)"
-        [selected]="chips.has(Emoji.sad)"
-        >{{ Emoji.sad }}</mat-chip
-      >
-    </mat-chip-list>
-  </div>
-</div>
+    <mat-chip
+      (click)="toggleChip(Emoji.shit)"
+      [selected]="chips.has(Emoji.shit)"
+      >{{ Emoji.shit }}</mat-chip
+    >
+    <mat-chip
+      (click)="toggleChip(Emoji.smile)"
+      [selected]="chips.has(Emoji.smile)"
+      >{{ Emoji.smile }}</mat-chip
+    >
+    <mat-chip
+      (click)="toggleChip(Emoji.sad)"
+      [selected]="chips.has(Emoji.sad)"
+      >{{ Emoji.sad }}</mat-chip
+    >
+  </mat-chip-list>
+</ng-container>

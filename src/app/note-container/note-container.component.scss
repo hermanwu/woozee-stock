@@ -1,9 +1,16 @@
 .toolbar {
+  margin-top: 10px;
   display: flex;
-  justify-content: space-between;
   align-items: center; /* Center vertically */
 }
 
 .chip-list {
   display: inline;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center vertically */
+  margin-bottom :10px;
 }

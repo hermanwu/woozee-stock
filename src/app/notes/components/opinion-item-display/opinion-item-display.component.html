@@ -1,47 +1,18 @@
 <ng-container *ngIf="expanded; else shortVersion">
-  <div class="news-image">
-    <app-ui-images-display [images]="imageLinks"></app-ui-images-display>
-  </div>
+  <ng-container *ngIf="authorName">
+    <strong>
+      {{ authorName
+      }}<span *ngIf="organizationName"> of {{ organizationName }}</span>
+    </strong>
+  </ng-container>
 
-  <div *ngIf="opinion?.imageLinks">
+  <ng-container *ngIf="opinion?.imageLinks">
+    <app-ui-images-display [images]="imageLinks"></app-ui-images-display>
+
     <div *ngFor="let item of opinion.imageLinks">
       <app-image-display [imageLink]="item"></app-image-display>
     </div>
-  </div>
-
-  <div class="xl-text" *ngIf="opinion.title; else generatedTitle">
-    🎙️ {{ opinion.title }}
-  </div>
-
-  <ng-template #generatedTitle>
-    <div class="xl-text">
-      🎙️
-
-      <span *ngIf="opinion.name">{{ opinion.name }}</span>
-
-      <span>{{ author?.displayName }}</span>
-
-      <span *ngIf="author && organization"> of </span>
-
-      <span *ngIf="author || organization"
-        >{{ organization?.displayName }}
-      </span>
-
-      <span *ngFor="let item of opinion?.emotions">
-        <app-opinion-display [opinionType]="item"></app-opinion-display>
-      </span>
-
-      <span>Opinions on </span>
-
-      <span *ngFor="let item of targets; last as last"
-        >{{ item?.displayName }}<span *ngIf="!last">, </span>
-      </span>
-
-      <span class="emoji-display">
-        <app-emoji-display [emotion]="opinion.rating"> </app-emoji-display>
-      </span>
-    </div>
-  </ng-template>
+  </ng-container>
 
   <app-content-display [content]="opinion.content"></app-content-display>
 

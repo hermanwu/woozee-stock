@@ -1,6 +1,34 @@
 <form [formGroup]="newsForm" (ngSubmit)="onSubmit()">
   <button matSuffix mat-button aria-label="Go" type="submit">Update</button>
 
+  <div>
+    <mat-button-toggle-group
+      #ratingToggleGroup="matButtonToggleGroup"
+      (change)="setNoteType(ratingToggleGroup.value)"
+    >
+      <mat-button-toggle [value]="noteType.Action">Event</mat-button-toggle>
+      <mat-button-toggle [value]="noteType.Stats">Number</mat-button-toggle>
+      <mat-button-toggle [value]="noteType.Opinion">Opinion</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>targets</mat-label>
+      <input matInput formControlName="targets" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <div>
+      <mat-label>content</mat-label>:
+      <span> {{ newsForm.value?.content?.length || 0 }}</span>
+    </div>
+    <div>
+      <textarea rows="20" cols="50" formControlName="content"></textarea>
+    </div>
+  </div>
+
   <div *ngIf="note.noteType === noteType.Opinion">
     <mat-button-toggle-group
       #ratingToggleGroup="matButtonToggleGroup"
@@ -22,13 +50,6 @@
         >Very Bearish</mat-button-toggle
       >
     </mat-button-toggle-group>
-
-    <span> on </span>
-
-    <mat-form-field>
-      <mat-label>targets</mat-label>
-      <input matInput formControlName="targets" />
-    </mat-form-field>
   </div>
 
   <div>
@@ -77,16 +98,6 @@
     <div><mat-label>title</mat-label></div>
     <div>
       <textarea rows="5" cols="40" formControlName="title"></textarea>
-    </div>
-  </div>
-
-  <div>
-    <div>
-      <mat-label>content</mat-label>:
-      <span> {{ newsForm.value?.content?.length || 0 }}</span>
-    </div>
-    <div>
-      <textarea rows="40" cols="50" formControlName="content"></textarea>
     </div>
   </div>
 </form>

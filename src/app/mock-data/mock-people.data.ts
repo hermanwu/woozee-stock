@@ -81,4 +81,9 @@ export const people = [
     displayName: 'Geoffrey Hinton',
     imageLink: 'https://i.ibb.co/bPgXKNy/f-QGCUSt0-400x400.jpg',
   },
+  {
+    uuid: 'kevinscott',
+    displayName: 'Kevin Scott',
+    imageLink: 'https://i.ibb.co/TB3KDTr/Kevin-Scott-bio-final.png',
+  },
 ];

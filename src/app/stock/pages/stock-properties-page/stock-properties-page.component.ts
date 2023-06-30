@@ -7,7 +7,6 @@ import { map } from 'rxjs/operators';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { NotesServices } from 'src/app/news/services/notes.services';
 import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
-import { OpinionServices } from 'src/app/notes/services/opinion.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { Fact } from 'src/app/risks/models/fact.model';
 import { Stats } from 'src/app/shared/components/stats-display/stats-display.interface';
@@ -44,27 +43,25 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   opinions: Opinion[] = [];
   actions: Fact[] = [];
   numbers: Stats[] = [];
+  imageLinks = [];
 
   constructor(
     private route: ActivatedRoute,
     private dialog: MatDialog,
     private titleService: Title,
-    private objectiveDataService: StockServices,
-    private opinionServices: OpinionServices,
     private userServices: UserServices,
-    private notesServices: NotesServices
+    private notesServices: NotesServices,
+    private stockServices: StockServices
   ) {}
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
       this.stockUuid = params[this.stockId].toLowerCase();
 
-      this.stockAnalysis = this.objectiveDataService
-        .getDataMap()
-        .get(this.stockUuid);
-
+      this.stockAnalysis = this.stockServices.getStockByUuid(this.stockUuid);
       if (this.stockAnalysis) {
         this.titleService.setTitle(this.stockAnalysis.name);
+        this.imageLinks.push(this.stockAnalysis.logoLink);
       } else {
         this.stockAnalysis = null;
       }

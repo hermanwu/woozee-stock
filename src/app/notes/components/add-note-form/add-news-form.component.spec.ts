@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddNewsFormComponent } from './add-news-form.component';
+import { AddNewsFormComponent } from './add-note-form.component';
 
 describe('AddNewsFormComponent', () => {
   let component: AddNewsFormComponent;
@@ -8,9 +8,8 @@ describe('AddNewsFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddNewsFormComponent ]
-    })
-    .compileComponents();
+      declarations: [AddNewsFormComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

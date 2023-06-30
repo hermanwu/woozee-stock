@@ -30,6 +30,7 @@ export class OpinionItemDisplayComponent implements OnInit, OnChanges {
   parentExpanded = false;
   childrenNotes: (Quote | Fact | Opinion)[];
   targets: Tag[] = [];
+  authorName;
 
   constructor(
     private organizationServices: OrganizationServices,
@@ -46,21 +47,7 @@ export class OpinionItemDisplayComponent implements OnInit, OnChanges {
         this.opinion?.authorUuid
       );
 
-      if (this.author?.imageLink) {
-        this.imageLinks.push(this.author.imageLink);
-      }
-    }
-
-    if (this.opinion?.targets) {
-      for (let targetUuid of this.opinion.targets) {
-        const imageInfos = this.tagServices.getTagRelatedDataByUuid(targetUuid);
-        if (imageInfos?.imageLink) {
-          this.imageLinks.push(imageInfos);
-        }
-
-        const target = this.tagServices.getTagRelatedDataByUuid(targetUuid);
-        this.targets.push(target);
-      }
+      this.authorName = this.author?.displayName || this.opinion.authorUuid;
     }
   }
 

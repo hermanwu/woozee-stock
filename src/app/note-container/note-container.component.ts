@@ -1,6 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { environment } from 'src/environments/environment';
+import { UserServices } from '../accounts/services/user.services';
 import { InstagramNewsDisplayDialogComponent } from '../news/components/news-display-dialog/news-display-dialog.component';
 import { EmojiUnicode } from '../shared/data/enum/emoji.enum';
 import { Note } from '../shared/data/note.interface';
@@ -11,7 +18,7 @@ import { TwitterDisplayDialogComponent } from '../ui/components/twitter-display-
   templateUrl: './note-container.component.html',
   styleUrls: ['./note-container.component.scss'],
 })
-export class NoteContainerComponent implements OnInit {
+export class NoteContainerComponent implements OnInit, OnChanges {
   @Input() note: Note;
   @Input() shortVersion: boolean;
   @Input() savedNoteUuids = new Set();
@@ -20,10 +27,21 @@ export class NoteContainerComponent implements OnInit {
   chips = new Set();
   environment = environment;
   expanded;
+  authorName;
+  creatorName;
 
-  constructor(private dialogService: MatDialog) {}
+  constructor(
+    private dialogService: MatDialog,
+    private userServices: UserServices
+  ) {}
 
   ngOnInit(): void {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.creatorName = this.userServices.getUserByUuid(
+      this.note?.creatorUuid
+    )?.displayName;
+  }
 
   openInstagramDialog(note: Note) {
     this.dialogService.open<InstagramNewsDisplayDialogComponent>(

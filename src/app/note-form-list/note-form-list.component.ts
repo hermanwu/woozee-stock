@@ -20,13 +20,6 @@ export class NoteFormListComponent implements OnInit {
     });
   }
 
-  addNewFact() {
-    this.notes.unshift({
-      uuid: generateUuid(),
-      noteType: NoteType.Fact,
-    });
-  }
-
   update(note) {
     const index = this.notes.findIndex((n) => n.uuid === note.uuid);
     this.notes[index] = note;

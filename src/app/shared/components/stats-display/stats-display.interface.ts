@@ -9,6 +9,7 @@ export enum TimeFrame {
   yoy = 'yoy',
   mtm = 'mtm',
   qoq = 'qoq',
+  weekOverWeek = 'weekOverWeek',
 }
 
 export enum UnitType {

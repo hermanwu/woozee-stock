@@ -16,7 +16,13 @@ export class ContentDisplayComponent implements OnInit, OnChanges {
 
   constructor() {}
 
-  ngOnChanges(changes: SimpleChanges): void {}
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.content && changes.content.currentValue) {
+      this.content = changes.content.currentValue
+        .replace(/\n+$/, '')
+        .replace(/^\n+/, '');
+    }
+  }
 
   ngOnInit(): void {}
 }

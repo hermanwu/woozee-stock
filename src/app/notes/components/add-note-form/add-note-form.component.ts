@@ -14,9 +14,9 @@ import { TagServices } from '../../../shared/services/tag.services';
 import { News } from '../../../stock/models/news.model';
 import { OpinionEnum } from '../../../stock/models/opinion-type.model';
 @Component({
-  selector: 'app-add-news-form',
-  templateUrl: './add-news-form.component.html',
-  styleUrls: ['./add-news-form.component.scss'],
+  selector: 'app-add-note-form',
+  templateUrl: './add-note-form.component.html',
+  styleUrls: ['./add-note-form.component.scss'],
 })
 export class AddNewsFormComponent implements OnInit, OnChanges {
   @Output() newNote = new EventEmitter<Note>();
@@ -108,5 +108,9 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
    */
   setRating(rating: OpinionEnum): void {
     this.newsForm.patchValue({ emotions: [rating] });
+  }
+
+  setNoteType(noteType: NoteType): void {
+    this.newsForm.patchValue({ noteType });
   }
 }

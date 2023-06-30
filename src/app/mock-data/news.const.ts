@@ -13,6 +13,203 @@ import { Quote } from './quote.model';
 
 export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
   {
+    content:
+      "MosaicML, an AI startup that Databricks recently acquired, found AMD's chip could get 80% of the performance of Nvidia's chip\n\nMosaicML CTO Tang said they could use AMD software to train a large language model without having to make any changes to its code base. If developers can find AMD's chips at the right price, \"you can already switch to these today; they're essentially interchangeable\" with Nvidia chips.\n",
+    tagUuids: [],
+    uuid: '5a021968-5e37-4111-bb98-118b5955f501',
+    noteType: 'opinion',
+    creatorUuid: 'jane.doe@example.com',
+    targets: ['AMD'],
+    createdDate: '2023-06-30T21:17:38.670Z',
+  },
+  {
+    uuid: '84af4e90-255a-4e52-8563-7b259aed20f0',
+    noteType: 'number',
+    creatorUuid: 'john.smith@example.com',
+    targets: ['nke'],
+    name: 'Revenue',
+    value: 12.8 * BILLION,
+    changeRate: 0.05,
+    timeFrame: TimeFrame.yoy,
+    createdDate: '2023-06-29T23:41:43.626Z',
+  },
+  {
+    content:
+      'The number of electric vehicle (EV) charging ports in the U.S. is estimated to increase four times from current levels to 18M by 2027',
+    tagUuids: [],
+    uuid: '13fd7a5e-231a-471d-b1e2-2bf6a58b70e7',
+    noteType: 'opinion',
+    authorUuid: 'Research Firm Wood Mackenzie',
+    creatorUuid: 'john.smith@example.com',
+    targets: ['tsla'],
+    createdDate: '2023-06-29T20:55:43.115Z',
+  },
+  {
+    content:
+      'Micron Technology released latest financial results\n“We have increased confidence that the industry has passed the bottom for quarterly revenue and year-on-year revenue growth.”\n“The impact of the May 21st decision by the Cyberspace Administration of China (CAC) on the business of Micron remains uncertain and fluid”.\n“We currently estimate that approximately half of that China-headquartered customer revenue, which equates to a low-double-digit percentage of Micron’s worldwide revenue, is at risk of being impacted.”',
+    tagUuids: [],
+    uuid: '1af7d92a-a535-4a8b-9682-e36af53dad54',
+    noteType: 'action',
+    creatorUuid: 'alice.williams@example.com',
+    targets: ['mu'],
+    createdDate: '2023-06-29T20:47:07.568Z',
+  },
+  {
+    content:
+      'U.S.\'s central bank states that all 23 banks met minimum capital requirements under a hypothetical recession stress tests.\nTest included a global recession with a 40% decline in commercial real estate prices, a substantial increase in office vacancies, and a 38% drop in house prices. Under the scenario, the unemployment rate rose 6.4 percentage points to a peak of 10%.\nFed Vice Chair for Supervision Michael S. Barr. "Today\'s results confirm that the banking system remains strong and resilient," \n',
+    targets: ['Economy'],
+    uuid: '3439c4e2-505f-4ca9-b557-de66a060ac0c',
+    noteType: 'action',
+    creatorUuid: 'hwu1106@gmail.com',
+    createdDate: '2023-06-29T11:57:35.533Z',
+  },
+  {
+    noteType: 'opinion',
+    targets: ['mortgage'],
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+    content:
+      "Mortgage Bankers Association's deputy chief economist: 'New home sales have been driving purchase activity in recent months as buyers look for options beyond the existing-home market'",
+    date: convertDateToUTC(new Date('2023-6-28')),
+  },
+  {
+    noteType: 'number',
+    targets: ['mortgage'],
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+    name: 'Mortgage Application',
+    changeRate: 0.03,
+    timeFrame: TimeFrame.weekOverWeek,
+    date: convertDateToUTC(new Date('2023-6-28')),
+  },
+  {
+    noteType: 'action',
+    targets: ['u'],
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b43',
+    title:
+      'launched Unity Sentis and Unity Muse, two new AI platforms designed to make creators more productive and their RT3D experiences more engaging. Unity Sentis is a cross-platform runtime inference engine that helps deploy AI models in any Unity project, and Unity Muse consists of tools used to accelerate creation of RT3D content. Together, both Unity Muse and Unity Sentis leverage AI to enhance the interactivity of gameplay and RT3D powered experiences, while accelerating creative workflows. Unity today also launched a dedicated marketplace on the Unity Asset Store with a collection of Verified Solutions that accelerate AI-driven game development.',
+  },
+  {
+    noteType: 'action',
+    targets: ['amzn'],
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+    title:
+      'FTC Sues Amazon, Alleging Deceptive Practices Tied to Prime Subscriptions',
+  },
+  {
+    noteType: 'action',
+    targets: ['tsla'],
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+    title: 'Rivian makes deal with Tesla to join EV supercharger network',
+  },
+  {
+    noteType: 'opinion',
+    targets: ['tsla'],
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+    title:
+      'Barclays analyst Dan Levy downgraded Tesla stock to equal weight, down from overweight',
+    authorUuid: 'barclaysUuid',
+  },
+  {
+    noteType: 'number',
+    targets: ['adbe'],
+    value: 4.85 * BILLION,
+    previousValue: 4.443 * BILLION,
+    name: 'Q3 Revenue Target',
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+  },
+  {
+    noteType: 'number',
+    targets: ['adbe'],
+    value: 2.14 * BILLION,
+    name: 'Cash flows from operations',
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+  },
+  {
+    noteType: 'number',
+    targets: ['adbe'],
+    value: 15.22 * BILLION,
+    name: 'Q2 Remaining Performance Obligations (“RPO”) exiting the quarter',
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+  },
+  {
+    noteType: 'action',
+    targets: ['adbe'],
+    title: ' repurchased approximately 2.7 million shares during the quarter',
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+  },
+  ,
+  {
+    noteType: 'number',
+    targets: ['adbe'],
+    value: 1.3 / 4.82,
+    displayType: DisplayType.percent,
+    name: 'Q2 Net Margin',
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+  },
+  {
+    noteType: 'number',
+    targets: ['adbe'],
+    value: 1.62 / 4.82,
+    displayType: DisplayType.percent,
+    name: 'Q2 Operating Margin',
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+  },
+  {
+    noteType: 'number',
+    targets: ['adbe'],
+    value: 4.83 * BILLION,
+    changeRate: 0.1,
+    timeFrame: TimeFrame.yoy,
+    name: 'Q2 Revenue',
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+  },
+  {
+    noteType: 'action',
+    targets: ['coin'],
+    title: 'serves as custodian for BlackRock’s first bitcoin ETF',
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+  },
+  {
+    noteType: 'action',
+    targets: ['kr'],
+    title: 'released quarterly result and missed revenue estimates.',
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+  },
+  {
+    noteType: 'action',
+    targets: ['adbe'],
+    title:
+      'reported better-than-expected quarterly results and boosted its outlook for the year. ',
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+  },
+  {
+    noteType: 'action',
+    targets: ['dis'],
+    title: 'CFO Christine McCarthy steps down',
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
+  },
+  {
+    noteType: 'action',
+    targets: ['msft'],
+    title:
+      'CTO Kevin Scott said the next generation AI business will be the fastest-growing $10 billion business in our history.',
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b92',
+  },
+  {
+    noteType: 'action',
+    targets: ['unh'],
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
+    title:
+      'said it saw increased demand from patients in Medicare health plans for those aged 65 and above, particularly related to knees and hips.',
+    createdDate: convertDateToUTC(new Date('2023-6-14')),
+  },
+  {
+    noteType: 'action',
+    targets: ['uber'],
+    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
+    title: 'launched a peer-to-peer car-sharing service.',
+    createdDate: convertDateToUTC(new Date('2023-6-8')),
+  },
+  {
     noteType: 'action',
     targets: ['uber'],
     uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',

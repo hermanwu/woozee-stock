@@ -52,7 +52,8 @@
         ><ng-container [ngSwitch]="statsDisplay.timeFrame">
           <span *ngSwitchCase="TimeFrameEnum.yoy">y/y</span
           ><span *ngSwitchCase="TimeFrameEnum.qoq">q/q</span
-          ><span *ngSwitchCase="TimeFrameEnum.mtm">m/m</span>
+          ><span *ngSwitchCase="TimeFrameEnum.mtm">m/m</span
+          ><span *ngSwitchCase="TimeFrameEnum.weekOverWeek">week/week</span>
         </ng-container>
         <ng-container *ngIf="statsDisplay.previousValue">
           (from {{ statsDisplay.previousValue | siUnit : 2 | undefined }})

@@ -13,36 +13,6 @@
   column-gap: 20px;
 }
 
-.logo-container {
-  margin: auto;
-  width: 400px;
-  height: 400px;
-}
-
-.logo-image {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
-  position: relative;
-  display: inline-block;
-
-  img {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    opacity: 0.2;
-  }
-
-  .video-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  // align-self: center;
-  // justify-self: center;
-}
-
 .risk-slides-overview {
   font-weight: lighter;
   margin-bottom: 1rem;
@@ -61,3 +31,22 @@
 //   justify-content: flex-end;
 //   font-size: large;
 // }
+
+
+
+
+
+.head-section {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.logo-image {
+  // center image in the div
+  // add margin top and bottom with 10px
+  margin: 10px auto;
+
+  // set image height to 150px
+  height: 150px;
+}

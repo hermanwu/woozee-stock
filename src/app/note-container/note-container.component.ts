@@ -29,6 +29,7 @@ export class NoteContainerComponent implements OnInit, OnChanges {
   expanded;
   authorName;
   creatorName;
+  vote = Math.floor(Math.random() * 100);
 
   constructor(
     private dialogService: MatDialog,

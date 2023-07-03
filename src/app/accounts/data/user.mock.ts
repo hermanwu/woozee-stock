@@ -54,3 +54,16 @@ export const currentUserMock: {
   marketRankings: [RegionCode.us, RegionCode.eu, RegionCode.cn],
   assetRankings: [],
 };
+
+export interface Feedback {
+  uuid: string;
+  userUuid: string;
+  noteUuid: string;
+  vote: number;
+  createdTime?: string;
+  updatedTime?: string;
+  saved?: boolean;
+  emotions?: string[];
+}
+
+const mockThoughts = [];

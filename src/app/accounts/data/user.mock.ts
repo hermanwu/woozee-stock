@@ -66,4 +66,10 @@ export interface Feedback {
   emotions?: string[];
 }
 
-const mockThoughts = [];
+const mockThoughts = [
+  {
+    noteUuid: '5a021968-5e37-4111-bb98-118b5955f501',
+    vote: 5,
+    userUuid: 'herman.wrt@gmail.com',
+  },
+];

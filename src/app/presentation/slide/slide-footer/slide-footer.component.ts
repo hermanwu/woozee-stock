@@ -6,16 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slide-footer.component.scss'],
 })
 export class SlideFooterComponent implements OnInit {
-  showDisclaimer;
-
-  constructor() {
-    this.showDisclaimer = localStorage.getItem('showDisclaimer');
-  }
+  constructor() {}
 
   ngOnInit(): void {}
-
-  click(): void {
-    this.showDisclaimer = 'false';
-    localStorage.setItem('showDisclaimer', 'false');
-  }
 }

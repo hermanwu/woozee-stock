@@ -7,6 +7,7 @@ import { AssetListPageComponent } from './assets/components/asset-list-page/asse
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
 import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
 import { ListComponent } from './list/list.component';
+import { LoginComponent } from './login/login.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
 import { RegionPropertiesPageComponent } from './markets/components/region-properties-page/region-properties-page.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
@@ -18,6 +19,7 @@ import { AddPersonFormComponent } from './people/components/add-person-form/add-
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
 import { DemoPageComponent } from './shared/components/demo-page/demo-page.component';
+import { SignupComponent } from './signup/signup.component';
 import { ForeverOwnStocksPanelComponent } from './stock/forever-own-stocks-panel/forever-own-stocks-panel.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
@@ -34,6 +36,14 @@ const routes: Routes = [
     path: '',
     component: AppContainerComponent,
     children: [
+      {
+        path: 'signup',
+        component: SignupComponent,
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
       {
         path: 'news',
         component: NewsPageComponent,

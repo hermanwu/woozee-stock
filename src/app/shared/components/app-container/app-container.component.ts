@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { UserServices } from 'src/app/accounts/services/user.services';
+import { LandingComponent } from 'src/app/landing/landing.component';
 import { environment } from 'src/environments/environment';
+import { AuthService } from '../../services/auth.services';
 
 @Component({
   selector: 'app-app-container',
@@ -12,13 +15,31 @@ export class AppContainerComponent implements OnInit {
   aboutPage = 'https://mailchi.mp/5377c7dfbe07/about';
 
   showSearchBar: boolean;
+  showDisclaimer;
   language: string;
+  username: string | null;
 
-  constructor(private userServices: UserServices) {
+  constructor(
+    private userServices: UserServices,
+    private authService: AuthService,
+    private dialog: MatDialog
+  ) {
     this.language = this.userServices.getLanguage();
+    this.showDisclaimer = localStorage.getItem('showDisclaimer');
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.getLoggedInDisplayName().subscribe((name) => {
+      this.username = name;
+      console.log(localStorage.getItem('showDisclaimer'));
+      if (!name && localStorage.getItem('showDisclaimer') !== 'false') {
+        const dialogRef = this.dialog.open(LandingComponent, {
+          width: '500px',
+          disableClose: true, // Disable dialog close on Esc or click outside
+        });
+      }
+    });
+  }
 
   searchIconClicked(): void {
     this.showSearchBar = true;
@@ -34,5 +55,14 @@ export class AppContainerComponent implements OnInit {
     }
 
     window.location.reload();
+  }
+
+  logout(): void {
+    this.authService.signOut();
+  }
+
+  agreeAndClose(): void {
+    this.showDisclaimer = 'false';
+    localStorage.setItem('showDisclaimer', 'false');
   }
 }

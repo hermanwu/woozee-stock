@@ -5,7 +5,6 @@
   <ng-template #appName>
     <div>
       <span class="name">Invesdea</span>
-      <span i18n> - Investing Ideas</span>
     </div>
   </ng-template>
 
@@ -31,8 +30,14 @@
     <!-- <button mat-menu-item disabled>
       <a [routerLink]="['/stocks']">Stocks</a>
     </button> -->
-    <button mat-menu-item disabled>Login</button>
-    <button mat-menu-item disabled>Signup</button>
+    <ng-container *ngIf="username; else register">
+      <span mat-menu-item>{{ username }}</span>
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </ng-container>
+    <ng-template #register>
+      <button mat-menu-item [routerLink]="['/login']">Login</button>
+      <button mat-menu-item [routerLink]="['/signup']">Signup</button>
+    </ng-template>
   </mat-menu>
 
   <button mat-icon-button [matMenuTriggerFor]="menu">

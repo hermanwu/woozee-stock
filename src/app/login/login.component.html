@@ -1,0 +1,33 @@
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="login-form">
+  <h2>Login</h2>
+
+  <mat-form-field>
+    <input matInput placeholder="Email" id="email" formControlName="email" />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      type="password"
+      id="password"
+      formControlName="password"
+      placeholder="Password"
+    />
+  </mat-form-field>
+
+  <div>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="!loginForm.valid"
+    >
+      Login
+    </button>
+  </div>
+
+  <div>
+    <button mat-raised-button (click)="loginWithGoogle()">
+      Login with Google
+    </button>
+  </div>
+</form>

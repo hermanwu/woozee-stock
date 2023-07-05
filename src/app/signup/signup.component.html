@@ -1,0 +1,13 @@
+<form [formGroup]="signupForm" (ngSubmit)="signupWithEmail()">
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email" required />
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password" required />
+  </div>
+  <button type="submit">Signup with Email</button>
+</form>
+
+<button (click)="signupWithGoogle()">Signup with Google</button>

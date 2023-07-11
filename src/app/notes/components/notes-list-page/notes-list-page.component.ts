@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NotesServices } from 'src/app/news/services/notes.services';
-import { Note } from 'src/app/shared/data/note.interface';
+import { Thought } from 'src/app/stock/models/thought.model';
 import { UserServices } from '../../../accounts/services/user.services';
+import { AddNoteFormComponent } from '../add-note-form/add-note-form.component';
 import { Opinion } from '../opinion-display/opinion.interface';
 
 @Component({
@@ -11,14 +13,14 @@ import { Opinion } from '../opinion-display/opinion.interface';
   styleUrls: ['./notes-list-page.component.scss'],
 })
 export class NotesListPageComponent implements OnInit {
-  notes: Note[];
   opinions: Opinion[];
   showAddNotesSection = false;
-  myOpinions: Opinion[];
+  thoughts: Thought[];
 
   constructor(
     private userServices: UserServices,
     private notesServices: NotesServices,
+    private dialogService: MatDialog,
     private router: Router
   ) {
     const userUuid = userServices.currentUser.userUuid;
@@ -33,12 +35,11 @@ export class NotesListPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openAddNewsDialog() {
-    this.showAddNotesSection = true;
-    // this.dialogService.open<AddNoteComponent>(AddNoteComponent, {
-    //   maxHeight: '90vh', //you can adjust the value as per your view
-    //   data: {},
-    //   panelClass: 'medium-modal-panel',
-    // });
+  addNote() {
+    this.dialogService.open<AddNoteFormComponent>(AddNoteFormComponent, {
+      maxHeight: '90vh', //you can adjust the value as per your view
+      data: {},
+      panelClass: 'medium-modal-panel',
+    });
   }
 }

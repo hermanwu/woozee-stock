@@ -70,4 +70,6 @@ export interface Note {
   uuid: string;
   childrenUuids?: string[];
   targets?: string[];
+  parentUuid?: string;
+  statuses?: [string, number][];
 }

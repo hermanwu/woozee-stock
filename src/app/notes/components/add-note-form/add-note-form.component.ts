@@ -18,7 +18,7 @@ import { OpinionEnum } from '../../../stock/models/opinion-type.model';
   templateUrl: './add-note-form.component.html',
   styleUrls: ['./add-note-form.component.scss'],
 })
-export class AddNewsFormComponent implements OnInit, OnChanges {
+export class AddNoteFormComponent implements OnInit, OnChanges {
   @Output() newNote = new EventEmitter<Note>();
   @Input() note: Note;
 
@@ -68,12 +68,12 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
 
     const news = {
       title: this.newsForm.value.title,
+      noteType: this.newsForm.value.noteType,
       content: this.newsForm.value.content,
       tagUuids: [...tags],
       sourceLink: this.newsForm.value.sourceLink,
       rating: this.newsForm.value.rating,
       uuid: this.newsForm.value.uuid,
-      noteType: this.note.noteType,
       authorUuid: this.newsForm.value.authorUuid,
       creatorUuid: this.newsForm.value.creatorUuid,
       targets: this.newsForm.value.targets
@@ -96,10 +96,6 @@ export class AddNewsFormComponent implements OnInit, OnChanges {
     this.news = news;
 
     this.newNote.emit(news);
-  }
-
-  setNote(noteType: NoteType) {
-    this.newsForm.patchValue({ noteType });
   }
 
   /**

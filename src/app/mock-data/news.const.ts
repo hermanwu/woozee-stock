@@ -14,6 +14,40 @@ import { Quote } from './quote.model';
 export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
   {
     content:
+      'Exxon Mobil said lower natural gas prices and refining margins will reduce second-quarter earnings by about $4 billion compared with the previous three months.\n\n',
+    tagUuids: [],
+    sourceLink:
+      'https://www.bloomberg.com/news/articles/2023-07-05/exxon-sees-4-billion-earnings-hit-from-gas-prices-refining',
+    uuid: 'd253ff8a-af58-4f96-814d-7fddc200580b',
+    noteType: 'action',
+    creatorUuid: 'jane.doe@example.com',
+    targets: ['xom'],
+    createdDate: '2023-07-06T21:48:18.747Z',
+  },
+  {
+    content:
+      'Google has delayed the release of a fully custom chip for its Pixel smartphones until 2025.\n\nGoogle will also switch from Samsung to Taiwan Semiconductor Manufacturing Co for making the chips.',
+    tagUuids: [],
+    sourceLink:
+      'https://www.reuters.com/technology/google-delays-release-fully-custom-phone-chip-until-2025-information-2023-07-06/',
+    uuid: 'dafe59d4-d694-4981-affb-e777745940aa',
+    noteType: 'action',
+    creatorUuid: 'will.smith@example.com',
+    targets: ['googl'],
+    createdDate: '2023-07-06T21:27:47.408Z',
+  },
+  {
+    content:
+      "More than 30 million users signed up for Meta's new app Threads, which will compete with Twitter.\n\nThe app will let users bring over their existing follower lists and account names from Instagram and have the same content rules with the same controls for muting and blocking harassing accounts.",
+    tagUuids: [],
+    uuid: 'b96a4053-a73b-47a8-be8a-9c559b577b92',
+    noteType: 'action',
+    creatorUuid: 'jimmy.lee@example.com',
+    targets: ['meta'],
+    createdDate: '2023-07-06T21:16:47.808Z',
+  },
+  {
+    content:
       "MosaicML, an AI startup that Databricks recently acquired, found AMD's chip could get 80% of the performance of Nvidia's chip\n\nMosaicML CTO Tang said they could use AMD software to train a large language model without having to make any changes to its code base. If developers can find AMD's chips at the right price, \"you can already switch to these today; they're essentially interchangeable\" with Nvidia chips.\n",
     tagUuids: [],
     uuid: '5a021968-5e37-4111-bb98-118b5955f501',

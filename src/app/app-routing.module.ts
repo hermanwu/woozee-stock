@@ -2,11 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
-import { ActionsListPageComponent } from './actions/components/actions-list-page/actions-list-page.component';
 import { AssetListPageComponent } from './assets/components/asset-list-page/asset-list-page.component';
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
 import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
-import { ListComponent } from './list/list.component';
 import { LoginComponent } from './login/login.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
 import { RegionPropertiesPageComponent } from './markets/components/region-properties-page/region-properties-page.component';
@@ -87,16 +85,6 @@ const routes: Routes = [
           {
             path: 'opinions',
             component: NotesListPageComponent,
-            pathMatch: 'full',
-          },
-          {
-            path: 'lists',
-            component: ListComponent,
-            pathMatch: 'full',
-          },
-          {
-            path: 'actions',
-            component: ActionsListPageComponent,
             pathMatch: 'full',
           },
           {

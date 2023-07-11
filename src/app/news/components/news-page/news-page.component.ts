@@ -38,9 +38,9 @@ export class NewsPageComponent implements OnInit {
       [NoteType.Opinion, NoteType.Fact, NoteType.Action, NoteType.Stats],
       [...this.notes]
     );
-    this.userServices
-      .getSavedNotes()
-      .map((uuid) => this.savedNoteUuids.add(uuid));
+    // this.userServices
+    //   .getSavedNotes()
+    //   .map((uuid) => this.savedNoteUuids.add(uuid));
   }
 
   ngOnInit(): void {}

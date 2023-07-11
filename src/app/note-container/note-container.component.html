@@ -11,7 +11,7 @@
 
   <div>
     📝
-    <app-date-display [date]="note?.createdDate"></app-date-display>
+    <!-- <app-date-display [date]="note?.createdDate"></app-date-display> -->
     <!-- by {{ creatorName || "invesdea" }} -->
     by Invesdea
   </div>
@@ -74,7 +74,7 @@
 
   <mat-menu #menu="matMenu">
     <button mat-menu-item *ngIf="note?.sourceLink">
-      <a href="{{ item.sourceLink }}" target="_blank"> read more </a>
+      <a href="{{ note.sourceLink }}" target="_blank"> read more </a>
     </button>
 
     <button mat-menu-item [cdkCopyToClipboard]="note.uuid">Copy UUID</button>

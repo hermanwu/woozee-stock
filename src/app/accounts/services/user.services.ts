@@ -48,7 +48,7 @@ export class UserServices {
   }
 
   getSavedNotes(): string[] {
-    return this.currentUser.savedNotes;
+    return;
   }
 
   // getMyNotes(): string[] {

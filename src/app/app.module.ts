@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment';
 import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
-import { ActionsListPageComponent } from './actions/components/actions-list-page/actions-list-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AssetListPageComponent } from './assets/components/asset-list-page/asset-list-page.component';
@@ -22,9 +21,9 @@ import { EmojiDisplayComponent } from './emoji-display/emoji-display.component';
 import { ImageDisplayComponent } from './images/components/image-display/image-display.component';
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
 import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
+import { LandingComponent } from './landing/landing.component';
 import { ListDisplayComponent } from './list-display/list-display.component';
-import { ListPropertiesPageComponent } from './list/components/list-properties-page/list-properties-page.component';
-import { ListComponent } from './list/list.component';
+import { LoginComponent } from './login/login.component';
 import { MarketDisplayComponent } from './markets/components/market-display/market-display.component';
 import { MarketListComponent } from './markets/components/market-list/market-list.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
@@ -35,7 +34,7 @@ import { InstagramNewsDisplayDialogComponent } from './news/components/news-disp
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
 import { NoteContainerComponent } from './note-container/note-container.component';
 import { NoteFormListComponent } from './note-form-list/note-form-list.component';
-import { AddNewsFormComponent } from './notes/components/add-note-form/add-note-form.component';
+import { AddNoteFormComponent } from './notes/components/add-note-form/add-note-form.component';
 import { BoosterComponent } from './notes/components/catalyst/booster/booster.component';
 import { CatalystListComponent } from './notes/components/catalyst/components/catalyst-list/catalyst-list.component';
 import { CatalystPageComponent } from './notes/components/catalyst/components/catalyst-page/catalyst-page.component';
@@ -85,6 +84,7 @@ import { SiUnitPipeModule } from './shared/pipes/si-unit/si-unit-pipe.module';
 import { TagDisplayPipe } from './shared/pipes/tag-display.pipe';
 import { UndefinedPipeModule } from './shared/pipes/undefined-pipe/undefined-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
+import { SignupComponent } from './signup/signup.component';
 import { BusinessOverviewComponent } from './stock/components/business-overview/business-overview.component';
 import { ComparisonDialogComponent } from './stock/components/comparison-dialog/comparison-dialog.component';
 import { EarningsReportComponent } from './stock/components/earnings-report/earnings-report.component';
@@ -127,9 +127,6 @@ import { UiListComponent } from './ui/ui-list/ui-list.component';
 import { UiMoleculesComponent } from './ui/ui-molecules/ui-molecules.component';
 import { UiOrganismComponent } from './ui/ui-organism/ui-organism.component';
 import { UiTemplatesComponent } from './ui/ui-templates/ui-templates.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { LandingComponent } from './landing/landing.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -222,16 +219,13 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     MarketPageComponent,
     RegionPropertiesPageComponent,
     AssetListPageComponent,
-    AddNewsFormComponent,
+    AddNoteFormComponent,
     ContentDisplayComponent,
-    ListComponent,
-    ActionsListPageComponent,
     NotesListPageComponent,
     QuoteDisplayComponent,
     InvestorDisplayComponent,
     SquareContainerComponent,
     AddPersonFormComponent,
-    ListPropertiesPageComponent,
     GrowthDetailsComponent,
     UiTemplatesComponent,
     UiAtomsComponent,

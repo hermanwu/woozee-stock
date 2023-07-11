@@ -23,6 +23,8 @@ export enum StatsCategory {
 
 export interface Stats extends Note {
   uuid: string;
+  statues?: [string, number][];
+
   noteType: string | NoteType;
   name?: string;
   value?: number;

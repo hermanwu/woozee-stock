@@ -5,8 +5,6 @@
 <mat-divider></mat-divider>
 
 <div *ngFor="let item of notes; trackBy: trackByUuid">
-  {{ item | json }}
-
   <div>
     <app-add-note-form
       [note]="item"

@@ -233,9 +233,6 @@ export const bili: StockAnalysis = {
   ],
 
   trends: ['COVID', 'Video Entertainments'],
-  thoughts: {
-    hermanScore: 1,
-  },
 
   score: {
     vision: 7,

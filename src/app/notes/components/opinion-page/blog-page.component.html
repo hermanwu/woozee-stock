@@ -1,11 +1,11 @@
-<nav mat-tab-nav-bar>
+<!-- <nav mat-tab-nav-bar>
   <a
     mat-tab-link
     [routerLink]="[opinionsRoute]"
     [active]="activeRoute === opinionsRoute"
     (click)="onAnchorLinkClicked($event.target)"
     i18n
-    >Opinions</a
+    >Bullish</a
   >
 
   <a
@@ -14,7 +14,7 @@
     [active]="activeRoute === listRoute"
     (click)="onAnchorLinkClicked($event.target)"
     i18n
-    >Quotes</a
+    >Neutral</a
   >
 
   <a
@@ -23,7 +23,8 @@
     [active]="activeRoute === actionsRoute"
     (click)="onAnchorLinkClicked($event.target)"
     i18n
-    >Facts</a
+    >Neutral</a
   >
 </nav>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+<app-notes-list-page></app-notes-list-page>

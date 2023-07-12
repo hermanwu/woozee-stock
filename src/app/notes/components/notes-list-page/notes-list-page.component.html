@@ -1,23 +1,26 @@
-<h3>Bullish</h3>
-<div *ngFor="let opinion of opinions">
-  <app-card>
+<app-card>
+  <h3>Bullish</h3>
+  <div *ngFor="let opinion of bullishNotes">
     <app-note-container [note]="opinion"></app-note-container>
-  </app-card>
-</div>
+    <app-divider></app-divider>
+  </div>
+</app-card>
 
-<h3>Neutral</h3>
-<div *ngFor="let opinion of opinions">
-  <app-card>
+<app-card>
+  <h3>Neutral</h3>
+  <div *ngFor="let opinion of notes">
     <app-note-container [note]="opinion"></app-note-container>
-  </app-card>
-</div>
+    <app-divider></app-divider>
+  </div>
+</app-card>
 
-<h3>Bearish</h3>
-<div *ngFor="let opinion of opinions">
-  <app-card>
+<app-card>
+  <h3>Bearish</h3>
+  <div *ngFor="let opinion of bearishNotes">
     <app-note-container [note]="opinion"></app-note-container>
-  </app-card>
-</div>
+    <app-divider></app-divider>
+  </div>
+</app-card>
 
 <button mat-icon-button class="float-button" (click)="addNote()">
   <mat-icon>edit_square</mat-icon>

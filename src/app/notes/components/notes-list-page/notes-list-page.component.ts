@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NotesServices } from 'src/app/news/services/notes.services';
-import { Thought } from 'src/app/stock/models/thought.model';
+import { EmotionServices } from 'src/emotion/emotion.services';
 import { UserServices } from '../../../accounts/services/user.services';
 import { AddNoteFormComponent } from '../add-note-form/add-note-form.component';
-import { Opinion } from '../opinion-display/opinion.interface';
 
 @Component({
   selector: 'app-notes-list-page',
@@ -13,15 +12,18 @@ import { Opinion } from '../opinion-display/opinion.interface';
   styleUrls: ['./notes-list-page.component.scss'],
 })
 export class NotesListPageComponent implements OnInit {
-  opinions: Opinion[];
   showAddNotesSection = false;
-  thoughts: Thought[];
+  notes;
+  neutralNotes = [];
+  bullishNotes = [];
+  bearishNotes = [];
 
   constructor(
     private userServices: UserServices,
     private notesServices: NotesServices,
     private dialogService: MatDialog,
-    private router: Router
+    private router: Router,
+    private emotionServices: EmotionServices
   ) {
     const userUuid = userServices.currentUser.userUuid;
     // this.myOpinions = notesServices
@@ -33,7 +35,15 @@ export class NotesListPageComponent implements OnInit {
     // );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const emotions = this.emotionServices.getEmotionsByUserId(
+      this.userServices.currentUser.userUuid
+    );
+
+    this.notes = this.notesServices.getNotesByUuids(
+      emotions.map((e) => e.noteUuid)
+    );
+  }
 
   addNote() {
     this.dialogService.open<AddNoteFormComponent>(AddNoteFormComponent, {

@@ -5,12 +5,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { NotesServices } from 'src/app/news/services/notes.services';
-import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
-import { Fact } from 'src/app/risks/models/fact.model';
-import { Stats } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
+import { EmotionServices } from 'src/emotion/emotion.services';
 import { environment } from 'src/environments/environment';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 import { StockServices } from '../../services/objective-data.service';
@@ -37,11 +35,9 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   stockAnalysis: StockAnalysis;
   stockUuid: string;
   rank$: Observable<number>;
-
-  opinions: Opinion[] = [];
-  actions: Fact[] = [];
-  numbers: Stats[] = [];
   imageLinks = [];
+  notes = [];
+  myNotes = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -49,7 +45,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
     private titleService: Title,
     private userServices: UserServices,
     private notesServices: NotesServices,
-    private stockServices: StockServices
+    private stockServices: StockServices,
+    private emotionServices: EmotionServices
   ) {}
 
   ngOnInit(): void {
@@ -64,7 +61,19 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         this.stockAnalysis = null;
       }
 
-      const notes = this.notesServices.getNotesByTargets([this.stockUuid]);
+      const allNotes = this.notesServices.getNotesByTargets([this.stockUuid]);
+
+      const emotions = this.emotionServices.getEmotionsByUserId(
+        this.userServices.currentUser.userUuid
+      );
+
+      for (let note of allNotes) {
+        if (emotions.some((e) => e.noteUuid === note.uuid)) {
+          this.myNotes.push(note);
+        } else {
+          this.notes.push(note);
+        }
+      }
     });
   }
 

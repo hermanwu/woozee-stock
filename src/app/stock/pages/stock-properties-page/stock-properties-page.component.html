@@ -43,12 +43,22 @@
       <app-title-menu>
         <div header-3>My Notes</div>
       </app-title-menu>
+
+      <div *ngFor="let note of myNotes">
+        <app-note-container [note]="note"></app-note-container>
+        <app-divider></app-divider>
+      </div>
     </app-card>
 
     <app-card class="grid">
       <app-title-menu>
         <div header-3>Other Notes</div>
       </app-title-menu>
+
+      <div *ngFor="let note of notes">
+        <app-note-container [note]="note"></app-note-container>
+        <app-divider></app-divider>
+      </div>
     </app-card>
   </div>
 </ng-template>

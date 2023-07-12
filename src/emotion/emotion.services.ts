@@ -6,9 +6,17 @@ export interface Emotion {
   saved?: boolean;
   bullish?: number;
   thumbUp?: number;
+  noteUuid: string;
 }
 
-export const mockEmotions: Emotion[] = [];
+export const mockEmotions: Emotion[] = [
+  {
+    uuid: '1',
+    userUuid: 'herman.wrt@gmail.com',
+    noteUuid: 'dafe59d4-d694-4981-affb-e777745940aa',
+    saved: true,
+  },
+];
 
 @Injectable({
   providedIn: 'root',

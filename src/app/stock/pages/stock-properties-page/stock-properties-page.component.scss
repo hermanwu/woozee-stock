@@ -50,3 +50,17 @@
   // set image height to 150px
   height: 150px;
 }
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  align-self: flex-start;
+}
+
+.right {
+  align-self: flex-end;
+}

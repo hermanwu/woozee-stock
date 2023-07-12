@@ -40,9 +40,12 @@
 
   <div class="grid grid-dynamic">
     <app-card class="grid">
-      <app-title-menu>
-        <div header-3>My Notes</div>
-      </app-title-menu>
+      <div class="container">
+        <div class="left">My Notes</div>
+        <div class="right">
+          <app-opinion-display [sentiment]="mySentiment"></app-opinion-display>
+        </div>
+      </div>
 
       <div *ngFor="let note of myNotes">
         <app-note-container [note]="note"></app-note-container>
@@ -51,9 +54,14 @@
     </app-card>
 
     <app-card class="grid">
-      <app-title-menu>
-        <div header-3>Other Notes</div>
-      </app-title-menu>
+      <div class="container">
+        <div class="left">Other Notes</div>
+        <div class="right">
+          <app-opinion-display
+            [sentiment]="publicSentiment"
+          ></app-opinion-display>
+        </div>
+      </div>
 
       <div *ngFor="let note of notes">
         <app-note-container [note]="note"></app-note-container>

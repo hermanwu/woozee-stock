@@ -38,6 +38,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   imageLinks = [];
   notes = [];
   myNotes = [];
+  mySentiment;
+  publicSentiment;
 
   constructor(
     private route: ActivatedRoute,
@@ -74,6 +76,14 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
           this.notes.push(note);
         }
       }
+
+      this.mySentiment = this.emotionServices.getSentimentFromNotes(
+        this.myNotes
+      );
+
+      this.publicSentiment = this.emotionServices.getSentimentFromNotes(
+        this.notes
+      );
     });
   }
 

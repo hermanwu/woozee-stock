@@ -73,7 +73,6 @@ import { NoteDialogComponent } from './shared/components/note-dialog/note-dialog
 import { NoteComponent } from './shared/components/note/note.component';
 import { RegionDisplayComponent } from './shared/components/region-display/region-display.component';
 import { SearchComponent } from './shared/components/search/search.component';
-import { SentimentDisplayComponent } from './shared/components/sentiment-display/sentiment-display.component';
 import { SliderComponent } from './shared/components/slider/slider.component';
 import { StatsDisplayComponent } from './shared/components/stats-display/stats-display.component';
 import { TagsDisplayComponent } from './shared/components/tags-display/tags-display.component';
@@ -190,7 +189,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     EarningsReportComponent,
     RevenueCompositionDisplayComponent,
     RevenueDisplayComponent,
-    SentimentDisplayComponent,
     MovementDisplayComponent,
     ProfitabilityDetailsComponent,
     StatsDisplayComponent,

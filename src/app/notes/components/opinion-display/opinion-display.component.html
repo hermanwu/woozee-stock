@@ -27,3 +27,39 @@
     <ng-container *ngSwitchDefault i18n></ng-container>
   </ng-container>
 </span>
+
+<span *ngIf="opinionType">
+  <ng-container [ngSwitch]="opinionType">
+    <ng-container *ngSwitchCase="opinionTypeEnum.VeryBullish" i18n>
+      <span class="very-green">Very Bullish</span>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="opinionTypeEnum.Bullish" i18n>
+      <span class="green">{{ emojiUnicode.rocket }} Bullish </span>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="opinionTypeEnum.VeryBearish" i18n>
+      <span class="very-red">Very Bearish</span>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="opinionTypeEnum.Bearish" i18n>
+      <span class="red">{{ emojiUnicode.bear }} Bearish</span>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault i18n></ng-container>
+  </ng-container>
+</span>
+
+<span *ngIf="sentiment">
+  <ng-container *ngIf="sentiment.score === 0" i18n>
+    <span>Neutral</span>
+  </ng-container>
+
+  <ng-container *ngIf="sentiment.score > 0" i18n>
+    <span class="green">{{ emojiUnicode.rocket }} Bullish </span>
+  </ng-container>
+
+  <ng-container *ngIf="sentiment.score < 0" i18n>
+    <span class="red">{{ emojiUnicode.bear }} Bearish</span>
+  </ng-container>
+</span>

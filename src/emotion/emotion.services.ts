@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Note } from 'src/app/shared/data/note.interface';
 
 export interface Emotion {
   uuid: string;
@@ -7,6 +8,10 @@ export interface Emotion {
   bullish?: number;
   thumbUp?: number;
   noteUuid: string;
+}
+
+export interface Sentiment {
+  score: number;
 }
 
 export const mockEmotions: Emotion[] = [
@@ -28,5 +33,16 @@ export class EmotionServices {
 
   getEmotionsByUserId(userId: string): Emotion[] {
     return mockEmotions.filter((emotion) => emotion.userUuid === userId);
+  }
+
+  /**
+   * Get Sentiment from a list of notes
+   */
+  getSentimentFromNotes(note: Note[]): Sentiment {
+    const result = {
+      score: 0,
+    };
+
+    return result;
   }
 }

@@ -3,7 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { NotesServices } from 'src/app/news/services/notes.services';
 import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
@@ -12,7 +11,6 @@ import { Fact } from 'src/app/risks/models/fact.model';
 import { Stats } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
-import { NoteType } from 'src/app/shared/data/note.interface';
 import { environment } from 'src/environments/environment';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 import { StockServices } from '../../services/objective-data.service';
@@ -66,37 +64,11 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         this.stockAnalysis = null;
       }
 
-      this.rank$ = this.userServices.rankings$.pipe(
-        map((ranks: string[]): number => {
-          return ranks.indexOf(this.stockUuid) >= 0
-            ? ranks.indexOf(this.stockUuid) + 1
-            : null;
-        })
-      );
-
       const notes = this.notesServices.getNotesByTargets([this.stockUuid]);
-
-      this.opinions = notes.filter(
-        (item) => item.noteType === NoteType.Opinion
-      ) as Opinion[];
-      this.numbers = notes.filter(
-        (item) => item.noteType === NoteType.Stats
-      ) as Stats[];
-      this.actions = notes.filter(
-        (item) => item.noteType === NoteType.Fact
-      ) as Fact[];
     });
   }
 
   ngOnDestroy(): void {
     this.routeSub.unsubscribe();
-  }
-
-  setDisplayMode(displayMode: DisplayMode) {
-    this.displayMode = displayMode;
-  }
-
-  updateDisplayItem(index: number) {
-    this.carousalDisplayItemIndex = index;
   }
 }

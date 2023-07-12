@@ -1,7 +1,6 @@
 import {
   Component,
   EventEmitter,
-  Input,
   OnChanges,
   OnInit,
   Output,
@@ -9,10 +8,12 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserServices } from 'src/app/accounts/services/user.services';
+import { v4 as generateUuid } from 'uuid';
 import { Note, NoteType } from '../../../shared/data/note.interface';
 import { TagServices } from '../../../shared/services/tag.services';
 import { News } from '../../../stock/models/news.model';
 import { OpinionEnum } from '../../../stock/models/opinion-type.model';
+
 @Component({
   selector: 'app-add-note-form',
   templateUrl: './add-note-form.component.html',
@@ -20,12 +21,12 @@ import { OpinionEnum } from '../../../stock/models/opinion-type.model';
 })
 export class AddNoteFormComponent implements OnInit, OnChanges {
   @Output() newNote = new EventEmitter<Note>();
-  @Input() note: Note;
 
   newsForm: FormGroup;
   news: News;
   noteType = NoteType;
   ratingEnum = OpinionEnum;
+  note;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,14 +34,17 @@ export class AddNoteFormComponent implements OnInit, OnChanges {
     private userServices: UserServices
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.note = {
+      uuid: generateUuid(),
+      noteType: NoteType.Fact,
+    };
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes.note && !this.newsForm) {
-      this.createForm();
-      this.newsForm.patchValue({ uuid: changes.note.currentValue.uuid });
-    }
+    this.createForm();
+    this.newsForm.patchValue({ uuid: this.note.uuid, noteType: this.noteType });
   }
+
+  ngOnChanges(changes: SimpleChanges): void {}
 
   createForm() {
     this.newsForm = this.formBuilder.group({
@@ -55,6 +59,7 @@ export class AddNoteFormComponent implements OnInit, OnChanges {
       creatorUuid: 'hwu1106@gmail.com',
       parentUuid: [],
       emotions: [],
+      noteType: [],
     });
   }
 
@@ -75,17 +80,13 @@ export class AddNoteFormComponent implements OnInit, OnChanges {
       rating: this.newsForm.value.rating,
       uuid: this.newsForm.value.uuid,
       authorUuid: this.newsForm.value.authorUuid,
-      creatorUuid: this.newsForm.value.creatorUuid,
       targets: this.newsForm.value.targets
         ?.split(',')
         .map((target) => target.trim()),
       createdDate: new Date(),
       emotions: this.newsForm.value.emotions,
+      creatorUuid: 'hwu106@gmail.com',
     };
-
-    if (news.noteType === NoteType.Opinion) {
-      news.creatorUuid = this.userServices.getRandomUser().uuid;
-    }
 
     for (let key in news) {
       if (news[key] === null || news[key] === undefined) {
@@ -98,15 +99,9 @@ export class AddNoteFormComponent implements OnInit, OnChanges {
     this.newNote.emit(news);
   }
 
-  /**
-   * Set the rating
-   * @param rating
-   */
-  setRating(rating: OpinionEnum): void {
-    this.newsForm.patchValue({ emotions: [rating] });
-  }
-
   setNoteType(noteType: NoteType): void {
-    this.newsForm.patchValue({ noteType });
+    console.log(noteType);
+    this.newsForm.patchValue({ noteType: noteType });
+    console.log(this.newsForm.value);
   }
 }

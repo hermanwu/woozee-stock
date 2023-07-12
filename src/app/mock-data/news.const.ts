@@ -13,6 +13,16 @@ import { Quote } from './quote.model';
 
 export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
   {
+    noteType: 'action',
+    content:
+      'Roku shares jump as the company partners with Shopify, allowing customers to purchase products through Roku TVs.',
+    tagUuids: [],
+    uuid: '5976d522-64c7-4da9-8073-13d0142c79f0',
+    targets: ['roku', 'shop'],
+    createdDate: '2023-07-12T01:17:36.412Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
     content:
       'Exxon Mobil said lower natural gas prices and refining margins will reduce second-quarter earnings by about $4 billion compared with the previous three months.\n\n',
     tagUuids: [],

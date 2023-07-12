@@ -39,81 +39,16 @@
   </div>
 
   <div class="grid grid-dynamic">
-    <app-card class="grid" *ngIf="numbers?.length > 0">
+    <app-card class="grid">
       <app-title-menu>
-        <div header-2>Numbers</div>
+        <div header-3>My Notes</div>
       </app-title-menu>
-      <div *ngFor="let note of numbers" class="opinion-display">
-        📊 <app-tag-display [tagUuid]="note?.targets?.[0]"></app-tag-display>
-        <app-stats-display [statsDisplay]="note"></app-stats-display>
-      </div>
     </app-card>
 
-    <app-card class="grid" *ngIf="opinions?.length > 0">
+    <app-card class="grid">
       <app-title-menu>
-        <div header-2>Actions</div>
-
-        <div right-items>
-          <button right-items mat-icon-button [matMenuTriggerFor]="opinionMenu">
-            <mat-icon>more_horiz</mat-icon>
-          </button>
-
-          <mat-menu #opinionMenu="matMenu">
-            <button
-              mat-menu-item
-              type="button"
-              (click)="setDisplayMode(displayModeEnum.list)"
-            >
-              <mat-icon>list</mat-icon>
-            </button>
-            <button
-              mat-menu-item
-              type="button"
-              (click)="setDisplayMode(displayModeEnum.slide)"
-            >
-              <mat-icon>view_array</mat-icon>
-            </button>
-
-            <button mat-menu-item type="button" matTooltip="Add Risk">
-              <mat-icon>add_circle</mat-icon>
-            </button>
-          </mat-menu>
-        </div>
+        <div header-3>Other Notes</div>
       </app-title-menu>
-      <div *ngFor="let action of actions" class="opinion-display">
-        <span>🔸 </span>
-        <span *ngFor="let item of action?.targets; let last = last"
-          ><app-tag-display [tagUuid]="item"></app-tag-display
-          ><span *ngIf="!last">, </span>
-        </span>
-
-        <span> {{ action.title }} </span>
-      </div>
-    </app-card>
-
-    <app-card class="grid" *ngIf="opinions?.length > 0">
-      <app-title-menu>
-        <div header-2>Opinions</div>
-
-        <div right-items>
-          <button right-items mat-icon-button [matMenuTriggerFor]="opinionMenu">
-            <mat-icon>more_horiz</mat-icon>
-          </button>
-
-          <mat-menu #opinionMenu="matMenu">
-            <button mat-menu-item type="button" matTooltip="Add Risk">
-              <mat-icon>add_circle</mat-icon>
-            </button>
-          </mat-menu>
-        </div>
-      </app-title-menu>
-
-      <div *ngFor="let note of opinions" class="opinion-display">
-        <app-opinion-item-display
-          [opinion]="note"
-          [expanded]="true"
-        ></app-opinion-item-display>
-      </div>
     </app-card>
   </div>
 </ng-template>

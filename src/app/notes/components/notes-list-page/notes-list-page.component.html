@@ -1,24 +1,21 @@
-<app-card>
-  <h3>Bullish</h3>
-  <div *ngFor="let opinion of bullishNotes">
-    <app-note-container [note]="opinion"></app-note-container>
-    <app-divider></app-divider>
+<app-card *ngFor="let stockSentiment of sentiments">
+  <div>
+    <div class="logo-image">
+      <app-image-display
+        [imageLink]="stockUuidToStockMap.get(stockSentiment[0])?.logoLink"
+      ></app-image-display>
+    </div>
+    <div>{{ stockUuidToStockMap.get(stockSentiment[0])?.displayName }}</div>
+    <div>
+      <app-opinion-display
+        [sentiment]="stockSentiment[1]"
+      ></app-opinion-display>
+    </div>
   </div>
-</app-card>
 
-<app-card>
-  <h3>Neutral</h3>
-  <div *ngFor="let opinion of notes">
-    <app-note-container [note]="opinion"></app-note-container>
+  <div *ngFor="let note of stockUuidToNotesMap.get(stockSentiment[0])">
     <app-divider></app-divider>
-  </div>
-</app-card>
-
-<app-card>
-  <h3>Bearish</h3>
-  <div *ngFor="let opinion of bearishNotes">
-    <app-note-container [note]="opinion"></app-note-container>
-    <app-divider></app-divider>
+    <app-note-container [note]="note"></app-note-container>
   </div>
 </app-card>
 

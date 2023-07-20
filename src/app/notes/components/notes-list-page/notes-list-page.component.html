@@ -5,17 +5,25 @@
         [imageLink]="stockUuidToStockMap.get(stockSentiment[0])?.logoLink"
       ></app-image-display>
     </div>
-    <div>{{ stockUuidToStockMap.get(stockSentiment[0])?.displayName }}</div>
-    <div>
-      <app-opinion-display
-        [sentiment]="stockSentiment[1]"
-      ></app-opinion-display>
+
+    <div class="container">
+      <div class="left">
+        {{ stockUuidToStockMap.get(stockSentiment[0])?.displayName }}
+      </div>
+      <div class="right">
+        <app-opinion-display
+          [sentiment]="stockSentiment[1]"
+        ></app-opinion-display>
+      </div>
     </div>
   </div>
 
   <div *ngFor="let note of stockUuidToNotesMap.get(stockSentiment[0])">
     <app-divider></app-divider>
-    <app-note-container [note]="note"></app-note-container>
+    <app-note-container
+      [note]="note"
+      [emotion]="noteUuidToEmotionMap.get(note.uuid)"
+    ></app-note-container>
   </div>
 </app-card>
 

@@ -21,6 +21,13 @@ export const mockEmotions: Emotion[] = [
     noteUuid: 'dafe59d4-d694-4981-affb-e777745940aa',
     saved: true,
   },
+  {
+    uuid: '2',
+    userUuid: 'herman.wrt@gmail.com',
+    noteUuid: 'f3314d82-b904-40a8-9fb3-c245d9edfbb5',
+    saved: true,
+    bullish: 1,
+  },
 ];
 
 @Injectable({

@@ -58,7 +58,10 @@
 
   <button mat-button>Bearish</button>
 
-  <button mat-button>Save</button>
+  <button mat-button (click)="onSaveClick()">
+    <span *ngIf="emotion?.saved; else unsavedButton">Saved</span
+    ><ng-template #unsavedButton>Save</ng-template>
+  </button>
 
   <button mat-button (click)="expanded = !expanded">
     😀 <mat-icon> expand_more </mat-icon>

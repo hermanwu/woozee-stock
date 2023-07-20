@@ -24,3 +24,17 @@
   display: flex;
   justify-content: center;
 }
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  align-self: flex-start;
+}
+
+.right {
+  align-self: flex-end;
+}
+

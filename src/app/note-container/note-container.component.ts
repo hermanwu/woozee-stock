@@ -6,6 +6,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Emotion } from 'src/emotion/emotion.services';
 import { environment } from 'src/environments/environment';
 import { UserServices } from '../accounts/services/user.services';
 import { InstagramNewsDisplayDialogComponent } from '../news/components/news-display-dialog/news-display-dialog.component';
@@ -21,7 +22,7 @@ import { TwitterDisplayDialogComponent } from '../ui/components/twitter-display-
 export class NoteContainerComponent implements OnInit, OnChanges {
   @Input() note: Note;
   @Input() shortVersion: boolean;
-  @Input() savedNoteUuids = new Set();
+  @Input() emotion: Emotion;
 
   readonly Emoji = EmojiUnicode;
   chips = new Set();
@@ -73,4 +74,8 @@ export class NoteContainerComponent implements OnInit, OnChanges {
 
     this.chips.has(chip) ? removeChip() : addChip();
   };
+
+  onSaveClick() {
+    this.emotion.saved = !this.emotion.saved;
+  }
 }

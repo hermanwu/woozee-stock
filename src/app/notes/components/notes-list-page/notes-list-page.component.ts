@@ -4,7 +4,11 @@ import { Router } from '@angular/router';
 import { NotesServices } from 'src/app/news/services/notes.services';
 import { Note } from 'src/app/shared/data/note.interface';
 import { StockServices } from 'src/app/stock/services/objective-data.service';
-import { EmotionServices, Sentiment } from 'src/emotion/emotion.services';
+import {
+  Emotion,
+  EmotionServices,
+  Sentiment,
+} from 'src/emotion/emotion.services';
 import { UserServices } from '../../../accounts/services/user.services';
 import { AddNoteFormComponent } from '../add-note-form/add-note-form.component';
 
@@ -23,6 +27,7 @@ export class NotesListPageComponent implements OnInit {
   sentiments: [string, Sentiment][] = [];
   stockUuidToNotesMap = new Map<string, Note[]>();
   stockUuidToStockMap = new Map<string, any>();
+  noteUuidToEmotionMap = new Map<string, Emotion>();
 
   constructor(
     private userServices: UserServices,
@@ -46,6 +51,10 @@ export class NotesListPageComponent implements OnInit {
     const emotions = this.emotionServices.getEmotionsByUserId(
       this.userServices.currentUser.userUuid
     );
+
+    for (let emotion of emotions) {
+      this.noteUuidToEmotionMap.set(emotion.noteUuid, emotion);
+    }
 
     this.notes = this.notesServices.getNotesByUuids(
       emotions.map((e) => e.noteUuid)
@@ -80,6 +89,7 @@ export class NotesListPageComponent implements OnInit {
       maxHeight: '90vh', //you can adjust the value as per your view
       data: {},
       panelClass: 'medium-modal-panel',
+      disableClose: true,
     });
   }
 }

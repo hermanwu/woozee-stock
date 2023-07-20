@@ -15,6 +15,77 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
   {
     noteType: 'action',
     content:
+      'TSMC reported revenue slipped 10% from a year ago to NT$480.84 billion\n\nNet income fell 23.3% from a year ago to NT$181.8 billion.\n\nThe second quarter revenue and net income figures were better than market expectations.\n\n“Moving into third quarter 2023, we expect our business to be supported by the strong ramp of our 3-nanomenter technologies, partially offset by customers’ continued inventory adjustment,” Wendell Huang, CFO of TSMC said.',
+    tagUuids: [],
+    uuid: '4a9ec066-6f0b-470c-9d5c-36c5660f76f6',
+    targets: ['tsmc'],
+    createdDate: '2023-07-20T22:38:41.076Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Blackstone released earnings.\n\nProfit was $1.2 billion, -39% y/y\n\nIt became the first private equity firm to manage a $1 trillion.\n\nIt slowed the pace of doing new deals and cashing out of existing bets as more buyers and sellers struggled to agree on valuations for private assets.',
+    tagUuids: [],
+    uuid: '3e91f094-3be2-46ac-bb14-dbcf13ebf8fe',
+    targets: ['bx'],
+    createdDate: '2023-07-20T22:34:56.964Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Discover Financial Services tumbled more than 13% after its quarterly earnings fell short of expectations.\n\nNet income was $901 million, -18% y/y\n\nIt will also pause share repurchases as it investigates incorrect classification of credit card accounts',
+    tagUuids: [],
+    uuid: 'ed125fa2-ff7c-4277-ac21-50f06ec3b0df',
+    targets: ['dfs'],
+    createdDate: '2023-07-20T22:26:12.312Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Johnson & Johnson released earnings that topped Wall Street’s expectations.\n\nRevenue was $25.5 billion, +6.3% y/y\n\nOperating Income was $6.7 billion, +15.8% y/y\n\nOperating Margin 26.4%',
+    tagUuids: [],
+    uuid: '5213cf95-39cf-4fc1-a62c-a079cbf2b02f',
+    targets: ['jnj'],
+    createdDate: '2023-07-20T22:09:31.447Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      "Netflix released earnings\n\nRevenue was $8.187 billion, up 2.7% y/y\n\nOperating Margin was 22.3%\n\nNext quarter's revenue growth was expected to be 7.5% \n\nPaid Memberships was 238.39 million, up 8.00% y/y",
+    tagUuids: [],
+    uuid: '31c52dc5-a3dd-4286-85e4-2cfa97917be3',
+    targets: ['nflx'],
+    createdDate: '2023-07-20T21:58:15.326Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Tesla released earnings.\n\nRevenue rose 47% to $24.9 billion\n\nGross margin was 18.2% in the quarter, lower than the 25% margin from a year ago.\n\nThe company now has 16 days worth of inventory globally, up from four days a year ago.',
+    tagUuids: [],
+    uuid: 'f3314d82-b904-40a8-9fb3-c245d9edfbb5',
+    authorUuid: '',
+    targets: ['tsla'],
+    createdDate: '2023-07-19T23:55:56.505Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Microsoft charges $30 per user per month to use popular AI tool Copilot for Microsoft 365 E3, E5, Business Standard, and Business Premium customers.\n\n',
+    tagUuids: [],
+    uuid: '8b2286d0-d6d3-4707-981b-5566c73c9176',
+    targets: ['msft'],
+    createdDate: '2023-07-18T23:48:52.026Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
       'Roku shares jump as the company partners with Shopify, allowing customers to purchase products through Roku TVs.',
     tagUuids: [],
     uuid: '5976d522-64c7-4da9-8073-13d0142c79f0',

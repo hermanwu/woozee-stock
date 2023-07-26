@@ -264,4 +264,14 @@ export const organizations: Organization[] = [
     displayName: 'Nike',
     logoLink: '',
   },
+  {
+    uuid: 'dfs',
+    displayName: 'Discover',
+    logoLink: '',
+  },
+  {
+    uuid: 'bx',
+    displayName: 'Blackstone',
+    logoLink: '',
+  },
 ];

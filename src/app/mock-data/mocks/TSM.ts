@@ -5,6 +5,7 @@ export const TSM: StockAnalysis = {
   name: { English: 'Taiwan Semiconductor Manufacturing Company Limited' },
   description: [],
   ticker: 'TSM',
+  displayName: 'Taiwan Semiconductor',
 
   // Earnings Report:
   earnings: {

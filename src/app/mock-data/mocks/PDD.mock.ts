@@ -172,10 +172,7 @@ export const pdd: StockAnalysis = {
     'Resemble a "virtual bazaar" where buyers browse and explore a full spectrum of products on our platform while interacting with one another. ',
     'Customer connect to manufacturer directly.',
   ],
-  painPoint: [
-    'How to buy same quality product with lower price.',
-    'Desire for deals during discovery shopping.',
-  ],
+
   products: [
     {
       description: 'App',
@@ -210,9 +207,6 @@ export const pdd: StockAnalysis = {
   ],
 
   trends: ['COVID', 'E-commerce'],
-  thoughts: {
-    hermanScore: 1,
-  },
 
   score: {
     vision: 9,

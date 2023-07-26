@@ -11,7 +11,6 @@ import { UserServices } from 'src/app/accounts/services/user.services';
 import { v4 as generateUuid } from 'uuid';
 import { Note, NoteType } from '../../../shared/data/note.interface';
 import { TagServices } from '../../../shared/services/tag.services';
-import { News } from '../../../stock/models/news.model';
 import { OpinionEnum } from '../../../stock/models/opinion-type.model';
 
 @Component({
@@ -22,11 +21,10 @@ import { OpinionEnum } from '../../../stock/models/opinion-type.model';
 export class AddNoteFormComponent implements OnInit, OnChanges {
   @Output() newNote = new EventEmitter<Note>();
 
-  newsForm: FormGroup;
-  news: News;
+  noteForm: FormGroup;
+  note: Note;
   noteType = NoteType;
   ratingEnum = OpinionEnum;
-  note;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -35,31 +33,25 @@ export class AddNoteFormComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
-    this.note = {
-      uuid: generateUuid(),
-      noteType: NoteType.Fact,
-    };
-
     this.createForm();
-    this.newsForm.patchValue({ uuid: this.note.uuid, noteType: this.noteType });
   }
 
   ngOnChanges(changes: SimpleChanges): void {}
 
   createForm() {
-    this.newsForm = this.formBuilder.group({
+    this.noteForm = this.formBuilder.group({
       targets: [],
       title: [],
       content: [],
       tags: [],
       sourceLink: [],
       rating: [],
-      uuid: [],
+      uuid: [generateUuid()],
       authorUuid: [],
       creatorUuid: 'hwu1106@gmail.com',
       parentUuid: [],
       emotions: [],
-      noteType: [],
+      noteType: [NoteType.Fact],
     });
   }
 
@@ -67,41 +59,39 @@ export class AddNoteFormComponent implements OnInit, OnChanges {
    * Submit the form
    */
   onSubmit(): void {
-    let tags = this.newsForm.value.tags
-      ? this.newsForm.value.tags.split(',')
+    let tags = this.noteForm.value.tags
+      ? this.noteForm.value.tags.split(',')
       : [];
 
-    const news = {
-      title: this.newsForm.value.title,
-      noteType: this.newsForm.value.noteType,
-      content: this.newsForm.value.content,
+    const note = {
+      title: this.noteForm.value.title,
+      noteType: this.noteForm.value.noteType,
+      content: this.noteForm.value.content,
       tagUuids: [...tags],
-      sourceLink: this.newsForm.value.sourceLink,
-      rating: this.newsForm.value.rating,
-      uuid: this.newsForm.value.uuid,
-      authorUuid: this.newsForm.value.authorUuid,
-      targets: this.newsForm.value.targets
+      sourceLink: this.noteForm.value.sourceLink,
+      rating: this.noteForm.value.rating,
+      uuid: this.noteForm.value.uuid,
+      authorUuid: this.noteForm.value.authorUuid,
+      targets: this.noteForm.value.targets
         ?.split(',')
         .map((target) => target.trim()),
       createdDate: new Date(),
-      emotions: this.newsForm.value.emotions,
+      emotions: this.noteForm.value.emotions,
       creatorUuid: 'hwu106@gmail.com',
     };
 
-    for (let key in news) {
-      if (news[key] === null || news[key] === undefined) {
-        delete news[key];
+    for (let key in note) {
+      if (note[key] === null || note[key] === undefined) {
+        delete note[key];
       }
     }
 
-    this.news = news;
+    this.note = note;
 
-    this.newNote.emit(news);
+    this.newNote.emit(note);
   }
 
   setNoteType(noteType: NoteType): void {
-    console.log(noteType);
-    this.newsForm.patchValue({ noteType: noteType });
-    console.log(this.newsForm.value);
+    this.noteForm.patchValue({ noteType: noteType });
   }
 }

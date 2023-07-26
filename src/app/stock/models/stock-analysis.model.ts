@@ -9,7 +9,6 @@ import { Trend } from './trend.enum';
 
 export interface Product {
   name?: string;
-  size?: number;
   markets?: IndustryType[];
   description?: string;
   imageLink?: string;
@@ -38,13 +37,13 @@ export interface StockAnalysis {
   secFilings?: string;
   business?: Business;
   products?: Product[];
-  revenues?: any[];
+  lists?: string[];
+
   foundedYear?: number;
 
   // Demand:
   vision?: string[];
   value?: string[];
-  painPoint?: string[]; // for market.
   market?: string[]; // China, US, ETC
   trends?: string[] | Trend[];
   industries?: IndustryType[];
@@ -57,10 +56,6 @@ export interface StockAnalysis {
   };
 
   // Other Reports:
-
-  thoughts?: {
-    hermanScore: number;
-  };
   earnings?: {}; // TODO: retire this.
   earningsReports?: EarningsReport[];
   forcast?: {};

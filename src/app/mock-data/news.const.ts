@@ -13,12 +13,202 @@ import { Quote } from './quote.model';
 
 export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
   {
+    noteType: 'opinion',
+    content: 'Google PE is lower than Microsoft',
+    tagUuids: [],
+    uuid: '700e6257-0182-449f-a567-9ad44f4d7761',
+    targets: ['googl'],
+    createdDate: '2023-07-26T23:23:44.400Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'ServiceNow released earnings\n\nRevenue was $2.15 billion, +23%\nRemaining performance obligation was $7.2 billion, +25%\n45 customers with more than $20 million in ACV, +55% \n\nUnveiled AI Lighthouse, a partnership with Nvidia fast track the development and adoption of generative AI capabilities.',
+    tagUuids: [],
+    uuid: '0b56b68d-1cb5-479e-abf8-3a2cd1111bba',
+    targets: ['now'],
+    createdDate: '2023-07-26T21:17:15.853Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Chipotle released earnings\n\nRevenue was $2.5 billion, +13.6%\nOperating margin was 17.2%, an increase from 15.3%\nComparable store sales +7.4%, lower than the estimates of 7.7% \n',
+    tagUuids: [],
+    uuid: 'b88b7983-3b6b-45b6-a98a-1aef568ee92f',
+    targets: ['cmg'],
+    createdDate: '2023-07-26T21:12:57.717Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Boeing released earnings.\n\nRevenue was $19.75 1 billion, +18%\nNet loss was $149 million\n\n$440 billion backlog includes more than 4,800 commercial planes.\n\nCEO: "With demand strong, we\'re steadily increasing our production rates across key programs and growing investments in our people, products and technologies."',
+    tagUuids: [],
+    uuid: '87b2fb39-29df-459a-9514-531b4839afae',
+    targets: ['ba'],
+    createdDate: '2023-07-26T21:08:29.907Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Align Technology released earnings\n\nRevenue was $1.0 billion, +3.4%\nOperating Income was $171.9 million ->17.2% operating margin.\n\nClear Aligner volume for teens +9.7%\n\nAlign Technology stock is up 12% after hours.\n',
+    tagUuids: [],
+    uuid: '2a5570b4-3193-4fd9-93cd-8d693cf96d04',
+    targets: ['algn'],
+    createdDate: '2023-07-26T21:03:59.631Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Meta released earnings\n\nRevenue was $32 billion, +11%\nFirst double-digit growth since Q4 2021\n\nOperating Income was $9.4 billion, +12%\nNet Income was $7.79 billion, +16%\n\nDAP (Dialy Active People) was 3.07 billion, +7%\n\nQ3 Revenue Growth estimate is at least +15%',
+    tagUuids: [],
+    uuid: '8d158068-f6b0-4bab-adb5-755a4838b453',
+    targets: ['meta'],
+    createdDate: '2023-07-26T20:31:30.833Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      "Spotify released earnings\n\nRevenue was €3.17B, +11%\nMAU was 551 million, +27%\nPremium subscribers were 217 million\nNet loss increased to €302 million from €125 million. \nNext quarter's revenue guidance was €3.3B",
+    tagUuids: [],
+    uuid: '48920ee7-7781-41b7-9c28-aa5c126007f5',
+    targets: ['spot'],
+    createdDate: '2023-07-26T11:23:29.316Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Snap released earnings.\n\nRevenue was $1,068 million, -3.6%.\nNet loss was $377 million, improved from $422 million in the prior year.\nDAUs were 397 million in Q2 2023, an increase of 50 million, +14%\nIt guided to $1.07B-$1.13B in revenues for the third quarter, a change of -5% to 0%\n\n"From a revenue perspective, our business remains in a period of rapid transition as we work to improve our advertising platform, while forward visibility of advertising demand remains limited,"',
+    tagUuids: [],
+    uuid: '92609df5-ce25-491c-8496-81bc7f66cba6',
+    targets: ['snap'],
+    createdDate: '2023-07-26T11:14:33.125Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'PacWest Bancorp has agreed to combine with Banc of California in an all-stock merger transaction.\n\nPacWest (PACW) stockholders will receive 0.6569 of a share of Banc of California (BANC) common stock for each share of PacWest. \n\nNew company will operate under the Banc of California name.\n\n',
+    tagUuids: [],
+    uuid: 'be221cc9-15d6-4816-a5b6-94b25b4081f2',
+    targets: ['pacw', 'banc'],
+    createdDate: '2023-07-26T11:10:14.451Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'GE released earnings, beating both the top and bottom lines and raising guidance.\n\nTotal orders of $22.0B, +59%; organic orders +58%\nTotal revenues (GAAP) of $16.7B, +18%; adjusted revenues* $15.9B, +19% organically\nTotal cost and expenses went up 15% YoY\n',
+    tagUuids: [],
+    uuid: '700a624b-54ce-4bd2-8b95-cb31e11d226e',
+    targets: ['ge'],
+    createdDate: '2023-07-26T11:05:33.812Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      "Google released earnings\n\nRevenue was $74.6 billion, +7%\nOperating Income was $21.8 billion, +29%\nNet income was $18.4 billion\n\nYoutube ads grew from 7.34 billion to 7.66 billion.\nGoogle Cloud was 8 billion, +28%.\nGoogle Cloud's operating income grew from (590) million to 395 million.",
+    tagUuids: [],
+    uuid: '2f96f34a-185a-4d41-a4f0-d6dd11acfac5',
+    targets: ['googl'],
+    createdDate: '2023-07-26T10:57:59.831Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Microsoft released earnings.\n\nRevenue was $56.2 billion, +8%\nOperating income was $24.3 billion, +18%\nNet income was $20.1 billion, +20%\n\nMicrosoft Cloud revenue was $30.3 billion, +21% (Azure revenue +26%)\nRevenue in Productivity and Business Processes was $18.3 billion, +10%\nAnticipated ~25% Azure cloud growth this quarter ',
+    tagUuids: [],
+    uuid: '8d881aac-67c9-48fd-a03b-4a885caad26e',
+    targets: ['msft'],
+    createdDate: '2023-07-26T10:45:19.273Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      "Movie ‘Barbie’, based on Mattel's toy, set a record $155 Million post-pandemic box office.\n\nMovie theaters, including AMC, surged on the news.\n\nAMC also revised its stock conversion plan, which would dilute investors' shares after a U.S. court blocked it.",
+    tagUuids: [],
+    uuid: '2fa584c5-6d1f-456e-ae5b-1063c6827e62',
+    targets: ['amc', 'mat'],
+    createdDate: '2023-07-25T00:02:53.658Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Chevron released second-quarter earnings.\n\nNet profit was $6 billion, which is almost half of the record profit in the same period last year.\n\nCFO: "The macro price environment has softened a little bit versus the first quarter."\n\nCEO Mike Wirth will remain after the company waived a mandatory retirement age of 65 \n\n',
+    tagUuids: [],
+    uuid: '62851d4f-b07c-43e2-a729-074ce969fe90',
+    targets: ['cvx'],
+    createdDate: '2023-07-24T23:49:58.308Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      '\nElon Musk rebranded Twitter from the blue bird logo to the letter X.\n\nThe purpose is to make Twitter an all-in-one app.\n\nTwitter / X CEO: “(company will) continue delight our entire community with new experiences in audio, video, messaging, payments, banking – creating a global marketplace for ideas, goods, services, and opportunities.”\n\n',
+    tagUuids: [],
+    uuid: '5255fa03-24e2-45e2-9baf-93672e7d7667',
+    targets: ['tsla'],
+    createdDate: '2023-07-24T23:07:41.115Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Spotify increases prices for its premium subscription plans\n\nIn US:\nPremium Individual change to $10.99, up from $9.99;\nPremium Duo plan changed to $14.99, up from $12.99;\nPremium Family plan changed to $16.99, up from $15.99;\n\nPrice increase also affect other countries, including Canada, France, the U.K., Mexico and Australia.',
+    tagUuids: [],
+    uuid: 'a994efd5-2df9-42f5-9442-8669b5297eff',
+    targets: ['spot'],
+    createdDate: '2023-07-24T22:45:12.344Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'NXP Semiconductors released earnings\n\nRevenue of $3.3B, -0.4% y/y\nAutomotive revenue +9% y/y\nIndustrial & IoT revenue -19% y/y\nMobile revenue -27% y/y\n\nGAAP Operating Income was $937 million, -1% y/y\n\nNext quarter revenue is expected to decrease by 1% y/y as well.',
+    tagUuids: [],
+    uuid: '91c9c848-eede-4113-b819-dba6a372d9e8',
+    targets: ['nxpi'],
+    createdDate: '2023-07-24T21:02:47.401Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'opinion',
+    content:
+      'Ark Invest’s Cathie Wood said her flagship innovation fund has reduced its China exposure to zero as the developing market faces an economic slowdown.\n\n',
+    tagUuids: [],
+    uuid: '46f66954-4e66-44e2-b862-6481cd1f54e1',
+    authorUuid: 'cathiewood',
+    targets: ['china'],
+    createdDate: '2023-07-21T16:30:19.367Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'American Express released earnings.\n\nRevenue was $15.1 billion, +12% y/y, with card member spending reaching a quarterly high. \n\nEarnings per share was $2.89, +12% y/y.\n\nThe company reaffirms full-year 2023 revenue and EPS guidance\n\n"Card Member spending hit another all-time high, growing 8 percent on an FX-adjusted basis, driven by double-digit growth in U.S. Consumer and International Card Member spending"',
+    tagUuids: [],
+    uuid: '40254458-f1f8-4832-8f67-68a0db7f64e9',
+    targets: ['axp'],
+    createdDate: '2023-07-21T16:11:54.380Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
     noteType: 'action',
     content:
       'TSMC reported revenue slipped 10% from a year ago to NT$480.84 billion\n\nNet income fell 23.3% from a year ago to NT$181.8 billion.\n\nThe second quarter revenue and net income figures were better than market expectations.\n\n“Moving into third quarter 2023, we expect our business to be supported by the strong ramp of our 3-nanomenter technologies, partially offset by customers’ continued inventory adjustment,” Wendell Huang, CFO of TSMC said.',
     tagUuids: [],
     uuid: '4a9ec066-6f0b-470c-9d5c-36c5660f76f6',
-    targets: ['tsmc'],
+    targets: ['tsm'],
     createdDate: '2023-07-20T22:38:41.076Z',
     creatorUuid: 'hwu106@gmail.com',
   },
@@ -4120,227 +4310,5 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     uuid: '4240717d-7d1a-41ed-b96d-6732948ee164',
     createdDate: '2023-01-12T05:45:02.168Z',
     noteType: 'fact',
-  },
-  {
-    title:
-      '据彭博社消息，苹果最快可能在2025年发布带触摸屏的MacBook Pro笔记本电脑',
-    content:
-      '苹果在2018年曾明确表示触摸屏笔记本电脑在人体工程学方面较差：“抬起你的手臂来戳屏幕是一件非常累人的事情”\n苹果Mac产品线销量在发布自研芯片后表现出色。自2020年以来，销量增长了40%。',
-    tagUuids: ['aapl'],
-    sourceLink:
-      'https://www.cnbc.com/2023/01/11/apple-reportedly-considering-touchscreen-mac-laptop-for-2025.html',
-    uuid: 'f9e34da3-72f2-4085-81c4-683d689c1e65',
-    createdDate: '2023-01-12T05:37:56.898Z',
-    noteType: 'fact',
-  },
-  {
-    title:
-      "The market is optimistic about Thursday's CPI report, and the three major indexes closed higher.",
-    content:
-      'The Nasdaq Composite closed up 1.8%, achieving a four-day winning strike, the S&P 500 closed up 1.3%, and the Dow closed up 0.8%.\nAll 11 S&P sectors rose. Real estate rose 3.6 percent, while consumer staples rose 2.7 percent.\nIf data shows that the CPI slows down, it may prompt the Fed to slow down the pace of raising interest rates.',
-    tagUuids: ['cpi', 'us', 'fed'],
-    sourceLink:
-      'https://seekingalpha.com/news/3923887-wall-street-shows-optimism-ahead-of-cpi-data-dow-sp-500-nasdaq-rise',
-    uuid: 'a0967096-5bfd-4b27-a78b-fe0b2d93dcff',
-    createdDate: '2023-01-12T03:28:54.652Z',
-    noteType: 'fact',
-  },
-  {
-    title: '市场看好周四的CPI报告, 三大指数集体收高。',
-    content:
-      '纳斯达克综收盘上涨 1.8%，连续第4天上涨，标普500收盘上涨 1.3%，道指收盘上涨 0.8%。\n标普11个板块全部上涨。房地产板块上涨3.6%，消费品板块上涨 2.7%。\n如果数据显示CPI放缓，可能促使美联储放缓加息脚步。',
-    tagUuids: ['cpi', 'us', 'fed'],
-    sourceLink:
-      'https://seekingalpha.com/news/3923887-wall-street-shows-optimism-ahead-of-cpi-data-dow-sp-500-nasdaq-rise',
-    uuid: '1d423563-7830-4b81-a8a3-ea72c368d2ac',
-    createdDate: '2023-01-12T01:16:29.560Z',
-    noteType: 'fact',
-  },
-  {
-    title:
-      'The largest mortgage player in the United States, Wells Fargo, decided to scale down its mortgage business',
-    content:
-      "Moving forward, Wells Fargo plans to provide mortgage services only to bank clients, wealth management customers, and borrowers from minority communities.\nWells Fargo's third-party loan acquisition business will be closed and assets related to mortgage services will be sold.\nManagement said that regulatory pressure and high interest rates were the main reasons for this decision.\n",
-    tagUuids: ['housing', 'wfe'],
-    sourceLink:
-      'https://www.cnbc.com/2023/01/10/wells-fargo-once-the-no-1-player-in-mortgages-is-stepping-back-from-the-housing-market.html',
-    uuid: '6fdf0d67-4da8-4dd7-9e7f-039e89172387',
-    createdDate: '2023-01-11T06:29:33.322Z',
-    noteType: 'fact',
-  },
-  {
-    title: 'Coinbase is laying off another 950 staff.\n\n',
-    content:
-      'CEO Armstrong: "As we examined our 2023 scenarios, it became clear that we would need to reduce expenses to increase our chances of doing well in every scenario. While it is always painful to part ways with our fellow colleagues, there was no way to reduce our expenses significantly enough, without considering changes to headcount,"\nThe layoff is about 20% of the total workforce, and it is expected to save 25% of operating expenses.\n',
-    tagUuids: ['coin', 'crypto'],
-    uuid: 'e9b1cf34-464b-4a73-8b8f-a034bbaba65d',
-    createdDate: '2023-01-11T06:20:26.550Z',
-    noteType: 'fact',
-  },
-  {
-    title:
-      'Bed Bath & Beyond released its earnings on Tuesday: Both revenue and profit fell short of expectations',
-    content:
-      'The quarterly loss was $393 million, 42% more than last year\'s.\nThe CEO admitted that the company did not achieve the original goals but made progress on reducing expenses, including closing 150 stores.\nBed Bath & Beyond "squeezed" up nearly 30% today and rose another 17% during the after-hour.',
-    tagUuids: ['bbby', 'retail'],
-    uuid: 'a591f751-6b5c-4ca5-a55d-bcf7cf63c92c',
-    createdDate: '2023-01-11T06:16:59.265Z',
-    noteType: 'fact',
-  },
-  {
-    title:
-      'The S&P 500 was up 0.7%, and the Nasdaq was up 1.01%, achieving a three-day winning streak.',
-    content:
-      'Federal Reserve Chairman Powell emphasized on Tuesday that “Price stability is the bedrock of a healthy economy and provides the public with immeasurable benefits over time."\nThe Fed\'s primary task is to control inflation and stabilize prices. It can "require measures that are not popular in the short term as we raise interest rates to slow the economy"\nBut Powell did not disclose any information about the future interest rate.\n\n',
-    tagUuids: ['fed', ' interest rate'],
-    sourceLink:
-      'https://www.cnbc.com/2023/01/10/powell-stresses-need-for-feds-political-independence-while-tackling-inflation.html',
-    uuid: '26e3800e-c229-4486-b9b1-00fabd8f34e9',
-    createdDate: '2023-01-11T05:44:10.569Z',
-    noteType: 'fact',
-  },
-  {
-    title:
-      '美股在周二午后开始上涨。标普500收盘上涨0.7%，纳斯达克实现三天连涨，收盘上涨1.01%。',
-    content:
-      '美联储主席鲍威尔周二强调，稳定的物价是经济健康的基石。美联储的首要任务是控制通胀和稳定物价，而不是被政治因素所左右。因此有些不够”政治正确”措施是无法避免的，比如提高利率。\n但鲍威尔没有对未来的加息计划透露任何信息。',
-    tagUuids: ['fed'],
-    sourceLink:
-      'https://www.cnbc.com/2023/01/10/powell-stresses-need-for-feds-political-independence-while-tackling-inflation.html',
-    uuid: '97c6db5c-f5b8-43c9-bfd0-109229abfa02',
-    createdDate: '2023-01-11T02:50:02.249Z',
-    noteType: 'fact',
-  },
-  {
-    title: '实体连锁Bed Bath & Beyond周二发布财报，营收和利润均不及预期',
-    content:
-      '季度亏损达到3.93亿美元；同比亏损增加42%。\nCEO承认公司没有实现达成本来的季度目标，但做出了很多改进来减少支出，包括关闭150家门店。\nBed Bath & Beyond今天盘中暴涨近30%，盘后再涨17%。',
-    tagUuids: ['bbby', 'retail'],
-    sourceLink:
-      'https://www.nbcnews.com/business/business-news/bed-bath-reports-wider-expected-loss-quarterly-earnings-rcna65080',
-    uuid: '72d1ce6a-f57d-4fe4-9253-b3d9e7a1d82b',
-    createdDate: '2023-01-11T02:06:04.644Z',
-    noteType: 'fact',
-  },
-  {
-    title: '苹果的应用商店增长可能正在放缓',
-    content:
-      '苹果在2022年支付了3200亿美元给开发者，同比增长23%。根据苹果的支付公式，估计应用商店的营收同比增长在0%-21%之间（700亿美元-850亿美元）。\n2022订阅服务到达9亿次，同比增长20%。\n2022服务营收为780亿美元，同比增长14%，但远低于去年的27%的增长率。',
-    tagUuids: ['aapl'],
-    sourceLink:
-      'https://www.cnbc.com/2023/01/10/apple-app-store-revenue-update-shows-slowing-growth-.html',
-    uuid: '4749ee7d-1502-48d5-8ce5-175e172e97f2',
-    createdDate: '2023-01-11T01:05:07.792Z',
-    noteType: 'fact',
-  },
-  {
-    title: 'Coinbase再裁950人',
-    content:
-      'CEO在声明中写到“我们在审视2023年可能遇到的不同境况后，得出一个显而易见的结论，就是我们需要减少开支以保证在任何境况下都能运营下去”。\n被裁员工数占总员工数的20%，预计可以节省25%运营支出。\n',
-    tagUuids: ['coin', 'crypto'],
-    sourceLink:
-      'https://www.npr.org/2023/01/10/1148163220/coinbase-layoffs-crypto-winter-bitcoin',
-    uuid: '68c67378-ad2d-4293-b4b3-87e532826297',
-    createdDate: '2023-01-11T00:35:37.725Z',
-    noteType: 'fact',
-  },
-  {
-    title: '美国最大房贷银行：富国银行，决定大规模缩减房贷业务',
-    content:
-      '富国银行准备只向银行，理财客户，和一些少数族裔社区提供住房贷款服务，而不是“所有人”。\n富国银行的第三方贷款收购业务将关闭，大部分贷款相关资产也将卖出。\n管理层表示监管压力和高利率是促使这个决定的主要原因。',
-    tagUuids: ['housing', 'wfc'],
-    sourceLink:
-      'https://www.cnbc.com/2023/01/10/wells-fargo-once-the-no-1-player-in-mortgages-is-stepping-back-from-the-housing-market.html',
-    uuid: 'ad6cee43-f83a-4bf1-b419-9924e96e81da',
-    createdDate: '2023-01-11T00:21:15.854Z',
-    noteType: 'fact',
-  },
-  {
-    title: '消费者对住房市场的信心有所回升。',
-    content:
-      'Fannie Mae的月度住房情绪指数显示情绪从11月到 12 月有所改善。\n21%的受访者表示现在是购房好时机，高于11月的16%。\n大多数消费者认为房价将在未来12个月内会下跌，但房屋贷款利率将会下降。',
-    tagUuids: ['real estate', ' housing', ''],
-    sourceLink:
-      'https://www.cnbc.com/2023/01/09/consumer-confidence-in-housing-rises-as-prices-fall.html',
-    uuid: 'c436aea5-fb06-4ec7-847d-033344669c3a',
-    createdDate: '2023-01-09T22:55:30.337Z',
-    noteType: 'fact',
-  },
-  {
-    title: '辉瑞CEO：2022 年是我们公司历史上最成功的年份之一',
-    content: '目前正在把Paxlovid送往中国\n未来18个月将生产19个新产品',
-    tagUuids: ['pfe'],
-    sourceLink:
-      'https://www.cnbc.com/video/2023/01/09/pfizer-ceo-2022-was-one-of-the-most-successful-years-in-our-corporate-history.html',
-    uuid: '80b754e1-e5b3-4201-8c13-b4e2acce8764',
-    createdDate: '2023-01-09T22:46:08.838Z',
-    noteType: 'fact',
-  },
-  {
-    title: '马云将放弃了对蚂蚁集团的控制权',
-    content:
-      '该消息显示出中国政府可能放松对科技行业的监管力度\n高盛将阿里巴巴列入坚定买入名单,认为阿里巴巴最差的日子已经过去，目前价格合理，接下来公司将享受广告业务，金融科技，和云业务带来的增长。\n阿里巴巴周一上涨3%',
-    tagUuids: ['baba', 'fintech', 'china'],
-    sourceLink:
-      'https://www.barrons.com/articles/alibaba-hong-kong-stock-price-jack-ma-ant-51673253910',
-    uuid: 'ad50e989-1814-4777-a042-9037c5c3b044',
-    createdDate: '2023-01-09T22:15:41.199Z',
-    noteType: 'fact',
-  },
-  {
-    title: 'Lululemon下调第四季度利率指引,大跌近10%。',
-    content:
-      'Lululemon 表示，预计第四季度毛利率将下降 90-110 个基点，而此前预期为增长 10-20 个基点。\n不过，该公司将其第四季度净收入预期上调了0.5亿美元。\nLululemon库存继续增加显示经济衰退影响对富有消费者也开始产生影响。',
-    tagUuids: ['lulu', 'retail'],
-    sourceLink:
-      'https://finance.yahoo.com/news/lululemon-athletica-raises-fourth-quarter-115148722.html',
-    uuid: '3e599c50-a47e-4e45-8c05-a1d6a2ef4c3c',
-    createdDate: '2023-01-09T22:07:55.821Z',
-    noteType: 'fact',
-  },
-  {
-    title: '美股高开低走。市场期待这周的CPI报告和银行股的财报。',
-    content:
-      '科技股领涨，纳斯达克上涨0.63%。\n卫生保健，消费必需品领跌，标普500下跌0.08%。\n周四12月CPI指数即将发布。\n周五银行股将率先发布财报开启财报季。',
-    tagUuids: ['cpi'],
-    sourceLink:
-      'https://seekingalpha.com/news/3923039-sp500-dow-jones-nasdaq-stock-market-tech-stocks-rally-cpi-data',
-    uuid: 'c4933c5e-c5df-4cad-961e-1bf154b8aa1e',
-    createdDate: '2023-01-09T21:46:39.004Z',
-    noteType: 'fact',
-  },
-
-  {
-    title: 'Compass is cutting more labor',
-    content:
-      '* Compass CEO does not think the price will crash.\n* Excluding the luxury market, inventory is down year over year.',
-    tagUuids: ['COMP'],
-    uuid: '0dca3183-b644-4161-b7a8-5a3f4031be08',
-    createdDate: '2023-01-09T15:36:33.710Z',
-    noteType: 'fact',
-  },
-];
-
-export const allNewsTest = [
-  {
-    type: 'products',
-    imageLinks: [],
-    title: 'Bard',
-    tags: ['SaaS', 'AI', 'Chat-GPT'],
-    content: '',
-    released: 'true',
-  },
-  {
-    type: 'action',
-    imageLinks: [],
-    title: 'Bard',
-    tags: ['SaaS', 'AI', 'Chat-GPT'],
-    content: '',
-    released: 'true',
-  },
-  {
-    type: 'questionaine',
-    title: 'Moat Questionaire',
-    content: '',
   },
 ];

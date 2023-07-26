@@ -267,10 +267,6 @@ export const sq: StockAnalysis = {
     'Helping all kinds of people succeed and grow in the economy.',
     'Create a cohesive commerce ecosystem for business and individuals.',
   ],
-  painPoint: [
-    'High cost software/hardware to manage a business.',
-    'Inconvenience of using different payments system or financial management services.',
-  ],
   products: [
     {
       description: 'Seller Hardware',
@@ -297,9 +293,6 @@ export const sq: StockAnalysis = {
 
   trends: ['COVID', 'Cashless'],
 
-  thoughts: {
-    hermanScore: 1,
-  },
   score: {
     vision: 9,
     painPoint: 7,

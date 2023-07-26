@@ -6,6 +6,7 @@ export interface Emotion {
   userUuid: string;
   saved?: boolean;
   bullish?: number;
+  bearish?: number;
   thumbUp?: number;
   noteUuid: string;
 }

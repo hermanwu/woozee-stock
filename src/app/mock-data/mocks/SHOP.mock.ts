@@ -41,7 +41,6 @@ export const shop: StockAnalysis = {
     'https://investors.shopify.com/financial-reports/default.aspx#sec',
 
   // Demand
-  painPoint: [''],
 
   // Earnings Report:
   earningsReports: [

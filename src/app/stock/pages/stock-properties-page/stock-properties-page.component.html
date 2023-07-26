@@ -8,34 +8,48 @@
       <app-image-display [imageLink]="imageLinks[0]"></app-image-display>
     </div>
 
-    <app-title-menu>
-      <div header-1 i18n>
-        <span
-          >{{ stockAnalysis.displayName || stockAnalysis.name }} ({{
-            stockAnalysis?.ticker | uppercase
-          }})
-        </span>
+    <div>
+      <span
+        >{{ stockAnalysis.displayName || stockAnalysis.name }} ({{
+          stockAnalysis?.ticker | uppercase
+        }})
+      </span>
 
-        <span
-          ><a
-            target="_blank"
-            *ngIf="stockAnalysis?.irAddress"
-            title="Investor Relations"
-            href="{{ stockAnalysis.irAddress }}"
-          >
-            🔗
-          </a></span
+      <span
+        ><a
+          target="_blank"
+          *ngIf="stockAnalysis?.irAddress"
+          title="Investor Relations"
+          href="{{ stockAnalysis.irAddress }}"
         >
+          🔗
+        </a></span
+      >
 
-        <!-- <span *ngIf="rank$ | async; else followButton">
+      <!-- <span *ngIf="rank$ | async; else followButton">
           - Rank {{ rank$ | async | undefined }}</span
         > -->
-        <span *ngIf="stockAnalysis.price">
-          - {{ stockAnalysis.price | undefined }}</span
-        >
-      </div>
-      <div right-items></div>
-    </app-title-menu>
+      <span *ngIf="stockAnalysis.price">
+        - {{ stockAnalysis.price | undefined }}</span
+      >
+    </div>
+
+    <div>
+      <mat-chip-list>
+        <mat-chip *ngFor="let item of stockAnalysis?.lists">
+          {{ item }}
+        </mat-chip>
+      </mat-chip-list>
+    </div>
+
+    <div *ngIf="stockAnalysis?.products">
+      <span>Products:</span>
+      <mat-chip-list>
+        <mat-chip *ngFor="let item of stockAnalysis.products">
+          {{ item?.name }}
+        </mat-chip>
+      </mat-chip-list>
+    </div>
   </div>
 
   <div class="grid grid-dynamic">

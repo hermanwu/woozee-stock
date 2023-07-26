@@ -9,6 +9,7 @@ export const spot: StockAnalysis = {
   ticker: 'spot',
   displayName: 'Spotify',
   irAddress: 'https://investors.spotify.com/home/default.aspx',
+  logoLink: 'https://i.ibb.co/2v074vR/vr-PUCDn2-400x400.jpg',
 
   // Earnings Report:
   earningsReports: [

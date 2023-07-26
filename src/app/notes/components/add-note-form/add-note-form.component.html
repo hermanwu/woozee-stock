@@ -1,10 +1,12 @@
-<form [formGroup]="newsForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
   <div>
     <mat-button-toggle-group
       #ratingToggleGroup="matButtonToggleGroup"
       (change)="setNoteType(ratingToggleGroup.value)"
     >
-      <mat-button-toggle [value]="noteType.Action">Event</mat-button-toggle>
+      <mat-button-toggle checked [value]="noteType.Action"
+        >Event</mat-button-toggle
+      >
       <mat-button-toggle [value]="noteType.Stats">Number</mat-button-toggle>
       <mat-button-toggle [value]="noteType.Opinion">Opinion</mat-button-toggle>
     </mat-button-toggle-group>
@@ -17,7 +19,7 @@
     </mat-form-field>
   </div>
 
-  <div *ngIf="newsForm.value.noteType === noteType.Stats; else notNumber">
+  <div *ngIf="noteForm.value.noteType === noteType.Stats; else notNumber">
     <mat-form-field>
       <mat-label>Change Rate</mat-label>
       <input matInput type="number" />
@@ -27,7 +29,7 @@
   <ng-template #notNumber>
     <mat-form-field appearance="fill" class="full-width">
       <mat-label
-        >Content: <span> {{ newsForm.value?.content?.length || 0 }}</span>
+        >Content: <span> {{ noteForm.value?.content?.length || 0 }}</span>
       </mat-label>
       <textarea
         matInput
@@ -60,7 +62,7 @@
     </mat-form-field>
   </div> -->
 
-  <div *ngIf="newsForm.value.noteType === noteType.Opinion">
+  <div *ngIf="noteForm.value.noteType === noteType.Opinion">
     <mat-form-field>
       <mat-label>Author</mat-label>
       <input matInput formControlName="authorUuid" />
@@ -77,4 +79,4 @@
   <button matSuffix mat-button aria-label="Go" type="submit">Update</button>
 </form>
 
-{{ news | json }}
+{{ note | json }}

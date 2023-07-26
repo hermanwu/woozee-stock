@@ -19,33 +19,6 @@ export const aapl: StockAnalysis = {
   ticker: 'aapl',
   ceoQuote: [],
   irAddress: 'https://investor.apple.com/investor-relations/default.aspx',
-  revenues: [
-    {
-      name: 'iPhone',
-      size: 50.57 * BILLION,
-      markets: [IndustryType.hardware],
-    },
-    {
-      name: 'Mac',
-      size: 10.435 * BILLION,
-      markets: [IndustryType.hardware],
-    },
-    {
-      name: 'iPad',
-      size: 7.646 * BILLION,
-      markets: [IndustryType.hardware],
-    },
-    {
-      name: 'Wearables, Home and Accessories',
-      size: 8.806 * BILLION,
-      markets: [IndustryType.hardware],
-    },
-    {
-      name: 'Services',
-      size: 19.821 * BILLION,
-      markets: [IndustryType.cloudService],
-    },
-  ],
 
   products: [
     {

@@ -5,6 +5,7 @@ export const jnj: StockAnalysis = {
   name: { English: 'Johnson & Johnson' },
   description: [],
   ticker: 'JNJ',
+  displayName: 'Johnson & Johnson',
 
   // Earnings Report:
   earnings: {

@@ -58,7 +58,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
       this.stockAnalysis = this.stockServices.getStockByUuid(this.stockUuid);
       if (this.stockAnalysis) {
         this.titleService.setTitle(this.stockAnalysis.name);
-        this.imageLinks.push(this.stockAnalysis.logoLink);
+        this.imageLinks = [this.stockAnalysis.logoLink];
       } else {
         this.stockAnalysis = null;
       }

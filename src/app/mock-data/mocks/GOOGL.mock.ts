@@ -23,7 +23,8 @@ export const googl: StockAnalysis = {
   advantage: [],
   irAddress: 'https://abc.xyz/investor/',
   catalystUuids: googleCatalysts.map((c) => c.uuid),
-  industries: [
+
+  lists: [
     IndustryType.adTech,
     IndustryType.social,
     IndustryType.digitalMedia,

@@ -179,7 +179,6 @@ export const bili: StockAnalysis = {
     '成为探索中国年轻一代文化趋势和现象的目的地。',
     '亚文化会成为主流文化',
   ],
-  painPoint: ['满足二次元文化需求', '提供一个分享创作的地方'],
   products: [
     {
       description: 'App',

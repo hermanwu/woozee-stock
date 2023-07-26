@@ -6,6 +6,7 @@ import {
   rankLower,
 } from 'src/app/shared/functions/ranking.function';
 import { OpinionEnum } from 'src/app/stock/models/opinion-type.model';
+import { StockServices } from 'src/app/stock/services/objective-data.service';
 
 export const opinionMock: Opinion = {
   uuid: 'test-uuid',
@@ -28,24 +29,19 @@ export class UiMoleculesComponent implements OnInit {
   mockResult;
   opinionMock = opinionMock;
 
-  mockImages = [
-    {
-      link: 'https://i.ibb.co/zhWrySv/Screenshot-2023-02-23-at-8-38-05-PM.png',
-      title: 'Nvidia',
-    },
-    {
-      link: 'https://i.ibb.co/wRSMW2S/Screenshot-2023-04-05-at-3-59-27-PM.png',
-      title: 'Nvidia',
-    },
-    {
-      link: 'https://i.ibb.co/JqzwMhY/Screenshot-2023-04-05-at-4-35-44-PM.png',
-      title: 'Goldman Sachs',
-    },
-  ];
+  mockImages = ['googl', 'msft', 'snap', 'spot'];
+  imageLinks = [];
 
-  constructor() {}
+  constructor(private stockServices: StockServices) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    for (let ticker of this.mockImages) {
+      const stock = this.stockServices.getStockByUuid(ticker);
+      if (stock) {
+        this.imageLinks.push(stock.logoLink);
+      }
+    }
+  }
 
   mockRankHigher() {
     this.mockResult = rankHigher(

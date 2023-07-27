@@ -18,15 +18,28 @@ export interface Sentiment {
 export const mockEmotions: Emotion[] = [
   {
     uuid: '1',
-    userUuid: 'herman.wrt@gmail.com',
+    userUuid: 'hwu1106@gmail.com',
     noteUuid: 'dafe59d4-d694-4981-affb-e777745940aa',
     saved: true,
   },
   {
     uuid: '2',
-    userUuid: 'herman.wrt@gmail.com',
+    userUuid: 'hwu1106@gmail.com',
     noteUuid: 'f3314d82-b904-40a8-9fb3-c245d9edfbb5',
     saved: true,
+    bullish: 1,
+  },
+  {
+    uuid: '3',
+    userUuid: 'hwu1106@gmail.com',
+    noteUuid: 'f3314d82-b904-40a8-9fb3-c245d9edfbb5',
+    saved: true,
+    bullish: 1,
+  },
+  {
+    uuid: '4',
+    userUuid: 'hwu1106@gmail.com',
+    noteUuid: '700e6257-0182-449f-a567-9ad44f4d7761',
     bullish: 1,
   },
 ];

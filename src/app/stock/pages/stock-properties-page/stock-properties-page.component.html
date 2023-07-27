@@ -62,7 +62,10 @@
       </div>
 
       <div *ngFor="let note of myNotes">
-        <app-note-container [note]="note"></app-note-container>
+        <app-note-container
+          [note]="note"
+          [emotion]="note?.emotion"
+        ></app-note-container>
         <app-divider></app-divider>
       </div>
     </app-card>

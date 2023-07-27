@@ -8,6 +8,7 @@ import { NotesServices } from 'src/app/news/services/notes.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
+import { Note } from 'src/app/shared/data/note.interface';
 import { EmotionServices } from 'src/emotion/emotion.services';
 import { environment } from 'src/environments/environment';
 import { StockAnalysis } from '../../models/stock-analysis.model';
@@ -37,9 +38,10 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   rank$: Observable<number>;
   imageLinks = [];
   notes = [];
-  myNotes = [];
+  myNotes: Note[] = [];
   mySentiment;
   publicSentiment;
+  noteUuidToEmotionMap = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -55,10 +57,17 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
     this.routeSub = this.route.params.subscribe((params) => {
       this.stockUuid = params[this.stockId].toLowerCase();
 
+      // Reset everything.
+      this.imageLinks = [];
+      this.mySentiment = null;
+      this.publicSentiment = null;
+      this.myNotes = [];
+      this.notes = [];
+
       this.stockAnalysis = this.stockServices.getStockByUuid(this.stockUuid);
       if (this.stockAnalysis) {
         this.titleService.setTitle(this.stockAnalysis.name);
-        this.imageLinks = [this.stockAnalysis.logoLink];
+        this.imageLinks.push(this.stockAnalysis.logoLink);
       } else {
         this.stockAnalysis = null;
       }
@@ -70,7 +79,9 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
       );
 
       for (let note of allNotes) {
-        if (emotions.some((e) => e.noteUuid === note.uuid)) {
+        const emotion = emotions.find((e) => e.noteUuid === note.uuid);
+        if (emotion) {
+          note.emotion = emotion;
           this.myNotes.push(note);
         } else {
           this.notes.push(note);

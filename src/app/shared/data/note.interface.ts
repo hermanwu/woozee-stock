@@ -2,6 +2,8 @@
  * Interface for a general notes structure
  */
 
+import { Emotion } from 'src/emotion/emotion.services';
+
 export enum NoteType {
   Fact = 'action',
   /**
@@ -72,4 +74,6 @@ export interface Note {
   targets?: string[];
   parentUuid?: string;
   statuses?: [string, number][];
+
+  emotion?: Emotion;
 }

@@ -20,10 +20,7 @@
 
   <div *ngFor="let note of stockUuidToNotesMap.get(stockSentiment[0])">
     <app-divider></app-divider>
-    <app-note-container
-      [note]="note"
-      [emotion]="noteUuidToEmotionMap.get(note.uuid)"
-    ></app-note-container>
+    <app-note-container [note]="note"></app-note-container>
   </div>
 </app-card>
 

@@ -59,10 +59,17 @@ export class EmotionServices {
   /**
    * Get Sentiment from a list of notes
    */
-  getSentimentFromNotes(note: Note[]): Sentiment {
+  getSentimentFromNotes(notes: Note[]): Sentiment {
     const result = {
       score: 0,
     };
+
+    for (let note of notes) {
+      if (note.emotion) {
+        result.score +=
+          (note.emotion.bullish || 0) * (note.emotion.saved ? 2 : 1);
+      }
+    }
 
     return result;
   }

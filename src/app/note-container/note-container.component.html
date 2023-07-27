@@ -49,27 +49,27 @@
   </app-comparison-note>
 </ng-container>
 
-<div class="toolbar" *ngIf="!environment.production">
+<div class="toolbar" *ngIf="!environment.production && note?.emotion">
   <button mat-icon-button><mat-icon>expand_less</mat-icon></button>
-  <span>{{ emotion?.vote || 0 }}</span>
+  <span>{{ note.emotion?.vote || 0 }}</span>
   <button mat-icon-button><mat-icon>expand_more</mat-icon></button>
 
   <button mat-button>
     Bullish
-    <ng-container *ngIf="emotion?.bullish"
-      >x {{ emotion?.bullish }}</ng-container
+    <ng-container *ngIf="note.emotion?.bullish"
+      >x {{ note.emotion?.bullish }}</ng-container
     >
   </button>
 
   <button mat-button>
     Bearish
-    <ng-container *ngIf="emotion?.bearish"
-      >x {{ emotion?.bearish }}</ng-container
+    <ng-container *ngIf="note.emotion?.bearish"
+      >x {{ note.emotion?.bearish }}</ng-container
     >
   </button>
 
   <button mat-button (click)="onSaveClick()">
-    <span *ngIf="emotion?.saved; else unsavedButton">Saved</span
+    <span *ngIf="note.emotion?.saved; else unsavedButton">Saved</span
     ><ng-template #unsavedButton>Save</ng-template>
   </button>
 

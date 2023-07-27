@@ -56,10 +56,14 @@
   </ng-container>
 
   <ng-container *ngIf="sentiment.score > 0" i18n>
-    <span class="green">{{ emojiUnicode.rocket }} Bullish </span>
+    <span class="green"
+      >{{ emojiUnicode.rocket }} Bullish x {{ sentiment.score }}
+    </span>
   </ng-container>
 
   <ng-container *ngIf="sentiment.score < 0" i18n>
-    <span class="red">{{ emojiUnicode.bear }} Bearish</span>
+    <span class="red"
+      >{{ emojiUnicode.bear }} Bearish x {{ sentiment.score }}</span
+    >
   </ng-container>
 </span>

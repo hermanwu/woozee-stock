@@ -4,11 +4,7 @@ import { Router } from '@angular/router';
 import { NotesServices } from 'src/app/news/services/notes.services';
 import { Note } from 'src/app/shared/data/note.interface';
 import { StockServices } from 'src/app/stock/services/objective-data.service';
-import {
-  Emotion,
-  EmotionServices,
-  Sentiment,
-} from 'src/emotion/emotion.services';
+import { EmotionServices, Sentiment } from 'src/emotion/emotion.services';
 import { UserServices } from '../../../accounts/services/user.services';
 import { AddNoteFormComponent } from '../add-note-form/add-note-form.component';
 
@@ -19,7 +15,7 @@ import { AddNoteFormComponent } from '../add-note-form/add-note-form.component';
 })
 export class NotesListPageComponent implements OnInit {
   showAddNotesSection = false;
-  notes: Note[];
+  notes: Note[] = [];
   neutralNotes = [];
   bullishNotes = [];
   bearishNotes = [];
@@ -27,7 +23,6 @@ export class NotesListPageComponent implements OnInit {
   sentiments: [string, Sentiment][] = [];
   stockUuidToNotesMap = new Map<string, Note[]>();
   stockUuidToStockMap = new Map<string, any>();
-  noteUuidToEmotionMap = new Map<string, Emotion>();
 
   constructor(
     private userServices: UserServices,
@@ -53,12 +48,13 @@ export class NotesListPageComponent implements OnInit {
     );
 
     for (let emotion of emotions) {
-      this.noteUuidToEmotionMap.set(emotion.noteUuid, emotion);
-    }
+      const note = this.notesServices.getNotesByUuids([emotion.noteUuid])[0];
+      console.log(note);
 
-    this.notes = this.notesServices.getNotesByUuids(
-      emotions.map((e) => e.noteUuid)
-    );
+      note.emotion = emotion;
+
+      this.notes.push(note);
+    }
 
     for (let note of this.notes) {
       if (note.targets) {

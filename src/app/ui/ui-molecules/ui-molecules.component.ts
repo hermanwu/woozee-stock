@@ -29,7 +29,7 @@ export class UiMoleculesComponent implements OnInit {
   mockResult;
   opinionMock = opinionMock;
 
-  mockImages = ['googl', 'msft', 'snap', 'spot'];
+  mockImages = ['googl', 'msft', 'meta', 'snap', 'spot'];
   imageLinks = [];
 
   constructor(private stockServices: StockServices) {}

@@ -6,7 +6,7 @@ import {
   rankLower,
 } from 'src/app/shared/functions/ranking.function';
 import { OpinionEnum } from 'src/app/stock/models/opinion-type.model';
-import { StockServices } from 'src/app/stock/services/objective-data.service';
+import { StockServices } from 'src/app/stock/services/stock.service';
 
 export const opinionMock: Opinion = {
   uuid: 'test-uuid',

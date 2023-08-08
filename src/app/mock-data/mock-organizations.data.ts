@@ -274,4 +274,24 @@ export const organizations: Organization[] = [
     displayName: 'Blackstone',
     logoLink: '',
   },
+  {
+    uuid: 'cat',
+    displayName: 'Caterpillar',
+    logoLink: 'https://i.ibb.co/1QGmPWL/nhptx-XQp-400x400.png',
+  },
+  {
+    uuid: 'chgg',
+    displayName: 'Chegg',
+    logoLink: 'https://i.ibb.co/WgQNfBK/t-UR4-Dt-Gz-400x400.jpg',
+  },
+  {
+    uuid: 'smci',
+    displayName: 'Super Micro Computer',
+    logoLink: 'https://i.ibb.co/CPNfMb3/i-VFx-Tc5-400x400.jpg',
+  },
+  {
+    uuid: 'lly',
+    displayName: 'Eli Lilly',
+    logoLink: 'https://i.ibb.co/z8xRgVX/q2-Bx-TXTj-400x400.png',
+  },
 ];

@@ -5,8 +5,8 @@ import { UserServices } from 'src/app/accounts/services/user.services';
 import { DragDropRankDialogComponent } from 'src/app/shared/components/drag-drop-rank-dialog/drag-drop-rank-dialog.component';
 import { environment } from 'src/environments/environment';
 import { ComparisonDialogComponent } from '../../components/comparison-dialog/comparison-dialog.component';
-import { StockServices } from '../../services/objective-data.service';
 import { StockData } from '../../services/stock-data.model';
+import { StockServices } from '../../services/stock.service';
 
 export interface Equity {
   ticker: string;

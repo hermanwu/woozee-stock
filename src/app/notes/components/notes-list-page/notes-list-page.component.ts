@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NotesServices } from 'src/app/news/services/notes.services';
 import { Note } from 'src/app/shared/data/note.interface';
-import { StockServices } from 'src/app/stock/services/objective-data.service';
+import { StockServices } from 'src/app/stock/services/stock.service';
 import { EmotionServices, Sentiment } from 'src/emotion/emotion.services';
 import { UserServices } from '../../../accounts/services/user.services';
 import { AddNoteFormComponent } from '../add-note-form/add-note-form.component';
@@ -49,7 +49,6 @@ export class NotesListPageComponent implements OnInit {
 
     for (let emotion of emotions) {
       const note = this.notesServices.getNotesByUuids([emotion.noteUuid])[0];
-      console.log(note);
 
       note.emotion = emotion;
 

@@ -12,7 +12,7 @@ import { Note } from 'src/app/shared/data/note.interface';
 import { EmotionServices } from 'src/emotion/emotion.services';
 import { environment } from 'src/environments/environment';
 import { StockAnalysis } from '../../models/stock-analysis.model';
-import { StockServices } from '../../services/objective-data.service';
+import { StockServices } from '../../services/stock.service';
 
 @Component({
   selector: 'app-stock-properties-page',

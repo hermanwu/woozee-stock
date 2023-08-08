@@ -10,7 +10,7 @@ import { Note } from 'src/app/shared/data/note.interface';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { Industry } from 'src/app/stock/models/industry.model';
 import { Stock } from 'src/app/stock/models/stock.model';
-import { StockServices } from 'src/app/stock/services/objective-data.service';
+import { StockServices } from 'src/app/stock/services/stock.service';
 
 @Component({
   selector: 'app-industry-properties-page',

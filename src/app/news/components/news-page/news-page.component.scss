@@ -1,3 +1,4 @@
+
 .news-card {
   width: 95vw;
   max-width: 600px;
@@ -9,7 +10,6 @@
 }
 
 .news-display {
-  max-width: 420px;
   margin: 5px auto;
 }
 
@@ -46,4 +46,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.logo-image {
+  // center image in the div
+  // add margin top and bottom with 10px
+
+  // set image height to 150px
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  margin-bottom: 10px;
 }

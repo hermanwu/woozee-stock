@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { organizations } from 'src/app/mock-data/mock-organizations.data';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { stocksMap } from '../../mock-data/mocks/stock-list.const';
@@ -56,8 +57,11 @@ export class StockServices {
     );
   }
 
-  getStockByUuid(uuid: string): StockAnalysis {
-    return this.dataMap.get(uuid.toLowerCase());
+  getStockByUuid(uuid: string): any {
+    return (
+      this.dataMap.get(uuid.toLowerCase()) ||
+      organizations.find((org) => org.uuid.toLowerCase() === uuid.toLowerCase())
+    );
   }
 
   getStockByTicker(ticker: string): StockAnalysis {

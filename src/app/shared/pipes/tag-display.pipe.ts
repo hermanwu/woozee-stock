@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { StockServices } from 'src/app/stock/services/objective-data.service';
+import { StockServices } from 'src/app/stock/services/stock.service';
 
 /**
  * Add a sign to string.

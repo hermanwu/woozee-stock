@@ -11,7 +11,7 @@ import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { environment } from 'src/environments/environment';
 import { Industry } from '../../models/industry.model';
 import { StockAnalysis } from '../../models/stock-analysis.model';
-import { StockServices } from '../../services/objective-data.service';
+import { StockServices } from '../../services/stock.service';
 import { ComparisonDialogInput } from './comparison-dialog-input.model';
 
 @Component({

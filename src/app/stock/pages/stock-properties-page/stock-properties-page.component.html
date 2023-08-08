@@ -10,9 +10,10 @@
 
     <div>
       <span
-        >{{ stockAnalysis.displayName || stockAnalysis.name }} ({{
-          stockAnalysis?.ticker | uppercase
-        }})
+        >{{ stockAnalysis.displayName || stockAnalysis.name }}
+        <span *ngIf="stockAnalysis?.ticker"
+          >({{ stockAnalysis?.ticker | uppercase }})</span
+        >
       </span>
 
       <span
@@ -53,7 +54,7 @@
   </div>
 
   <div class="grid grid-dynamic">
-    <app-card class="grid">
+    <app-card class="grid" *ngIf="myNotes && myNotes.length > 0">
       <div class="container">
         <div class="left">My Notes</div>
         <div class="right">
@@ -70,9 +71,9 @@
       </div>
     </app-card>
 
-    <app-card class="grid">
+    <app-card class="grid" *ngIf="notes && notes.length > 0">
       <div class="container">
-        <div class="left">Other Notes</div>
+        <div class="left">Public Notes</div>
         <div class="right">
           <app-opinion-display
             [sentiment]="publicSentiment"

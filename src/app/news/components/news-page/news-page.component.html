@@ -44,12 +44,21 @@
 
 <div *ngIf="showTools"></div>
 
-<div class="news-card" *ngFor="let item of filteredNotes">
-  <div class="news-display">
-    <app-card>
-      <app-note-container [note]="item"></app-note-container>
-    </app-card>
-  </div>
+<div class="news-card" *ngFor="let stockUuid of stockUuidToStockMap.keys()">
+  <app-card>
+    <div class="logo-image">
+      <app-image-display
+        [imageLink]="stockUuidToStockMap.get(stockUuid)?.logoLink"
+      >
+      </app-image-display>
+    </div>
+
+    <div *ngFor="let item of stockUuidToNotesMap.get(stockUuid)">
+      <div class="news-display">
+        <app-note-container [note]="item"></app-note-container>
+      </div>
+    </div>
+  </app-card>
 </div>
 
 <!-- <button type="button" mat-button disabled>

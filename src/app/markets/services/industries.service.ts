@@ -4,8 +4,8 @@ import { calculateIncreasePercentage } from 'src/app/shared/functions/math.funct
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { Industry } from 'src/app/stock/models/industry.model';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
-import { StockServices } from 'src/app/stock/services/objective-data.service';
 import { StockData } from 'src/app/stock/services/stock-data.model';
+import { StockServices } from 'src/app/stock/services/stock.service';
 import { allMarkets } from '../data/all-markets.const';
 
 @Injectable({

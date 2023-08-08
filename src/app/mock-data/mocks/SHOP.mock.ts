@@ -40,6 +40,7 @@ export const shop: StockAnalysis = {
   secFilings:
     'https://investors.shopify.com/financial-reports/default.aspx#sec',
 
+  logoLink: 'https://i.ibb.co/X2786r1/vn6-Edh-Rg-400x400.jpg',
   // Demand
 
   // Earnings Report:

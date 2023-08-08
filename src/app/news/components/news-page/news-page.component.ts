@@ -7,6 +7,7 @@ import { Note, NoteType } from 'src/app/shared/data/note.interface';
 import { Industry } from 'src/app/stock/models/industry.model';
 import { EventType } from 'src/app/stock/models/news.model';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
+import { StockServices } from 'src/app/stock/services/stock.service';
 import { environment } from 'src/environments/environment';
 import { NotesServices } from '../../services/notes.services';
 
@@ -29,10 +30,14 @@ export class NewsPageComponent implements OnInit {
   showTools: boolean = false;
   stocks: StockAnalysis[];
 
+  stockUuidToNotesMap = new Map<string, Note[]>();
+  stockUuidToStockMap = new Map<string, any>();
+
   constructor(
     private newsService: NotesServices,
     private dialogService: MatDialog,
-    private userServices: UserServices
+    private userServices: UserServices,
+    private stockServices: StockServices
   ) {
     this.notes = newsService.getAllNews();
     this.filteredNotes = this.filteredNotesByTypes(
@@ -42,6 +47,22 @@ export class NewsPageComponent implements OnInit {
     // this.userServices
     //   .getSavedNotes()
     //   .map((uuid) => this.savedNoteUuids.add(uuid));
+
+    for (let note of this.filteredNotes) {
+      if (note.targets) {
+        const stockUuid = note.targets[0];
+
+        if (!this.stockUuidToStockMap.has(stockUuid)) {
+          this.stockUuidToStockMap.set(
+            stockUuid,
+            this.stockServices.getStockByUuid(stockUuid)
+          );
+          this.stockUuidToNotesMap.set(stockUuid, []);
+        }
+
+        this.stockUuidToNotesMap.get(stockUuid).push(note);
+      }
+    }
   }
 
   ngOnInit(): void {}

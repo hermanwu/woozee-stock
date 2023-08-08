@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { TopicServices } from 'src/app/industries/services/topic.services';
 import { OrganizationServices } from 'src/app/organizations/services/organization.services';
 import { PeopleServices } from 'src/app/people/services/people.services';
-import { StockServices } from 'src/app/stock/services/objective-data.service';
+import { StockServices } from 'src/app/stock/services/stock.service';
 import { Tag, TagType } from '../data/tag.model';
 
 const tags = {

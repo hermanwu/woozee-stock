@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { Tag } from '../shared/data/tag.model';
 import { NavigationServices } from '../shared/services/navgiation.services';
 import { TagServices } from '../shared/services/tag.services';
@@ -28,9 +27,9 @@ export class TagDisplayComponent implements OnInit {
   }
 
   navigate(tag: Tag) {
-    if (environment.production) {
-      return;
-    }
+    // if (environment.production) {
+    //   return;
+    // }
 
     this.navigationServices.navigate(tag.type, tag.uuid);
   }

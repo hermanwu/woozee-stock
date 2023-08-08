@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { DisplayType } from 'src/app/shared/components/stats-display/stats-display.interface';
 import { EarningsReport } from '../../models/earnings.model';
-import { StockServices } from '../../services/objective-data.service';
+import { StockServices } from '../../services/stock.service';
 import { StockMetric } from './stock-metric.enum';
 
 @Component({

@@ -31,7 +31,6 @@ export class AppContainerComponent implements OnInit {
   ngOnInit(): void {
     this.authService.getLoggedInDisplayName().subscribe((name) => {
       this.username = name;
-      console.log(localStorage.getItem('showDisclaimer'));
       if (!name && localStorage.getItem('showDisclaimer') !== 'false') {
         const dialogRef = this.dialog.open(LandingComponent, {
           width: '500px',

@@ -54,9 +54,11 @@ export const afrmCatalysts: Catalyst[] = [
 
 export const afrm: StockAnalysis = {
   marketCap: 5.56 * BILLION,
-
+  logoLink: 'https://i.ibb.co/FV2Rww2/AFRM.png',
+  largeLogoLink: 'https://i.ibb.co/6XjkHf6/AFRM-BIG.png',
   riskUuids: afrmRisks.map((r) => r.uuid),
   catalystUuids: afrmCatalysts.map((i) => i.uuid),
+  displayName: 'Affirm',
 
   logo: '',
   name: 'Affirm',

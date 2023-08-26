@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { LandingComponent } from 'src/app/landing/landing.component';
+import { AddNoteFormComponent } from 'src/app/notes/components/add-note-form/add-note-form.component';
 import { environment } from 'src/environments/environment';
 import { AuthService } from '../../services/auth.services';
 
@@ -63,5 +64,14 @@ export class AppContainerComponent implements OnInit {
   agreeAndClose(): void {
     this.showDisclaimer = 'false';
     localStorage.setItem('showDisclaimer', 'false');
+  }
+
+  addNote() {
+    this.dialog.open<AddNoteFormComponent>(AddNoteFormComponent, {
+      maxHeight: '90vh', //you can adjust the value as per your view
+      data: {},
+      panelClass: 'medium-modal-panel',
+      disableClose: true,
+    });
   }
 }

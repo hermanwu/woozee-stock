@@ -31,33 +31,25 @@
   flex: 0 0 80px; /* Set the width of the fixed-width item to 200px */
 }
 
-.float-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #f371f3;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .logo-image {
   // center image in the div
   // add margin top and bottom with 10px
 
   // set image height to 150px
-  height: 200px;
   display: flex;
+  max-height: 200px;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .card {
   margin-bottom: 10px;
+}
+
+img {
+  max-height: 100%;       /* Ensures the image doesn't exceed the container's height */
+  max-width: 100%;        /* Ensures the image doesn't exceed the container's width */
+  object-fit: contain;    /* Optional: Adjusts how the content fits its container while keeping aspect ratio */
 }

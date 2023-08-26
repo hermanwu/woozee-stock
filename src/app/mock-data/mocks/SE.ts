@@ -8,6 +8,8 @@ export const se: StockAnalysis = {
   description: [],
   ticker: 'se',
   irAddress: 'https://www.sea.com/investor',
+  displayName: 'Sea Limited',
+  logoLink: 'https://i.ibb.co/tmwKCM6/c61-TLz-Y-400x400.jpg',
 
   // Earnings Report:
   earningsReports: [

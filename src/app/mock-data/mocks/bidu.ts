@@ -5,7 +5,9 @@ export const bidu: StockAnalysis = {
   logo: '',
   name: { English: 'Baidu' },
   description: [],
+  displayName: 'Baidu',
   ticker: 'BIDU',
+  logoLink: 'https://i.ibb.co/Hg8DmXv/v-Z2n-Wy8-M-400x400.jpg',
 
   // Earnings Report:
   earnings: {

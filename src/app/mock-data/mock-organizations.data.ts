@@ -294,4 +294,9 @@ export const organizations: Organization[] = [
     displayName: 'Eli Lilly',
     logoLink: 'https://i.ibb.co/z8xRgVX/q2-Bx-TXTj-400x400.png',
   },
+  {
+    uuid: 'ttd',
+    displayName: 'The Trade Desk',
+    logoLink: 'https://i.ibb.co/N2HZGG9/i-Z5-He-FNX-400x400.jpg',
+  },
 ];

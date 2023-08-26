@@ -4,7 +4,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const tgt: StockAnalysis = {
   marketCap: 102.02 * BILLION,
-  logo: '',
+  logoLink: 'https://i.ibb.co/m86tHRX/5k32-D4t-400x400.jpg',
   name: { English: 'TARGET CORPORATION' },
   description: [],
   ticker: 'TGT',

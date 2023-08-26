@@ -5,6 +5,8 @@ export const TTD: StockAnalysis = {
   name: { English: 'THE TRADE DESK, INC.' },
   description: [],
   ticker: 'TTD',
+  displayName: 'The Trade Desk',
+  logoLink: 'https://i.ibb.co/N2HZGG9/i-Z5-He-FNX-400x400.jpg',
 
   // Earnings Report:
   earnings: {

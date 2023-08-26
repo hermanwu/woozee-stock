@@ -13,6 +13,76 @@ import { Quote } from './quote.model';
 
 export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
   {
+    noteType: 'opinion',
+    content:
+      'Weak Moat.\n\n没有明显护城河，像苹果这样的大公司也可以通过Apple Pay轻松进入这个市场。\n\n',
+    tagUuids: [],
+    uuid: '79783991-d90b-44f2-8268-5af4efbbe264',
+    targets: ['afrm'],
+    createdDate: '2023-08-26T08:26:26.237Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Affirm 2023FQ4 Earnings Highlights:\n\n🔸 Revenue: $446M, +22% y/y, 8.1% of GMV\n🔸 Operating Loss: $244M, or 55% of revenue\n🔸 Gross Merchandise Volume: $5.5B, +25% y/y\n🔸 Delinquency Rate: -30bp y/y\n🔸 Merchant Count: 254K, +8% y/y\n🔸 Consumer Count: 16.5M, +18% y/y\n🔸 Transaction Per Consumer: 3.9, +30% y/y',
+    tagUuids: [],
+    uuid: '62453519-4d6e-43b6-a929-3705f90bb2d4',
+    targets: ['afrm'],
+    createdDate: '2023-08-25T15:29:16.670Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      '📢 Nvidia Announced FY2024Q2 Earnings:\n🔸 Revenue: $13.51B, +88% q/q, +101% y/y\n🔸 Data Center Revenue: $10.32B, +141% q/q, +171% y/y\n🔸 FY2024Q3 Revenue Outlook: $16B, +18.4% q/q\n🔸 Gaming Revenue: $2.49B, +11% q/q, +22% y/y\n🔸 Professional Visualization Revenue: $379M, -24% y/y\n🔸 Automotive Revenue: $253M, +15% y/y\n🔸 Net Income: $2.48B, or 18.4% of total revenue\n🔸 "Data Center compute revenue nearly tripled year-on-year"\n🔸 "Networking revenue almost doubled year-on-year"\n🔸 "China demand was within the historical range of 20% to 25% of our Data Center revenue."',
+    tagUuids: [],
+    uuid: 'a4a08ef6-1f00-42d8-9b82-44849b7551b5',
+    targets: ['nvda'],
+    createdDate: '2023-08-24T13:05:18.907Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      '📊 #Snowflake $SNOW \n📢 Announced Fiscal 2024Q2 Earnings\n\n🔸 Revenue: $674.0M, +36% y/y\n🔸 Product Revenue: $640.2M, +37% y/y\n🔸 TTM Revenue $1M+ Customers: 402, +62% y/y\n🔸 Forbes Global 2000 customers: 639, +17% y/y\n🔸 FY2024Q3 Revenue Outlook: $670M-$675M, +28.5%y/y\n🔸 Net revenue retention rate: +142%\n🔸 Remaining Performance Obligations: $3.5 billion, +30% y/y\n🔸 Operating Income: -$285.4M, or 42% of total revenue\n🔸 Net Income: -$227.3M, or 34% of total revenue\n',
+    tagUuids: [],
+    uuid: 'd5e9d221-d8b5-468d-bc9e-ba5a9defbcf4',
+    targets: ['snow'],
+    createdDate: '2023-08-23T22:47:10.678Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      '🛡️ Palo Alto Networks $PANW \n📢 Announced Fiscal 2023Q4 Earnings\n\n🔸 Revenue: $2.0B, +26% y/y\n🔸 Billings: $3.2B, +18% y/y\n🔸 Subscription: $1.45B, +26.5% y/y\n🔸 Remaining Performance Obligation: $10.6B, +30% y/y\n🔸 Next Quarter Revenue Outlook: $1.82B-$1.85B, +17% y/y\n🔸 Gross Profit: $1.45B, or 74% of total revenue\n🔸 Net Income: $227.7M, or 12% of total revenue',
+    tagUuids: [],
+    uuid: 'e2ef71d6-8652-4722-89f1-f7a3ebdeba10',
+    targets: ['panw'],
+    createdDate: '2023-08-18T23:26:33.270Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Bilibili announced 2023Q2 earnings:\n\n🔸 Revenue: $731.5M, +8% y/y\n🔸 Value-added Service Rev: $317.4M, +9% y/y\n🔸 Advertising Rev: $216.9M, +36% y/y\n🔸 Mobile Games Rev: $122.9M, -15% y/y\n🔸 IP derivatives (E-commerce) Rev: $74.3M, -10% y/y\n🔸 DAU: 96.5M, +15% y/y\n🔸 View Time: +22% y/y\n🔸 Net Loss: $213.5M, down from $277M loss a year ago',
+    tagUuids: [],
+    uuid: '06339452-bb6d-4fce-96f0-7f4f534bc540',
+    targets: ['bili'],
+    createdDate: '2023-08-18T05:21:13.522Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'BILL.com announced quarterly earnings\n\n🔸 Revenue: $296M, +48% y/y\n🔸 Subscription Revenue: $66.9M, +21% y/y\n🔸 Transaction Revenue: $192.6M, +38% y/y\n🔸 Revenue Outlook: $297M, +29% y/y\n🔸 Gross Profit: $243.4M, 82.2% of the total revenue\n🔸 Operating Loss: $41.4M, up from $83.4M a year ago\n🔸 Net Loss: $15.9M, up from $84.3M a year ago',
+    tagUuids: [],
+    uuid: 'eb80b1d3-955d-49f2-9944-fe1c5623d710',
+    targets: ['bill'],
+    createdDate: '2023-08-17T23:41:15.437Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
     noteType: 'action',
     content:
       'Lilly Reports Second-Quarter 2023 Financial Results\n\nRevenue: $8.3B, +28% y/y\nVolume: +29% y/y\nUS Rev: $5.53B, +41% y/y\nNew Products Rev: $1B\nGrowth Products Rev: $4.93B, +16% y/y\n\nGross Profit: $6.5B, +29% y/y\nEPS: $1.95, +86% y/y\nRaised 2023 EPS Guide\n\nCEO:\n"Lilly\'s financial results in Q2 were led by Mounjaro sales and a strong performance from Growth Products," \n"Exciting scientific breakthroughs, such as TRAILBLAZER-ALZ 2 in Alzheimer\'s disease and SURMOUNT-3 and -4 in obesity, encourage us to continue to make significant investments that support our new medicines including multiple launches expected by the end of 2023 to help more patients around the world."',
@@ -1714,13 +1784,6 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     targets: ['msft'],
     title: 'will hold its three-day developers conference on Tuesday, May 23.',
     name: 'products',
-    uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
-  },
-  {
-    noteType: 'action',
-    targets: ['low', 'intu', 'azo', 'panw', 'wsm', 'dks'],
-    title: 'will release earnings on Tuesday, May 23',
-    name: 'earnings',
     uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
   },
   {

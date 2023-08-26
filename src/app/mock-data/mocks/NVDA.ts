@@ -9,6 +9,7 @@ export const nvda: StockAnalysis = {
   displayName: 'Nvidia',
   marketCap: 461 * BILLION,
   logoLink: 'https://i.ibb.co/K7kfDPB/U4lx-VYEw-400x400.png',
+  largeLogoLink: 'https://i.ibb.co/C8CgDmg/NVDA-BIG.png',
 
   // predications: [
   //   {

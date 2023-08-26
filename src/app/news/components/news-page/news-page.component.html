@@ -44,13 +44,26 @@
 
 <div *ngIf="showTools"></div>
 
-<div class="news-card" *ngFor="let stockUuid of stockUuidToStockMap.keys()">
+<div
+  class="news-card"
+  [style.backgroundColor]="bgColor"
+  *ngFor="let stockUuid of stockUuidToStockMap.keys()"
+>
   <app-card>
     <div class="logo-image">
-      <app-image-display
-        [imageLink]="stockUuidToStockMap.get(stockUuid)?.logoLink"
-      >
-      </app-image-display>
+      <!-- <app-image-display
+          [imageLink]="
+            stockUuidToStockMap.get(stockUuid)?.largeLogoLink ||
+            stockUuidToStockMap.get(stockUuid)?.logoLink
+          "
+        >
+        </app-image-display> -->
+      <img
+        [src]="
+          stockUuidToStockMap.get(stockUuid)?.largeLogoLink ||
+          stockUuidToStockMap.get(stockUuid)?.logoLink
+        "
+      />
     </div>
 
     <div *ngFor="let item of stockUuidToNotesMap.get(stockUuid)">
@@ -65,12 +78,3 @@
     Load More
     <mat-icon>more_horiz</mat-icon>
   </button> -->
-
-<button
-  mat-icon-button
-  class="float-button"
-  (click)="addNote()"
-  [disabled]="environment.production"
->
-  <mat-icon>edit_square</mat-icon>
-</button>

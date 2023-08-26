@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { DailyMediumReportDisplayDialogComponent } from 'src/app/news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
-import { AddNoteFormComponent } from 'src/app/notes/components/add-note-form/add-note-form.component';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
 import { Industry } from 'src/app/stock/models/industry.model';
 import { EventType } from 'src/app/stock/models/news.model';
@@ -19,7 +18,6 @@ import { NotesServices } from '../../services/notes.services';
 export class NewsPageComponent implements OnInit {
   readonly NoteType = NoteType;
   readonly eventType = EventType;
-
   chips = new Set();
   environment = environment;
   markets: Industry[];
@@ -106,13 +104,4 @@ export class NewsPageComponent implements OnInit {
       )
       .slice(0, 40);
   };
-
-  addNote() {
-    this.dialogService.open<AddNoteFormComponent>(AddNoteFormComponent, {
-      maxHeight: '90vh', //you can adjust the value as per your view
-      data: {},
-      panelClass: 'medium-modal-panel',
-      disableClose: true,
-    });
-  }
 }

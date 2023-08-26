@@ -1,11 +1,5 @@
-<app-card *ngFor="let stockSentiment of sentiments">
+<app-card *ngFor="let stockSentiment of sentiments" class="card">
   <div>
-    <div class="logo-image">
-      <app-image-display
-        [imageLink]="stockUuidToStockMap.get(stockSentiment[0])?.logoLink"
-      ></app-image-display>
-    </div>
-
     <div class="container">
       <div class="left">
         {{ stockUuidToStockMap.get(stockSentiment[0])?.displayName }}

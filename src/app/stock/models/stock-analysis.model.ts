@@ -17,6 +17,7 @@ export interface Product {
 export interface StockAnalysis {
   uuid?: string;
   logoLink?: string;
+  largeLogoLink?: string;
   logo?: string;
   name?: any;
   displayName?: string;

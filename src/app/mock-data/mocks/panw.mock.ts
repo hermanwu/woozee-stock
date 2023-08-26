@@ -4,9 +4,9 @@ import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const panw: StockAnalysis = {
-  logo: '',
   name: 'Palo Alto Networks',
   displayName: 'Palo Alto Networks',
+  logoLink: 'https://i.postimg.cc/1RfTL6gS/ox-Bhl9i9-400x400.jpg',
 
   description: [],
   ticker: 'PANW',

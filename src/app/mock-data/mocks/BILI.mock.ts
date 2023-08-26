@@ -30,8 +30,9 @@ export const biliRisks = [
 
 export const bili: StockAnalysis = {
   marketCap: 11 * BILLION,
-  logo: 'https://lh3.googleusercontent.com/pw/ACtC-3e9AoltCnmSTNXb44UMaPYhVOVfeVGD0_rM7wOvceClSFwu_b3_NPLwMXGxITQwqZ1gPu-GMU-T9fhIWYRiqMmicuQTHiJpTZgar7N1AyxoaIhv0nsyFZBe959Es1OgCMoM44TRT9v1vFblgZ-TEyEPA=w870-h412-no?authuser=3',
+  logoLink: 'https://i.ibb.co/LSzQ20z/lh-B6z-WTX-400x400.jpg',
   name: 'Bilibili',
+  displayName: 'Bilibili',
   ticker: 'bili',
   irAddress: 'https://ir.bilibili.com/',
   secFilings: 'https://ir.bilibili.com/financial-information/sec-filings',

@@ -31,7 +31,7 @@ export const snow: StockAnalysis = {
   },
   uuid: 'snow',
   logoLink: 'https://i.ibb.co/jJ4wn7f/42ab-Mq-B6-400x400.jpg',
-
+  largeLogoLink: 'https://i.ibb.co/y45BwVJ/SNOW-BIG.png',
   earningsReports: [
     {
       year: 2022,

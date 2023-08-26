@@ -30,13 +30,6 @@ export const mockEmotions: Emotion[] = [
     bullish: 1,
   },
   {
-    uuid: '3',
-    userUuid: 'hwu1106@gmail.com',
-    noteUuid: 'f3314d82-b904-40a8-9fb3-c245d9edfbb5',
-    saved: true,
-    bullish: 1,
-  },
-  {
     uuid: '4',
     userUuid: 'hwu1106@gmail.com',
     noteUuid: '700e6257-0182-449f-a567-9ad44f4d7761',
@@ -66,8 +59,7 @@ export class EmotionServices {
 
     for (let note of notes) {
       if (note.emotion) {
-        result.score +=
-          (note.emotion.bullish || 0) * (note.emotion.saved ? 2 : 1);
+        result.score += note.emotion.bullish || 0;
       }
     }
 

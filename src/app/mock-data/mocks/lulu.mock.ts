@@ -8,6 +8,7 @@ export const lulu: StockAnalysis = {
   displayName: 'Lululemon',
   logoLink: 'https://i.ibb.co/hgdjS2g/download-4.png',
   irAddress: 'https://corporate.lululemon.com/investors',
+  largeLogoLink: 'https://i.ibb.co/6yZ4bR5/LULU-BIG.png',
   earningsReports: [
     {
       year: 2022,

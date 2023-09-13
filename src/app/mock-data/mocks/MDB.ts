@@ -5,7 +5,8 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const mdb: StockAnalysis = {
   marketCap: 13.5 * BILLION,
-  logo: '',
+  logoLink: 'https://i.ibb.co/wNXPXtV/MDB.png',
+  largeLogoLink: 'https://i.ibb.co/C74QS0y/MDB-BIG.png',
   name: 'Mongodb Inc',
   description: [],
   ticker: 'mdb',

@@ -5,7 +5,8 @@ import { OpinionEnum } from '../../stock/models/opinion-type.model';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const zs: StockAnalysis = {
-  logo: '',
+  logoLink: 'https://i.ibb.co/4Z7wr0f/ZS.png',
+  largeLogoLink: 'https://i.ibb.co/vVSzkFr/ZS-BIG.png',
   name: 'Zscaler',
   displayName: 'Zscaler',
   description: [],

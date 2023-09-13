@@ -7,6 +7,7 @@ export const orcl: StockAnalysis = {
   ticker: 'ORCL',
   displayName: 'Oracle',
   logoLink: 'https://i.ibb.co/YDHyyPw/z11b-Dhy-400x400.jpg',
+  largeLogoLink: 'https://i.ibb.co/xm4zSz9/ORCL-BIG.png',
 
   // Earnings Report:
   earnings: {

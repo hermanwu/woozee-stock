@@ -197,7 +197,8 @@ export const organizations: Organization[] = [
   {
     uuid: 'c3ai',
     displayName: 'C3.ai',
-    logoLink: '',
+    largeLogoLink: 'https://i.ibb.co/kXkhTBr/AI-BIG.png',
+    logoLink: 'https://i.ibb.co/DpYtVyr/AI.png',
   },
   {
     uuid: 'nflx',
@@ -298,5 +299,23 @@ export const organizations: Organization[] = [
     uuid: 'ttd',
     displayName: 'The Trade Desk',
     logoLink: 'https://i.ibb.co/N2HZGG9/i-Z5-He-FNX-400x400.jpg',
+  },
+  {
+    uuid: 'asna',
+    displayName: 'Asana',
+    logoLink: 'https://i.ibb.co/qNZ3qvH/ASAN.png',
+    largeLogoLink: 'https://i.ibb.co/0G4HbbP/ASAN-BIG.png',
+  },
+  {
+    uuid: 'gtlb',
+    displayName: 'GitLab',
+    logoLink: 'https://i.ibb.co/ZLYjVFY/GTLB.png',
+    largeLogoLink: 'https://i.ibb.co/8sQrshH/GTLB-BIG.png',
+  },
+  {
+    uuid: 'path',
+    displayName: 'UiPath',
+    largeLogoLink: 'https://i.ibb.co/JsHkFsJ/PATH-BIG.png',
+    logoLink: 'https://i.ibb.co/8dbhv4r/PATH.png',
   },
 ];

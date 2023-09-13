@@ -3,7 +3,6 @@ import { abnb } from './abnb';
 import { adbe } from './adbe';
 import { ADSK } from './ADSK';
 import { afrm } from './afrm';
-import { ai } from './AI';
 import { amc } from './amc';
 import { amd } from './amd';
 import { amzn } from './amzn.mock';
@@ -42,7 +41,6 @@ import { fvrr } from './fvrr';
 import { gme } from './gme';
 import { googl } from './googl.mock';
 import { gs } from './gs';
-import { gtlb } from './gtlb.mock';
 import { HD } from './HD';
 import { hood } from './hood';
 import { huya } from './huya';
@@ -85,7 +83,6 @@ import { open } from './open';
 import { orcl } from './orcl';
 import { oxy } from './oxy';
 import { panw } from './panw.mock';
-import { path } from './PATH';
 import { pdd } from './pdd.mock';
 import { PENN } from './PENN';
 import { pins } from './PINs';
@@ -275,7 +272,6 @@ export const stocksMap = {
   zs,
   ftnt,
   dbx,
-  path,
   mttr,
   oxy,
   twlo,
@@ -287,11 +283,9 @@ export const stocksMap = {
   panw,
   mrvl,
   chwy,
-  ai,
   s,
   lulu,
   pstg,
-  gtlb,
   li,
   cxm,
   ual,

@@ -4,6 +4,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const xpev: StockAnalysis = {
   logoLink: 'https://i.ibb.co/mtkLgbD/download-5.png',
+  largeLogoLink: 'https://i.ibb.co/SV7f7Yj/XPEV-BIG.png',
   name: 'XPENG INC.',
   description: [],
   ticker: 'XPEV',

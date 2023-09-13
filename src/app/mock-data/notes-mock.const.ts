@@ -13,10 +13,160 @@ import { Quote } from './quote.model';
 
 export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
   {
+    noteType: 'action',
+    content:
+      'Quarterly Financial Results on 9/11/23\n🏦 Revenue: $12.5B, +9% y/y\n💸 Net Income: $2.42B, 19% of total revenue\n🔸 Next Quarter Outlook: +5%-7% y/y\n🔸 Cloud Revenue: $4.6B, +30% y/y\n🔸 Cloud Infrastructure Revenue: $1.5B, +66% y/y\n🔸 CEO: "Oracle Cloud Infrastructure revenue grew 66% in Q1, much faster than our hyperscale cloud infrastructure competitors,"\n🔸 Larry Ellison: "Self-driving cars, molecular drug design, voice user interfaces - billions of dollars are being invested in AI. ", "The largest AI technology companies and the leading AI startups continue to expand their business with Oracle for one simple reason - Oracle\'s RDMA interconnected NVIDIA Superclusters train AI models at twice the speed and less than half the cost of other clouds."',
+    tagUuids: [],
+    uuid: 'f7ef9336-986e-4a6b-ab6c-d8548318c357',
+    targets: ['orcl'],
+    createdDate: '2023-09-12T18:59:24.994Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'UiPath Announced Financial Results on 9/6/23\n🏦 Revenue: $287M, +19% y/y\n💸 Net Loss: $60.3M, or 21% of total revenue\n🔸 Next Quarter Rev Outlook: $313M–318M, +20% y/y\n🔸 Remaining Performance Obligation: $905M, +28% y/y\n🔸 Subscription Revenue: $160M, +28% y/y\n🔸 Net Retention Rate: 121%\n🔸 ARR: $1.308B, +25% y/y\n🔸 Cloud ARR: $500M+, +125% y/y\n🔸 Customers with $1M ARR: 254, +33.7% y/y\n🔸 Announced $500 Stock Repurchase Program',
+    tagUuids: [],
+    uuid: '730c8ffd-274b-44a3-9798-07cb553736ae',
+    targets: ['path'],
+    createdDate: '2023-09-07T16:55:12.940Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'C3.ai Announced Financial Results on Sep 6, 2023\n🏦 Revenue: $72.4M, +11% y/y\n💸 Net Loss: $64.4M, or 89% of total revenue\n🔸 Next Quarter Rev Outlook: $72–76.5M, +15–23% y/y\n🔸 Gross Profit: $40.5M, or 85% of total revenue\n🔸 Free Cash Flow: -$8.9M\n🔸 Remaining Performance Obligation: $334.6M\n🔸 New/Expanded Agreements: NEOM, Nucor, Roche, Riverside County, California; Pantaleon, Ball, Cargill, Con Edison, Shell, Tyson Foods, and the U.S. Department of Defense.',
+    tagUuids: [],
+    uuid: '96d56d6f-faf7-453d-9b25-072b3a20fbca',
+    targets: ['c3ai'],
+    createdDate: '2023-09-06T22:35:53.399Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'GitLab Announced Financial Results on Sep 5, 2023\n🏦 Revenue: $139.6M, +38% y/y\n💸 Net Loss: $50.1M, or 35.8% of total revenue\n🔸 Next Quarter Rev Outlook: $140M–141M, +24% y/y\n🔸 Customer with $5K+ ARR: 7,815, +33% y/y\n🔸 Customer with $100K+ ARR: 810, +37% y/y\n🔸 Net Retention Rate: 124%',
+    tagUuids: [],
+    uuid: '9fed5a95-a544-4538-94ba-4da0cde97be6',
+    targets: ['gtlb'],
+    createdDate: '2023-09-06T18:46:22.655Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Zscaler Announced Financial Results on Sep 5, 2023\n🏦 Revenue: $455M, +43% y/y\n💸 Net Loss: $30.7M, or 6.7% of total revenue\n🔸 Next Quarter Rev Outlook: $472M–474M, +33% y/y\n🔸 Billings: $719.3M, +43% y/y\n🔸 Deferred Revenue: $1.44B, +41% y/y\n🔸 CEO: "We concluded our fiscal year with strong top line growth and record operating profits. In less than two years, we doubled our annual recurring revenue, surpassing the $2 billion milestone. With cyber security as a high priority, IT executives are modernizing their legacy network security with our zero-trust architecture"',
+    tagUuids: [],
+    uuid: '687d18f2-523f-49fc-a78a-e991fb26f625',
+    targets: ['zs'],
+    createdDate: '2023-09-05T22:51:51.141Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Asana, a leading work management platform founded by Facebook\'s co-founder Dustin Moskovitz.\n📢 Announced FY2024Q2 Financial Results\n🏦 Revenue: $162.5M, +20% y/y\n💸 Net Loss: $71.4M, or 44% of total revenue\n🔸 Next Quarter Rev Outlook: $164M, +16% y/y\n🔸 Free Cash Flow: $14.6, up from -$42.3M a year ago.\n🔸 Revenues from clients with $5K+ yearly : +24% y/y\n🔸 Clients with $5K+ annual spending: +15% y/y\n🔸 Net Retention Rate: 105%\n🔸 Net Retention Rate of clients with $5K+ yearly: 110%\n🔸 Net Retention Rate of clients with $100K+ yearly: 125%\n🔸 CEO: "Asana\'s Q2 results beat expectations on the top and bottom line. Revenue growth was better than our guidance, operating margin improved 37 percentage points, and we posted positive free cash flow"',
+    tagUuids: [],
+    uuid: '70863de1-8be1-4e0c-9f3c-01985e1e4642',
+    targets: ['asna'],
+    createdDate: '2023-09-05T21:48:16.208Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Broadcom, a global technology leader that designs, develops and supplies semiconductor and infrastructure software solutions\n📢 Announced FY2023Q3 Financial Results\n🏦 Revenue: $8.876B, +5% y/y\n💸 Net Income: $3.303B, or 37.2% of total revenue\n🔸 Next Quarter Rev Outlook: $9.27B, +4% y/y\n🔸 Dividend: $4.60 per share\n🔸 Shares Repurchased: $2.167B\n🔸 CEO: \'Results were driven by demand for next generation networking technologies as hyperscale customers scale out and network their AI clusters within data centers"',
+    tagUuids: [],
+    uuid: '8e599a6c-5b5b-49d7-9512-8fee12e70a23',
+    targets: ['avgo'],
+    createdDate: '2023-08-31T22:39:59.310Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'MongoDB \n📢 Announced FY2024Q2 Financial Results\n🏦 Revenue: $423.8M, +40% y/y\n💸 Net Loss: $37.6M, or 8.9% of total revenue\n🔸 Next Quarter Revenue Outlook: $400–404M, +20.5% y/y\n🔸 Subscription Revenue: $409.3M, +40% y/y\n🔸 Service Revenue: $14.5M, +20% y/y\n🔸 Gross Profit: $318.5M, or 75% of total revenue\n🔸 "We are at the early stages of AI powering the next wave of application development. We believe MongoDB provides developers a unified platform that supports both the foundational requirements necessary for any application and the exceptionally demanding needs of AI-specific applications, making our competitive advantage even stronger in the world of AI."',
+    tagUuids: [],
+    uuid: 'e88c6f13-8faf-47d5-8901-94bb0f605a1d',
+    targets: ['MDB'],
+    createdDate: '2023-08-31T21:58:53.408Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Lululemon Athletica\n📢 Announced 2023Q2 Financial Results\n🏦 Revenue: $2.2B, +18% y/y\n💸 Net Income: $341.6M, or 15.5% of total revenue\n🔸 Next Quarter Rev Outlook: $2.165B-$2.19B, +17.5%\n🔸 Comparable Sales: +11% y/y\n🔸 North America Revenue: +11% y/y\n🔸 International Revenue: +52% y/y\n🔸 Gross Profit: $1.3B, +23% y/y, or 58.8% of total revenue',
+    tagUuids: [],
+    uuid: '318bf08e-2aef-435a-b473-058c53ffb9fe',
+    targets: ['Lulu'],
+    createdDate: '2023-08-31T20:56:17.983Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Okta, the leading independent identity partner\n📢 Announced FY2024Q2 Financial Results\n🏦 Revenue: $556M, +23% y/y\n💸 Net Loss: $111M, or 20% of total revenue\n🔸 Subscription: $542M, +24% y/y\n🔸 Subscription Backlog: $3.03B, +8% y/y\n🔸 Next Quarter Rev Outlook: $558M-560M, +16% y/y\n🔸 Customer Count: 18,400, +12% y/y\n🔸 TTM Dollar Based Net Retention: 115%',
+    tagUuids: [],
+    uuid: '2267f775-c865-4587-ac4d-69831d11b32b',
+    targets: ['okta'],
+    createdDate: '2023-08-30T23:29:08.011Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Crowdstrike Announced FY2024Q2 Financial Results\n🏦 Revenue: $731.6B, +37% y/y\n💸 Net Income: $8.5M, or 1% of total revenue\n🔸 Subscription: $690M, +36% y/y\n🔸 Annual Recurring Revenue: $2.93B, +37% y/y\n🔸 Next Quarter Rev Outlook: $775.4M-778M, +33.7% y/y\n🔸 Module adoption rates increased to 63%, 41%, and 24% for 5+, 6+ and 7+ modules, +1% q/q for each category.',
+    tagUuids: [],
+    uuid: '0d65f16d-eb00-4bf0-971d-e0648721ad4d',
+    targets: ['crwd'],
+    createdDate: '2023-08-30T22:10:27.282Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      '📢 Salesforce Announced FY2024Q2 Financial Results\n🏦 Revenue: $8.6B, +11% y/y\n💸 Net Income: $1.27B, or 14.7% of total revenue\n🔸 Remaining Performance Obligation: $24.1B, +12 % y/y\n🔸 Share Repurchases: $1.9B\n🔸 Next Quarter Rev Outlook: $34.7B-$34.8B, +11% y/y\n🔸 Raised FY24 Revenue, Margin, Cash Flow Guidance',
+    tagUuids: [],
+    uuid: '85239a32-19ec-4e50-b320-2cca5fd96df6',
+    targets: ['crm'],
+    createdDate: '2023-08-30T21:07:51.689Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'NIO Announced 2023Q2 Financial Results:\n🏷️ Revenue: $1.21B, -14.8 y/y, -17.8% q/q\n💰 Net Loss: $835.1M, +119.6% y/y, +27.8% q/q\n🔸 Vehicle Sales: $991M, -24.9% y/y, -22.1% q/q\n🔸 Gross Profit: $12M, or 1% of total revenue\n🔸 Vehicle Margin: 6.2%, down from 16.7% a year ago\n🔸 Cash / Cash Equivalents: $4.3B\n🔸 NIO delivered 20,462 vehicles in July 2023, representing an increase of 103.6% year-over-year.',
+    tagUuids: [],
+    uuid: '4d936e44-e17f-483e-a2c5-f942547af5c3',
+    targets: ['nio'],
+    createdDate: '2023-08-29T20:56:47.775Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      'Pinduoduo Announced 2023Q2 Financial Results:\n🔸 Revenue: $7.21B, +66% y/y\n🔸 Net Income: $1.81B, or 25% of total revenue\n🔸 Online Marketing Services Rev: $5.23B, +50% y/y\n🔸 Transaction Services Rev: $1.98B, +131% y/y\n🔸 Gross Profit: $4.62B, or 64.2% of total revenue\n🔸 Operating Profit: $1.75B, or 24.3% of total revenue\n🔸 CEO: "Over the recent quarter, we saw a positive shift in consumer sentiment, leading to a rise in demand across various product sectors"',
+    tagUuids: [],
+    uuid: 'b0d66350-a0cd-44f6-9b6b-236f13703b29',
+    targets: ['pdd'],
+    createdDate: '2023-08-29T13:33:19.051Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      '🔸 XPeng announced a strategic partnership with Didi today.\n\n🔸 XPeng will launch a new brand A-class smart EV, to expand in the mass market segment of the RMB150,000 price range.\n\n🔸 DiDi will provide support from its mobility ecosystem with access to its nationwide shared mobility market.\n\n🔸 XPeng will issue Class A ordinary shares, representing approximately 3.25% of the Company’s outstanding shares, to acquire assets related to DiDi’s Smart EV project. DiDi will thereby become a strategic shareholder of the Company, with a lock-up period of 24 months after the initial closing.',
+    tagUuids: [],
+    uuid: 'e550cd7a-8c3e-460d-bfc0-35c143a266e2',
+    targets: ['xpev'],
+    createdDate: '2023-08-29T01:09:53.387Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
     noteType: 'opinion',
     content:
       'Weak Moat.\n\n没有明显护城河，像苹果这样的大公司也可以通过Apple Pay轻松进入这个市场。\n\n',
-    tagUuids: [],
+    tagUuids: ['moat'],
     uuid: '79783991-d90b-44f2-8268-5af4efbbe264',
     targets: ['afrm'],
     createdDate: '2023-08-26T08:26:26.237Z',

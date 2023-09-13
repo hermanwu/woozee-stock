@@ -10,6 +10,8 @@ export const avgo: StockAnalysis = {
   ticker: 'avgo',
   irAddress: 'https://investors.broadcom.com/',
   marketCap: 200 * BILLION,
+  logoLink: 'https://i.ibb.co/8s1CB31/AVGO.png',
+  largeLogoLink: 'https://i.ibb.co/qg5CjJt/AVGO-BIG.png',
 
   // Earnings Report:
   earningsReports: [

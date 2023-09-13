@@ -35,6 +35,12 @@ export const mockEmotions: Emotion[] = [
     noteUuid: '700e6257-0182-449f-a567-9ad44f4d7761',
     bullish: 1,
   },
+  {
+    uuid: '5',
+    userUuid: 'hwu1106@gmail.com',
+    noteUuid: '79783991-d90b-44f2-8268-5af4efbbe264',
+    bearish: 1,
+  },
 ];
 
 @Injectable({
@@ -60,6 +66,7 @@ export class EmotionServices {
     for (let note of notes) {
       if (note.emotion) {
         result.score += note.emotion.bullish || 0;
+        result.score -= note.emotion.bearish || 0;
       }
     }
 

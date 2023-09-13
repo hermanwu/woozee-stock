@@ -1,7 +1,7 @@
 import { Quote } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { allMarkets } from 'src/app/markets/data/all-markets.const';
-import { allNotes } from 'src/app/mock-data/news.const';
+import { allNotes } from 'src/app/mock-data/notes-mock.const';
 import { catalysts } from 'src/app/notes/components/catalyst/data/catalyst.mock';
 import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { Stats } from 'src/app/shared/components/stats-display/stats-display.interface';

@@ -11,6 +11,7 @@ export const crmCatalysts = [];
 
 export const crm: StockAnalysis = {
   marketCap: 175 * BILLION,
+  logoLink: 'https://i.ibb.co/SvT0ptr/CRM.png',
   predications: [
     {
       start: new Date('2022-3-1'),

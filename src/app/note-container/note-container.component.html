@@ -7,6 +7,14 @@
       <ng-container *ngSwitchCase="'action'"> 🗓️ Events: </ng-container>
     </ng-container>
     <app-tag-display [tagUuid]="note?.targets?.[0]"></app-tag-display>
+    <ng-container *ngIf="note?.tagUuids?.length > 0">
+      |
+      <span *ngFor="let item of note.tagUuids" class="tag">
+        <a>
+          <app-tag-display [tagUuid]="item"></app-tag-display>
+        </a>
+      </span>
+    </ng-container>
   </div>
 
   <div>

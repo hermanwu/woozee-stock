@@ -18,6 +18,7 @@ export const nio: StockAnalysis = {
   ticker: 'NIO',
   irAddress: 'https://ir.nio.com/financials/quarterly-results',
   industries: [IndustryType.ev],
+  largeLogoLink: 'https://i.ibb.co/cwnXtjn/NIO-BIG.png',
 
   // Earnings Report:
   earningsReports: [

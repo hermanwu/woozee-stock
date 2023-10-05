@@ -9,6 +9,8 @@ export const pins: StockAnalysis = {
   description: [],
   ticker: 'pins',
   irAddress: 'https://investor.pinterestinc.com/investor-overview/default.aspx',
+  logoLink: 'https://i.ibb.co/MM85BZX/PINS.png',
+  largeLogoLink: 'https://i.ibb.co/DW2VKb5/PINS-BIG.png',
 
   // Earnings Report:
   earningsReports: [

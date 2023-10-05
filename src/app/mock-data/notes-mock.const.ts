@@ -15,6 +15,97 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
   {
     noteType: 'action',
     content:
+      '💰 Quarterly Financial Results on 9/28/23\n🔹 Revenue: $12.9B, +2% y/y\n🔹 Operating Expenses: $4.1B, +5% y/y\n🔹 Net Income: $1.45B, -1% y/y\n🔹 Demand Creation Expense: $1.1B, +13% y/y due to advertising and marketing\n🔹 Nike Direct Revenue: $5.4B, +6% y/y\n🔹 North America Revenue: $5.4B, -2% y/y\n🔹 Europe, Middle East & Africa Revenue: $3.61B, +8% y/y\n🔹 Greater China Revenue: 1.29B, +5% y/y\n🔹 Dividends: $524M, +9% y/y\n🔹 Share Repurchases: $1.1B',
+    tagUuids: [],
+    uuid: '8ae849e8-5a67-470c-a924-c4ecba64e7ba',
+    targets: ['NKE'],
+    createdDate: '2023-09-29T23:47:56.444Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      '📢 Financial Results on 9/27/23\n🌱 Revenue: $4.01B, -40% y/y, +7% q/q\n💸 Operating Expenses: $1.037B, -5.8% y/y\n💰 Net Loss: $1.43B, or 35.66% of total revenue\n🔮 Future Outlook: Next Quarter Revenue: $3.8B - $4.2B; Diluted Loss Per Share: $1.17 - $1.31\n🔸 Compute and Networking Unit Revenue: -14% q/q, -59% y/y\n🔸 Mobile Unit Revenue: +48% q/q, -20% y/y\n💡 CEO Sanjay Mehrotra: "Our 2023 performance positions us well as a market recovery takes shape in 2024, driven by increasing demand and disciplined supply. We look forward to record industry TAM revenue in 2025 as AI proliferates from the data center to the edge."',
+    tagUuids: [],
+    uuid: '131a1105-d1ee-4e9b-ae1b-ba866d3f05e1',
+    targets: ['mu'],
+    createdDate: '2023-09-27T23:13:51.516Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      "Costco released earnings that topped Wall Street's Expectations.\n📢 Financial Results on 9/26/23\n🌱 Revenue: $78.9B, +9.5% y/y with one extra week sales this quarter\n💸 Operating Expenses: $76.16B, +9.4% y/y\n💰 Net Income: $2.16B, or 2.7% of total revenue\n🔸 Membership Revenue: $6.9B, +15% y/y\n🔸 E-commerce Sales: -0.8% y/y\n🔸 Comparable Total Sales: +1.1% y/y\n🔸 Comparable U.S Sales: +0.2% y/y\n🔸 Comparable Canada Sales: +1.8% y/y\n🔸 Comparable International Sales: 5.5% y/y\n💡 CFO: Shoppers made more trips to the retailer's stores, even as they spent less. Sales of pricier items were weaker.",
+    tagUuids: [],
+    uuid: 'e5af0172-a0af-4567-ab06-024876c25ab5',
+    targets: ['cost'],
+    createdDate: '2023-09-26T22:47:45.158Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      "📢 Financial Results on 9/21/23\n🌱 Revenue: $2.7B, +11.6% y/y (Including acquired 77 Ruth's Chris Steak House)\n💸 Operating Expenses: $2.48B, +12.5% y/y\n💰 Net Income: $194.5M, or 7.12% of total revenue\n🔮 Future Outlook: Reiterated Financial Outlook for FY2024\n🔸 Marketing Expenses: $38.6M, +27.4% y/y\n🔸 Same Store Sales: +5% y/y\n🔸 Olive Garden Same Store Sales: +6.1% y/y\n🔸 LongHorn Steakhouse Same Store Sales: +8.1% y/y\n🔸 Repurchased Stock: $143M\n🔸 Dividends Paid: $159M",
+    tagUuids: [],
+    uuid: '93bfef7c-b89e-4dff-8b0f-aa4f46d38622',
+    targets: ['dri'],
+    createdDate: '2023-09-22T23:24:50.774Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      '📢 Latest Financial Results on 9/20/23\n🌱 Revenue: $1.59B, -14% y/y\n💸 Expenses: $1.4B, -8% y/y\n💰 Net Income: $149M, or 9.3% of total revenue\n🔮 Outlook: FY2023 Revenue of $6.31B, up from previous estimates of $5.80B-$6.20B\n🔸 Homes Delivered: 3375, -7% y/y\n🔸 Average Selling Price: $466K, -8% y/y\n🔸 Backlog Homes: 7008, -35% y/y\n🔸 Repurchased Shares: $82.5M',
+    tagUuids: [],
+    uuid: 'de9ea415-655b-4cb7-a1d0-34b3d6e3b4d0',
+    targets: ['kbh'],
+    createdDate: '2023-09-21T07:43:56.143Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      '📢 Latest Financial Results on 9/20/23\n🌱 Revenue: $21.7B, -7% y/y\n💸 Operating Expenses: $20.2, -8% y/y\n💰 Net Income: $1.08B, or 5% of total revenue\n🔮 Future Outlook: Revenue Flat for FY2024\n🔸 FedEx Ground Operating Income: +59% y/y\n🔸 "First quarter results improved primarily due to the execution of the company\'s DRIVE program initiatives and continued focus on revenue quality. The improvement in operating results was partially offset by ongoing demand weakness."',
+    tagUuids: [],
+    uuid: 'bd4c9c7f-953b-42af-9d49-2bacc28b6cc3',
+    targets: ['fdx'],
+    createdDate: '2023-09-21T07:41:25.421Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      '📢 Latest Financial Results on 7/27/23\n🌱 Revenue: $45B, +12% y/y\n💰 Operating Income: $2.46B, or 5.5% of total revenue\n🔸 Model e Revenue: $1.8B, +39% y/y\nFord Blue Revenue: $25B, +5% y/y\nFord Pro: $15.6B, +22% y/y \n, 💡 CEO: "The shift to powerful digital experiences and breakthrough EVs is underway and going to be volatile, so being able to guide customers through and adapt to the pace of adoption are big advantages for us,"',
+    tagUuids: [],
+    uuid: 'c34ee8b2-0090-4272-b7a6-5ad4997cf109',
+    targets: ['f'],
+    createdDate: '2023-09-19T14:34:50.950Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
+      '📢 Latest Financial Results on 9/14/23\n🌱 Revenue: $8.7B, -2.7% y/y\n💰 Operating Income: $1.47B, or 16.9% of total revenue\n🔮 Next Quarter Revenue Outlook: ~$9.9B, -6.6% y/y\n🔸 Deliveries: 18,559 homes, +8% y/y\n🔸 Average Sales Prices：$448,000, -8.8% y/y\n🔸 New Orders: 19,666 homes, +37% y/y\n🔸 New Orders Value: $8.6B, +30% y/y\n🔸 Gross Margin: 24.4%, down from 29.2% y/y\n🔸 Stock Buyback: $366M\n💡 CEO: "Short housing supply, absorbed by strong primary and pent-up demand, continued to define a strong sales environment. Homebuilders continued to use incentives, including buy-downs, to offset rising interest rates and tighter capital"',
+    tagUuids: [],
+    uuid: 'da560489-edd8-4d05-97cc-021763846b82',
+    targets: ['len'],
+    createdDate: '2023-09-16T04:29:12.112Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    uuid: '84af4e90-255a-4e52-8563-7b259aed20f1',
+    noteType: 'number',
+    creatorUuid: 'john.smith@example.com',
+    targets: ['nke'],
+    name: 'Revenue',
+    value: 12.8 * BILLION,
+    changeRate: 0.05,
+    timeFrame: TimeFrame.yoy,
+    createdDate: '2023-09-13T23:41:43.626Z',
+  },
+  {
+    noteType: 'action',
+    content:
       'Quarterly Financial Results on 9/11/23\n🏦 Revenue: $12.5B, +9% y/y\n💸 Net Income: $2.42B, 19% of total revenue\n🔸 Next Quarter Outlook: +5%-7% y/y\n🔸 Cloud Revenue: $4.6B, +30% y/y\n🔸 Cloud Infrastructure Revenue: $1.5B, +66% y/y\n🔸 CEO: "Oracle Cloud Infrastructure revenue grew 66% in Q1, much faster than our hyperscale cloud infrastructure competitors,"\n🔸 Larry Ellison: "Self-driving cars, molecular drug design, voice user interfaces - billions of dollars are being invested in AI. ", "The largest AI technology companies and the leading AI startups continue to expand their business with Oracle for one simple reason - Oracle\'s RDMA interconnected NVIDIA Superclusters train AI models at twice the speed and less than half the cost of other clouds."',
     tagUuids: [],
     uuid: 'f7ef9336-986e-4a6b-ab6c-d8548318c357',

@@ -22,7 +22,7 @@ export class NewsPageComponent implements OnInit {
   environment = environment;
   markets: Industry[];
   notes: Note[];
-  filteredNotes: Note[];
+  filteredNotes: Note[] = [];
   savedNoteUuids = new Set();
   showAddNotesSection = false;
   showTools: boolean = false;
@@ -36,8 +36,10 @@ export class NewsPageComponent implements OnInit {
     private dialogService: MatDialog,
     private userServices: UserServices,
     private stockServices: StockServices
-  ) {
-    this.notes = newsService.getAllNews();
+  ) {}
+
+  ngOnInit(): void {
+    this.notes = this.newsService.getAllNews();
     this.filteredNotes = this.filteredNotesByTypes(
       [NoteType.Opinion, NoteType.Fact, NoteType.Action, NoteType.Stats],
       [...this.notes]
@@ -62,8 +64,6 @@ export class NewsPageComponent implements OnInit {
       }
     }
   }
-
-  ngOnInit(): void {}
 
   openDailyReportDialog() {
     this.dialogService.open<DailyMediumReportDisplayDialogComponent>(

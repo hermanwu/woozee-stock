@@ -10,9 +10,11 @@ import {
 } from '@angular/material/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgChartsModule } from 'ng2-charts';
 import { environment } from 'src/environments/environment';
 import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
+import { AddNoteDialogComponent } from './add-note-dialog/add-note-dialog.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AssetListPageComponent } from './assets/components/asset-list-page/asset-list-page.component';
@@ -126,7 +128,7 @@ import { UiListComponent } from './ui/ui-list/ui-list.component';
 import { UiMoleculesComponent } from './ui/ui-molecules/ui-molecules.component';
 import { UiOrganismComponent } from './ui/ui-organism/ui-organism.component';
 import { UiTemplatesComponent } from './ui/ui-templates/ui-templates.component';
-import { AddNoteDialogComponent } from './add-note-dialog/add-note-dialog.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -243,6 +245,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     SignupComponent,
     LandingComponent,
     AddNoteDialogComponent,
+    BarChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -258,6 +261,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    NgChartsModule,
   ],
   providers: [
     { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig },

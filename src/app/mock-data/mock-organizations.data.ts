@@ -263,7 +263,8 @@ export const organizations: Organization[] = [
   {
     uuid: 'nke',
     displayName: 'Nike',
-    logoLink: '',
+    largeLogoLink: 'https://i.ibb.co/NNbW2D5/NKE.png',
+    logoLink: 'https://i.ibb.co/8BVTndT/Oo1-e1-N2-400x400.jpg',
   },
   {
     uuid: 'dfs',
@@ -317,5 +318,39 @@ export const organizations: Organization[] = [
     displayName: 'UiPath',
     largeLogoLink: 'https://i.ibb.co/JsHkFsJ/PATH-BIG.png',
     logoLink: 'https://i.ibb.co/8dbhv4r/PATH.png',
+  },
+  {
+    uuid: 'len',
+    displayName: 'Lennar',
+    logoLink: 'https://i.ibb.co/42xLnxX/LEN.png',
+    largeLogoLink: 'https://i.ibb.co/QYY5Zmq/LEN-BIG.png',
+  },
+  {
+    uuid: 'f',
+    displayName: 'Ford',
+    logoLink: 'https://i.ibb.co/kJyBRKb/Dt5-ZJBL6-400x400.png',
+    largeLogoLink: 'https://i.ibb.co/WxGJNBQ/F.png',
+  },
+  {
+    uuid: 'pins',
+    displayName: 'Pinterest',
+    logoLink: 'https://i.ibb.co/MM85BZX/PINS.png',
+    largeLogoLink: 'https://i.ibb.co/DW2VKb5/PINS-BIG.png',
+  },
+  {
+    uuid: 'kbh',
+    displayName: 'KB Home',
+    logoLink: 'https://i.ibb.co/n6HcLnf/9-Zx2pmys-400x400.jpg',
+  },
+  {
+    uuid: 'fdx',
+    displayName: 'FedEx',
+    logoLink: 'https://i.ibb.co/RgwbWB5/T76j415n-400x400.jpg',
+  },
+  {
+    uuid: 'dri',
+    displayName: 'Darden Restaurants',
+    logoLink: 'https://i.imgur.com/57h8buf.png',
+    largeLogoLink: 'https://i.imgur.com/MruHbxv.png',
   },
 ];

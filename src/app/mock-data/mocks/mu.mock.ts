@@ -4,8 +4,8 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const mu: StockAnalysis = {
   marketCap: 57.63 * BILLION,
-
-  logo: '',
+  logoLink: 'https://i.imgur.com/lrJpoxN.png',
+  largeLogoLink: 'https://i.imgur.com/6hcUA6y.png',
   name: 'Micron Technology, Inc.',
   description: [],
   ticker: 'mu',

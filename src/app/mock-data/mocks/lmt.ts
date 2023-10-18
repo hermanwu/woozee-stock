@@ -1,7 +1,9 @@
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const lmt: StockAnalysis = {
-  logo: '',
+  largeLogoLink: 'https://i.ibb.co/M6qDjzB/LMT-BIG.png',
+  logoLink: 'https://i.ibb.co/Cm27FWs/LMT.png',
+
   name: { English: 'LOCKHEED MARTIN CORPORATION' },
   description: [],
   ticker: 'LMT',

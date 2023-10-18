@@ -15,6 +15,16 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
   {
     noteType: 'action',
     content:
+      '💰 Financial Results on 10/17/23\n🔹 Revenue: $16.9B, +2% y/y\n🔹 Net Income: $1.68B, or 9.98% of total revenue\n🔹 Dividends and Share Repurchases: $2.5B\n🔹 Reaffirms 2023 financial outlook\n🔹 Aeronautics Segment Revenue: $6.7B, -5% y/y\n🔹 Missiles and Fire Control: $2.94B, +4% y/y\n🔹 Rotary and Mission Systems: $4.12B, +9% y/y\n🔹 Space Segment Revenue: $3.1B, +8% y/y\n🔹 CEO Jim Taiclet: "Our third quarter results were at or above our expectations across the board, generating $2.5 billion of free cash flow, with nearly 100% returned to shareholders through dividends and share repurchases."; "Our backlog remains robust at $156 billion as both domestic and international orders were strong."',
+    tagUuids: [],
+    uuid: 'd2ccfe52-8753-4b14-987d-8939baf1d68d',
+    targets: ['lmt'],
+    createdDate: '2023-10-17T23:54:26.274Z',
+    creatorUuid: 'hwu106@gmail.com',
+  },
+  {
+    noteType: 'action',
+    content:
       '💰 Quarterly Financial Results on 9/28/23\n🔹 Revenue: $12.9B, +2% y/y\n🔹 Operating Expenses: $4.1B, +5% y/y\n🔹 Net Income: $1.45B, -1% y/y\n🔹 Demand Creation Expense: $1.1B, +13% y/y due to advertising and marketing\n🔹 Nike Direct Revenue: $5.4B, +6% y/y\n🔹 North America Revenue: $5.4B, -2% y/y\n🔹 Europe, Middle East & Africa Revenue: $3.61B, +8% y/y\n🔹 Greater China Revenue: 1.29B, +5% y/y\n🔹 Dividends: $524M, +9% y/y\n🔹 Share Repurchases: $1.1B',
     tagUuids: [],
     uuid: '8ae849e8-5a67-470c-a924-c4ecba64e7ba',

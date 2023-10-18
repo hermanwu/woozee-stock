@@ -2,6 +2,11 @@ import { Organization } from '../people/components/investor-display/investor-dis
 
 export const organizations: Organization[] = [
   {
+    uuid: 'schw',
+    displayName: 'Charles Schwab',
+    logoLink: 'https://i.ibb.co/hgb2bmt/SCHW.png',
+  },
+  {
     uuid: 'sofi',
     displayName: 'SoFi',
     logoLink: 'https://i.ibb.co/Xsfmtz7/Lq-QG6o-Zd-400x400.jpg',

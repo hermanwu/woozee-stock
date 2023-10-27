@@ -1,17 +1,10 @@
 import { Opinion } from '../notes/components/opinion-display/opinion.interface';
 import { Fact } from '../risks/models/fact.model';
-import {
-  DisplayType,
-  Stats,
-  TimeFrame,
-  UnitType,
-} from '../shared/components/stats-display/stats-display.interface';
 import { convertDateToUTC } from '../shared/functions/getUtcDate.function';
-import { BILLION, MILLION } from '../shared/numbers/number.model';
 import { OpinionEnum } from '../stock/models/opinion-type.model';
 import { Quote } from './quote.model';
 
-export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
+export const allNotes: (Quote | Opinion | Fact)[] = [
   {
     noteType: 'action',
     content:
@@ -102,17 +95,7 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     createdDate: '2023-09-16T04:29:12.112Z',
     creatorUuid: 'hwu106@gmail.com',
   },
-  {
-    uuid: '84af4e90-255a-4e52-8563-7b259aed20f1',
-    noteType: 'number',
-    creatorUuid: 'john.smith@example.com',
-    targets: ['nke'],
-    name: 'Revenue',
-    value: 12.8 * BILLION,
-    changeRate: 0.05,
-    timeFrame: TimeFrame.yoy,
-    createdDate: '2023-09-13T23:41:43.626Z',
-  },
+
   {
     noteType: 'action',
     content:
@@ -1021,17 +1004,6 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     createdDate: '2023-06-30T21:17:38.670Z',
   },
   {
-    uuid: '84af4e90-255a-4e52-8563-7b259aed20f0',
-    noteType: 'number',
-    creatorUuid: 'john.smith@example.com',
-    targets: ['nke'],
-    name: 'Revenue',
-    value: 12.8 * BILLION,
-    changeRate: 0.05,
-    timeFrame: TimeFrame.yoy,
-    createdDate: '2023-06-29T23:41:43.626Z',
-  },
-  {
     content:
       'The number of electric vehicle (EV) charging ports in the U.S. is estimated to increase four times from current levels to 18M by 2027',
     tagUuids: [],
@@ -1069,15 +1041,7 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
       "Mortgage Bankers Association's deputy chief economist: 'New home sales have been driving purchase activity in recent months as buyers look for options beyond the existing-home market'",
     date: convertDateToUTC(new Date('2023-6-28')),
   },
-  {
-    noteType: 'number',
-    targets: ['mortgage'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
-    name: 'Mortgage Application',
-    changeRate: 0.03,
-    timeFrame: TimeFrame.weekOverWeek,
-    date: convertDateToUTC(new Date('2023-6-28')),
-  },
+
   {
     noteType: 'action',
     targets: ['u'],
@@ -1106,60 +1070,14 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
       'Barclays analyst Dan Levy downgraded Tesla stock to equal weight, down from overweight',
     authorUuid: 'barclaysUuid',
   },
-  {
-    noteType: 'number',
-    targets: ['adbe'],
-    value: 4.85 * BILLION,
-    previousValue: 4.443 * BILLION,
-    name: 'Q3 Revenue Target',
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
-  },
-  {
-    noteType: 'number',
-    targets: ['adbe'],
-    value: 2.14 * BILLION,
-    name: 'Cash flows from operations',
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
-  },
-  {
-    noteType: 'number',
-    targets: ['adbe'],
-    value: 15.22 * BILLION,
-    name: 'Q2 Remaining Performance Obligations (“RPO”) exiting the quarter',
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
-  },
+
   {
     noteType: 'action',
     targets: ['adbe'],
     title: ' repurchased approximately 2.7 million shares during the quarter',
     uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
   },
-  ,
-  {
-    noteType: 'number',
-    targets: ['adbe'],
-    value: 1.3 / 4.82,
-    displayType: DisplayType.percent,
-    name: 'Q2 Net Margin',
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
-  },
-  {
-    noteType: 'number',
-    targets: ['adbe'],
-    value: 1.62 / 4.82,
-    displayType: DisplayType.percent,
-    name: 'Q2 Operating Margin',
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
-  },
-  {
-    noteType: 'number',
-    targets: ['adbe'],
-    value: 4.83 * BILLION,
-    changeRate: 0.1,
-    timeFrame: TimeFrame.yoy,
-    name: 'Q2 Revenue',
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b93',
-  },
+
   {
     noteType: 'action',
     targets: ['coin'],
@@ -1224,60 +1142,6 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
   },
   {
     noteType: 'number',
-    targets: ['aapl'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: '2023Q1 iPhone Sales',
-    value: 51334 * MILLION,
-    previousValue: 50570 * MILLION,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
-  {
-    noteType: 'number',
-    targets: ['aapl'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: '2023Q1 Mac Sales',
-    value: 7168 * MILLION,
-    previousValue: 10435 * MILLION,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
-  {
-    noteType: 'number',
-    targets: ['aapl'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: '2023Q1 iPad Sales',
-    value: 6670 * MILLION,
-    previousValue: 7646 * MILLION,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
-  {
-    noteType: 'number',
-    targets: ['aapl'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: '2023Q1 Wearable, Home, Accessories Sales',
-    value: 8757 * MILLION,
-    previousValue: 8806 * MILLION,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
-  {
-    noteType: 'number',
-    targets: ['aapl'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: '2023Q1 Service Sales',
-    value: 20907 * MILLION,
-    previousValue: 19821 * MILLION,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
-  {
-    noteType: 'number',
-    targets: ['aapl'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: '2023Q1 Totol Net Sales',
-    value: 94836 * MILLION,
-    previousValue: 97278 * MILLION,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
-  {
-    noteType: 'number',
     targets: ['nasdaq'],
     uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
     changeRate: 0.0107,
@@ -1310,15 +1174,7 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
     title: 'released Q1 results',
   },
-  {
-    noteType: 'number',
-    targets: ['crm'],
-    name: 'Revenue',
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    changeRate: 0.11,
-    value: 8.25 * BILLION,
-    timeFrame: TimeFrame.yoy,
-  },
+
   {
     noteType: 'opinion',
     targets: ['chwy'],
@@ -1328,14 +1184,7 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
       '“2023 is off to a strong start for Chewy. Our first quarter results reflect accelerating double-digit topline growth and continued expansion of adjusted EBITDA margin. Net sales per active customer and Autoship customer sales also both reached new record highs for the company and continued to fuel customer loyalty and spend towards our platform,”',
     createdDate: convertDateToUTC(new Date('2023-6-1')),
   },
-  {
-    noteType: 'number',
-    targets: ['chwy'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    changeRate: 0.147,
-    value: 2.78 * BILLION,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
+
   {
     noteType: 'action',
     targets: ['chwy'],
@@ -1373,15 +1222,7 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     title: 'was added to an ESG Index',
     createdDate: convertDateToUTC(new Date('2023-6-1')),
   },
-  {
-    noteType: 'number',
-    targets: ['s'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'Operating Margin',
-    value: -115377 / 133393,
-    displayType: DisplayType.percent,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
+
   {
     noteType: 'opinion',
     targets: ['s'],
@@ -1398,35 +1239,7 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     name: 'released fiscal Q1 2024 result that missed revenue estimates',
     createdDate: convertDateToUTC(new Date('2023-6-1')),
   },
-  {
-    noteType: 'number',
-    targets: ['s'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'Revenue',
-    changeRate: 0.7,
-    value: 133.4 * MILLION,
-    timeFrame: TimeFrame.yoy,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
-  {
-    noteType: 'number',
-    targets: ['lulu'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'Q2 Revenue Outlook',
-    changeRate: 0.15,
-    value: 2.14 * BILLION,
-    timeFrame: TimeFrame.yoy,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
-  {
-    noteType: 'number',
-    targets: ['lulu'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'Inventory',
-    changeRate: 0.24,
-    timeFrame: TimeFrame.yoy,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
+
   {
     noteType: 'opinion',
     targets: ['lulu'],
@@ -1450,34 +1263,6 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
     name: 'Operating Margin',
     changeRate: 0.201,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
-  {
-    noteType: 'number',
-    targets: ['lulu'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'North America Revenue',
-    changeRate: 0.17,
-    timeFrame: TimeFrame.yoy,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
-  {
-    noteType: 'number',
-    targets: ['lulu'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'International Revenue',
-    changeRate: 0.6,
-    timeFrame: TimeFrame.yoy,
-    createdDate: convertDateToUTC(new Date('2023-6-1')),
-  },
-  {
-    noteType: 'number',
-    targets: ['lulu'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'Revenue',
-    changeRate: 0.27,
-    value: 2 * BILLION,
-    timeFrame: TimeFrame.yoy,
     createdDate: convertDateToUTC(new Date('2023-6-1')),
   },
   {
@@ -1686,32 +1471,7 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     name: 'after hours',
     changeRate: 0.13,
   },
-  {
-    noteType: 'number',
-    targets: ['crwd'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'Sales an Marketing Expenses',
-    value: 281.107 * MILLION,
-    previousValue: 193.532 * MILLION,
-    timeFrame: TimeFrame.yoy,
-  },
-  {
-    noteType: 'number',
-    targets: ['crwd'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'Operating Expenses',
-    value: 542.806 * MILLION,
-    previousValue: 384.885 * MILLION,
-    timeFrame: TimeFrame.yoy,
-  },
-  {
-    noteType: 'number',
-    targets: ['crwd'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'Operating Margin',
-    value: -19456 / 692580,
-    displayType: DisplayType.percent,
-  },
+
   {
     noteType: 'action',
     targets: ['crwd'],
@@ -1726,55 +1486,13 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     title:
       'Introduced Charlotte AI, a new generative AI security analyst that uses the world’s highest-fidelity security data and is continuously improved through a tight human feedback loop from usage by CrowdStrike’s industry-leading threat hunters, managed detection and response operators, and incident response experts.',
   },
-  {
-    noteType: 'number',
-    targets: ['crwd'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'Net Margin',
-    value: 499 / 692580,
-    displayType: DisplayType.percent,
-  },
-  {
-    noteType: 'number',
-    targets: ['crwd'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'Annual Recurring Revenue (ARR)',
-    value: 2.73 * BILLION,
-    changeRate: 0.42,
-    timeFrame: TimeFrame.yoy,
-  },
-  {
-    noteType: 'number',
-    targets: ['crwd'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'Q2 Revenue Outlook',
-    value: 722 * MILLION,
-    previousValue: 487.83 * MILLION,
-    timeFrame: TimeFrame.yoy,
-  },
-  {
-    noteType: 'number',
-    targets: ['crwd'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'Revenue',
-    value: 692.58 * MILLION,
-    changeRate: 0.42,
-    timeFrame: TimeFrame.yoy,
-  },
+
   {
     noteType: 'number',
     targets: ['crwd'],
     uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
     name: 'after hours',
     changeRate: -0.11,
-  },
-  {
-    noteType: 'number',
-    targets: ['oil'],
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    name: 'U.S. cruid oil hit 10-week low',
-    changeRate: -0.11,
-    timeFrame: TimeFrame.mtm,
   },
 
   {
@@ -1784,15 +1502,7 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
     changeRate: -0.0568,
   },
-  {
-    noteType: 'number',
-    targets: ['c3ai'],
-    name: 'Revenue',
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b91',
-    changeRate: 0.001,
-    value: 72.41 * MILLION,
-    timeFrame: TimeFrame.yoy,
-  },
+
   {
     noteType: 'action',
     targets: ['c3ai'],
@@ -1930,60 +1640,7 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     content:
       'We believe Nvidia possesses a wide economic moat stemming from its intangible assets related to the design of graphics processing units. The company is the originator of and leader in discrete graphics, having captured the lion’s share of the market from longtime rival AMD',
   },
-  {
-    noteType: 'number',
-    targets: ['nvda'],
-    name: '2024 Q2 Expected Gross Margin',
-    value: 0.686,
-    displayType: DisplayType.percent,
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b8',
-  },
-  {
-    noteType: 'number',
-    targets: ['nvda'],
-    name: '2024 Q2 Expected Operating Expenses',
-    value: 2.71 * BILLION,
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b8',
-  },
-  {
-    noteType: 'number',
-    targets: ['nvda'],
-    title: '2024 Q2 Expected Revenue',
-    value: 11 * BILLION,
-    previousValue: 6.7 * BILLION,
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b8',
-  },
-  {
-    noteType: 'number',
-    targets: ['nvda'],
-    title: '2024 Q1 Net Income',
-    value: 2043 * MILLION,
-    previousValue: 1618 * MILLION,
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b8',
-  },
-  {
-    noteType: 'number',
-    targets: ['nvda'],
-    title: '2024 Q1 Operating Income',
-    value: 2140 * MILLION,
-    previousValue: 1868 * MILLION,
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b8',
-  },
-  {
-    noteType: 'number',
-    targets: ['nvda'],
-    title: '2024 Q1 Operating Expenses',
-    value: 2508 * MILLION,
-    previousValue: 3563 * MILLION,
-    uuid: '14f2b529-fdbd-4033-b92b-4aed55468b8',
-  },
-  {
-    noteType: 'number',
-    targets: ['nvda'],
-    title: '2024 Q1 Gross Margin',
-    value: 0.646,
-    uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
-  },
+
   {
     noteType: 'action',
     targets: ['jobs'],
@@ -2052,43 +1709,7 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     changeRate: -0.2724,
     uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
   },
-  {
-    noteType: 'number',
-    targets: ['baba'],
-    name: 'Revenue',
-    value: 208200000,
-    changeRate: 0.02,
-    unit: UnitType.rmb,
-    uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
-    timeFrame: TimeFrame.yoy,
-  },
-  {
-    noteType: 'number',
-    targets: ['wmt'],
-    name: 'Revenue',
-    title: 'Fiscal 2024 Net Sale Guidance',
-    changeRate: 0.035,
-    uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
-    timeFrame: TimeFrame.yoy,
-  },
-  {
-    noteType: 'number',
-    targets: ['wmt'],
-    name: 'Revenue',
-    title: 'Q2 Net Sale Guidance',
-    changeRate: 0.04,
-    uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
-    timeFrame: TimeFrame.yoy,
-  },
-  {
-    noteType: 'number',
-    targets: ['wmt'],
-    name: 'Revenue',
-    title: 'U.S. comp sales',
-    changeRate: 0.074,
-    uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
-    timeFrame: TimeFrame.yoy,
-  },
+
   {
     noteType: 'number',
     targets: ['wmt'],
@@ -2097,15 +1718,7 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     changeRate: 0.3,
     uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
   },
-  {
-    noteType: 'number',
-    targets: ['wmt'],
-    name: 'Profit',
-    title: 'Operating Margin',
-    value: 0.173,
-    displayType: DisplayType.percent,
-    uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
-  },
+
   {
     noteType: 'action',
     targets: ['wmt'],
@@ -2148,14 +1761,7 @@ export const allNotes: (Quote | Opinion | Fact | Stats)[] = [
     title: 'Stock Price After Hours',
     uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
   },
-  {
-    noteType: 'numbers',
-    targets: ['ttwo'],
-    changeRate: 0.65,
-    timeFrame: TimeFrame.yoy,
-    title: 'Stock Price After Hours',
-    uuid: '14f2b529-fdbd-4033-b92b-4aebd55468b8',
-  },
+
   {
     noteType: 'opinion',
     authorUuid: 'steve-cohen',

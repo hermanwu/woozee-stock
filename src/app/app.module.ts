@@ -18,6 +18,7 @@ import { AddNoteDialogComponent } from './add-note-dialog/add-note-dialog.compon
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AssetListPageComponent } from './assets/components/asset-list-page/asset-list-page.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { ComparisonNoteComponent } from './comparison-note/comparison-note.component';
 import { EmojiDisplayComponent } from './emoji-display/emoji-display.component';
 import { ImageDisplayComponent } from './images/components/image-display/image-display.component';
@@ -88,7 +89,6 @@ import { AppMaterialModule } from './shared/styles/app-material.module';
 import { SignupComponent } from './signup/signup.component';
 import { BusinessOverviewComponent } from './stock/components/business-overview/business-overview.component';
 import { ComparisonDialogComponent } from './stock/components/comparison-dialog/comparison-dialog.component';
-import { EarningsReportComponent } from './stock/components/earnings-report/earnings-report.component';
 import { FactComponent } from './stock/components/facts/components/fact/fact.component';
 import { GrowthDetailsComponent } from './stock/components/growth-details/growth-details.component';
 import { GrowthComponent } from './stock/components/growth/growth.component';
@@ -128,7 +128,6 @@ import { UiListComponent } from './ui/ui-list/ui-list.component';
 import { UiMoleculesComponent } from './ui/ui-molecules/ui-molecules.component';
 import { UiOrganismComponent } from './ui/ui-organism/ui-organism.component';
 import { UiTemplatesComponent } from './ui/ui-templates/ui-templates.component';
-import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -189,7 +188,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     DemoPageComponent,
     RiskTotalDisplayComponent,
     CatalystTotalDisplayComponent,
-    EarningsReportComponent,
     RevenueCompositionDisplayComponent,
     RevenueDisplayComponent,
     MovementDisplayComponent,

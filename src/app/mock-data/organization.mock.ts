@@ -57,12 +57,11 @@ export const organizations: Organization[] = [
     uuid: 'amzn',
     displayName: 'Amazon',
     logoLink: 'https://i.ibb.co/qsZzrS2/download-3.png',
+    irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
   },
-
   {
-    uuid: 'amazon',
-    displayName: 'Amazon',
-    logoLink: 'https://i.ibb.co/qsZzrS2/download-3.png',
+    uuid: 'mrk',
+    displayName: 'Merck',
   },
   {
     uuid: 'pipersandler',
@@ -285,6 +284,14 @@ export const organizations: Organization[] = [
     uuid: 'cat',
     displayName: 'Caterpillar',
     logoLink: 'https://i.ibb.co/1QGmPWL/nhptx-XQp-400x400.png',
+    irAddress: 'https://investors.caterpillar.com/overview/default.aspx',
+  },
+  {
+    uuid: 'meta',
+    displayName: 'Meta',
+    logoLink: 'https://i.ibb.co/mJdDP5t/Hqrr-Ecr-I-400x400.png',
+    irAddress: 'https://investor.fb.com/home/default.aspx',
+    ticker: 'meta',
   },
   {
     uuid: 'chgg',
@@ -357,5 +364,15 @@ export const organizations: Organization[] = [
     displayName: 'Darden Restaurants',
     logoLink: 'https://i.imgur.com/57h8buf.png',
     largeLogoLink: 'https://i.imgur.com/MruHbxv.png',
+  },
+  {
+    uuid: 'axp',
+    displayName: 'American Express',
+    ticker: 'AXP',
+    irAddress: 'https://ir.americanexpress.com/investor-relations/default.aspx',
+    descriptions: [
+      'American Express (NYSE: AXP) is a globally integrated payments company that provides customers with access to products, insights and experiences that enrich lives and build business success. Our integrated payments platform includes card-issuing, merchant-acquiring and card network businesses. We are a leader in providing payment products and services to a broad range of customers, including consumers, small businesses, mid-sized companies and large corporations around the world.',
+      'Founded in 1850 and headquartered in New York, American Express has a heritage built on service and sustained by innovation. American Express® cards issued by American Express as well as by third-party banks and other institutions on the American Express network are accepted at millions of merchants around the world.',
+    ],
   },
 ];

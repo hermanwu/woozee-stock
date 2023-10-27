@@ -1,5 +1,3 @@
-import { Note, NoteType } from '../../data/note.interface';
-
 export enum DisplayType {
   numeric = 'numeric',
   percent = 'percent',
@@ -21,11 +19,9 @@ export enum StatsCategory {
   revenue = 'Revenue',
 }
 
-export interface Stats extends Note {
-  uuid: string;
+export interface Stats {
   statues?: [string, number][];
 
-  noteType: string | NoteType;
   name?: string;
   value?: number;
   displayType?: DisplayType;
@@ -33,13 +29,12 @@ export interface Stats extends Note {
   previousValue?: number;
   expectedChangeRate?: number;
   expectedValue?: number;
-  timeFrame?: TimeFrame;
-  unit?: UnitType;
+  timeFrame?: TimeFrame | string;
+  unit?: UnitType | string;
   statsCategory?: StatsCategory;
-
-  details?: Stats[];
-  title?: string;
   tagUuids?: string[];
   creatorUuid?: string;
   createdDate?: string;
+
+  data?: Stats[];
 }

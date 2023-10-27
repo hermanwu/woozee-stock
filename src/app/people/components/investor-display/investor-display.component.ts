@@ -18,8 +18,11 @@ export interface Person {
 export interface Organization {
   uuid: string;
   displayName: string;
-  logoLink: string;
+  logoLink?: string;
   largeLogoLink?: string;
+  ticker?: string;
+  irAddress?: string;
+  descriptions?: string[];
 }
 
 @Component({

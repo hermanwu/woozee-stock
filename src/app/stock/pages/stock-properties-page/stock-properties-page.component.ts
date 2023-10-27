@@ -4,6 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { UserServices } from 'src/app/accounts/services/user.services';
+import { getProductsByRootCompanyId } from 'src/app/mock-data/product.mock';
 import { NotesServices } from 'src/app/news/services/notes.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
@@ -27,10 +28,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   private stockId = 'stockId';
 
   factType = FactType;
-  carousalDisplayItemIndex: number;
-  displayMode = DisplayMode.list;
   expanded: boolean;
-  panelOpenState = true;
   // Determine what state to be displayed;
   routeSub: Subscription;
   stockAnalysis: StockAnalysis;
@@ -42,6 +40,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   mySentiment;
   publicSentiment;
   noteUuidToEmotionMap = {};
+
+  products = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -95,6 +95,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
       this.publicSentiment = this.emotionServices.getSentimentFromNotes(
         this.notes
       );
+
+      this.products = getProductsByRootCompanyId(this.stockUuid);
     });
   }
 

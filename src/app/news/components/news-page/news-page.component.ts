@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserServices } from 'src/app/accounts/services/user.services';
+import { earnings } from 'src/app/mock-data/earnings.mock';
+import { quotes } from 'src/app/mock-data/quote.mock';
 import { DailyMediumReportDisplayDialogComponent } from 'src/app/news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
 import { Industry } from 'src/app/stock/models/industry.model';
@@ -27,6 +29,8 @@ export class NewsPageComponent implements OnInit {
   showAddNotesSection = false;
   showTools: boolean = false;
   stocks: StockAnalysis[];
+  quotes: any[];
+  earnings: any[];
 
   stockUuidToNotesMap = new Map<string, Note[]>();
   stockUuidToStockMap = new Map<string, any>();
@@ -39,6 +43,10 @@ export class NewsPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.quotes = quotes.filter(
+      (quote) => quote.creatorUuid === 'info@invesdea.com'
+    );
+    this.earnings = earnings;
     this.notes = this.newsService.getAllNews();
     this.filteredNotes = this.filteredNotesByTypes(
       [NoteType.Opinion, NoteType.Fact, NoteType.Action, NoteType.Stats],

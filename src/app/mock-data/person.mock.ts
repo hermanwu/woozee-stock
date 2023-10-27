@@ -86,4 +86,11 @@ export const people = [
     displayName: 'Kevin Scott',
     imageLink: 'https://i.ibb.co/TB3KDTr/Kevin-Scott-bio-final.png',
   },
+
+  {
+    uuid: 'jennifer-doudna',
+    displayName: 'Jennifer Doudna',
+    description:
+      'Jennifer Doudna is an American biochemist known for her pioneering work in the field of molecular biology, particularly for co-discovering the CRISPR-Cas9 gene-editing technology with French microbiologist Emmanuelle Charpentier. ',
+  },
 ];

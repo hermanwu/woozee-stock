@@ -10,7 +10,6 @@ import { API } from './API';
 import { asml } from './asml';
 import { ATVI } from './ATVI';
 import { avgo } from './avgo';
-import { AXP } from './AXP';
 import { baba } from './baba';
 import { bidu } from './bidu';
 import { bili } from './bili.mock';
@@ -62,7 +61,6 @@ import { luv } from './luv';
 import { LZ } from './LZ';
 import { mdb } from './mdb';
 import { meli } from './MELI';
-import { meta } from './meta';
 import { mrk } from './mrk';
 import { mrna } from './mrna';
 import { mrvl } from './mrvl.mock';
@@ -162,7 +160,6 @@ export const stocksMap = {
   asml,
   ATVI,
   avgo,
-  AXP,
   baba,
   bidu,
   bili,
@@ -182,7 +179,6 @@ export const stocksMap = {
   EDIT,
   estc,
   etsy,
-  meta,
   fvrr,
   gme,
   googl,

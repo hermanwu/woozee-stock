@@ -8,7 +8,7 @@
       <app-image-display [imageLink]="imageLinks[0]"></app-image-display>
     </div>
 
-    <div>
+    <h1>
       <span
         >{{ stockAnalysis.displayName || stockAnalysis.name }}
         <span *ngIf="stockAnalysis?.ticker"
@@ -27,13 +27,10 @@
         </a></span
       >
 
-      <!-- <span *ngIf="rank$ | async; else followButton">
-          - Rank {{ rank$ | async | undefined }}</span
-        > -->
       <span *ngIf="stockAnalysis.price">
         - {{ stockAnalysis.price | undefined }}</span
       >
-    </div>
+    </h1>
 
     <div>
       <mat-chip-list>
@@ -42,15 +39,22 @@
         </mat-chip>
       </mat-chip-list>
     </div>
+  </div>
 
-    <div *ngIf="stockAnalysis?.products">
-      <span>Products:</span>
-      <mat-chip-list>
-        <mat-chip *ngFor="let item of stockAnalysis.products">
-          {{ item?.name }}
-        </mat-chip>
-      </mat-chip-list>
-    </div>
+  <mat-divider></mat-divider>
+
+  <div *ngIf="products">
+    <h2>Products</h2>
+
+    <mat-chip-list>
+      <mat-chip *ngFor="let item of products">
+        {{ item.name }}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+
+  <div *ngIf="earnings">
+    <h2>Earnings</h2>
   </div>
 
   <div class="grid grid-dynamic">

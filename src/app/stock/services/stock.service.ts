@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { organizations } from 'src/app/mock-data/mock-organizations.data';
+import { organizations } from 'src/app/mock-data/organization.mock';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { stocksMap } from '../../mock-data/mocks/stock-list.const';

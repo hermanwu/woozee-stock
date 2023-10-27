@@ -1,43 +1,16 @@
 <ng-container *ngIf="statsDisplay.value || statsDisplay.changeRate">
   <ng-container>
-    <strong *ngIf="statsDisplay?.title || statsDisplay?.name">
-      {{ statsDisplay?.title || statsDisplay.name }}
-    </strong>
-
     <ng-container [ngSwitch]="statsDisplay.displayType">
       <ng-container *ngSwitchCase="DisplayType.percent" i18n>
-        was
-
         {{
           statsDisplay?.value | siUnit : 3 | percent : "1.1-2" | undefined
         }}</ng-container
       >
 
       <ng-container *ngSwitchDefault i18n>
-        <span
-          *ngIf="
-            statsDisplay &&
-            statsDisplay?.value &&
-            (statsDisplay?.changeRate ||
-              statsDisplay?.value > statsDisplay?.previousValue)
-          "
-        >
-          increased to
-        </span>
-
-        <span
-          *ngIf="
-            statsDisplay &&
-            statsDisplay?.value &&
-            (statsDisplay?.changeRate < 0 ||
-              statsDisplay?.value < statsDisplay?.previousValue)
-          "
-        >
-          decreased to
-        </span>
-
         <span *ngIf="statsDisplay?.value">
-          {{ statsDisplay.value | siUnit : 2 | undefined }},
+          <span *ngIf="statsDisplay?.unit">$</span
+          >{{ statsDisplay.value | siUnit : 2 | undefined }},
         </span>
 
         <app-movement-display
@@ -55,9 +28,7 @@
           ><span *ngSwitchCase="TimeFrameEnum.mtm">m/m</span
           ><span *ngSwitchCase="TimeFrameEnum.weekOverWeek">week/week</span>
         </ng-container>
-        <ng-container *ngIf="statsDisplay.previousValue">
-          (from {{ statsDisplay.previousValue | siUnit : 2 | undefined }})
-        </ng-container>
+
         <span *ngIf="statsDisplay?.expectedChangeRate"
           >,{{
             statsDisplay?.expectedChangeRate < statsDisplay?.changeRate

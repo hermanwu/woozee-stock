@@ -1,15 +1,5 @@
 import { BILLION } from 'src/app/shared/numbers/number.model';
-import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { StockAnalysis } from '../../stock/models/stock-analysis.model';
-
-export const pddRisks = [
-  {
-    name: 'strong competitors',
-  },
-  {
-    name: 'low user loyalty',
-  },
-];
 
 export const pdd: StockAnalysis = {
   marketCap: 54.96 * BILLION,
@@ -32,20 +22,12 @@ export const pdd: StockAnalysis = {
       imageLink:
         'https://lh3.googleusercontent.com/pw/ACtC-3cV6CWGFQfD0tmYibyGBkc8TnTxCjOuMXV0MnDhcsoxnsI5Xpt4a-zzxONlGTmiO1fOxyKf3BpgoVhwODId9jUmq7dNRtvAgR8GBG-xX3K8_KhNEng9g5TDDGNjitO-7zVQgoZEvycPkP75DbVhz3bI=w1314-h828-no?authuser=3',
     },
-    {
-      description: 'Ecosystem',
-      imageLink:
-        'https://lh3.googleusercontent.com/pw/ACtC-3cT_xiDmJ0t0r0LooLECn-pcGBXj9nouzMx0TNDbvGBpKRMtNmgLlS83iOFikdBNYrqefy2PlRIIjglJHT1FEoJO8Mt_5RRAaDsnA4mRI66LDT-FzayygnjfPj-PqjDAL15ak0KkinQMyNTPPvSLltB=w1652-h1168-no?authuser=3',
-    },
   ],
 
   business: {
-    markets: [IndustryType.ecommerce],
     growthStrategy: [
       'Create a team purchase model that initiated by user with more detailed customer information.',
       'Focus on less-developed cities/market with consumers that are more sensitive to price, where Alibaba and JD were not focused',
-      'Work with Tencent as a strategic partner.',
-      'Use psychology to drive more discovery shopping',
       'C2M model: Use data to create accurate demand for manufacturer and lower the cost.',
     ],
     users: [
@@ -58,22 +40,6 @@ export const pdd: StockAnalysis = {
     'Technology driven',
     'Strategic investors',
   ],
-
-  trends: ['COVID', 'E-commerce'],
-
-  score: {
-    vision: 9,
-    painPoint: 8,
-    product: 10,
-    customer: 8,
-    businessModel: 8,
-    advantage: 8,
-    risk: 6,
-    competitors: 7,
-    marketPotential: 7,
-    trend: 10,
-    total: 81,
-  },
 
   companyOfficialDocs: [
     {

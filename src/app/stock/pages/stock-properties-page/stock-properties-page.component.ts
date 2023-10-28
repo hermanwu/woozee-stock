@@ -38,7 +38,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   notes = [];
   myNotes: Note[] = [];
   mySentiment;
-  publicSentiment;
   noteUuidToEmotionMap = {};
 
   products = [];
@@ -60,7 +59,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
       // Reset everything.
       this.imageLinks = [];
       this.mySentiment = null;
-      this.publicSentiment = null;
       this.myNotes = [];
       this.notes = [];
 
@@ -90,10 +88,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
 
       this.mySentiment = this.emotionServices.getSentimentFromNotes(
         this.myNotes
-      );
-
-      this.publicSentiment = this.emotionServices.getSentimentFromNotes(
-        this.notes
       );
 
       this.products = getProductsByRootCompanyId(this.stockUuid);

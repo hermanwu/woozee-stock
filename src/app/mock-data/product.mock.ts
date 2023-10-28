@@ -12,6 +12,19 @@ export class Product {
 
 export const mockProducts: Product[] = [
   {
+    name: 'EV',
+    rootCompanyId: 'tsla',
+  },
+  {
+    name: 'Solar Panels',
+    rootCompanyId: 'tsla',
+  },
+  {
+    name: 'Pinduoduo App',
+    rootCompanyId: 'pdd',
+    parents: ['E-commerce'],
+  },
+  {
     name: 'Amazon Web Services (AWS)',
     rootCompanyId: 'amzn',
     parents: ['Cloud Computing'],

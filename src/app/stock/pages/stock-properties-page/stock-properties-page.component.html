@@ -41,9 +41,7 @@
     </div>
   </div>
 
-  <mat-divider></mat-divider>
-
-  <div *ngIf="products">
+  <div *ngIf="products.length > 0">
     <h2>Products</h2>
 
     <mat-chip-list>
@@ -75,9 +73,9 @@
       </div>
     </app-card>
 
-    <app-card class="grid" *ngIf="notes && notes.length > 0">
+    <div *ngIf="notes && notes.length > 0">
       <div class="container">
-        <div class="left">Public Notes</div>
+        <h2 class="left">Public Notes</h2>
         <div class="right">
           <app-opinion-display
             [sentiment]="publicSentiment"
@@ -85,10 +83,10 @@
         </div>
       </div>
 
-      <div *ngFor="let note of notes">
+      <div *ngFor="let note of notes" class="margin-top-2">
         <app-note-container [note]="note"></app-note-container>
         <app-divider></app-divider>
       </div>
-    </app-card>
+    </div>
   </div>
 </ng-template>

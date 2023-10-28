@@ -35,6 +35,114 @@ export class Earnings {
 
 export const earnings: Earnings[] = [
   {
+    targets: ['mrk'],
+    releasedDate: getUtcDate(2023, 10, 29),
+    documents: [
+      {
+        name: 'Transcript',
+        link: 'https://s21.q4cdn.com/488056881/files/doc_events/2023/Oct/26/mrk-usq_transcript_2023-10-26-6.pdf',
+      },
+      {
+        name: 'Earnings Presentation',
+        link: 'https://s21.q4cdn.com/488056881/files/doc_financials/2023/q3/Q3-2023-Merck-Earnings-Deck-Final-Website.pdf',
+      },
+      {
+        name: 'Press Release',
+        link: 'https://s21.q4cdn.com/488056881/files/doc_financials/2023/q3/Merck-News-Release-10-26-23-Merck-Announces-Third-Quarter-2023-Financial-Results.pdf',
+      },
+    ],
+    data: [
+      {
+        name: 'Revenue',
+        value: 15962e6,
+        previousValue: 14959e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+        data: [
+          {
+            name: 'KEYTRUDA',
+            value: 6338e6,
+            previousValue: 5426e6,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+          {
+            name: 'GARDASIL / GARDASIL 9',
+            value: 2585e6,
+            previousValue: 2294e6,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+          {
+            name: 'JANUVIA / JANUMET',
+            value: 1133e6,
+            previousValue: 835e6,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+
+          {
+            name: 'PROQUAD, M-M-R II and VARIVAX',
+            value: 713e6,
+            previousValue: 668e6,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+          {
+            name: 'LAGEVRIO',
+            value: 640e6,
+            previousValue: 436e6,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+          {
+            name: 'Animal Health',
+            value: 1400e6,
+            previousValue: 1371e6,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+        ],
+      },
+      {
+        name: 'Costs',
+        data: [
+          {
+            name: 'Cost of sales',
+            value: 4264e6,
+            previousValue: 3934e6,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+        ],
+      },
+      {
+        name: 'Expenses',
+        data: [
+          {
+            name: 'Research and development',
+            value: 3307e6,
+            previousValue: 4399e6,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+        ],
+      },
+      {
+        name: 'Incomes',
+        data: [
+          {
+            name: 'Net Income',
+            value: 4750e6,
+            previousValue: 3253e6,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+        ],
+      },
+    ],
+  },
+  {
     targets: ['amzn'],
     releasedDate: getUtcDate(2023, 10, 26),
     documents: [

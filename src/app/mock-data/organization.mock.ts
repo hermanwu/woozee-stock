@@ -61,7 +61,11 @@ export const organizations: Organization[] = [
   },
   {
     uuid: 'mrk',
+    ticker: 'mrk',
     displayName: 'Merck',
+    logoLink: 'https://i.ibb.co/sFvQccx/MRK.png',
+    largeLogoLink: 'https://i.ibb.co/jGsMtCB/MRK-BIG.png',
+    irAddress: 'https://www.merck.com/investor-relations/',
   },
   {
     uuid: 'pipersandler',

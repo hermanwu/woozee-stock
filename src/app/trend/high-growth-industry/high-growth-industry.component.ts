@@ -140,13 +140,6 @@ export class HighGrowthIndustryComponent implements OnInit {
       chinese: '京东',
       category: GrowthType.ECOMMERCE,
     },
-    {
-      ticker: 'pdd',
-      name: 'Pinduoduo, Inc',
-      chinese: '拼多多',
-      reason: '初生牛犊不怕虎的电商',
-      category: GrowthType.ECOMMERCE,
-    },
     // Gaming and Entertainment
     {
       ticker: 'TCEHY',

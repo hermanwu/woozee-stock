@@ -61,7 +61,6 @@ import { luv } from './luv';
 import { LZ } from './LZ';
 import { mdb } from './mdb';
 import { meli } from './MELI';
-import { mrk } from './mrk';
 import { mrna } from './mrna';
 import { mrvl } from './mrvl.mock';
 import { msft } from './msft';
@@ -81,7 +80,6 @@ import { open } from './open';
 import { orcl } from './orcl';
 import { oxy } from './oxy';
 import { panw } from './panw.mock';
-import { pdd } from './pdd.mock';
 import { PENN } from './PENN';
 import { pins } from './PINs';
 import { pltr } from './pltr';
@@ -200,7 +198,6 @@ export const stocksMap = {
   LZ,
   mdb,
   meli,
-  mrk,
   mrna,
   msft,
   net,
@@ -215,7 +212,6 @@ export const stocksMap = {
   okta,
   open,
   orcl,
-  pdd,
   PENN,
   pins,
   pltr,

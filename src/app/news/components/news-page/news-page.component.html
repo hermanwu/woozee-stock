@@ -80,14 +80,16 @@
     </div>
     <div>
       <app-tag-display [tagUuid]="item?.targets?.[0]"></app-tag-display>
-      Financial Results on
+    </div>
+    <div>
+      💰 Financial Results on
       <app-date-display [date]="item.releasedDate"></app-date-display>
     </div>
 
     <div *ngIf="item.data?.length > 0">
       <strong>Numbers</strong>
       <div *ngFor="let data of item?.data">
-        🔹 {{ data.name }}:
+        <span *ngIf="data.value">🔹</span> {{ data.name }}:
         <app-stats-display [statsDisplay]="data"></app-stats-display>
 
         <ng-container *ngIf="data.data">

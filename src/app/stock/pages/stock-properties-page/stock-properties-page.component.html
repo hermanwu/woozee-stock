@@ -41,8 +41,10 @@
     </div>
   </div>
 
-  <div *ngIf="products.length > 0">
-    <h2>Products</h2>
+  <div *ngIf="products.length > 0" class="mt-4">
+    <div class="mb-2">
+      <h2>Products</h2>
+    </div>
 
     <mat-chip-list>
       <mat-chip *ngFor="let item of products">
@@ -55,38 +57,28 @@
     <h2>Earnings</h2>
   </div>
 
-  <div class="grid grid-dynamic">
-    <app-card class="grid" *ngIf="myNotes && myNotes.length > 0">
-      <div class="container">
-        <div class="left">My Notes</div>
-        <div class="right">
-          <app-opinion-display [sentiment]="mySentiment"></app-opinion-display>
-        </div>
+  <div class="grid mt-4" *ngIf="myNotes && myNotes.length > 0">
+    <div class="container mb-2">
+      <h2 class="left">Opinions</h2>
+      <div class="right">
+        <app-opinion-display [sentiment]="mySentiment"></app-opinion-display>
       </div>
+    </div>
 
-      <div *ngFor="let note of myNotes">
-        <app-note-container
-          [note]="note"
-          [emotion]="note?.emotion"
-        ></app-note-container>
-        <app-divider></app-divider>
-      </div>
-    </app-card>
+    <div *ngFor="let note of myNotes">
+      <app-note-container
+        [note]="note"
+        [emotion]="note?.emotion"
+      ></app-note-container>
+      <app-divider></app-divider>
+    </div>
+  </div>
 
-    <div *ngIf="notes && notes.length > 0">
-      <div class="container">
-        <h2 class="left">Public Notes</h2>
-        <div class="right">
-          <app-opinion-display
-            [sentiment]="publicSentiment"
-          ></app-opinion-display>
-        </div>
-      </div>
-
-      <div *ngFor="let note of notes" class="margin-top-2">
-        <app-note-container [note]="note"></app-note-container>
-        <app-divider></app-divider>
-      </div>
+  <div *ngIf="notes && notes.length > 0" class="mt-4">
+    <div class="mb-2"><h2>News</h2></div>
+    <div *ngFor="let note of notes">
+      <app-note-container [note]="note"></app-note-container>
+      <app-divider></app-divider>
     </div>
   </div>
 </ng-template>

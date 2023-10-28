@@ -70,7 +70,9 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         this.stockAnalysis = null;
       }
 
-      const allNotes = this.notesServices.getNotesByTargets([this.stockUuid]);
+      const allNotes = this.notesServices
+        .getNotesByTargets([this.stockUuid])
+        .slice(0, 5);
 
       const emotions = this.emotionServices.getEmotionsByUserId(
         this.userServices.currentUser.userUuid

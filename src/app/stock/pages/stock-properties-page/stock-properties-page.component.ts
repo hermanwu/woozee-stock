@@ -4,12 +4,14 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { UserServices } from 'src/app/accounts/services/user.services';
+import { getEarningsByTicker } from 'src/app/mock-data/earnings.mock';
 import { getProductsByRootCompanyId } from 'src/app/mock-data/product.mock';
 import { NotesServices } from 'src/app/news/services/notes.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
 import { Note } from 'src/app/shared/data/note.interface';
+import { NavigationServices } from 'src/app/shared/services/navgiation.services';
 import { EmotionServices } from 'src/emotion/emotion.services';
 import { environment } from 'src/environments/environment';
 import { StockAnalysis } from '../../models/stock-analysis.model';
@@ -39,6 +41,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   myNotes: Note[] = [];
   mySentiment;
   noteUuidToEmotionMap = {};
+  earnings = [];
 
   products = [];
 
@@ -49,7 +52,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
     private userServices: UserServices,
     private notesServices: NotesServices,
     private stockServices: StockServices,
-    private emotionServices: EmotionServices
+    private emotionServices: EmotionServices,
+    private navigationServices: NavigationServices
   ) {}
 
   ngOnInit(): void {
@@ -93,10 +97,15 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
       );
 
       this.products = getProductsByRootCompanyId(this.stockUuid);
+      this.earnings = getEarningsByTicker(this.stockUuid);
     });
   }
 
   ngOnDestroy(): void {
     this.routeSub.unsubscribe();
+  }
+
+  navigateToProductPage(uuid: string) {
+    this.navigationServices.navigate('product', uuid);
   }
 }

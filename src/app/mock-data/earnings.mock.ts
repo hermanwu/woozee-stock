@@ -18,6 +18,10 @@ export const opinionKeyWord = [
 ];
 export const factKeyWord = ['Robotics', 'Surgery'];
 
+export const getEarningsByTicker = (ticker: string) => {
+  return earnings.filter((item) => item.targets?.includes(ticker));
+};
+
 export class Earnings {
   releasedDate?: Date;
   revenue?: Stats;
@@ -31,9 +35,259 @@ export class Earnings {
   quotes?: any[];
   targets?: string[];
   documents?: any[];
+  imageLinks?: string[];
 }
 
 export const earnings: Earnings[] = [
+  {
+    targets: ['smci'],
+    releasedDate: getUtcDate(2023, 11, 1),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://ir.supermicro.com/news/news-details/2023/Supermicro-Announces-First-Quarter-Fiscal-Year-2024-Financial-Results/default.aspx',
+      },
+      {
+        name: 'Presentation',
+        link: 'https://s25.q4cdn.com/632471818/files/doc_presentation/2023/Earnings-Deck-Q1FY24-Vf.pdf',
+      },
+    ],
+    data: [
+      {
+        name: 'Net sales',
+        value: 2.12e9,
+        quarterOverQuarterValue: 2.18e9,
+        previousValue: 1.85e9,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Total operating expenses',
+        value: 181181e3,
+        previousValue: 127412e3,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Research and Development',
+        value: 111027e3,
+        previousValue: 74243e3,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Net income',
+        value: 156995e3,
+        previousValue: 184416e3,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+    ],
+    quotes: [
+      {
+        name: 'CEO Charles Liang',
+        contents:
+          'the strong demand we are seeing for AI infrastructure and compelling new and upcoming compute and storage products we are now raising our fiscal year 2024 outlook to $10B - $11B in revenue',
+      },
+    ],
+  },
+  {
+    targets: ['cat'],
+    releasedDate: getUtcDate(2023, 10, 31),
+    documents: [
+      {
+        name: 'Presentation',
+        link: 'https://s25.q4cdn.com/358376879/files/doc_financials/2023/q3/3Q_2023-Analyst-Slide-Deck.pdf',
+      },
+      {
+        name: 'Press Release',
+        link: 'https://www.caterpillar.com/content/dam/caterpillarDotCom/releases/3q23/3q23-caterpillar-inc-financial-results.pdf',
+      },
+      {
+        name: 'Cat Financial',
+        link: 'https://www.caterpillar.com/en/news/corporate-press-releases/h/3q23-results-cat-financial.html',
+      },
+    ],
+    data: [
+      {
+        name: 'Sales and Revenues',
+        value: 16.8e9,
+        previousValue: 15e9,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Construction Industries Revenue',
+        value: 6999e6,
+        previousValue: 6276e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Resource Industries Revenue',
+        value: 3351e6,
+        previousValue: 3087e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Energy & Transportation Revenue',
+        value: 6859e6,
+        previousValue: 6186e6,
+        changeRate: (6859 - 6186) / 6186,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Financial Products Revenues',
+        value: 822e6,
+        previousValue: 716e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+
+      {
+        name: 'North America Revenue',
+        value: 8927e6,
+        changeRate: 0.25,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Latin America Revenue',
+        value: 1603e6,
+        changeRate: -0.11,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'EAME Revenue',
+        value: 3402e6,
+        changeRate: 0.08,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Asia/Pacific Revenue',
+        value: 2878e6,
+        changeRate: -0.01,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Total operating costs',
+        value: 13361e6,
+        previousValue: 12569e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Total operating costs',
+        value: 13361e6,
+        previousValue: 12569e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Net Income',
+        value: 2794e6,
+        previousValue: 2041e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Order Backlog',
+        value: -1.9e9,
+        unit: 'dollar',
+      },
+    ],
+  },
+  {
+    targets: ['pins'],
+    releasedDate: getUtcDate(2023, 10, 30),
+    data: [
+      {
+        name: 'Q3 revenue',
+        value: 763e6,
+        changeRate: 0.11,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Global Monthly Active Users (MAUs)',
+        value: 482e6,
+        changeRate: 0.08,
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'GAAP net income',
+        value: 7e6,
+        unit: 'dollar',
+        timeFrame: 'q3',
+      },
+      {
+        name: 'Q4 2023 Revenue Growth Guidance',
+        changeRate: 0.12,
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Total costs and expenses',
+        value: 768202e3,
+        previousValue: 753925e3,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Revenue - Europe',
+        value: 114e6,
+        previousValue: 86e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Revenue - Rest of World',
+        value: 31e6,
+        previousValue: 24e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'MAUs - Europe',
+        value: 128e6,
+        previousValue: 120e6,
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'MAUs - Rest of World',
+        value: 258e6,
+        previousValue: 230e6,
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Revenue - U.S. and Canada',
+        value: 618e6,
+        previousValue: 575e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'MAUs - U.S. and Canada',
+        value: 96e6,
+        previousValue: 95e6,
+        timeFrame: 'yoy',
+      },
+    ],
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://s23.q4cdn.com/958601754/files/doc_earnings/2023/q3/earnings-result/Q323-PressRelease.pdf',
+      },
+      {
+        name: 'Presentation',
+        link: 'https://s23.q4cdn.com/958601754/files/doc_earnings/2023/q3/presentation/2023-Q3-IR-Earnings-Presentation.pdf',
+      },
+    ],
+  },
   {
     targets: ['mrk'],
     releasedDate: getUtcDate(2023, 10, 29),
@@ -105,40 +359,25 @@ export const earnings: Earnings[] = [
         ],
       },
       {
-        name: 'Costs',
-        data: [
-          {
-            name: 'Cost of sales',
-            value: 4264e6,
-            previousValue: 3934e6,
-            unit: 'dollar',
-            timeFrame: 'yoy',
-          },
-        ],
+        name: 'Cost of sales',
+        value: 4264e6,
+        previousValue: 3934e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
       },
       {
-        name: 'Expenses',
-        data: [
-          {
-            name: 'Research and development',
-            value: 3307e6,
-            previousValue: 4399e6,
-            unit: 'dollar',
-            timeFrame: 'yoy',
-          },
-        ],
+        name: 'Research and development',
+        value: 3307e6,
+        previousValue: 4399e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
       },
       {
-        name: 'Incomes',
-        data: [
-          {
-            name: 'Net Income',
-            value: 4750e6,
-            previousValue: 3253e6,
-            unit: 'dollar',
-            timeFrame: 'yoy',
-          },
-        ],
+        name: 'Net Income',
+        value: 4750e6,
+        previousValue: 3253e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
       },
     ],
   },

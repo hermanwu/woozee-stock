@@ -35,6 +35,6 @@ export interface Stats {
   tagUuids?: string[];
   creatorUuid?: string;
   createdDate?: string;
-
+  quarterOverQuarterValue?: number;
   data?: Stats[];
 }

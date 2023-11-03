@@ -8,12 +8,18 @@ export class NavigationServices {
   constructor(private router: Router) {}
 
   navigate(type: string, routeWord: string) {
-    if (type === 'Stock') {
-      return this.router.navigate([`/woozee/stocks/${routeWord}`]);
-    }
-
-    if (type === 'Industry') {
-      return this.router.navigate([`/woozee/industries/${routeWord}`]);
+    type = type.toLowerCase();
+    switch (type) {
+      case 'company':
+        return this.router.navigate([`/woozee/companies/${routeWord}`]);
+      case 'organization':
+        return this.router.navigate([`/woozee/stocks/${routeWord}`]);
+      case 'industry':
+        return this.router.navigate([`/woozee/industries/${routeWord}`]);
+      case 'product':
+        return this.router.navigate([`/woozee/products/${routeWord}`]);
+      default:
+        return;
     }
   }
 }

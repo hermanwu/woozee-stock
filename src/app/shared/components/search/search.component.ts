@@ -3,13 +3,13 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { stocksMap } from 'src/app/mock-data/mocks/stock-list.const';
-import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
+import { organizations } from 'src/app/mock-data/organization.mock';
+import { mockProducts } from 'src/app/mock-data/product.mock';
 import { NavigationServices } from '../../services/navgiation.services';
 
 export interface StateGroup {
   label: string;
-  names: string[];
+  items?: any[];
 }
 @Component({
   selector: 'app-search',
@@ -23,23 +23,16 @@ export class SearchComponent implements OnInit {
   filteredOptions: Observable<string[]>;
   stateGroups: StateGroup[] = [
     {
-      label: 'Stock',
-      names: Object.values(stocksMap).map(
-        (stock: any) =>
-          (stock.displayName || stock.displayName || stock.name) +
-          ' (' +
-          stock.ticker?.toUpperCase() +
-          ')'
-      ),
+      label: 'Organization',
+      items: organizations,
     },
     {
-      label: 'Industry',
-      names: Object.values(IndustryType),
+      label: 'Product',
+      items: mockProducts,
     },
   ];
   selectedGroup: string;
   selectedText: string;
-
   stateGroupOptions: Observable<StateGroup[]>;
 
   constructor(
@@ -61,25 +54,16 @@ export class SearchComponent implements OnInit {
   }
 
   search(): void {
-    const searchText = this.searchForm.value.searchText;
-    this.navigationServices.navigate(this.selectedGroup, searchText);
+    const searchItem = this.searchForm.value;
+    this.navigationServices.navigate(this.selectedGroup, searchItem.searchText);
   }
 
   onSelectionChange($event, group: string): void {
     if ($event.source.selected) {
-      const searchText = $event.source.value;
-
+      const searchItem = $event.source.value;
       this.selectedGroup = group;
-
-      if (this.selectedGroup === 'Stock') {
-        const leftIndex = searchText.indexOf('(');
-        const rightIndex = searchText.indexOf(')');
-        this.selectedText = searchText.slice(leftIndex + 1, rightIndex);
-      } else {
-        this.selectedText = searchText;
-      }
-
-      this.navigationServices.navigate(this.selectedGroup, this.selectedText);
+      this.navigationServices.navigate(group, searchItem.id || searchItem.uuid);
+      this.searchForm.reset();
     }
   }
 
@@ -90,17 +74,22 @@ export class SearchComponent implements OnInit {
       return this.stateGroups
         .map((group) => ({
           label: group.label,
-          names: this._filter(group.names, value),
+          items: this._filter(group.items, value),
         }))
-        .filter((group) => group.names.length > 0);
+        .filter((group) => group.items.length > 0);
     }
 
     return this.stateGroups;
   }
 
-  private _filter = (opt: string[], value: string): string[] => {
+  private _filter = (opt: any[], value: string): string[] => {
     const filterValue = value.toLowerCase();
 
-    return opt.filter((item) => item.toLowerCase().includes(filterValue));
+    return opt.filter(
+      (item) =>
+        item?.displayName?.toLowerCase().includes(filterValue) ||
+        item?.name?.toLowerCase().includes(filterValue) ||
+        item?.ticker?.toLowerCase().includes(filterValue)
+    );
   };
 }

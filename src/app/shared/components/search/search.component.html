@@ -13,17 +13,17 @@
         [label]="group.label"
       >
         <mat-option
-          *ngFor="let option of group.names"
-          [value]="option"
+          *ngFor="let item of group.items"
+          [value]="item"
           (onSelectionChange)="onSelectionChange($event, group.label)"
         >
-          {{ option }}
+          {{ item?.displayName || item?.name }}
         </mat-option>
       </mat-optgroup>
     </mat-autocomplete>
   </mat-form-field>
 
-  <button
+  <!-- <button
     matSuffix
     mat-icon-button
     aria-label="Go"
@@ -31,5 +31,5 @@
     (click)="search()"
   >
     <mat-icon>chevron_right</mat-icon>
-  </button>
+  </button> -->
 </form>

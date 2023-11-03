@@ -2,6 +2,25 @@ import { Organization } from '../people/components/investor-display/investor-dis
 
 export const organizations: Organization[] = [
   {
+    uuid: 'amd',
+    displayName: 'AMD',
+    ticker: 'amd',
+    irAddress: 'https://ir.amd.com/',
+    logoLink: 'https://i.ibb.co/HFk1hgT/In8-IVKDB-400x400.png',
+  },
+  {
+    uuid: 'pfe',
+    displayName: 'Pfizer',
+    logoLink: '',
+  },
+  {
+    uuid: 'cat',
+    displayName: 'Caterpillar',
+    logoLink: 'https://i.ibb.co/JyqMNDQ/CAT.png',
+    largeLogoLink: 'https://i.ibb.co/XjRsPWJ/CAT-BIG.png',
+    irAddress: 'https://investors.caterpillar.com/overview/default.aspx',
+  },
+  {
     uuid: 'schw',
     displayName: 'Charles Schwab',
     logoLink: 'https://i.ibb.co/hgb2bmt/SCHW.png',
@@ -22,6 +41,8 @@ export const organizations: Organization[] = [
     displayName: 'Apple',
     logoLink:
       'https://i.ibb.co/42vzsdT/Screenshot-2023-02-06-at-12-09-11-PM.png',
+    irAddress: 'https://investor.apple.com/investor-relations/default.aspx',
+    ticker: 'aapl',
   },
   {
     uuid: 'UnitedStatesSecretaryOfTheTreasury',
@@ -304,8 +325,13 @@ export const organizations: Organization[] = [
   },
   {
     uuid: 'smci',
-    displayName: 'Super Micro Computer',
+    displayName: 'Supermicro',
     logoLink: 'https://i.ibb.co/CPNfMb3/i-VFx-Tc5-400x400.jpg',
+    irAddress: 'https://ir.supermicro.com/ir-overview/default.aspx',
+    headquarters: 'San Jose, CA',
+    descriptions: [
+      'a Total IT Solution Manufacturer for AI, Cloud, Storage and 5G/Edge',
+    ],
   },
   {
     uuid: 'lly',

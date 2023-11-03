@@ -1,10 +1,8 @@
-import { aapl } from './aapl.mock';
 import { abnb } from './abnb';
 import { adbe } from './adbe';
 import { ADSK } from './ADSK';
 import { afrm } from './afrm';
 import { amc } from './amc';
-import { amd } from './amd';
 import { amzn } from './amzn.mock';
 import { API } from './API';
 import { asml } from './asml';
@@ -138,7 +136,6 @@ import { zs } from './ZS';
 
 export const foreverOwnedStock = {
   // Ecosystem
-  aapl,
   // Much more advanced features.
   tsla,
   // Monopoly on seach and ads
@@ -146,13 +143,11 @@ export const foreverOwnedStock = {
 };
 
 export const stocksMap = {
-  aapl,
   abnb,
   adbe,
   ADSK,
   afrm,
   amc,
-  amd,
   amzn,
   API,
   asml,

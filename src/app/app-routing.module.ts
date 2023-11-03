@@ -15,6 +15,7 @@ import { NotesListPageComponent } from './notes/components/notes-list-page/notes
 import { MePageComponent } from './notes/components/opinion-page/blog-page.component';
 import { AddPersonFormComponent } from './people/components/add-person-form/add-person-form.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
+import { ProductPropertiesPageComponent } from './product-properties-page/product-properties-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
 import { DemoPageComponent } from './shared/components/demo-page/demo-page.component';
 import { SignupComponent } from './signup/signup.component';
@@ -165,6 +166,10 @@ const routes: Routes = [
       {
         path: 'stocks/:stockId',
         component: StockPropertiesPageComponent,
+      },
+      {
+        path: 'products/:productId',
+        component: ProductPropertiesPageComponent,
       },
       {
         path: 'forever-own',

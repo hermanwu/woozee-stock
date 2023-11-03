@@ -1,0 +1,47 @@
+<div class="logo-image" *ngIf="earnings.imageLinks">
+  <!-- <app-image-display
+        [imageLink]="
+          stockUuidToStockMap.get(stockUuid)?.largeLogoLink ||
+          stockUuidToStockMap.get(stockUuid)?.logoLink
+        "
+      >
+      </app-image-display> -->
+  <img [src]="earnings?.imageLinks[0]" />
+</div>
+
+<div>
+  💰 Financial Results on
+  <app-date-display [date]="earnings.releasedDate"></app-date-display>
+</div>
+
+<div *ngIf="earnings.data?.length > 0">
+  <strong>Numbers</strong>
+  <div *ngFor="let data of earnings?.data">
+    <span *ngIf="data.value">🔹</span> {{ data.name }}:
+    <app-stats-display [statsDisplay]="data"></app-stats-display>
+
+    <ng-container *ngIf="data.data">
+      <div *ngFor="let data2 of data?.data">
+        🔹 {{ data2.name }}:
+        <app-stats-display [statsDisplay]="data2"></app-stats-display>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<div *ngIf="earnings?.documents?.length > 0">
+  <strong>Documents</strong>
+  <div *ngFor="let document of earnings?.documents">
+    <strong>{{ document.name }}:</strong>
+    <a href="{{ document.link }}" target="_blank">{{ document.link }}</a>
+  </div>
+</div>
+
+<div *ngIf="earnings?.quotes">
+  <strong>Quotes</strong>
+  <div *ngFor="let earnings of earnings.quotes">
+    💬
+    <strong>{{ earnings.name }}: </strong>
+    <span>{{ earnings.contents }}</span>
+  </div>
+</div>

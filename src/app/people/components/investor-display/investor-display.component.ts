@@ -23,6 +23,7 @@ export interface Organization {
   ticker?: string;
   irAddress?: string;
   descriptions?: string[];
+  headquarters?: string;
 }
 
 @Component({

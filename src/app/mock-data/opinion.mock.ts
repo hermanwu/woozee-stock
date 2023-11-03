@@ -1,1 +1,5 @@
-export const opinions = [];
+export const opinions = [
+  {
+    targets: ['pdd'],
+  },
+];

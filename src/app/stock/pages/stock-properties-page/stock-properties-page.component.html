@@ -10,7 +10,7 @@
 
     <h1>
       <span
-        >{{ stockAnalysis.displayName || stockAnalysis.name }}
+        >{{ stockAnalysis?.displayName || stockAnalysis?.name }}
         <span *ngIf="stockAnalysis?.ticker"
           >({{ stockAnalysis?.ticker | uppercase }})</span
         >
@@ -27,7 +27,7 @@
         </a></span
       >
 
-      <span *ngIf="stockAnalysis.price">
+      <span *ngIf="stockAnalysis?.price">
         - {{ stockAnalysis.price | undefined }}</span
       >
     </h1>
@@ -48,8 +48,23 @@
     </mat-chip-list>
   </div>
 
-  <div *ngIf="earnings?.length > 0" class="mt-4">
+  <div *ngIf="relatedProducts.length > 0" class="mt-4">
     <div class="mb-2">
+      <h2>Related</h2>
+    </div>
+
+    <mat-chip-list>
+      <mat-chip
+        *ngFor="let item of relatedProducts"
+        (click)="navigateToProductPage(item.id)"
+      >
+        {{ item.name }}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+
+  <div *ngIf="earnings?.length > 0" class="mt-4">
+    <div class="mb-2 mt-10">
       <h2>Earnings</h2>
     </div>
 
@@ -59,7 +74,7 @@
   </div>
 
   <div class="grid mt-4" *ngIf="myNotes && myNotes.length > 0">
-    <div class="container mb-2">
+    <div class="container mb-2 mt-10">
       <h2 class="left">Opinions</h2>
       <div class="right">
         <app-opinion-display [sentiment]="mySentiment"></app-opinion-display>
@@ -76,7 +91,7 @@
   </div>
 
   <div *ngIf="notes && notes.length > 0" class="mt-4">
-    <div class="mb-2"><h2>News</h2></div>
+    <div class="mb-2 mt-10"><h2>News</h2></div>
     <div *ngFor="let note of notes">
       <app-note-container [note]="note"></app-note-container>
       <app-divider></app-divider>

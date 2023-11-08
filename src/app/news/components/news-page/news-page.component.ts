@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { earnings } from 'src/app/mock-data/earnings.mock';
+import { events } from 'src/app/mock-data/event.mock';
 import { quotes } from 'src/app/mock-data/quote.mock';
 import { DailyMediumReportDisplayDialogComponent } from 'src/app/news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
@@ -24,16 +25,16 @@ export class NewsPageComponent implements OnInit {
   environment = environment;
   markets: Industry[];
   notes: Note[];
-  filteredNotes: Note[] = [];
   savedNoteUuids = new Set();
   showAddNotesSection = false;
   showTools: boolean = false;
   stocks: StockAnalysis[];
   quotes: any[];
   earnings: any[];
+  events: any[];
 
-  stockUuidToNotesMap = new Map<string, Note[]>();
-  stockUuidToStockMap = new Map<string, any>();
+  selectedType: string;
+  selectedObject: any;
 
   constructor(
     private newsService: NotesServices,
@@ -43,34 +44,12 @@ export class NewsPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.quotes = quotes.filter(
-      (quote) => quote.creatorUuid === 'info@invesdea.com'
-    );
+    this.quotes = quotes;
     this.earnings = earnings;
     this.notes = this.newsService.getAllNews();
-    this.filteredNotes = this.filteredNotesByTypes(
-      [NoteType.Opinion, NoteType.Fact, NoteType.Action, NoteType.Stats],
-      [...this.notes]
-    );
-    // this.userServices
-    //   .getSavedNotes()
-    //   .map((uuid) => this.savedNoteUuids.add(uuid));
+    this.events = events;
 
-    for (let note of this.filteredNotes) {
-      if (note.targets) {
-        const stockUuid = note.targets[0];
-
-        if (!this.stockUuidToStockMap.has(stockUuid)) {
-          this.stockUuidToStockMap.set(
-            stockUuid,
-            this.stockServices.getStockByUuid(stockUuid)
-          );
-          this.stockUuidToNotesMap.set(stockUuid, []);
-        }
-
-        this.stockUuidToNotesMap.get(stockUuid).push(note);
-      }
-    }
+    this.pickRandomNews();
   }
 
   openDailyReportDialog() {
@@ -93,23 +72,27 @@ export class NewsPageComponent implements OnInit {
     };
 
     this.chips.has(chip) ? removeChip() : addChip();
-
-    this.filteredNotes = this.filteredNotesByTypes(
-      Array.from(this.chips.keys()) as NoteType[],
-      this.notes
-    );
   };
 
-  filteredNotesByTypes = (types: (NoteType | string)[], notes: Note[]) => {
-    let filteredNotes = [...notes];
-    if (types?.length > 0) {
-      filteredNotes = notes.filter((note) => types.includes(note.noteType));
+  pickRandomNews = () => {
+    const types = ['quotes', 'earnings', 'opinions', 'events'];
+
+    this.selectedType = types[Math.floor(Math.random() * types.length)];
+
+    switch (this.selectedType) {
+      case 'quotes':
+        this.selectedObject =
+          this.quotes[Math.floor(Math.random() * this.quotes.length)];
+        break;
+      case 'earnings':
+        this.selectedObject =
+          this.earnings[Math.floor(Math.random() * this.earnings.length)];
+        break;
+      case 'opinions':
+        this.selectedObject = this.notes[Math.floor(Math.random() * 10)];
+        break;
+      case 'events':
+        this.selectedObject = this.events[Math.floor(Math.random() * 10)];
     }
-    return filteredNotes
-      .sort(
-        (a, b) =>
-          new Date(b.createdDate).getTime() - new Date(a.createdDate).getTime()
-      )
-      .slice(0, 40);
   };
 }

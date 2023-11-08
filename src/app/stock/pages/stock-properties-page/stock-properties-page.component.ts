@@ -5,7 +5,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { getEarningsByTicker } from 'src/app/mock-data/earnings.mock';
-import { getProductsByRootCompanyId } from 'src/app/mock-data/product.mock';
+import {
+  getProductsByIds,
+  getProductsByRootCompanyId,
+} from 'src/app/mock-data/product.mock';
 import { NotesServices } from 'src/app/news/services/notes.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
@@ -44,6 +47,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   earnings = [];
 
   products = [];
+  relatedProducts = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -78,25 +82,28 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         .getNotesByTargets([this.stockUuid])
         .slice(0, 5);
 
-      const emotions = this.emotionServices.getEmotionsByUserId(
+      const emotions = this.emotionServices.getUserInteractionsByUserId(
         this.userServices.currentUser.userUuid
       );
 
       for (let note of allNotes) {
-        const emotion = emotions.find((e) => e.noteUuid === note.uuid);
+        const emotion = emotions.find((e) => e.targetUuid === note.uuid);
         if (emotion) {
-          note.emotion = emotion;
           this.myNotes.push(note);
         } else {
           this.notes.push(note);
         }
       }
 
-      this.mySentiment = this.emotionServices.getSentimentFromNotes(
-        this.myNotes
-      );
-
       this.products = getProductsByRootCompanyId(this.stockUuid);
+
+      // get all parents ids from product list
+      let parentIds = this.products
+        .filter((obj) => obj.parentIds !== undefined) // Filter out undefined values
+        .map((obj) => obj.parentIds)
+        .reduce((acc, val) => acc.concat(val), []);
+      console.log(parentIds);
+      this.relatedProducts = getProductsByIds(parentIds);
       this.earnings = getEarningsByTicker(this.stockUuid);
     });
   }

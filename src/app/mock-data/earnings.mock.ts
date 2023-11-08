@@ -40,6 +40,137 @@ export class Earnings {
 
 export const earnings: Earnings[] = [
   {
+    targets: ['coin'],
+    releasedDate: getUtcDate(2023, 11, 2),
+    documents: [
+      {
+        name: 'Shareholder Letter',
+        link: 'https://s27.q4cdn.com/397450999/files/doc_financials/2023/q3/Shareholder-Letter-Q3-2023.pdf',
+      },
+    ],
+    data: [
+      {
+        name: 'Revenue',
+        previousValue: 576e6,
+        value: 623e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+
+        data: [
+          {
+            name: 'Total transaction revenue',
+            previousValue: 365.9e6,
+            value: 288.6e6,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+          {
+            name: 'Total subscription and services revenue',
+            value: 334.4e6,
+            previousValue: 210.5e6,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+        ],
+      },
+      {
+        name: 'Trading Volume',
+        previousValue: 159e9,
+        value: 76e9,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Operating expenses',
+        previousValue: 1.146823e9,
+        value: 753.973e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+        data: [
+          {
+            name: 'Technology and development expenses',
+            previousValue: 556.338e6,
+            value: 322.756e6,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+        ],
+      },
+      {
+        name: 'Net Income',
+        value: -2e6,
+        previousValue: -545e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+    ],
+  },
+  {
+    targets: ['shop'],
+    releasedDate: getUtcDate(2023, 11, 2),
+    documents: [
+      {
+        name: 'Presentation',
+        link: 'https://s27.q4cdn.com/572064924/files/doc_financials/2023/q3/Webcast-Presentation-Q3-2023.pdf',
+      },
+      {
+        name: 'Press Release',
+        link: 'https://news.shopify.com/shopify-announces-third-quarter-2023-financial-results',
+      },
+    ],
+    data: [
+      {
+        name: 'Gross Merchandise Volume',
+        value: 5.62e10,
+        previousValue: 4.62e10,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Revenue',
+        value: 1.7e9,
+        unit: 'dollar',
+        changeRate: 0.25,
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Subscription Solutions Revenue',
+        value: 486e6,
+        unit: 'dollar',
+        changeRate: 0.29,
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Monthly Recurring Revenue',
+        value: 141e6,
+        unit: 'dollar',
+        changeRate: 0.32,
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Gross Profit',
+        value: 901e6,
+        unit: 'dollar',
+        changeRate: 0.36,
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Operating Expenses',
+        value: 779e6,
+        previousValue: 1.008e9,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Net Income',
+        value: 718e6,
+        previousValue: -159e6,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+    ],
+  },
+  {
     targets: ['smci'],
     releasedDate: getUtcDate(2023, 11, 1),
     documents: [

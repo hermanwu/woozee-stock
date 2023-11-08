@@ -1,7 +1,6 @@
 import { abnb } from './abnb';
 import { adbe } from './adbe';
 import { ADSK } from './ADSK';
-import { afrm } from './afrm';
 import { amc } from './amc';
 import { amzn } from './amzn.mock';
 import { API } from './API';
@@ -16,7 +15,6 @@ import { blde } from './blde';
 import { bynd } from './bynd';
 import { chwy } from './CHWY';
 import { CLOV } from './CLOV';
-import { coin } from './coin';
 import { cost } from './cost';
 import { crm } from './crm';
 import { crwd } from './crwd';
@@ -146,7 +144,6 @@ export const stocksMap = {
   abnb,
   adbe,
   ADSK,
-  afrm,
   amc,
   amzn,
   API,
@@ -159,7 +156,6 @@ export const stocksMap = {
   blde,
   bynd,
   CLOV,
-  coin,
   crm,
   crwd,
   dash,

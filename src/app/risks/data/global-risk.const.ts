@@ -3,7 +3,6 @@ import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { FactType } from '../models/fact-type.enum';
 import { Term } from '../models/risk-level.model';
 import { Risk } from '../models/risk.model';
-import { allStockRisks } from './all-stock-risks.const';
 import { marketRisks } from './markets.risks';
 
 export const allRisks: Risk[] = [
@@ -14,7 +13,6 @@ export const allRisks: Risk[] = [
   //   type: FactType.business,
   //   updatedTime: new Date('2022-04-26'),
   // },
-  ...allStockRisks,
   ...marketRisks,
   {
     uuid: 'r23',

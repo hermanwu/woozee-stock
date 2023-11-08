@@ -1,22 +1,21 @@
-<app-card *ngFor="let stockSentiment of sentiments" class="card">
-  <div>
-    <div class="container">
-      <div class="left">
-        {{ stockUuidToStockMap.get(stockSentiment[0])?.displayName }}
-      </div>
-      <div class="right">
-        <app-opinion-display
-          [sentiment]="stockSentiment[1]"
-        ></app-opinion-display>
-      </div>
-    </div>
+<h1>Ideas</h1>
+
+<div class="mt-10" *ngFor="let stockUuid of stockUuids">
+  <div class="left">
+    <app-tag-display [tagUuid]="stockUuid"></app-tag-display>
+  </div>
+  <div class="right">
+    <!-- <app-opinion-display
+        [sentiment]="stockSentiment[1]"
+      ></app-opinion-display> -->
   </div>
 
-  <div *ngFor="let note of stockUuidToNotesMap.get(stockSentiment[0])">
-    <app-divider></app-divider>
-    <app-note-container [note]="note"></app-note-container>
+  <div *ngIf="stockUuidToOpinionMap.get(stockUuid)">
+    <div *ngFor="let opinion of stockUuidToOpinionMap.get(stockUuid)">
+      <app-content-display [content]="opinion.content"></app-content-display>
+    </div>
   </div>
-</app-card>
+</div>
 
 <button mat-icon-button class="float-button" (click)="addNote()">
   <mat-icon>edit_square</mat-icon>

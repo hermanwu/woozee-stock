@@ -17,7 +17,7 @@
 <div *ngIf="earnings.data?.length > 0">
   <strong>Numbers</strong>
   <div *ngFor="let data of earnings?.data">
-    <span *ngIf="data.value">🔹</span> {{ data.name }}:
+    <span *ngIf="data.value">🔷</span> {{ data.name }}:
     <app-stats-display [statsDisplay]="data"></app-stats-display>
 
     <ng-container *ngIf="data.data">
@@ -27,13 +27,21 @@
       </div>
     </ng-container>
   </div>
+  <div *ngIf="grossMargin">
+    🔷 Gross Margin: {{ grossMargin | percent : "1.1-2" }}
+  </div>
+  <div *ngIf="operatingMargin">
+    🔷 Operating Margin: {{ operatingMargin | percent : "1.1-2" }}
+  </div>
+  <div *ngIf="netMargin">
+    🔷 Net Margin: {{ netMargin | percent : "1.1-2" }}
+  </div>
 </div>
 
 <div *ngIf="earnings?.documents?.length > 0">
   <strong>Documents</strong>
   <div *ngFor="let document of earnings?.documents">
-    <strong>{{ document.name }}:</strong>
-    <a href="{{ document.link }}" target="_blank">{{ document.link }}</a>
+    🔗 <a href="{{ document.link }}" target="_blank">{{ document.name }}</a>
   </div>
 </div>
 

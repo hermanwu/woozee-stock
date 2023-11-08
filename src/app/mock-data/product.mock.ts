@@ -4,7 +4,7 @@ export class Product {
   usage?: string;
   description?: string;
   images?: string[];
-  parents?: string[];
+  parentIds?: string[];
   children?: Product[];
   siblings?: Product[];
   parentCompany?: string;
@@ -12,6 +12,74 @@ export class Product {
 }
 
 export const mockProducts: Product[] = [
+  {
+    id: 'bitcoin',
+    name: 'Bitcoin',
+  },
+  {
+    id: 'coinbase-consumer-platform',
+    name: 'Coinbase (Consumer Platform)',
+    description:
+      'User-friendly platform for buying, selling, and managing cryptocurrency portfolios.',
+    rootCompanyId: 'coin',
+    parentIds: ['bitcoin'],
+  },
+  {
+    id: 'coinbase-pro',
+    name: 'Coinbase Pro',
+    description:
+      'Advanced trading platform with detailed charting, expanded order types, and deeper liquidity for experienced traders.',
+    rootCompanyId: 'coin',
+  },
+  {
+    id: 'coinbase-wallet',
+    name: 'Coinbase Wallet',
+    description:
+      'Self-custody cryptocurrency wallet for storing cryptocurrencies, exploring DApps, and managing private keys.',
+    rootCompanyId: 'coin',
+  },
+  {
+    id: 'coinbase-card',
+    name: 'Coinbase Card',
+    description:
+      'A Visa debit card allowing users to spend cryptocurrencies for purchases and ATM withdrawals.',
+    rootCompanyId: 'coin',
+  },
+  {
+    id: 'coinbase-commerce',
+    name: 'Coinbase Commerce',
+    description:
+      'Service for merchants to accept cryptocurrency payments in a decentralized way.',
+    rootCompanyId: 'coin',
+  },
+  {
+    id: 'coinbase-earn',
+    name: 'Coinbase Earn',
+    description:
+      'Platform for users to earn cryptocurrencies by learning about them through videos and quizzes.',
+    rootCompanyId: 'coin',
+  },
+  {
+    id: 'coinbase-prime',
+    name: 'Coinbase Prime',
+    description:
+      'Professional trading platform for institutional clients with advanced trading and analytics tools.',
+    rootCompanyId: 'coin',
+  },
+  {
+    id: 'coinbase-custody',
+    name: 'Coinbase Custody',
+    description:
+      'Institutional-grade service for secure cryptocurrency storage, offering offline storage, insurance, and audited controls.',
+    rootCompanyId: 'coin',
+  },
+  {
+    id: 'coinbase-ventures',
+    name: 'Coinbase Ventures',
+    description:
+      'Investment arm funding early-stage cryptocurrency and blockchain startups.',
+    rootCompanyId: 'coin',
+  },
   {
     id: 'keytruda',
     name: 'KEYTRUDA (pembrolizumab)',
@@ -81,17 +149,17 @@ export const mockProducts: Product[] = [
   {
     name: 'Pinduoduo App',
     rootCompanyId: 'pdd',
-    parents: ['E-commerce'],
+    parentIds: ['E-commerce'],
   },
   {
     name: 'Amazon Web Services (AWS)',
     rootCompanyId: 'amzn',
-    parents: ['Cloud Computing'],
+    parentIds: ['Cloud Computing'],
   },
   {
     name: 'YouTube',
     rootCompanyId: 'googl',
-    parents: ['Video Streaming Service'],
+    parentIds: ['Video Streaming Service'],
   },
   {
     name: 'ChatGPT',
@@ -113,4 +181,8 @@ export const getProductsByRootCompanyId = (rootCompanyId: string) => {
 
 export const getProductByProductId = (productId: string) => {
   return mockProducts.find((product) => product.id === productId);
+};
+
+export const getProductsByIds = (productIds: string[]) => {
+  return mockProducts.filter((product) => productIds.includes(product.id));
 };

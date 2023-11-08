@@ -1,6 +1,6 @@
 <app-title-menu>
   <div left-items class="inline-display">
-    <h1>Latest Investing Ideas</h1>
+    <h1>Trending</h1>
 
     <!-- <mat-chip-list class="chip-list" [multiple]="true" selectable>
       <mat-chip
@@ -42,76 +42,65 @@
   </div>
 </app-title-menu>
 
-<div *ngIf="showTools"></div>
+<div *ngIf="selectedType === 'quotes'">
+  <h2>Quotes</h2>
 
-<h2>💬 Quotes</h2>
-
-<div class="news-card" *ngFor="let item of quotes">
-  <div>📚 {{ item.sourceType }}: {{ item.sourceName }}</div>
-  <div>✍️ {{ item.authorName }}</div>
-  <div>💬 "{{ item.content }}"</div>
   <div class="logo-image">
     <!-- <app-image-display
-          [imageLink]="
-            stockUuidToStockMap.get(stockUuid)?.largeLogoLink ||
-            stockUuidToStockMap.get(stockUuid)?.logoLink
-          "
-        >
-        </app-image-display> -->
-    <img [src]="item.imageLink" />
+            [imageLink]="
+              stockUuidToStockMap.get(stockUuid)?.largeLogoLink ||
+              stockUuidToStockMap.get(stockUuid)?.logoLink
+            "
+          >
+          </app-image-display> -->
+    <img [src]="selectedObject.imageLink" />
   </div>
+
+  <div class="logo-image"></div>
+
+  <div>📚 {{ selectedObject.sourceType }}: {{ selectedObject.sourceName }}</div>
+  <div>✍️ {{ selectedObject.authorName }}</div>
+  <div>💬 "{{ selectedObject.content }}"</div>
 </div>
 
-<h2>🎙️ Earnings</h2>
+<div *ngIf="selectedType === 'earnings'">
+  <h2>Earnings</h2>
 
-<div class="news-card" *ngFor="let item of earnings">
+  <!-- <app-image-display
+        [imageLink]="
+          stockUuidToStockMap.get(stockUuid)?.largeLogoLink ||
+          stockUuidToStockMap.get(stockUuid)?.logoLink
+        "
+      >
+      </app-image-display> -->
+  <img [src]="" />
   <div>
-    <app-tag-display [tagUuid]="item?.targets?.[0]"></app-tag-display>
+    <app-tag-display [tagUuid]="selectedObject?.targets?.[0]"></app-tag-display>
   </div>
 
-  <app-earnings-display [earnings]="item"></app-earnings-display>
-
-  <mat-divider></mat-divider>
+  <app-earnings-display [earnings]="selectedObject"></app-earnings-display>
 </div>
 
-<div>
+<div *ngIf="selectedType === 'opinions'">
   <h2>Opinions</h2>
-</div>
 
-<div>
-  <h2>📰 Events</h2>
-  <div
-    class="news-card"
-    [style.backgroundColor]="bgColor"
-    *ngFor="let stockUuid of stockUuidToStockMap.keys()"
-  >
-    <app-card>
-      <div class="logo-image">
-        <!-- <app-image-display
-          [imageLink]="
-            stockUuidToStockMap.get(stockUuid)?.largeLogoLink ||
-            stockUuidToStockMap.get(stockUuid)?.logoLink
-          "
-        >
-        </app-image-display> -->
-        <img
-          [src]="
-            stockUuidToStockMap.get(stockUuid)?.largeLogoLink ||
-            stockUuidToStockMap.get(stockUuid)?.logoLink
-          "
-        />
-      </div>
-
-      <div *ngFor="let item of stockUuidToNotesMap.get(stockUuid)">
-        <div class="news-display">
-          <app-note-container [note]="item"></app-note-container>
-        </div>
-      </div>
-    </app-card>
+  <div class="news-display">
+    <app-note-container [note]="selectedObject"></app-note-container>
   </div>
 </div>
 
-<!-- <button type="button" mat-button disabled>
-    Load More
-    <mat-icon>more_horiz</mat-icon>
-  </button> -->
+<div *ngIf="selectedType === 'events'">
+  <h2>Announcement</h2>
+
+  <div>{{ selectedObject.title }}</div>
+</div>
+
+<div class="flex justify-end">
+  <button
+    type="button"
+    (click)="pickRandomNews()"
+    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+  >
+    Next
+  </button>
+</div>

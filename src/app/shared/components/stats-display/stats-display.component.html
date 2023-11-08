@@ -29,6 +29,11 @@
           ><span *ngSwitchCase="TimeFrameEnum.weekOverWeek">week/week</span>
         </ng-container>
 
+        <span *ngIf="statsDisplay?.previousValue < 0">
+          , up from ${{ statsDisplay?.previousValue | siUnit : 3 | undefined }}
+          a year ago
+        </span>
+
         <span *ngIf="statsDisplay?.expectedChangeRate"
           >,{{
             statsDisplay?.expectedChangeRate < statsDisplay?.changeRate

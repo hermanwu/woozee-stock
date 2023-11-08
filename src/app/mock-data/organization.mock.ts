@@ -2,11 +2,36 @@ import { Organization } from '../people/components/investor-display/investor-dis
 
 export const organizations: Organization[] = [
   {
+    id: 'shop',
+    name: 'SHOPIFY INC.',
+    displayName: 'Shopify',
+    ticker: 'shop',
+    irAddress: 'https://investors.shopify.com/home/default.aspx',
+    logoLink: 'https://i.ibb.co/X2786r1/vn6-Edh-Rg-400x400.jpg',
+  },
+  {
     uuid: 'amd',
     displayName: 'AMD',
     ticker: 'amd',
     irAddress: 'https://ir.amd.com/',
     logoLink: 'https://i.ibb.co/HFk1hgT/In8-IVKDB-400x400.png',
+  },
+  {
+    uuid: 'coin',
+    displayName: 'Coinbase',
+    ticker: 'coin',
+    logoLink: 'https://i.ibb.co/J2Hd0Sf/A9y-Yenz3-400x400.png',
+    irAddress: 'https://investor.coinbase.com/home/default.aspx',
+  },
+  {
+    uuid: 'afrm',
+    logoLink: 'https://i.ibb.co/FV2Rww2/AFRM.png',
+    largeLogoLink: 'https://i.ibb.co/6XjkHf6/AFRM-BIG.png',
+    displayName: 'Affirm',
+    name: 'Affirm',
+    ticker: 'afrm',
+    irAddress: 'https://investors.affirm.com/',
+    // Earnings Report:
   },
   {
     uuid: 'pfe',

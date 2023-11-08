@@ -58,16 +58,13 @@
       mat-menu-item
       i18n
     >
-      Notebook
+      Ideas
     </button>
 
     <!-- <button mat-menu-item disabled>
       <a [routerLink]="['/stocks']">Stocks</a>
     </button> -->
 
-    <a mat-menu-item [href]="aboutPage" *ngIf="!environment.production"
-      >About</a
-    >
     <!-- <button mat-menu-item [routerLink]="['/about']">About</button> -->
 
     <button
@@ -78,6 +75,10 @@
     >
       UI
     </button>
+
+    <a mat-menu-item [href]="aboutPage" *ngIf="!environment.production"
+      >About</a
+    >
   </mat-menu>
 </mat-toolbar>
 

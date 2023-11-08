@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NotesServices } from 'src/app/news/services/notes.services';
-import { Note } from 'src/app/shared/data/note.interface';
 import { StockServices } from 'src/app/stock/services/stock.service';
-import { EmotionServices, Sentiment } from 'src/emotion/emotion.services';
+import { EmotionServices } from 'src/emotion/emotion.services';
 import { UserServices } from '../../../accounts/services/user.services';
 import { AddNoteFormComponent } from '../add-note-form/add-note-form.component';
 
@@ -15,14 +14,13 @@ import { AddNoteFormComponent } from '../add-note-form/add-note-form.component';
 })
 export class NotesListPageComponent implements OnInit {
   showAddNotesSection = false;
-  notes: Note[] = [];
   neutralNotes = [];
   bullishNotes = [];
   bearishNotes = [];
 
-  sentiments: [string, Sentiment][] = [];
-  stockUuidToNotesMap = new Map<string, Note[]>();
   stockUuidToStockMap = new Map<string, any>();
+  stockUuidToOpinionMap = new Map<string, any>();
+  stockUuids = [];
 
   constructor(
     private userServices: UserServices,
@@ -43,40 +41,35 @@ export class NotesListPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const emotions = this.emotionServices.getEmotionsByUserId(
+    const interactions = this.emotionServices.getUserInteractionsByUserId(
       this.userServices.currentUser.userUuid
     );
 
-    for (let emotion of emotions) {
-      const note = this.notesServices.getNotesByUuids([emotion.noteUuid])[0];
+    const stockInteractions = interactions.filter(
+      (item) => item.type === 'stock'
+    );
 
-      note.emotion = emotion;
+    const opinionInteractions = interactions.filter(
+      (item) => item.type === 'opinion'
+    );
 
-      this.notes.push(note);
-    }
+    const opinions = this.notesServices.getNotesByUuids(
+      opinionInteractions.map((item) => item.targetUuid)
+    );
 
-    for (let note of this.notes) {
-      if (note.targets) {
-        const stockUuid = note.targets[0];
-        if (!this.stockUuidToStockMap.has(stockUuid)) {
-          this.stockUuidToStockMap.set(
-            stockUuid,
-            this.stockServices.getStockByUuid(stockUuid)
-          );
-          this.stockUuidToNotesMap.set(stockUuid, []);
+    console.log(opinions);
+
+    for (let opinion of opinions) {
+      const stock = this.stockServices.getStockByUuid(opinion.targets[0]);
+      if (stock) {
+        this.stockUuidToStockMap.set(stock.uuid, stock);
+        this.stockUuids.push(stock.uuid);
+        if (!this.stockUuidToOpinionMap.has(stock.uuid)) {
+          this.stockUuidToOpinionMap.set(stock.uuid, []);
         }
-
-        this.stockUuidToNotesMap.get(stockUuid).push(note);
+        this.stockUuidToOpinionMap.get(stock.uuid).push(opinion);
       }
     }
-
-    for (let stockUuid of this.stockUuidToNotesMap.keys()) {
-      const notes = this.stockUuidToNotesMap.get(stockUuid);
-      const sentiment = this.emotionServices.getSentimentFromNotes(notes);
-      this.sentiments.push([stockUuid, sentiment]);
-    }
-
-    this.sentiments.sort((a, b) => b[1].score - a[1].score);
   }
 
   addNote() {

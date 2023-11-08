@@ -1,11 +1,5 @@
 <div class="header">
   <div>
-    <!-- Display Note Type Based on noteType-->
-    <ng-container [ngSwitch]="note.noteType">
-      <ng-container *ngSwitchCase="'opinion'"> 🎙️ Opinions: </ng-container>
-      <ng-container *ngSwitchCase="'number'"> 📊 Numbers: </ng-container>
-      <ng-container *ngSwitchCase="'action'"> 🗓️ Events: </ng-container>
-    </ng-container>
     <app-tag-display [tagUuid]="note?.targets?.[0]"></app-tag-display>
     <ng-container *ngIf="note?.tagUuids?.length > 0">
       |

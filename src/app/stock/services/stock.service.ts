@@ -57,10 +57,14 @@ export class StockServices {
     );
   }
 
-  getStockByUuid(uuid: string): any {
+  getStockByUuid(id: string): any {
     return (
-      this.dataMap.get(uuid.toLowerCase()) ||
-      organizations.find((org) => org.uuid.toLowerCase() === uuid.toLowerCase())
+      this.dataMap.get(id.toLowerCase()) ||
+      organizations.find(
+        (org) =>
+          org?.uuid?.toLowerCase() === id.toLowerCase() ||
+          org?.id?.toLowerCase() === id.toLowerCase()
+      )
     );
   }
 

@@ -16,7 +16,9 @@ export interface Person {
 }
 
 export interface Organization {
-  uuid: string;
+  id?: string;
+  uuid?: string;
+  name?: string;
   displayName: string;
   logoLink?: string;
   largeLogoLink?: string;

@@ -3,7 +3,6 @@ import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { Term } from 'src/app/risks/models/risk-level.model';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
-import { allCatalystsForStocks } from './all-catalyst-for-stocks.const';
 import { marketCatalysts } from './markets-catalysts.mock';
 
 export const catalysts: Catalyst[] = [
@@ -25,7 +24,6 @@ export const catalysts: Catalyst[] = [
   //     },
   //   ],
   // },
-  ...allCatalystsForStocks,
   ...marketCatalysts,
   {
     uuid: 'c9',

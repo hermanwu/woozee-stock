@@ -17,4 +17,10 @@ export const quotes = [
     content:
       '寻找下一个百年公司。日常生活离不开的产物。在可预见未来里，继续成长的行业。有科技基因。稳定现金流且盈利。',
   },
+  {
+    creatorUuid: 'hwu1106@gmail.com',
+    authorName: 'Peter Lynch',
+    content:
+      'insiders might sell their shares for any number of reasons, but they buy them for only one: they think the price will rise.',
+  },
 ];

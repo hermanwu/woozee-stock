@@ -1,13 +1,18 @@
 <h1>Ideas</h1>
 
 <div class="mt-10" *ngFor="let stockUuid of stockUuids">
-  <div class="left">
-    <app-tag-display [tagUuid]="stockUuid"></app-tag-display>
-  </div>
-  <div class="right">
-    <!-- <app-opinion-display
-        [sentiment]="stockSentiment[1]"
-      ></app-opinion-display> -->
+  <h2>
+    <app-tag-display class="" [tagUuid]="stockUuid"></app-tag-display>
+  </h2>
+
+  <div class="mt-5" *ngIf="stockUuidToProductMap.get(stockUuid)">
+    <div *ngFor="let product of stockUuidToProductMap.get(stockUuid)">
+      <mat-chip-list>
+        <mat-chip (click)="navigateToProductPage(product.uuid)">
+          {{ product.name }}
+        </mat-chip>
+      </mat-chip-list>
+    </div>
   </div>
 
   <div *ngIf="stockUuidToOpinionMap.get(stockUuid)">

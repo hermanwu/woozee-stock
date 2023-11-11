@@ -1,6 +1,21 @@
 import { UserInteractions } from 'src/emotion/emotion.services';
 
+export const getInteractionsByProductId = (
+  productId: string
+): UserInteractions => {
+  return userInteractions.find(
+    (interaction) => interaction.targetUuid === productId
+  );
+};
+
 export const userInteractions: UserInteractions[] = [
+  {
+    uuid: '79783993-d90b-44f2-8268-5af46fbbe264',
+    userUuid: 'hwu1106@gmail.com',
+    targetUuid: 'li-l9',
+    vote: 10,
+    type: 'product',
+  },
   {
     uuid: '1',
     userUuid: 'hwu1106@gmail.com',
@@ -30,5 +45,12 @@ export const userInteractions: UserInteractions[] = [
     targetUuid: '79783991-d90b-44f2-8268-5af4efbbe264',
     type: 'opinion',
     bearish: 1,
+  },
+  {
+    uuid: '79783992-d90b-44f2-8268-5af4efbbe264',
+    userUuid: 'hwu1106@gmail.com',
+    targetUuid: 'processor-architectures',
+    saved: true,
+    type: 'product',
   },
 ];

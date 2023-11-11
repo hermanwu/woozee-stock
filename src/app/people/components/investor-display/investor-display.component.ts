@@ -22,6 +22,7 @@ export interface Organization {
   displayName: string;
   logoLink?: string;
   largeLogoLink?: string;
+  backgroundImage?: string;
   ticker?: string;
   irAddress?: string;
   descriptions?: string[];

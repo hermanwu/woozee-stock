@@ -48,7 +48,6 @@ import { jd } from './JD';
 import { JMIA } from './JMIA';
 import { jnj } from './jnj';
 import { jpm } from './jpm';
-import { li } from './li.mock';
 import { lmt } from './lmt';
 import { logi } from './LOGI';
 import { lrcx } from './lrcx';
@@ -269,7 +268,6 @@ export const stocksMap = {
   s,
   lulu,
   pstg,
-  li,
   cxm,
   ual,
   cost,

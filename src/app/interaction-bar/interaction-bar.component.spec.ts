@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EmojiDisplayComponent } from './emoji-display.component';
+import { InteractionBarComponent } from './interaction-bar.component';
 
-describe('EmojiDisplayComponent', () => {
-  let component: EmojiDisplayComponent;
-  let fixture: ComponentFixture<EmojiDisplayComponent>;
+describe('InteractionBarComponent', () => {
+  let component: InteractionBarComponent;
+  let fixture: ComponentFixture<InteractionBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmojiDisplayComponent ]
+      declarations: [ InteractionBarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EmojiDisplayComponent);
+    fixture = TestBed.createComponent(InteractionBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

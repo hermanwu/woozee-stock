@@ -42,65 +42,71 @@
   </div>
 </app-title-menu>
 
-<div *ngIf="selectedType === 'quotes'">
-  <h2>Quotes</h2>
+<div class="mt-5">
+  <div *ngIf="selectedType === 'quotes'">
+    <h2>Quotes</h2>
 
-  <div class="logo-image">
-    <!-- <app-image-display
+    <div *ngIf="selectedObject.sourceType">
+      📚 {{ selectedObject.sourceType }}: {{ selectedObject.sourceName }}
+    </div>
+    <div *ngIf="selectedObject.authorName">
+      ✍️ {{ selectedObject.authorName }}
+    </div>
+    <div>💬 "{{ selectedObject.content }}"</div>
+
+    <div class="logo-image">
+      <!-- <app-image-display
             [imageLink]="
               stockUuidToStockMap.get(stockUuid)?.largeLogoLink ||
               stockUuidToStockMap.get(stockUuid)?.logoLink
             "
           >
           </app-image-display> -->
-    <img [src]="selectedObject.imageLink" />
+      <img [src]="selectedObject.imageLink" />
+    </div>
   </div>
 
-  <div class="logo-image"></div>
+  <div *ngIf="selectedType === 'earnings'">
+    <h2>Earnings</h2>
 
-  <div>📚 {{ selectedObject.sourceType }}: {{ selectedObject.sourceName }}</div>
-  <div>✍️ {{ selectedObject.authorName }}</div>
-  <div>💬 "{{ selectedObject.content }}"</div>
-</div>
-
-<div *ngIf="selectedType === 'earnings'">
-  <h2>Earnings</h2>
-
-  <!-- <app-image-display
+    <!-- <app-image-display
         [imageLink]="
           stockUuidToStockMap.get(stockUuid)?.largeLogoLink ||
           stockUuidToStockMap.get(stockUuid)?.logoLink
         "
       >
       </app-image-display> -->
-  <img [src]="" />
-  <div>
-    <app-tag-display [tagUuid]="selectedObject?.targets?.[0]"></app-tag-display>
+    <img [src]="" />
+    <div>
+      <app-tag-display
+        [tagUuid]="selectedObject?.targets?.[0]"
+      ></app-tag-display>
+    </div>
+
+    <app-earnings-display [earnings]="selectedObject"></app-earnings-display>
   </div>
 
-  <app-earnings-display [earnings]="selectedObject"></app-earnings-display>
-</div>
+  <div *ngIf="selectedType === 'opinions'">
+    <h2>Opinions</h2>
 
-<div *ngIf="selectedType === 'opinions'">
-  <h2>Opinions</h2>
-
-  <div class="news-display">
-    <app-note-container [note]="selectedObject"></app-note-container>
+    <div class="news-display">
+      <app-note-container [note]="selectedObject"></app-note-container>
+    </div>
   </div>
-</div>
 
-<div *ngIf="selectedType === 'events'">
-  <h2>Announcement</h2>
+  <div *ngIf="selectedType === 'events'">
+    <h2>Announcement</h2>
 
-  <div>{{ selectedObject.title }}</div>
-</div>
+    <div>{{ selectedObject.title }}</div>
+  </div>
 
-<div class="flex justify-end">
-  <button
-    type="button"
-    (click)="pickRandomNews()"
-    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-  >
-    Next
-  </button>
+  <div class="flex justify-end">
+    <button
+      type="button"
+      (click)="pickRandomNews()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Next
+    </button>
+  </div>
 </div>

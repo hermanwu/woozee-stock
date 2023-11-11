@@ -15,7 +15,6 @@
 </div>
 
 <div *ngIf="earnings.data?.length > 0">
-  <strong>Numbers</strong>
   <div *ngFor="let data of earnings?.data">
     <span *ngIf="data.value">🔷</span> {{ data.name }}:
     <app-stats-display [statsDisplay]="data"></app-stats-display>

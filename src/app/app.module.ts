@@ -20,10 +20,11 @@ import { AppComponent } from './app.component';
 import { AssetListPageComponent } from './assets/components/asset-list-page/asset-list-page.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { ComparisonNoteComponent } from './comparison-note/comparison-note.component';
-import { EmojiDisplayComponent } from './emoji-display/emoji-display.component';
+import { EarningsDisplayComponent } from './earnings-display/earnings-display.component';
 import { ImageDisplayComponent } from './images/components/image-display/image-display.component';
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
 import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
+import { InteractionBarComponent } from './interaction-bar/interaction-bar.component';
 import { LandingComponent } from './landing/landing.component';
 import { ListDisplayComponent } from './list-display/list-display.component';
 import { LoginComponent } from './login/login.component';
@@ -58,6 +59,7 @@ import { PresentationComponent } from './presentation/presentation.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
 import { SlideFooterComponent } from './presentation/slide/slide-footer/slide-footer.component';
 import { SlideComponent } from './presentation/slide/slide/slide.component';
+import { ProductPropertiesPageComponent } from './product-properties-page/product-properties-page.component';
 import { RiskCatalystDialogComponent } from './risks/components/risk-catalyst-dialog/risk-catalyst-dialog.component';
 import { RiskListComponent } from './risks/components/risk-list/risk-list.component';
 import { RiskTotalDisplayComponent } from './risks/components/risk-total-display/risk-total-display.component';
@@ -128,8 +130,6 @@ import { UiListComponent } from './ui/ui-list/ui-list.component';
 import { UiMoleculesComponent } from './ui/ui-molecules/ui-molecules.component';
 import { UiOrganismComponent } from './ui/ui-organism/ui-organism.component';
 import { UiTemplatesComponent } from './ui/ui-templates/ui-templates.component';
-import { ProductPropertiesPageComponent } from './product-properties-page/product-properties-page.component';
-import { EarningsDisplayComponent } from './earnings-display/earnings-display.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -239,7 +239,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     UiImagesDisplayComponent,
     NoteContainerComponent,
     NoteFormListComponent,
-    EmojiDisplayComponent,
     TagDisplayComponent,
     LoginComponent,
     SignupComponent,
@@ -248,6 +247,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     BarChartComponent,
     ProductPropertiesPageComponent,
     EarningsDisplayComponent,
+    InteractionBarComponent,
   ],
   imports: [
     BrowserModule,

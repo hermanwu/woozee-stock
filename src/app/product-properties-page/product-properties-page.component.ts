@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { getInteractionsByProductId } from '../mock-data/interactions.mock';
 import { getProductByProductId } from '../mock-data/product.mock';
 
 @Component({
@@ -12,6 +13,7 @@ export class ProductPropertiesPageComponent implements OnInit {
   private productId = 'productId';
   product;
   routeSub: Subscription;
+  interactions;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -20,6 +22,8 @@ export class ProductPropertiesPageComponent implements OnInit {
       const productId = params[this.productId].toLowerCase();
 
       this.product = getProductByProductId(productId);
+
+      this.interactions = getInteractionsByProductId(productId);
     });
   }
 

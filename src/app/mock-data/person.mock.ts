@@ -1,3 +1,11 @@
+export const findPeopleByOrganizationUuid = (uuid: string) => {
+  return people.filter((person) => {
+    return person.titles?.some((title) => {
+      return title.organizationUuid === uuid;
+    });
+  });
+};
+
 export const people = [
   {
     uuid: 'charmath',
@@ -5,6 +13,19 @@ export const people = [
     imageLink: 'https://i.ibb.co/JpcJ6Sy/Chamath-Palihapitiya-Portrait.jpg',
   },
 
+  {
+    uuid: 'lixiang',
+    displayName: 'Li Xiang',
+    descriptions: [
+      'Li Xiang is an entrepreneur with a background in the automotive and technology sectors. Before founding Li Auto, he was involved in other entrepreneurial ventures, including an auto-focused internet company. His experience in both the internet and automotive industries has contributed to the philosophy behind Li Auto, which emphasizes smart vehicles and advanced technologies.',
+    ],
+    titles: [
+      {
+        organizationUuid: 'li',
+        names: ['CEO', 'Founder'],
+      },
+    ],
+  },
   {
     uuid: 'bobIger',
     displayName: 'Bob Iger',

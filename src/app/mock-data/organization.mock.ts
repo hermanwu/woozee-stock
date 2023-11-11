@@ -2,7 +2,26 @@ import { Organization } from '../people/components/investor-display/investor-dis
 
 export const organizations: Organization[] = [
   {
-    id: 'shop',
+    uuid: 'li',
+    logoLink: 'https://i.ibb.co/YD47KMh/li-600.png',
+    displayName: 'Li Auto',
+    ticker: 'li',
+    irAddress: 'https://ir.lixiang.com/',
+  },
+  {
+    uuid: 'arm',
+    displayName: 'arm',
+    ticker: 'arm',
+    irAddress: 'https://investors.arm.com/',
+    logoLink: 'https://i.ibb.co/vmMPWGF/9jd-Jld-Y9-400x400.jpg',
+    backgroundImage: 'https://i.ibb.co/SV4xGvB/1500x500.jpg',
+    headquarters: 'Cambridge, UK',
+    descriptions: [
+      'ARM Holdings is a semiconductor and software design company, widely known for its ARM processors and architectures. ARM is a subsidiary of the SoftBank Group, a Japanese multinational conglomerate, though there were plans for it to be sold to NVIDIA, a deal which was ultimately canceled due to regulatory challenges.',
+    ],
+  },
+  {
+    uuid: 'shop',
     name: 'SHOPIFY INC.',
     displayName: 'Shopify',
     ticker: 'shop',
@@ -146,10 +165,11 @@ export const organizations: Organization[] = [
   {
     uuid: 'rivn',
     displayName: 'Rivian',
+    ticker: 'rivn',
+    irAddress: 'https://rivian.com/investors',
     logoLink:
       'https://pbs.twimg.com/profile_images/1199724774613606402/ZTAmKeoe_400x400.jpg',
   },
-
   {
     uuid: 'dis',
     displayName: 'Disney',

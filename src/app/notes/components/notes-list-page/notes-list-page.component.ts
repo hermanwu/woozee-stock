@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import {
+  getProductsByProductUuids,
+  getRootCompanyIdByProductId,
+  Product,
+} from 'src/app/mock-data/product.mock';
 import { NotesServices } from 'src/app/news/services/notes.services';
+import { NavigationServices } from 'src/app/shared/services/navgiation.services';
 import { StockServices } from 'src/app/stock/services/stock.service';
 import { EmotionServices } from 'src/emotion/emotion.services';
 import { UserServices } from '../../../accounts/services/user.services';
@@ -18,9 +24,13 @@ export class NotesListPageComponent implements OnInit {
   bullishNotes = [];
   bearishNotes = [];
 
+  interactions = [];
   stockUuidToStockMap = new Map<string, any>();
+  stockUuidToProductMap = new Map<string, Product[]>();
   stockUuidToOpinionMap = new Map<string, any>();
-  stockUuids = [];
+  stockUuids = new Set();
+  products = [];
+  userUuid;
 
   constructor(
     private userServices: UserServices,
@@ -28,9 +38,10 @@ export class NotesListPageComponent implements OnInit {
     private dialogService: MatDialog,
     private router: Router,
     private emotionServices: EmotionServices,
-    private stockServices: StockServices
+    private stockServices: StockServices,
+    private navigationServices: NavigationServices
   ) {
-    const userUuid = userServices.currentUser.userUuid;
+    this.userUuid = userServices.currentUser.userUuid;
     // this.myOpinions = notesServices
     //   .getNotesByCreatorUuid(userUuid)
     //   .filter((item) => item.noteType === NoteType.Opinion);
@@ -41,15 +52,17 @@ export class NotesListPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const interactions = this.emotionServices.getUserInteractionsByUserId(
+    this.interactions = this.emotionServices.getUserInteractionsByUserId(
       this.userServices.currentUser.userUuid
     );
 
-    const stockInteractions = interactions.filter(
+    this.processProductInteractions();
+
+    const stockInteractions = this.interactions.filter(
       (item) => item.type === 'stock'
     );
 
-    const opinionInteractions = interactions.filter(
+    const opinionInteractions = this.interactions.filter(
       (item) => item.type === 'opinion'
     );
 
@@ -57,18 +70,43 @@ export class NotesListPageComponent implements OnInit {
       opinionInteractions.map((item) => item.targetUuid)
     );
 
-    console.log(opinions);
-
     for (let opinion of opinions) {
       const stock = this.stockServices.getStockByUuid(opinion.targets[0]);
       if (stock) {
         this.stockUuidToStockMap.set(stock.uuid, stock);
-        this.stockUuids.push(stock.uuid);
+        this.stockUuids.add(stock.uuid);
         if (!this.stockUuidToOpinionMap.has(stock.uuid)) {
           this.stockUuidToOpinionMap.set(stock.uuid, []);
         }
         this.stockUuidToOpinionMap.get(stock.uuid).push(opinion);
       }
+    }
+  }
+
+  processProductInteractions() {
+    const productInteractions = this.interactions.filter(
+      (item) => item.type === 'product'
+    );
+
+    const products = getProductsByProductUuids(
+      productInteractions.map((item) => item.targetUuid)
+    );
+
+    for (let product of products) {
+      let companyUuid = getRootCompanyIdByProductId(product.uuid);
+
+      if (!this.stockUuids.has(companyUuid)) {
+        this.stockUuids.add(companyUuid);
+        this.stockUuidToStockMap.set(
+          companyUuid,
+          this.stockServices.getStockByUuid(companyUuid)
+        );
+      }
+
+      if (!this.stockUuidToProductMap.has(companyUuid)) {
+        this.stockUuidToProductMap.set(companyUuid, []);
+      }
+      this.stockUuidToProductMap.get(companyUuid).push(product);
     }
   }
 
@@ -79,5 +117,8 @@ export class NotesListPageComponent implements OnInit {
       panelClass: 'medium-modal-panel',
       disableClose: true,
     });
+  }
+  navigateToProductPage(uuid: string) {
+    this.navigationServices.navigate('product', uuid);
   }
 }

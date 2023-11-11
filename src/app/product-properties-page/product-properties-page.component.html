@@ -1,7 +1,19 @@
-<div>
-  {{ product.name }}
+<img
+  [src]="product.images?.[0]"
+  alt="Descriptive Image Text"
+  class="rounded-lg"
+/>
+
+<div class="mt-5">
+  <h1>
+    {{ product.name }}
+  </h1>
 </div>
 
 <div>
   {{ product.description }}
+</div>
+
+<div class="mt-5">
+  <app-interaction-bar [interactions]="interactions"></app-interaction-bar>
 </div>

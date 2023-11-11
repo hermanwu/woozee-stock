@@ -40,6 +40,9 @@ export enum EmojiUnicode {
   two = '2️⃣',
   three = '3️⃣',
   four = '4️⃣',
+  heart = '❤️',
+  bookmark = '🔖',
+  comment = '💬',
 }
 
 export const BullishEmoji = ['🚀', '😆', '🙂', '👍', '🤑', '😲'];

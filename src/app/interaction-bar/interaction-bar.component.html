@@ -1,0 +1,50 @@
+<div *ngIf="interactions" class="flex space-x-2">
+  <span class="items-center space-x-2 border rounded">
+    <button class="text-white hover:bg-blue-700 font-bold py-2 px-3 rounded">
+      {{ emojiUnicode.thumbUp }}
+    </button>
+
+    <span class="text-gray-700 font-bold"> {{ interactions.vote || 0 }} </span>
+
+    <button class="font-bold hover:bg-blue-700 py-2 px-3 rounded">
+      {{ emojiUnicode.thumbDown }}
+    </button>
+  </span>
+
+  <span *ngIf="interactions.thumbUp">
+    <button class="border hover:bg-blue-700 font-bold py-2 px-4 rounded">
+      {{ emojiUnicode.thumbDown }}
+    </button>
+  </span>
+
+  <span>
+    <button class="border hover:bg-blue-700 font-bold py-2 px-4 rounded">
+      {{ emojiUnicode.pin }}
+    </button>
+  </span>
+
+  <span>
+    <button class="border hover:bg-blue-700 font-bold py-2 px-4 rounded">
+      {{ emojiUnicode.comment }}
+    </button>
+  </span>
+
+  <span>
+    <button class="border hover:bg-blue-700 font-bold py-2 px-4 rounded">
+      Want
+    </button>
+  </span>
+
+  <span>
+    <button class="border hover:bg-blue-700 font-bold py-2 px-4 rounded">
+      Used
+    </button>
+  </span>
+
+  <span>
+    <button class="border hover:bg-blue-700 font-bold py-2 px-4 rounded">
+      {{ emojiUnicode.heart }}
+      Own
+    </button>
+  </span>
+</div>

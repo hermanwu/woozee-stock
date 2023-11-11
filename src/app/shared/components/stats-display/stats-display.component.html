@@ -15,14 +15,17 @@
 
         <app-movement-display
           *ngIf="
-            (statsDisplay?.value && statsDisplay?.previousValue) ||
+            (statsDisplay?.value > 0 && statsDisplay?.previousValue > 0) ||
             statsDisplay?.changeRate
           "
           [previousData]="statsDisplay?.previousValue"
           [currentData]="statsDisplay?.value"
           [changePercent]="statsDisplay?.changeRate"
         ></app-movement-display
-        ><ng-container [ngSwitch]="statsDisplay.timeFrame">
+        ><ng-container
+          *ngIf="statsDisplay?.value > 0 && statsDisplay?.previousValue > 0"
+          [ngSwitch]="statsDisplay.timeFrame"
+        >
           <span *ngSwitchCase="TimeFrameEnum.yoy">y/y</span
           ><span *ngSwitchCase="TimeFrameEnum.qoq">q/q</span
           ><span *ngSwitchCase="TimeFrameEnum.mtm">m/m</span
@@ -30,7 +33,7 @@
         </ng-container>
 
         <span *ngIf="statsDisplay?.previousValue < 0">
-          , up from ${{ statsDisplay?.previousValue | siUnit : 3 | undefined }}
+          up from ${{ statsDisplay?.previousValue | siUnit : 3 | undefined }}
           a year ago
         </span>
 

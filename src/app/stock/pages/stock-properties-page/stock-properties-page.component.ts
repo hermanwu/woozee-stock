@@ -5,8 +5,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { getEarningsByTicker } from 'src/app/mock-data/earnings.mock';
+import { findPeopleByOrganizationUuid } from 'src/app/mock-data/person.mock';
 import {
-  getProductsByIds,
+  getAllParents,
   getProductsByRootCompanyId,
 } from 'src/app/mock-data/product.mock';
 import { NotesServices } from 'src/app/news/services/notes.services';
@@ -48,6 +49,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
 
   products = [];
   relatedProducts = [];
+  people = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -86,6 +88,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         this.userServices.currentUser.userUuid
       );
 
+      this.people = findPeopleByOrganizationUuid(this.stockUuid);
+
       for (let note of allNotes) {
         const emotion = emotions.find((e) => e.targetUuid === note.uuid);
         if (emotion) {
@@ -102,8 +106,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         .filter((obj) => obj.parentIds !== undefined) // Filter out undefined values
         .map((obj) => obj.parentIds)
         .reduce((acc, val) => acc.concat(val), []);
-      console.log(parentIds);
-      this.relatedProducts = getProductsByIds(parentIds);
+      this.relatedProducts = getAllParents(this.products);
       this.earnings = getEarningsByTicker(this.stockUuid);
     });
   }

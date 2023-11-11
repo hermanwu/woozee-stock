@@ -1,15 +1,24 @@
 import { Injectable } from '@angular/core';
-import { userInteractions } from 'src/app/mock-data/opinion.mock';
+import { userInteractions } from 'src/app/mock-data/interactions.mock';
 
 export interface UserInteractions {
   uuid: string;
   userUuid: string;
   targetUuid: string;
-  type: 'stock' | 'product' | 'people' | 'quote' | 'opinion' | 'event';
+  type:
+    | 'stock'
+    | 'product'
+    | 'people'
+    | 'quote'
+    | 'opinion'
+    | 'event'
+    | 'earnings';
   saved?: boolean;
   bullish?: number;
   bearish?: number;
   thumbUp?: number;
+  vote?: number;
+  hearted?: number;
 }
 
 export interface Sentiment {

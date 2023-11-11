@@ -33,6 +33,34 @@
     </h1>
   </div>
 
+  <div>
+    <span *ngIf="stockAnalysis?.headquarters">
+      Headquartered in {{ stockAnalysis.headquarters }}
+    </span>
+
+    <span *ngIf="stockAnalysis?.descriptions?.length > 0">
+      ,
+      <span *ngFor="let item of stockAnalysis.descriptions">
+        {{ item }}
+      </span>
+    </span>
+  </div>
+
+  <div *ngIf="people?.length > 0" class="mt-4">
+    <div class="mb-2">
+      <h2>Key People</h2>
+    </div>
+
+    <mat-chip-list>
+      <mat-chip
+        *ngFor="let item of people"
+        (click)="navigateToPersonPage(item.id)"
+      >
+        {{ item.displayName }}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+
   <div *ngIf="products.length > 0" class="mt-4">
     <div class="mb-2">
       <h2>Products</h2>
@@ -41,7 +69,7 @@
     <mat-chip-list>
       <mat-chip
         *ngFor="let item of products"
-        (click)="navigateToProductPage(item.id)"
+        (click)="navigateToProductPage(item.uuid)"
       >
         {{ item.name }}
       </mat-chip>
@@ -65,7 +93,7 @@
 
   <div *ngIf="earnings?.length > 0" class="mt-4">
     <div class="mb-2 mt-10">
-      <h2>Earnings</h2>
+      <h2>Earnings Highlights</h2>
     </div>
 
     <div *ngFor="let item of earnings">

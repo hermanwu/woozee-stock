@@ -40,6 +40,176 @@ export class Earnings {
 
 export const earnings: Earnings[] = [
   {
+    targets: ['li'],
+    releasedDate: getUtcDate(2023, 11, 9),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://ir.lixiang.com/news-releases/news-release-details/li-auto-inc-announces-unaudited-third-quarter-2023-financial',
+      },
+    ],
+    data: [
+      {
+        name: 'Total Vehicle Deliveries',
+        value: 105108,
+        changeRate: 2.96,
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Revenue',
+        value: 4.75e9,
+        changeRate: 2.712,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Vehicle Margin',
+        value: 21.2,
+        unit: 'percentage',
+        timeFrame: 'Q3 2023',
+      },
+      {
+        name: 'Operating Income',
+        value: 320600000,
+        changeRate: 0.439,
+        timeFrame: 'qoq',
+      },
+      {
+        name: 'Net Income',
+        value: 385500000,
+        changeRate: 0.218,
+        timeFrame: 'qoq',
+      },
+    ],
+  },
+  {
+    targets: ['arm'],
+    releasedDate: getUtcDate(2023, 11, 8),
+    documents: [
+      {
+        name: 'shareholder letters',
+        link: 'https://investors.arm.com/static-files/bf24c7a3-d2c0-47bd-bf72-73f686a5d62f',
+      },
+      {
+        name: 'Roadshow Presentation',
+        link: 'https://investors.arm.com/static-files/b43123f6-9236-4e3c-bd7f-05c3aa2b26c1',
+      },
+    ],
+    data: [
+      {
+        name: 'Revenue',
+        value: 806000000,
+        previousValue: 630000000,
+        changeRate: 28,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+        data: [
+          {
+            name: 'License and Other Revenue',
+            value: 388000000,
+            previousValue: 188000000,
+            changeRate: 106,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+          {
+            name: 'Royalty Revenue',
+            value: 418000000,
+            previousValue: 442000000,
+            unit: 'dollar',
+            timeFrame: 'yoy',
+          },
+        ],
+      },
+      {
+        name: 'Chips Shipped',
+        value: 7100000000,
+        previousValue: 7500000000,
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Gross Profit',
+        value: 760000000,
+        previousValue: 605000000,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Operating Expenses',
+        value: 916000000,
+        previousValue: 422000000,
+        changeRate: 117,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Net Loss',
+        value: 110000000,
+        previousValue: -114000000,
+        unit: 'dollar',
+        timeFrame: 'yoy',
+      },
+    ],
+  },
+  {
+    targets: ['rivn'],
+    releasedDate: getUtcDate(2023, 11, 7),
+    documents: [
+      {
+        name: 'shareholder letters',
+        link: 'https://downloads.rivian.com/2md5qhoeajym/7GkeR1EvqEDRDWd6wHXcsX/b26027790dc64a3dc86cd499b97c8b07/EX_-_99.2_3Q23_Shareholder_Letter_Final_11.7.23_NASDAQ.pdf',
+      },
+    ],
+    data: [
+      {
+        name: '2023 Total Production',
+        value: 54000,
+        unit: 'units', // Assuming 'units' is the correct measurement for production here, replace as needed.
+        // Additional properties like 'previousValue', 'changeRate', or 'timeFrame' could be added if relevant data is provided.
+      },
+      {
+        name: 'Revenue',
+        value: 1337e6,
+        previousValue: 536e6,
+        unit: 'dollars',
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Delivery',
+        value: 15564,
+        previousValue: 6584,
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Production',
+        value: 16304,
+        previousValue: 7363,
+        timeFrame: 'yoy',
+      },
+      {
+        name: 'Gross Profit',
+        value: -477e6,
+        previousValue: -917e6,
+        timeFrame: 'yoy',
+        unit: 'dollar',
+      },
+      {
+        name: 'Total Operating Expenses',
+        value: 963e6,
+        previousValue: 857e6,
+        timeFrame: 'yoy',
+        unit: 'dollar',
+      },
+      {
+        name: 'Net Loss',
+        previousValue: 1724e6,
+        value: 1367e6,
+        timeFrame: 'yoy',
+        unit: 'million',
+      },
+    ],
+  },
+  {
     targets: ['coin'],
     releasedDate: getUtcDate(2023, 11, 2),
     documents: [

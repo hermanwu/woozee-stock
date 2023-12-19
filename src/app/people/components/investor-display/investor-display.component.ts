@@ -13,6 +13,7 @@ export interface Person {
   displayName: string;
   organizationUuidTitles: [string, string][];
   imageLink: string;
+  titles?: string[];
 }
 
 export interface Organization {

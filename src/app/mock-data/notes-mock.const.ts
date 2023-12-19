@@ -4,6 +4,10 @@ import { convertDateToUTC } from '../shared/functions/getUtcDate.function';
 import { OpinionEnum } from '../stock/models/opinion-type.model';
 import { Quote } from './quote.model';
 
+export const getOpinionsByCreatorUuid = (creatorUuid: string) => {
+  return allNotes.filter((note) => note.creatorUuid === creatorUuid);
+};
+
 export const allNotes: (Quote | Opinion | Fact)[] = [
   {
     noteType: 'action',
@@ -254,7 +258,7 @@ export const allNotes: (Quote | Opinion | Fact)[] = [
     uuid: '79783991-d90b-44f2-8268-5af4efbbe264',
     targets: ['afrm'],
     createdDate: '2023-08-26T08:26:26.237Z',
-    creatorUuid: 'hwu106@gmail.com',
+    creatorUuid: 'herman.wrt@gmail.com',
   },
   {
     noteType: 'action',
@@ -1837,18 +1841,7 @@ export const allNotes: (Quote | Opinion | Fact)[] = [
     creatorUuid: 'will.smith@example.com',
     createdDate: '2023-05-11T06:59:43.804Z',
   },
-  {
-    title: 'Robinhood released 2023 Q1 earnings',
-    content:
-      'Launch 24-Hour Trading on Weekdays in Stocks and ETFs. \nTotal Net Revenue $441 million, +16% q/q\nNet Cumulative Funded Accounts 23.1 million, +120k accounts q/q\nMonthly Active Users 11.8 million, +0.4 million q/q\nAssets Under Custody 78 billion, +26% q/q\nAverage Revenue Per User $77, +16% q/q\nAdj. EBITDA $115M, +40% q/q\n\n\n',
-    tagUuids: [],
-    sourceLink: '',
-    uuid: '7ec50b09-59cb-4d5b-a996-92c1af23a208',
-    noteType: 'opinion',
-    authorUuid: 'hood',
-    creatorUuid: 'herman.wrt@gmail.com',
-    createdDate: '2023-05-10T22:55:35.134Z',
-  },
+
   {
     title: 'Walt Disney Company reported Fiscal 2023 Q2 earnings results',
     content:
@@ -1979,29 +1972,6 @@ export const allNotes: (Quote | Opinion | Fact)[] = [
     authorUuid: 'sq',
     creatorUuid: 'emily.nguyen@example.com',
     createdDate: '2023-05-04T21:24:59.961Z',
-  },
-  {
-    title:
-      'Apple today announced financial results for its fiscal 2023 second quarter ended April 1, 2023.',
-    content:
-      'Quarterly revenue of $94.8 billion, down 3 percent year over year\n\nQuarterly earnings per diluted share of $1.52, unchanged year over year\n\nTim Cook: “We are pleased to report an all-time record in Services and a March quarter record for iPhone despite the challenging macroeconomic environment, and to have our installed base of active devices reach an all-time high.”\n\n"Board has authorized an additional $90 billion for share repurchases. We are also raising our quarterly dividend for the eleventh year in a row." ',
-    tagUuids: [],
-    uuid: 'b35a4d3c-8eaf-43b1-b3ea-46942de67488',
-    noteType: 'opinion',
-    authorUuid: 'aapl',
-    creatorUuid: 'herman.wrt@gmail.com',
-    createdDate: '2023-05-04T20:37:47.794Z',
-  },
-  {
-    title: 'Coinbase Releases Financial Result for Q1 2023 ',
-    content:
-      '"We reduced costs, doubled down on operational excellence and risk management, and continue to drive product innovation and regulatory clarity"\n\nNet revenue grew 22% Q/Q Wto $736 million.\n\nTotal operating expenses declined 24% Q/Q,\n\nNet loss of $79 million but a return to positive Adjusted EBITDA of $284 million.',
-    tagUuids: [],
-    uuid: 'fd705b3f-78e3-4e7e-a645-c8adcc89fd26',
-    noteType: 'opinion',
-    authorUuid: 'coin',
-    creatorUuid: 'herman.wrt@gmail.com',
-    createdDate: '2023-05-04T20:31:15.695Z',
   },
   {
     title: 'DoorDash Releases First Quarter 2023 Financial Results\n',
@@ -2387,7 +2357,6 @@ export const allNotes: (Quote | Opinion | Fact)[] = [
       'https://tesla-cdn.thron.com/static/ZXSBN8_TSLA_Q1_2023_Update_ABMJPG.pdf?xseo=&response-content-disposition=inline%3Bfilename%3D%22e826b065-cc14-467c-8c9c-e1feb7189ba8.pdf%22',
     uuid: '70ec27cc-5924-4da1-ae19-2c29aa7b7e7c',
     noteType: 'opinion',
-    authorUuid: 'hwu1106@gmail.com',
     creatorUuid: 'herman.wrt@gmail.com',
     targets: ['tsla'],
     createdDate: '2023-04-19T20:20:42.355Z',

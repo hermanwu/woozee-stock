@@ -19,6 +19,7 @@ export interface UserInteractions {
   thumbUp?: number;
   vote?: number;
   hearted?: number;
+  used?: number;
 }
 
 export interface Sentiment {

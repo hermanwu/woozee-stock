@@ -118,4 +118,8 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   navigateToProductPage(uuid: string) {
     this.navigationServices.navigate('product', uuid);
   }
+
+  navigateToPersonPage(uuid: string) {
+    this.navigationServices.navigate('person', uuid);
+  }
 }

@@ -1,0 +1,13 @@
+<ng-container *ngIf="person">
+  <h1>{{ person.displayName }}</h1>
+
+  <div *ngFor="let item of person.titles">
+    <span *ngFor="let name of item.names"> {{ name }} </span>
+
+    @<app-tag-display [tagUuid]="item.organizationUuid"></app-tag-display>
+  </div>
+
+  <div>
+    <app-links-display [links]="person?.links"></app-links-display>
+  </div>
+</ng-container>

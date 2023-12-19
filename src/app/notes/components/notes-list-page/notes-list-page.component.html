@@ -2,21 +2,33 @@
 
 <div class="mt-10" *ngFor="let stockUuid of stockUuids">
   <h2>
-    <app-tag-display class="" [tagUuid]="stockUuid"></app-tag-display>
+    <app-tag-display [tagUuid]="stockUuid"></app-tag-display>
+
+    <app-interaction-bar
+      [interactions]="uuidToInteractionMap.get(stockUuid)"
+    ></app-interaction-bar>
   </h2>
 
   <div class="mt-5" *ngIf="stockUuidToProductMap.get(stockUuid)">
     <div *ngFor="let product of stockUuidToProductMap.get(stockUuid)">
-      <mat-chip-list>
-        <mat-chip (click)="navigateToProductPage(product.uuid)">
-          {{ product.name }}
-        </mat-chip>
-      </mat-chip-list>
+      <span class="inline-flex">
+        <mat-chip-list>
+          <mat-chip (click)="navigateToProductPage(product.uuid)">
+            {{ product.name }}
+          </mat-chip>
+        </mat-chip-list>
+      </span>
+
+      <span>
+        <app-interaction-bar
+          [interactions]="uuidToInteractionMap.get(product.uuid)"
+        ></app-interaction-bar>
+      </span>
     </div>
   </div>
 
-  <div *ngIf="stockUuidToOpinionMap.get(stockUuid)">
-    <div *ngFor="let opinion of stockUuidToOpinionMap.get(stockUuid)">
+  <div *ngIf="stockUuidToCreatedOpinionMap.get(stockUuid)">
+    <div *ngFor="let opinion of stockUuidToCreatedOpinionMap.get(stockUuid)">
       <app-content-display [content]="opinion.content"></app-content-display>
     </div>
   </div>

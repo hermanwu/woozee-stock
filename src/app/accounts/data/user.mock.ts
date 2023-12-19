@@ -13,11 +13,9 @@ export const currentUserMock: {
   marketRankings: any[];
   assetRankings: Asset[];
   opinions?: Opinion[];
-  savedNotes: string[];
 } = {
-  userUuid: 'hwu1106@gmail.com',
-  userName: 'Admin',
-  savedNotes: ['69ebf096-c688-4e7f-8d37-c3966581a499'],
+  userUuid: 'herman.wrt@gmail.com',
+  userName: 'Herman',
   portfolios: [
     { name: 'Favorites', stocks: ['crwd', 'aapl', 'snow'] },
     {

@@ -6,11 +6,32 @@ export const findPeopleByOrganizationUuid = (uuid: string) => {
   });
 };
 
+export const getPersonByUuid = (uuid: string) => {
+  return people.find((person) => person.uuid === uuid);
+};
+
 export const people = [
   {
     uuid: 'charmath',
     displayName: 'Chamath Palihapitiya',
     imageLink: 'https://i.ibb.co/JpcJ6Sy/Chamath-Palihapitiya-Portrait.jpg',
+  },
+
+  {
+    uuid: 'brian-armstrong',
+    displayName: 'Brian Armstrong',
+    titles: [
+      {
+        organizationUuid: 'coin',
+        names: ['CEO', 'Founder'],
+      },
+    ],
+    links: [
+      {
+        name: 'Wiki',
+        value: 'https://en.wikipedia.org/wiki/Brian_Armstrong_(businessman)',
+      },
+    ],
   },
 
   {

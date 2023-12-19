@@ -14,6 +14,7 @@ import { CatalystPageComponent } from './notes/components/catalyst/components/ca
 import { NotesListPageComponent } from './notes/components/notes-list-page/notes-list-page.component';
 import { MePageComponent } from './notes/components/opinion-page/blog-page.component';
 import { AddPersonFormComponent } from './people/components/add-person-form/add-person-form.component';
+import { PersonPropertyPageComponent } from './person-property-page/person-property-page.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
 import { ProductPropertiesPageComponent } from './product-properties-page/product-properties-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
@@ -170,6 +171,10 @@ const routes: Routes = [
       {
         path: 'products/:productId',
         component: ProductPropertiesPageComponent,
+      },
+      {
+        path: 'people/:personUuid',
+        component: PersonPropertyPageComponent,
       },
       {
         path: 'forever-own',

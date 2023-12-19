@@ -93,7 +93,7 @@ export class TagServices {
         uuid: tagUuid,
         displayName: stock.displayName,
         imageLink: stock.logoLink,
-        type: TagType.Stock,
+        type: TagType.Organization,
         ticker: stock.ticker,
       };
     }
@@ -106,7 +106,7 @@ export class TagServices {
         uuid: cleanedTagUuid,
         displayName: organization.displayName,
         imageLink: organization.logoLink,
-        type: TagType.Stock,
+        type: TagType.Organization,
       };
     }
 

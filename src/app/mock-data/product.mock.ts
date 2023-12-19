@@ -5,8 +5,8 @@ export class Product {
   description?: string;
   images?: string[];
   parentIds?: string[];
-  children?: Product[];
-  siblings?: Product[];
+  childrenIds?: string[];
+  siblingIds?: string[];
   parentCompany?: string;
   rootCompanyId?: string;
 }
@@ -260,6 +260,7 @@ export const mockProducts: Product[] = [
     description: 'A chatbot that uses GPT-3 / GPT-4 to generate responses',
   },
   {
+    uuid: 'github-copilot',
     name: 'GitHub Copilot',
     rootCompanyId: 'msft',
     parentCompany: 'GitHub',

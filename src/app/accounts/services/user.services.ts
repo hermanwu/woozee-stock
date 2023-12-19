@@ -43,10 +43,6 @@ export class UserServices {
     return this.currentUser.portfolios;
   }
 
-  getSavedNoteUuids(): string[] {
-    return this.currentUser.savedNotes;
-  }
-
   getSavedNotes(): string[] {
     return;
   }

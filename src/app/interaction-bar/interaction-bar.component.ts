@@ -9,6 +9,8 @@ import { EmojiUnicode } from '../shared/data/enum/emoji.enum';
 })
 export class InteractionBarComponent implements OnInit {
   @Input() interactions: UserInteractions;
+  displayOnly = true;
+  editing = false;
 
   emojiUnicode = EmojiUnicode;
 

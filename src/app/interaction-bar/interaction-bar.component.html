@@ -1,50 +1,41 @@
-<div *ngIf="interactions" class="flex space-x-2">
+<ng-container *ngIf="interactions && displayOnly">
+  <span *ngIf="interactions.hearted">
+    {{ emojiUnicode.heart }}
+  </span>
+
+  <span class="ml-2" *ngIf="interactions?.vote && interactions.vote !== 0">
+    {{ interactions.vote > 0 ? emojiUnicode.thumbUp : emojiUnicode.thumbDown }}
+    x
+    {{ interactions.vote }}
+  </span>
+</ng-container>
+
+<ng-container *ngIf="editing">
   <span class="items-center space-x-2 border rounded">
     <button class="text-white hover:bg-blue-700 font-bold py-2 px-3 rounded">
       {{ emojiUnicode.thumbUp }}
     </button>
-
-    <span class="text-gray-700 font-bold"> {{ interactions.vote || 0 }} </span>
 
     <button class="font-bold hover:bg-blue-700 py-2 px-3 rounded">
       {{ emojiUnicode.thumbDown }}
     </button>
   </span>
 
-  <span *ngIf="interactions.thumbUp">
-    <button class="border hover:bg-blue-700 font-bold py-2 px-4 rounded">
-      {{ emojiUnicode.thumbDown }}
-    </button>
-  </span>
-
-  <span>
+  <span *ngIf="interactions.saved">
     <button class="border hover:bg-blue-700 font-bold py-2 px-4 rounded">
       {{ emojiUnicode.pin }}
     </button>
   </span>
 
-  <span>
+  <span *ngIf="opinions">
     <button class="border hover:bg-blue-700 font-bold py-2 px-4 rounded">
       {{ emojiUnicode.comment }}
     </button>
   </span>
 
-  <span>
-    <button class="border hover:bg-blue-700 font-bold py-2 px-4 rounded">
-      Want
-    </button>
-  </span>
-
-  <span>
+  <span *ngIf="interactions.used">
     <button class="border hover:bg-blue-700 font-bold py-2 px-4 rounded">
       Used
     </button>
   </span>
-
-  <span>
-    <button class="border hover:bg-blue-700 font-bold py-2 px-4 rounded">
-      {{ emojiUnicode.heart }}
-      Own
-    </button>
-  </span>
-</div>
+</ng-container>

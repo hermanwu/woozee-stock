@@ -18,6 +18,8 @@ export class NavigationServices {
         return this.router.navigate([`/woozee/industries/${routeWord}`]);
       case 'product':
         return this.router.navigate([`/woozee/products/${routeWord}`]);
+      case 'person':
+        return this.router.navigate([`/woozee/people/${routeWord}`]);
       default:
         return;
     }

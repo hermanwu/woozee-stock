@@ -1,7 +1,7 @@
 export enum TagType {
   stockTicker = 'Stock Ticker',
   People = 'People',
-  Stock = 'Stock',
+  Organization = 'Organization',
   Market = 'Market',
   Industry = 'Industry',
   Group = 'Group',

@@ -10,13 +10,52 @@ export const getPersonByUuid = (uuid: string) => {
   return people.find((person) => person.uuid === uuid);
 };
 
+export const getPeopleByPersonUuids = (uuids: string[]) => {
+  return people.filter((person) => uuids.includes(person.uuid));
+};
+
 export const people = [
+  {
+    displayName: 'Alex Karp',
+    uuid: 'alex-karp',
+    titles: [
+      {
+        organizationUuid: 'pltr',
+        names: ['CEO', 'Co-founder'],
+      },
+    ],
+  },
+  {
+    displayName: 'William Li',
+    uuid: 'william-li',
+    titles: [
+      {
+        organizationUuid: 'nio',
+        names: ['CEO', 'Founder'],
+      },
+    ],
+  },
   {
     uuid: 'charmath',
     displayName: 'Chamath Palihapitiya',
     imageLink: 'https://i.ibb.co/JpcJ6Sy/Chamath-Palihapitiya-Portrait.jpg',
   },
-
+  {
+    uuid: 'tony-xu',
+    displayName: 'Tony Xu',
+    titles: [
+      {
+        organizationUuid: 'dash',
+        names: ['CEO', 'Founder'],
+      },
+    ],
+    links: [
+      {
+        name: 'Wikipedia',
+        value: 'https://en.Wikipediapedia.org/Wikipedia/Tony_Xu',
+      },
+    ],
+  },
   {
     uuid: 'brian-armstrong',
     displayName: 'Brian Armstrong',
@@ -28,8 +67,9 @@ export const people = [
     ],
     links: [
       {
-        name: 'Wiki',
-        value: 'https://en.wikipedia.org/wiki/Brian_Armstrong_(businessman)',
+        name: 'Wikipedia',
+        value:
+          'https://en.Wikipediapedia.org/Wikipedia/Brian_Armstrong_(businessman)',
       },
     ],
   },
@@ -53,6 +93,40 @@ export const people = [
     organizationUuidTitles: [['dis', 'CEO']],
     imageLink:
       'https://i.postimg.cc/rmczfYsj/Screenshot-2023-02-08-at-2-07-51-PM.png',
+  },
+  {
+    uuid: 'tobby-lutke',
+    displayName: 'Tobby Lutke',
+    titles: [
+      {
+        organizationUuid: 'shop',
+        names: ['CEO', 'co-founder'],
+      },
+    ],
+    links: [
+      {
+        name: 'Wikipedia',
+        value: 'https://en.Wikipediapedia.org/Wikipedia/Tobias_L%C3%BCtke',
+      },
+    ],
+  },
+  {
+    uuid: 'elon-musk',
+    displayName: 'Elon Musk',
+    titles: [
+      {
+        organizationUuid: 'tsla',
+        names: ['CEO', 'Founder'],
+      },
+      {
+        organizationUuid: 'spacex',
+        names: ['Founder'],
+      },
+      {
+        organizationUuid: 'x',
+        names: ['CEO'],
+      },
+    ],
   },
   {
     uuid: '123',

@@ -9,6 +9,24 @@
     ></app-interaction-bar>
   </h2>
 
+  <div class="mt-5" *ngIf="stockUuidToPersonMap.get(stockUuid)">
+    <div *ngFor="let person of stockUuidToPersonMap.get(stockUuid)">
+      <span class="inline-flex">
+        <mat-chip-list>
+          <mat-chip (click)="navigateToPersonPage(person.uuid)">
+            {{ person.displayName }}
+          </mat-chip>
+        </mat-chip-list>
+      </span>
+
+      <span>
+        <app-interaction-bar
+          [interactions]="uuidToInteractionMap.get(person.uuid)"
+        ></app-interaction-bar>
+      </span>
+    </div>
+  </div>
+
   <div class="mt-5" *ngIf="stockUuidToProductMap.get(stockUuid)">
     <div *ngFor="let product of stockUuidToProductMap.get(stockUuid)">
       <span class="inline-flex">
@@ -28,9 +46,13 @@
   </div>
 
   <div *ngIf="stockUuidToCreatedOpinionMap.get(stockUuid)">
-    <div *ngFor="let opinion of stockUuidToCreatedOpinionMap.get(stockUuid)">
-      <app-content-display [content]="opinion.content"></app-content-display>
-    </div>
+    <button mat-icon-button (click)="expanded = !expanded">Opinions</button>
+
+    <ng-container *ngIf="expanded">
+      <div *ngFor="let opinion of stockUuidToCreatedOpinionMap.get(stockUuid)">
+        <app-content-display [content]="opinion.content"></app-content-display>
+      </div>
+    </ng-container>
   </div>
 </div>
 

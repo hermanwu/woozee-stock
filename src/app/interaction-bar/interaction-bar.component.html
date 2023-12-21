@@ -3,10 +3,22 @@
     {{ emojiUnicode.heart }}
   </span>
 
+  <span *ngIf="interactions.using">
+    {{ emojiUnicode.hammer }}
+  </span>
+
   <span class="ml-2" *ngIf="interactions?.vote && interactions.vote !== 0">
     {{ interactions.vote > 0 ? emojiUnicode.thumbUp : emojiUnicode.thumbDown }}
-    x
     {{ interactions.vote }}
+  </span>
+
+  <span *ngIf="interactions.listUuids">
+    <span
+      class="ml-2 bg-blue-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+      *ngFor="let uuid of interactions.listUuids"
+    >
+      {{ uuid }}
+    </span>
   </span>
 </ng-container>
 

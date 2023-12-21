@@ -2,6 +2,43 @@ import { Organization } from '../people/components/investor-display/investor-dis
 
 export const organizations: Organization[] = [
   {
+    uuid: 'amzn',
+    displayName: 'Amazon',
+    ticker: 'amzn',
+  },
+  {
+    uuid: 'docu',
+    displayName: 'DocuSign',
+    ticker: 'docu',
+  },
+  {
+    uuid: 'afrm',
+    displayName: 'Affirm',
+    ticker: 'afrm',
+  },
+  {
+    uuid: 'anet',
+    displayName: 'Arista',
+    ticker: 'ANET',
+  },
+  {
+    uuid: 'shop',
+    name: 'Shopify',
+    displayName: 'Shopify',
+    ticker: 'shop',
+    irAddress: 'https://investors.shopify.com/home/default.aspx',
+    logoLink: 'https://i.ibb.co/X2786r1/vn6-Edh-Rg-400x400.jpg',
+  },
+  {
+    uuid: 'lulu',
+    name: 'Lululemon',
+    ticker: 'lulu',
+    displayName: 'Lululemon',
+    logoLink: 'https://i.ibb.co/hgdjS2g/download-4.png',
+    irAddress: 'https://corporate.lululemon.com/investors',
+    largeLogoLink: 'https://i.ibb.co/6yZ4bR5/LULU-BIG.png',
+  },
+  {
     uuid: 'li',
     logoLink: 'https://i.ibb.co/YD47KMh/li-600.png',
     displayName: 'Li Auto',
@@ -131,6 +168,17 @@ export const organizations: Organization[] = [
     logoLink: 'https://i.ibb.co/sFvQccx/MRK.png',
     largeLogoLink: 'https://i.ibb.co/jGsMtCB/MRK-BIG.png',
     irAddress: 'https://www.merck.com/investor-relations/',
+  },
+  {
+    uuid: 'dash',
+    displayName: 'DoorDash',
+    logoLink: 'https://i.ibb.co/0h6gYpW/dash.png',
+    irAddress: '',
+  },
+  {
+    uuid: 'cost',
+    displayName: 'Costco',
+    irAddress: 'https://investor.costco.com/',
   },
   {
     uuid: 'pipersandler',

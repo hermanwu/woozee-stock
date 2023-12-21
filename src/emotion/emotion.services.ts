@@ -8,11 +8,12 @@ export interface UserInteractions {
   type:
     | 'stock'
     | 'product'
-    | 'people'
+    | 'person'
     | 'quote'
     | 'opinion'
     | 'event'
     | 'earnings';
+
   saved?: boolean;
   bullish?: number;
   bearish?: number;
@@ -20,6 +21,8 @@ export interface UserInteractions {
   vote?: number;
   hearted?: number;
   used?: number;
+  listUuids?: string[];
+  using?: number;
 }
 
 export interface Sentiment {

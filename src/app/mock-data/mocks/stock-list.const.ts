@@ -51,7 +51,6 @@ import { jpm } from './jpm';
 import { lmt } from './lmt';
 import { logi } from './LOGI';
 import { lrcx } from './lrcx';
-import { lulu } from './lulu.mock';
 import { luv } from './luv';
 import { LZ } from './LZ';
 import { mdb } from './mdb';
@@ -91,7 +90,6 @@ import { rtx } from './rtx';
 import { s } from './s.mock';
 import { sbux } from './sbux';
 import { se } from './se';
-import { shop } from './shop.mock';
 import { SKLZ } from './SKLZ';
 import { snap } from './snap';
 import { snow } from './snow';
@@ -216,7 +214,6 @@ export const stocksMap = {
   rtx,
   sbux,
   se,
-  shop,
   SKLZ,
   snap,
   snow,
@@ -266,7 +263,6 @@ export const stocksMap = {
   mrvl,
   chwy,
   s,
-  lulu,
   pstg,
   cxm,
   ual,

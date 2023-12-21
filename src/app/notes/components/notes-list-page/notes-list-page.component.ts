@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { getOpinionsByCreatorUuid } from 'src/app/mock-data/notes-mock.const';
+import { getPeopleByPersonUuids } from 'src/app/mock-data/person.mock';
 import {
   getProductsByProductUuids,
   getRootCompanyIdByProductId,
@@ -29,10 +30,11 @@ export class NotesListPageComponent implements OnInit {
   stockUuidToStockMap = new Map<string, any>();
   stockUuidToProductMap = new Map<string, Product[]>();
   stockUuidToOpinionMap = new Map<string, any>();
+  stockUuidToPersonMap = new Map<string, any[]>();
   uuidToInteractionMap = new Map<string, any>();
   stockUuidToCreatedOpinionMap = new Map<string, any>();
 
-  stockUuids = new Set();
+  stockUuids = [];
   products = [];
   userUuid;
 
@@ -60,13 +62,33 @@ export class NotesListPageComponent implements OnInit {
       this.userServices.currentUser.userUuid
     );
 
-    this.getCreatedOpinions();
-
     this.processStockInteractions();
+
+    this.processPersonInteractions();
 
     this.processProductInteractions();
 
+    this.getCreatedOpinions();
+
     this.processOpinionInteractions();
+
+    this.stockUuids = this.stockUuids.sort((keyA, keyB) => {
+      let a = this.uuidToInteractionMap.get(keyA);
+      let b = this.uuidToInteractionMap.get(keyB);
+      if (a?.vote && b?.vote) {
+        return b.vote - a.vote;
+      }
+
+      if (a?.vote) {
+        return -a.vote;
+      }
+
+      if (b?.vote) {
+        return b.vote;
+      }
+
+      return 0;
+    });
   }
 
   processStockInteractions() {
@@ -76,15 +98,10 @@ export class NotesListPageComponent implements OnInit {
 
     for (let interactions of stockInteractions) {
       const stockUuid = interactions.targetUuid;
-      this.uuidToInteractionMap.set(stockUuid, interactions);
 
-      if (!this.stockUuids.has(stockUuid)) {
-        this.stockUuids.add(stockUuid);
-        this.stockUuidToStockMap.set(
-          stockUuid,
-          this.stockServices.getStockByUuid(stockUuid)
-        );
-      }
+      this.addStock(stockUuid);
+
+      this.uuidToInteractionMap.set(stockUuid, interactions);
     }
   }
 
@@ -95,20 +112,18 @@ export class NotesListPageComponent implements OnInit {
 
     for (let opinion of createdOpinions) {
       for (let target of opinion.targets) {
-        if (this.stockUuids.has(target)) {
+        const stockUuid = target.toLowerCase();
+
+        if (this.stockUuidToCreatedOpinionMap.has(stockUuid)) {
           continue;
         }
 
-        const stock = this.stockServices.getStockByUuid(opinion.targets[0]);
-        if (stock) {
-          this.stockUuidToStockMap.set(stock.uuid, stock);
-          this.stockUuids.add(stock.uuid);
-          if (!this.stockUuidToCreatedOpinionMap.has(stock.uuid)) {
-            this.stockUuidToCreatedOpinionMap.set(stock.uuid, []);
-          }
-          console.log(this.stockUuidToCreatedOpinionMap.get(stock.uuid));
-          this.stockUuidToCreatedOpinionMap.get(stock.uuid).push(opinion);
+        this.addStock(stockUuid);
+
+        if (!this.stockUuidToCreatedOpinionMap.has(stockUuid)) {
+          this.stockUuidToCreatedOpinionMap.set(stockUuid, []);
         }
+        this.stockUuidToCreatedOpinionMap.get(stockUuid).push(opinion);
       }
     }
   }
@@ -123,14 +138,46 @@ export class NotesListPageComponent implements OnInit {
     );
 
     for (let opinion of interactedOpinions) {
-      const stock = this.stockServices.getStockByUuid(opinion.targets[0]);
-      if (stock) {
-        this.stockUuidToStockMap.set(stock.uuid, stock);
-        this.stockUuids.add(stock.uuid);
-        if (!this.stockUuidToOpinionMap.has(stock.uuid)) {
-          this.stockUuidToOpinionMap.set(stock.uuid, []);
+      for (let target of opinion.targets) {
+        const stockUuid = target.toLowerCase();
+
+        if (this.stockUuidToCreatedOpinionMap.has(stockUuid)) {
+          continue;
         }
-        this.stockUuidToOpinionMap.get(stock.uuid).push(opinion);
+
+        this.addStock(stockUuid);
+
+        if (!this.stockUuidToCreatedOpinionMap.has(stockUuid)) {
+          this.stockUuidToCreatedOpinionMap.set(stockUuid, []);
+        }
+        this.stockUuidToCreatedOpinionMap.get(stockUuid).push(opinion);
+      }
+    }
+  }
+
+  processPersonInteractions() {
+    const personInteractions = this.interactions.filter(
+      (item) => item.type === 'person'
+    );
+
+    for (let interaction of personInteractions) {
+      this.uuidToInteractionMap.set(interaction.targetUuid, interaction);
+    }
+
+    const people = getPeopleByPersonUuids(
+      personInteractions.map((item) => item.targetUuid)
+    );
+
+    for (let person of people) {
+      let companyUuids = person.titles.map((item) => item.organizationUuid);
+
+      for (let companyUuid of companyUuids) {
+        this.addStock(companyUuid);
+
+        if (!this.stockUuidToPersonMap.has(companyUuid)) {
+          this.stockUuidToPersonMap.set(companyUuid, []);
+        }
+        this.stockUuidToPersonMap.get(companyUuid).push(person);
       }
     }
   }
@@ -151,13 +198,7 @@ export class NotesListPageComponent implements OnInit {
     for (let product of products) {
       let companyUuid = getRootCompanyIdByProductId(product.uuid);
 
-      if (!this.stockUuids.has(companyUuid)) {
-        this.stockUuids.add(companyUuid);
-        this.stockUuidToStockMap.set(
-          companyUuid,
-          this.stockServices.getStockByUuid(companyUuid)
-        );
-      }
+      this.addStock(companyUuid);
 
       if (!this.stockUuidToProductMap.has(companyUuid)) {
         this.stockUuidToProductMap.set(companyUuid, []);
@@ -176,5 +217,22 @@ export class NotesListPageComponent implements OnInit {
   }
   navigateToProductPage(uuid: string) {
     this.navigationServices.navigate('product', uuid);
+  }
+
+  navigateToPersonPage(uuid: string) {
+    this.navigationServices.navigate('person', uuid);
+  }
+
+  addStock(organizationUuid) {
+    if (
+      !this.stockUuidToStockMap.has(organizationUuid) &&
+      this.stockServices.getStockByUuid(organizationUuid)
+    ) {
+      this.stockUuids.push(organizationUuid);
+      this.stockUuidToStockMap.set(
+        organizationUuid,
+        this.stockServices.getStockByUuid(organizationUuid)
+      );
+    }
   }
 }

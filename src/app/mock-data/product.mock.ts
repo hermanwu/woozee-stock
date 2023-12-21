@@ -62,6 +62,40 @@ export const getAllParents = (products: Product[]) => {
 
 export const mockProducts: Product[] = [
   {
+    name: 'Amazon Prime',
+    uuid: 'amazon-prime',
+    rootCompanyId: 'amzn',
+  },
+  {
+    uuid: 'robinhood-app',
+    name: 'Robinhood App',
+    rootCompanyId: 'hood',
+  },
+  {
+    uuid: 'nio-power-swap-station',
+    name: 'NIO Power Swap Station',
+    rootCompanyId: 'nio',
+  },
+  {
+    uuid: 'cuda',
+    name: 'CUDA (Compute Unified Device Architecture)',
+    rootCompanyId: 'nvda',
+  },
+  {
+    uuid: 'datacenter',
+    name: 'Data Center',
+  },
+  {
+    uuid: 'lululemon-clothing',
+    name: 'LuluLemon Clothing',
+    rootCompanyId: 'lulu',
+  },
+  {
+    uuid: 'costco-membership',
+    name: 'Costco Membership',
+    rootCompanyId: 'cost',
+  },
+  {
     uuid: 'li-l9',
     name: 'Li L9',
     description: 'Li Auto Flagship 6-Seat Family SUV',

@@ -15,7 +15,7 @@ export interface Opinion extends Note {
   emojis?: EmojiUnicode[];
   title?: string;
   content?: string;
-  targets?: string[];
+  targetUuids?: string[];
   betterThan?: string[];
   links?: { name: string; value: string }[];
   date?: Date | string;

@@ -6,7 +6,7 @@ import { OpinionEnum } from '../stock/models/opinion-type.model';
 export const macroOpinions: Opinion[] = [
   {
     content: 'US companies are laying off employees',
-    targets: ['job market', 'us'],
+    targetUuids: ['job market', 'us'],
     rating: OpinionEnum.Bearish,
     emojis: [EmojiUnicode.thumbDown],
     details: [

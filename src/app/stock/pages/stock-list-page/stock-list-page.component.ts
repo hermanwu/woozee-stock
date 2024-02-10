@@ -36,16 +36,6 @@ export class StockListPageComponent implements OnInit, OnDestroy {
     private dialogService: MatDialog
   ) {
     this.portfolios = this.userServices.getPortfolios();
-
-    this.globalRankingSub = this.userServices.rankings$.subscribe(
-      (rankings) => {
-        this.allStocks = this.userServices.updateStockRanks(
-          this.stockServices.getStocksByTickers(rankings),
-          rankings
-        );
-        this.updatePortfolio(this.selectedPortfolio);
-      }
-    );
   }
 
   ngOnInit(): void {

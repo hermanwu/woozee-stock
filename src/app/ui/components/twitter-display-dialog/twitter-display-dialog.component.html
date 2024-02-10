@@ -12,8 +12,6 @@
 
 <div *ngIf="dialogData?.takeAway">✏️TAKEAWAY {{ dialogData.takeAway }}</div>
 
-<app-tags-display [tagUuids]="dialogData?.tags"> </app-tags-display>
-
 <div *ngIf="links">
   <app-links-display [links]="links" [showUrls]="'true'"></app-links-display>
 </div>

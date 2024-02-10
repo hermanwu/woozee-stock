@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { userInteractions } from 'src/app/mock-data/interactions.mock';
 import { users } from 'src/app/mock-data/mock-users.data';
+import { getTradableItemByOrganizationUuid } from 'src/app/mock-data/mocks/tradables.mock';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
-import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { StockData } from 'src/app/stock/services/stock-data.model';
 import { currentUserMock } from '../data/user.mock';
 
@@ -12,20 +12,40 @@ import { currentUserMock } from '../data/user.mock';
 export class UserServices {
   currentUser = currentUserMock;
   users = users;
-  rankings = new BehaviorSubject<string[]>(this.currentUser.rankings);
-  marketRankings = new BehaviorSubject<string[]>(
-    this.currentUser.marketRankings
-  );
+  entityUuidToInteraction = new Map<string, any>();
+  userTradableItemsSet = new Set<string>();
+  userOrganizationSet = new Set<string>();
+  userProductsSet = new Set<string>();
+  userPeopleSet = new Set<string>();
 
-  industryRankings = new BehaviorSubject<IndustryType[]>(
-    this.currentUser.industriesRankings
-  );
+  constructor() {
+    const interactions = userInteractions.filter(
+      (interaction) =>
+        interaction.userUuid === this.currentUser.userUuid &&
+        interaction.listUuids?.length > 0
+    );
 
-  rankings$ = this.rankings.asObservable();
-  industryRankings$ = this.industryRankings.asObservable();
-  marketRankings$ = this.marketRankings.asObservable();
+    for (let interaction of interactions) {
+      this.entityUuidToInteraction.set(interaction.targetUuid, interaction);
 
-  constructor() {}
+      if (interaction.type === 'tradableItem') {
+        this.userTradableItemsSet.add(interaction.targetUuid);
+      } else if (interaction.type === 'stock') {
+        this.userOrganizationSet.add(interaction.targetUuid);
+
+        const tradable = getTradableItemByOrganizationUuid(
+          interaction.targetUuid
+        );
+        if (tradable) {
+          this.userTradableItemsSet.add(tradable.uuid);
+        }
+      } else if (interaction.type === 'product') {
+        this.userProductsSet.add(interaction.targetUuid);
+      } else if (interaction.type === 'person') {
+        this.userPeopleSet.add(interaction.targetUuid);
+      }
+    }
+  }
 
   getCurrentUser() {
     return this.currentUser;
@@ -60,14 +80,6 @@ export class UserServices {
     )[0];
 
     return portfolio;
-  }
-
-  getGlobalRanking() {
-    return this.currentUser.rankings;
-  }
-
-  setGlobalRanking(rankings: string[]) {
-    this.rankings.next(rankings);
   }
 
   updateStockRanks(stocks: StockData[], rankings: string[]): StockData[] {

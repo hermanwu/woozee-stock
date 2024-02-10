@@ -1,0 +1,12 @@
+.logo-image {
+  // center image in the div
+  // add margin top and bottom with 10px
+  margin: 10px auto;
+
+  // set image height to 150px
+  height: 150px;
+}
+.head-section {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,11 +1,3 @@
-export const findPeopleByOrganizationUuid = (uuid: string) => {
-  return people.filter((person) => {
-    return person.titles?.some((title) => {
-      return title.organizationUuid === uuid;
-    });
-  });
-};
-
 export const getPersonByUuid = (uuid: string) => {
   return people.find((person) => person.uuid === uuid);
 };
@@ -15,6 +7,18 @@ export const getPeopleByPersonUuids = (uuids: string[]) => {
 };
 
 export const people = [
+  {
+    displayName: 'Lisa Su',
+    uuid: 'lisa-su',
+  },
+  {
+    displayName: 'Peter Lynch',
+    uuid: 'peter-lynch',
+  },
+  {
+    displayName: 'Satya Nadella',
+    uuid: 'satya-nadella',
+  },
   {
     displayName: 'Alex Karp',
     uuid: 'alex-karp',
@@ -93,6 +97,10 @@ export const people = [
     organizationUuidTitles: [['dis', 'CEO']],
     imageLink:
       'https://i.postimg.cc/rmczfYsj/Screenshot-2023-02-08-at-2-07-51-PM.png',
+  },
+  {
+    displayName: 'Michael E. Porter',
+    uuid: 'michael-e-porter',
   },
   {
     uuid: 'tobby-lutke',

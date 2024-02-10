@@ -4,7 +4,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const bynd: StockAnalysis = {
   marketCap: 2.89 * BILLION,
   logo: '',
-  name: 'Beyond Meat, Inc.',
+  name: 'Beyond Meat Inc.',
   description: [],
   ticker: 'bynd',
   displayName: 'Beyond Meat',

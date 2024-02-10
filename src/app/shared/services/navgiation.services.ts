@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -5,11 +6,16 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class NavigationServices {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private viewportScroller: ViewportScroller
+  ) {}
 
   navigate(type: string, routeWord: string) {
     type = type.toLowerCase();
     switch (type) {
+      case 'tradable':
+        return this.router.navigate([`/woozee/quotes/${routeWord}`]);
       case 'company':
         return this.router.navigate([`/woozee/companies/${routeWord}`]);
       case 'organization':
@@ -20,6 +26,8 @@ export class NavigationServices {
         return this.router.navigate([`/woozee/products/${routeWord}`]);
       case 'person':
         return this.router.navigate([`/woozee/people/${routeWord}`]);
+      case 'tag':
+        return this.router.navigate([`/woozee/tags/${routeWord}`]);
       default:
         return;
     }

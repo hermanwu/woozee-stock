@@ -1,10 +1,77 @@
 import { Organization } from '../people/components/investor-display/investor-display.component';
 
+export const getOrganizationsByUuids = (uuids: string[]) => {
+  return organizations.filter((org) => uuids.includes(org.uuid));
+};
+
 export const organizations: Organization[] = [
   {
-    uuid: 'amzn',
-    displayName: 'Amazon',
-    ticker: 'amzn',
+    displayName: 'Robinhood',
+    uuid: 'hood',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1267616128022351873/dZJpsWTD_400x400.jpg',
+  },
+  {
+    uuid: 'crwd',
+    logoLink: 'https://i.ibb.co/VTQgVXD/download.jpg',
+    name: 'Crowdstrike',
+    displayName: 'Crowdstrike',
+    largeLogoLink: 'https://i.ibb.co/D7dS9sS/Dzws42r-X0-AAWJgd.jpg',
+  },
+  {
+    uuid: 'zs',
+    logoLink: 'https://i.ibb.co/4Z7wr0f/ZS.png',
+    largeLogoLink: 'https://i.ibb.co/vVSzkFr/ZS-BIG.png',
+    displayName: 'Zscaler',
+  },
+  {
+    uuid: 'lmt',
+    largeLogoLink: 'https://i.ibb.co/M6qDjzB/LMT-BIG.png',
+    logoLink: 'https://i.ibb.co/Cm27FWs/LMT.png',
+    displayName: 'Lockheed Martin',
+    ticker: 'LMT',
+  },
+
+  {
+    uuid: 'orcl',
+    ticker: 'ORCL',
+    displayName: 'Oracle',
+    logoLink: 'https://i.ibb.co/YDHyyPw/z11b-Dhy-400x400.jpg',
+    largeLogoLink: 'https://i.ibb.co/xm4zSz9/ORCL-BIG.png',
+  },
+
+  {
+    displayName: 'MongoDB',
+    uuid: 'mdb',
+    ticker: 'mdb',
+    logoLink: 'https://i.ibb.co/wNXPXtV/MDB.png',
+    largeLogoLink: 'https://i.ibb.co/C74QS0y/MDB-BIG.png',
+  },
+  {
+    displayName: 'Airbnb',
+    uuid: 'abnb',
+    ticker: 'abnb',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1604935435007901696/BpgKDmvE_400x400.jpg',
+  },
+  {
+    uuid: 'pdd',
+    displayName: 'Pinduoduo',
+    ticker: 'pdd',
+  },
+  {
+    uuid: 'data',
+    displayName: 'Datadog',
+    ticker: 'data',
+  },
+  {
+    displayName: 'OpenAI',
+    uuid: 'openai',
+  },
+  {
+    uuid: 'u',
+    displayName: 'Unity',
+    ticker: 'u',
   },
   {
     uuid: 'docu',
@@ -20,6 +87,11 @@ export const organizations: Organization[] = [
     uuid: 'anet',
     displayName: 'Arista',
     ticker: 'ANET',
+  },
+  {
+    uuid: 'nvda',
+    displayName: 'Nvidia',
+    ticker: 'nvda',
   },
   {
     uuid: 'shop',
@@ -158,6 +230,7 @@ export const organizations: Organization[] = [
   {
     uuid: 'amzn',
     displayName: 'Amazon',
+    ticker: 'amzn',
     logoLink: 'https://i.ibb.co/qsZzrS2/download-3.png',
     irAddress: 'https://ir.aboutamazon.com/overview/default.aspx',
   },
@@ -184,6 +257,11 @@ export const organizations: Organization[] = [
     uuid: 'pipersandler',
     displayName: 'Piper Sandler',
     logoLink: 'https://i.ibb.co/P9j9ts8/5l-CBn4v-U-400x400.jpg',
+  },
+  {
+    uuid: 'isrg',
+    displayName: 'Intuitive Surgical',
+    irAddress: 'https://isrg.intuitive.com/',
   },
   {
     uuid: 'frc',
@@ -312,6 +390,23 @@ export const organizations: Organization[] = [
     logoLink: '',
   },
   {
+    uuid: 'spot',
+    displayName: 'Spotify',
+    logoLink: 'https://i.ibb.co/2v074vR/vr-PUCDn2-400x400.jpg',
+  },
+  {
+    uuid: 'msft',
+    displayName: 'Microsoft',
+    logoLink: '',
+    ticker: 'msft',
+  },
+  {
+    uuid: 'pypl',
+    displayName: 'PayPal',
+    logoLink: '',
+    ticker: 'pypl',
+  },
+  {
     uuid: 'morningstaruuid',
     displayName: 'Morningstar',
     logoLink: '',
@@ -422,6 +517,7 @@ export const organizations: Organization[] = [
     logoLink: 'https://i.ibb.co/CPNfMb3/i-VFx-Tc5-400x400.jpg',
     irAddress: 'https://ir.supermicro.com/ir-overview/default.aspx',
     headquarters: 'San Jose, CA',
+    ticker: 'smci',
     descriptions: [
       'a Total IT Solution Manufacturer for AI, Cloud, Storage and 5G/Edge',
     ],
@@ -430,6 +526,7 @@ export const organizations: Organization[] = [
     uuid: 'lly',
     displayName: 'Eli Lilly',
     logoLink: 'https://i.ibb.co/z8xRgVX/q2-Bx-TXTj-400x400.png',
+    website: 'https://www.lilly.com/',
   },
   {
     uuid: 'ttd',
@@ -473,6 +570,10 @@ export const organizations: Organization[] = [
     largeLogoLink: 'https://i.ibb.co/DW2VKb5/PINS-BIG.png',
   },
   {
+    uuid: 'intu',
+    displayName: 'Intuit',
+  },
+  {
     uuid: 'kbh',
     displayName: 'KB Home',
     logoLink: 'https://i.ibb.co/n6HcLnf/9-Zx2pmys-400x400.jpg',
@@ -481,6 +582,11 @@ export const organizations: Organization[] = [
     uuid: 'fdx',
     displayName: 'FedEx',
     logoLink: 'https://i.ibb.co/RgwbWB5/T76j415n-400x400.jpg',
+  },
+  {
+    uuid: 'tsm',
+    displayName: 'Taiwan Semiconductor',
+    logoLink: 'https://i.ibb.co/F8mrjzZ/TSM.png',
   },
   {
     uuid: 'dri',
@@ -497,5 +603,21 @@ export const organizations: Organization[] = [
       'American Express (NYSE: AXP) is a globally integrated payments company that provides customers with access to products, insights and experiences that enrich lives and build business success. Our integrated payments platform includes card-issuing, merchant-acquiring and card network businesses. We are a leader in providing payment products and services to a broad range of customers, including consumers, small businesses, mid-sized companies and large corporations around the world.',
       'Founded in 1850 and headquartered in New York, American Express has a heritage built on service and sustained by innovation. American Express® cards issued by American Express as well as by third-party banks and other institutions on the American Express network are accepted at millions of merchants around the world.',
     ],
+  },
+  {
+    displayName: 'Carvana',
+    uuid: 'cvna',
+    ticker: 'cvna',
+  },
+  {
+    displayName: 'Tesla',
+    uuid: 'tsla',
+    ticker: 'tsla',
+    logoLink: 'https://i.ibb.co/P6jhPKW/6-Ggc4-S5n-400x400.png',
+  },
+  {
+    displayName: 'Google',
+    uuid: 'googl',
+    logoLink: 'https://i.ibb.co/hM9z9R6/tp-QNbg-Mz-400x400.jpg',
   },
 ];

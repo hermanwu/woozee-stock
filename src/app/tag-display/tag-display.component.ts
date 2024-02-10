@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Tag } from '../shared/data/tag.model';
+import { getTagByUuid, Tag } from '../shared/data/tag.model';
 import { NavigationServices } from '../shared/services/navgiation.services';
-import { TagServices } from '../shared/services/tag.services';
 
 @Component({
   selector: 'app-tag-display',
@@ -11,26 +10,27 @@ import { TagServices } from '../shared/services/tag.services';
 export class TagDisplayComponent implements OnInit {
   @Input() tagUuid: string;
 
-  item: Tag;
+  tag: Tag;
 
-  constructor(
-    private tagServices: TagServices,
-    private navigationServices: NavigationServices
-  ) {}
+  constructor(private navigationServices: NavigationServices) {}
 
   ngOnInit(): void {}
 
   ngOnChanges() {
     if (this.tagUuid) {
-      this.item = this.tagServices.getTagRelatedDataByUuid(this.tagUuid);
+      this.tag = getTagByUuid(this.tagUuid);
     }
   }
 
-  navigate(tag: Tag) {
+  navigate(tagUuid: string) {
     // if (environment.production) {
     //   return;
     // }
 
-    this.navigationServices.navigate(tag.type, tag.uuid);
+    this.navigationServices.navigate('tag', tagUuid);
+  }
+
+  getTagColor(tag) {
+    return 'bg-' + (tag?.color || 'blue') + '-500';
   }
 }

@@ -6,7 +6,7 @@ export const mu: StockAnalysis = {
   marketCap: 57.63 * BILLION,
   logoLink: 'https://i.imgur.com/lrJpoxN.png',
   largeLogoLink: 'https://i.imgur.com/6hcUA6y.png',
-  name: 'Micron Technology, Inc.',
+  name: 'Micron Technology Inc.',
   description: [],
   ticker: 'mu',
   displayName: 'Micron',

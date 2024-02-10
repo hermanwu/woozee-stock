@@ -1,7 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { Fact } from 'src/app/risks/models/fact.model';
 import { industryEmojiMap } from 'src/app/shared/data/enum/emoji.enum';
-import { TagServices } from 'src/app/shared/services/tag.services';
 import { environment } from 'src/environments/environment';
 import { EventType } from '../../models/news.model';
 import { StockAnalysis } from '../../models/stock-analysis.model';
@@ -24,16 +23,7 @@ export class NewsDisplayComponent implements OnChanges {
   stock: StockAnalysis;
   showDetails = false;
 
-  constructor(private tagService: TagServices) {}
+  constructor() {}
 
-  ngOnChanges(): void {
-    if (this.news?.tagUuids?.length) {
-      for (let tag of this.news.tagUuids) {
-        const tagData = this.tagService.getTagRelatedDataByUuid(tag);
-        if (tagData?.imageLink) {
-          this.imageLinks.push(tagData);
-        }
-      }
-    }
-  }
+  ngOnChanges(): void {}
 }

@@ -21,7 +21,6 @@ export class UiComponentsPageComponent implements OnInit {
   opinionMock = opinionMock;
   mockPortfolio;
   rankedStocks;
-  globalRanking = this.userServices.getGlobalRanking();
 
   constructor(private router: Router, private userServices: UserServices) {}
 

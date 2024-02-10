@@ -1,22 +1,11 @@
 <app-card [isSquare]="'true'">
   <div>
     <ng-container [ngSwitch]="dialogData.noteType">
-      <app-news-display
-        *ngSwitchCase="'fact'"
-        [news]="dialogData"
-        [shortVersion]="true"
-      ></app-news-display>
       <app-opinion-item-display
         *ngSwitchCase="'opinion'"
         [opinion]="dialogData"
         [expanded]="true"
       ></app-opinion-item-display>
-      <app-quote-display
-        *ngSwitchCase="'quote'"
-        [quote]="dialogData"
-        [expanded]="true"
-      >
-      </app-quote-display>
       <app-list-display *ngSwitchCase="'list'" [list]="dialogData">
       </app-list-display>
     </ng-container>

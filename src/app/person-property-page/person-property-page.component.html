@@ -1,10 +1,16 @@
 <ng-container *ngIf="person">
   <h1>{{ person.displayName }}</h1>
 
+  <div>
+    <app-interaction-bar
+      [interactions]="personInteractions"
+    ></app-interaction-bar>
+  </div>
+
   <div *ngFor="let item of person.titles">
     <span *ngFor="let name of item.names"> {{ name }} </span>
 
-    @<app-tag-display [tagUuid]="item.organizationUuid"></app-tag-display>
+    @<app-stock-display [tagUuid]="item.organizationUuid"></app-stock-display>
   </div>
 
   <div>

@@ -4,7 +4,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const gs: StockAnalysis = {
   marketCap: 109.83 * BILLION,
   logo: '',
-  name: 'The Goldman Sachs Group, Inc.',
+  name: 'The Goldman Sachs Group Inc.',
   description: [],
   ticker: 'gs',
   displayName: 'Goldman Sachs',

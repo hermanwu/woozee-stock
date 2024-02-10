@@ -49,6 +49,7 @@ export enum NoteType {
   },
    */
   Product = 'product',
+  Quote = 'quote',
 }
 
 export interface List {
@@ -69,7 +70,12 @@ export interface Note {
   updatedDate?: string;
   uuid: string;
   childrenUuids?: string[];
-  targets?: string[];
+  targetUuids?: string[];
   parentUuid?: string;
   statuses?: [string, number][];
+  userUuid?: string;
+  authorUuids?: string[];
+  question?: string;
+  links?: any[];
+  data?: any[];
 }

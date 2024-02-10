@@ -26,9 +26,8 @@ export class NoteContainerComponent implements OnInit, OnChanges {
   chips = new Set();
   environment = environment;
   expanded;
-  authorName;
-  creatorName;
   vote = Math.floor(Math.random() * 100);
+  authors;
 
   constructor(
     private dialogService: MatDialog,
@@ -37,11 +36,7 @@ export class NoteContainerComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.creatorName = this.userServices.getUserByUuid(
-      this.note?.creatorUuid
-    )?.displayName;
-  }
+  ngOnChanges(changes: SimpleChanges): void {}
 
   openInstagramDialog(note: Note) {
     this.dialogService.open<InstagramNewsDisplayDialogComponent>(

@@ -20,9 +20,10 @@ import { ProductPropertiesPageComponent } from './product-properties-page/produc
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
 import { DemoPageComponent } from './shared/components/demo-page/demo-page.component';
 import { SignupComponent } from './signup/signup.component';
-import { ForeverOwnStocksPanelComponent } from './stock/forever-own-stocks-panel/forever-own-stocks-panel.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
+import { TagPropertiesPageComponent } from './tag-properties-page/tag-properties-page.component';
+import { TradablePropertiesPageComponent } from './tradable-properties-page/tradable-properties-page.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
 import { UiComponentsPageComponent } from './ui/components/ui-components-page/ui-components-page.component';
@@ -177,10 +178,13 @@ const routes: Routes = [
         component: PersonPropertyPageComponent,
       },
       {
-        path: 'forever-own',
-        component: ForeverOwnStocksPanelComponent,
+        path: 'tags/:tagUuid',
+        component: TagPropertiesPageComponent,
       },
-
+      {
+        path: 'quotes/:quoteUuid',
+        component: TradablePropertiesPageComponent,
+      },
       {
         path: 'industries2',
         component: HighGrowthIndustryComponent,
@@ -197,7 +201,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

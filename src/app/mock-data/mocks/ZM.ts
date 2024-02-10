@@ -5,7 +5,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const zm: StockAnalysis = {
   marketCap: 33 * BILLION,
   logo: '',
-  name: 'Zoom Video Communications, Inc.',
+  name: 'Zoom Video Communications Inc.',
   description: [],
   ticker: 'zm',
   displayName: 'Zoom Video',

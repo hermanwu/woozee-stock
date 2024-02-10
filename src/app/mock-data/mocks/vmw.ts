@@ -2,7 +2,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const vmw: StockAnalysis = {
   logo: '',
-  name: { English: 'VMware, Inc.' },
+  name: { English: 'VMware Inc.' },
   description: [],
   ticker: 'VMW',
 

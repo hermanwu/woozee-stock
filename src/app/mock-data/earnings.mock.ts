@@ -4,7 +4,7 @@ import {
   UnitType,
 } from '../shared/components/stats-display/stats-display.interface';
 import { getUtcDate } from '../shared/functions/getUtcDate.function';
-import { MILLION } from '../shared/numbers/number.model';
+import { BILLION, MILLION } from '../shared/numbers/number.model';
 
 export const opinionKeyWord = [
   'profitability',
@@ -18,9 +18,18 @@ export const opinionKeyWord = [
 ];
 export const factKeyWord = ['Robotics', 'Surgery'];
 
-export const getEarningsByTicker = (ticker: string) => {
-  return earnings.filter((item) => item.targets?.includes(ticker));
+export const getEarningsByTargetUuid = (targetUuid: string) => {
+  return earnings.filter((item) => item.targetUuids?.includes(targetUuid));
 };
+
+export enum EarningsKeyWord {
+  revenue = 'Revenue',
+  operatingIncome = 'Operating Income',
+  netIncome = 'Net Income',
+  grossProfit = 'Gross Profit',
+  mau = 'Monthly Active Users',
+  avru = 'Average Revenue Per User',
+}
 
 export class Earnings {
   releasedDate?: Date;
@@ -33,57 +42,826 @@ export class Earnings {
   netIncome?: Stats;
   data?: Stats[];
   quotes?: any[];
-  targets?: string[];
+  targetUuids?: string[];
   documents?: any[];
   imageLinks?: string[];
 }
 
 export const earnings: Earnings[] = [
   {
-    targets: ['li'],
-    releasedDate: getUtcDate(2023, 11, 9),
+    targetUuids: ['pins:nyse'],
+    releasedDate: getUtcDate(2024, 2, 8),
     documents: [
       {
         name: 'Press Release',
-        link: 'https://ir.lixiang.com/news-releases/news-release-details/li-auto-inc-announces-unaudited-third-quarter-2023-financial',
+        link: 'https://s23.q4cdn.com/958601754/files/doc_earnings/2023/q4/earnings-result/Q423-PressRelease.pdf',
       },
     ],
     data: [
       {
-        name: 'Total Vehicle Deliveries',
-        value: 105108,
-        changeRate: 2.96,
-        timeFrame: 'yoy',
+        name: EarningsKeyWord.mau,
+        value: 498 * MILLION,
+        previousValue: 450 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+        data: [
+          {
+            name: 'US and Canada MAU',
+            value: 97 * MILLION,
+            previousValue: 95 * MILLION,
+            timeFrame: TimeFrame.yoy,
+          },
+        ],
       },
       {
-        name: 'Revenue',
-        value: 4.75e9,
-        changeRate: 2.712,
-        unit: 'dollar',
-        timeFrame: 'yoy',
+        name: EarningsKeyWord.avru,
+        value: 2.0,
+        previousValue: 1.96,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
       },
       {
-        name: 'Vehicle Margin',
-        value: 21.2,
-        unit: 'percentage',
-        timeFrame: 'Q3 2023',
+        name: EarningsKeyWord.revenue,
+        value: 981 * MILLION,
+        previousValue: 877 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
       },
       {
-        name: 'Operating Income',
-        value: 320600000,
-        changeRate: 0.439,
-        timeFrame: 'qoq',
+        name: EarningsKeyWord.operatingIncome,
+        value: 196.25 * MILLION,
+        previousValue: 5.868 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
       },
       {
-        name: 'Net Income',
-        value: 385500000,
-        changeRate: 0.218,
-        timeFrame: 'qoq',
+        name: EarningsKeyWord.netIncome,
+        value: 201.178 * MILLION,
+        previousValue: 17.491 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
       },
     ],
   },
   {
-    targets: ['arm'],
+    targetUuids: ['net:nyse'],
+    releasedDate: getUtcDate(2024, 2, 8),
+    documents: [
+      {
+        name: 'Shareholder Letter',
+        link: 'https://cloudflare.net/files/doc_financials/2023/q4/Q4-23-Exhibit-99-1.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 362.473 * MILLION,
+        previousValue: 274.7 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 279.19 * MILLION,
+        previousValue: 206.912 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -42.829 * MILLION,
+        previousValue: -50.691 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -27.865 * MILLION,
+        previousValue: -45.917 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['net:nyse'],
+    releasedDate: getUtcDate(2023, 11, 2),
+    documents: [
+      {
+        name: 'Shareholder Letter',
+        link: 'https://cloudflare.net/files/doc_financials/2023/q3/Q3-23-Exhibit-99-1.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 335.603 * MILLION,
+        previousValue: 253.857 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -39.212 * MILLION,
+        previousValue: -45.947 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -23.535 * MILLION,
+        previousValue: -42.546 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['pins:nyse'],
+    releasedDate: getUtcDate(2023, 10, 30),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://s23.q4cdn.com/958601754/files/doc_earnings/2023/q3/earnings-result/Q323-PressRelease.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 763.203 * MILLION,
+        previousValue: 684.55 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -4.999 * MILLION,
+        previousValue: -69.375 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 6.733 * MILLION,
+        previousValue: -65.181 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['afrm:nasdaq'],
+    releasedDate: getUtcDate(2024, 2, 8),
+    documents: [
+      {
+        name: 'Shareholder Letter',
+        link: 'https://investors.affirm.com/static-files/753da02e-35cc-4831-a046-8c8a9125e310',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 591 * MILLION,
+        changeRate: 0.48,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+        data: [
+          {
+            name: 'Gross Merchandise Volume',
+            value: 7.5 * BILLION,
+            changeRate: 0.32,
+            timeFrame: TimeFrame.yoy,
+            unit: UnitType.dollar,
+          },
+        ],
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -172.2 * MILLION,
+        previousValue: -359.5 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -166.9 * MILLION,
+        previousValue: -322.4 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['afrm:nasdaq'],
+    releasedDate: getUtcDate(2023, 11, 8),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investors.affirm.com/static-files/fd2ef456-7baf-44e3-904c-9e2c4a80589e',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 496.547 * MILLION,
+        previousValue: 361.624 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -209.447 * MILLION,
+        previousValue: -287.467 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -171.783 * MILLION,
+        previousValue: -251.269 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['dis'],
+    releasedDate: getUtcDate(2024, 2, 7),
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 23.549 * BILLION,
+        previousValue: 23.512 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+        data: [
+          {
+            name: 'Entertainment Revenue',
+            value: 9.981 * BILLION,
+            previousValue: 10.675 * BILLION,
+            timeFrame: TimeFrame.yoy,
+            unit: UnitType.dollar,
+          },
+          {
+            name: 'Sports Revenue',
+            value: 4.835 * BILLION,
+            previousValue: 4.64 * BILLION,
+            timeFrame: TimeFrame.yoy,
+            unit: UnitType.dollar,
+          },
+          {
+            name: 'Experiences Revenue',
+            value: 9.132 * MILLION,
+            previousValue: 8.545 * MILLION,
+            timeFrame: TimeFrame.yoy,
+            unit: UnitType.dollar,
+          },
+        ],
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 2.151 * BILLION,
+        previousValue: 1.361 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['pypl'],
+    releasedDate: getUtcDate(2024, 2, 7),
+    data: [
+      {
+        name: 'Active Accounts',
+        value: 426 * MILLION,
+        previousValue: 428 * MILLION,
+        timeFrame: TimeFrame.qoq,
+      },
+      {
+        name: EarningsKeyWord.revenue,
+        value: 8.026 * BILLION,
+        previousValue: 7.383 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 1.728 * BILLION,
+        previousValue: 1.244 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 1.402 * BILLION,
+        previousValue: 0.921 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['arm'],
+    releasedDate: getUtcDate(2024, 2, 7),
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 824 * MILLION,
+        previousValue: 724 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+        data: [
+          {
+            name: 'License revenue',
+            value: 354 * MILLION,
+            changeRate: 0.18,
+          },
+        ],
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 788 * MILLION,
+        previousValue: 695 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 134 * MILLION,
+        previousValue: 244 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 87 * MILLION,
+        previousValue: 182 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['baba'],
+    releasedDate: getUtcDate(2024, 2, 7),
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 36669 * MILLION,
+      },
+    ],
+  },
+  {
+    targetUuids: ['spot'],
+    releasedDate: getUtcDate(2024, 2, 6),
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 3671 * MILLION,
+        previousValue: 3166 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.euro,
+      },
+      {
+        name: EarningsKeyWord.mau,
+        value: 602 * MILLION,
+        changeRate: 0.23,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 980 * MILLION,
+        previousValue: 801 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.euro,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -75 * MILLION,
+        previousValue: -231 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.euro,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -70 * MILLION,
+        previousValue: -270 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.euro,
+      },
+    ],
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investor.lilly.com/node/50281/pdf',
+      },
+    ],
+  },
+  {
+    targetUuids: ['tsm'],
+    releasedDate: getUtcDate(2024, 1, 18),
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 19624 * MILLION,
+        changeRate: 0,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 8163 * MILLION,
+        changeRate: -0.199,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 7476 * MILLION,
+        changeRate: -0.195,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investor.lilly.com/node/50281/pdf',
+      },
+    ],
+  },
+  {
+    targetUuids: ['pltr'],
+    releasedDate: getUtcDate(2024, 2, 6),
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 608.35 * MILLION,
+        previousValue: 508.624 * MILLION,
+        data: [
+          {
+            name: 'US commercial revenue',
+            changeRate: 0.7,
+            timeFrame: TimeFrame.yoy,
+            unit: UnitType.dollar,
+          },
+        ],
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 499.711 * MILLION,
+        previousValue: 404.313 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 65.794 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 96.13 * MILLION,
+        previousValue: 33.489 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investor.lilly.com/node/50281/pdf',
+      },
+    ],
+  },
+  {
+    targetUuids: ['lly'],
+    releasedDate: getUtcDate(2024, 2, 6),
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 9353.4 * MILLION,
+        previousValue: 7301.8 * MILLION,
+        data: [
+          {
+            name: 'New Products revenue',
+            value: 2.49 * BILLION,
+            previousValue: 0.3 * BILLION,
+            timeFrame: TimeFrame.yoy,
+            unit: UnitType.dollar,
+          },
+        ],
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 2387.8 * MILLION,
+        previousValue: 1836.4 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 2189.6 * MILLION,
+        previousValue: 1937.7 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investor.lilly.com/node/50281/pdf',
+      },
+    ],
+  },
+  {
+    targetUuids: ['meta:nasdaq'],
+    releasedDate: getUtcDate(2024, 2, 1),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investor.fb.com/investor-news/press-release-details/2024/Meta-Reports-Fourth-Quarter-and-Full-Year-2023-Results-Initiates-Quarterly-Dividend/default.aspx',
+      },
+    ],
+    data: [
+      {
+        name: 'Revenue',
+        value: 40111 * MILLION,
+        previousValue: 32165 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: 'Operating Income',
+        value: 16384 * MILLION,
+        previousValue: 6399 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: 'Costs and expenses',
+        value: 23727 * MILLION,
+        previousValue: 25766 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: 'Net Income',
+        value: 14017 * MILLION,
+        previousValue: 4652 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: 'Family daily active people',
+        value: 3.19 * BILLION,
+        changeRate: 0.08,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: 'Headcount as of December 31',
+        changeRate: -0.22,
+        timeFrame: TimeFrame.yoy,
+      },
+    ],
+  },
+  {
+    targetUuids: ['amd'],
+    documents: [],
+    releasedDate: getUtcDate(2024, 1, 30),
+    pressReleaseLink:
+      'https://d1io3yog0oux5.cloudfront.net/_ecf7d4256581c62ef459ae9962be6214/amd/news/2024-01-30_AMD_Reports_Fourth_Quarter_and_Full_Year_2023_1180.pdf',
+    data: [
+      {
+        name: 'Revenue',
+        value: 6168 * MILLION,
+        previousValue: 5599 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+        data: [
+          {
+            name: 'Data Center segment revenue',
+            value: 2.3 * BILLION,
+            changeRate: 0.38,
+            timeFrame: TimeFrame.yoy,
+          },
+          {
+            name: 'Client segment revenue',
+            value: 1.5 * BILLION,
+            changeRate: 0.62,
+            timeFrame: TimeFrame.yoy,
+          },
+          {
+            name: 'Gaming segment revenue',
+            value: 1.4 * BILLION,
+            changeRate: -0.17,
+            timeFrame: TimeFrame.yoy,
+          },
+          {
+            name: 'Embedded segment revenue',
+            value: 1.1 * BILLION,
+            changeRate: -0.24,
+          },
+        ],
+      },
+      {
+        name: 'Gross profit',
+        value: 2911 * MILLION,
+        previousValue: 2403 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: 'Operating expenses',
+        value: 2575 * MILLION,
+        previousValue: 2557 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: 'Net income',
+        value: 667 * MILLION,
+        previousValue: 21 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['msft'],
+    documents: [],
+    releasedDate: getUtcDate(2024, 1, 30),
+    pressReleaseLink:
+      'https://www.microsoft.com/en-us/investor/earnings/fy-2024-q2/press-release-webcast',
+    data: [
+      {
+        name: 'Revenue',
+        value: 62020 * MILLION,
+        previousValue: 52747 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+        data: [
+          {
+            name: 'Productivity and Business Processes Revenue',
+            value: 19249 * MILLION,
+            previousValue: 17002 * MILLION,
+            timeFrame: TimeFrame.yoy,
+            unit: UnitType.dollar,
+          },
+          {
+            name: 'Intelligent Cloud Revenue',
+            value: 25880 * MILLION,
+            previousValue: 21508 * MILLION,
+            timeFrame: TimeFrame.yoy,
+            unit: UnitType.dollar,
+          },
+          {
+            name: 'More Personal Computing Revenue',
+            value: 16891 * MILLION,
+            previousValue: 14237 * MILLION,
+            timeFrame: TimeFrame.yoy,
+            unit: UnitType.dollar,
+          },
+        ],
+      },
+      {
+        name: 'Operating income',
+        value: 27032 * MILLION,
+        previousValue: 20399 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: 'Net income',
+        value: 21870 * MILLION,
+        previousValue: 16425 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: 'Azure and other cloud services revenue',
+        changeRate: 0.3,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: 'Gaming revenue',
+        changeRate: 0.49,
+      },
+      {
+        name: 'Xbox content and services revenue',
+        changeRate: 0.61,
+      },
+      {
+        name: 'LinkedIn Revenue',
+        changeRate: +0.09,
+        timeFrame: TimeFrame.yoy,
+      },
+    ],
+  },
+  {
+    targetUuids: ['googl'],
+    releasedDate: getUtcDate(2023, 1, 30),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://abc.xyz/assets/95/eb/9cef90184e09bac553796896c633/2023q4-alphabet-earnings-release.pdf',
+      },
+    ],
+    data: [
+      {
+        name: 'Revenue',
+        value: 86310 * MILLION,
+        previousValue: 76048 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: 'Operating Expenses',
+        value: 86310 * MILLION - 23697 * MILLION,
+        previousValue: 76048 * MILLION - 18160 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: 'Net Income',
+        value: 23697 * MILLION,
+        previousValue: 18160 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: 'Google advertising',
+        value: 65517 * MILLION,
+        previousValue: 59042 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+        data: [
+          {
+            name: 'Google Search & other',
+            value: 48020 * MILLION,
+            previousValue: 42604 * MILLION,
+            unit: UnitType.dollar,
+            timeFrame: TimeFrame.yoy,
+          },
+          {
+            name: 'YouTube ads',
+            value: 9200 * MILLION,
+            previousValue: 7963 * MILLION,
+            unit: UnitType.dollar,
+            timeFrame: TimeFrame.yoy,
+          },
+          {
+            name: 'Google Network',
+            value: 8297 * MILLION,
+            previousValue: 8475 * MILLION,
+            unit: UnitType.dollar,
+            timeFrame: TimeFrame.yoy,
+          },
+        ],
+      },
+      {
+        name: 'Google Services total',
+        value: 76311 * MILLION,
+        previousValue: 67838 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: 'Google Cloud',
+        value: 9192 * MILLION,
+        previousValue: 7315 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: 'Other Bets',
+        value: 657 * MILLION,
+        previousValue: 226 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: 'Total Traffic Acquisition Costs',
+        value: 13986 * MILLION,
+        previousValue: 12925 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: 'Number of employees',
+        value: 182502,
+        previousValue: 190234,
+        timeFrame: TimeFrame.yoy,
+      },
+    ],
+  },
+  {
+    targetUuids: ['arm'],
     releasedDate: getUtcDate(2023, 11, 8),
     documents: [
       {
@@ -152,7 +930,7 @@ export const earnings: Earnings[] = [
     ],
   },
   {
-    targets: ['rivn'],
+    targetUuids: ['rivn'],
     releasedDate: getUtcDate(2023, 11, 7),
     documents: [
       {
@@ -210,7 +988,7 @@ export const earnings: Earnings[] = [
     ],
   },
   {
-    targets: ['coin'],
+    targetUuids: ['coin'],
     releasedDate: getUtcDate(2023, 11, 2),
     documents: [
       {
@@ -276,7 +1054,7 @@ export const earnings: Earnings[] = [
     ],
   },
   {
-    targets: ['shop'],
+    targetUuids: ['shop'],
     releasedDate: getUtcDate(2023, 11, 2),
     documents: [
       {
@@ -341,7 +1119,7 @@ export const earnings: Earnings[] = [
     ],
   },
   {
-    targets: ['smci'],
+    targetUuids: ['smci'],
     releasedDate: getUtcDate(2023, 11, 1),
     documents: [
       {
@@ -393,7 +1171,7 @@ export const earnings: Earnings[] = [
     ],
   },
   {
-    targets: ['cat'],
+    targetUuids: ['cat'],
     releasedDate: getUtcDate(2023, 10, 31),
     documents: [
       {
@@ -504,7 +1282,7 @@ export const earnings: Earnings[] = [
     ],
   },
   {
-    targets: ['pins'],
+    targetUuids: ['pins'],
     releasedDate: getUtcDate(2023, 10, 30),
     data: [
       {
@@ -590,7 +1368,7 @@ export const earnings: Earnings[] = [
     ],
   },
   {
-    targets: ['mrk'],
+    targetUuids: ['mrk'],
     releasedDate: getUtcDate(2023, 10, 29),
     documents: [
       {
@@ -683,7 +1461,7 @@ export const earnings: Earnings[] = [
     ],
   },
   {
-    targets: ['amzn'],
+    targetUuids: ['amzn'],
     releasedDate: getUtcDate(2023, 10, 26),
     documents: [
       {
@@ -815,7 +1593,7 @@ export const earnings: Earnings[] = [
     ],
   },
   {
-    targets: ['meta'],
+    targetUuids: ['meta'],
     releasedDate: getUtcDate(2023, 10, 25),
     documents: [
       {
@@ -825,7 +1603,7 @@ export const earnings: Earnings[] = [
     ],
   },
   {
-    targets: ['msft'],
+    targetUuids: ['msft'],
     documents: [],
     releasedDate: getUtcDate(2023, 10, 24),
     presentationLink:
@@ -875,7 +1653,7 @@ export const earnings: Earnings[] = [
   },
 
   {
-    targets: ['googl'],
+    targetUuids: ['googl'],
     releasedDate: getUtcDate(2023, 10, 24),
     revenue: {},
     operatingExpenses: {},
@@ -979,7 +1757,7 @@ export const earnings: Earnings[] = [
     ],
   },
   {
-    targets: ['axp'],
+    targetUuids: ['axp'],
     releasedDate: getUtcDate(2023, 10, 21),
     documents: [],
     pressReleaseLink:

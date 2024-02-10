@@ -13,11 +13,8 @@
   </span>
 
   <span *ngIf="interactions.listUuids">
-    <span
-      class="ml-2 bg-blue-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
-      *ngFor="let uuid of interactions.listUuids"
-    >
-      {{ uuid }}
+    <span *ngFor="let uuid of interactions.listUuids">
+      <app-tag-display [tagUuid]="uuid"></app-tag-display>
     </span>
   </span>
 </ng-container>

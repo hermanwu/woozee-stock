@@ -1,65 +1,39 @@
 import { Injectable } from '@angular/core';
-import { TopicServices } from 'src/app/industries/services/topic.services';
-import { OrganizationServices } from 'src/app/organizations/services/organization.services';
-import { PeopleServices } from 'src/app/people/services/people.services';
-import { StockServices } from 'src/app/stock/services/stock.service';
-import { Tag, TagType } from '../data/tag.model';
-
-const tags = {
-  谷歌: 'Google',
-  亚马逊: 'Amazon',
-  元: 'Meta',
-  科技: 'technology',
-  互联网: 'internet',
-  美联储: 'fed',
-  小鹏汽车: 'xpeng',
-};
-const tagSet = new Set([
-  ...Object.values(tags).map((value) => value.toLowerCase()),
-  ...Object.keys(tags),
-]);
+import { userInteractions } from 'src/app/mock-data/interactions.mock';
+import { getTagByUuid, Tag, TagType } from '../data/tag.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TagServices {
-  constructor(
-    private stockServices: StockServices,
-    private peopleServices: PeopleServices,
-    private topicServices: TopicServices,
-    private organizationServices: OrganizationServices
-  ) {}
+  interactions = [];
+  tags = new Map<string, Tag>();
 
-  getAllTags(): { type: TagType; url: string; keyword: string }[] {
-    return [];
+  constructor() {
+    this.interactions = userInteractions;
+    for (let interaction of this.interactions) {
+      if (interaction.listUuids) {
+        for (let listUuid of interaction.listUuids) {
+          let tag = this.tags.get(listUuid);
+
+          if (tag) {
+            tag.totalVotes++;
+          } else {
+            tag = getTagByUuid(listUuid);
+            if (tag) {
+              tag.totalVotes = 1;
+              this.tags.set(listUuid, tag);
+            }
+          }
+        }
+      }
+    }
   }
 
-  getTags(content: string): string[] {
-    const tagsCount = {};
-
-    const tags = content
-      ?.split(' ')
-      .filter((word) => tagSet.has(word.trim()?.toLowerCase()))
-      .map((word) => word.trim()?.toLowerCase());
-    // Count tags
-    if (tags) {
-      tags.forEach((tag) => {
-        if (tagsCount[tag]) {
-          tagsCount[tag] += 1;
-        } else {
-          tagsCount[tag] = 1;
-        }
-      });
-
-      // Sort tags by count
-      const sortedArray = [];
-      for (let key in tagsCount) {
-        sortedArray.push([key, tagsCount[key]]);
-      }
-      sortedArray.sort((a, b) => b[1] - a[1]);
-
-      return tags;
-    }
+  getTopTags() {
+    return Array.from(this.tags.values())
+      .filter((tag) => tag.type !== TagType.Portfolio)
+      .sort((a, b) => b?.totalVotes - a?.totalVotes);
   }
 
   formatTags(tags: string[]): string[] {
@@ -81,55 +55,5 @@ export class TagServices {
 
   getImagesByTags(tags: string[]): any[] {
     return [];
-  }
-
-  getTagRelatedDataByUuid(tagUuid: string): Tag {
-    let cleanedTagUuid = tagUuid.trim()?.toLowerCase();
-
-    let stock = this.stockServices.getStockByUuid(cleanedTagUuid);
-
-    if (stock) {
-      return {
-        uuid: tagUuid,
-        displayName: stock.displayName,
-        imageLink: stock.logoLink,
-        type: TagType.Organization,
-        ticker: stock.ticker,
-      };
-    }
-
-    let organization =
-      this.organizationServices.getOrganizationByUuid(cleanedTagUuid);
-
-    if (organization) {
-      return {
-        uuid: cleanedTagUuid,
-        displayName: organization.displayName,
-        imageLink: organization.logoLink,
-        type: TagType.Organization,
-      };
-    }
-
-    let person = this.peopleServices.getPersonByUuid(cleanedTagUuid);
-
-    if (person) {
-      return {
-        uuid: tagUuid,
-        displayName: person.displayName,
-        imageLink: person.imageLink,
-        type: TagType.People,
-      };
-    }
-
-    let topic = this.topicServices.getTopicByUuid(cleanedTagUuid);
-
-    if (topic) {
-      return {
-        uuid: tagUuid,
-        displayName: topic.displayName,
-        imageLink: topic.imageLink,
-        type: TagType.Group,
-      };
-    }
   }
 }

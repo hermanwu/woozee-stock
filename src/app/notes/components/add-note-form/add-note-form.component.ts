@@ -7,10 +7,8 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { UserServices } from 'src/app/accounts/services/user.services';
 import { v4 as generateUuid } from 'uuid';
 import { Note, NoteType } from '../../../shared/data/note.interface';
-import { TagServices } from '../../../shared/services/tag.services';
 import { OpinionEnum } from '../../../stock/models/opinion-type.model';
 
 @Component({
@@ -26,11 +24,7 @@ export class AddNoteFormComponent implements OnInit, OnChanges {
   noteType = NoteType;
   ratingEnum = OpinionEnum;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private tagServices: TagServices,
-    private userServices: UserServices
-  ) {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.createForm();
@@ -40,7 +34,7 @@ export class AddNoteFormComponent implements OnInit, OnChanges {
 
   createForm() {
     this.noteForm = this.formBuilder.group({
-      targets: [],
+      targetUuids: [],
       title: [],
       content: [],
       tags: [],
@@ -72,7 +66,7 @@ export class AddNoteFormComponent implements OnInit, OnChanges {
       rating: this.noteForm.value.rating,
       uuid: this.noteForm.value.uuid,
       authorUuid: this.noteForm.value.authorUuid,
-      targets: this.noteForm.value.targets
+      targetUuids: this.noteForm.value.targetUuids
         ?.split(',')
         .map((target) => target.trim()),
       createdDate: new Date(),

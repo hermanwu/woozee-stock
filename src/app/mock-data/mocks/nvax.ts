@@ -2,7 +2,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const nvax: StockAnalysis = {
   logo: '',
-  name: { English: 'Novavax, Inc.' },
+  name: { English: 'Novavax Inc.' },
   description: [],
   ticker: 'NVAX',
 

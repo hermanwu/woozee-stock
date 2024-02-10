@@ -1,3 +1,7 @@
+<ng-container *ngIf="statsDisplay.name">
+  {{ statsDisplay.name }}:
+</ng-container>
+
 <ng-container *ngIf="statsDisplay.value || statsDisplay.changeRate">
   <ng-container>
     <ng-container [ngSwitch]="statsDisplay.displayType">
@@ -9,7 +13,12 @@
 
       <ng-container *ngSwitchDefault i18n>
         <span *ngIf="statsDisplay?.value">
-          <span *ngIf="statsDisplay?.unit">$</span
+          <span *ngIf="statsDisplay?.unit">
+            <ng-container [ngSwitch]="statsDisplay.unit">
+              <ng-container *ngSwitchCase="'euro'">€</ng-container>
+
+              <ng-container *ngSwitchDefault>$</ng-container>
+            </ng-container> </span
           >{{ statsDisplay.value | siUnit : 2 | undefined }},
         </span>
 

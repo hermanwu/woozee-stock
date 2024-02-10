@@ -28,6 +28,7 @@ export interface Organization {
   irAddress?: string;
   descriptions?: string[];
   headquarters?: string;
+  website?: string;
 }
 
 @Component({

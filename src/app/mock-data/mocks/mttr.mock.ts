@@ -6,7 +6,7 @@ export const mttr: StockAnalysis = {
   marketCap: 1.55 * BILLION,
 
   logo: '',
-  name: 'Matterport, Inc.',
+  name: 'Matterport Inc.',
   description: [],
   ticker: 'mttr',
   displayName: 'Matterport',

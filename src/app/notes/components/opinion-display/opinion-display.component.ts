@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
-import { Sentiment } from 'src/emotion/emotion.services';
+import { Sentiment } from 'src/interactions/interaction.services';
 import { Term } from '../../../risks/models/risk-level.model';
 import { OpinionEnum } from '../../../stock/models/opinion-type.model';
 import { Opinion } from './opinion.interface';

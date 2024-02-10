@@ -36,9 +36,10 @@ mat-toolbar {
 }
 
 .content-container {
-  margin-top: 64px;
   padding-left: 1rem;
   padding-right: 1rem;
+  margin: 64px auto 0 auto;
+  max-width: 800px;
 }
 
 .name {

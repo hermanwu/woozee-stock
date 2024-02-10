@@ -32,9 +32,9 @@ export class NotesServices {
     );
   }
 
-  getNotesByTargets(targets: string[]) {
+  getNotesByTargets(targetUuids: string[]) {
     return this.notes.filter((item) =>
-      item.targets?.some((t) => targets.includes(t))
+      item.targetUuids?.some((t) => targetUuids.includes(t))
     );
   }
 

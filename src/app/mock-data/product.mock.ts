@@ -62,6 +62,30 @@ export const getAllParents = (products: Product[]) => {
 
 export const mockProducts: Product[] = [
   {
+    name: 'Ray-Ban Meta Smart Glasses',
+    uuid: 'ray-ban-meta-smart-glasses',
+  },
+  {
+    name: 'Netflix produced movies/shows',
+    uuid: 'netflix-produced-movies-shows',
+    rootCompanyId: 'nflx',
+  },
+  {
+    name: 'Netflix membership',
+    uuid: 'netflix-membership',
+    rootCompanyId: 'nflx',
+  },
+  {
+    name: 'AutoPilot',
+    uuid: 'autopilot',
+    rootCompanyId: 'tsla',
+    parentIds: ['self-driving'],
+  },
+  {
+    name: 'Self Driving',
+    uuid: 'self-driving',
+  },
+  {
     name: 'Amazon Prime',
     uuid: 'amazon-prime',
     rootCompanyId: 'amzn',
@@ -267,10 +291,11 @@ export const mockProducts: Product[] = [
   },
   {
     name: 'EV',
-    rootCompanyId: 'tsla',
+    uuid: 'ev',
   },
   {
     name: 'Solar Panels',
+    parentIds: ['ev'],
     rootCompanyId: 'tsla',
   },
   {
@@ -289,8 +314,9 @@ export const mockProducts: Product[] = [
     parentIds: ['Video Streaming Service'],
   },
   {
+    uuid: 'chatgpt',
     name: 'ChatGPT',
-    rootCompanyId: 'msft',
+    rootCompanyId: 'openai',
     description: 'A chatbot that uses GPT-3 / GPT-4 to generate responses',
   },
   {
@@ -298,5 +324,24 @@ export const mockProducts: Product[] = [
     name: 'GitHub Copilot',
     rootCompanyId: 'msft',
     parentCompany: 'GitHub',
+  },
+  {
+    name: 'Generative AI',
+    parentIds: ['ai'],
+    uuid: 'generative-ai',
+  },
+  {
+    name: 'Semiconductor',
+    parentIds: ['hardware'],
+    uuid: 'semiconductor',
+  },
+  {
+    name: 'Accelerated Computing',
+    parentIds: ['semiconductor'],
+  },
+  {
+    name: 'Silicon Carbide (SiC)',
+    parentIds: ['semiconductor'],
+    uuid: 'sic',
   },
 ];

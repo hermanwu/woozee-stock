@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { getInteractionsByPersonUuid } from '../mock-data/interactions.mock';
 import { getPersonByUuid } from '../mock-data/person.mock';
 
 @Component({
@@ -11,7 +12,7 @@ import { getPersonByUuid } from '../mock-data/person.mock';
 export class PersonPropertyPageComponent implements OnInit {
   private personUuid = 'personUuid';
   routeSub: Subscription;
-  interactions;
+  personInteractions;
   person;
 
   constructor(private route: ActivatedRoute) {}
@@ -20,8 +21,9 @@ export class PersonPropertyPageComponent implements OnInit {
     this.routeSub = this.route.params.subscribe((params) => {
       const personUuid = params[this.personUuid].toLowerCase();
 
-      console.log(personUuid);
       this.person = getPersonByUuid(personUuid);
+
+      this.personInteractions = getInteractionsByPersonUuid(personUuid);
     });
   }
 

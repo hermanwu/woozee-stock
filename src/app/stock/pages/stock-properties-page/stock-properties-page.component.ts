@@ -4,20 +4,24 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import { getEarningsByTicker } from 'src/app/mock-data/earnings.mock';
-import { findPeopleByOrganizationUuid } from 'src/app/mock-data/person.mock';
+import { getEarningsByTargetUuid } from 'src/app/mock-data/earnings.mock';
+import { getInteractionsByOrganizationUuid } from 'src/app/mock-data/interactions.mock';
+import { getTradableItemByOrganizationUuid } from 'src/app/mock-data/mocks/tradables.mock';
+import { getOrganizationsByUuids } from 'src/app/mock-data/organization.mock';
+import { getPeopleByPersonUuids } from 'src/app/mock-data/person.mock';
 import {
   getAllParents,
-  getProductsByRootCompanyId,
+  getProductsByProductUuids,
 } from 'src/app/mock-data/product.mock';
+import { getRelationshipsByStartNodeUuid } from 'src/app/mock-data/relationship.mock';
 import { NotesServices } from 'src/app/news/services/notes.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
 import { Note } from 'src/app/shared/data/note.interface';
 import { NavigationServices } from 'src/app/shared/services/navgiation.services';
-import { EmotionServices } from 'src/emotion/emotion.services';
 import { environment } from 'src/environments/environment';
+import { InteractionServices } from 'src/interactions/interaction.services';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 import { StockServices } from '../../services/stock.service';
 
@@ -46,10 +50,14 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   mySentiment;
   noteUuidToEmotionMap = {};
   earnings = [];
+  stockInteractions;
+
+  tradableItem;
 
   products = [];
   relatedProducts = [];
   people = [];
+  partners = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -58,7 +66,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
     private userServices: UserServices,
     private notesServices: NotesServices,
     private stockServices: StockServices,
-    private emotionServices: EmotionServices,
+    private emotionServices: InteractionServices,
     private navigationServices: NavigationServices
   ) {}
 
@@ -80,7 +88,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         this.stockAnalysis = null;
       }
 
-      const allNotes = this.notesServices
+      this.notes = this.notesServices
         .getNotesByTargets([this.stockUuid])
         .slice(0, 5);
 
@@ -88,26 +96,34 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         this.userServices.currentUser.userUuid
       );
 
-      this.people = findPeopleByOrganizationUuid(this.stockUuid);
+      this.tradableItem = getTradableItemByOrganizationUuid(this.stockUuid);
 
-      for (let note of allNotes) {
-        const emotion = emotions.find((e) => e.targetUuid === note.uuid);
-        if (emotion) {
-          this.myNotes.push(note);
-        } else {
-          this.notes.push(note);
-        }
-      }
+      const relationships = getRelationshipsByStartNodeUuid(this.stockUuid);
+      this.stockInteractions = getInteractionsByOrganizationUuid(
+        this.stockUuid
+      );
 
-      this.products = getProductsByRootCompanyId(this.stockUuid);
+      this.products = getProductsByProductUuids(
+        relationships
+          .filter((r) => r.endNodeType === 'product')
+          .map((r) => r.endNodeUuid)
+      );
+
+      this.people = getPeopleByPersonUuids(
+        relationships
+          .filter((r) => r.endNodeType === 'person')
+          .map((r) => r.endNodeUuid)
+      );
+
+      this.partners = getOrganizationsByUuids(
+        relationships
+          .filter((r) => r.endNodeType === 'organization')
+          .map((r) => r.endNodeUuid)
+      );
 
       // get all parents ids from product list
-      let parentIds = this.products
-        .filter((obj) => obj.parentIds !== undefined) // Filter out undefined values
-        .map((obj) => obj.parentIds)
-        .reduce((acc, val) => acc.concat(val), []);
       this.relatedProducts = getAllParents(this.products);
-      this.earnings = getEarningsByTicker(this.stockUuid);
+      this.earnings = getEarningsByTargetUuid(this.stockUuid);
     });
   }
 

@@ -2,7 +2,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const swks: StockAnalysis = {
   logo: '',
-  name: { English: 'Skyworks Solutions, Inc.' },
+  name: { English: 'Skyworks Solutions Inc.' },
   description: [],
   ticker: 'SWKS',
 

@@ -2,10 +2,6 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { currentUserMock } from 'src/app/accounts/data/user.mock';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import {
-  sortPortoflioBasedOnRanking,
-  updateGlobalRankBasedOnPortfolio,
-} from 'src/app/shared/functions/ranking.function';
 
 @Component({
   selector: 'app-ui-organism',
@@ -37,26 +33,13 @@ export class UiOrganismComponent implements OnInit {
   rankedStocks;
   selectedPortfolio;
   mockPortfolio;
-  globalRanking = this.userServices.getGlobalRanking();
 
   constructor(private userServices: UserServices) {}
 
-  ngOnInit(): void {
-    this.mockPortfolio = sortPortoflioBasedOnRanking(
-      this.userServices.getPortfolioByName('Mock').stocks,
-      this.globalRanking
-    );
-  }
+  ngOnInit(): void {}
 
   changePortfolio(portfolio: string) {
     this.selectedPortfolio = portfolio;
-  }
-
-  saveRank() {
-    this.globalRanking = updateGlobalRankBasedOnPortfolio(
-      this.mockPortfolio,
-      this.globalRanking
-    );
   }
 
   drop(event: CdkDragDrop<string[]>) {

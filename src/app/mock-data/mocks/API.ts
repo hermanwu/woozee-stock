@@ -2,7 +2,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const API: StockAnalysis = {
   logo: '',
-  name: { English: 'Agora, Inc.' },
+  name: { English: 'Agora Inc.' },
   description: [],
   ticker: 'API',
 

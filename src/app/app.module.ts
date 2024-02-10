@@ -21,12 +21,12 @@ import { AssetListPageComponent } from './assets/components/asset-list-page/asse
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { ComparisonNoteComponent } from './comparison-note/comparison-note.component';
 import { EarningsDisplayComponent } from './earnings-display/earnings-display.component';
+import { EntityDisplayComponent } from './entity-display/entity-display.component';
 import { ImageDisplayComponent } from './images/components/image-display/image-display.component';
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
 import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
 import { InteractionBarComponent } from './interaction-bar/interaction-bar.component';
 import { LandingComponent } from './landing/landing.component';
-import { ListDisplayComponent } from './list-display/list-display.component';
 import { LoginComponent } from './login/login.component';
 import { MarketDisplayComponent } from './markets/components/market-display/market-display.component';
 import { MarketListComponent } from './markets/components/market-list/market-list.component';
@@ -51,8 +51,10 @@ import { OpinionDisplayComponent } from './notes/components/opinion-display/opin
 import { OpinionItemDisplayComponent } from './notes/components/opinion-item-display/opinion-item-display.component';
 import { MePageComponent } from './notes/components/opinion-page/blog-page.component';
 import { QuoteDisplayComponent } from './notes/components/quote-display/quote-display.component';
+import { PeopleDisplayComponent } from './people-display/people-display.component';
 import { AddPersonFormComponent } from './people/components/add-person-form/add-person-form.component';
 import { InvestorDisplayComponent } from './people/components/investor-display/investor-display.component';
+import { PersonPropertyPageComponent } from './person-property-page/person-property-page.component';
 import { ThumbnailComponent } from './presentation/components/thumbnail/thumbnail.component';
 import { PresentationHeaderComponent } from './presentation/presentation-header/presentation-header.component';
 import { PresentationComponent } from './presentation/presentation.component';
@@ -80,7 +82,6 @@ import { RegionDisplayComponent } from './shared/components/region-display/regio
 import { SearchComponent } from './shared/components/search/search.component';
 import { SliderComponent } from './shared/components/slider/slider.component';
 import { StatsDisplayComponent } from './shared/components/stats-display/stats-display.component';
-import { TagsDisplayComponent } from './shared/components/tags-display/tags-display.component';
 import { AutofocusDirective } from './shared/directives/auto-focus.directive';
 import { IopsPipeModule } from './shared/pipes/iops/iops-pipe.module';
 import { SafePipe } from './shared/pipes/safe.pipe';
@@ -89,6 +90,7 @@ import { TagDisplayPipe } from './shared/pipes/tag-display.pipe';
 import { UndefinedPipeModule } from './shared/pipes/undefined-pipe/undefined-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
 import { SignupComponent } from './signup/signup.component';
+import { StockDisplayComponent } from './stock-display/stock-display.component';
 import { BusinessOverviewComponent } from './stock/components/business-overview/business-overview.component';
 import { ComparisonDialogComponent } from './stock/components/comparison-dialog/comparison-dialog.component';
 import { FactComponent } from './stock/components/facts/components/fact/fact.component';
@@ -107,15 +109,16 @@ import { StockMetricDisplayComponent } from './stock/components/stock-metric-dis
 import { TickerDisplayComponent } from './stock/components/ticker-display/ticker-display.component';
 import { ValuationDetailsComponent } from './stock/components/valuation-details/valuation-details.component';
 import { ValuationComponent } from './stock/components/valuation/valuation.component';
-import { ForeverOwnStocksPanelComponent } from './stock/forever-own-stocks-panel/forever-own-stocks-panel.component';
 import { NewsDisplayComponent } from './stock/molecules/news-display/news-display.component';
 import { StockListTableComponent } from './stock/molecules/stock-list-table/stock-list-table.component';
 import { StockProductsListComponent } from './stock/molecules/stock-products-list/stock-products-list.component';
 import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/thoughts-display.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
-import { StockDisplayComponent } from './stock/stock-display/stock-display.component';
 import { TagDisplayComponent } from './tag-display/tag-display.component';
+import { TagPropertiesPageComponent } from './tag-properties-page/tag-properties-page.component';
+import { TradableDisplayComponent } from './tradable-display/tradable-display.component';
+import { TradablePropertiesPageComponent } from './tradable-properties-page/tradable-properties-page.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
 import { MockCompareDialogComponent } from './ui/components/mock-compare-dialog/mock-compare-dialog.component';
@@ -130,7 +133,6 @@ import { UiListComponent } from './ui/ui-list/ui-list.component';
 import { UiMoleculesComponent } from './ui/ui-molecules/ui-molecules.component';
 import { UiOrganismComponent } from './ui/ui-organism/ui-organism.component';
 import { UiTemplatesComponent } from './ui/ui-templates/ui-templates.component';
-import { PersonPropertyPageComponent } from './person-property-page/person-property-page.component';
 
 // Use this when you want to disable Material ripple animations for all components
 const globalRippleConfig: RippleGlobalOptions = { disabled: true };
@@ -143,9 +145,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     NewsDisplayComponent,
     StockProductsListComponent,
     HighGrowthIndustryComponent,
-    StockDisplayComponent,
     TrendComponent,
-    ForeverOwnStocksPanelComponent,
     StockListTableComponent,
     SlideDemoComponent,
     SlideComponent,
@@ -198,7 +198,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     StatsDisplayComponent,
     ImageDisplayComponent,
     ValuationDetailsComponent,
-    TagsDisplayComponent,
     LinksDisplayComponent,
     InstagramNewsDisplayDialogComponent,
     StockImageDisplayComponent,
@@ -234,7 +233,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     UiMoleculesComponent,
     UiOrganismComponent,
     UiListComponent,
-    ListDisplayComponent,
     UiComparisonComponent,
     ComparisonNoteComponent,
     UiImagesDisplayComponent,
@@ -250,6 +248,12 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     EarningsDisplayComponent,
     InteractionBarComponent,
     PersonPropertyPageComponent,
+    StockDisplayComponent,
+    TagPropertiesPageComponent,
+    PeopleDisplayComponent,
+    TradablePropertiesPageComponent,
+    TradableDisplayComponent,
+    EntityDisplayComponent,
   ],
   imports: [
     BrowserModule,

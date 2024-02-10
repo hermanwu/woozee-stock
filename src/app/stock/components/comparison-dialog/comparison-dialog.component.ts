@@ -3,10 +3,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
-import {
-  rankHigher,
-  rankLower,
-} from 'src/app/shared/functions/ranking.function';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { environment } from 'src/environments/environment';
 import { Industry } from '../../models/industry.model';
@@ -94,28 +90,6 @@ export class ComparisonDialogComponent {
       this.better.push(this.toCompareList.shift());
     }
     this.selected = null;
-  }
-
-  save() {
-    let ranks = this.userServices.getGlobalRanking();
-
-    for (let worseStock of this.worse) {
-      ranks = rankLower(
-        worseStock.ticker.toLowerCase(),
-        this.stock.ticker.toLowerCase(),
-        ranks
-      );
-    }
-
-    for (let betterStock of this.better) {
-      ranks = rankHigher(
-        betterStock.ticker.toLowerCase(),
-        this.stock.ticker.toLowerCase(),
-        ranks
-      );
-    }
-
-    this.userServices.setGlobalRanking(ranks);
   }
 
   select(rankedStock) {

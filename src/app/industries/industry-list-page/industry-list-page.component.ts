@@ -17,15 +17,7 @@ export class IndustryListPageComponent implements OnInit {
   constructor(
     private industriesService: IndustriesService,
     private userService: UserServices
-  ) {
-    this.rankingSub = userService.industryRankings$.subscribe((rankings) => {
-      this.industries = industriesService.getIndustryByTypes(rankings);
-
-      for (let i = 0; i < this.industries.length; i++) {
-        this.industries[i].rank = i + 1;
-      }
-    });
-  }
+  ) {}
 
   ngOnInit(): void {}
 

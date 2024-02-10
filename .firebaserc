@@ -1,5 +1,5 @@
 {
-  "targets": {
+  "targetUuids": {
     "woozee-stock": {
       "hosting": {
         "woozee-stock": [

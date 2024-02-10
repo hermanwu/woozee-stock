@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UserInteractions } from 'src/emotion/emotion.services';
+import { UserInteractions } from 'src/interactions/interaction.services';
 import { EmojiUnicode } from '../shared/data/enum/emoji.enum';
 
 @Component({

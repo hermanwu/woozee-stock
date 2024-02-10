@@ -81,7 +81,7 @@ export const twtrRisks = [
 export const twtr: StockAnalysis = {
   marketCap: 29.64 * BILLION,
   logo: '',
-  name: 'Twitter, Inc.',
+  name: 'Twitter Inc.',
   description: [],
   ticker: 'twtr',
   displayName: 'Twitter',

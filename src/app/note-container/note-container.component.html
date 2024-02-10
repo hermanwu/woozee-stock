@@ -1,45 +1,53 @@
-<div class="header">
+<ng-container *ngIf="note">
   <div>
-    <app-tag-display [tagUuid]="note?.targets?.[0]"></app-tag-display>
-    <ng-container *ngIf="note?.tagUuids?.length > 0">
-      |
-      <span *ngFor="let item of note.tagUuids" class="tag">
-        <a>
-          <app-tag-display [tagUuid]="item"></app-tag-display>
-        </a>
-      </span>
-    </ng-container>
+    <span *ngIf="note.createdDate">
+      <app-date-display [date]="note.createdDate"></app-date-display>
+    </span>
+
+    <span *ngFor="let item of note?.tagUuids" class="tag">
+      <app-tag-display [tagUuid]="item"></app-tag-display>
+    </span>
+
+    <span>
+      <app-people-display
+        *ngIf="note.authorUuids"
+        [peopleUuids]="note.authorUuids"
+      ></app-people-display>
+    </span>
   </div>
 
-  <div>
-    📝
-    <!-- <app-date-display [date]="note?.createdDate"></app-date-display> -->
-    <!-- by {{ creatorName || "invesdea" }} -->
-    by invesdea.com
+  <mat-chip-list *ngIf="note.targetUuids">
+    <mat-chip *ngFor="let item of note.targetUuids">
+      <app-entity-display [entityUuid]="item"></app-entity-display>
+    </mat-chip>
+  </mat-chip-list>
+
+  <div *ngIf="note.title">
+    <strong>{{ note.title }}</strong>
   </div>
-</div>
 
-<div *ngIf="note.title">
-  <strong>{{ note.title }}</strong>
-</div>
+  <div *ngIf="note.content">
+    <app-content-display *ngIf="note.content" [content]="note.content">
+    </app-content-display>
+  </div>
 
-<ng-container [ngSwitch]="note.noteType">
+  <ng-container *ngIf="note?.data">
+    <div *ngFor="let item of note.data">
+      <app-stats-display [statsDisplay]="item"></app-stats-display>
+    </div>
+  </ng-container>
+
+  <div *ngIf="note.links">
+    <app-links-display [links]="note.links"></app-links-display>
+  </div>
+</ng-container>
+<!-- <ng-container [ngSwitch]="note.noteType">
   <app-opinion-item-display
     *ngSwitchCase="'opinion'"
     [opinion]="note"
     [expanded]="true"
     [shortVersion]="shortVersion"
   ></app-opinion-item-display>
-  <app-quote-display
-    *ngSwitchCase="'quote'"
-    [quote]="note"
-    [expanded]="!shortVersion"
-  >
-  </app-quote-display>
-  <ng-container *ngSwitchCase="'action'">
-    <app-content-display *ngIf="note.content" [content]="note.content">
-    </app-content-display>
-  </ng-container>
 
   <ng-container *ngSwitchCase="'number'">
     <div>
@@ -49,85 +57,4 @@
   <app-list-display *ngSwitchCase="'list'" [list]="note"> </app-list-display>
   <app-comparison-note *ngSwitchCase="'vote'" [comparisonData]="note">
   </app-comparison-note>
-</ng-container>
-
-<div class="toolbar" *ngIf="false">
-  <button mat-icon-button><mat-icon>expand_less</mat-icon></button>
-  <span>{{ note.emotion?.vote || 0 }}</span>
-  <button mat-icon-button><mat-icon>expand_more</mat-icon></button>
-
-  <button mat-button>
-    Bullish
-    <ng-container *ngIf="note.emotion?.bullish"
-      >x {{ note.emotion?.bullish }}</ng-container
-    >
-  </button>
-
-  <button mat-button>
-    Bearish
-    <ng-container *ngIf="note.emotion?.bearish"
-      >x {{ note.emotion?.bearish }}</ng-container
-    >
-  </button>
-
-  <button mat-button (click)="onSaveClick()">
-    <span *ngIf="note.emotion?.saved; else unsavedButton">Saved</span
-    ><ng-template #unsavedButton>Save</ng-template>
-  </button>
-
-  <button mat-button (click)="expanded = !expanded">
-    😀 <mat-icon> expand_more </mat-icon>
-  </button>
-  <button
-    right-items
-    mat-icon-button
-    [matMenuTriggerFor]="menu"
-    *ngIf="!environment.production"
-  >
-    <mat-icon>more_horiz</mat-icon>
-  </button>
-
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item *ngIf="note?.sourceLink">
-      <a href="{{ note.sourceLink }}" target="_blank"> read more </a>
-    </button>
-
-    <button mat-menu-item [cdkCopyToClipboard]="note.uuid">Copy UUID</button>
-
-    <button mat-menu-item (click)="openDialog()">Twitter</button>
-
-    <button mat-menu-item (click)="openInstagramDialog(note)">Instagram</button>
-  </mat-menu>
-</div>
-
-<ng-container *ngIf="expanded">
-  <mat-chip-list class="chip-list" [multiple]="true" selectable>
-    <mat-chip
-      (click)="toggleChip(Emoji.thumbUp)"
-      [selected]="chips.has(Emoji.thumbUp)"
-      >{{ Emoji.thumbUp }}</mat-chip
-    >
-
-    <mat-chip
-      (click)="toggleChip(Emoji.rocket)"
-      [selected]="chips.has(Emoji.rocket)"
-      >{{ Emoji.rocket }}</mat-chip
-    >
-
-    <mat-chip
-      (click)="toggleChip(Emoji.shit)"
-      [selected]="chips.has(Emoji.shit)"
-      >{{ Emoji.shit }}</mat-chip
-    >
-    <mat-chip
-      (click)="toggleChip(Emoji.smile)"
-      [selected]="chips.has(Emoji.smile)"
-      >{{ Emoji.smile }}</mat-chip
-    >
-    <mat-chip
-      (click)="toggleChip(Emoji.sad)"
-      [selected]="chips.has(Emoji.sad)"
-      >{{ Emoji.sad }}</mat-chip
-    >
-  </mat-chip-list>
-</ng-container>
+</ng-container> -->

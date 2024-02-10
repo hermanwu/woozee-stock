@@ -16,12 +16,12 @@
 
 <div *ngIf="earnings.data?.length > 0">
   <div *ngFor="let data of earnings?.data">
-    <span *ngIf="data.value">🔷</span> {{ data.name }}:
+    <span *ngIf="data.value">🔷</span>
     <app-stats-display [statsDisplay]="data"></app-stats-display>
 
     <ng-container *ngIf="data.data">
       <div *ngFor="let data2 of data?.data">
-        🔹 {{ data2.name }}:
+        🔹
         <app-stats-display [statsDisplay]="data2"></app-stats-display>
       </div>
     </ng-container>

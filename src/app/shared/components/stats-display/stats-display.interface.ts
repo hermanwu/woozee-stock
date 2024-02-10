@@ -13,6 +13,7 @@ export enum TimeFrame {
 export enum UnitType {
   dollar = 'dollar',
   rmb = 'rmb',
+  euro = 'euro',
 }
 
 export enum StatsCategory {

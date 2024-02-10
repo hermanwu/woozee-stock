@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { getOpinionsByCreatorUuid } from 'src/app/mock-data/notes-mock.const';
-import { getPeopleByPersonUuids } from 'src/app/mock-data/person.mock';
 import {
-  getProductsByProductUuids,
-  getRootCompanyIdByProductId,
-  Product,
-} from 'src/app/mock-data/product.mock';
+  getTradableItemByOrganizationUuid,
+  getTradableItemsByUuids,
+} from 'src/app/mock-data/mocks/tradables.mock';
+import { getOrganizationsByUuids } from 'src/app/mock-data/organization.mock';
+import { Product } from 'src/app/mock-data/product.mock';
 import { NotesServices } from 'src/app/news/services/notes.services';
 import { NavigationServices } from 'src/app/shared/services/navgiation.services';
 import { StockServices } from 'src/app/stock/services/stock.service';
-import { EmotionServices } from 'src/emotion/emotion.services';
+import { InteractionServices } from 'src/interactions/interaction.services';
 import { UserServices } from '../../../accounts/services/user.services';
 import { AddNoteFormComponent } from '../add-note-form/add-note-form.component';
 
@@ -31,179 +30,126 @@ export class NotesListPageComponent implements OnInit {
   stockUuidToProductMap = new Map<string, Product[]>();
   stockUuidToOpinionMap = new Map<string, any>();
   stockUuidToPersonMap = new Map<string, any[]>();
-  uuidToInteractionMap = new Map<string, any>();
+  targetUuidToInteractionMap = new Map<string, any>();
   stockUuidToCreatedOpinionMap = new Map<string, any>();
 
   stockUuids = [];
-  products = [];
   userUuid;
+
+  /**
+   * {
+   *  tradableItem
+   *  organizations
+   *  people
+   *  products
+   * }
+   */
+
+  displayItemMap = new Map();
+  displayItems = [];
+
+  organizations = [];
+  products = [];
+  people = [];
 
   constructor(
     private userServices: UserServices,
     private notesServices: NotesServices,
     private dialogService: MatDialog,
     private router: Router,
-    private emotionServices: EmotionServices,
+    private interactionServices: InteractionServices,
     private stockServices: StockServices,
     private navigationServices: NavigationServices
   ) {
     this.userUuid = userServices.currentUser.userUuid;
-    // this.myOpinions = notesServices
-    //   .getNotesByCreatorUuid(userUuid)
-    //   .filter((item) => item.noteType === NoteType.Opinion);
-
-    // this.opinions = this.notesServices.getNotesByUuids(
-    //   this.userServices.getSavedNoteUuids()
-    // );
   }
 
   ngOnInit(): void {
-    this.interactions = this.emotionServices.getUserInteractionsByUserId(
-      this.userServices.currentUser.userUuid
-    );
+    this.processAllInteractions();
 
-    this.processStockInteractions();
+    this.displayItems = Array.from(this.displayItemMap.values())
+      .map((item) => {
+        const { tradableItem, organizations, people, products } = item;
+        const tradableItemVotes =
+          this.targetUuidToInteractionMap.get(tradableItem?.uuid)?.vote || 0;
+        const organizationVotes = organizations.reduce((acc, organization) => {
+          return (
+            acc +
+            (this.targetUuidToInteractionMap.get(organization?.uuid)?.vote || 0)
+          );
+        }, 0);
+        const productVotes = products.reduce((acc, product) => {
+          return (
+            acc +
+            (this.targetUuidToInteractionMap.get(product?.uuid)?.vote || 0)
+          );
+        }, 0);
+        const personVotes = people.reduce((acc, person) => {
+          return (
+            acc + (this.targetUuidToInteractionMap.get(person?.uuid)?.vote || 0)
+          );
+        }, 0);
 
-    this.processPersonInteractions();
-
-    this.processProductInteractions();
-
-    this.getCreatedOpinions();
-
-    this.processOpinionInteractions();
-
-    this.stockUuids = this.stockUuids.sort((keyA, keyB) => {
-      let a = this.uuidToInteractionMap.get(keyA);
-      let b = this.uuidToInteractionMap.get(keyB);
-      if (a?.vote && b?.vote) {
-        return b.vote - a.vote;
-      }
-
-      if (a?.vote) {
-        return -a.vote;
-      }
-
-      if (b?.vote) {
-        return b.vote;
-      }
-
-      return 0;
-    });
+        return {
+          tradableItem,
+          organizations,
+          people,
+          products,
+          tradableItemVotes,
+          organizationVotes,
+          productVotes,
+          personVotes,
+        };
+      })
+      .sort((a, b) => {
+        return b?.tradableItemVotes - a?.tradableItemVotes;
+      });
   }
 
-  processStockInteractions() {
-    const stockInteractions = this.interactions.filter(
-      (item) => item.type === 'stock'
-    );
+  processAllInteractions() {
+    this.targetUuidToInteractionMap = this.userServices.entityUuidToInteraction;
 
-    for (let interactions of stockInteractions) {
-      const stockUuid = interactions.targetUuid;
+    for (let uuid of this.userServices.userTradableItemsSet) {
+      const tradableItem = getTradableItemsByUuids([uuid])?.[0];
 
-      this.addStock(stockUuid);
-
-      this.uuidToInteractionMap.set(stockUuid, interactions);
-    }
-  }
-
-  getCreatedOpinions() {
-    const createdOpinions = getOpinionsByCreatorUuid(
-      this.userServices.currentUser.userUuid
-    );
-
-    for (let opinion of createdOpinions) {
-      for (let target of opinion.targets) {
-        const stockUuid = target.toLowerCase();
-
-        if (this.stockUuidToCreatedOpinionMap.has(stockUuid)) {
-          continue;
-        }
-
-        this.addStock(stockUuid);
-
-        if (!this.stockUuidToCreatedOpinionMap.has(stockUuid)) {
-          this.stockUuidToCreatedOpinionMap.set(stockUuid, []);
-        }
-        this.stockUuidToCreatedOpinionMap.get(stockUuid).push(opinion);
+      if (tradableItem) {
+        this.displayItemMap.set(uuid, {
+          tradableItem,
+          organizations: [],
+          people: [],
+          products: [],
+          totalVotes: 0,
+        });
       }
     }
-  }
 
-  processOpinionInteractions() {
-    const opinionInteractions = this.interactions.filter(
-      (item) => item.type === 'opinion'
-    );
+    for (let uuid of this.userServices.userOrganizationSet) {
+      const organization = getOrganizationsByUuids([uuid])?.[0];
+      const tradableItem = getTradableItemByOrganizationUuid(
+        organization?.uuid
+      );
 
-    const interactedOpinions = this.notesServices.getNotesByUuids(
-      opinionInteractions.map((item) => item.targetUuid)
-    );
-
-    for (let opinion of interactedOpinions) {
-      for (let target of opinion.targets) {
-        const stockUuid = target.toLowerCase();
-
-        if (this.stockUuidToCreatedOpinionMap.has(stockUuid)) {
-          continue;
+      if (tradableItem) {
+        if (this.displayItemMap.has(tradableItem.uuid)) {
+          this.displayItemMap
+            .get(tradableItem.uuid)
+            .organizations.push(organization);
+        } else {
+          this.displayItemMap.set(tradableItem.uuid, {
+            tradableItem,
+            organizations: [organization],
+            people: [],
+            products: [],
+          });
         }
-
-        this.addStock(stockUuid);
-
-        if (!this.stockUuidToCreatedOpinionMap.has(stockUuid)) {
-          this.stockUuidToCreatedOpinionMap.set(stockUuid, []);
-        }
-        this.stockUuidToCreatedOpinionMap.get(stockUuid).push(opinion);
+      } else if (organization.ticker) {
+        this.displayItemMap.set(organization.ticker, {
+          tradableItem,
+          organizations: [organization],
+          people: [],
+          products: [],
+        });
       }
-    }
-  }
-
-  processPersonInteractions() {
-    const personInteractions = this.interactions.filter(
-      (item) => item.type === 'person'
-    );
-
-    for (let interaction of personInteractions) {
-      this.uuidToInteractionMap.set(interaction.targetUuid, interaction);
-    }
-
-    const people = getPeopleByPersonUuids(
-      personInteractions.map((item) => item.targetUuid)
-    );
-
-    for (let person of people) {
-      let companyUuids = person.titles.map((item) => item.organizationUuid);
-
-      for (let companyUuid of companyUuids) {
-        this.addStock(companyUuid);
-
-        if (!this.stockUuidToPersonMap.has(companyUuid)) {
-          this.stockUuidToPersonMap.set(companyUuid, []);
-        }
-        this.stockUuidToPersonMap.get(companyUuid).push(person);
-      }
-    }
-  }
-
-  processProductInteractions() {
-    const productInteractions = this.interactions.filter(
-      (item) => item.type === 'product'
-    );
-
-    for (let interactions of productInteractions) {
-      this.uuidToInteractionMap.set(interactions.targetUuid, interactions);
-    }
-
-    const products = getProductsByProductUuids(
-      productInteractions.map((item) => item.targetUuid)
-    );
-
-    for (let product of products) {
-      let companyUuid = getRootCompanyIdByProductId(product.uuid);
-
-      this.addStock(companyUuid);
-
-      if (!this.stockUuidToProductMap.has(companyUuid)) {
-        this.stockUuidToProductMap.set(companyUuid, []);
-      }
-      this.stockUuidToProductMap.get(companyUuid).push(product);
     }
   }
 
@@ -215,6 +161,7 @@ export class NotesListPageComponent implements OnInit {
       disableClose: true,
     });
   }
+
   navigateToProductPage(uuid: string) {
     this.navigationServices.navigate('product', uuid);
   }

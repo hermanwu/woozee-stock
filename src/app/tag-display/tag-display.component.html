@@ -1,4 +1,76 @@
-<span *ngIf="item; else nameOnly" (click)="navigate(item)"
-  >{{ item.displayName }}
-</span>
-<ng-template #nameOnly>{{ tagUuid }}</ng-template>
+<ng-container *ngIf="tag; else uuidOnly">
+  <ng-container [ngSwitch]="tag.type">
+    <ng-container *ngSwitchCase="'Bullish'">
+      <span
+        class="ml-2 bg-green-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+        (click)="navigate(tag.uuid)"
+      >
+        <span>{{ tag.displayName }}</span>
+      </span>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'Bearish'">
+      <span
+        class="ml-2 bg-red-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+        (click)="navigate(tag.uuid)"
+      >
+        <span>{{ tag.displayName }}</span>
+      </span>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'Industry'">
+      <span
+        class="ml-2 bg-red-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+        (click)="navigate(tag.uuid)"
+      >
+        <span>{{ tag.displayName }}</span>
+      </span>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'Portfolio'">
+      <span
+        class="ml-2 bg-gray-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+        (click)="navigate(tag.uuid)"
+      >
+        <span>{{ tag.displayName }}</span>
+      </span>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'Growth'">
+      <span
+        class="ml-2 bg-green-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+        (click)="navigate(tag.uuid)"
+      >
+        <span> {{ tag.displayName }}</span>
+      </span>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'Profitability'">
+      <span
+        class="ml-2 bg-amber-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+        (click)="navigate(tag.uuid)"
+      >
+        <span> {{ tag.displayName }}</span>
+      </span>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+      <span
+        class="ml-2 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+        (click)="navigate(tag.uuid)"
+        [ngClass]="getTagColor(tag)"
+      >
+        <span>{{ tag.displayName }}</span>
+      </span>
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-template #uuidOnly>
+  <span
+    (click)="navigate(tagUuid)"
+    class="ml-2 bg-blue-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+  >
+    {{ tagUuid }}
+  </span>
+</ng-template>

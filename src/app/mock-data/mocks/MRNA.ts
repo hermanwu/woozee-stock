@@ -4,7 +4,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 export const mrna: StockAnalysis = {
   marketCap: 52 * BILLION,
   logo: '',
-  name: 'Moderna, Inc.',
+  name: 'Moderna Inc.',
   description: [],
   ticker: 'mrna',
   displayName: 'Moderna',

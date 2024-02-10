@@ -5,7 +5,6 @@ import { StockData } from 'src/app/stock/services/stock-data.model';
 import { environment } from 'src/environments/environment';
 import { UserServices } from '../../../accounts/services/user.services';
 import { cloneDeep } from '../../functions/clone-deep';
-import { updateGlobalRankBasedOnPortfolio } from '../../functions/ranking.function';
 
 @Component({
   selector: 'app-drag-drop-rank-dialog',
@@ -14,7 +13,6 @@ import { updateGlobalRankBasedOnPortfolio } from '../../functions/ranking.functi
 })
 export class DragDropRankDialogComponent implements OnInit {
   readonly envirnoment = environment;
-  globalRanking = this.userServices.getGlobalRanking();
   stocks;
 
   constructor(
@@ -36,12 +34,5 @@ export class DragDropRankDialogComponent implements OnInit {
     moveItemInArray(this.stocks, event.previousIndex, event.currentIndex);
   }
 
-  saveRank() {
-    this.globalRanking = updateGlobalRankBasedOnPortfolio(
-      this.stocks.map((stock) => stock.ticker.toLowerCase()),
-      this.globalRanking
-    );
-
-    this.userServices.setGlobalRanking(this.globalRanking);
-  }
+  saveRank() {}
 }

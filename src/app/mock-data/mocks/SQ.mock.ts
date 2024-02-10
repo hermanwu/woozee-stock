@@ -70,7 +70,7 @@ export const sq: StockAnalysis = {
   catalystUuids: blockCatalysts.map((c) => c.uuid),
 
   logo: 'https://lh3.googleusercontent.com/pw/ACtC-3dVUwpnglNTwsN6ZkweBVX9VgZhM9aJL6oQ0Cn9Ofk62gCDq1R8DwwkrzUb-HBxX9B3FA_C5ZqbfYT9UIKdPFLqpxeBLj4Dis4Z1DZ6oakHj-YOZqNdUclAkdW9Q8XkXOoz-nkQfOYeEFRK0eatm9bc=w614-h548-no?authuser=3',
-  name: 'Block, Inc.',
+  name: 'Block Inc.',
   ticker: 'sq',
   displayName: 'Block',
   propertiesPageEnabled: true,
@@ -251,7 +251,7 @@ export const sq: StockAnalysis = {
   description: [
     {
       content:
-        'Square, Inc. creates tools that empower businesses and individuals to participate in the economy.',
+        'Square Inc. creates tools that empower businesses and individuals to participate in the economy.',
     },
     {
       content:

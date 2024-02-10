@@ -1,109 +1,66 @@
 <app-title-menu>
   <div left-items class="inline-display">
     <h1>Trending</h1>
-
-    <!-- <mat-chip-list class="chip-list" [multiple]="true" selectable>
-      <mat-chip
-        (click)="toggleChip(NoteType.Stats)"
-        [selected]="chips.has(NoteType.Stats)"
-        >Numbers</mat-chip
-      >
-
-      <mat-chip
-        (click)="toggleChip(NoteType.Action)"
-        [selected]="chips.has(NoteType.Action)"
-        >Actions</mat-chip
-      >
-      <mat-chip
-        (click)="toggleChip(NoteType.Opinion)"
-        [selected]="chips.has(NoteType.Opinion)"
-        >Opinions</mat-chip
-      >
-    </mat-chip-list> -->
-  </div>
-
-  <div right-items>
-    <button mat-icon-button [matMenuTriggerFor]="newsMenu">
-      <mat-icon>more_horiz</mat-icon>
-    </button>
-
-    <mat-menu #newsMenu="matMenu">
-      <button
-        mat-menu-item
-        (click)="openDailyReportDialog()"
-        [disabled]="environment.production"
-      >
-        Daily Report
-      </button>
-      <button mat-menu-item (click)="showTools = !showTools" disabled>
-        <mat-icon>filter_alt</mat-icon>
-      </button>
-    </mat-menu>
   </div>
 </app-title-menu>
 
+<div>
+  <span *ngFor="let item of tags">
+    <app-tag-display [tagUuid]="item.uuid"></app-tag-display>
+  </span>
+</div>
+
 <div class="mt-5">
-  <div *ngIf="selectedType === 'quotes'">
-    <h2>Quotes</h2>
+  <h1>Earnings To Watch</h1>
 
-    <div *ngIf="selectedObject.sourceType">
-      📚 {{ selectedObject.sourceType }}: {{ selectedObject.sourceName }}
-    </div>
-    <div *ngIf="selectedObject.authorName">
-      ✍️ {{ selectedObject.authorName }}
-    </div>
-    <div>💬 "{{ selectedObject.content }}"</div>
-
-    <div class="logo-image">
-      <!-- <app-image-display
-            [imageLink]="
-              stockUuidToStockMap.get(stockUuid)?.largeLogoLink ||
-              stockUuidToStockMap.get(stockUuid)?.logoLink
-            "
-          >
-          </app-image-display> -->
-      <img [src]="selectedObject.imageLink" />
-    </div>
+  <div *ngFor="let item of events">
+    <app-date-display [date]="item.date"></app-date-display>:
+    <span class="mr-2" *ngFor="let stockUuid of item.targetUuids">
+      <app-tradable-display [tradableUuid]="stockUuid"></app-tradable-display>
+    </span>
   </div>
+</div>
 
-  <div *ngIf="selectedType === 'earnings'">
-    <h2>Earnings</h2>
-
-    <!-- <app-image-display
-        [imageLink]="
-          stockUuidToStockMap.get(stockUuid)?.largeLogoLink ||
-          stockUuidToStockMap.get(stockUuid)?.logoLink
-        "
-      >
-      </app-image-display> -->
-    <img [src]="" />
-    <div>
-      <app-tag-display
-        [tagUuid]="selectedObject?.targets?.[0]"
-      ></app-tag-display>
-    </div>
-
-    <app-earnings-display [earnings]="selectedObject"></app-earnings-display>
+<div class="mt-5">
+  <h1>Earnings Result</h1>
+  <div>
+    <span
+      class="mr-2"
+      *ngFor="let stockUuid of earnings[selectedEarningsIndex].targetUuids"
+    >
+      <app-tradable-display [tradableUuid]="stockUuid"></app-tradable-display>
+    </span>
   </div>
-
-  <div *ngIf="selectedType === 'opinions'">
-    <h2>Opinions</h2>
-
-    <div class="news-display">
-      <app-note-container [note]="selectedObject"></app-note-container>
-    </div>
-  </div>
-
-  <div *ngIf="selectedType === 'events'">
-    <h2>Announcement</h2>
-
-    <div>{{ selectedObject.title }}</div>
+  <div>
+    <app-earnings-display
+      [earnings]="earnings[selectedEarningsIndex]"
+    ></app-earnings-display>
   </div>
 
   <div class="flex justify-end">
     <button
       type="button"
-      (click)="pickRandomNews()"
+      (click)="selectedEarningsIndex = selectedEarningsIndex + 1"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Next
+    </button>
+  </div>
+</div>
+
+<div class="mt-5">
+  <h1>Notes</h1>
+</div>
+
+<div>
+  <div class="news-display">
+    <app-note-container [note]="notes[selectedNoteIndex]"></app-note-container>
+  </div>
+
+  <div class="flex justify-end">
+    <button
+      type="button"
+      (click)="selectedNoteIndex = selectedNoteIndex + 1"
       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
     >
       Next

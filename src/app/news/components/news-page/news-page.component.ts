@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { UserServices } from 'src/app/accounts/services/user.services';
 import { earnings } from 'src/app/mock-data/earnings.mock';
-import { events } from 'src/app/mock-data/event.mock';
-import { quotes } from 'src/app/mock-data/quote.mock';
-import { DailyMediumReportDisplayDialogComponent } from 'src/app/news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
+import { events } from 'src/app/mock-data/events.mock';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
+import { TagServices } from 'src/app/shared/services/tag.services';
 import { Industry } from 'src/app/stock/models/industry.model';
 import { EventType } from 'src/app/stock/models/news.model';
 import { StockAnalysis } from 'src/app/stock/models/stock-analysis.model';
-import { StockServices } from 'src/app/stock/services/stock.service';
 import { environment } from 'src/environments/environment';
 import { NotesServices } from '../../services/notes.services';
 
@@ -29,38 +25,32 @@ export class NewsPageComponent implements OnInit {
   showAddNotesSection = false;
   showTools: boolean = false;
   stocks: StockAnalysis[];
-  quotes: any[];
-  earnings: any[];
-  events: any[];
-
-  selectedType: string;
-  selectedObject: any;
+  selectedNote: Note;
+  tags = [];
+  earnings = earnings.slice(0, 20);
+  selectedNoteIndex = 0;
+  selectedEarningsIndex = 0;
+  events = events.reverse();
 
   constructor(
     private newsService: NotesServices,
-    private dialogService: MatDialog,
-    private userServices: UserServices,
-    private stockServices: StockServices
+    private tagServices: TagServices
   ) {}
 
   ngOnInit(): void {
-    this.quotes = quotes;
-    this.earnings = earnings;
-    this.notes = this.newsService.getAllNews();
-    this.events = events;
-
-    this.pickRandomNews();
+    this.notes = this.newsService.getAllNews().slice(0, 20);
+    this.tags = this.tagServices.getTopTags();
   }
 
   openDailyReportDialog() {
-    this.dialogService.open<DailyMediumReportDisplayDialogComponent>(
-      DailyMediumReportDisplayDialogComponent,
-      {
-        maxHeight: '90vh', //you can adjust the value as per your view
-        data: {},
-        panelClass: 'medium-modal-panel',
-      }
-    );
+    // this.dialogService.open<DailyMediumReportDisplayDialogComponent>(
+    //   DailyMediumReportDisplayDialogComponent,
+    //   {
+    //     maxHeight: '90vh', //you can adjust the value as per your view
+    //     data: {},
+    //     panelClass: 'medium-modal-panel',
+    //   }
+    // );
   }
 
   toggleChip = (chip: any) => {
@@ -72,27 +62,5 @@ export class NewsPageComponent implements OnInit {
     };
 
     this.chips.has(chip) ? removeChip() : addChip();
-  };
-
-  pickRandomNews = () => {
-    const types = ['quotes', 'earnings', 'opinions', 'events'];
-
-    this.selectedType = types[Math.floor(Math.random() * types.length)];
-
-    switch (this.selectedType) {
-      case 'quotes':
-        this.selectedObject =
-          this.quotes[Math.floor(Math.random() * this.quotes.length)];
-        break;
-      case 'earnings':
-        this.selectedObject =
-          this.earnings[Math.floor(Math.random() * this.earnings.length)];
-        break;
-      case 'opinions':
-        this.selectedObject = this.notes[Math.floor(Math.random() * 10)];
-        break;
-      case 'events':
-        this.selectedObject = this.events[Math.floor(Math.random() * 10)];
-    }
   };
 }

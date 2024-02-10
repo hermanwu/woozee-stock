@@ -52,18 +52,3 @@
     </button>
   </mat-menu>
 </app-card>
-
-<app-card>
-  <h1>Ranking Stocks</h1>
-
-  <div>Global Ranking: {{ globalRanking | json }}</div>
-
-  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let stock of mockPortfolio" cdkDrag>
-      {{ stock }}
-      <button mat-stroked-button (click)="compareStock(stock)">compare</button>
-    </div>
-  </div>
-
-  <button mat-stroked-button (click)="saveRank()">Save Rank</button>
-</app-card>

@@ -2,7 +2,7 @@ import { StockAnalysis } from '../../stock/models/stock-analysis.model';
 
 export const LZ: StockAnalysis = {
   logo: '',
-  name: { English: 'LegalZoom.com, Inc.' },
+  name: { English: 'LegalZoom.com Inc.' },
   description: [],
   ticker: 'LZ',
 

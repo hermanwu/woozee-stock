@@ -27,7 +27,16 @@ export class NewsPageComponent implements OnInit {
   stocks: StockAnalysis[];
   selectedNote: Note;
   tags = [];
-  earnings = earnings.slice(0, 20);
+  earnings = earnings
+    .sort((a, b) => {
+      // Convert date strings to Date objects
+      const dateA = new Date(a.releasedDate);
+      const dateB = new Date(b.releasedDate);
+
+      // Compare the dates
+      return dateB.getTime() - dateA.getTime();
+    })
+    .slice(0, 10);
   selectedNoteIndex = 0;
   selectedEarningsIndex = 0;
   events = events.reverse();
@@ -38,7 +47,7 @@ export class NewsPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.notes = this.newsService.getAllNews().slice(0, 20);
+    this.notes = this.newsService.getAllNews().slice(0, 10);
     this.tags = this.tagServices.getTopTags();
   }
 

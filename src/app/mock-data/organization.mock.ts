@@ -6,6 +6,25 @@ export const getOrganizationsByUuids = (uuids: string[]) => {
 
 export const organizations: Organization[] = [
   {
+    uuid: 'upst',
+    displayName: 'Upstart',
+    ticker: 'upst',
+    largeLogoLink: 'https://i.ibb.co/28BD51c/UPST-BIG.png',
+  },
+  {
+    uuid: 'cdns',
+    displayName: 'Cadence',
+    ticker: 'cdns',
+    logoLink: 'https://i.ibb.co/1q2P4kC/CDNS.png',
+    largeLogoLink: 'https://i.ibb.co/Z6Yrpcm/CDNS-BIG.png',
+  },
+  {
+    uuid: 'anet',
+    displayName: 'Arista Networks',
+    ticker: 'ANET',
+    logoLink: 'https://i.ibb.co/3v3zHJk/ANET.png',
+  },
+  {
     displayName: 'Robinhood',
     uuid: 'hood',
     logoLink:
@@ -78,28 +97,11 @@ export const organizations: Organization[] = [
     displayName: 'DocuSign',
     ticker: 'docu',
   },
-  {
-    uuid: 'afrm',
-    displayName: 'Affirm',
-    ticker: 'afrm',
-  },
-  {
-    uuid: 'anet',
-    displayName: 'Arista',
-    ticker: 'ANET',
-  },
+
   {
     uuid: 'nvda',
     displayName: 'Nvidia',
     ticker: 'nvda',
-  },
-  {
-    uuid: 'shop',
-    name: 'Shopify',
-    displayName: 'Shopify',
-    ticker: 'shop',
-    irAddress: 'https://investors.shopify.com/home/default.aspx',
-    logoLink: 'https://i.ibb.co/X2786r1/vn6-Edh-Rg-400x400.jpg',
   },
   {
     uuid: 'lulu',
@@ -245,8 +247,8 @@ export const organizations: Organization[] = [
   {
     uuid: 'dash',
     displayName: 'DoorDash',
-    logoLink: 'https://i.ibb.co/0h6gYpW/dash.png',
-    irAddress: '',
+    logoLink: 'https://i.ibb.co/XVGJwF6/Oav-Did-Hn-400x400.jpg',
+    irAddress: 'https://ir.doordash.com/overview/default.aspx',
   },
   {
     uuid: 'cost',
@@ -295,6 +297,11 @@ export const organizations: Organization[] = [
     irAddress: 'https://rivian.com/investors',
     logoLink:
       'https://pbs.twimg.com/profile_images/1199724774613606402/ZTAmKeoe_400x400.jpg',
+  },
+  {
+    uuid: 'roku',
+    displayName: 'Roku',
+    ticker: 'roku',
   },
   {
     uuid: 'dis',

@@ -24,9 +24,16 @@ export interface Tag {
   entityUuids?: string[];
   color?: string;
   value?: number;
+  votes?: number;
+  sentiment?: number;
 }
 
 export const mockTags: Tag[] = [
+  {
+    uuid: 'proprietary-data',
+    type: TagType.Industry,
+    displayName: 'Proprietary Data',
+  },
   {
     uuid: 'spatial-computing',
     type: TagType.Industry,
@@ -36,6 +43,7 @@ export const mockTags: Tag[] = [
     uuid: 'bad-earnings',
     type: TagType.Bearish,
     displayName: '👎 Earnings',
+    sentiment: -1,
   },
   {
     uuid: 'worse-earnings',
@@ -52,11 +60,13 @@ export const mockTags: Tag[] = [
     type: TagType.Bullish,
     displayName: '👍👍 Earnings',
     color: 'lime',
+    votes: 100,
   },
   {
     uuid: 'good-earnings',
     type: TagType.Bullish,
     displayName: '👍 Earnings',
+    votes: 5,
   },
   {
     uuid: 'share-buyback',
@@ -112,7 +122,7 @@ export const mockTags: Tag[] = [
   {
     uuid: 'boa-herman',
     type: TagType.Portfolio,
-    displayName: 'BOA Future',
+    displayName: 'Portfolio BOA',
     color: 'gray',
   },
   {
@@ -129,13 +139,13 @@ export const mockTags: Tag[] = [
   {
     uuid: 'jess-robinhood',
     type: TagType.Portfolio,
-    displayName: 'Portfolio 1',
+    displayName: 'Portfolio Large',
     color: 'gray',
   },
   {
     uuid: 'herman-robinhood',
     type: TagType.Portfolio,
-    displayName: '2x-HermanHood',
+    displayName: 'Portfolio Small',
     color: 'gray',
   },
   {

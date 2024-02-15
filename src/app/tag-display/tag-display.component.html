@@ -1,4 +1,6 @@
 <ng-container *ngIf="tag; else uuidOnly">
+  <!-- <span *ngIf="tag.sentiment < 0">✅❗</span> -->
+
   <ng-container [ngSwitch]="tag.type">
     <ng-container *ngSwitchCase="'Bullish'">
       <span

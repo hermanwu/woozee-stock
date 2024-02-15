@@ -62,6 +62,16 @@ export const getAllParents = (products: Product[]) => {
 
 export const mockProducts: Product[] = [
   {
+    name: 'Accommodations Booking',
+    uuid: 'accommodations-booking',
+  },
+  {
+    name: 'electronic design automation (EDA)',
+    uuid: 'eda',
+    description:
+      'Providing software, hardware, and intellectual property (IP) to design and verify integrated circuits (ICs), system on chips (SoCs), and printed circuit boards (PCBs)',
+  },
+  {
     name: 'Ray-Ban Meta Smart Glasses',
     uuid: 'ray-ban-meta-smart-glasses',
   },
@@ -312,6 +322,18 @@ export const mockProducts: Product[] = [
     name: 'YouTube',
     rootCompanyId: 'googl',
     parentIds: ['Video Streaming Service'],
+  },
+  {
+    uuid: 'network-switches',
+    name: 'Network Switches',
+    description:
+      "Arista's primary product is its line of network switches, which are designed for high performance, scalability, and reliability. These switches are widely used in data centers and cloud computing environments. They support a variety of network protocols and standards, offering flexibility in network design and deployment.",
+  },
+  {
+    uuid: 'ai-networking',
+    name: 'AI Networking',
+    description:
+      'As AI continues to advance at unprecedented pace networks need to adapt to the colossal growth in traffic transiting hundreds and thousands of processors with trillions of transactions and gigabits of throughput. As AI quickly moves out of labs and research projects toward mainstream adoption it demands increases in network and computing resources.',
   },
   {
     uuid: 'chatgpt',

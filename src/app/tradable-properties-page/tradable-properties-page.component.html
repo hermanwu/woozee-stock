@@ -14,7 +14,7 @@
   ></app-interaction-bar>
 </div>
 
-<div *ngIf="tradable?.irAddress">
+<div class="mt-2" *ngIf="tradable?.irAddress">
   <a target="_blank" [href]="tradable.irAddress"> Investor Relations 🔗 </a>
 </div>
 
@@ -50,6 +50,14 @@
 
   <div *ngFor="let item of earnings">
     <app-earnings-display [earnings]="item"></app-earnings-display>
+    <app-divider></app-divider>
+  </div>
+</div>
+
+<div *ngIf="notes && notes.length > 0" class="mt-4">
+  <div class="mb-2 mt-10"><h2>Notes</h2></div>
+  <div *ngFor="let note of notes">
+    <app-note-container [note]="note"></app-note-container>
     <app-divider></app-divider>
   </div>
 </div>

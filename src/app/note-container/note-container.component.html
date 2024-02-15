@@ -16,12 +16,6 @@
     </span>
   </div>
 
-  <mat-chip-list *ngIf="note.targetUuids">
-    <mat-chip *ngFor="let item of note.targetUuids">
-      <app-entity-display [entityUuid]="item"></app-entity-display>
-    </mat-chip>
-  </mat-chip-list>
-
   <div *ngIf="note.title">
     <strong>{{ note.title }}</strong>
   </div>

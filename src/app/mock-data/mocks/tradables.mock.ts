@@ -77,6 +77,8 @@ export const tradable = [
     displayName: 'Coinbase Global Inc',
     ticker: 'COIN',
     organizationUuid: 'coin',
+    logoLink: 'https://i.ibb.co/J2Hd0Sf/A9y-Yenz3-400x400.png',
+    irAddress: 'https://investor.coinbase.com/home/default.aspx',
   },
   {
     uuid: 'ABNB:NASDAQ',
@@ -102,6 +104,9 @@ export const tradable = [
     displayName: 'Robinhood Markets Inc',
     ticker: 'HOOD',
     organizationUuid: 'hood',
+    irAddress: 'https://investors.robinhood.com/overview/default.aspx',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1267616128022351873/dZJpsWTD_400x400.jpg',
   },
   {
     uuid: 'LABU:NYSEARCA',
@@ -205,6 +210,8 @@ export const tradable = [
     displayName: 'Pinduoduo Inc',
     ticker: 'PDD',
     organizationUuid: 'pdd',
+    logoLink: 'https://i.ibb.co/df7fxCk/PDD.png',
+    irAddress: 'https://investor.pinduoduo.com/',
   },
   {
     uuid: 'AXP:NYSE',
@@ -333,10 +340,12 @@ export const tradable = [
     organizationUuid: 'mara',
   },
   {
-    uuid: 'DASH:NYSE',
+    uuid: 'DASH:NASDAQ',
     displayName: 'DoorDash Inc',
     ticker: 'DASH',
     organizationUuid: 'dash',
+    irAddress: 'https://ir.doordash.com/overview/default.aspx',
+    logoLink: 'https://i.ibb.co/XVGJwF6/Oav-Did-Hn-400x400.jpg',
   },
   {
     uuid: 'RIVN:NASDAQ',
@@ -386,6 +395,8 @@ export const tradable = [
     displayName: 'Uber Technologies Inc',
     ticker: 'UBER',
     organizationUuid: 'uber',
+    logoLink: 'https://i.ibb.co/h1PC0XC/TPLLaq-YR-400x400.jpg',
+    irAddress: 'https://investor.uber.com/home/default.aspx',
   },
   {
     uuid: 'CSIQ:NASDAQ',
@@ -453,6 +464,9 @@ export const tradable = [
     displayName: 'The Walt Disney Company',
     ticker: 'DIS',
     organizationUuid: 'dis',
+    irAddress: 'https://thewaltdisneycompany.com/investor-relations/',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1624815535505522695/mhZM0n62_400x400.png',
   },
   {
     uuid: 'DOCU:NASDAQ',
@@ -525,15 +539,26 @@ export const tradable = [
     displayName: 'Roku Inc',
     ticker: 'ROKU',
     organizationUuid: 'roku',
+    irAddress: 'https://www.roku.com/investor',
+    logoLink: 'https://i.ibb.co/qND1H1w/u7-ZA1-AOh-400x400.jpg',
   },
   {
     uuid: 'TTD:NASDAQ',
     displayName: 'The Trade Desk Inc',
     ticker: 'TTD',
     organizationUuid: 'ttd',
+    logoLink: 'https://i.ibb.co/N2HZGG9/i-Z5-He-FNX-400x400.jpg',
+    irAddress: 'https://investors.thetradedesk.com/overview/default.aspx',
   },
   { uuid: 'YETI:NYSE', displayName: 'YETI Holdings Inc', ticker: 'YETI' },
-  { uuid: 'DKNG:NASDAQ', displayName: 'DraftKings Inc', ticker: 'DKNG' },
+  {
+    uuid: 'DKNG:NASDAQ',
+    displayName: 'DraftKings Inc',
+    ticker: 'DKNG',
+    irAddress: 'https://investors.draftkings.com/',
+    largeLogoLink: 'https://i.ibb.co/s5YZ99g/DKNG-BIG.png',
+    logoLink: 'https://i.ibb.co/5jHSC9g/DKNG.png',
+  },
   {
     uuid: 'SCHW:NYSE',
     displayName: 'Charles Schwab Corporation',

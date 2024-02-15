@@ -3,70 +3,77 @@
 </ng-container>
 
 <ng-container *ngIf="statsDisplay.value || statsDisplay.changeRate">
-  <ng-container>
-    <ng-container [ngSwitch]="statsDisplay.displayType">
-      <ng-container *ngSwitchCase="DisplayType.percent" i18n>
-        {{
-          statsDisplay?.value | siUnit : 3 | percent : "1.1-2" | undefined
-        }}</ng-container
+  <ng-container [ngSwitch]="statsDisplay.displayType">
+    <ng-container *ngSwitchCase="DisplayType.percent" i18n>
+      {{
+        statsDisplay?.value | siUnit : 3 | percent : "1.1-2" | undefined
+      }}</ng-container
+    >
+
+    <ng-container *ngSwitchDefault i18n>
+      <span *ngIf="statsDisplay?.value < 0">-</span>
+      <span *ngIf="statsDisplay?.value">
+        <span *ngIf="statsDisplay?.unit">
+          <ng-container [ngSwitch]="statsDisplay.unit">
+            <ng-container *ngSwitchCase="'euro'">€</ng-container>
+
+            <ng-container *ngSwitchDefault>$</ng-container>
+          </ng-container></span
+        >{{
+          statsDisplay.value < 0
+            ? (statsDisplay.value | siUnit : 2 | undefined | slice : 1)
+            : (statsDisplay.value | siUnit : 2 | undefined)
+        }},
+      </span>
+
+      <app-movement-display
+        *ngIf="
+          (statsDisplay?.value > 0 && statsDisplay?.previousValue > 0) ||
+          statsDisplay?.changeRate
+        "
+        [previousData]="statsDisplay?.previousValue"
+        [currentData]="statsDisplay?.value"
+        [changePercent]="statsDisplay?.changeRate"
       >
+      </app-movement-display>
 
-      <ng-container *ngSwitchDefault i18n>
-        <span *ngIf="statsDisplay?.value">
-          <span *ngIf="statsDisplay?.unit">
-            <ng-container [ngSwitch]="statsDisplay.unit">
-              <ng-container *ngSwitchCase="'euro'">€</ng-container>
-
-              <ng-container *ngSwitchDefault>$</ng-container>
-            </ng-container> </span
-          >{{ statsDisplay.value | siUnit : 2 | undefined }},
-        </span>
-
-        <app-movement-display
-          *ngIf="
-            (statsDisplay?.value > 0 && statsDisplay?.previousValue > 0) ||
-            statsDisplay?.changeRate
-          "
-          [previousData]="statsDisplay?.previousValue"
-          [currentData]="statsDisplay?.value"
-          [changePercent]="statsDisplay?.changeRate"
-        ></app-movement-display
-        ><ng-container
-          *ngIf="statsDisplay?.value > 0 && statsDisplay?.previousValue > 0"
-          [ngSwitch]="statsDisplay.timeFrame"
-        >
-          <span *ngSwitchCase="TimeFrameEnum.yoy">y/y</span
-          ><span *ngSwitchCase="TimeFrameEnum.qoq">q/q</span
-          ><span *ngSwitchCase="TimeFrameEnum.mtm">m/m</span
-          ><span *ngSwitchCase="TimeFrameEnum.weekOverWeek">week/week</span>
-        </ng-container>
-
-        <span *ngIf="statsDisplay?.previousValue < 0">
-          up from ${{ statsDisplay?.previousValue | siUnit : 3 | undefined }}
-          a year ago
-        </span>
-
-        <span *ngIf="statsDisplay?.expectedChangeRate"
-          >,{{
-            statsDisplay?.expectedChangeRate < statsDisplay?.changeRate
-              ? "above expectations of"
-              : "below expectations of"
-          }}{{
-            statsDisplay?.expectedChangeRate
-              | siUnit : 3
-              | percent : "1.1-2"
-              | undefined
-          }}</span
-        ><span *ngIf="statsDisplay?.expectedValue"
-          >,
-          {{
-            statsDisplay?.expectedValue < statsDisplay?.value
-              ? "above expectations of"
-              : "below expectations of"
-          }}
-          {{ statsDisplay?.expectedValue | siUnit : 2 | undefined }}
-        </span>
+      <ng-container
+        *ngIf="statsDisplay?.value > 0 && statsDisplay?.previousValue > 0"
+        [ngSwitch]="statsDisplay.timeFrame"
+      >
+        <span *ngSwitchCase="TimeFrameEnum.yoy">y/y</span
+        ><span *ngSwitchCase="TimeFrameEnum.qoq">q/q</span
+        ><span *ngSwitchCase="TimeFrameEnum.mtm">m/m</span
+        ><span *ngSwitchCase="TimeFrameEnum.weekOverWeek">week/week</span>
       </ng-container>
+
+      <span *ngIf="statsDisplay?.previousValue < 0">
+        up from -${{
+          statsDisplay?.previousValue | siUnit : 2 | undefined | slice : 1
+        }}
+        a year ago
+      </span>
+
+      <span *ngIf="statsDisplay?.expectedChangeRate"
+        >,{{
+          statsDisplay?.expectedChangeRate < statsDisplay?.changeRate
+            ? "above expectations of"
+            : "below expectations of"
+        }}{{
+          statsDisplay?.expectedChangeRate
+            | siUnit : 3
+            | percent : "1.1-2"
+            | undefined
+        }}</span
+      ><span *ngIf="statsDisplay?.expectedValue"
+        >,
+        {{
+          statsDisplay?.expectedValue < statsDisplay?.value
+            ? "above expectations of"
+            : "below expectations of"
+        }}
+        {{ statsDisplay?.expectedValue | siUnit : 2 | undefined }}
+      </span>
     </ng-container>
   </ng-container>
 </ng-container>

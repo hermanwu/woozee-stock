@@ -1,5 +1,8 @@
 {
-  "targetUuids": {
+  "projects": {
+    "default": "woozee-stock"
+  },
+  "targets": {
     "woozee-stock": {
       "hosting": {
         "woozee-stock": [
@@ -8,7 +11,5 @@
       }
     }
   },
-  "projects": {
-    "default": "woozee-stock"
-  }
+  "etags": {}
 }

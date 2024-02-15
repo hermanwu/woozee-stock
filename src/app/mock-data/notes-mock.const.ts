@@ -19,6 +19,40 @@ export const allNotes: (Opinion | Fact)[] = [
   {
     uuid: 'd2ccfe52-d753-4b14-g87d-8939baf1d68d',
     noteType: NoteType.Opinion,
+    targetUuids: ['coin:nasdaq'],
+    createdDate: getUtcDate(2023, 2, 15),
+    creatorUuid: 'herman.wrt@gmail.com',
+    content: 'Overvalued. 120 might be a good price',
+  },
+  {
+    uuid: 'd2ccfe52-d753-4b14-g87d-8939baf1d68d',
+    noteType: NoteType.Opinion,
+    targetUuids: ['cdns:nasdaq'],
+    createdDate: getUtcDate(2023, 2, 12),
+    creatorUuid: 'herman.wrt@gmail.com',
+    content: 'Next quarter revenue is shrinking.',
+  },
+  {
+    uuid: 'd2ccfe52-d753-4b14-g87d-8939baf1d68d',
+    noteType: NoteType.Opinion,
+    targetUuids: ['anet:nyse'],
+    createdDate: getUtcDate(2024, 2, 12),
+    creatorUuid: 'herman.wrt@gmail.com',
+    content:
+      "Revenue growth is decelerating quickly compared to last quarter's 28.32% y/y growth.",
+  },
+  {
+    uuid: 'd2ccfe52-d753-4b14-g87d-8939baf1d68d',
+    noteType: NoteType.Opinion,
+
+    targetUuids: ['pins:nyse'],
+    content: '2% US and Canada user growth is too slow',
+    createdDate: getUtcDate(2023, 10, 1),
+    creatorUuid: 'herman.wrt@gmail.com',
+  },
+  {
+    uuid: 'd2ccfe52-d753-4b14-g87d-8939baf1d68d',
+    noteType: NoteType.Opinion,
     targetUuids: ['AFRM:NASDAQ'],
     content:
       'Earnings show that Affirm is not able to cut costs and become profitable quickly.',

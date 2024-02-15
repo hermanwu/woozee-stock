@@ -8,6 +8,7 @@ import {
   Tradable,
 } from '../mock-data/mocks/tradables.mock';
 import { getOrganizationsByUuids } from '../mock-data/organization.mock';
+import { NotesServices } from '../news/services/notes.services';
 
 @Component({
   selector: 'app-tradable-properties-page',
@@ -22,8 +23,13 @@ export class TradablePropertiesPageComponent implements OnInit {
   targetUuidToInteractionMap;
   earnings;
   organizations;
+  notes;
 
-  constructor(private route: ActivatedRoute, userServices: UserServices) {
+  constructor(
+    private route: ActivatedRoute,
+    userServices: UserServices,
+    private notesServices: NotesServices
+  ) {
     this.targetUuidToInteractionMap = userServices.entityUuidToInteraction;
   }
 
@@ -37,6 +43,10 @@ export class TradablePropertiesPageComponent implements OnInit {
       ]);
 
       this.earnings = getEarningsByTargetUuid(quoteUuid);
+
+      this.notes = this.notesServices
+        .getNotesByTargets([quoteUuid])
+        .slice(0, 5);
     });
   }
 

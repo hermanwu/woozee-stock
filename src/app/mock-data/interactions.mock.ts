@@ -22,6 +22,22 @@ export const getInteractionsByPersonUuid = (uuid: string) => {
 
 export const userInteractions: UserInteractions[] = [
   {
+    uuid: '1e8c8ca5-188d-4503-902b-ff46b9229a66',
+    userUuid: 'herman.wrt@gmail.com',
+    targetUuid: 'CART:NASDAQ',
+    type: 'tradableItem',
+    listUuids: ['ok-earnings'],
+    vote: 1,
+  },
+  {
+    uuid: '1e8c8ca5-188d-4503-902b-ff46b9229a66',
+    userUuid: 'herman.wrt@gmail.com',
+    targetUuid: 'CDNS:NASDAQ',
+    type: 'tradableItem',
+    listUuids: ['bad-earnings'],
+    vote: -5,
+  },
+  {
     uuid: '0e8c8ca5-188d-4503-902b-ff46b9229a66',
     userUuid: 'herman.wrt@gmail.com',
     targetUuid: 'EXPE:NASDAQ',
@@ -210,7 +226,8 @@ export const userInteractions: UserInteractions[] = [
     userUuid: 'herman.wrt@gmail.com',
     type: 'tradableItem',
     targetUuid: 'HOOD:NASDAQ',
-    listUuids: ['10x', 'herman-robinhood'],
+    listUuids: ['profitable', 'good-earnings', '10x', 'herman-robinhood'],
+    vote: 20,
   },
 
   {
@@ -447,12 +464,21 @@ export const userInteractions: UserInteractions[] = [
     type: 'product',
     listUuids: ['using'],
   },
+
   {
     uuid: '79783991-d90b-44f2-8268-5af4efbbe2az',
     targetUuid: 'abnb',
     userUuid: 'herman.wrt@gmail.com',
     type: 'stock',
-    listUuids: ['talented-employees', 'founder-led'],
+    listUuids: ['talented-employees', 'founder-led', 'no-differentiation'],
+  },
+  {
+    uuid: '79783991-d90b-44f2-8268-5af4efbbe2ay',
+    targetUuid: 'DKNG:NASDAQ',
+    userUuid: 'herman.wrt@gmail.com',
+    type: 'tradableItem',
+    listUuids: ['high-growth'],
+    vote: 15,
   },
   {
     uuid: '79783991-d90b-44f2-8268-5af4efbbe26z',
@@ -612,14 +638,7 @@ export const userInteractions: UserInteractions[] = [
     userUuid: 'herman.wrt@gmail.com',
     targetUuid: 'googl',
     type: 'stock',
-    listUuids: [
-      'talented-employees',
-      '10-growth',
-      '30-net-margin',
-      'differentiation',
-      'Revenue - 86B',
-      'Income - 24B',
-    ],
+    listUuids: ['talented-employees', 'differentiation', 'proprietary-data'],
   },
   {
     uuid: '79783991-d90b-44f2-8268-5af4edbbe26f',
@@ -747,8 +766,8 @@ export const userInteractions: UserInteractions[] = [
     uuid: '9c8e7863-b2b2-4a4c-80cc-d8dfddfbd38e',
     userUuid: 'herman.wrt@gmail.com',
     type: 'tradableItem',
-    listUuids: ['interactive-broker'],
-    vote: 15,
+    listUuids: ['interactive-broker', 'bad-earnings'],
+    vote: -1,
     targetUuid: 'ANET:NYSE',
   },
   {
@@ -831,7 +850,7 @@ export const userInteractions: UserInteractions[] = [
     type: 'tradableItem',
     listUuids: ['good-earnings', 'jess-robinhood'],
     targetUuid: 'LLY:NYSE',
-    vote: 22,
+    vote: 24,
   },
   {
     uuid: 'cacd7366-ffcc-4bca-98d2-f733995c3434',
@@ -844,9 +863,9 @@ export const userInteractions: UserInteractions[] = [
     uuid: 'c8cd7366-ffcc-4bca-98d2-f733995c3434',
     userUuid: 'herman.wrt@gmail.com',
     type: 'tradableItem',
-    listUuids: ['jess-robinhood'],
+    listUuids: ['jess-robinhood', 'bad-earnings'],
     targetUuid: 'ABNB:NASDAQ',
-    vote: 14,
+    vote: 1,
   },
   {
     uuid: 'cbcd7366-ffcc-4bca-98d2-f733995c3434',
@@ -1108,8 +1127,9 @@ export const userInteractions: UserInteractions[] = [
     uuid: '88007eeb-e5b2-44b6-9b5a-874185dde17e',
     userUuid: 'herman.wrt@gmail.com',
     type: 'tradableItem',
-    listUuids: ['interactive-broker', 'high-volatility'],
+    listUuids: ['interactive-broker', 'high-volatility', 'bad-earnings'],
     targetUuid: 'UPST:NASDAQ',
+    vote: -5,
   },
   {
     uuid: 'fc715eed-be5a-447a-a134-12959ed1ebe0',

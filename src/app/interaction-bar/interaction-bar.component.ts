@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { UserInteractions } from 'src/interactions/interaction.services';
 import { EmojiUnicode } from '../shared/data/enum/emoji.enum';
 
@@ -11,6 +12,7 @@ export class InteractionBarComponent implements OnInit {
   @Input() interactions: UserInteractions;
   displayOnly = true;
   editing = false;
+  environment = environment;
 
   emojiUnicode = EmojiUnicode;
 

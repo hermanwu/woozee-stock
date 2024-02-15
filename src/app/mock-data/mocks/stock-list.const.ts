@@ -17,11 +17,7 @@ import { cost } from './cost';
 import { crm } from './crm';
 import { csco } from './csco.mock';
 import { cxm } from './cxm.mock';
-import { dash } from './dash';
 import { dbx } from './dbx';
-import { ddog } from './DDOG';
-import { dis } from './dis.mock';
-import { dkng } from './dkng';
 import { docu } from './docu';
 import { DUOL } from './DUOL';
 import { EA } from './EA';
@@ -33,7 +29,6 @@ import { fvrr } from './fvrr';
 import { gme } from './gme';
 import { gs } from './gs';
 import { HD } from './HD';
-import { hood } from './hood';
 import { huya } from './huya';
 import { iac } from './iac';
 import { intc } from './intc';
@@ -64,14 +59,12 @@ import { orcl } from './orcl';
 import { oxy } from './oxy';
 import { panw } from './panw.mock';
 import { PENN } from './PENN';
-import { pltr } from './pltr';
 import { pstg } from './pstg.mock';
 import { pton } from './pton';
 import { qs } from './qs';
 import { rblx } from './rblx.mock';
 import { RDFN } from './RDFN';
 import { RH } from './RH';
-import { roku } from './roku';
 import { rskd } from './rskd';
 import { rtx } from './rtx';
 import { s } from './s.mock';
@@ -90,17 +83,11 @@ import { tdoc } from './tdoc';
 import { team } from './team';
 import { tgt } from './tgt';
 import { TRMB } from './TRMB';
-import { TSM } from './TSM';
-import { TTD } from './TTD';
-import { twlo } from './TWLO';
-import { twtr } from './twtr';
 import { u } from './U.mock';
 import { ual } from './ual.mock';
-import { uber } from './uber';
 import { ulta } from './ULTA';
 import { unh } from './unh';
 import { up } from './UP';
-import { upst } from './upst';
 import { upwk } from './UPWK';
 import { v } from './v';
 import { VMEO } from './vmeo';
@@ -128,10 +115,6 @@ export const stocksMap = {
   bynd,
   CLOV,
   crm,
-  dash,
-  ddog,
-  dis,
-  dkng,
   docu,
   DUOL,
   EA,
@@ -142,7 +125,6 @@ export const stocksMap = {
   gme,
   gs,
   HD,
-  hood,
   huya,
   iac,
   jd,
@@ -166,13 +148,11 @@ export const stocksMap = {
   open,
   orcl,
   PENN,
-  pltr,
   pton,
   qs,
   rblx,
   RDFN,
   RH,
-  roku,
   rskd,
   rtx,
   sbux,
@@ -190,15 +170,10 @@ export const stocksMap = {
   techy,
   tgt,
   TRMB,
-  TSM,
-  TTD,
-  twtr,
   u,
-  uber,
   ulta,
   unh,
   up,
-  upst,
   upwk,
   v,
   VMEO,
@@ -213,7 +188,6 @@ export const stocksMap = {
   dbx,
   mttr,
   oxy,
-  twlo,
   mu,
   ionq,
   wmt,

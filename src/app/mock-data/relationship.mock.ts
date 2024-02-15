@@ -7,6 +7,34 @@ export const getRelationshipsByStartNodeUuid = (uuid: string) => {
 export const relationships = [
   {
     uuid: 'a9d83991-d90b-44f2-8268-5af4efbbe26t',
+    startNodeUuid: 'abnb',
+    startNodeType: 'organization',
+    endNodeUuid: 'accommodations-booking',
+    endNodeType: 'product',
+  },
+  {
+    uuid: 'e9d83991-d90b-44f2-8268-5af4efbbe26t',
+    startNodeUuid: 'cdns',
+    startNodeType: 'organization',
+    endNodeUuid: 'eda',
+    endNodeType: 'product',
+  },
+  {
+    uuid: 'b9d83991-d90b-44f2-8268-5af4efbbe26t',
+    startNodeUuid: 'anet',
+    startNodeType: 'organization',
+    endNodeUuid: 'ai-networking',
+    endNodeType: 'product',
+  },
+  {
+    uuid: 'c9d83991-d90b-44f2-8268-5af4efbbe26t',
+    startNodeUuid: 'anet',
+    startNodeType: 'organization',
+    endNodeUuid: 'network-switches',
+    endNodeType: 'product',
+  },
+  {
+    uuid: 'a9d83991-d90b-44f2-8268-5af4efbbe26t',
     startNodeUuid: 'meta',
     startNodeType: 'organization',
     endNodeUuid: 'ray-ban-meta-smart-glasses',

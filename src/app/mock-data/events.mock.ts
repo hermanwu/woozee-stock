@@ -11,7 +11,7 @@ export const events = [
       'COIN:NASDAQ',
       'ROKU:NASDAQ',
       'TTD:NASDAQ',
-      'DASH:NYSE',
+      'DASH:NASDAQ',
     ],
   },
   {

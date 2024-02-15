@@ -22,11 +22,11 @@
 </div>
 
 <div class="mt-5">
-  <h1>Earnings Result</h1>
+  <h1>Popular Earnings Results</h1>
   <div>
     <span
       class="mr-2"
-      *ngFor="let stockUuid of earnings[selectedEarningsIndex].targetUuids"
+      *ngFor="let stockUuid of earnings[selectedEarningsIndex]?.targetUuids"
     >
       <app-tradable-display [tradableUuid]="stockUuid"></app-tradable-display>
     </span>
@@ -37,7 +37,7 @@
     ></app-earnings-display>
   </div>
 
-  <div class="flex justify-end">
+  <div class="flex justify-end" *ngIf="earnings[selectedEarningsIndex]">
     <button
       type="button"
       (click)="selectedEarningsIndex = selectedEarningsIndex + 1"
@@ -49,15 +49,21 @@
 </div>
 
 <div class="mt-5">
-  <h1>Notes</h1>
+  <h1>Top Notes</h1>
 </div>
 
 <div>
+  <mat-chip-list *ngIf="notes[selectedNoteIndex]">
+    <mat-chip *ngFor="let item of notes[selectedNoteIndex].targetUuids">
+      <app-entity-display [entityUuid]="item"></app-entity-display>
+    </mat-chip>
+  </mat-chip-list>
+
   <div class="news-display">
     <app-note-container [note]="notes[selectedNoteIndex]"></app-note-container>
   </div>
 
-  <div class="flex justify-end">
+  <div class="flex justify-end" *ngIf="notes[selectedNoteIndex]">
     <button
       type="button"
       (click)="selectedNoteIndex = selectedNoteIndex + 1"

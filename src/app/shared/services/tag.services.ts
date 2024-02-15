@@ -33,7 +33,8 @@ export class TagServices {
   getTopTags() {
     return Array.from(this.tags.values())
       .filter((tag) => tag.type !== TagType.Portfolio)
-      .sort((a, b) => b?.totalVotes - a?.totalVotes);
+      .sort((a, b) => (b?.votes || 0) - (a?.votes || 0))
+      .slice(0, 10);
   }
 
   formatTags(tags: string[]): string[] {

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { EarningsKeyWord } from '../mock-data/earnings-key-word.enum';
 import { Earnings } from '../mock-data/earnings.mock';
 
 @Component({
@@ -31,7 +32,7 @@ export class EarningsDisplayComponent implements OnInit {
         this.grossProfit = item.value;
       } else if (item?.name?.trim().toLowerCase() === 'operating income') {
         this.operatingIncome = item.value;
-      } else if (item?.name?.trim().toLowerCase() === 'net income') {
+      } else if (item?.name === EarningsKeyWord.netIncome) {
         this.netIncome = item.value;
       }
     }

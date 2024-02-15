@@ -1,16 +1,20 @@
 <ng-container *ngIf="interactions && displayOnly">
-  <span *ngIf="interactions.hearted">
-    {{ emojiUnicode.heart }}
-  </span>
+  <ng-container *ngIf="!environment.production">
+    <span *ngIf="interactions.hearted">
+      {{ emojiUnicode.heart }}
+    </span>
 
-  <span *ngIf="interactions.using">
-    {{ emojiUnicode.hammer }}
-  </span>
+    <span *ngIf="interactions.using">
+      {{ emojiUnicode.hammer }}
+    </span>
 
-  <span class="ml-2" *ngIf="interactions?.vote && interactions.vote !== 0">
-    {{ interactions.vote > 0 ? emojiUnicode.thumbUp : emojiUnicode.thumbDown }}
-    {{ interactions.vote }}
-  </span>
+    <span class="ml-2" *ngIf="interactions?.vote && interactions.vote !== 0">
+      {{
+        interactions.vote > 0 ? emojiUnicode.thumbUp : emojiUnicode.thumbDown
+      }}
+      {{ interactions.vote }}
+    </span>
+  </ng-container>
 
   <span *ngIf="interactions.listUuids">
     <span *ngFor="let uuid of interactions.listUuids">

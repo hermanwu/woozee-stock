@@ -10,7 +10,7 @@
 </div>
 
 <div>
-  💰 Financial Results on
+  💰 Earnings Results on
   <app-date-display [date]="earnings.releasedDate"></app-date-display>
 </div>
 
@@ -38,7 +38,7 @@
 </div>
 
 <div *ngIf="earnings?.documents?.length > 0">
-  <strong>Documents</strong>
+  <strong>Links</strong>
   <div *ngFor="let document of earnings?.documents">
     🔗 <a href="{{ document.link }}" target="_blank">{{ document.name }}</a>
   </div>

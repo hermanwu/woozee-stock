@@ -35,6 +35,7 @@ export interface UserInteractions {
   used?: number;
   listUuids?: string[];
   using?: number;
+  targetPrice?: number;
 }
 
 export interface Sentiment {

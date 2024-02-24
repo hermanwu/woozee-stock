@@ -14,32 +14,61 @@
   ></app-interaction-bar>
 </div>
 
-<div class="mt-2" *ngIf="tradable?.irAddress">
-  <a target="_blank" [href]="tradable.irAddress"> Investor Relations 🔗 </a>
-</div>
-
-<div>
-  <a
-    target="_blank"
-    [href]="'https://www.google.com/finance/quote/' + tradable.uuid"
-  >
-    Google Finance 🔗
-  </a>
-</div>
-
-<div>
-  <a
-    target="_blank"
-    [href]="'https://seekingalpha.com/symbol/' + tradable.uuid.split(':')[0]"
-  >
-    Seeking Alpha 🔗
-  </a>
-</div>
-
 <div class="mt-2" *ngIf="organizations?.length > 0">
   Organizations:
   <span *ngFor="let org of organizations">
     <app-stock-display [tagUuid]="org?.uuid"></app-stock-display>
+  </span>
+</div>
+
+<div class="mt-2">
+  Research Links:
+  <span *ngIf="tradable?.irAddress">
+    <a target="_blank" [href]="tradable.irAddress"> Investor Relations 🔗 </a>
+  </span>
+
+  <span>
+    <a
+      target="_blank"
+      [href]="'https://www.google.com/finance/quote/' + tradable.uuid"
+    >
+      google🔗
+    </a>
+  </span>
+
+  <span>
+    <a
+      target="_blank"
+      [href]="'https://seekingalpha.com/symbol/' + tradable.uuid.split(':')[0]"
+    >
+      seekingalpha.com🔗
+    </a>
+  </span>
+
+  <span>
+    <a
+      target="_blank"
+      [href]="
+        'https://www.tipranks.com/stocks/' +
+        tradable.uuid.split(':')[0] +
+        '/forecast'
+      "
+    >
+      tipranks.com🔗
+    </a>
+  </span>
+
+  <span>
+    <a
+      target="_blank"
+      [href]="
+        'https://www.finviz.com/quote.ashx?t=' +
+        tradable.uuid.split(':')[0] +
+        '&p=d'
+      "
+    >
+      finviz.com🔗
+    </a>
   </span>
 </div>
 

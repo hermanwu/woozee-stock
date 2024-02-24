@@ -30,6 +30,11 @@ export interface Tag {
 
 export const mockTags: Tag[] = [
   {
+    uuid: 'online-gambling',
+    type: TagType.Industry,
+    displayName: 'Online Gambling',
+  },
+  {
     uuid: 'proprietary-data',
     type: TagType.Industry,
     displayName: 'Proprietary Data',
@@ -38,6 +43,11 @@ export const mockTags: Tag[] = [
     uuid: 'spatial-computing',
     type: TagType.Industry,
     displayName: 'Spatial Computing',
+  },
+  {
+    uuid: 'crypto',
+    type: TagType.Industry,
+    displayName: 'Crypto',
   },
   {
     uuid: 'bad-earnings',

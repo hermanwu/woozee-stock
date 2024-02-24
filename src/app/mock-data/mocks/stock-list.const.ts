@@ -28,7 +28,6 @@ import { ftnt } from './ftnt';
 import { fvrr } from './fvrr';
 import { gme } from './gme';
 import { gs } from './gs';
-import { HD } from './HD';
 import { huya } from './huya';
 import { iac } from './iac';
 import { intc } from './intc';
@@ -41,15 +40,12 @@ import { logi } from './LOGI';
 import { lrcx } from './lrcx';
 import { luv } from './luv';
 import { LZ } from './LZ';
-import { meli } from './MELI';
-import { mrna } from './mrna';
 import { mrvl } from './mrvl.mock';
 import { msft } from './msft';
 import { mttr } from './mttr.mock';
 import { mu } from './mu.mock';
 import { nio } from './nio.mock';
 import { noc } from './noc';
-import { now } from './now';
 import { ntdoy } from './ntdoy';
 import { nvax } from './nvax';
 import { ob } from './ob';
@@ -75,13 +71,11 @@ import { snap } from './snap';
 import { snow } from './snow';
 import { sofi } from './sofi';
 import { SPLK } from './SPLK';
-import { sq } from './sq.mock';
 import { STEM } from './STEM';
 import { swks } from './swks';
 import { techy } from './TCEHY';
 import { tdoc } from './tdoc';
 import { team } from './team';
-import { tgt } from './tgt';
 import { TRMB } from './TRMB';
 import { u } from './U.mock';
 import { ual } from './ual.mock';
@@ -94,7 +88,6 @@ import { VMEO } from './vmeo';
 import { vmw } from './vmw';
 import { wish } from './wish';
 import { wix } from './wix';
-import { wmt } from './wmt.mock';
 import { xpev } from './XPEV';
 import { you } from './you';
 import { z } from './Z.mock';
@@ -124,7 +117,6 @@ export const stocksMap = {
   fvrr,
   gme,
   gs,
-  HD,
   huya,
   iac,
   jd,
@@ -135,12 +127,9 @@ export const stocksMap = {
   lrcx,
   luv,
   LZ,
-  meli,
-  mrna,
   msft,
   nio,
   noc,
-  now,
   ntdoy,
   nvax,
   ob,
@@ -162,13 +151,11 @@ export const stocksMap = {
   snow,
   sofi,
   SPLK,
-  sq,
   STEM,
   swks,
   tdoc,
   team,
   techy,
-  tgt,
   TRMB,
   u,
   ulta,
@@ -190,7 +177,6 @@ export const stocksMap = {
   oxy,
   mu,
   ionq,
-  wmt,
   csco,
   bill,
   panw,

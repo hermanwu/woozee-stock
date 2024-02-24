@@ -15,6 +15,7 @@ export class NavigationServices {
     type = type.toLowerCase();
     switch (type) {
       case 'tradable':
+      case 'stocks and etfs':
         return this.router.navigate([`/woozee/quotes/${routeWord}`]);
       case 'company':
         return this.router.navigate([`/woozee/companies/${routeWord}`]);

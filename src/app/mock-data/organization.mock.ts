@@ -97,7 +97,11 @@ export const organizations: Organization[] = [
     displayName: 'DocuSign',
     ticker: 'docu',
   },
-
+  {
+    uuid: 'now',
+    displayName: 'ServiceNow',
+    ticker: 'now',
+  },
   {
     uuid: 'nvda',
     displayName: 'Nvidia',
@@ -352,6 +356,12 @@ export const organizations: Organization[] = [
       'https://pbs.twimg.com/profile_images/1631347869687898142/ATwo7QZZ_400x400.jpg',
   },
   {
+    uuid: 'hd',
+    displayName: 'Home Depot',
+    logoLink:
+      'https://pbs.twimg.com/profile_images/1631347869687898142/ATwo7QZZ_400x400.jpg',
+  },
+  {
     uuid: 'dltr',
     displayName: 'Dollar Tree',
     logoLink: '',
@@ -427,7 +437,6 @@ export const organizations: Organization[] = [
   {
     uuid: 'nflx',
     displayName: 'Netflix',
-    logoLink: '',
   },
   {
     uuid: 'hpe',
@@ -522,7 +531,6 @@ export const organizations: Organization[] = [
     uuid: 'smci',
     displayName: 'Supermicro',
     logoLink: 'https://i.ibb.co/CPNfMb3/i-VFx-Tc5-400x400.jpg',
-    irAddress: 'https://ir.supermicro.com/ir-overview/default.aspx',
     headquarters: 'San Jose, CA',
     ticker: 'smci',
     descriptions: [
@@ -553,6 +561,11 @@ export const organizations: Organization[] = [
     largeLogoLink: 'https://i.ibb.co/8sQrshH/GTLB-BIG.png',
   },
   {
+    uuid: 'panw',
+    displayName: 'Palo Alto Networks',
+    logoLink: 'https://i.postimg.cc/1RfTL6gS/ox-Bhl9i9-400x400.jpg',
+  },
+  {
     uuid: 'path',
     displayName: 'UiPath',
     largeLogoLink: 'https://i.ibb.co/JsHkFsJ/PATH-BIG.png',
@@ -577,8 +590,22 @@ export const organizations: Organization[] = [
     largeLogoLink: 'https://i.ibb.co/DW2VKb5/PINS-BIG.png',
   },
   {
+    uuid: 'mrna',
+    displayName: 'Moderna',
+    logoLink: 'https://companieslogo.com/img/orig/MRNA-723e7c1a.png',
+    largeLogoLink: 'https://companieslogo.com/img/orig/MRNA_BIG-e94ccd42.png',
+  },
+  {
     uuid: 'intu',
     displayName: 'Intuit',
+    largeLogoLink: 'https://companieslogo.com/img/orig/INTU_BIG-14a0e657.png',
+    logoLink: 'https://companieslogo.com/img/orig/INTU-fb19ded3.png',
+  },
+  {
+    uuid: 'meli',
+    displayName: 'MercadoLibre',
+    largeLogoLink: 'https://companieslogo.com/img/orig/MELI_BIG-d1f8e207.png',
+    logoLink: 'https://companieslogo.com/img/orig/MELI-ec0c0e4f.png',
   },
   {
     uuid: 'kbh',

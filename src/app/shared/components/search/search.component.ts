@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { tradable } from 'src/app/mock-data/mocks/tradables.mock';
 import { organizations } from 'src/app/mock-data/organization.mock';
 import { mockProducts } from 'src/app/mock-data/product.mock';
 import { NavigationServices } from '../../services/navgiation.services';
@@ -22,6 +23,10 @@ export class SearchComponent implements OnInit {
   searchForm: FormGroup;
   filteredOptions: Observable<string[]>;
   stateGroups: StateGroup[] = [
+    {
+      label: 'Stocks and ETFs',
+      items: tradable,
+    },
     {
       label: 'Organization',
       items: organizations,
@@ -83,7 +88,11 @@ export class SearchComponent implements OnInit {
   }
 
   private _filter = (opt: any[], value: string): string[] => {
-    const filterValue = value.toLowerCase();
+    let filterValue = value;
+
+    if (typeof filterValue === 'string') {
+      filterValue = filterValue.toLowerCase();
+    }
 
     return opt.filter(
       (item) =>

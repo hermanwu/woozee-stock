@@ -48,6 +48,15 @@ export const userInteractions: UserInteractions[] = [
   {
     uuid: '0e8c8ca5-188d-4503-902b-ff46b9229a66',
     userUuid: 'herman.wrt@gmail.com',
+    targetUuid: 'ETSY:NASDAQ',
+    type: 'tradableItem',
+    listUuids: ['bad-earnings'],
+    vote: -5,
+    targetPrice: 60,
+  },
+  {
+    uuid: '0e8c8ca5-188d-4503-902b-ff46b9229a66',
+    userUuid: 'herman.wrt@gmail.com',
     targetUuid: 'NET:NYSE',
     type: 'tradableItem',
     listUuids: [
@@ -58,6 +67,7 @@ export const userInteractions: UserInteractions[] = [
       'cybersecurity',
     ],
     vote: 20,
+    targetPrice: 70,
   },
   {
     uuid: '0e8c8ca5-188d-4503-902b-ff46b9229a66',
@@ -105,6 +115,7 @@ export const userInteractions: UserInteractions[] = [
       'interactive-broker',
     ],
     vote: 22,
+    targetPrice: 120,
   },
   {
     uuid: '0e8c8ca5-188d-4503-902b-ff46b9229a66',
@@ -113,14 +124,34 @@ export const userInteractions: UserInteractions[] = [
     type: 'tradableItem',
     listUuids: ['jess-robinhood'],
     vote: 10,
+    targetPrice: 750,
   },
   {
     uuid: '0e8c8ca5-188d-4503-902b-ff46b9229a66',
     userUuid: 'herman.wrt@gmail.com',
-    targetUuid: 'PANW:NYSE',
+    targetUuid: 'HD:NYSE',
     type: 'tradableItem',
-    listUuids: ['jess-robinhood'],
+    listUuids: ['Retail'],
+    vote: -1,
+    targetPrice: 320,
+  },
+  {
+    uuid: '0e8c8ca5-188d-4503-902b-ff46b9229a66',
+    userUuid: 'herman.wrt@gmail.com',
+    targetUuid: 'DASH:NASDAQ',
+    type: 'tradableItem',
+    listUuids: ['share-economy'],
     vote: 3,
+    targetPrice: 100,
+  },
+  {
+    uuid: '0e8c8ca5-188d-4503-902b-ff46b9229a66',
+    userUuid: 'herman.wrt@gmail.com',
+    targetUuid: 'PANW:NASDAQ',
+    type: 'tradableItem',
+    listUuids: ['jess-robinhood', 'ai-hardware', 'cybersecurity'],
+    vote: 3,
+    targetPrice: 260,
   },
   {
     uuid: '0e8c8ca5-188d-4503-902b-ff46b9229a66',
@@ -163,6 +194,8 @@ export const userInteractions: UserInteractions[] = [
     type: 'tradableItem',
     listUuids: ['interactive-broker', 'high-volatility'],
     targetUuid: 'APP:NASDAQ',
+    vote: 30,
+    targetPrice: 80,
   },
   {
     uuid: '0e8c8ca5-188d-4503-902b-ff46b9229a66',
@@ -171,6 +204,7 @@ export const userInteractions: UserInteractions[] = [
     listUuids: ['better-earnings', 'interactive-broker', 'high-volatility'],
     targetUuid: 'SMCI:NASDAQ',
     vote: 26,
+    targetPrice: 650,
   },
   {
     uuid: '0e8c8ca5-188d-4503-902b-ff46b9229a66',
@@ -185,6 +219,8 @@ export const userInteractions: UserInteractions[] = [
     type: 'tradableItem',
     listUuids: ['herman-robinhood'],
     targetUuid: 'RIVN:NASDAQ',
+    vote: -2,
+    targetPrice: 10,
   },
   {
     uuid: '4d6e3182-435c-40e0-8ed6-58402657a7e7',
@@ -212,7 +248,8 @@ export const userInteractions: UserInteractions[] = [
       'boa-herman',
     ],
     targetUuid: 'COIN:NASDAQ',
-    vote: 13,
+    vote: 30,
+    targetPrice: 200,
   },
   {
     uuid: 'ax783991-d90b-44f2-8268-5af4efbbe264',
@@ -242,6 +279,7 @@ export const userInteractions: UserInteractions[] = [
       'boa-herman',
     ],
     vote: 20,
+    targetPrice: 160,
   },
   {
     uuid: 'au783991-d90b-44f2-8268-5af4efbbe264',
@@ -255,7 +293,16 @@ export const userInteractions: UserInteractions[] = [
       'jess-robinhood',
       'boa-herman',
     ],
-    vote: 25,
+    vote: 15,
+    targetPrice: 160,
+  },
+  {
+    uuid: 'at783991-d90b-44f2-8268-5af4efbbe264',
+    userUuid: 'herman.wrt@gmail.com',
+    type: 'tradableItem',
+    targetUuid: 'TWLO:NYSE',
+    listUuids: ['no-growth'],
+    vote: -10,
   },
   {
     uuid: 'at783991-d90b-44f2-8268-5af4efbbe264',
@@ -269,14 +316,16 @@ export const userInteractions: UserInteractions[] = [
       'worse-earnings',
     ],
     vote: 5,
+    targetPrice: 170,
   },
   {
     uuid: 'as783991-d90b-44f2-8268-5af4efbbe264',
     userUuid: 'herman.wrt@gmail.com',
     type: 'tradableItem',
-    targetUuid: 'GOOGL:GOOG:NASDAQ',
+    targetUuid: 'GOOGL:NASDAQ',
     listUuids: ['magnificent-7', 'jess-robinhood', 'boa-herman'],
-    vote: 18,
+    vote: 30,
+    targetPrice: 130,
   },
   {
     uuid: 'ar783991-d90b-44f2-8268-5af4efbbe264',
@@ -293,6 +342,7 @@ export const userInteractions: UserInteractions[] = [
       'boa-herman',
     ],
     vote: 50,
+    targetPrice: 470,
   },
   {
     uuid: 'aq783991-d90b-44f2-8268-5af4efbbe264',
@@ -302,12 +352,12 @@ export const userInteractions: UserInteractions[] = [
     listUuids: [
       'better-earnings',
       'gen-ai',
-      '1.6T Market Cap',
       'magnificent-7',
       'jess-robinhood',
       'boa-herman',
     ],
-    vote: 25,
+    vote: 99,
+    targetPrice: 650,
   },
   {
     uuid: 'ap783991-d90b-44f2-8268-5af4efbbe264',
@@ -323,6 +373,7 @@ export const userInteractions: UserInteractions[] = [
       'boa-herman',
     ],
     vote: 23,
+    targetPrice: 320,
   },
   {
     uuid: 'an783991-d90b-44f2-8268-5af4efbbe264',
@@ -330,6 +381,15 @@ export const userInteractions: UserInteractions[] = [
     type: 'tradableItem',
     targetUuid: 'MPW:NYSE',
     listUuids: ['trending', 'cheap'],
+  },
+  {
+    uuid: 'an783991-d90b-44f2-8268-5af4efbbe264',
+    userUuid: 'herman.wrt@gmail.com',
+    type: 'tradableItem',
+    targetUuid: 'WMT:NYSE',
+    listUuids: ['Retail'],
+    vote: 5,
+    targetPrice: 175,
   },
   {
     uuid: 'am783991-d90b-44f2-8268-5af4efbbe264',
@@ -477,7 +537,7 @@ export const userInteractions: UserInteractions[] = [
     targetUuid: 'DKNG:NASDAQ',
     userUuid: 'herman.wrt@gmail.com',
     type: 'tradableItem',
-    listUuids: ['high-growth'],
+    listUuids: ['high-growth', 'online-gambling'],
     vote: 15,
   },
   {
@@ -611,6 +671,8 @@ export const userInteractions: UserInteractions[] = [
     targetUuid: 'intu',
     type: 'stock',
     listUuids: ['friends-working-there'],
+    vote: 15,
+    targetPrice: 450,
   },
   {
     uuid: '79783991-d90b-44f2-8268-5af4efbbe26i',
@@ -667,15 +729,7 @@ export const userInteractions: UserInteractions[] = [
     userUuid: 'herman.wrt@gmail.com',
     targetUuid: 'nvda',
     type: 'stock',
-    listUuids: [
-      'talented-employees',
-      'founder-led',
-      'differentiation',
-      'Revenue - 18B',
-      'Net Income - 9B',
-      '200% Revenue Growth',
-      '50% Net Margin',
-    ],
+    listUuids: ['talented-employees', 'founder-led', 'differentiation'],
     vote: 3,
   },
   {
@@ -751,9 +805,10 @@ export const userInteractions: UserInteractions[] = [
     uuid: '161a445a-750b-4d75-9fa1-64fd1b2da25d',
     userUuid: 'herman.wrt@gmail.com',
     type: 'tradableItem',
-    listUuids: ['jess-robinhood', 'interactive-broker'],
+    listUuids: ['gen-ai', 'jess-robinhood', 'interactive-broker'],
     targetUuid: 'AMD:NASDAQ',
     vote: 19,
+    targetPrice: 120,
   },
   {
     uuid: '4e24d0bc-62ca-4914-98b6-a5ac49493482',
@@ -761,6 +816,8 @@ export const userInteractions: UserInteractions[] = [
     type: 'tradableItem',
     listUuids: ['interactive-broker'],
     targetUuid: 'CRWD:NASDAQ',
+    vote: 15,
+    targetPrice: 220,
   },
   {
     uuid: '9c8e7863-b2b2-4a4c-80cc-d8dfddfbd38e',
@@ -813,6 +870,7 @@ export const userInteractions: UserInteractions[] = [
     listUuids: ['jess-robinhood'],
     targetUuid: 'NFLX:NASDAQ',
     vote: 20,
+    targetPrice: 500,
   },
   {
     uuid: '6e0869a0-29c6-441f-86f4-b2efe245c0a2',
@@ -851,6 +909,7 @@ export const userInteractions: UserInteractions[] = [
     listUuids: ['good-earnings', 'jess-robinhood'],
     targetUuid: 'LLY:NYSE',
     vote: 24,
+    targetPrice: 600,
   },
   {
     uuid: 'cacd7366-ffcc-4bca-98d2-f733995c3434',
@@ -1073,6 +1132,15 @@ export const userInteractions: UserInteractions[] = [
     type: 'tradableItem',
     listUuids: ['interactive-broker'],
     targetUuid: 'ROKU:NASDAQ',
+    vote: 1,
+  },
+  {
+    uuid: 'd6a3f8b3-8e9d-4f12-9d4eZS-4b7a2cfe5af3',
+    userUuid: 'herman.wrt@gmail.com',
+    type: 'tradableItem',
+    listUuids: ['interactive-broker'],
+    targetUuid: 'TTD:NASDAQ',
+    vote: 10,
   },
   {
     uuid: '0d8a2b9b-9f60-4f29-8345-df4b0193d6ff',
@@ -1144,6 +1212,22 @@ export const userInteractions: UserInteractions[] = [
     type: 'tradableItem',
     listUuids: [],
     targetUuid: 'WAL:NYSE',
+  },
+  {
+    uuid: '5c0fe795-ec50-4bd4-80e6-ee91d91b866f',
+    userUuid: 'herman.wrt@gmail.com',
+    type: 'tradableItem',
+    listUuids: ['cloud-computing'],
+    targetUuid: 'FSLY:NYSE',
+    vote: -5,
+  },
+  {
+    uuid: '5c0fe795-ec50-4bd4-80e6-ee91d91b866f',
+    userUuid: 'herman.wrt@gmail.com',
+    type: 'tradableItem',
+    listUuids: ['transportation'],
+    targetUuid: 'LYFT:NASDAQ',
+    vote: 5,
   },
   {
     uuid: '6f63cb42-dfc5-4b56-a47a-65d41b48663e',

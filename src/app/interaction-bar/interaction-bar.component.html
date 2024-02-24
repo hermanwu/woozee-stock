@@ -1,5 +1,9 @@
 <ng-container *ngIf="interactions && displayOnly">
   <ng-container *ngIf="!environment.production">
+    <span *ngIf="interactions.targetPrice">
+      🎯 ${{ interactions.targetPrice }}
+    </span>
+
     <span *ngIf="interactions.hearted">
       {{ emojiUnicode.heart }}
     </span>

@@ -19,6 +19,22 @@ export const allNotes: (Opinion | Fact)[] = [
   {
     uuid: 'd2ccfe52-d753-4b14-g87d-8939baf1d68d',
     noteType: NoteType.Opinion,
+    targetUuids: ['smci:nasdaq'],
+    createdDate: getUtcDate(2024, 2, 20),
+    creatorUuid: 'herman.wrt@gmail.com',
+    content: 'Gross Profit is too low.',
+  },
+  {
+    uuid: 'd2ccfe52-d753-4b14-g87d-8939baf1d68d',
+    noteType: NoteType.Opinion,
+    targetUuids: ['amzn:nasdaq'],
+    createdDate: getUtcDate(2024, 2, 20),
+    creatorUuid: 'herman.wrt@gmail.com',
+    content: 'Amazon is joining S&P Dow Jones Indices on Feb 26th',
+  },
+  {
+    uuid: 'd2ccfe52-d753-4b14-g87d-8939baf1d68d',
+    noteType: NoteType.Opinion,
     targetUuids: ['coin:nasdaq'],
     createdDate: getUtcDate(2023, 2, 15),
     creatorUuid: 'herman.wrt@gmail.com',

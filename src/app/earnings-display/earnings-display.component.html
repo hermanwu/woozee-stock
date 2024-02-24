@@ -37,18 +37,18 @@
   </div>
 </div>
 
-<div *ngIf="earnings?.documents?.length > 0">
-  <strong>Links</strong>
-  <div *ngFor="let document of earnings?.documents">
-    🔗 <a href="{{ document.link }}" target="_blank">{{ document.name }}</a>
-  </div>
-</div>
-
 <div *ngIf="earnings?.quotes">
   <strong>Quotes</strong>
   <div *ngFor="let earnings of earnings.quotes">
     💬
     <strong>{{ earnings.name }}: </strong>
     <span>{{ earnings.contents }}</span>
+  </div>
+</div>
+
+<div *ngIf="earnings?.documents?.length > 0">
+  <strong>Links</strong>
+  <div *ngFor="let document of earnings?.documents">
+    🔗 <a href="{{ document.link }}" target="_blank">{{ document.name }}</a>
   </div>
 </div>

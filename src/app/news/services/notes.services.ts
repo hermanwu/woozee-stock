@@ -34,7 +34,7 @@ export class NotesServices {
 
   getNotesByTargets(targetUuids: string[]) {
     return this.notes.filter((item) =>
-      item.targetUuids?.some((t) => targetUuids.includes(t))
+      item.targetUuids?.some((t) => targetUuids.includes(t.toLowerCase()))
     );
   }
 

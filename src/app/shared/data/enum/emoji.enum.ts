@@ -45,6 +45,8 @@ export enum EmojiUnicode {
   comment = '💬',
   hammer = '🛠️',
   drug = '💊',
+  sun = '☀️',
+  moon = '🌙',
 }
 
 export const BullishEmoji = ['🚀', '😆', '🙂', '👍', '🤑', '😲'];

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { getTradableItemsByUuids } from '../mock-data/mocks/tradables.mock';
+import { Tradable } from '../mock-data/mocks/tradables.mock';
 import { NavigationServices } from '../shared/services/navgiation.services';
 
 @Component({
@@ -8,20 +8,15 @@ import { NavigationServices } from '../shared/services/navgiation.services';
   styleUrls: ['./tradable-display.component.scss'],
 })
 export class TradableDisplayComponent implements OnInit {
-  @Input() tradableUuid: string;
-  tradable;
+  @Input() tradable: Tradable;
 
   constructor(private navigationServices: NavigationServices) {}
 
   ngOnInit(): void {}
 
-  ngOnChanges() {
-    if (this.tradableUuid) {
-      this.tradable = getTradableItemsByUuids([this.tradableUuid])?.[0];
-    }
-  }
+  ngOnChanges() {}
 
   navigate() {
-    this.navigationServices.navigate('tradable', this.tradableUuid);
+    this.navigationServices.navigate('tradable', this.tradable.uuid);
   }
 }

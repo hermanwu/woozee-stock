@@ -14,6 +14,11 @@
   ></app-interaction-bar>
 </div>
 
+<div class="mt-2" *ngIf="priceRange">
+  Forecast & Price Target Range:
+  <app-price-display [priceRange]="priceRange"></app-price-display>
+</div>
+
 <div class="mt-2" *ngIf="organizations?.length > 0">
   Organizations:
   <span *ngFor="let org of organizations">
@@ -22,54 +27,59 @@
 </div>
 
 <div class="mt-2">
-  Research Links:
-  <span *ngIf="tradable?.irAddress">
-    <a target="_blank" [href]="tradable.irAddress"> Investor Relations 🔗 </a>
-  </span>
+  <mat-chip-list>
+    Research Links:
 
-  <span>
-    <a
-      target="_blank"
-      [href]="'https://www.google.com/finance/quote/' + tradable.uuid"
-    >
-      google🔗
-    </a>
-  </span>
+    <mat-chip *ngIf="tradable?.irAddress">
+      <a target="_blank" [href]="tradable.irAddress"> Investor Relations 🔗 </a>
+    </mat-chip>
 
-  <span>
-    <a
-      target="_blank"
-      [href]="'https://seekingalpha.com/symbol/' + tradable.uuid.split(':')[0]"
-    >
-      seekingalpha.com🔗
-    </a>
-  </span>
+    <mat-chip>
+      <a
+        target="_blank"
+        [href]="'https://www.google.com/finance/quote/' + tradable.uuid"
+      >
+        google🔗
+      </a>
+    </mat-chip>
 
-  <span>
-    <a
-      target="_blank"
-      [href]="
-        'https://www.tipranks.com/stocks/' +
-        tradable.uuid.split(':')[0] +
-        '/forecast'
-      "
-    >
-      tipranks.com🔗
-    </a>
-  </span>
+    <mat-chip>
+      <a
+        target="_blank"
+        [href]="
+          'https://seekingalpha.com/symbol/' + tradable.uuid.split(':')[0]
+        "
+      >
+        seekingalpha.com🔗
+      </a>
+    </mat-chip>
 
-  <span>
-    <a
-      target="_blank"
-      [href]="
-        'https://www.finviz.com/quote.ashx?t=' +
-        tradable.uuid.split(':')[0] +
-        '&p=d'
-      "
-    >
-      finviz.com🔗
-    </a>
-  </span>
+    <mat-chip>
+      <a
+        target="_blank"
+        [href]="
+          'https://www.tipranks.com/stocks/' +
+          tradable.uuid.split(':')[0] +
+          '/forecast'
+        "
+      >
+        tipranks.com🔗
+      </a>
+    </mat-chip>
+
+    <mat-chip>
+      <a
+        target="_blank"
+        [href]="
+          'https://www.finviz.com/quote.ashx?t=' +
+          tradable.uuid.split(':')[0] +
+          '&p=d'
+        "
+      >
+        finviz.com🔗
+      </a>
+    </mat-chip>
+  </mat-chip-list>
 </div>
 
 <div *ngIf="earnings?.length > 0" class="mt-4">

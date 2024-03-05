@@ -37,9 +37,733 @@ export class Earnings {
   targetUuids?: string[];
   documents?: any[];
   imageLinks?: string[];
+  beforeMarketOpen?: boolean;
 }
 
 export const earnings: Earnings[] = [
+  {
+    targetUuids: ['avav:nasdaq'],
+    releasedDate: getUtcDate(2024, 3, 4),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investor.avinc.com/news-releases/news-release-details/aerovironment-announces-fiscal-2024-third-quarter-results',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 186.578 * MILLION,
+        previousValue: 134.395 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 119.291 * MILLION,
+        previousValue: 88.885 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 14.334 * MILLION,
+        previousValue: 4.607 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 13.885 * MILLION,
+        previousValue: -0.676 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+    quotes: [
+      {
+        name: 'CEO',
+        contents:
+          'With the increased global demand for our solutions, strong backlog and growing pipeline, AeroVironment remains well positioned for continued growth. ',
+      },
+    ],
+  },
+  {
+    targetUuids: ['gtlb:nasdaq'],
+    releasedDate: getUtcDate(2024, 3, 4),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://ir.gitlab.com/news-releases/news-release-details/gitlab-reports-fourth-quarter-and-full-year-2024-financial',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 163.779 * MILLION,
+        previousValue: 122.907 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 147.79 * MILLION,
+        previousValue: 108.669 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -34.883 * MILLION,
+        previousValue: -46.274 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -37.571 * MILLION,
+        previousValue: -42.121 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+    quotes: [
+      {
+        name: 'CEO',
+        contents:
+          'By integrating AI throughout the software development lifecycle, our DevSecOps platform allows our customers to plan, build, manage, and deliver software more efficiently, ultimately scaling the impact their software investments have on business outcomes. We believe this puts us in a strong position to continue to win the large market opportunity in front of us.',
+      },
+    ],
+  },
+  {
+    targetUuids: ['gtlb:nasdaq'],
+    releasedDate: getUtcDate(2023, 12, 4),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://ir.gitlab.com/news-releases/news-release-details/gitlab-reports-third-quarter-fiscal-year-2024-financial-results',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 149.7 * MILLION,
+        previousValue: 113.0 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 134.584 * MILLION,
+        previousValue: 98.417 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -40.267 * MILLION,
+        previousValue: -56.962 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -286.355 * MILLION,
+        previousValue: -50.465 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['fubo:nyse'],
+    releasedDate: getUtcDate(2024, 3, 1),
+    documents: [
+      {
+        name: 'Shareholder Letter',
+        link: 'https://s21.q4cdn.com/819998841/files/doc_financials/2023/q4/Q4_FY-2023-SHL-Letter-FINAL-docx.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 410.181 * MILLION,
+        previousValue: 319.315 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -72.093 * MILLION,
+        previousValue: -93.901 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -70.527 * MILLION,
+        previousValue: -151.981 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['adsk:nasdaq'],
+    releasedDate: getUtcDate(2024, 2, 29),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investors.autodesk.com/news-releases/news-release-details/autodesk-inc-announces-fiscal-2024-fourth-quarter-and-full-year',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 1.469 * BILLION,
+        previousValue: 1.318 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 1.339 * BILLION,
+        previousValue: 1.194 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 315 * MILLION,
+        previousValue: 277 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 282 * MILLION,
+        previousValue: 293 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['estc:nyse'],
+    releasedDate: getUtcDate(2024, 2, 29),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://ir.elastic.co/news/news-details/2024/Elastic-Reports-Third-Quarter-Fiscal-2024-Financial-Results/default.aspx',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 327.957 * MILLION,
+        previousValue: 274.566 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 243.315 * MILLION,
+        previousValue: 199.358 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -26.404 * MILLION,
+        previousValue: -69.347 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 176.124 * MILLION,
+        previousValue: -72.574 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['zs:nasdaq'],
+    releasedDate: getUtcDate(2024, 2, 29),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://ir.zscaler.com/news-releases/news-release-details/zscaler-reports-second-quarter-fiscal-2024-financial-results',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 524.999 * MILLION,
+        previousValue: 387.598 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 407.8 * MILLION,
+        previousValue: 299.994 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -45.457 * MILLION,
+        previousValue: -65.238 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -28.469 * MILLION,
+        previousValue: -57.453 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['adsk:nasdaq'],
+    releasedDate: getUtcDate(2023, 11, 21),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investors.autodesk.com/static-files/b8201417-8a0e-41dd-b9d2-7eba693e20d2',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 1.414 * BILLION,
+        previousValue: 1.28 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 1.287 * BILLION,
+        previousValue: 1.16 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 334 * MILLION,
+        previousValue: 256 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 241 * MILLION,
+        previousValue: 198 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['estc:nyse'],
+    releasedDate: getUtcDate(2023, 11, 30),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://ir.elastic.co/news/news-details/2023/Elastic-Reports-Second-Quarter-Fiscal-2024-Financial-Results/',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 310.612 * MILLION,
+        previousValue: 264.401 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 230.523 * MILLION,
+        previousValue: 189.644 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -21.539 * MILLION,
+        previousValue: -49.028 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -24.796 * MILLION,
+        previousValue: -47.305 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['zs:nasdaq'],
+    releasedDate: getUtcDate(2023, 11, 27),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://ir.zscaler.com/news-releases/news-release-details/zscaler-reports-first-quarter-fiscal-2024-financial-results',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 496.703 * MILLION,
+        previousValue: 355.548 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 385.309 * MILLION,
+        previousValue: 278.851 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -46.057 * MILLION,
+        previousValue: -69.087 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -33.483 * MILLION,
+        previousValue: -68.162 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['crm:nyse'],
+    releasedDate: getUtcDate(2024, 2, 28),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://s23.q4cdn.com/574569502/files/doc_financials/2024/q4/CRM-Q4-FY24-Earnings-Press-Release-w-financials.pdf',
+      },
+      {
+        name: 'Presentation',
+        link: 'https://s23.q4cdn.com/574569502/files/doc_financials/2024/q4/CRM-Q4-FY24-Earnings-Presentation.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 9.287 * BILLION,
+        previousValue: 8.384 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 7.139 * BILLION,
+        previousValue: 6.284 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 1.622 * BILLION,
+        previousValue: 0.357 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 1.446 * BILLION,
+        previousValue: -0.098 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+    quotes: [
+      {
+        name: 'CEO Marc Benioff',
+        contents:
+          'Our total remaining performance obligation ended the fourth quarter at $56.9 billion, an increase of 17% year-over-year. We’re also thrilled to initiate our first-ever Salesforce dividend and increase our share buyback plan by $10 billion',
+      },
+    ],
+  },
+  {
+    targetUuids: ['duol:nasdaq'],
+    releasedDate: getUtcDate(2024, 2, 28),
+    documents: [
+      {
+        name: 'Shareholder Letter',
+        link: 'https://investors.duolingo.com/static-files/06cda5ae-c66f-4d99-82ec-da764ecb1034',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 150.985 * MILLION,
+        previousValue: 103.824 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 110.414 * MILLION,
+        previousValue: 76.054 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 4.795 * MILLION,
+        previousValue: -18.152 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -12.117 * MILLION,
+        previousValue: -13.93 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+    quotes: [
+      {
+        contents:
+          'Our user growth accelerated throughout the year, we achieved record bookings and revenue in both the fourth quarter and the full year, and we became significantly more profitable.',
+      },
+    ],
+  },
+  {
+    targetUuids: ['okta:nasdaq'],
+    releasedDate: getUtcDate(2024, 2, 28),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investor.okta.com/news-releases/news-release-details/okta-announces-fourth-quarter-and-fiscal-year-2024-financial',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 605 * MILLION,
+        previousValue: 510 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 460 * MILLION,
+        previousValue: 371 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -83 * MILLION,
+        previousValue: -157 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -44 * MILLION,
+        previousValue: -153 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+
+  {
+    targetUuids: ['snow:nyse'],
+    releasedDate: getUtcDate(2024, 2, 28),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investors.snowflake.com/news/news-details/2024/Snowflake-Reports-Financial-Results-for-the-Fourth-Quarter-and-Full-Year-of-Fiscal-2024/',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 774.699 * MILLION,
+        previousValue: 589.012 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 532.895 * MILLION,
+        previousValue: 383.355 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -275.505 * MILLION,
+        previousValue: -239.75 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -169.912 * MILLION,
+        previousValue: -207.484 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['snow:nyse'],
+    releasedDate: getUtcDate(2022, 10, 31),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investors.snowflake.com/news/news-details/2023/Snowflake-Reports-Financial-Results-for-the-Third-Quarter-of-Fiscal-2024/default.aspx',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 734.173 * MILLION,
+        previousValue: 557.028 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 505.225 * MILLION,
+        previousValue: 366.307 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -260.623 * MILLION,
+        previousValue: -206.019 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -214.694 * MILLION,
+        previousValue: -201.442 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['zm:nasdaq'],
+    releasedDate: getUtcDate(2024, 2, 26),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investors.zoom.us/news-releases/news-release-details/zoom-video-communications-reports-fourth-quarter-and-fiscal-3',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 1.146457 * BILLION,
+        previousValue: 1.117803 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+        data: [
+          {
+            name: 'Enterprise Revenue',
+            value: 667.3 * MILLION,
+            changeRate: 0.049,
+            timeFrame: TimeFrame.yoy,
+            unit: UnitType.dollar,
+          },
+        ],
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 870.15 * MILLION,
+        previousValue: 823.449 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 168.53 * MILLION,
+        previousValue: -129.887 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 298.832 * MILLION,
+        previousValue: -104.05 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+    quotes: [
+      {
+        contents:
+          'Drove robust profitability and grew free cash flow, up 24.1% year over year ',
+      },
+      {
+        contents:
+          'Authorization to repurchase up to $1.5 billion of Zoom’s Class A common stock',
+      },
+    ],
+  },
+  {
+    targetUuids: ['wday:nasdaq'],
+    releasedDate: getUtcDate(2024, 2, 26),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://newsroom.workday.com/2024-02-26-Workday-Announces-Fiscal-2024-Fourth-Quarter-and-Full-Year-Financial-Results',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 1.922 * BILLION,
+        previousValue: 1.646 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 79 * MILLION,
+        previousValue: -89 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 1188 * MILLION,
+        previousValue: -126 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+    quotes: [
+      {
+        contents:
+          'We are reiterating our fiscal year 2025 subscription revenue guidance of $7.725 billion to $7.775 billion, representing growth of 17% to 18%',
+      },
+    ],
+  },
   {
     targetUuids: ['cvna:nyse'],
     releasedDate: getUtcDate(2022, 2, 22),
@@ -308,6 +1032,100 @@ export const earnings: Earnings[] = [
         previousValue: 1.465 * BILLION,
         timeFrame: TimeFrame.yoy,
         unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['u:nyse'],
+    releasedDate: getUtcDate(2024, 2, 26),
+    documents: [
+      {
+        name: 'Shareholder Letter',
+        link: 'https://s26.q4cdn.com/977690160/files/doc_earnings/2023/q4/generic/2023_Q4-Shareholder-Letter_FINAL.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 609268 * MILLION,
+        previousValue: 450974 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 347686 * MILLION,
+        previousValue: 311046 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -258960 * MILLION,
+        previousValue: -273760 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -253985 * MILLION,
+        previousValue: -287754 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+    quotes: [
+      {
+        name: 'CEO',
+        contents:
+          'We delivered revenue of $544 million, within our guidance range of $540 to $550 million. This represents a 69% year-over-year increase, or 8% growth on a pro-forma basis.',
+      },
+    ],
+  },
+  {
+    targetUuids: ['u:nyse'],
+    releasedDate: getUtcDate(2023, 11, 9),
+    documents: [
+      {
+        name: 'Shareholder Letter',
+        link: 'https://s26.q4cdn.com/977690160/files/doc_earnings/2023/q3/generic/2023_Q3-Shareholder-Letter_FINAL.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 544.21 * MILLION,
+        previousValue: 322.881 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 392.861 * MILLION,
+        previousValue: 210.978 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -127.398 * MILLION,
+        previousValue: -239.626 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -125.31 * MILLION,
+        previousValue: -250.021 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+    quotes: [
+      {
+        name: 'CEO',
+        contents:
+          'We delivered revenue of $544 million, within our guidance range of $540 to $550 million. This represents a 69% year-over-year increase, or 8% growth on a pro-forma basis.',
       },
     ],
   },
@@ -1977,7 +2795,46 @@ export const earnings: Earnings[] = [
       },
     ],
   },
-
+  {
+    targetUuids: ['box:nyse'],
+    releasedDate: getUtcDate(2023, 12, 5),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://www.box.com/press/press-release/box-announces-third-quarter-fiscal-2023-financial-results',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 261.537 * MILLION,
+        previousValue: 249.951 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 192.31 * MILLION,
+        previousValue: 185.461 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 11.379 * MILLION,
+        previousValue: 13.366 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 10.656 * MILLION,
+        previousValue: 9.908 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
   {
     targetUuids: ['afrm:nasdaq'],
     releasedDate: getUtcDate(2024, 2, 8),
@@ -2181,6 +3038,112 @@ export const earnings: Earnings[] = [
     ],
   },
   {
+    targetUuids: ['jwn:nyse'],
+    releasedDate: getUtcDate(2023, 11, 21),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investor.nordstrom.com/news-releases/news-release-details/nordstrom-reports-third-quarter-2023-earnings',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 3.32 * BILLION,
+        previousValue: 3.546 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 67 * MILLION,
+        previousValue: -20 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['chpt:nasdaq'],
+    releasedDate: getUtcDate(2023, 11, 16),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://s22.q4cdn.com/779683160/files/doc_financials/2024/q3/CHPT-8-K-ER-FY2024-Q3-EX-99-1.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 110.283 * MILLION,
+        previousValue: 125.341 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: -23.946 * MILLION,
+        previousValue: 22.681 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -153.767 * MILLION,
+        previousValue: -83.278 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -158.219 * MILLION,
+        previousValue: -84.48 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['axon:nasdaq'],
+    releasedDate: getUtcDate(2024, 2, 27),
+    documents: [
+      {
+        name: 'Shareholder Letter',
+        link: 'https://filecache.investorroom.com/mr5ir_axon/425/AXON_Q4_2023_ShareholderLetter.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 432.142 * MILLION,
+        previousValue: 336.142 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 263.887 * MILLION,
+        previousValue: 205.679 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 42.809 * MILLION,
+        previousValue: 22.541 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 57.271 * MILLION,
+        previousValue: 29.175 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
     targetUuids: ['spot'],
     releasedDate: getUtcDate(2024, 2, 6),
     data: [
@@ -2262,7 +3225,7 @@ export const earnings: Earnings[] = [
     ],
   },
   {
-    targetUuids: ['pltr'],
+    targetUuids: ['pltr:nyse'],
     releasedDate: getUtcDate(2024, 2, 6),
     data: [
       {
@@ -2579,6 +3542,10 @@ export const earnings: Earnings[] = [
     targetUuids: ['now:nyse'],
     releasedDate: getUtcDate(2024, 1, 24),
     documents: [
+      {
+        name: 'Presentation',
+        link: 'https://www.servicenow.com/content/dam/servicenow/other-documents/investor-relations/investor-presentations/servicenow-q4-2023-investor-presentation.pdf',
+      },
       {
         name: 'Press Release',
         link: 'https://www.servicenow.com/company/media/press-room/fourth-quarter-full-year-2023-financial-results.html',

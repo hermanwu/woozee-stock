@@ -9,8 +9,9 @@ export enum TagType {
   Valuation = 'Valuation',
   Profitability = 'Profitability',
   InvestorFriendliness = 'Investor Friendliness',
-  Bullish = 'Bullish',
-  Bearish = 'Bearish',
+  Moat = 'Moat',
+  Trend = 'Trend',
+  Earnings = 'Earnings',
 }
 
 export interface Tag {
@@ -33,11 +34,13 @@ export const mockTags: Tag[] = [
     uuid: 'online-gambling',
     type: TagType.Industry,
     displayName: 'Online Gambling',
+    sentiment: 1,
   },
   {
     uuid: 'proprietary-data',
-    type: TagType.Industry,
+    type: TagType.Moat,
     displayName: 'Proprietary Data',
+    sentiment: 1,
   },
   {
     uuid: 'spatial-computing',
@@ -46,37 +49,64 @@ export const mockTags: Tag[] = [
   },
   {
     uuid: 'crypto',
-    type: TagType.Industry,
+    type: TagType.Trend,
     displayName: 'Crypto',
+    sentiment: 10,
+    votes: 5,
   },
   {
     uuid: 'bad-earnings',
-    type: TagType.Bearish,
-    displayName: '👎 Earnings',
+    type: TagType.Earnings,
+    displayName: 'Earnings 👎',
     sentiment: -1,
-  },
-  {
-    uuid: 'worse-earnings',
-    type: TagType.Bearish,
-    displayName: '👎👎 Earnings',
-  },
-  {
-    uuid: 'worst-earnings',
-    type: TagType.Bearish,
-    displayName: '👎👎👎 Earnings',
-  },
-  {
-    uuid: 'better-earnings',
-    type: TagType.Bullish,
-    displayName: '👍👍 Earnings',
-    color: 'lime',
     votes: 100,
   },
   {
-    uuid: 'good-earnings',
-    type: TagType.Bullish,
-    displayName: '👍 Earnings',
+    uuid: 'weapons',
+    type: TagType.Industry,
+    displayName: 'Weapons',
+    sentiment: 1,
+    votes: 1,
+  },
+  {
+    uuid: 'no-differentiation',
+    type: TagType.Moat,
+    sentiment: -1,
+    votes: 10,
+    displayName: 'No Differentiation',
+  },
+  {
+    uuid: 'cybersecurity',
+    type: TagType.Trend,
+    displayName: 'Cybersecurity',
+    sentiment: 1,
+  },
+  {
+    uuid: 'live-sports',
+    type: TagType.Trend,
+    displayName: 'Live Sports',
+    sentiment: 1,
+    votes: 3,
+  },
+  {
+    uuid: 'travel',
+    type: TagType.Trend,
+    displayName: 'Travel',
+    sentiment: 1,
     votes: 5,
+  },
+  {
+    uuid: 'good-earnings',
+    type: TagType.Earnings,
+    displayName: 'Earnings 👍 ',
+    votes: 5,
+    sentiment: 1,
+  },
+  {
+    uuid: 'magnificent-7',
+    type: TagType.Group,
+    displayName: 'Magnificent 7',
+    sentiment: 0,
   },
   {
     uuid: 'share-buyback',
@@ -128,7 +158,11 @@ export const mockTags: Tag[] = [
     type: TagType.Profitability,
     displayName: '10% Net Margin',
   },
-
+  {
+    uuid: 'semiconductor',
+    type: TagType.Industry,
+    displayName: '⚡ Semiconductor',
+  },
   {
     uuid: 'boa-herman',
     type: TagType.Portfolio,
@@ -187,10 +221,23 @@ export const mockTags: Tag[] = [
   {
     uuid: 'gen-ai',
     type: TagType.Industry,
-    displayName: 'Generative AI',
+    sentiment: 1,
+    votes: 10,
+    displayName: '🤖 Generative AI',
+  },
+  {
+    uuid: 'weight-loss',
+    type: TagType.Trend,
+    sentiment: 1,
+    votes: 5,
+    displayName: 'Weight Loss',
   },
 ];
 
 export const getTagByUuid = (uuid: string): Tag => {
   return mockTags.find((tag) => tag.uuid === uuid);
+};
+
+export const getTagsByUuids = (uuids: string[]): Tag[] => {
+  return mockTags.filter((tag) => uuids.includes(tag.uuid));
 };

@@ -6,38 +6,77 @@
 
 <div>
   <span *ngFor="let item of tags">
-    <app-tag-display [tagUuid]="item.uuid"></app-tag-display>
+    <app-tag-display [tag]="item"></app-tag-display>
   </span>
+</div>
+
+<div class="mt-5">
+  <app-title-menu>
+    <div left-items class="inline-display">
+      <h1>Top Picks</h1>
+    </div>
+  </app-title-menu>
+
+  <mat-chip-list>
+    <mat-chip *ngFor="let item of tradables">
+      <app-tradable-display [tradable]="item"></app-tradable-display>
+    </mat-chip>
+  </mat-chip-list>
 </div>
 
 <div class="mt-5">
   <h1>Earnings To Watch</h1>
 
-  <div *ngFor="let item of events">
-    <app-date-display [date]="item.date"></app-date-display>:
-    <span class="mr-2" *ngFor="let stockUuid of item.targetUuids">
-      <app-tradable-display [tradableUuid]="stockUuid"></app-tradable-display>
-    </span>
+  <div class="mt-5" *ngFor="let item of dailyEvents">
+    <app-date-display
+      class="font-bold text-lg"
+      [date]="item.date"
+    ></app-date-display>
+
+    <mat-chip-list>
+      <ng-container *ngIf="item.beforeMarketOpen.length > 0">
+        <mat-chip *ngFor="let tradable of item.beforeMarketOpen">
+          <app-tradable-display [tradable]="tradable"></app-tradable-display> ☀️
+        </mat-chip>
+      </ng-container>
+
+      <ng-container *ngIf="item.afterMarketClose.length > 0">
+        <mat-chip *ngFor="let tradable of item.afterMarketClose">
+          <app-tradable-display [tradable]="tradable"></app-tradable-display> 🌙
+        </mat-chip>
+      </ng-container>
+    </mat-chip-list>
   </div>
+
+  <!-- <app-date-display [date]="item.date"></app-date-display>:
+
+    <mat-chip-list>
+      <mat-chip *ngFor="let stockUuid of item.targetUuids">
+        <app-tradable-display [tradableUuid]="stockUuid"></app-tradable-display>
+      </mat-chip>
+    </mat-chip-list> -->
 </div>
 
 <div class="mt-5">
   <h1>Popular Earnings Results</h1>
-  <div>
-    <span
+  <mat-chip-list>
+    <mat-chip
       class="mr-2"
-      *ngFor="let stockUuid of earnings[selectedEarningsIndex]?.targetUuids"
+      *ngFor="let item of earningsDisplays[selectedEarningsIndex]?.targets"
     >
-      <app-tradable-display [tradableUuid]="stockUuid"></app-tradable-display>
-    </span>
-  </div>
+      <app-tradable-display [tradable]="item"></app-tradable-display>
+    </mat-chip>
+  </mat-chip-list>
   <div>
     <app-earnings-display
-      [earnings]="earnings[selectedEarningsIndex]"
+      [earnings]="earningsDisplays[selectedEarningsIndex].earnings"
     ></app-earnings-display>
   </div>
 
-  <div class="flex justify-end" *ngIf="earnings[selectedEarningsIndex]">
+  <div
+    class="flex justify-center"
+    *ngIf="earningsDisplays[selectedEarningsIndex]"
+  >
     <button
       type="button"
       (click)="selectedEarningsIndex = selectedEarningsIndex + 1"
@@ -52,7 +91,7 @@
   <h1>Top Notes</h1>
 </div>
 
-<div>
+<div class="mb-5">
   <mat-chip-list *ngIf="notes[selectedNoteIndex]">
     <mat-chip *ngFor="let item of notes[selectedNoteIndex].targetUuids">
       <app-entity-display [entityUuid]="item"></app-entity-display>
@@ -63,7 +102,7 @@
     <app-note-container [note]="notes[selectedNoteIndex]"></app-note-container>
   </div>
 
-  <div class="flex justify-end" *ngIf="notes[selectedNoteIndex]">
+  <div class="flex justify-center" *ngIf="notes[selectedNoteIndex]">
     <button
       type="button"
       (click)="selectedNoteIndex = selectedNoteIndex + 1"

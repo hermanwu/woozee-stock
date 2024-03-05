@@ -20,9 +20,7 @@ export class UserServices {
 
   constructor() {
     const interactions = userInteractions.filter(
-      (interaction) =>
-        interaction.userUuid === this.currentUser.userUuid &&
-        interaction.listUuids?.length > 0
+      (interaction) => interaction.userUuid === this.currentUser.userUuid
     );
 
     for (let interaction of interactions) {

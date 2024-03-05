@@ -314,6 +314,13 @@ export const mockProducts: Product[] = [
     parentIds: ['E-commerce'],
   },
   {
+    uuid: 'loitering-munition-systems',
+    name: 'Loitering Munition Systems',
+    images: [
+      'https://i.ibb.co/nBV3RTH/Screenshot-2024-03-04-at-3-06-35-PM.png',
+    ],
+  },
+  {
     name: 'Amazon Web Services (AWS)',
     rootCompanyId: 'amzn',
     parentIds: ['Cloud Computing'],
@@ -340,6 +347,14 @@ export const mockProducts: Product[] = [
     name: 'ChatGPT',
     rootCompanyId: 'openai',
     description: 'A chatbot that uses GPT-3 / GPT-4 to generate responses',
+  },
+  {
+    uuid: 'gaming',
+    name: 'Gaming',
+  },
+  {
+    uuid: 'vr-ar',
+    name: 'VR/AR',
   },
   {
     uuid: 'github-copilot',

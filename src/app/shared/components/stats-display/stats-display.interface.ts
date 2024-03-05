@@ -20,6 +20,12 @@ export enum StatsCategory {
   revenue = 'Revenue',
 }
 
+export interface PriceRange {
+  low: number;
+  high: number;
+  average: number;
+}
+
 export interface Stats {
   statues?: [string, number][];
 

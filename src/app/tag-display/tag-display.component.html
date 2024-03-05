@@ -1,7 +1,7 @@
 <ng-container *ngIf="tag; else uuidOnly">
   <!-- <span *ngIf="tag.sentiment < 0">✅❗</span> -->
 
-  <ng-container [ngSwitch]="tag.type">
+  <!-- <ng-container [ngSwitch]="tag.type">
     <ng-container *ngSwitchCase="'Bullish'">
       <span
         class="ml-2 bg-green-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
@@ -54,18 +54,15 @@
       >
         <span> {{ tag.displayName }}</span>
       </span>
-    </ng-container>
+    </ng-container> -->
 
-    <ng-container *ngSwitchDefault>
-      <span
-        class="ml-2 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
-        (click)="navigate(tag.uuid)"
-        [ngClass]="getTagColor(tag)"
-      >
-        <span>{{ tag.displayName }}</span>
-      </span>
-    </ng-container>
-  </ng-container>
+  <span
+    class="ml-2 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+    (click)="navigate(tag.uuid)"
+    [ngClass]="getTagColor(tag)"
+  >
+    <span>{{ tag.displayName }}</span>
+  </span>
 </ng-container>
 
 <ng-template #uuidOnly>

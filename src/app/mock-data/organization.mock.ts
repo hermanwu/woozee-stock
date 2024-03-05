@@ -25,6 +25,18 @@ export const organizations: Organization[] = [
     logoLink: 'https://i.ibb.co/3v3zHJk/ANET.png',
   },
   {
+    uuid: 'unity',
+    displayName: 'Unity',
+    ticker: 'u',
+  },
+  {
+    uuid: 'wday',
+    displayName: 'Workday',
+    ticker: 'wday',
+    largeLogoLink:
+      'https://upload.wikimedia.org/wikipedia/commons/3/3b/Workday_Logo.png',
+  },
+  {
     displayName: 'Robinhood',
     uuid: 'hood',
     logoLink:
@@ -106,6 +118,11 @@ export const organizations: Organization[] = [
     uuid: 'nvda',
     displayName: 'Nvidia',
     ticker: 'nvda',
+  },
+  {
+    uuid: 'avav',
+    displayName: 'AeroVironment',
+    ticker: 'avav',
   },
   {
     uuid: 'lulu',
@@ -231,6 +248,13 @@ export const organizations: Organization[] = [
     uuid: 'goldmansachs',
     displayName: 'Goldman Sachs',
     logoLink: 'https://i.ibb.co/SXprQts/Goldman-Sachs-svg.png',
+  },
+  {
+    uuid: 'zm',
+    displayName: 'Zoom',
+    ticker: 'zm',
+    largeLogoLink:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Zoom_Logo_2022.svg/1920px-Zoom_Logo_2022.svg.png',
   },
 
   {

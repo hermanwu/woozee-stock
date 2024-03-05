@@ -48,6 +48,13 @@ export interface Sentiment {
 export class InteractionServices {
   constructor() {}
 
+  getTopTradableInteractions() {
+    return userInteractions
+      .filter((interaction) => interaction.type === 'tradableItem')
+      .sort((a, b) => (b.vote || 0) - (a.vote || 0))
+      .slice(0, 10);
+  }
+
   getInteractionTargets(
     interactions: UserInteractions[]
   ): [any[], Organization[], Product[], Person[]] {

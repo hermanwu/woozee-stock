@@ -8,7 +8,7 @@
 
     <span *ngIf="item.tradableItem; else stockTickerDisplay">
       <app-tradable-display
-        [tradableUuid]="item.tradableItem?.uuid"
+        [tradable]="item.tradableItem"
       ></app-tradable-display>
 
       <app-interaction-bar

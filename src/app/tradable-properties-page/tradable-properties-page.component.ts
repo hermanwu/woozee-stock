@@ -3,12 +3,14 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { UserServices } from '../accounts/services/user.services';
 import { getEarningsByTargetUuid } from '../mock-data/earnings.mock';
+import { getPriceRangeByTradableUuid } from '../mock-data/mocks/price-range.mock';
 import {
   getTradableItemsByUuids,
   Tradable,
 } from '../mock-data/mocks/tradables.mock';
 import { getOrganizationsByUuids } from '../mock-data/organization.mock';
 import { NotesServices } from '../news/services/notes.services';
+import { PriceRange } from '../shared/components/stats-display/stats-display.interface';
 
 @Component({
   selector: 'app-tradable-properties-page',
@@ -24,6 +26,7 @@ export class TradablePropertiesPageComponent implements OnInit {
   earnings;
   organizations;
   notes;
+  priceRange: PriceRange;
 
   constructor(
     private route: ActivatedRoute,
@@ -47,6 +50,8 @@ export class TradablePropertiesPageComponent implements OnInit {
       this.notes = this.notesServices
         .getNotesByTargets([quoteUuid])
         .slice(0, 5);
+
+      this.priceRange = getPriceRangeByTradableUuid(quoteUuid);
     });
   }
 

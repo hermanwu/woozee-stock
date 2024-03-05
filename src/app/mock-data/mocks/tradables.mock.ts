@@ -1,8 +1,12 @@
 export const getTradableItemsByUuids = (uuids): any[] => {
-  const lowerCases = uuids.map((uuid) => uuid.toLowerCase());
-  return tradable.filter((tradable) =>
-    lowerCases.includes(tradable.uuid.toLowerCase())
-  );
+  const tradableMap = new Map();
+  for (let item of tradable) {
+    tradableMap.set(item.uuid.toLowerCase(), item);
+  }
+
+  return uuids
+    .map((uuid) => tradableMap.get(uuid.toLowerCase()))
+    .filter((item) => item !== undefined);
 };
 
 export const getTradableItemByOrganizationUuid = (
@@ -24,6 +28,87 @@ export class Tradable {
 }
 
 export const tradable = [
+  {
+    uuid: 'ROST:NASDAQ',
+    displayName: 'Ross Stores Inc',
+    ticker: 'ROST',
+    organizationUuid: 'rost',
+    irAddress: 'https://investors.rossstores.com/',
+  },
+  {
+    uuid: 'CHPT:NASDAQ',
+    displayName: 'ChargePoint Holdings Inc',
+    ticker: 'CHPT',
+    organizationUuid: 'chpt',
+    irAddress: 'https://investors.chargepoint.com/overview/default.aspx',
+  },
+  {
+    uuid: 'NIO:NYSE',
+    displayName: 'NIO Inc',
+    ticker: 'NIO',
+    organizationUuid: 'nio',
+    logoLink: 'https://i.ibb.co/j3ZmyNB/nio-600.png',
+    irAddress: 'https://ir.nio.com/financials/quarterly-results',
+    largeLogoLink: 'https://i.ibb.co/cwnXtjn/NIO-BIG.png',
+  },
+  {
+    uuid: 'AVAV:NASDAQ',
+    displayName: 'AeroVironment Inc',
+    ticker: 'AVAV',
+    organizationUuid: 'avav',
+    irAddress: 'https://investor.avinc.com/',
+    logoLink: 'https://companieslogo.com/img/orig/AVAV_BIG-17003aa3.png',
+  },
+  {
+    uuid: 'GTLB:NASDAQ',
+    displayName: 'GitLab Inc',
+    ticker: 'GTLB',
+    organizationUuid: 'gtlb',
+    irAddress: 'https://ir.gitlab.com/',
+  },
+  {
+    uuid: 'CNQ:NYSE',
+    displayName: 'Canadian Natural Resources Ltd',
+    ticker: 'CNQ',
+    organizationUuid: 'cnq',
+  },
+  {
+    uuid: 'CRON:NASDAQ',
+    displayName: 'Cronos Group Inc',
+    ticker: 'CRON',
+    organizationUuid: 'cron',
+  },
+  {
+    uuid: 'BBWI:NASDAQ',
+    displayName: 'Bath & Body Works Inc',
+    ticker: 'BBWI',
+    organizationUuid: 'bbwi',
+  },
+  {
+    uuid: 'MLCO:NASDAQ',
+    displayName: 'Melco Resorts & Entertainment Ltd',
+    ticker: 'MLCO',
+    organizationUuid: 'mlco',
+  },
+  {
+    uuid: 'FSR:NYSE',
+    displayName: 'Fisker Inc',
+    ticker: 'FSR',
+    organizationUuid: 'fsr',
+  },
+  {
+    uuid: 'AXON:NASDAQ',
+    displayName: 'Axon Enterprise Inc',
+    ticker: 'AXON',
+    organizationUuid: 'axon',
+    irAddress: 'https://investor.axon.com/',
+  },
+  {
+    uuid: 'VEEV:NYSE',
+    displayName: 'Veeva Systems Inc',
+    ticker: 'VEEV',
+    organizationUuid: 'veev',
+  },
   {
     uuid: 'EXPE:NASDAQ',
     displayName: 'Expedia Group Inc',
@@ -48,6 +133,44 @@ export const tradable = [
     largeLogoLink: 'https://i.ibb.co/DW2VKb5/PINS-BIG.png',
   },
   {
+    ticker: 'CHPT',
+    uuid: 'CHPT:NASDAQ',
+    displayName: 'ChargePoint Holdings Inc',
+    organizationUuid: 'chpt',
+    irAddress: 'https://ir.chargepoint.com/',
+  },
+  {
+    uuid: 'JWN:NYSE',
+    displayName: 'Nordstrom Inc',
+    ticker: 'JWN',
+    organizationUuid: 'jwn',
+    irAddress: 'https://investor.nordstrom.com/',
+  },
+  {
+    uuid: 'NVEI:NASDAQ',
+    displayName: 'NVEI',
+    ticker: 'NVEI',
+    organizationUuid: 'nvei',
+  },
+  {
+    uuid: 'IOT:NYSE',
+    displayName: 'Samsara Inc',
+    ticker: 'IOT',
+    organizationUuid: 'iot',
+  },
+  {
+    uuid: 'FL:NYSE',
+    displayName: 'Foot Locker Inc',
+    ticker: 'FL',
+    organizationUuid: 'fl',
+  },
+  {
+    uuid: 'GAP:NYSE',
+    displayName: 'Gap Inc',
+    ticker: 'GAP',
+    organizationUuid: 'gap',
+  },
+  {
     ticker: 'TSM',
     uuid: 'TSM:NYSE',
     displayName: 'Taiwan Semiconductor Manufacturing Company Ltd',
@@ -60,6 +183,12 @@ export const tradable = [
     displayName: 'ServiceNow Inc',
     organizationUuid: 'now',
     irAddress: 'https://www.servicenow.com/company/investor-relations.html',
+  },
+  {
+    uuid: 'AEO:NYSE',
+    displayName: 'American Eagle Outfitters Inc',
+    ticker: 'AEO',
+    organizationUuid: 'aeo',
   },
   {
     ticker: 'PANW',
@@ -98,9 +227,10 @@ export const tradable = [
   {
     ticker: 'TSM',
     uuid: 'TSM:NYSE',
-    displayName: 'Taiwan Semiconductor Manufacturing Company Ltd',
+    displayName: 'Taiwan Semiconductor Mfg. Co. Ltd.',
     organizationUuid: 'tsm',
   },
+
   {
     uuid: 'HOOD:NASDAQ',
     displayName: 'Robinhood Markets Inc',
@@ -174,6 +304,14 @@ export const tradable = [
     logoLink:
       'https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/legal-info/logo-brand-usage/_jcr_content/root/responsivegrid/nv_container_392921705/nv_container/nv_image.coreimg.100.850.png/1703060329053/nvidia-logo-vert.png',
   },
+
+  {
+    uuid: 'BOX:NYSE',
+    displayName: 'Box Inc',
+    ticker: 'BOX',
+    organizationUuid: 'box',
+    irAddress: 'https://www.boxinvestorrelations.com/',
+  },
   {
     uuid: 'AAPL:NASDAQ',
     displayName: 'Apple Inc',
@@ -197,6 +335,8 @@ export const tradable = [
     ticker: 'CRWD',
     organizationUuid: 'crwd',
     irAddress: 'https://ir.crowdstrike.com/',
+    logoLink: 'https://i.ibb.co/VTQgVXD/download.jpg',
+    largeLogoLink: 'https://i.ibb.co/D7dS9sS/Dzws42r-X0-AAWJgd.jpg',
   },
   {
     uuid: 'ANET:NYSE',
@@ -294,6 +434,7 @@ export const tradable = [
     displayName: 'Zscaler Inc',
     ticker: 'ZS',
     organizationUuid: 'zs',
+    irAddress: 'https://ir.zscaler.com/',
   },
   {
     uuid: 'LLY:NYSE',
@@ -319,6 +460,8 @@ export const tradable = [
     displayName: 'Salesforce Inc',
     ticker: 'CRM',
     organizationUuid: 'crm',
+    logoLink: 'https://i.ibb.co/SvT0ptr/CRM.png',
+    irAddress: 'https://investor.salesforce.com/overview/default.aspx',
   },
   {
     uuid: 'LEN:NYSE',
@@ -366,6 +509,16 @@ export const tradable = [
     logoLink: 'https://i.ibb.co/XVGJwF6/Oav-Did-Hn-400x400.jpg',
   },
   {
+    uuid: 'AVGO:NASDAQ',
+    displayName: 'Broadcom Inc',
+    ticker: 'AVGO',
+    organizationUuid: 'avgo',
+    irAddress: 'https://investors.broadcom.com/',
+    logoLink: 'https://i.ibb.co/8s1CB31/AVGO.png',
+    largeLogoLink: 'https://i.ibb.co/qg5CjJt/AVGO-BIG.png',
+  },
+
+  {
     uuid: 'RIVN:NASDAQ',
     displayName: 'Rivian Automotive Inc',
     ticker: 'RIVN',
@@ -406,6 +559,12 @@ export const tradable = [
     organizationUuid: 'bili',
   },
   {
+    uuid: 'LULU:NASDAQ',
+    displayName: 'Lululemon Athletica Inc',
+    ticker: 'LULU',
+    organizationUuid: 'lulu',
+  },
+  {
     uuid: 'LUV:NYSE',
     displayName: 'Southwest Airlines Co',
     ticker: 'LUV',
@@ -438,7 +597,7 @@ export const tradable = [
     organizationUuid: 'low',
   },
   {
-    uuid: 'AAP:NASDAQ',
+    uuid: 'AAP:NYSE',
     displayName: 'Advance Auto Parts Inc',
     ticker: 'AAP',
     organizationUuid: 'aap',
@@ -448,12 +607,28 @@ export const tradable = [
     displayName: 'C3.ai Inc',
     ticker: 'AI',
     organizationUuid: 'ai',
+    irAddress: 'https://ir.c3.ai/',
   },
   {
-    uuid: 'estc:NYSE',
+    uuid: 'NVO:NYSE',
+    displayName: 'Novo Nordisk A/S',
+    ticker: 'NVO',
+    organizationUuid: 'nvo',
+  },
+  {
+    uuid: 'VKTX:NASDAQ',
+    displayName: 'Viking Therapeutics Inc',
+    ticker: 'VKTX',
+    organizationUuid: 'vktx',
+  },
+  {
+    uuid: 'ESTC:NYSE',
     displayName: 'Elastic NV',
-    ticker: 'estc',
-    organizationUuid: 'estc',
+    ticker: 'ESTC',
+    organizationUuid: 'ESTC',
+    irAddress: 'https://ir.elastic.co/',
+    largeLogoLink: 'https://companieslogo.com/img/orig/ESTC_BIG-69f72e11.png',
+    logoLink: 'https://companieslogo.com/img/orig/ESTC-4d81ee09.png',
   },
   {
     uuid: 'celh:NASDAQ',
@@ -466,6 +641,14 @@ export const tradable = [
     displayName: 'Autodesk Inc',
     ticker: 'ADSK',
     organizationUuid: 'adsk',
+    irAddress: 'https://investors.autodesk.com/',
+  },
+  {
+    uuid: 'DELL:NYSE',
+    displayName: 'Dell Technologies Inc',
+    ticker: 'DELL',
+    organizationUuid: 'dell',
+    irAddress: 'https://investor.delltechnologies.com/',
   },
   {
     uuid: 'BUD:NYSE',
@@ -490,6 +673,10 @@ export const tradable = [
     displayName: 'Duolingo Inc',
     ticker: 'DUOL',
     organizationUuid: 'duol',
+    irAddress: 'https://investors.duolingo.com/',
+    logoLink:
+      'https://companieslogo.com/img/orig/DUOL-5baebe62.png?t=1660638203&download=true',
+    largeLogoLink: 'https://companieslogo.com/img/orig/DUOL_BIG-d5832a76.png',
   },
   {
     uuid: 'PLUG:NASDAQ',
@@ -502,6 +689,8 @@ export const tradable = [
     displayName: 'fuboTV Inc',
     ticker: 'FUBO',
     organizationUuid: 'fubo',
+    irAddress: 'https://ir.fubo.tv/',
+    logoLink: 'https://i.ibb.co/QHRxtVX/Cs31g-GCh-400x400.png',
   },
   {
     uuid: 'TJX:NYSE',
@@ -514,6 +703,9 @@ export const tradable = [
     displayName: 'Okta Inc',
     ticker: 'OKTA',
     organizationUuid: 'okta',
+    logoLink: 'https://i.ibb.co/hFPG1rG/OKTA.png',
+    largeLogoLink: 'https://i.ibb.co/RTC7vFJ/OKTA-BIG.png',
+    irAddress: 'https://investor.okta.com/',
   },
   {
     uuid: 'BIDU:NASDAQ',
@@ -550,6 +742,7 @@ export const tradable = [
     displayName: 'Workday Inc',
     ticker: 'WDAY',
     organizationUuid: 'wday',
+    irAddress: 'https://investor.workday.com/',
   },
   {
     uuid: 'AMT:NYSE',
@@ -631,6 +824,7 @@ export const tradable = [
     displayName: 'DocuSign Inc',
     ticker: 'DOCU',
     organizationUuid: 'docu',
+    irAddrees: 'https://investor.docusign.com/',
   },
   {
     uuid: 'ENPH:NASDAQ',
@@ -651,10 +845,25 @@ export const tradable = [
     organizationUuid: 'ionq',
   },
   {
+    uuid: 'FL:NYSE',
+    displayName: 'Foot Locker Inc',
+    ticker: 'FL',
+    organizationUuid: 'fl',
+    irAddress: 'https://investors.footlocker-inc.com/',
+  },
+  {
+    uuid: 'ANF:NYSE',
+    displayName: 'Abercrombie & Fitch Co',
+    ticker: 'ANF',
+    organizationUuid: 'anf',
+    irAddress: 'https://corporate.abercrombie.com/investors',
+  },
+  {
     uuid: 'JD:NASDAQ',
     displayName: 'JD.com Inc',
     ticker: 'JD',
     organizationUuid: 'jd',
+    irAddress: 'https://ir.jd.com/',
   },
   {
     uuid: 'LABU:NASDAQ',
@@ -667,6 +876,28 @@ export const tradable = [
     displayName: 'Li Auto Inc',
     ticker: 'LI',
     organizationUuid: 'li',
+    irAddress: 'https://ir.lixiang.com/',
+  },
+  {
+    uuid: 'EVgo:NASDAQ',
+    displayName: 'EVgo Inc',
+    ticker: 'EVgo',
+    organizationUuid: 'evgo',
+    irAddress: 'https://investors.evgo.com/',
+  },
+  {
+    uuid: 'TPVG:NYSE',
+    displayName: 'TriplePoint Venture Growth BDC Corp',
+    ticker: 'TPVG',
+    organizationUuid: 'tpvg',
+    irAddress: 'https://ir.tpvg.com/',
+  },
+  {
+    uuid: 'KR:NYSE',
+    displayName: 'The Kroger Co',
+    ticker: 'KR',
+    organizationUuid: 'kr',
+    irAddress: 'https://ir.kroger.com/',
   },
   {
     uuid: 'LMND:NYSE',
@@ -734,6 +965,9 @@ export const tradable = [
     displayName: 'Snowflake Inc',
     ticker: 'SNOW',
     organizationUuid: 'snow',
+    logoLink: 'https://i.ibb.co/jJ4wn7f/42ab-Mq-B6-400x400.jpg',
+    largeLogoLink: 'https://i.ibb.co/y45BwVJ/SNOW-BIG.png',
+    irAddress: 'https://investors.snowflake.com/',
   },
   {
     uuid: 'TDOC:NYSE',
@@ -759,6 +993,8 @@ export const tradable = [
     displayName: 'Unity Software Inc',
     ticker: 'U',
     organizationUuid: 'unity',
+    irAddress: 'https://investors.unity.com/overview/default.aspx',
+    logoLink: 'https://i.ibb.co/MVzDdH3/Vv-SVu-Ym-I-400x400.jpg',
   },
   {
     uuid: 'UPST:NASDAQ',
@@ -782,7 +1018,8 @@ export const tradable = [
     uuid: 'ZM:NASDAQ',
     displayName: 'Zoom Video Communications Inc',
     ticker: 'ZM',
-    organizationUuid: 'zoom',
+    organizationUuid: 'zm',
+    irAddress: 'https://investors.zoom.us/',
   },
   {
     uuid: 'XPEV:NYSE',
@@ -822,6 +1059,13 @@ export const tradable = [
     ticker: 'SNPS',
     organizationUuid: 'snps',
     irAddress: 'https://investor.synopsys.com/',
+  },
+  {
+    uuid: 'MRVL:NASDAQ',
+    displayName: 'Marvell Technology Inc',
+    ticker: 'MRVL',
+    organizationUuid: 'mrvl',
+    irAddress: 'https://investor.marvell.com/',
   },
   {
     uuid: 'MRNA:NASDAQ',

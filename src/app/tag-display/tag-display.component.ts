@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { getTagByUuid, Tag } from '../shared/data/tag.model';
+import { Tag } from '../shared/data/tag.model';
 import { NavigationServices } from '../shared/services/navgiation.services';
 
 @Component({
@@ -8,19 +8,11 @@ import { NavigationServices } from '../shared/services/navgiation.services';
   styleUrls: ['./tag-display.component.scss'],
 })
 export class TagDisplayComponent implements OnInit {
-  @Input() tagUuid: string;
-
-  tag: Tag;
+  @Input() tag: Tag;
 
   constructor(private navigationServices: NavigationServices) {}
 
   ngOnInit(): void {}
-
-  ngOnChanges() {
-    if (this.tagUuid) {
-      this.tag = getTagByUuid(this.tagUuid);
-    }
-  }
 
   navigate(tagUuid: string) {
     // if (environment.production) {
@@ -31,6 +23,10 @@ export class TagDisplayComponent implements OnInit {
   }
 
   getTagColor(tag) {
-    return 'bg-' + (tag?.color || 'blue') + '-500';
+    return (
+      'bg-' +
+      (tag?.sentiment > 0 ? 'green' : tag?.sentiment < 0 ? 'red' : 'gray') +
+      '-500'
+    );
   }
 }

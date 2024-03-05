@@ -3,10 +3,10 @@
 </h1>
 
 <div *ngIf="tradableItems?.length > 0" class="mt-2">
-  <h2>Stocks and ETF</h2>
+  <h2>Stocks and ETFs</h2>
   <div *ngFor="let item of tradableItems; let i = index">
     {{ i + 1 }}
-    <app-tradable-display [tradableUuid]="item.uuid"></app-tradable-display>
+    <app-tradable-display [tradable]="item"></app-tradable-display>
     <app-interaction-bar
       [interactions]="uuidToInteractionMap.get(item.uuid)"
     ></app-interaction-bar>

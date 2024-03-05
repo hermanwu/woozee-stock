@@ -1,3 +1,4 @@
-<span *ngIf="tradable" (click)="navigate()">
+<span *ngIf="tradable; else tradableUuidDisplay" (click)="navigate()">
   {{ tradable.displayName }} - {{ tradable.ticker }}
 </span>
+<ng-template #tradableUuidDisplay>{{ tradableUuid | uppercase }}</ng-template>

@@ -14,7 +14,6 @@ import { bynd } from './bynd';
 import { chwy } from './CHWY';
 import { CLOV } from './CLOV';
 import { cost } from './cost';
-import { crm } from './crm';
 import { csco } from './csco.mock';
 import { cxm } from './cxm.mock';
 import { dbx } from './dbx';
@@ -49,7 +48,6 @@ import { noc } from './noc';
 import { ntdoy } from './ntdoy';
 import { nvax } from './nvax';
 import { ob } from './ob';
-import { okta } from './OKTA';
 import { open } from './open';
 import { orcl } from './orcl';
 import { oxy } from './oxy';
@@ -70,7 +68,6 @@ import { SKLZ } from './SKLZ';
 import { snap } from './snap';
 import { snow } from './snow';
 import { sofi } from './sofi';
-import { SPLK } from './SPLK';
 import { STEM } from './STEM';
 import { swks } from './swks';
 import { techy } from './TCEHY';
@@ -90,8 +87,6 @@ import { wish } from './wish';
 import { wix } from './wix';
 import { xpev } from './XPEV';
 import { you } from './you';
-import { z } from './Z.mock';
-import { zm } from './zm';
 
 export const stocksMap = {
   adbe,
@@ -107,7 +102,6 @@ export const stocksMap = {
   blde,
   bynd,
   CLOV,
-  crm,
   docu,
   DUOL,
   EA,
@@ -133,7 +127,6 @@ export const stocksMap = {
   ntdoy,
   nvax,
   ob,
-  okta,
   open,
   orcl,
   PENN,
@@ -150,7 +143,6 @@ export const stocksMap = {
   snap,
   snow,
   sofi,
-  SPLK,
   STEM,
   swks,
   tdoc,
@@ -169,8 +161,6 @@ export const stocksMap = {
   wix,
   xpev,
   you,
-  z,
-  zm,
   ftnt,
   dbx,
   mttr,

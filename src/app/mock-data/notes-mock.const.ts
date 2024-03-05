@@ -19,6 +19,14 @@ export const allNotes: (Opinion | Fact)[] = [
   {
     uuid: 'd2ccfe52-d753-4b14-g87d-8939baf1d68d',
     noteType: NoteType.Opinion,
+    targetUuids: ['snow:nyse'],
+    createdDate: getUtcDate(2024, 2, 28),
+    creatorUuid: 'herman.wrt@gmail.com',
+    content: 'CEO Slottman stepped down. ',
+  },
+  {
+    uuid: 'd2ccfe52-d753-4b14-g87d-8939baf1d68d',
+    noteType: NoteType.Opinion,
     targetUuids: ['smci:nasdaq'],
     createdDate: getUtcDate(2024, 2, 20),
     creatorUuid: 'herman.wrt@gmail.com',

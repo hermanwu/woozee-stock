@@ -21,6 +21,26 @@ export const relationships = [
   },
   {
     uuid: 'b9d83991-d90b-44f2-8268-5af4efbbe26t',
+    startNodeUuid: 'unity',
+    startNodeType: 'organization',
+    endNodeUuid: 'vr-ar',
+    endNodeType: 'product',
+  },
+  {
+    startNodeUuid: 'avav',
+    startNodeType: 'organization',
+    endNodeUuid: 'loitering-munition-systems',
+    endNodeType: 'product',
+  },
+  {
+    uuid: 'b9d83991-d90b-44f2-8268-5af4efbbe26t',
+    startNodeUuid: 'unity',
+    startNodeType: 'organization',
+    endNodeUuid: 'gaming',
+    endNodeType: 'product',
+  },
+  {
+    uuid: 'b9d83991-d90b-44f2-8268-5af4efbbe26t',
     startNodeUuid: 'anet',
     startNodeType: 'organization',
     endNodeUuid: 'ai-networking',

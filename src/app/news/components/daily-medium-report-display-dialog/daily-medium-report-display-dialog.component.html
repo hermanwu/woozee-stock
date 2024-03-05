@@ -1,27 +1,7 @@
-<!-- <div class="index-display">
-  <div>
-    S&P 500
-    <app-price-display [price]="sp500Stats"></app-price-display>
-  </div>
-
-  <div>
-    Nasdaq Composite
-    <app-price-display [price]="nasdaqStats"></app-price-display>
-  </div>
-</div> -->
-
 <app-title-menu>
   <div header-2>Macro</div>
 </app-title-menu>
-<div>
-  🔶
-  <!-- <b
-    >S&P 500 <app-price-display [price]="sp500Stats"></app-price-display>
-    Nasdaq
-    <app-price-display [price]="nasdaqStats"></app-price-display
-  ></b> -->
-  ➡️ {{ overviewNews?.[0]?.title }}
-</div>
+<div>🔶 ➡️ {{ overviewNews?.[0]?.title }}</div>
 <div *ngFor="let news of macroNews">
   <app-stock-image-display [tag]="news?.tags?.[0]"></app-stock-image-display>
   🔶 <b>{{news.tags?.[0] | tagdisplay}}</b> ➡️ {{ news.title }}

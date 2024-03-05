@@ -31,9 +31,7 @@
 
     <span *ngIf="tradableItem">
       Stock:
-      <app-tradable-display
-        [tradableUuid]="tradableItem?.uuid"
-      ></app-tradable-display>
+      <app-tradable-display [tradable]="tradableItem"></app-tradable-display>
     </span>
   </div>
 

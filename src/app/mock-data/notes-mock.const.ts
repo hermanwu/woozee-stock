@@ -17,6 +17,37 @@ export const getNotesByTagUuid = (tagUuid: string) => {
 
 export const allNotes: (Opinion | Fact)[] = [
   {
+    uuid: 'c2ccfe52-d753-4b14-g87d-8939baf1d68d',
+    targetUuids: ['mdb:nasdaq'],
+    noteType: NoteType.Opinion,
+    createdDate: getUtcDate(2024, 3, 8),
+    creatorUuid: 'herman.wrt@gmail.com',
+    content: 'Margin is not improving and growth is slowing down.',
+  },
+  {
+    uuid: 'c2ccfe52-d753-4b14-g87d-8939baf1d68d',
+    targetUuids: ['pltr:nyse'],
+    noteType: NoteType.Fact,
+    createdDate: getUtcDate(2024, 3, 6),
+    creatorUuid: 'herman.wrt@gmail.com',
+    links: [
+      {
+        link: 'https://investors.palantir.com/news-details/2024/Army-Selects-Palantir-to-Deliver-TITAN-Next-Generation-Deep-Sensing-Capability-in-Prototype-Maturation-Phase/',
+      },
+    ],
+    content:
+      'Palantir Technologies Inc. (NYSE: PLTR) today announced that the Army Contracting Command – Aberdeen Proving Ground (ACC-APG) has awarded Palantir USG, Inc. — a wholly-owned subsidiary of Palantir Technologies Inc. — a prime agreement for the development and delivery of the Tactical Intelligence Targeting Access Node (TITAN) ground station system, the Army’s next-generation deep-sensing capability enabled by artificial intelligence and machine learning (AI/ML). The agreement, valued at $178.4 million, covers the development of 10 TITAN prototypes, including five Advanced and five Basic variants, as well as the integration of new critical technologies and the transition to fielding.    ',
+  },
+  {
+    uuid: 'c2ccfe52-d753-4b14-g87d-8939baf1d68d',
+    targetUuids: ['aapl:nasdaq'],
+    noteType: NoteType.Fact,
+    createdDate: getUtcDate(2024, 3, 5),
+    creatorUuid: 'herman.wrt@gmail.com',
+    content:
+      'Analyst firm Counterpoint Research said in a note Tuesday that iPhone sales in China dropped 24% in the period, as Apple faced stiff competition from local smartphone firms.',
+  },
+  {
     uuid: 'd2ccfe52-d753-4b14-g87d-8939baf1d68d',
     noteType: NoteType.Opinion,
     targetUuids: ['snow:nyse'],
@@ -128,6 +159,7 @@ export const allNotes: (Opinion | Fact)[] = [
       },
     ],
   },
+
   {
     uuid: 'b2ccfe52-d753-4b14-g87d-8939baf1d68d',
     noteType: NoteType.Fact,

@@ -27,7 +27,7 @@ export class EntityServices {
       };
     }
 
-    let stock = this.stockServices.getStockByUuid(cleanedEntityUuid);
+    let stock = this.stockServices.getOrganizationByUuid(cleanedEntityUuid);
 
     if (stock) {
       return {

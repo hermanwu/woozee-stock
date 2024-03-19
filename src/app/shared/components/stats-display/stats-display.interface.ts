@@ -14,7 +14,17 @@ export enum UnitType {
   dollar = 'dollar',
   rmb = 'rmb',
   euro = 'euro',
+  chf = 'CHF',
+  hk = 'HK$',
 }
+
+export const currencyToDollarConversionMap = {
+  dollar: 1,
+  rmb: 0.15,
+  euro: 1.19,
+  CHF: 1.06,
+  HK$: 0.13,
+};
 
 export enum StatsCategory {
   revenue = 'Revenue',
@@ -24,6 +34,7 @@ export interface PriceRange {
   low: number;
   high: number;
   average: number;
+  updatedDate?: string;
 }
 
 export interface Stats {

@@ -1,4 +1,6 @@
-<span> ${{ priceRange?.low }} </span>
+<span> ${{ priceRange?.low | number : "1.2-2" }} </span>
 <span>—</span>
-<span> ${{ priceRange?.high }} </span>
-<span *ngIf="priceRange?.average">(${{ priceRange.average }} Avg.) </span>
+<span> ${{ priceRange?.high | number : "1.2-2" }} </span>
+<span *ngIf="priceRange?.average"
+  >(${{ priceRange.average | number : "1.2-2" }} Avg.)
+</span>

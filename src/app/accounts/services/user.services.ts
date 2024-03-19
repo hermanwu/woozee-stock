@@ -24,7 +24,10 @@ export class UserServices {
     );
 
     for (let interaction of interactions) {
-      this.entityUuidToInteraction.set(interaction.targetUuid, interaction);
+      this.entityUuidToInteraction.set(
+        interaction.targetUuid.toLowerCase(),
+        interaction
+      );
 
       if (interaction.type === 'tradableItem') {
         this.userTradableItemsSet.add(interaction.targetUuid);

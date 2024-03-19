@@ -14,3 +14,15 @@ export interface Industry {
   rank?: number;
   logoLink?: string;
 }
+
+export const getIndustriesByUuids = (uuids: string[]): any[] => {
+  return industries.filter((industry) => uuids.includes(industry.uuid));
+};
+
+export const industries = [
+  {
+    name: 'music streaming',
+    uuid: 'music-streaming',
+    type: 'industry',
+  },
+];

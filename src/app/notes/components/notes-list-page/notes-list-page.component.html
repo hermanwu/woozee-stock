@@ -1,55 +1,81 @@
-<div class="mt-10">
-  <h1>Ideas</h1>
+<div class="mt-20">
+  <h1>Ranks</h1>
 </div>
 
-<div class="mt-10" *ngFor="let item of displayItems; let i = index">
-  <h2>
-    {{ i + 1 }}.
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label> Stocks and ETFs </ng-template>
 
-    <span *ngIf="item.tradableItem; else stockTickerDisplay">
-      <app-tradable-display
-        [tradable]="item.tradableItem"
-      ></app-tradable-display>
+    <div class="mt-5" *ngFor="let item of displayItems; let i = index">
+      <h2>
+        {{ i + 1 }}.
 
-      <app-interaction-bar
-        [interactions]="targetUuidToInteractionMap.get(item.tradableItem?.uuid)"
-      ></app-interaction-bar>
-    </span>
-    <ng-template #stockTickerDisplay>
-      <span style="text-transform: uppercase">{{
-        item.organizations[0]?.ticker
-      }}</span>
-    </ng-template>
-  </h2>
+        <span *ngIf="item.tradableItem; else stockTickerDisplay">
+          <app-tradable-display
+            [tradable]="item.tradableItem"
+          ></app-tradable-display>
 
-  <!-- <div class="mt-2" *ngIf="item.organizations.length > 0">
-    <div *ngFor="let org of item.organizations">
-      <app-stock-display [tagUuid]="org?.uuid"></app-stock-display>
+          <app-interaction-bar
+            [interactions]="
+              targetUuidToInteractionMap.get(
+                item.tradableItem?.uuid.toLowerCase()
+              )
+            "
+          ></app-interaction-bar>
+        </span>
+        <ng-template #stockTickerDisplay>
+          <span style="text-transform: uppercase">{{
+            item.organizations[0]?.ticker
+          }}</span>
+        </ng-template>
+      </h2>
 
-      <app-interaction-bar
-        [interactions]="targetUuidToInteractionMap.get(org?.uuid)"
-      ></app-interaction-bar>
+      <!-- <div class="mt-2" *ngIf="item.organizations.length > 0">
+        <div *ngFor="let org of item.organizations">
+          <app-stock-display [tagUuid]="org?.uuid"></app-stock-display>
+
+          <app-interaction-bar
+            [interactions]="targetUuidToInteractionMap.get(org?.uuid)"
+          ></app-interaction-bar>
+        </div>
+      </div> -->
+
+      <div class="mt-5" *ngIf="stockUuidToPersonMap.get(stockUuid)">
+        <div *ngFor="let person of stockUuidToPersonMap.get(stockUuid)">
+          <span class="inline-flex">
+            <mat-chip-list>
+              <mat-chip (click)="navigateToPersonPage(person.uuid)">
+                {{ person.displayName }}
+              </mat-chip>
+            </mat-chip-list>
+          </span>
+
+          <span>
+            <app-interaction-bar
+              [interactions]="targetUuidToInteractionMap.get(person.uuid)"
+            ></app-interaction-bar>
+          </span>
+        </div>
+      </div>
     </div>
-  </div> -->
+  </mat-tab>
 
-  <div class="mt-5" *ngIf="stockUuidToPersonMap.get(stockUuid)">
-    <div *ngFor="let person of stockUuidToPersonMap.get(stockUuid)">
-      <span class="inline-flex">
-        <mat-chip-list>
-          <mat-chip (click)="navigateToPersonPage(person.uuid)">
-            {{ person.displayName }}
-          </mat-chip>
-        </mat-chip-list>
-      </span>
+  <mat-tab>
+    <ng-template mat-tab-label> Tags </ng-template>
 
-      <span>
-        <app-interaction-bar
-          [interactions]="targetUuidToInteractionMap.get(person.uuid)"
-        ></app-interaction-bar>
-      </span>
+    <div class="mt-5" *ngFor="let tag of tags; let i = index">
+      <div>
+        {{ i + 1 }}.
+        <app-tag-display [tag]="tag"></app-tag-display>
+
+        <span *ngIf="tag?.votes && tag?.votes !== 0">
+          {{ tag.votes > 0 ? emojiUnicode.thumbUp : emojiUnicode.thumbDown }}
+          {{ tag?.votes }}
+        </span>
+      </div>
     </div>
-  </div>
-</div>
+  </mat-tab>
+</mat-tab-group>
 
 <button mat-icon-button class="float-button" (click)="addNote()">
   <mat-icon>edit_square</mat-icon>

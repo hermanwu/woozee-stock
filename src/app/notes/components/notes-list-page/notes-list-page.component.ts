@@ -8,6 +8,8 @@ import {
 import { getOrganizationsByUuids } from 'src/app/mock-data/organization.mock';
 import { Product } from 'src/app/mock-data/product.mock';
 import { NotesServices } from 'src/app/news/services/notes.services';
+import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
+import { getAllTags } from 'src/app/shared/data/tag.model';
 import { NavigationServices } from 'src/app/shared/services/navgiation.services';
 import { StockServices } from 'src/app/stock/services/stock.service';
 import { InteractionServices } from 'src/interactions/interaction.services';
@@ -21,9 +23,6 @@ import { AddNoteFormComponent } from '../add-note-form/add-note-form.component';
 })
 export class NotesListPageComponent implements OnInit {
   showAddNotesSection = false;
-  neutralNotes = [];
-  bullishNotes = [];
-  bearishNotes = [];
 
   interactions = [];
   stockUuidToStockMap = new Map<string, any>();
@@ -35,6 +34,7 @@ export class NotesListPageComponent implements OnInit {
 
   stockUuids = [];
   userUuid;
+  tags = [];
 
   /**
    * {
@@ -51,6 +51,7 @@ export class NotesListPageComponent implements OnInit {
   organizations = [];
   products = [];
   people = [];
+  emojiUnicode = EmojiUnicode;
 
   constructor(
     private userServices: UserServices,
@@ -67,11 +68,16 @@ export class NotesListPageComponent implements OnInit {
   ngOnInit(): void {
     this.processAllInteractions();
 
+    this.tags = getAllTags().sort((a, b) => {
+      return (b.votes || 0) - (a.votes || 0);
+    });
+
     this.displayItems = Array.from(this.displayItemMap.values())
       .map((item) => {
         const { tradableItem, organizations, people, products } = item;
         const tradableItemVotes =
-          this.targetUuidToInteractionMap.get(tradableItem?.uuid)?.vote || 0;
+          this.targetUuidToInteractionMap.get(tradableItem?.uuid.toLowerCase())
+            ?.vote || 0;
         const organizationVotes = organizations.reduce((acc, organization) => {
           return (
             acc +
@@ -173,12 +179,12 @@ export class NotesListPageComponent implements OnInit {
   addStock(organizationUuid) {
     if (
       !this.stockUuidToStockMap.has(organizationUuid) &&
-      this.stockServices.getStockByUuid(organizationUuid)
+      this.stockServices.getOrganizationByUuid(organizationUuid)
     ) {
       this.stockUuids.push(organizationUuid);
       this.stockUuidToStockMap.set(
         organizationUuid,
-        this.stockServices.getStockByUuid(organizationUuid)
+        this.stockServices.getOrganizationByUuid(organizationUuid)
       );
     }
   }

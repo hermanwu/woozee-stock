@@ -4,7 +4,46 @@ export const getRelationshipsByStartNodeUuid = (uuid: string) => {
   );
 };
 
-export const relationships = [
+export const getCompetitorsByTradableUuid = (uuid: string) => {
+  uuid = uuid.toLowerCase();
+  const competitorRelationships = relationships.filter(
+    (relationship) =>
+      (relationship.startNodeUuid.toLowerCase() === uuid ||
+        relationship.endNodeUuid.toLowerCase() === uuid) &&
+      relationship.relationship === 'competitor'
+  );
+  const resultUuids = new Set();
+  competitorRelationships.forEach((relationship) => {
+    if (relationship.startNodeUuid === uuid) {
+      resultUuids.add(relationship.endNodeUuid);
+    } else {
+      resultUuids.add(relationship.startNodeUuid);
+    }
+  });
+  return Array.from(resultUuids);
+};
+
+export const getIndustriesByOrganizationUuid = (uuid: string) => {
+  return relationships
+    .filter(
+      (relationship) =>
+        relationship.startNodeUuid === uuid &&
+        relationship.endNodeType === 'industry'
+    )
+    .map((relationship) => relationship.endNodeUuid);
+};
+
+export class Relationship {
+  uuid?: string;
+  startNodeUuid: string;
+  startNodeType: string;
+  endNodeUuid: string;
+  endNodeType: string;
+  relationship?: string;
+  directionDescriptions?: string[];
+}
+
+export const relationships: Relationship[] = [
   {
     uuid: 'a9d83991-d90b-44f2-8268-5af4efbbe26t',
     startNodeUuid: 'abnb',
@@ -18,6 +57,13 @@ export const relationships = [
     startNodeType: 'organization',
     endNodeUuid: 'eda',
     endNodeType: 'product',
+  },
+  {
+    startNodeUuid: 'orcl:nyse',
+    startNodeType: 'tradable',
+    endNodeUuid: 'msft:nasdaq',
+    endNodeType: 'tradable',
+    relationship: 'competitor',
   },
   {
     uuid: 'b9d83991-d90b-44f2-8268-5af4efbbe26t',
@@ -45,6 +91,13 @@ export const relationships = [
     startNodeType: 'organization',
     endNodeUuid: 'ai-networking',
     endNodeType: 'product',
+  },
+  {
+    uuid: 'b9d83991-d90b-44f2-8268-5af4efbbe26t',
+    startNodeUuid: 'tme',
+    startNodeType: 'organization',
+    endNodeUuid: 'music-streaming',
+    endNodeType: 'industry',
   },
   {
     uuid: 'c9d83991-d90b-44f2-8268-5af4efbbe26t',

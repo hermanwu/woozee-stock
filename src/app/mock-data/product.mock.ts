@@ -9,6 +9,7 @@ export class Product {
   siblingIds?: string[];
   parentCompany?: string;
   rootCompanyId?: string;
+  type?: string;
 }
 
 export const getProductsByProductUuids = (productUuids: string[]) => {
@@ -61,6 +62,55 @@ export const getAllParents = (products: Product[]) => {
 };
 
 export const mockProducts: Product[] = [
+  {
+    name: 'QQ Music',
+    uuid: 'qq-music',
+    rootCompanyId: 'tme',
+    description:
+      'a leading music streaming service in China, offering a comprehensive library of songs, albums, and curated playlists. It caters to diverse musical tastes and has features for music discovery, sharing, and listening.',
+  },
+  {
+    name: 'Kugou Music',
+    uuid: 'kugou-music',
+    rootCompanyId: 'tme',
+    description:
+      'Another popular music streaming service in China, Kugou Music boasts a large user base and provides a wide array of music options, including songs, music videos, and live streaming performances. It is known for its strong regional music offerings.',
+  },
+  {
+    name: 'Kuwo Music',
+    uuid: 'kuwo-music',
+    rootCompanyId: 'tme',
+    description:
+      'Similar to QQ Music and Kugou, Kuwo Music offers streaming services but is particularly known for its karaoke features and interactive music experiences. It also hosts music-related content, such as music videos and live performances.',
+  },
+  {
+    name: 'WeSing 全民K歌',
+    uuid: 'karaoke',
+    rootCompanyId: 'tme',
+    description:
+      "Tencent's online karaoke platform, WeSing, allows users to sing, record, and share their performances. It also enables users to interact with each other through song duets, challenges, and live streaming.",
+  },
+  {
+    name: 'Singularity Platform',
+    uuid: 'singularity-platform',
+    rootCompanyId: 's',
+    description:
+      'A unified, AI-powered cybersecurity platform offering real-time endpoint protection, detection, and response (EDR), and threat hunting.',
+  },
+  {
+    name: 'Singularity XDR',
+    uuid: 'singularity-xdr',
+    rootCompanyId: 's',
+    description:
+      'Extends EDR capabilities by aggregating data across multiple security layers for comprehensive threat detection and response.',
+  },
+  {
+    name: 'Singularity Ranger',
+    uuid: 'singularity-ranger',
+    rootCompanyId: 's',
+    description:
+      'A network detection tool that provides visibility into every device on the network, including IoT devices, for enhanced security management.',
+  },
   {
     name: 'Accommodations Booking',
     uuid: 'accommodations-booking',
@@ -139,6 +189,11 @@ export const mockProducts: Product[] = [
     ],
   },
   {
+    uuid: 'specialty-apparel',
+    name: 'specialty apparel',
+    rootCompanyId: 'gps',
+  },
+  {
     uuid: 'ip',
     name: 'Intellectual Property (IP)',
     description:
@@ -205,6 +260,11 @@ export const mockProducts: Product[] = [
     description:
       'A Visa debit card allowing users to spend cryptocurrencies for purchases and ATM withdrawals.',
     rootCompanyId: 'coin',
+  },
+  {
+    uuid: 'data-infrastructure-semiconductor-solutions',
+    name: 'data infrastructure semiconductor solutions',
+    rootCompanyId: 'mrvl',
   },
   {
     uuid: 'coinbase-commerce',
@@ -329,6 +389,27 @@ export const mockProducts: Product[] = [
     name: 'YouTube',
     rootCompanyId: 'googl',
     parentIds: ['Video Streaming Service'],
+  },
+  {
+    uuid: '80ce4b74-3fee-444c-9a0d-db3a23e24d9a',
+    name: 'Oracle Database',
+    description:
+      'A multi-model database management system widely used for online transaction processing, data warehousing, and mixed database workloads.',
+    rootCompanyId: 'orcl',
+  },
+  {
+    uuid: 'f7758fd9-98c1-4f20-a31c-ea40ecc98e4a',
+    name: 'Oracle Cloud Infrastructure (OCI)',
+    description:
+      'Provides a range of cloud services including computing, storage, networking, and database services to support various business needs.',
+    rootCompanyId: 'orcl',
+  },
+  {
+    uuid: 'a9d984c2-a079-47cc-8a6d-b8847c4600a5',
+    name: 'Oracle E-Business Suite',
+    description:
+      'A set of applications for managing business processes like financials, supply chain management, customer relationship management, and human resource management.',
+    rootCompanyId: 'orcl',
   },
   {
     uuid: 'network-switches',

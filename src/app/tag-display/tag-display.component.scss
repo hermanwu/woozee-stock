@@ -2,6 +2,13 @@
   color: blue;
   cursor: pointer;
 }
-span {
-  display: inline-block; /* or block */
+
+.negative-tag {
+  background-color: lightcoral;
+  color: whitesmoke;
+}
+
+.positive-tag {
+  background-color: lightgreen;
+  color: darkgreen;
 }

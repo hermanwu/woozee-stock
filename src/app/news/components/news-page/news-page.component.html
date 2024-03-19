@@ -1,13 +1,52 @@
-<app-title-menu>
-  <div left-items class="inline-display">
-    <h1>Trending</h1>
-  </div>
-</app-title-menu>
+<div class="mt-5">
+  <app-title-menu>
+    <div left-items class="inline-display">
+      <h1>Earnings To Watch</h1>
+    </div>
+  </app-title-menu>
 
-<div>
-  <span *ngFor="let item of tags">
-    <app-tag-display [tag]="item"></app-tag-display>
-  </span>
+  <div *ngFor="let item of dailyEvents">
+    <app-date-display
+      class="font-bold text-lg"
+      [date]="item.date"
+    ></app-date-display>
+
+    <mat-chip-list>
+      <ng-container *ngIf="item.beforeMarketOpen.length > 0">
+        <mat-chip *ngFor="let tradable of item.beforeMarketOpen">
+          <app-tradable-display [tradable]="tradable"></app-tradable-display>
+          ☀️
+        </mat-chip>
+      </ng-container>
+
+      <ng-container *ngIf="item.afterMarketClose.length > 0">
+        <mat-chip *ngFor="let tradable of item.afterMarketClose">
+          <app-tradable-display [tradable]="tradable"></app-tradable-display>
+          🌙
+        </mat-chip>
+      </ng-container>
+    </mat-chip-list>
+  </div>
+
+  <!-- <app-date-display [date]="item.date"></app-date-display>:
+
+    <mat-chip-list>
+      <mat-chip *ngFor="let stockUuid of item.targetUuids">
+        <app-tradable-display [tradableUuid]="stockUuid"></app-tradable-display>
+      </mat-chip>
+    </mat-chip-list> -->
+</div>
+
+<div class="mt-5">
+  <app-title-menu>
+    <div left-items class="inline-display">
+      <h1>Trending</h1>
+    </div>
+  </app-title-menu>
+
+  <mat-chip-list>
+    <app-tag-display *ngFor="let item of tags" [tag]="item"></app-tag-display>
+  </mat-chip-list>
 </div>
 
 <div class="mt-5">
@@ -25,41 +64,13 @@
 </div>
 
 <div class="mt-5">
-  <h1>Earnings To Watch</h1>
+  <app-title-menu>
+    <div left-items class="inline-display">
+      <h1>Popular Earnings Results</h1>
+    </div>
+  </app-title-menu>
 
-  <div class="mt-5" *ngFor="let item of dailyEvents">
-    <app-date-display
-      class="font-bold text-lg"
-      [date]="item.date"
-    ></app-date-display>
-
-    <mat-chip-list>
-      <ng-container *ngIf="item.beforeMarketOpen.length > 0">
-        <mat-chip *ngFor="let tradable of item.beforeMarketOpen">
-          <app-tradable-display [tradable]="tradable"></app-tradable-display> ☀️
-        </mat-chip>
-      </ng-container>
-
-      <ng-container *ngIf="item.afterMarketClose.length > 0">
-        <mat-chip *ngFor="let tradable of item.afterMarketClose">
-          <app-tradable-display [tradable]="tradable"></app-tradable-display> 🌙
-        </mat-chip>
-      </ng-container>
-    </mat-chip-list>
-  </div>
-
-  <!-- <app-date-display [date]="item.date"></app-date-display>:
-
-    <mat-chip-list>
-      <mat-chip *ngFor="let stockUuid of item.targetUuids">
-        <app-tradable-display [tradableUuid]="stockUuid"></app-tradable-display>
-      </mat-chip>
-    </mat-chip-list> -->
-</div>
-
-<div class="mt-5">
-  <h1>Popular Earnings Results</h1>
-  <mat-chip-list>
+  <mat-chip-list class="mt-5">
     <mat-chip
       class="mr-2"
       *ngFor="let item of earningsDisplays[selectedEarningsIndex]?.targets"
@@ -67,6 +78,7 @@
       <app-tradable-display [tradable]="item"></app-tradable-display>
     </mat-chip>
   </mat-chip-list>
+
   <div>
     <app-earnings-display
       [earnings]="earningsDisplays[selectedEarningsIndex].earnings"
@@ -87,9 +99,11 @@
   </div>
 </div>
 
-<div class="mt-5">
-  <h1>Top Notes</h1>
-</div>
+<app-title-menu>
+  <div left-items class="inline-display">
+    <h1>Top Notes</h1>
+  </div>
+</app-title-menu>
 
 <div class="mb-5">
   <mat-chip-list *ngIf="notes[selectedNoteIndex]">

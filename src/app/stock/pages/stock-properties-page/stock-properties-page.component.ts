@@ -12,6 +12,7 @@ import { getPeopleByPersonUuids } from 'src/app/mock-data/person.mock';
 import {
   getAllParents,
   getProductsByProductUuids,
+  getProductsByRootCompanyId,
 } from 'src/app/mock-data/product.mock';
 import { getRelationshipsByStartNodeUuid } from 'src/app/mock-data/relationship.mock';
 import { NotesServices } from 'src/app/news/services/notes.services';
@@ -22,6 +23,7 @@ import { Note } from 'src/app/shared/data/note.interface';
 import { NavigationServices } from 'src/app/shared/services/navgiation.services';
 import { environment } from 'src/environments/environment';
 import { InteractionServices } from 'src/interactions/interaction.services';
+import { getIndustriesByUuids } from '../../models/industry.model';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 import { StockServices } from '../../services/stock.service';
 
@@ -54,10 +56,12 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
 
   tradableItem;
 
+  brandedProducts = [];
   products = [];
   relatedProducts = [];
   people = [];
   partners = [];
+  industries = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -74,13 +78,17 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
     this.routeSub = this.route.params.subscribe((params) => {
       this.stockUuid = params[this.stockId].toLowerCase();
 
+      this.brandedProducts = getProductsByRootCompanyId(this.stockUuid);
+
       // Reset everything.
       this.imageLinks = [];
       this.mySentiment = null;
       this.myNotes = [];
       this.notes = [];
 
-      this.stockAnalysis = this.stockServices.getStockByUuid(this.stockUuid);
+      this.stockAnalysis = this.stockServices.getOrganizationByUuid(
+        this.stockUuid
+      );
       if (this.stockAnalysis) {
         this.titleService.setTitle(this.stockAnalysis.name);
         this.imageLinks.push(
@@ -105,11 +113,20 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         this.stockUuid
       );
 
+      console.log(relationships);
       this.products = getProductsByProductUuids(
         relationships
           .filter((r) => r.endNodeType === 'product')
           .map((r) => r.endNodeUuid)
       );
+
+      this.industries = getIndustriesByUuids(
+        relationships
+          .filter((r) => r.endNodeType === 'industry')
+          .map((r) => r.endNodeUuid)
+      );
+
+      console.log(this.industries);
 
       this.people = getPeopleByPersonUuids(
         relationships

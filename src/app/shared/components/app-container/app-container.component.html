@@ -1,22 +1,33 @@
 <mat-toolbar>
-  <span *ngIf="showSearchBar; else appName">
-    <app-search enableAutoFocus="'true'"> </app-search>
-  </span>
-  <ng-template #appName>
-    <div>
+  <div>
+    <a [routerLink]="['/news']">
       <span class="name">Invesdea</span>
-    </div>
-  </ng-template>
-
-  <button mat-icon-button (click)="searchIconClicked()">
-    <mat-icon>search</mat-icon>
-  </button>
+    </a>
+  </div>
 
   <span class="spacer"></span>
 
   <!-- <button *ngIf="!environment.production" mat-button (click)="updateLanguage()">
     <span>{{ language === "cn" ? "English" : "中文" }}</span>
   </button> -->
+
+  <span *ngIf="showSearchBar">
+    <span>
+      <app-search enableAutoFocus="'true'"> </app-search>
+    </span>
+  </span>
+
+  <button mat-icon-button (click)="searchIconClicked()">
+    <mat-icon>search</mat-icon>
+  </button>
+
+  <button
+    [routerLink]="['/me']"
+    *ngIf="!environment.production"
+    mat-icon-button
+  >
+    <mat-icon>swap_vert</mat-icon>
+  </button>
 
   <button mat-icon-button [matMenuTriggerFor]="accountMenu">
     <mat-icon>account_circle</mat-icon>
@@ -42,7 +53,11 @@
     </ng-template>
   </mat-menu>
 
-  <button mat-icon-button [matMenuTriggerFor]="menu">
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    *ngIf="!environment.production"
+  >
     <mat-icon>menu</mat-icon>
   </button>
 

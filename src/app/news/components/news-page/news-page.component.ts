@@ -56,7 +56,7 @@ export class NewsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.notes = this.newsService.getAllNews().slice(0, 10);
-    this.tags = this.tagServices.getTopTags();
+    this.tags = this.tagServices.getTrendTags();
     const interactions = this.interactionServices.getTopTradableInteractions();
     this.tradables = getTradableItemsByUuids(
       interactions.map((i) => i.targetUuid)

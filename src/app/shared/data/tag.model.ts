@@ -1,18 +1,14 @@
 export enum TagType {
   People = 'People',
-  Organization = 'Organization',
-  Industry = 'Industry',
-  Group = 'Group',
-  PriceTarget = 'Price Target',
-  Portfolio = 'Portfolio',
-  Growth = 'Growth',
-  Valuation = 'Valuation',
-  Profitability = 'Profitability',
-  InvestorFriendliness = 'Investor Friendliness',
-  Moat = 'Moat',
   Trend = 'Trend',
-  Earnings = 'Earnings',
+  Business = 'Business',
+  Fundamental = 'Fundamental',
+  Technical = 'Technical',
 }
+
+export const getAllTags = () => {
+  return mockTags;
+};
 
 export interface Tag {
   uuid: string;
@@ -32,19 +28,25 @@ export interface Tag {
 export const mockTags: Tag[] = [
   {
     uuid: 'online-gambling',
-    type: TagType.Industry,
+    type: TagType.Trend,
     displayName: 'Online Gambling',
     sentiment: 1,
   },
   {
+    displayName: 'High Switching Costs',
+    uuid: 'high-switching-costs',
+    type: TagType.Business,
+    votes: 1,
+  },
+  {
     uuid: 'proprietary-data',
-    type: TagType.Moat,
+    type: TagType.Business,
     displayName: 'Proprietary Data',
     sentiment: 1,
   },
   {
     uuid: 'spatial-computing',
-    type: TagType.Industry,
+    type: TagType.Trend,
     displayName: 'Spatial Computing',
   },
   {
@@ -52,27 +54,39 @@ export const mockTags: Tag[] = [
     type: TagType.Trend,
     displayName: 'Crypto',
     sentiment: 10,
-    votes: 5,
+    votes: 80,
   },
   {
     uuid: 'bad-earnings',
-    type: TagType.Earnings,
-    displayName: 'Earnings 👎',
+    type: TagType.Business,
+    displayName: 'Disappointed Earnings',
     sentiment: -1,
-    votes: 100,
+    votes: -10,
+  },
+  {
+    uuid: 'do-it-yourself',
+    type: TagType.Trend,
+    displayName: 'Do it Yourself',
+    votes: 1,
   },
   {
     uuid: 'weapons',
-    type: TagType.Industry,
+    type: TagType.Business,
     displayName: 'Weapons',
     sentiment: 1,
     votes: 1,
   },
   {
+    uuid: 'hyperscaler',
+    type: TagType.Trend,
+    displayName: 'Hyperscaler (Cloud Service Provider)',
+    votes: 30,
+  },
+  {
     uuid: 'no-differentiation',
-    type: TagType.Moat,
+    type: TagType.Business,
     sentiment: -1,
-    votes: 10,
+    votes: -5,
     displayName: 'No Differentiation',
   },
   {
@@ -80,6 +94,19 @@ export const mockTags: Tag[] = [
     type: TagType.Trend,
     displayName: 'Cybersecurity',
     sentiment: 1,
+  },
+  {
+    uuid: 'raised-guidance',
+    type: TagType.Business,
+    displayName: 'Raised Guidance',
+    sentiment: 1,
+  },
+  {
+    uuid: 'ev',
+    type: TagType.Trend,
+    displayName: 'EV',
+    sentiment: -1,
+    votes: -1,
   },
   {
     uuid: 'live-sports',
@@ -96,101 +123,70 @@ export const mockTags: Tag[] = [
     votes: 5,
   },
   {
+    uuid: 'cosmetics',
+    type: TagType.Trend,
+    displayName: 'Cosmetics',
+    votes: 1,
+  },
+  {
+    uuid: 'china',
+    type: TagType.Trend,
+    displayName: 'China',
+    votes: -1,
+  },
+  {
+    uuid: 'discounting store',
+    type: TagType.Trend,
+    displayName: 'Discounting Store',
+    votes: -1,
+  },
+  {
+    uuid: 'retail',
+    type: TagType.Trend,
+    displayName: 'Retail',
+    sentiment: 1,
+    votes: 0,
+  },
+  {
+    uuid: 'homebuilders',
+    type: TagType.Trend,
+    displayName: 'Homebuilders',
+    votes: 0,
+  },
+  {
+    uuid: 'ecommerce',
+    type: TagType.Trend,
+    displayName: 'Ecommerce',
+    sentiment: 1,
+    votes: 1,
+  },
+  {
     uuid: 'good-earnings',
-    type: TagType.Earnings,
-    displayName: 'Earnings 👍 ',
+    type: TagType.Business,
+    displayName: 'Impressive Earnings',
     votes: 5,
     sentiment: 1,
   },
   {
     uuid: 'magnificent-7',
-    type: TagType.Group,
+    type: TagType.Trend,
     displayName: 'Magnificent 7',
     sentiment: 0,
   },
   {
     uuid: 'share-buyback',
-    type: TagType.InvestorFriendliness,
+    type: TagType.Business,
     displayName: 'Share Buyback',
   },
   {
     uuid: 'dividend',
-    type: TagType.InvestorFriendliness,
+    type: TagType.Business,
     displayName: 'Dividend',
   },
   {
-    uuid: '40-operating-margin',
-    type: TagType.Profitability,
-    displayName: '40% Operating Margin',
-  },
-  {
-    uuid: '35-net-margin',
-    type: TagType.Profitability,
-    displayName: '35% Net Margin',
-  },
-  {
-    uuid: '20-growth',
-    type: TagType.Growth,
-    displayName: '20% Growth',
-  },
-  {
-    uuid: '25-growth',
-    type: TagType.Growth,
-    displayName: '25% Growth',
-  },
-  {
-    uuid: '10-growth',
-    type: TagType.Growth,
-    displayName: '10% Growth',
-  },
-  {
-    uuid: '20-margin',
-    type: TagType.Profitability,
-    displayName: '20% Net Margin',
-  },
-  {
-    uuid: '30-net-margin',
-    type: TagType.Profitability,
-    displayName: '30% Net Margin',
-  },
-  {
-    uuid: '10-margin',
-    type: TagType.Profitability,
-    displayName: '10% Net Margin',
-  },
-  {
     uuid: 'semiconductor',
-    type: TagType.Industry,
+    type: TagType.Trend,
     displayName: '⚡ Semiconductor',
-  },
-  {
-    uuid: 'boa-herman',
-    type: TagType.Portfolio,
-    displayName: 'Portfolio BOA',
-    color: 'gray',
-  },
-  {
-    uuid: 'citi-herman',
-    type: TagType.Portfolio,
-    displayName: 'High Potential ETFs',
-  },
-  {
-    uuid: 'interactive-broker',
-    type: TagType.Portfolio,
-    displayName: 'Portfolio IBKR',
-    color: 'gray',
-  },
-  {
-    uuid: 'jess-robinhood',
-    type: TagType.Portfolio,
-    displayName: 'Portfolio Large',
-    color: 'gray',
-  },
-  {
-    uuid: 'herman-robinhood',
-    type: TagType.Portfolio,
-    displayName: 'Portfolio Small',
-    color: 'gray',
   },
   {
     uuid: 'talented-employees',
@@ -199,31 +195,76 @@ export const mockTags: Tag[] = [
     color: 'purple',
   },
   {
-    uuid: '10x',
-    type: TagType.PriceTarget,
-    displayName: '10x',
-  },
-  {
     uuid: 'competitive-advantages',
-    type: TagType.Organization,
+    type: TagType.Business,
     displayName: 'Competitive Advantages',
   },
   {
     uuid: 'founder-led',
-    type: TagType.Organization,
+    type: TagType.Business,
     displayName: 'Founder Led',
   },
   {
     uuid: 'excellent-ceo',
-    type: TagType.Organization,
+    type: TagType.Business,
     displayName: 'Great CEO',
+  },
+
+  {
+    uuid: 'losing-money',
+    type: TagType.Business,
+    displayName: 'Losing Money',
+    votes: -1,
   },
   {
     uuid: 'gen-ai',
-    type: TagType.Industry,
+    type: TagType.Trend,
     sentiment: 1,
-    votes: 10,
-    displayName: '🤖 Generative AI',
+    votes: 99,
+    displayName: 'Generative AI 🤖 ',
+  },
+  {
+    uuid: 'accelerating-growth',
+    type: TagType.Business,
+    votes: 5,
+    displayName: 'Accelerating Growth',
+  },
+  {
+    uuid: 'datacenter',
+    type: TagType.Trend,
+    displayName: 'Datacenter',
+    votes: 40,
+  },
+  {
+    uuid: 'unpredictable',
+    type: TagType.Business,
+    votes: -1,
+    displayName: 'Unpredictable',
+  },
+  {
+    displayName: 'Regulatory Advantages',
+    uuid: 'regulatory-advantages',
+    type: TagType.Business,
+    votes: 1,
+  },
+
+  {
+    displayName: 'Network Effects',
+    uuid: 'network-effects',
+    type: TagType.Business,
+    votes: 1,
+  },
+  {
+    uuid: 'decelerating-growth',
+    type: TagType.Business,
+    votes: -5,
+    displayName: 'Decelerating Growth',
+  },
+  {
+    uuid: 'decreasing-revenue',
+    type: TagType.Business,
+    votes: -5,
+    displayName: 'Decreasing Revenue',
   },
   {
     uuid: 'weight-loss',

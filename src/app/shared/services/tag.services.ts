@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { userInteractions } from 'src/app/mock-data/interactions.mock';
-import { getTagByUuid, Tag, TagType } from '../data/tag.model';
+import { getTagByUuid, Tag } from '../data/tag.model';
 
 @Injectable({
   providedIn: 'root',
@@ -30,11 +30,10 @@ export class TagServices {
     }
   }
 
-  getTopTags() {
+  getTrendTags() {
     return Array.from(this.tags.values())
-      .filter((tag) => tag.type !== TagType.Portfolio)
-      .sort((a, b) => (b?.votes || 0) - (a?.votes || 0))
-      .slice(0, 10);
+      .filter((tag) => tag.type === 'Trend')
+      .sort((a, b) => (b?.votes || 0) - (a?.votes || 0));
   }
 
   formatTags(tags: string[]): string[] {

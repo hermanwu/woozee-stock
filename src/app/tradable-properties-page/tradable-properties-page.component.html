@@ -4,25 +4,41 @@
   </div>
 
   <h1>
-    <h1>{{ tradable?.displayName }} - ({{ tradable.ticker }})</h1>
+    <h1>{{ tradable?.displayName }} - {{ tradable.ticker.toUpperCase() }}</h1>
   </h1>
 </div>
 
 <div>
-  <app-interaction-bar
-    [interactions]="targetUuidToInteractionMap.get(tradable?.uuid)"
-  ></app-interaction-bar>
+  <app-interaction-bar [interactions]="interactions"></app-interaction-bar>
 </div>
 
 <div class="mt-2" *ngIf="priceRange">
-  Forecast & Price Target Range:
-  <app-price-display [priceRange]="priceRange"></app-price-display>
+  <ng-container *ngIf="!environment.production">
+    <span *ngIf="currentPrice"
+      >Last Price: {{ currentPrice | siUnit : 2 | undefined }}</span
+    >
+    <span class="ml-2" *ngIf="currentMarketCap"
+      >Market Cap: {{ currentMarketCap | siUnit : 2 | undefined }}</span
+    >
+  </ng-container>
+
+  <span class="ml-2"
+    >Forecast & Price Target Range:
+    <app-price-display [priceRange]="priceRange"></app-price-display
+  ></span>
 </div>
 
 <div class="mt-2" *ngIf="organizations?.length > 0">
   Organizations:
   <span *ngFor="let org of organizations">
     <app-stock-display [tagUuid]="org?.uuid"></app-stock-display>
+  </span>
+</div>
+
+<div class="mt-2" *ngIf="competitors?.length > 0">
+  Competitors:
+  <span *ngFor="let item of competitors">
+    <app-tradable-display [tradable]="item"></app-tradable-display>
   </span>
 </div>
 
@@ -39,7 +55,7 @@
         target="_blank"
         [href]="'https://www.google.com/finance/quote/' + tradable.uuid"
       >
-        google🔗
+        Google 🔗
       </a>
     </mat-chip>
 
@@ -47,23 +63,10 @@
       <a
         target="_blank"
         [href]="
-          'https://seekingalpha.com/symbol/' + tradable.uuid.split(':')[0]
+          'https://finance.yahoo.com/quote/' + tradable.uuid.split(':')[0]
         "
       >
-        seekingalpha.com🔗
-      </a>
-    </mat-chip>
-
-    <mat-chip>
-      <a
-        target="_blank"
-        [href]="
-          'https://www.tipranks.com/stocks/' +
-          tradable.uuid.split(':')[0] +
-          '/forecast'
-        "
-      >
-        tipranks.com🔗
+        Yahoo 🔗
       </a>
     </mat-chip>
 
@@ -76,7 +79,43 @@
           '&p=d'
         "
       >
-        finviz.com🔗
+        finviz 🔗
+      </a>
+    </mat-chip>
+    <mat-chip>
+      <a
+        target="_blank"
+        [href]="
+          'https://www.tipranks.com/stocks/' +
+          tradable.uuid.split(':')[0] +
+          '/forecast'
+        "
+      >
+        tipranks.com 🔗
+      </a>
+    </mat-chip>
+
+    <mat-chip>
+      <a
+        target="_blank"
+        [href]="
+          'https://www.reddit.com/r/wallstreetbets/search/?q=' +
+          tradable.uuid.split(':')[0] +
+          '&t=week'
+        "
+      >
+        Wallstreetbets 🔗
+      </a>
+    </mat-chip>
+
+    <mat-chip>
+      <a
+        target="_blank"
+        [href]="
+          'https://seekingalpha.com/symbol/' + tradable.uuid.split(':')[0]
+        "
+      >
+        seekingalpha.com 🔗
       </a>
     </mat-chip>
   </mat-chip-list>

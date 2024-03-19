@@ -50,6 +50,12 @@ export const organizations: Organization[] = [
     largeLogoLink: 'https://i.ibb.co/D7dS9sS/Dzws42r-X0-AAWJgd.jpg',
   },
   {
+    uuid: 'mrvl',
+    name: 'Marvell',
+    displayName: 'Marvell',
+    ticker: 'mrvl',
+  },
+  {
     uuid: 'zs',
     logoLink: 'https://i.ibb.co/4Z7wr0f/ZS.png',
     largeLogoLink: 'https://i.ibb.co/vVSzkFr/ZS-BIG.png',
@@ -69,8 +75,15 @@ export const organizations: Organization[] = [
     displayName: 'Oracle',
     logoLink: 'https://i.ibb.co/YDHyyPw/z11b-Dhy-400x400.jpg',
     largeLogoLink: 'https://i.ibb.co/xm4zSz9/ORCL-BIG.png',
+    website: 'https://www.oracle.com',
   },
-
+  {
+    uuid: 'asan',
+    displayName: 'Asana',
+    ticker: 'asan',
+    largeLogoLink: 'https://companieslogo.com/img/orig/ASAN_BIG-b201c207.png',
+    logoLink: 'https://companieslogo.com/img/orig/ASAN-1325de11.png',
+  },
   {
     displayName: 'MongoDB',
     uuid: 'mdb',
@@ -388,7 +401,8 @@ export const organizations: Organization[] = [
   {
     uuid: 'dltr',
     displayName: 'Dollar Tree',
-    logoLink: '',
+    largeLogoLink: 'https://companieslogo.com/img/orig/DLTR_BIG-205b5887.png',
+    logoLink: 'https://companieslogo.com/img/orig/DLTR-14624b8c.png',
   },
   {
     uuid: 'bby',
@@ -423,7 +437,8 @@ export const organizations: Organization[] = [
   {
     uuid: 'wsm',
     displayName: 'Williams Sonoma',
-    logoLink: '',
+    logoLink: 'https://companieslogo.com/img/orig/WSM-cbca8e30.png',
+    largeLogoLink: 'https://companieslogo.com/img/orig/WSM_BIG-b5248dee.png',
   },
   {
     uuid: 'dks',
@@ -468,6 +483,15 @@ export const organizations: Organization[] = [
     logoLink: '',
   },
   {
+    uuid: 's',
+    displayName: 'SentinelOne',
+    logoLink: 'https://companieslogo.com/img/orig/S-778d1d19.png',
+    largeLogoLink: 'https://companieslogo.com/img/orig/S_BIG-8883656a.png',
+    descriptions: [
+      'SentinelOne specializes in AI-driven cybersecurity, providing endpoint protection and real-time defense against cyber threats through innovative machine learning technologies.',
+    ],
+  },
+  {
     uuid: 'nasdaq',
     displayName: 'Nasdaq',
     logoLink: '',
@@ -493,8 +517,21 @@ export const organizations: Organization[] = [
     logoLink: '',
   },
   {
+    uuid: 'tme',
+    displayName: 'Tencent Music Entertainment Group',
+    logoLink: '',
+    descriptions: [
+      "Tencent Music Entertainment Group (TME) is a leading online music entertainment platform in China, operating popular services including QQ Music, Kugou Music, Kuwo Music, and WeSing. TME's platform encompasses music streaming, online karaoke, and live streaming, catering to a wide range of music preferences and interactive experiences. The company is a subsidiary of Tencent Holdings Limited, one of the largest internet companies in China.",
+    ],
+  },
+  {
     uuid: 'jwn',
     displayName: 'Nordstrom',
+    logoLink: '',
+  },
+  {
+    uuid: 'adbe',
+    displayName: 'Adobe',
     logoLink: '',
   },
   {

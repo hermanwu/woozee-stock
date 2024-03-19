@@ -5,7 +5,9 @@
 <ng-template #hasStock>
   <div class="head-section mb-2">
     <div class="logo-image">
-      <app-image-display [imageLink]="imageLinks[0]"></app-image-display>
+      <div class="image-item">
+        <app-image-display [imageLink]="imageLinks[0]"></app-image-display>
+      </div>
     </div>
 
     <h1>
@@ -15,6 +17,18 @@
         - {{ stockAnalysis.price | undefined }}</span
       >
     </h1>
+  </div>
+
+  <div>
+    <span *ngIf="stockAnalysis?.headquarters">
+      Headquartered in {{ stockAnalysis.headquarters }};
+    </span>
+
+    <span *ngIf="stockAnalysis?.descriptions?.length > 0">
+      <span *ngFor="let item of stockAnalysis.descriptions">
+        {{ item }}
+      </span>
+    </span>
   </div>
 
   <div>
@@ -32,19 +46,6 @@
     <span *ngIf="tradableItem">
       Stock:
       <app-tradable-display [tradable]="tradableItem"></app-tradable-display>
-    </span>
-  </div>
-
-  <div>
-    <span *ngIf="stockAnalysis?.headquarters">
-      Headquartered in {{ stockAnalysis.headquarters }}
-    </span>
-
-    <span *ngIf="stockAnalysis?.descriptions?.length > 0">
-      ,
-      <span *ngFor="let item of stockAnalysis.descriptions">
-        {{ item }}
-      </span>
     </span>
   </div>
 
@@ -71,10 +72,29 @@
     <app-people-display [peopleUuids]=""></app-people-display>
   </div>
 
-  <div *ngIf="products.length > 0" class="mt-4">
+  <div *ngIf="industries.length > 0">
+    <div class="mb-2">
+      <h2>Businesses & Industries</h2>
+    </div>
+
+    <span *ngFor="let item of industries">
+      {{ item.name }}
+    </span>
+  </div>
+
+  <div *ngIf="brandedProducts.length > 0 || products.length > 0" class="mt-4">
     <div class="mb-2">
       <h2>Products & Services</h2>
     </div>
+
+    <mat-chip-list>
+      <mat-chip
+        *ngFor="let item of brandedProducts"
+        (click)="navigateToProductPage(item.uuid)"
+      >
+        {{ item.name }}
+      </mat-chip>
+    </mat-chip-list>
 
     <mat-chip-list>
       <mat-chip

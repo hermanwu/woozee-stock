@@ -52,7 +52,7 @@ export class InteractionServices {
     return userInteractions
       .filter((interaction) => interaction.type === 'tradableItem')
       .sort((a, b) => (b.vote || 0) - (a.vote || 0))
-      .slice(0, 10);
+      .slice(0, 20);
   }
 
   getInteractionTargets(

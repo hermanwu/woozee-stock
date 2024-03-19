@@ -20,11 +20,9 @@
     </span>
   </ng-container>
 
-  <span *ngIf="interactions.listUuids">
-    <span *ngFor="let tag of tags">
-      <app-tag-display [tag]="tag"></app-tag-display>
-    </span>
-  </span>
+  <mat-chip-list>
+    <app-tag-display *ngFor="let tag of tags" [tag]="tag"></app-tag-display>
+  </mat-chip-list>
 </ng-container>
 
 <ng-container *ngIf="editing">

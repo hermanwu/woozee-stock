@@ -36,7 +36,7 @@ export class UiMoleculesComponent implements OnInit {
 
   ngOnInit(): void {
     for (let ticker of this.mockImages) {
-      const stock = this.stockServices.getStockByUuid(ticker);
+      const stock = this.stockServices.getOrganizationByUuid(ticker);
       if (stock) {
         this.imageLinks.push(stock.logoLink);
       }

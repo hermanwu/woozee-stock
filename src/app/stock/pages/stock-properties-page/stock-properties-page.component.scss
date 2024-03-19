@@ -32,25 +32,26 @@
 //   font-size: large;
 // }
 
-
-
-
-
 .head-section {
   display: flex;
   flex-direction: column;
 }
 
-
 .logo-image {
   // center image in the div
   // add margin top and bottom with 10px
-  margin: 10px auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   // set image height to 150px
-  height: 150px;
-}
 
+  .image-item {
+    max-height: 150px;
+    height: 150px;
+  }
+}
 
 .container {
   display: flex;

@@ -8,7 +8,7 @@
     {{ i + 1 }}
     <app-tradable-display [tradable]="item"></app-tradable-display>
     <app-interaction-bar
-      [interactions]="uuidToInteractionMap.get(item.uuid)"
+      [interactions]="uuidToInteractionMap.get(item.uuid?.toLowerCase())"
     ></app-interaction-bar>
   </div>
 </div>

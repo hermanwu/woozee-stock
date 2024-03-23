@@ -11,6 +11,7 @@ import { getTagsByUuids, Tag } from '../shared/data/tag.model';
 })
 export class InteractionBarComponent implements OnInit {
   @Input() interactions: UserInteractions;
+  @Input() displayTop3: boolean;
   tags: Tag[];
   displayOnly = true;
   editing = false;
@@ -25,8 +26,12 @@ export class InteractionBarComponent implements OnInit {
   ngOnChanges() {
     if (this.interactions && this.interactions.listUuids) {
       this.tags = getTagsByUuids(this.interactions.listUuids).sort(
-        (a, b) => (b.votes || 0) - (a.votes || 0)
+        (a, b) => Math.abs(b.votes) - Math.abs(a.votes)
       );
+
+      if (this.displayTop3 === true) {
+        this.tags = this.tags.slice(0, 3);
+      }
     }
   }
 }

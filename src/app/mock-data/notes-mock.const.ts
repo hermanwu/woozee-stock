@@ -2476,20 +2476,7 @@ export const allNotes: (Opinion | Fact)[] = [
     creatorUuid: 'bob.johnson@example.com',
     createdDate: '2023-04-20T23:29:15.411Z',
   },
-  {
-    title:
-      'Coinbase plans to launch an offshore exchange with a Bermuda license',
-    content:
-      'Without restricted U.S. regulation, Coinbase can offer more exotic crypto-related derivatives and be better poised to compete against companies like Binance.',
-    tagUuids: ['coin', 'crypto'],
-    uuid: '884a3c84-dcca-4793-a057-41434c5b121c',
-    noteType: 'opinion',
-    authorUuid: 'hwu1106@gmail.com',
-    creatorUuid: 'john.smith@example.com',
-    targetUuids: ['coin', 'crypto'],
-    createdDate: '2023-04-20T03:43:32.542Z',
-    emotions: ['Bullish'],
-  },
+
   {
     title:
       'Tesla Operating System will be able to continue reducing costs and improving margins.',

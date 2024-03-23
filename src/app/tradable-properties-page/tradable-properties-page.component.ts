@@ -146,13 +146,17 @@ export class TradablePropertiesPageComponent implements OnInit {
 
     const basePeRatio = 20;
     let highPossibleProfit =
-      ((grossProfit || operatingIncome) + operatingIncome) / 2;
+      ((grossProfit > 0 ? grossProfit : revenue / 2) +
+        (operatingIncome > 0 ? operatingIncome : revenue / 8)) /
+      2;
     let lowPossibleProfit =
       operatingIncome > 0
         ? operatingIncome
         : netIncome > 0
         ? netIncome
-        : grossProfit / 4;
+        : grossProfit > 0
+        ? grossProfit / 4
+        : revenue / 8;
     let highMultiple =
       revenueGrowthRatio > 1 ? (revenueGrowthRatio - 1) * 2 + 1 : 1;
 

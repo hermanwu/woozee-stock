@@ -95,6 +95,49 @@ export const prices = {
     price: 143.1,
     marketCap: 1.76 * TRILLION,
   },
+  'kbh:nyse': {
+    price: 68.23,
+    marketCap: 5.29 * BILLION,
+  },
+  'chwy:nyse': {
+    price: 16.69,
+    marketCap: 7.65 * BILLION,
+  },
+  'dash:nasdaq': {
+    price: 137.91,
+    marketCap: 55.38 * BILLION,
+  },
+  'nke:nyse': {
+    price: 100.27,
+    marketCap: 153.51 * BILLION,
+  },
+
+  'fdx:nyse': {
+    price: 259.99,
+    marketCap: 65.84 * BILLION,
+  },
+  'lulu:nasdaq': {
+    price: 394.29,
+    marketCap: 51.02 * BILLION,
+  },
+
+  'acn:nyse': {
+    price: 378.08,
+    marketCap: 252.5 * BILLION,
+  },
+
+  'dri:nyse': {
+    price: 174.09,
+    marketCap: 20.86 * BILLION,
+  },
+  'gps:nyse': {
+    price: 25.4,
+    marketCap: 9.88 * BILLION,
+  },
+  'gis:nyse': {
+    price: 67.74,
+    marketCap: 38.97 * BILLION,
+  },
   'aapl:nasdaq': {
     price: 147.1,
     marketCap: 2.46 * TRILLION,
@@ -163,9 +206,17 @@ export const prices = {
     price: 9.64,
     marketCap: 9.26 * BILLION,
   },
+  'orcl:nyse': {
+    price: 129.24,
+    marketCap: 354.59 * BILLION,
+  },
   'pdd:nasdaq': {
     price: 123.74,
     marketCap: 171.0 * BILLION,
+  },
+  'afrm:nasdaq': {
+    price: 37.51,
+    marketCap: 11.51 * BILLION,
   },
   'mdb:nasdaq': {
     price: 355.44,
@@ -174,6 +225,38 @@ export const prices = {
   'intu:nasdaq': {
     price: 625.52,
     marketCap: 176.5 * BILLION,
+  },
+  'wmt:nyse': {
+    price: 61.43,
+    marketCap: 495.17 * BILLION,
+  },
+  'abnb:nasdaq': {
+    price: 168.18,
+    marketCap: 108.82 * BILLION,
+  },
+  'kr:nyse': {
+    price: 57.03,
+    marketCap: 41.16 * BILLION,
+  },
+  'ttd:nasdaq': {
+    price: 85.06,
+    marketCap: 41.55 * BILLION,
+  },
+  'mrna:nasdaq': {
+    price: 104.09,
+    marketCap: 40.21 * BILLION,
+  },
+  'snow:nyse': {
+    price: 156.31,
+    marketCap: 51.73 * BILLION,
+  },
+  'len:nyse': {
+    price: 156.6,
+    marketCap: 43.86 * BILLION,
+  },
+  'mu:nasdaq': {
+    price: 93.78,
+    marketCap: 103.79 * BILLION,
   },
 };
 

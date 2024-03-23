@@ -146,12 +146,20 @@ export const organizations: Organization[] = [
     irAddress: 'https://corporate.lululemon.com/investors',
     largeLogoLink: 'https://i.ibb.co/6yZ4bR5/LULU-BIG.png',
   },
+
   {
     uuid: 'li',
     logoLink: 'https://i.ibb.co/YD47KMh/li-600.png',
     displayName: 'Li Auto',
     ticker: 'li',
     irAddress: 'https://ir.lixiang.com/',
+  },
+  {
+    uuid: 'baba',
+    displayName: 'Alibaba',
+    logoLink:
+      'https://i.ibb.co/PCs6DM8/316943607-10160101339785073-6829330401069941678-n.jpg',
+    ticker: 'baba',
   },
   {
     uuid: 'arm',
@@ -210,6 +218,16 @@ export const organizations: Organization[] = [
     irAddress: 'https://investors.caterpillar.com/overview/default.aspx',
   },
   {
+    uuid: 'chwy',
+    displayName: 'Chewy',
+    largeLogoLink: 'https://companieslogo.com/img/orig/CHWY_BIG-01a8d5d3.png',
+    logoLink: 'https://companieslogo.com/img/orig/CHWY-856b32d9.png',
+  },
+  {
+    uuid: 'app',
+    displayName: 'AppLovin',
+  },
+  {
     uuid: 'schw',
     displayName: 'Charles Schwab',
     logoLink: 'https://i.ibb.co/hgb2bmt/SCHW.png',
@@ -256,6 +274,15 @@ export const organizations: Organization[] = [
     displayName: 'Nvidia',
     logoLink:
       'https://i.ibb.co/zhWrySv/Screenshot-2023-02-23-at-8-38-05-PM.png',
+  },
+  {
+    uuid: 'acn',
+    displayName: 'Accenture',
+    largeLogoLink: 'https://companieslogo.com/img/orig/ACN_BIG-3a6289fb.png',
+    logoLink: 'https://companieslogo.com/img/orig/ACN-cce5b411.png',
+    descriptions: [
+      "Accenture is a global professional services company that specializes in IT services and consulting. Founded in 1989, it has grown to become one of the world's leading consulting firms, offering services in strategy, consulting, digital, technology, and operations. Accenture works across more than 40 industries, leveraging innovation to improve the way the world works and lives. The company aims to deliver on the promise of technology and human ingenuity, with a strong focus on digital transformation and the application of new technologies such as artificial intelligence, cloud computing, and blockchain.",
+    ],
   },
   {
     uuid: 'goldmansachs',
@@ -688,6 +715,21 @@ export const organizations: Organization[] = [
     displayName: 'Darden Restaurants',
     logoLink: 'https://i.imgur.com/57h8buf.png',
     largeLogoLink: 'https://i.imgur.com/MruHbxv.png',
+  },
+  {
+    uuid: 'xpev',
+    displayName: 'XPeng',
+    logoLink: 'https://i.ibb.co/3c2s1Vp/XPENG.png',
+  },
+  {
+    uuid: 'mu',
+    displayName: 'Micron',
+    logoLink: 'https://companieslogo.com/img/orig/MU-4d86a316.png',
+    largeLogoLink: 'https://companieslogo.com/img/orig/MU_BIG-92b24747.png',
+  },
+  {
+    uuid: 'gis',
+    displayName: 'General Mills',
   },
   {
     uuid: 'axp',

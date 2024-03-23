@@ -82,6 +82,478 @@ export const earnings: Earnings[] = [
     ],
   },
   {
+    targetUuids: ['kbh:nyse'],
+    releasedDate: getUtcDate(2024, 1, 20),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://s201.q4cdn.com/124745054/files/doc_financials/2023/q4/KB-Home-Reports-2023-Fourth-Quarter-and-Full-Year-Results-2024.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 1.673988 * BILLION,
+        previousValue: 1.94003 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 150.302 * MILLION,
+        previousValue: 216.41 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['chwy:nyse'],
+    releasedDate: getUtcDate(2023, 12, 6),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://s23.q4cdn.com/610444331/files/doc_financials/2023/q3/CHWY-Q3-2023-Press-Release-FINAL.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 2.738 * BILLION,
+        previousValue: 2.532 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 0.780761 * BILLION,
+        previousValue: 0.720177 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -0.010157 * BILLION,
+        previousValue: -0.434 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -0.03581 * BILLION,
+        previousValue: 2.311 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['acn:nyse'],
+    releasedDate: getUtcDate(2023, 3, 21),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investor.accenture.com/~/media/Files/A/Accenture-IR-V3/quarterly-earnings/2024/q2fy24/accenture-reports-second-quarter-fiscal-2024-results-.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 15.799514 * BILLION,
+        previousValue: 15.814158 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 15.799514 * BILLION - 10.921045 * BILLION,
+        previousValue: 15.814158 * BILLION - 10.979392 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 2.046427 * BILLION,
+        previousValue: 1.944581 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 1.709202 * BILLION,
+        previousValue: 1.550683 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['nke:nyse'],
+    releasedDate: getUtcDate(2023, 12, 21),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://s1.q4cdn.com/806093406/files/doc_financials/2024/q2/FY24-Q2-Combined-NIKE-Press-Release-Schedules-FINAL.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 13.388 * BILLION,
+        previousValue: 13.315 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 5.971 * BILLION,
+        previousValue: 5.711 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 1.578 * BILLION,
+        previousValue: 1.331 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['nke:nyse'],
+    releasedDate: getUtcDate(2024, 3, 21),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investors.nike.com/investors/news-events-and-reports/investor-news/investor-news-details/2024/NIKE-Inc.-Reports-Fiscal-2024-Third-Quarter-Results/default.aspx',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 12.429 * BILLION,
+        previousValue: 12.39 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 5.562 * BILLION,
+        previousValue: 5.371 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 1.172 * BILLION,
+        previousValue: 1.24 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['fdx:nyse'],
+    releasedDate: getUtcDate(2023, 12, 19),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investors.fedex.com/news-and-events/investor-news/investor-news-details/2023/FedEx-Reports-Higher-Second-Quarter-Diluted-EPS-of-3.55-and-Adjusted-Diluted-EPS-of-3.99/default.aspx',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 22.165 * BILLION,
+        previousValue: 22.814 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 1.276 * BILLION,
+        previousValue: 1.176 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 900 * MILLION,
+        previousValue: 788 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['fdx:nyse'],
+    releasedDate: getUtcDate(2024, 3, 21),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://s21.q4cdn.com/665674268/files/doc_financials/2024/q3/FedEx-Q3-FY24-Earnings-Release.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 21.738 * BILLION,
+        previousValue: 22.169 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 1.243 * BILLION,
+        previousValue: 1.042 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 879 * MILLION,
+        previousValue: 771 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['lulu:nasdaq'],
+    releasedDate: getUtcDate(2023, 12, 7),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://corporate.lululemon.com/media/press-releases/2023/12-07-2023',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 2.204218 * BILLION,
+        previousValue: 1.856889 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 1.256664 * BILLION,
+        previousValue: 1.038852 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 338.115 * MILLION,
+        previousValue: 352.427 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 248.714 * MILLION,
+        previousValue: 255.47 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['lulu:nasdaq'],
+    releasedDate: getUtcDate(2024, 3, 21),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://corporate.lululemon.com/media/press-releases/2024/03-21-2024-200524108',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 3.205103 * BILLION,
+        previousValue: 2.771838 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 1.903425 * BILLION,
+        previousValue: 1.527619 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 913.89 * MILLION,
+        previousValue: 314.426 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 669.468 * MILLION,
+        previousValue: 119.811 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['chwy:nyse'],
+    releasedDate: getUtcDate(2024, 3, 20),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://s23.q4cdn.com/610444331/files/doc_financials/2023/q4/CHWY-Q4-2023-Shareholder-Letter-FINAL-v2.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 2.8259 * BILLION,
+        previousValue: 2.7128 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 798.085 * MILLION,
+        previousValue: 761.417 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -21.981 * MILLION,
+        previousValue: 16.396 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 31.886 * MILLION,
+        previousValue: 6.784 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['mu:nasdaq'],
+    releasedDate: getUtcDate(2024, 3, 20),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investors.micron.com/news-releases/news-release-details/micron-technology-inc-reports-results-second-quarter-fiscal-2024',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 5.824 * BILLION,
+        previousValue: 3.693 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 1.079 * BILLION,
+        previousValue: -1.206 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 191 * MILLION,
+        previousValue: -2.303 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 793 * MILLION,
+        previousValue: -2.312 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['acn:nyse'],
+    releasedDate: getUtcDate(2023, 12, 19),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investor.accenture.com/~/media/Files/A/Accenture-IR-V3/quarterly-earnings/2024/q1fy24/accenture-reports-first-quarter-fiscal-2024-results.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 16.224303 * BILLION,
+        previousValue: 15.747802 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 16.224303 * BILLION - 10.776362 * BILLION,
+        previousValue: 15.747802 * BILLION - 10.56166 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 2.564887 * BILLION,
+        previousValue: 2.5931 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 2.009981 * BILLION,
+        previousValue: 1.9963 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['dri:nyse'],
+    releasedDate: getUtcDate(2023, 12, 15),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investor.darden.com/news/news-details/2023/Darden-Restaurants-Reports-Fiscal-2024-Second-Quarter-Results-Declares-Quarterly-Dividend-And-Updates-Fiscal-2024-Financial-Outlook/',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 2.7273 * BILLION,
+        previousValue: 2.4865 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 278.5 * MILLION,
+        previousValue: 233.2 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 212.1 * MILLION,
+        previousValue: 187.2 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
     targetUuids: ['smar:nyse'],
     releasedDate: getUtcDate(2023, 12, 7),
     documents: [
@@ -4679,6 +5151,39 @@ export const earnings: Earnings[] = [
     ],
   },
   {
+    targetUuids: ['gis:nyse'],
+    releasedDate: getUtcDate(2024, 3, 20),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://s29.q4cdn.com/993087495/files/doc_financials/2024/q3/F24Q3-Press-Release-FINAL.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 5.0992 * BILLION,
+        previousValue: 5.1259 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 5.0992 * BILLION * 0.335,
+        previousValue: 5.1259 * BILLION * 0.325,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 910.7 * MILLION,
+        previousValue: 730.2 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
     targetUuids: ['net:nyse'],
     releasedDate: getUtcDate(2024, 2, 8),
     documents: [
@@ -4828,6 +5333,86 @@ export const earnings: Earnings[] = [
       {
         contents:
           'announced the adoption of a new share repurchase program under which the company may repurchase up to US$3.0 billion worth of its shares (including ADSs) over the next 36 months through March 2027.',
+      },
+    ],
+  },
+  {
+    targetUuids: ['pdd:nasdaq'],
+    releasedDate: getUtcDate(2024, 3, 20),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investor.pddholdings.com/static-files/8c935dcd-f4a8-4983-844c-a8bcc72ebee7',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 88.881036 * BILLION,
+        previousValue: 39.820028 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.rmb,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 88.881036 * BILLION - 35.078272 * BILLION,
+        previousValue: 39.820028 * BILLION - 8.926705 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.rmb,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 22.394968 * BILLION,
+        previousValue: 9.113735 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.rmb,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 23.280309 * BILLION,
+        previousValue: 9.453697 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.rmb,
+      },
+    ],
+  },
+  {
+    targetUuids: ['mu:nasdaq'],
+    releasedDate: getUtcDate(2023, 12, 20),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investors.micron.com/news-releases/news-release-details/micron-technology-inc-reports-results-first-quarter-fiscal-2024',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 4.726 * BILLION,
+        previousValue: 4.085 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: -35 * MILLION,
+        previousValue: 893 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -1.128 * BILLION,
+        previousValue: -209 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -1.234 * BILLION,
+        previousValue: -195 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
       },
     ],
   },

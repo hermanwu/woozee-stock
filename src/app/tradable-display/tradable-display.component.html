@@ -1,4 +1,5 @@
 <span *ngIf="tradable; else tradableUuidDisplay" (click)="navigate()">
-  {{ tradable.displayName }} - {{ tradable.ticker.toUpperCase() }}
+  <span *ngIf="!tickerOnly">{{ tradable.displayName }} -</span>
+  {{ tradable.ticker.toUpperCase() }}
 </span>
 <ng-template #tradableUuidDisplay>{{ tradableUuid | uppercase }}</ng-template>

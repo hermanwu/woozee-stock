@@ -9,6 +9,7 @@ import { NavigationServices } from '../shared/services/navgiation.services';
 })
 export class TradableDisplayComponent implements OnInit {
   @Input() tradable: Tradable;
+  @Input() tickerOnly: boolean;
 
   constructor(private navigationServices: NavigationServices) {}
 

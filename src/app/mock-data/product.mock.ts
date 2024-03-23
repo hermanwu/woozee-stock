@@ -18,7 +18,8 @@ export const getProductsByProductUuids = (productUuids: string[]) => {
 
 export const getProductsByRootCompanyId = (rootCompanyId: string) => {
   return mockProducts.filter(
-    (product) => product.rootCompanyId === rootCompanyId
+    (product) =>
+      product.rootCompanyId?.toLowerCase() === rootCompanyId.toLowerCase()
   );
 };
 
@@ -62,6 +63,110 @@ export const getAllParents = (products: Product[]) => {
 };
 
 export const mockProducts: Product[] = [
+  {
+    uuid: 'a7b8c9d0-e1f2-3456-ghij-7890123456ff',
+    name: 'Yoga Gear Accessories',
+    rootCompanyId: 'LULU',
+    description:
+      'A range of yoga accessories, including straps and blocks, designed to support and enhance yoga practice.',
+  },
+  {
+    uuid: 'b8c9d0e1-f2g3-4567-hijk-8901234567f1',
+    name: 'Lifestyle Apparel',
+    rootCompanyId: 'LULU',
+    description:
+      'Casual and lifestyle-oriented apparel, including tops, pants, and dresses, that maintains a focus on comfort and style.',
+  },
+  {
+    name: 'DRAM (Dynamic Random Access Memory)',
+    uuid: 'dram',
+    rootCompanyId: 'mu',
+  },
+  {
+    name: 'NAND Flash',
+    uuid: 'nand-flash',
+    rootCompanyId: 'mu',
+  },
+  {
+    name: 'SSDs (Solid State Drives)',
+    uuid: 'ssd',
+    rootCompanyId: 'mu',
+  },
+  {
+    name: 'AppDiscovery',
+    uuid: 'appdiscovery',
+    rootCompanyId: 'app',
+    description:
+      "AppLovin's user acquisition platform, AppDiscovery, helps developers find high-quality users for their apps through its advanced algorithms and data-driven approach. It leverages machine learning to optimize ad placements across a vast network, ensuring that ads reach the most relevant audiences.",
+  },
+  {
+    name: 'MAX',
+    uuid: 'max',
+    rootCompanyId: 'app',
+    description:
+      'MAX is an in-app bidding platform designed to maximize revenue for mobile app developers. It allows various demand sources to bid in real-time for ad inventory within an app, ensuring that developers get the highest possible revenue for each ad impression. MAX supports various ad formats, including rewarded video, interstitials, and banners.',
+  },
+  {
+    name: 'Interactive',
+    uuid: 'interactive',
+    rootCompanyId: 'acn',
+    description:
+      'Interactive: Accenture Interactive focuses on improving customer experiences through services such as marketing, analytics, content, commerce, and design. It aims to create engaging customer experiences across various digital platforms.',
+  },
+  {
+    name: 'Olive Garden',
+    uuid: 'olive-garden',
+    rootCompanyId: 'dri',
+    description:
+      "Known for its Italian-American cuisine, Olive Garden offers a wide range of dishes including pasta, salads, chicken, seafood, and breadsticks. It's popular for its unlimited salad and breadsticks offer and family-friendly dining atmosphere.",
+  },
+  {
+    name: 'LongHorn Steakhouse',
+    uuid: 'longhorn-steakhouse',
+    rootCompanyId: 'dri',
+    description:
+      'Specializing in steaks, LongHorn Steakhouse serves various cuts of beef, ribs, chicken, and fish. The restaurant is known for its Western/Texan theme and casual dining environment.',
+  },
+  {
+    name: 'Strategy & Consulting',
+    uuid: 'strategy-consulting',
+    rootCompanyId: 'acn',
+    description:
+      'This service involves helping clients with their business strategies, from developing new business models to enhancing operational efficiency. It includes services like business model transformation, enterprise value realization, sustainability services, and technology strategy & advisory.',
+  },
+  {
+    name: 'SparkLabs',
+    uuid: 'sparklabs',
+    rootCompanyId: 'app',
+    description:
+      "SparkLabs is AppLovin's creative studio that assists developers in designing, testing, and optimizing their mobile ads. The studio aims to enhance ad performance and engagement by creating high-quality and compelling ad creatives.",
+  },
+  {
+    name: 'chewy.com',
+    uuid: 'chewy-com',
+    rootCompanyId: 'chwy',
+  },
+  {
+    name: 'Cheerios',
+    uuid: 'cheerios',
+    rootCompanyId: 'gis',
+  },
+  {
+    name: 'Yoplait',
+    uuid: 'yoplait',
+    rootCompanyId: 'gis',
+  },
+  {
+    name: 'Nature Valley',
+    uuid: 'nature-valley',
+    rootCompanyId: 'gis',
+  },
+  {
+    name: 'Temu App',
+    uuid: 'temu-app',
+    rootCompanyId: 'pdd',
+    description: 'A social e-commerce app that offers group-buying deals.',
+  },
   {
     name: 'QQ Music',
     uuid: 'qq-music',
@@ -170,9 +275,11 @@ export const mockProducts: Product[] = [
     name: 'Data Center',
   },
   {
-    uuid: 'lululemon-clothing',
-    name: 'LuluLemon Clothing',
-    rootCompanyId: 'lulu',
+    uuid: 'a1b2c3d4-e5f6-7890-abcd-1234567890ef',
+    name: "Women's Leggings",
+    rootCompanyId: 'LULU',
+    description:
+      'High-quality leggings available in various styles, lengths, and patterns, designed for fitness and exercise.',
   },
   {
     uuid: 'costco-membership',

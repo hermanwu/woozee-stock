@@ -7,56 +7,23 @@
     <ng-template mat-tab-label> Stocks and ETFs </ng-template>
 
     <div class="mt-5" *ngFor="let item of displayItems; let i = index">
-      <h2>
+      <span class="text-lg">
         {{ i + 1 }}.
 
-        <span *ngIf="item.tradableItem; else stockTickerDisplay">
-          <app-tradable-display
-            [tradable]="item.tradableItem"
-          ></app-tradable-display>
-
-          <app-interaction-bar
-            [interactions]="
-              targetUuidToInteractionMap.get(
-                item.tradableItem?.uuid.toLowerCase()
-              )
-            "
-          ></app-interaction-bar>
-        </span>
-        <ng-template #stockTickerDisplay>
-          <span style="text-transform: uppercase">{{
-            item.organizations[0]?.ticker
-          }}</span>
-        </ng-template>
-      </h2>
-
-      <!-- <div class="mt-2" *ngIf="item.organizations.length > 0">
-        <div *ngFor="let org of item.organizations">
-          <app-stock-display [tagUuid]="org?.uuid"></app-stock-display>
-
-          <app-interaction-bar
-            [interactions]="targetUuidToInteractionMap.get(org?.uuid)"
-          ></app-interaction-bar>
-        </div>
-      </div> -->
-
-      <div class="mt-5" *ngIf="stockUuidToPersonMap.get(stockUuid)">
-        <div *ngFor="let person of stockUuidToPersonMap.get(stockUuid)">
-          <span class="inline-flex">
-            <mat-chip-list>
-              <mat-chip (click)="navigateToPersonPage(person.uuid)">
-                {{ person.displayName }}
-              </mat-chip>
-            </mat-chip-list>
-          </span>
-
-          <span>
-            <app-interaction-bar
-              [interactions]="targetUuidToInteractionMap.get(person.uuid)"
-            ></app-interaction-bar>
-          </span>
-        </div>
-      </div>
+        <app-tradable-display
+          [tradable]="item.tradableItem"
+        ></app-tradable-display>
+      </span>
+      <span>
+        <app-interaction-bar
+          [interactions]="
+            targetUuidToInteractionMap.get(
+              item.tradableItem?.uuid.toLowerCase()
+            )
+          "
+          [displayTop3]="true"
+        ></app-interaction-bar>
+      </span>
     </div>
   </mat-tab>
 

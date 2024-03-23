@@ -70,13 +70,11 @@ export class ComparisonDialogComponent {
       return;
     }
 
-    const stockToAdd = this.stockServices.getStockByTicker(ticker);
-
-    if (stockToAdd) {
-      this.toCompareSet.add(ticker);
-      this.toCompareList.push(stockToAdd);
-      this.newTickerForm.reset();
-    }
+    // if (stockToAdd) {
+    //   this.toCompareSet.add(ticker);
+    //   this.toCompareList.push(stockToAdd);
+    //   this.newTickerForm.reset();
+    // }
   }
 
   selectFact(event: Event) {

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { organizations } from 'src/app/mock-data/organization.mock';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
-import { stocksMap } from '../../mock-data/mocks/stock-list.const';
 import { EarningsReport } from '../models/earnings.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { StockData } from './stock-data.model';
@@ -18,15 +17,7 @@ export class StockServices {
   threePreviousQuarterEr: EarningsReport;
   stock: StockAnalysis;
 
-  constructor() {
-    for (const property in stocksMap) {
-      const stock = stocksMap[property] as StockData;
-
-      this.calculateRevenues(stock);
-
-      this.dataMap.set(property.toLowerCase(), stock);
-    }
-  }
+  constructor() {}
 
   getDataMap() {
     return this.dataMap;
@@ -63,25 +54,6 @@ export class StockServices {
         org?.uuid?.toLowerCase() === id.toLowerCase() ||
         org?.id?.toLowerCase() === id.toLowerCase()
     );
-  }
-
-  getStockByTicker(ticker: string): StockAnalysis {
-    return stocksMap[ticker.toLowerCase()];
-  }
-
-  getStocksByTickers(tickers: string[]): StockAnalysis[] {
-    const result = [];
-
-    for (let ticker of tickers) {
-      if (stocksMap[ticker.toLocaleLowerCase()]) {
-        result.push(stocksMap[ticker.toLocaleLowerCase()]);
-      } else {
-        result.push({
-          ticker: ticker,
-        });
-      }
-    }
-    return result;
   }
 
   getEarningsReportInDescendingOrder(earningsReports: EarningsReport[]) {

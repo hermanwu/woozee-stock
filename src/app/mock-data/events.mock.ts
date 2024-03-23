@@ -30,7 +30,7 @@ export const events = [
     uuid: 'a9d83991-d90b-44f2-8268-5af4efbbe26t',
     type: 'earnings',
     date: getUtcDate(2024, 3, 20),
-    targetUuids: ['pdd:nasdaq', 'gis:nyse', 'tigr:nyse', 'jks:nyse'],
+    targetUuids: ['pdd:nasdaq', 'gis:nyse', 'tigr:nasdaq', 'jks:nyse'],
     beforeMarketOpen: true,
   },
   {

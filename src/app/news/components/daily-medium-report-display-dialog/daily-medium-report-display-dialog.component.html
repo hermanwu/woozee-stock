@@ -4,7 +4,7 @@
 <div>🔶 ➡️ {{ overviewNews?.[0]?.title }}</div>
 <div *ngFor="let news of macroNews">
   <app-stock-image-display [tag]="news?.tags?.[0]"></app-stock-image-display>
-  🔶 <b>{{news.tags?.[0] | tagdisplay}}</b> ➡️ {{ news.title }}
+  🔶 <b>{{news.tags?.[0] }}</b> ➡️ {{ news.title }}
   <ul>
     <li *ngFor="let item of news?.content">🔹 {{ item }}</li>
   </ul>
@@ -39,7 +39,7 @@
 </app-title-menu>
 <div *ngFor="let news of stockNews">
   <app-stock-image-display [tag]="news.tags?.[0]"></app-stock-image-display>
-  🔶 <b>{{ news.tags?.[0] | tagdisplay }}</b> ➡️ {{ news.title }}
+  🔶 <b>{{ news.tags?.[0]  }}</b> ➡️ {{ news.title }}
 
   <ul>
     <li *ngFor="let item of news?.content">🔹 {{ item }}</li>

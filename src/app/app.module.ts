@@ -86,7 +86,6 @@ import { AutofocusDirective } from './shared/directives/auto-focus.directive';
 import { IopsPipeModule } from './shared/pipes/iops/iops-pipe.module';
 import { SafePipe } from './shared/pipes/safe.pipe';
 import { SiUnitPipeModule } from './shared/pipes/si-unit/si-unit-pipe.module';
-import { TagDisplayPipe } from './shared/pipes/tag-display.pipe';
 import { UndefinedPipeModule } from './shared/pipes/undefined-pipe/undefined-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
 import { SignupComponent } from './signup/signup.component';
@@ -206,7 +205,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     PriceDisplayComponent,
     StockMetricDisplayComponent,
     UiComponentsPageComponent,
-    TagDisplayPipe,
     MePageComponent,
     RegionDisplayComponent,
     OpinionDisplayComponent,

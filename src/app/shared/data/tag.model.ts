@@ -39,6 +39,12 @@ export const mockTags: Tag[] = [
     votes: 1,
   },
   {
+    displayName: 'Undervalued',
+    uuid: 'undervalued',
+    type: TagType.Fundamental,
+    votes: 50,
+  },
+  {
     uuid: 'proprietary-data',
     type: TagType.Business,
     displayName: 'Proprietary Data',
@@ -54,14 +60,7 @@ export const mockTags: Tag[] = [
     type: TagType.Trend,
     displayName: 'Crypto',
     sentiment: 10,
-    votes: 80,
-  },
-  {
-    uuid: 'bad-earnings',
-    type: TagType.Business,
-    displayName: 'Disappointed Earnings',
-    sentiment: -1,
-    votes: -10,
+    votes: 50,
   },
   {
     uuid: 'do-it-yourself',
@@ -74,13 +73,13 @@ export const mockTags: Tag[] = [
     type: TagType.Business,
     displayName: 'Weapons',
     sentiment: 1,
-    votes: 1,
+    votes: 5,
   },
   {
     uuid: 'hyperscaler',
     type: TagType.Trend,
     displayName: 'Hyperscaler (Cloud Service Provider)',
-    votes: 30,
+    votes: 60,
   },
   {
     uuid: 'no-differentiation',
@@ -123,12 +122,6 @@ export const mockTags: Tag[] = [
     votes: 5,
   },
   {
-    uuid: 'cosmetics',
-    type: TagType.Trend,
-    displayName: 'Cosmetics',
-    votes: 1,
-  },
-  {
     uuid: 'china',
     type: TagType.Trend,
     displayName: 'China',
@@ -158,14 +151,7 @@ export const mockTags: Tag[] = [
     type: TagType.Trend,
     displayName: 'Ecommerce',
     sentiment: 1,
-    votes: 1,
-  },
-  {
-    uuid: 'good-earnings',
-    type: TagType.Business,
-    displayName: 'Impressive Earnings',
-    votes: 5,
-    sentiment: 1,
+    votes: 0,
   },
   {
     uuid: 'magnificent-7',
@@ -220,7 +206,7 @@ export const mockTags: Tag[] = [
     uuid: 'gen-ai',
     type: TagType.Trend,
     sentiment: 1,
-    votes: 99,
+    votes: 50,
     displayName: 'Generative AI 🤖 ',
   },
   {
@@ -233,7 +219,7 @@ export const mockTags: Tag[] = [
     uuid: 'datacenter',
     type: TagType.Trend,
     displayName: 'Datacenter',
-    votes: 40,
+    votes: 70,
   },
   {
     uuid: 'unpredictable',
@@ -270,7 +256,7 @@ export const mockTags: Tag[] = [
     uuid: 'weight-loss',
     type: TagType.Trend,
     sentiment: 1,
-    votes: 5,
+    votes: 50,
     displayName: 'Weight Loss',
   },
 ];

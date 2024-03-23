@@ -1,13 +1,13 @@
 <ng-container *ngIf="tag; else uuidOnly">
   <ng-container *ngIf="tag.votes > 0">
     <mat-chip class="positive-tag" (click)="navigate(tag.uuid)">
-      <span>📈 {{ tag.displayName }}</span>
+      <span>{{ tag.displayName }}</span>
     </mat-chip>
   </ng-container>
 
   <ng-container *ngIf="tag.votes < 0">
     <mat-chip class="negative-tag" (click)="navigate(tag.uuid)">
-      <span>📉 {{ tag.displayName }}</span>
+      <span>{{ tag.displayName }}</span>
     </mat-chip>
   </ng-container>
 

@@ -113,7 +113,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         this.stockUuid
       );
 
-      console.log(relationships);
       this.products = getProductsByProductUuids(
         relationships
           .filter((r) => r.endNodeType === 'product')
@@ -125,8 +124,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
           .filter((r) => r.endNodeType === 'industry')
           .map((r) => r.endNodeUuid)
       );
-
-      console.log(this.industries);
 
       this.people = getPeopleByPersonUuids(
         relationships

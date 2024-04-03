@@ -32,7 +32,11 @@ module.exports = {
     "quote-props": ["error", "as-needed"],
     "import/no-unresolved": 0,
     "object-curly-spacing": [2, "always"],
-
+    "operator-linebreak": [
+      "error",
+      "after",
+      { overrides: { "?": "before", ":": "before" } },
+    ],
     indent: ["error", 2],
   },
 };

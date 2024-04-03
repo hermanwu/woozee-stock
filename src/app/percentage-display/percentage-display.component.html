@@ -1,0 +1,19 @@
+<span
+  *ngIf="percentageDiff; else dashDisplay"
+  [ngClass]="{
+    'up-arrow': percentageDiff > 0,
+    neutral: percentageDiff === 0,
+    'down-arrow': percentageDiff < 0
+  }"
+>
+  <span *ngIf="percentageDiff > 0">
+    +{{ percentageDiff | percent : "1.2-2" }}
+  </span>
+  <span *ngIf="percentageDiff === 0">
+    {{ percentageDiff | percent : "1.2-2" }}
+  </span>
+  <span *ngIf="percentageDiff <= 0">
+    {{ percentageDiff | percent : "1.2-2" }}
+  </span>
+</span>
+<ng-template #dashDisplay>- --%</ng-template>

@@ -11,6 +11,7 @@ import { NotesServices } from 'src/app/news/services/notes.services';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
 import { getAllTags } from 'src/app/shared/data/tag.model';
 import { NavigationServices } from 'src/app/shared/services/navgiation.services';
+import { PricesServices } from 'src/app/shared/services/prices.services';
 import { StockServices } from 'src/app/stock/services/stock.service';
 import { InteractionServices } from 'src/interactions/interaction.services';
 import { UserServices } from '../../../accounts/services/user.services';
@@ -60,7 +61,8 @@ export class NotesListPageComponent implements OnInit {
     private router: Router,
     private interactionServices: InteractionServices,
     private stockServices: StockServices,
-    private navigationServices: NavigationServices
+    private navigationServices: NavigationServices,
+    private pricesServices: PricesServices
   ) {
     this.userUuid = userServices.currentUser.userUuid;
   }

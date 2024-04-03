@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -18,13 +18,15 @@ import {
   PriceRange,
   UnitType,
 } from '../shared/components/stats-display/stats-display.interface';
+import { PricesServices } from '../shared/services/prices.services';
+import { StockServices } from '../stock/services/stock.service';
 
 @Component({
   selector: 'app-tradable-properties-page',
   templateUrl: './tradable-properties-page.component.html',
   styleUrls: ['./tradable-properties-page.component.scss'],
 })
-export class TradablePropertiesPageComponent implements OnInit {
+export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
   private quoteUuid = 'quoteUuid';
   tradable: Tradable;
   routeSub: Subscription;
@@ -36,15 +38,23 @@ export class TradablePropertiesPageComponent implements OnInit {
   priceRange: PriceRange;
   competitors;
 
+  historicalPrice;
+  historicalMarketCap;
+  previousPrice;
   currentPrice;
-  currentMarketCap;
+  showRange;
 
   readonly environment = environment;
+
+  priceData: any;
+  private subscription: Subscription = new Subscription();
 
   constructor(
     private route: ActivatedRoute,
     private userServices: UserServices,
-    private notesServices: NotesServices
+    private notesServices: NotesServices,
+    private priceServices: PricesServices,
+    private tradableServices: StockServices
   ) {
     this.targetUuidToInteractionMap = userServices.entityUuidToInteraction;
   }
@@ -52,12 +62,45 @@ export class TradablePropertiesPageComponent implements OnInit {
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
       const quoteUuid = params[this.quoteUuid].toLowerCase();
+      const ticker = quoteUuid.slice(0, quoteUuid.indexOf(':'))?.toUpperCase();
 
       this.tradable = getTradableItemsByUuids([quoteUuid])?.[0];
 
       const stats = getPricesByUuid(quoteUuid);
-      this.currentPrice = stats?.price;
-      this.currentMarketCap = stats?.marketCap;
+      this.historicalPrice = stats?.price;
+      this.historicalMarketCap = stats?.marketCap;
+
+      this.subscription.add(
+        this.tradableServices.getStockByUuid(ticker).subscribe({
+          next: (response) => {
+            console.log(response);
+            const results = response;
+            if (results) {
+              this.tradable.marketCap = results.market_cap;
+              this.tradable.description = results.description;
+              this.tradable.homePageUrl = results.homepage_url;
+              if (!this.tradable.logoLink) {
+                this.tradable.logoLink = results.branding?.icon_url;
+              }
+            }
+
+            console.log(this.tradable);
+          },
+          error: (error) => {
+            console.error('Error calling the function:', error);
+          },
+        })
+      );
+
+      this.subscription.add(
+        this.priceServices.getPriceByTicker(ticker).subscribe((data) => {
+          if (data) {
+            this.priceData = data;
+          } else {
+            console.log('Data is not available yet');
+          }
+        })
+      );
 
       this.organizations = getOrganizationsByUuids([
         this.tradable.organizationUuid,
@@ -72,16 +115,16 @@ export class TradablePropertiesPageComponent implements OnInit {
 
       if (
         this.earnings.length > 0 &&
-        this.currentMarketCap &&
-        this.currentPrice
+        this.historicalMarketCap &&
+        this.historicalPrice
       ) {
         const targetMarketCap = this.calculateTargetMarketCapByEarnings(
           this.earnings[0]
         );
 
         let targetPriceRange = this.calculateTargetPriceByTargetMarketCap(
-          this.currentMarketCap,
-          this.currentPrice,
+          this.historicalMarketCap,
+          this.historicalPrice,
           targetMarketCap
         );
 
@@ -91,19 +134,6 @@ export class TradablePropertiesPageComponent implements OnInit {
           average: (targetPriceRange[0] + targetPriceRange[1]) / 2,
         };
       }
-
-      // const analystPriceRange = getPriceRangeByTradableUuid(quoteUuid);
-      // if (analystPriceRange) {
-      //   this.priceRange = { ...analystPriceRange };
-      //   this.priceRange.low = Math.min(
-      //     this.priceRange.low,
-      //     analystPriceRange.low
-      //   );
-      //   this.priceRange.high = Math.min(
-      //     this.priceRange.high,
-      //     analystPriceRange.high
-      //   );
-      // }
 
       this.notes = this.notesServices
         .getNotesByTargets([quoteUuid])
@@ -115,6 +145,11 @@ export class TradablePropertiesPageComponent implements OnInit {
 
       this.interactions = this.targetUuidToInteractionMap.get(quoteUuid);
     });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe(); // Prevent memory leaks
+    this.routeSub.unsubscribe();
   }
 
   calculateTargetMarketCapByEarnings(earnings: Earnings): [number, number] {
@@ -155,10 +190,14 @@ export class TradablePropertiesPageComponent implements OnInit {
         : netIncome > 0
         ? netIncome
         : grossProfit > 0
-        ? grossProfit / 4
-        : revenue / 8;
+        ? grossProfit / 8
+        : revenue / 16;
     let highMultiple =
-      revenueGrowthRatio > 1 ? (revenueGrowthRatio - 1) * 2 + 1 : 1;
+      revenueGrowthRatio < 1
+        ? 1
+        : 1 + (revenueGrowthRatio - 1) * 3 > 3
+        ? 3
+        : 1 + (revenueGrowthRatio - 1) * 3;
 
     let lowMarketCap =
       lowPossibleProfit * basePeRatio * 4 * Math.min(1, revenueGrowthRatio);
@@ -181,9 +220,5 @@ export class TradablePropertiesPageComponent implements OnInit {
         (targetMarketCap[1] / marketCap) * price,
       ];
     }
-  }
-
-  ngOnDestroy(): void {
-    this.routeSub.unsubscribe();
   }
 }

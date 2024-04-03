@@ -65,6 +65,27 @@ export const getAllParents = (products: Product[]) => {
 export const mockProducts: Product[] = [
   {
     uuid: 'a7b8c9d0-e1f2-3456-ghij-7890123456ff',
+    name: 'Heritage Brands',
+    rootCompanyId: 'pvh',
+    description:
+      "A group of labels including Van Heusen, IZOD, ARROW, Warner’s, Olga, and True&Co. These brands offer a wide range of products, such as men's dress shirts, sportswear, neckwear, underwear, and intimates. Each brand within the Heritage Brands portfolio caters to specific market segments and offers products aligned with its unique brand identity.",
+  },
+  {
+    uuid: 'a7b8c9d0-e1f2-3456-ghij-7890123456ff',
+    name: 'Tommy Hilfiger',
+    rootCompanyId: 'pvh',
+    description:
+      'One of the world’s leading designer lifestyle brands, recognized for celebrating the essence of classic American cool style, featuring preppy with a twist designs. It sells apparel for men, women, and children, as well as accessories and footwear.',
+  },
+  {
+    uuid: 'a7b8c9d0-e1f2-3456-ghij-7890123456ff',
+    name: 'Calvin Klein',
+    rootCompanyId: 'pvh',
+    description:
+      "A global lifestyle brand that exemplifies bold, progressive ideals and a seductive, and often minimal, aesthetic. The brand offers a wide range of products, including men's and women's apparel, accessories, footwear, underwear, fragrance, and home furnishings.",
+  },
+  {
+    uuid: 'a7b8c9d0-e1f2-3456-ghij-7890123456ff',
     name: 'Yoga Gear Accessories',
     rootCompanyId: 'LULU',
     description:

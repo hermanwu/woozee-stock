@@ -25,9 +25,33 @@ export class Tradable {
   irAddress?: string;
   logoLink?: string;
   largeLogoLink?: string;
+  marketCap?: number;
+  description?: string;
+  homePageUrl?: string;
 }
 
 export const tradable = [
+  {
+    uuid: 'gds:nasdaq',
+    displayName: 'GDS Holdings Ltd',
+    ticker: 'gds',
+    organizationUuid: 'gds',
+    irAddress: 'https://ir.gds-services.com/',
+  },
+  {
+    uuid: 'SNX:NYSE',
+    displayName: 'Synnex Corporation',
+    ticker: 'SNX',
+    organizationUuid: 'snx',
+    irAddress: 'https://ir.synnex.com/',
+  },
+  {
+    uuid: 'smti:nasdaq',
+    displayName: 'Sanara Medtech Inc',
+    ticker: 'smti',
+    organizationUuid: 'smti',
+    irAddress: 'https://ir.sanaramedtech.com/',
+  },
   {
     uuid: 'SPGI:NYSE',
     displayName: 'S&P Global Inc',
@@ -199,6 +223,13 @@ export const tradable = [
     irAddress: 'https://investor.tsmc.com/english',
   },
   {
+    ticker: 'ctas',
+    uuid: 'CTAS:NASDAQ',
+    displayName: 'Cintas Corporation',
+    organizationUuid: 'ctas',
+    irAddress: 'https://investor.cintas.com/',
+  },
+  {
     ticker: 'ACN',
     uuid: 'ACN:NYSE',
     displayName: 'Accenture PLC',
@@ -320,6 +351,27 @@ export const tradable = [
     type: 'reit',
   },
   {
+    uuid: 'play:nasdaq',
+    displayName: "Dave & Buster's Entertainment Inc",
+    ticker: 'play',
+    organizationUuid: 'play',
+    irAddress: 'https://ir.daveandbusters.com/',
+  },
+  {
+    uuid: 'ngs:nyse',
+    displayName: 'Natural Gas Services Group Inc',
+    ticker: 'ngs',
+    organizationUuid: 'ngs',
+    irAddress: 'https://naturalgasservices.gcs-web.com/',
+  },
+  {
+    uuid: 'PVH:NYSE',
+    displayName: 'PVH Corp',
+    ticker: 'PVH',
+    organizationUuid: 'pvh',
+    irAddress: 'https://www.pvh.com/investor-relations',
+  },
+  {
     uuid: 'URA:NYSEARCA',
     displayName: 'Global X Uranium ETF',
     ticker: 'URA',
@@ -331,6 +383,8 @@ export const tradable = [
     ticker: 'GOOGL',
     organizationUuid: 'googl',
     irAddress: 'https://abc.xyz/investor/',
+    logoLink: 'https://i.ibb.co/7vJ2J2V/GOOGL.png',
+    largeLogoLink: 'https://i.ibb.co/7vJ2J2V/GOOGL.png',
   },
   {
     uuid: 'GOOG:NASDAQ',
@@ -628,12 +682,26 @@ export const tradable = [
     organizationUuid: 'mara',
   },
   {
+    uuid: 'BRZE:NASDAQ',
+    displayName: 'Braze Inc',
+    ticker: 'brze',
+    organizationUuid: 'brze',
+    irAddress: 'https://investors.braze.com/overview/default.aspx',
+  },
+  {
     uuid: 'DASH:NASDAQ',
     displayName: 'DoorDash Inc',
     ticker: 'DASH',
     organizationUuid: 'dash',
     irAddress: 'https://ir.doordash.com/overview/default.aspx',
     logoLink: 'https://i.ibb.co/XVGJwF6/Oav-Did-Hn-400x400.jpg',
+  },
+  {
+    uuid: 'rh:nyse',
+    displayName: 'RH',
+    ticker: 'rh',
+    organizationUuid: 'rh',
+    irAddress: 'https://ir.rh.com/',
   },
   {
     uuid: 'AVGO:NASDAQ',
@@ -1374,6 +1442,7 @@ export const tradable = [
     displayName: 'Wayfair Inc',
     ticker: 'W',
     organizationUuid: 'wayfair',
+    irAddress: 'https://investor.wayfair.com/',
   },
   {
     uuid: 'WAL:NYSE',
@@ -1476,6 +1545,42 @@ export const tradable = [
     ticker: 'MRVL',
     organizationUuid: 'mrvl',
     irAddress: 'https://investor.marvell.com/',
+  },
+  {
+    uuid: 'wba:nyse',
+    displayName: 'Walgreens Boots Alliance Inc',
+    ticker: 'wba',
+    organizationUuid: 'wba',
+    irAddress: 'https://investor.walgreensbootsalliance.com/',
+  },
+
+  {
+    uuid: 'ccl:nyse',
+    displayName: 'Carnival Corporation & plc',
+    ticker: 'ccl',
+    organizationUuid: 'ccl',
+    irAddress: 'https://www.carnivalcorp.com/',
+  },
+  {
+    uuid: 'mkc:nyse',
+    displayName: 'McCormick & Company Inc',
+    ticker: 'mkc',
+    organizationUuid: 'mkc',
+    irAddress: 'https://ir.mccormick.com/',
+  },
+  {
+    uuid: 'gme:nyse',
+    displayName: 'GameStop Corp',
+    ticker: 'gme',
+    organizationUuid: 'gme',
+    irAddress: 'https://investor.gamestop.com/',
+  },
+  {
+    uuid: 'payx:NASDAQ',
+    displayName: 'Paychex Inc',
+    ticker: 'payx',
+    organizationUuid: 'payx',
+    irAddress: 'https://investor.paychex.com/',
   },
   {
     uuid: 'MRNA:NASDAQ',

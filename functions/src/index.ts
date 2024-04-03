@@ -1,39 +1,197 @@
 /* eslint-disable max-len */
 import axios from 'axios';
+import * as cors from 'cors';
 import * as admin from 'firebase-admin';
+import * as functions from 'firebase-functions';
 import * as v2 from 'firebase-functions/v2';
-admin.initializeApp();
 
-export const getLatestStockData = v2.https.onRequest((request, response) => {
-  const api = '7yhlLmtHv8Q8FhP3RImzpPVdxktmD2Pb';
-  const today = getToday();
-  const previousBusinessDay = getPreviousBusinessDay();
-  console.log(today);
-  console.log(previousBusinessDay);
+// const corsHandler = cors({ origin: ['https://invesdea.com'] });
+const corsHandler = cors({ origin: true });
+const api = '7yhlLmtHv8Q8FhP3RImzpPVdxktmD2Pb';
 
-  // const endpoint = `https://api.polygon.io/v2/aggs/ticker/AAPL/prev?adjusted=true&apiKey=${api}`;
-  const endpoint = `https://api.polygon.io/v2/aggs/grouped/locale/us/market/stocks/${previousBusinessDay}?adjusted=true&apiKey=${api}`;
-
-  axios.get<any>(endpoint).then((response) => {
-    const db = admin.firestore();
-    const data = response.data;
-    const collectionName = 'prices';
-    const documentId = previousBusinessDay;
-    const docRef = db.collection(collectionName).doc(documentId);
-    // Set the data in your document
-    console.log(data);
-    docRef
-      .set(data)
-      .then(() => {
-        console.log('Document successfully written with your ID!');
-      })
-      .catch((error) => {
-        console.error('Error writing document: ', error);
-      });
-  });
-
-  response.send(`<h1>message: !</h1>`);
+admin.initializeApp({
+  storageBucket: 'invesdea',
 });
+
+const saveImage = async (url: string, fileName: string) => {
+  const fileRef = admin.storage().bucket().file(fileName);
+
+  try {
+    const fileType = fileName.split('.').pop();
+
+    if (fileType === 'png') {
+      const axiosResponse = await axios.get(url, {
+        responseType: 'arraybuffer',
+      });
+      await fileRef.save(axiosResponse.data, {
+        metadata: {
+          contentType: 'image/png',
+        },
+      });
+      console.log('File uploaded successfully.');
+      return fileRef;
+    } else if (fileType === 'svg') {
+      const axiosResponse = await axios.get(url);
+      await fileRef.save(axiosResponse.data, {
+        metadata: {
+          contentType: 'image/svg+xml',
+        },
+      });
+      console.log('File uploaded successfully.');
+      return fileRef;
+    } else if (fileType === 'jpeg' || fileType === 'jpg') {
+      const axiosResponse = await axios.get(url, {
+        responseType: 'arraybuffer',
+      });
+      await fileRef.save(axiosResponse.data, {
+        metadata: {
+          contentType: 'image/jpeg',
+        },
+      });
+      console.log('File uploaded successfully.');
+      return fileRef;
+    } else {
+      console.error('Unsupported file type.');
+      return undefined;
+    }
+  } catch (error) {
+    console.error('Error fetching or writing document: ', error);
+    return undefined;
+  }
+};
+
+export const downloadImage = async (
+  downloadAddress: string,
+  fileName: string
+) => {
+  const bucket = admin.storage().bucket();
+  const fileRef = bucket.file(fileName);
+
+  try {
+    const [exists] = await fileRef.exists();
+    if (exists) {
+      // Assuming you have a method to construct the public URL
+      const url = `https://storage.googleapis.com/${bucket.name}/${fileName}`;
+      console.log('File already exists:', url);
+      return { message: 'File already exists', url };
+    }
+
+    const uploadedFileRef = await saveImage(downloadAddress, fileName);
+    if (!uploadedFileRef) {
+      console.log('Failed to fetch data');
+      return { error: 'Failed to fetch data' };
+    }
+    await fileRef.makePublic();
+    console.log('File uploaded successfully.');
+    const url = `https://storage.googleapis.com/${bucket.name}/${fileName}`;
+    return {
+      message: 'Image uploaded successfully',
+      url,
+    };
+  } catch (error) {
+    console.error('Error: ', error);
+    return { error: 'Failed to process request' };
+  }
+};
+export const logEndPoint = v2.https.onRequest((request, response) => {
+  corsHandler(request, response, async () => {
+    const ticker =
+      typeof request.query.ticker === 'string'
+        ? request.query.ticker.trim()
+        : '';
+    if (!ticker) {
+      response.status(400).send({ error: 'No valid ticker provided' });
+      return;
+    }
+
+    const docRef = admin.firestore().collection('stocks').doc(ticker);
+    const endpoint = `https://api.polygon.io/v3/reference/tickers/${ticker}?apiKey=${api}`;
+
+    try {
+      const doc = await docRef.get();
+      if (doc.exists) {
+        console.log(`Data for ${ticker} already exists. Skipping fetch.`);
+        response.status(200).send(doc.data());
+        return;
+      }
+
+      const axiosResponse = await axios.get(endpoint);
+      const stockDetails = axiosResponse.data.results;
+
+      // Add to search document
+      admin
+        .firestore()
+        .collection('search')
+        .doc('stocks')
+        .set(
+          {
+            [stockDetails.ticker]: stockDetails.name,
+          },
+          { merge: true }
+        );
+
+      // Download the logo
+      const logoUrl = stockDetails?.branding?.logo_url;
+      if (logoUrl) {
+        const fileName = `${ticker}-logo.svg`;
+        const downloadResult = await downloadImage(
+          `${logoUrl}?apiKey=${api}`,
+          fileName
+        );
+
+        if (downloadResult.url) {
+          stockDetails.branding.logo_url = downloadResult.url;
+        }
+      }
+
+      // Download the icon
+      const iconUrl = stockDetails?.branding?.icon_url;
+      if (iconUrl) {
+        const fileName = `${ticker}-icon.` + iconUrl.split('.').pop();
+        const downloadResult = await downloadImage(
+          `${iconUrl}?apiKey=${api}`,
+          fileName
+        );
+
+        if (downloadResult.url) {
+          stockDetails.branding.icon_url = downloadResult.url;
+        }
+      }
+
+      admin.firestore().collection('stocks').doc(ticker).set(stockDetails);
+      console.log('Document successfully written for ticker:', ticker);
+      response.status(200).send(stockDetails); // Sending the data back as the response
+    } catch (error) {
+      console.error('Error fetching or writing document: ', error);
+      response.status(500).send({ error: 'Failed to fetch data' }); // Send an appropriate error response
+    }
+  });
+});
+
+export const getLatestStockData = functions.pubsub
+  .schedule('every 15 minutes')
+  .onRun(async () => {
+    const today = getToday();
+    // const previousBusinessDay = getPreviousBusinessDay();
+
+    // const endpoint = `https://api.polygon.io/v2/aggs/ticker/AAPL/prev?adjusted=true&apiKey=${api}`;
+    const endpoint = `https://api.polygon.io/v2/aggs/grouped/locale/us/market/stocks/${today}?adjusted=true&apiKey=${api}`;
+
+    try {
+      const response = await axios.get(endpoint);
+      const data = response.data;
+      const collectionName = 'prices';
+      const documentId = today;
+      await admin
+        .firestore()
+        .collection(collectionName)
+        .doc(documentId)
+        .set(data);
+      console.log('Document successfully written with your ID!');
+    } catch (error) {
+      console.error('Error fetching or writing document: ', error);
+    }
+  });
 
 export const getToday = () => {
   const currentDate = new Date();
@@ -63,6 +221,23 @@ export const getPreviousBusinessDay = () => {
   const dateAsString = today.toISOString().slice(0, 10);
   return dateAsString;
 };
+
+// Testing endpoints
+export const testDownloadImage = v2.https.onRequest((request, response) => {
+  corsHandler(request, response, async () => {
+    const endpoint = `https://api.polygon.io/v1/reference/company-branding/YWJvdXQubWV0YS5jb20/images/2024-03-01_icon.png?apiKey=${api}`;
+    const fileName = `META-icon.png`;
+
+    const downloadResult = await downloadImage(endpoint, fileName);
+
+    if (downloadResult.error) {
+      response.status(500).send(downloadResult);
+      return;
+    }
+
+    response.status(200).send(downloadResult);
+  });
+});
 
 // export const hello = functions.https.onRequest((request, response) => {
 //   functions.logger.info('Hello logs!', { structuredData: true });

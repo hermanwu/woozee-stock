@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { organizations } from 'src/app/mock-data/organization.mock';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
@@ -17,7 +19,14 @@ export class StockServices {
   threePreviousQuarterEr: EarningsReport;
   stock: StockAnalysis;
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  getStockByUuid(ticker: string): Observable<any> {
+    ticker = ticker.toUpperCase();
+    const url = `https://logendpoint-igvhya62rq-uc.a.run.app?ticker=${ticker}`;
+    // const url = `http://127.0.0.1:5001/woozee-stock/us-central1/logEndPoint?ticker=${ticker}`;
+    return this.http.get(url);
+  }
 
   getDataMap() {
     return this.dataMap;

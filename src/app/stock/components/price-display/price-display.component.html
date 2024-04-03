@@ -1,6 +1,22 @@
-<span> ${{ priceRange?.low | number : "1.2-2" }} </span>
-<span>—</span>
-<span> ${{ priceRange?.high | number : "1.2-2" }} </span>
-<span *ngIf="priceRange?.average"
-  >(${{ priceRange.average | number : "1.2-2" }} Avg.)
+<span *ngIf="currentPrice; else closedPriceSection"
+  >${{ currentPrice | number : "1.2-2" | undefined }}</span
+>
+<ng-template #closedPriceSection>
+  <span class="text-gray-500">
+    closed: {{ closedPrice | number : "1.2-2" }}</span
+  >
+</ng-template>
+
+<span class="ml-3">
+  <app-percentage-display
+    [percentageDiff]="percentageDiff"
+  ></app-percentage-display>
+</span>
+
+<span class="ml-3" *ngIf="priceDiff">
+  <span *ngIf="priceDiff > 0"> +{{ priceDiff | number : "1.2-2" }} </span>
+  <span *ngIf="priceDiff === 0">
+    {{ priceDiff | number : "1.2-2" }}
+  </span>
+  <span *ngIf="priceDiff <= 0"> {{ priceDiff | number : "1.2-2" }} </span>Today
 </span>

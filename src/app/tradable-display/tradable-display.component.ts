@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Tradable } from '../mock-data/mocks/tradables.mock';
 import { NavigationServices } from '../shared/services/navgiation.services';
+import { Price } from '../shared/services/prices.services';
 
 @Component({
   selector: 'app-tradable-display',
@@ -10,12 +11,23 @@ import { NavigationServices } from '../shared/services/navgiation.services';
 export class TradableDisplayComponent implements OnInit {
   @Input() tradable: Tradable;
   @Input() tickerOnly: boolean;
+  @Input() prices: { closedPrice: Price; currentPrice: Price };
+  @Input() showPercentage: boolean;
+
+  dailyPercentageChange: number;
 
   constructor(private navigationServices: NavigationServices) {}
 
   ngOnInit(): void {}
 
-  ngOnChanges() {}
+  ngOnChanges() {
+    if (this.prices && this.prices.currentPrice) {
+      console.log(this.prices);
+      this.dailyPercentageChange =
+        (this.prices.currentPrice.c - this.prices.closedPrice.c) /
+        this.prices.closedPrice.c;
+    }
+  }
 
   navigate() {
     this.navigationServices.navigate('tradable', this.tradable.uuid);

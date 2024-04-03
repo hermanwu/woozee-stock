@@ -3,29 +3,51 @@
     <app-image-display [imageLink]="tradable.logoLink"></app-image-display>
   </div>
 
-  <h1>
-    <h1>{{ tradable?.displayName }} - {{ tradable.ticker.toUpperCase() }}</h1>
-  </h1>
+  <div class="container">
+    <h1>{{ tradable.ticker.toUpperCase() }} - {{ tradable?.displayName }}</h1>
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="industryMenu"
+      *ngIf="!environment.production"
+    >
+      <mat-icon>more_horiz</mat-icon>
+    </button>
+
+    <mat-menu #industryMenu="matMenu">
+      <button mat-menu-item type="button" (click)="showRange = !showRange">
+        <mat-icon>sort</mat-icon>
+      </button>
+    </mat-menu>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="mt-2" *ngIf="showRange">
+    <span *ngIf="historicalPrice"
+      >Last Price: {{ historicalPrice | siUnit : 2 | undefined }}</span
+    >
+    <span class="ml-2" *ngIf="historicalMarketCap"
+      >Market Cap: {{ historicalMarketCap | siUnit : 2 | undefined }}</span
+    >
+
+    <span class="ml-2"
+      >Forecast & Price Target Range:
+      <span> ${{ priceRange?.low | number : "1.2-2" }} </span>
+      <span>—</span>
+      <span> ${{ priceRange?.high | number : "1.2-2" }} </span>
+      <span *ngIf="priceRange?.average"
+        >(${{ priceRange.average | number : "1.2-2" }} Avg.)
+      </span>
+    </span>
+  </div>
+
+  <div class="text-2xl mt-5">
+    <app-price-display [prices]="priceData"></app-price-display>
+  </div>
 </div>
 
 <div>
   <app-interaction-bar [interactions]="interactions"></app-interaction-bar>
-</div>
-
-<div class="mt-2" *ngIf="priceRange">
-  <ng-container *ngIf="!environment.production">
-    <span *ngIf="currentPrice"
-      >Last Price: {{ currentPrice | siUnit : 2 | undefined }}</span
-    >
-    <span class="ml-2" *ngIf="currentMarketCap"
-      >Market Cap: {{ currentMarketCap | siUnit : 2 | undefined }}</span
-    >
-  </ng-container>
-
-  <span class="ml-2"
-    >Forecast & Price Target Range:
-    <app-price-display [priceRange]="priceRange"></app-price-display
-  ></span>
 </div>
 
 <div class="mt-2" *ngIf="organizations?.length > 0">
@@ -119,6 +141,10 @@
       </a>
     </mat-chip>
   </mat-chip-list>
+</div>
+
+<div class="mt-4" *ngIf="tradable.description">
+  {{ tradable.description }}
 </div>
 
 <div *ngIf="earnings?.length > 0" class="mt-4">

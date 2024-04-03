@@ -1,4 +1,5 @@
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -54,6 +55,7 @@ import { QuoteDisplayComponent } from './notes/components/quote-display/quote-di
 import { PeopleDisplayComponent } from './people-display/people-display.component';
 import { AddPersonFormComponent } from './people/components/add-person-form/add-person-form.component';
 import { InvestorDisplayComponent } from './people/components/investor-display/investor-display.component';
+import { PercentageDisplayComponent } from './percentage-display/percentage-display.component';
 import { PersonPropertyPageComponent } from './person-property-page/person-property-page.component';
 import { ThumbnailComponent } from './presentation/components/thumbnail/thumbnail.component';
 import { PresentationHeaderComponent } from './presentation/presentation-header/presentation-header.component';
@@ -252,9 +254,11 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     TradablePropertiesPageComponent,
     TradableDisplayComponent,
     EntityDisplayComponent,
+    PercentageDisplayComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
     AppMaterialModule,

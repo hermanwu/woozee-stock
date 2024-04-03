@@ -534,6 +534,10 @@ export const organizations: Organization[] = [
     logoLink: '',
   },
   {
+    uuid: 'pvh',
+    displayName: 'PVH Corp',
+  },
+  {
     uuid: 'pltr',
     displayName: 'Palantir',
     logoLink: '',

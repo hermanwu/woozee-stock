@@ -61,7 +61,7 @@ export const userInteractions: UserInteractions[] = [
     targetUuid: 'NET:NYSE',
     type: 'tradableItem',
     listUuids: ['gen-ai', 'cybersecurity'],
-    vote: 50,
+    vote: 40,
     targetPrice: 70,
   },
   {
@@ -286,7 +286,7 @@ export const userInteractions: UserInteractions[] = [
     type: 'tradableItem',
     targetUuid: 'AAPL:NASDAQ',
     listUuids: ['spatial-computing', 'magnificent-7', 'undervalued'],
-    vote: 40,
+    vote: 60,
     targetPrice: 160,
   },
   {
@@ -304,6 +304,14 @@ export const userInteractions: UserInteractions[] = [
     type: 'tradableItem',
     targetUuid: 'TWLO:NYSE',
     listUuids: ['no-growth'],
+    vote: -10,
+  },
+  {
+    uuid: 'at783991-d90b-44f2-8268-5af4efbbe264',
+    userUuid: 'herman.wrt@gmail.com',
+    type: 'tradableItem',
+    targetUuid: 'pvh:nyse',
+    listUuids: ['cyclical', 'Europe'],
     vote: -10,
   },
   {
@@ -847,7 +855,7 @@ export const userInteractions: UserInteractions[] = [
     uuid: 'a515c481-5d22-465a-8a79-080488914781',
     userUuid: 'herman.wrt@gmail.com',
     type: 'tradableItem',
-    listUuids: ['undervalued'],
+    listUuids: ['undervalued', 'cyclical'],
     targetUuid: 'anf:nyse',
     targetPrice: 150,
     vote: 50,

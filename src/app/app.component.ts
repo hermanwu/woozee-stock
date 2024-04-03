@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { PricesServices } from './shared/services/prices.services';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,8 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class AppComponent {
   showFiller = false;
-  constructor(private store: AngularFirestore) {}
+  constructor(
+    private store: AngularFirestore,
+    private pricesServices: PricesServices
+  ) {}
 }

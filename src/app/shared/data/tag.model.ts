@@ -76,6 +76,20 @@ export const mockTags: Tag[] = [
     votes: 5,
   },
   {
+    uuid: 'cyclical',
+    type: TagType.Trend,
+    displayName: 'Cyclical',
+    sentiment: -1,
+    votes: -5,
+  },
+  {
+    uuid: 'Europe',
+    type: TagType.Trend,
+    displayName: 'Europe',
+    sentiment: -1,
+    votes: -5,
+  },
+  {
     uuid: 'hyperscaler',
     type: TagType.Trend,
     displayName: 'Hyperscaler (Cloud Service Provider)',

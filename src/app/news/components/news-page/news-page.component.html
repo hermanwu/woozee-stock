@@ -1,6 +1,35 @@
 <div class="mt-5">
   <app-title-menu>
     <div left-items class="inline-display">
+      <h1>Trending</h1>
+    </div>
+  </app-title-menu>
+
+  <mat-chip-list>
+    <app-tag-display *ngFor="let item of tags" [tag]="item"></app-tag-display>
+  </mat-chip-list>
+</div>
+
+<div class="mt-5">
+  <app-title-menu>
+    <div left-items class="inline-display">
+      <h1>Top Picks</h1>
+    </div>
+  </app-title-menu>
+
+  <mat-chip-list>
+    <mat-chip *ngFor="let item of tradables">
+      <app-tradable-display
+        [tickerOnly]="true"
+        [tradable]="item"
+      ></app-tradable-display>
+    </mat-chip>
+  </mat-chip-list>
+</div>
+
+<div class="mt-5" *ngIf="dailyEvents.length > 0">
+  <app-title-menu>
+    <div left-items class="inline-display">
       <h1>Earnings To Watch</h1>
     </div>
   </app-title-menu>
@@ -35,32 +64,6 @@
         <app-tradable-display [tradableUuid]="stockUuid"></app-tradable-display>
       </mat-chip>
     </mat-chip-list> -->
-</div>
-
-<div class="mt-5">
-  <app-title-menu>
-    <div left-items class="inline-display">
-      <h1>Trending</h1>
-    </div>
-  </app-title-menu>
-
-  <mat-chip-list>
-    <app-tag-display *ngFor="let item of tags" [tag]="item"></app-tag-display>
-  </mat-chip-list>
-</div>
-
-<div class="mt-5">
-  <app-title-menu>
-    <div left-items class="inline-display">
-      <h1>Top Picks</h1>
-    </div>
-  </app-title-menu>
-
-  <mat-chip-list>
-    <mat-chip *ngFor="let item of tradables">
-      <app-tradable-display [tradable]="item"></app-tradable-display>
-    </mat-chip>
-  </mat-chip-list>
 </div>
 
 <div class="mt-5">

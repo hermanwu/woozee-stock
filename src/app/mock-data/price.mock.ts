@@ -1,4 +1,4 @@
-import { BILLION, TRILLION } from '../shared/numbers/number.model';
+import { BILLION, MILLION, TRILLION } from '../shared/numbers/number.model';
 
 export const prices = {
   'sq:nyse': {
@@ -154,9 +154,24 @@ export const prices = {
     price: 136.43,
     marketCap: 634.24 * BILLION,
   },
+
+  'ngs:nyse': {
+    price: 19.43,
+    marketCap: 251.23 * MILLION,
+  },
+
+  'play:nasdaq': {
+    price: 64.43,
+    marketCap: 2.49 * BILLION,
+  },
+
   'pltr:nyse': {
     price: 23.49,
     marketCap: 51.95 * BILLION,
+  },
+  'pvh:nyse': {
+    price: 140.6,
+    marketCap: 8.39 * BILLION,
   },
   'net:nyse': {
     price: 91.6,
@@ -206,9 +221,62 @@ export const prices = {
     price: 9.64,
     marketCap: 9.26 * BILLION,
   },
+  'gds:nasdaq': {
+    price: 8.53,
+    marketCap: 1.54 * BILLION,
+  },
+  'gme:nyse': {
+    price: 15.12,
+    marketCap: 4.67 * BILLION,
+  },
+  'arm:nasdaq': {
+    price: 134.15,
+    marketCap: 142.19 * BILLION,
+  },
+  'wba:nyse': {
+    price: 20.51,
+    marketCap: 18.17 * BILLION,
+  },
+  'rh:nyse': {
+    price: 286.54,
+    marketCap: 5.38 * BILLION,
+  },
+  'brze:nasdaq': {
+    price: 49.42,
+    marketCap: 5.02 * BILLION,
+  },
+  'panw:nasdaq': {
+    price: 286.69,
+    marketCap: 91.31 * BILLION,
+  },
+  'roku:nyse': {
+    price: 64.64,
+    marketCap: 9.29 * BILLION,
+  },
+  'ccl:nyse': {
+    price: 17.03,
+    marketCap: 21.93 * BILLION,
+  },
+  'mkc:nyse': {
+    price: 70.03,
+    marketCap: 18.8 * BILLION,
+  },
   'orcl:nyse': {
     price: 129.24,
     marketCap: 354.59 * BILLION,
+  },
+
+  'ctas:nasdaq': {
+    price: 635.66,
+    marketCap: 64.21 * BILLION,
+  },
+  'w:nyse': {
+    price: 64.71,
+    marketCap: 8.21 * BILLION,
+  },
+  'payx:nasdaq': {
+    price: 118.96,
+    marketCap: 42.93 * BILLION,
   },
   'pdd:nasdaq': {
     price: 123.74,

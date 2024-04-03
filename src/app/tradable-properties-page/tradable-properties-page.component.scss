@@ -10,3 +10,15 @@
   display: flex;
   flex-direction: column;
 }
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* This ensures vertical alignment in the middle, if needed */
+
+  h1,
+  button {
+    margin: 0; /* Removes default margins */
+    padding: 0.5rem; /* Adds some padding around the text for better readability */
+  }
+}

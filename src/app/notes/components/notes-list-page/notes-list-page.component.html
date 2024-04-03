@@ -12,6 +12,11 @@
 
         <app-tradable-display
           [tradable]="item.tradableItem"
+          [tickerOnly]="true"
+          [prices]="
+            pricesServices.getPriceByTicker(item.tradableItem?.ticker) | async
+          "
+          [showPercentage]="'true'"
         ></app-tradable-display>
       </span>
       <span>

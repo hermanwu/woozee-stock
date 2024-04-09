@@ -3,9 +3,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { tradable } from 'src/app/mock-data/mocks/tradables.mock';
-import { organizations } from 'src/app/mock-data/organization.mock';
-import { mockProducts } from 'src/app/mock-data/product.mock';
 import { NavigationServices } from '../../services/navgiation.services';
 
 export interface StateGroup {
@@ -19,23 +16,10 @@ export interface StateGroup {
 })
 export class SearchComponent implements OnInit {
   @Input() enableAutoFocus: boolean;
+  @Input() stateGroups: StateGroup[];
 
   searchForm: FormGroup;
   filteredOptions: Observable<string[]>;
-  stateGroups: StateGroup[] = [
-    {
-      label: 'Stocks and ETFs',
-      items: tradable,
-    },
-    {
-      label: 'Organization',
-      items: organizations,
-    },
-    {
-      label: 'Product',
-      items: mockProducts,
-    },
-  ];
   selectedGroup: string;
   selectedText: string;
   stateGroupOptions: Observable<StateGroup[]>;
@@ -67,7 +51,10 @@ export class SearchComponent implements OnInit {
     if ($event.source.selected) {
       const searchItem = $event.source.value;
       this.selectedGroup = group;
-      this.navigationServices.navigate(group, searchItem.id || searchItem.uuid);
+      this.navigationServices.navigate(
+        group,
+        searchItem.id || searchItem.uuid || searchItem.ticker
+      );
       this.searchForm.reset();
     }
   }

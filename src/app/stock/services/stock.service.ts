@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { organizations } from 'src/app/mock-data/organization.mock';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
@@ -23,9 +24,18 @@ export class StockServices {
 
   getStockByUuid(ticker: string): Observable<any> {
     ticker = ticker.toUpperCase();
-    const url = `https://logendpoint-igvhya62rq-uc.a.run.app?ticker=${ticker}`;
+    const url = `https://getstockbyticker-igvhya62rq-uc.a.run.app?ticker=${ticker}`;
     // const url = `http://127.0.0.1:5001/woozee-stock/us-central1/logEndPoint?ticker=${ticker}`;
-    return this.http.get(url);
+    return this.http.get(url).pipe(
+      catchError((error) => {
+        // Handle or log the error
+        console.error('Caught in catchError:', error);
+        // You can return an observable of a default item in case of an error
+        // return of(defaultValue);
+        // Or rethrow the error if you want to handle it in the error callback of subscribe()
+        return throwError(() => new Error('Error after catchError'));
+      })
+    );
   }
 
   getDataMap() {

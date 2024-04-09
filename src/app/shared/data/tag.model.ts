@@ -23,6 +23,7 @@ export interface Tag {
   value?: number;
   votes?: number;
   sentiment?: number;
+  name?: string;
 }
 
 export const mockTags: Tag[] = [
@@ -83,6 +84,13 @@ export const mockTags: Tag[] = [
     votes: -5,
   },
   {
+    uuid: 'impressive-earnings',
+    type: TagType.Business,
+    displayName: 'Impressive Earnings',
+    sentiment: 1,
+    votes: 90,
+  },
+  {
     uuid: 'Europe',
     type: TagType.Trend,
     displayName: 'Europe',
@@ -92,7 +100,8 @@ export const mockTags: Tag[] = [
   {
     uuid: 'hyperscaler',
     type: TagType.Trend,
-    displayName: 'Hyperscaler (Cloud Service Provider)',
+    name: 'Hyperscaler (Cloud Service Provider)',
+    displayName: 'Hyperscaler',
     votes: 60,
   },
   {

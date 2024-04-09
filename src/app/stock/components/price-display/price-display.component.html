@@ -1,6 +1,7 @@
-<span *ngIf="currentPrice; else closedPriceSection"
-  >${{ currentPrice | number : "1.2-2" | undefined }}</span
->
+<span *ngIf="currentPrice; else closedPriceSection">
+  ${{ currentPrice | number : "1.2-2" | undefined }}
+</span>
+
 <ng-template #closedPriceSection>
   <span class="text-gray-500">
     closed: {{ closedPrice | number : "1.2-2" }}</span
@@ -11,12 +12,16 @@
   <app-percentage-display
     [percentageDiff]="percentageDiff"
   ></app-percentage-display>
+
+  <ng-container *ngIf="currentPrice">
+    <span class="ml-1 text-gray-500 text-sm">(delayed)</span>
+  </ng-container>
 </span>
 
-<span class="ml-3" *ngIf="priceDiff">
+<!-- <span class="ml-3" *ngIf="priceDiff">
   <span *ngIf="priceDiff > 0"> +{{ priceDiff | number : "1.2-2" }} </span>
   <span *ngIf="priceDiff === 0">
     {{ priceDiff | number : "1.2-2" }}
   </span>
   <span *ngIf="priceDiff <= 0"> {{ priceDiff | number : "1.2-2" }} </span>Today
-</span>
+</span> -->

@@ -1,24 +1,64 @@
-.logo-image {
-  // center image in the div
-  // add margin top and bottom with 10px
-  margin: 10px auto;
-
+.profile-image {
   // set image height to 150px
-  height: 150px;
+  height: 100%;
+  width: 100px;
+  border: 1px solid #ccc;
+
+  img {
+    border-radius: 10px; /* Adjust as needed for desired roundness */
+  }
 }
-.head-section {
-  display: flex;
-  flex-direction: column;
+
+.market-cap-display {
+  margin-left: auto;
 }
 
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center; /* This ensures vertical alignment in the middle, if needed */
+  justify-content: flex-start;
+  align-items: end; /* This ensures vertical alignment in the middle, if needed */
+  gap: 15px; /* Adds a gap of 20px between the flex items */
+
+  .last-item {
+    margin-left: auto;
+  }
 
   h1,
   button {
     margin: 0; /* Removes default margins */
     padding: 0.5rem; /* Adds some padding around the text for better readability */
   }
+}
+
+.image-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100%; /* Set to the desired height */
+  width: 100%; /* Set to the desired width */
+}
+
+.large-logo-link {
+  height: 100;
+}
+
+.test-container {
+  position: relative;
+  height: 250px; /* or any specific size */
+  padding-top: 10px;
+  margin-bottom: 10px; /* Adjust the value as needed */
+}
+
+.bottom-div {
+  position: relative; /* This ensures the stacking context starts here */
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Not strictly necessary unless other elements are also positioned */
+}
+
+.top-div {
+  position: absolute;
+  top: 150px; /* Adjust the position as needed */
+  width: 100%;
+  z-index: 0; /* Ensures this div is above the bottom-div */
 }

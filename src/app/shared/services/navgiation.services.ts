@@ -12,6 +12,10 @@ export class NavigationServices {
   ) {}
 
   navigate(type: string, routeWord: string) {
+    if (!type) {
+      return this.router.navigate([`/woozee/quotes/${routeWord}`]);
+    }
+
     type = type.toLowerCase();
     switch (type) {
       case 'tradable':

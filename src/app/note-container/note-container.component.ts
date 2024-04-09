@@ -57,16 +57,5 @@ export class NoteContainerComponent implements OnInit, OnChanges {
     );
   }
 
-  toggleChip = (chip: any) => {
-    const addChip = () => {
-      this.chips.add(chip);
-    };
-    const removeChip = () => {
-      this.chips.delete(chip);
-    };
-
-    this.chips.has(chip) ? removeChip() : addChip();
-  };
-
   onSaveClick() {}
 }

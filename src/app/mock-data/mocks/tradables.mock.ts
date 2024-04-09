@@ -9,6 +9,12 @@ export const getTradableItemsByUuids = (uuids): any[] => {
     .filter((item) => item !== undefined);
 };
 
+export const getTradableItemByTicker = (ticker: string): any => {
+  return tradable.find(
+    (tradable) => tradable?.ticker?.toLowerCase() === ticker.toLowerCase()
+  );
+};
+
 export const getTradableItemByOrganizationUuid = (
   organizationUuid: string
 ): any => {
@@ -20,6 +26,7 @@ export const getTradableItemByOrganizationUuid = (
 export class Tradable {
   ticker: string;
   uuid: string;
+  name: string;
   displayName: string;
   organizationUuid: string;
   irAddress?: string;
@@ -28,9 +35,43 @@ export class Tradable {
   marketCap?: number;
   description?: string;
   homePageUrl?: string;
+  market?: string;
+  sicDescription?: string;
+  primaryExchange?: string;
+  weightedSharesOutstanding?: number;
+}
+
+export interface StockModel {
+  irAddress?: string;
+  address?: {
+    city?: string;
+    postal_code?: string;
+    state?: string;
+  };
+  description?: string;
+  homepage_url?: string;
+  list_date?: string;
+  market?: string;
+  market_cap?: number;
+  name?: string;
+  primary_exchange?: string;
+  sic_description?: string;
+  ticker?: string;
+  branding?: {
+    icon_url?: string;
+    logo_url?: string;
+  };
+  weighted_shares_outstanding?: number;
 }
 
 export const tradable = [
+  {
+    uuid: 'levi:nyse',
+    displayName: 'Levi Strauss & Co',
+    ticker: 'levi',
+    organizationUuid: 'levi',
+    irAddress: 'https://investors.levistrauss.com/home/default.aspx',
+  },
   {
     uuid: 'gds:nasdaq',
     displayName: 'GDS Holdings Ltd',
@@ -383,8 +424,6 @@ export const tradable = [
     ticker: 'GOOGL',
     organizationUuid: 'googl',
     irAddress: 'https://abc.xyz/investor/',
-    logoLink: 'https://i.ibb.co/7vJ2J2V/GOOGL.png',
-    largeLogoLink: 'https://i.ibb.co/7vJ2J2V/GOOGL.png',
   },
   {
     uuid: 'GOOG:NASDAQ',
@@ -397,6 +436,21 @@ export const tradable = [
     displayName: 'Meta Platforms Inc',
     ticker: 'META',
     organizationUuid: 'meta',
+    logoLink: 'https://i.ibb.co/mJdDP5t/Hqrr-Ecr-I-400x400.png',
+  },
+  {
+    uuid: 'cag',
+    displayName: 'Conagra Brands Inc',
+    ticker: 'cag',
+    organizationUuid: 'cag',
+    irAddress: 'https://investor.conagrabrands.com/',
+  },
+  {
+    uuid: 'lw',
+    displayName: 'Lamb Weston Holdings Inc',
+    ticker: 'lw',
+    organizationUuid: 'lw',
+    irAddress: 'https://investors.lambweston.com/',
   },
   {
     uuid: 'fsr:nyse',

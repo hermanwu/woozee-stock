@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import { LandingComponent } from 'src/app/landing/landing.component';
 import { AddNoteFormComponent } from 'src/app/notes/components/add-note-form/add-note-form.component';
 import { environment } from 'src/environments/environment';
 import { AuthService } from '../../services/auth.services';
+import { SearchService } from '../../services/search.services/search.service';
 
 @Component({
   selector: 'app-app-container',
@@ -18,27 +20,28 @@ export class AppContainerComponent implements OnInit {
   showSearchBar: boolean;
   showDisclaimer;
   language: string;
-  username: string | null;
+  username$: Observable<string | null>;
 
   constructor(
-    private userServices: UserServices,
     private authService: AuthService,
-    private dialog: MatDialog
+    private userServices: UserServices,
+    private dialog: MatDialog,
+    private searchServices: SearchService,
+    private router: Router
   ) {
-    this.language = this.userServices.getLanguage();
     this.showDisclaimer = localStorage.getItem('showDisclaimer');
+    this.username$ = this.userServices.getUsername();
   }
 
   ngOnInit(): void {
-    this.authService.getLoggedInDisplayName().subscribe((name) => {
-      this.username = name;
-      if (!name && localStorage.getItem('showDisclaimer') !== 'false') {
-        const dialogRef = this.dialog.open(LandingComponent, {
-          width: '500px',
-          disableClose: true, // Disable dialog close on Esc or click outside
-        });
-      }
-    });
+    // this.authService.getLoggedInDisplayName().subscribe((name) => {
+    //   if (!name && localStorage.getItem('showDisclaimer') !== 'false') {
+    //     const dialogRef = this.dialog.open(LandingComponent, {
+    //       width: '500px',
+    //       disableClose: true, // Disable dialog close on Esc or click outside
+    //     });
+    //   }
+    // });
   }
 
   searchIconClicked(): void {
@@ -46,19 +49,21 @@ export class AppContainerComponent implements OnInit {
   }
 
   updateLanguage(): void {
-    if (this.language === 'en') {
-      this.userServices.setLanguage('cn');
-      this.language = 'cn';
-    } else {
-      this.userServices.setLanguage('en');
-      this.language = 'en';
-    }
+    // if (this.language === 'en') {
+    //   this.userServices.setLanguage('cn');
+    //   this.language = 'cn';
+    // } else {
+    //   this.userServices.setLanguage('en');
+    //   this.language = 'en';
+    // }
 
     window.location.reload();
   }
 
   logout(): void {
-    this.authService.signOut();
+    this.authService.signOut().then(() => {
+      this.router.navigate(['/']);
+    });
   }
 
   agreeAndClose(): void {

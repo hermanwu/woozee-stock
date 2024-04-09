@@ -34,9 +34,7 @@ export class StockListPageComponent implements OnInit, OnDestroy {
     private userServices: UserServices,
     private stockServices: StockServices,
     private dialogService: MatDialog
-  ) {
-    this.portfolios = this.userServices.getPortfolios();
-  }
+  ) {}
 
   ngOnInit(): void {
     // const equitySummaryMap = this.generateEquitySummaryMap(this.tickers);

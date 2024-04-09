@@ -9,9 +9,7 @@ import { UserServices } from '../../services/user.services';
 export class PortfolioListComponent implements OnInit {
   portfolios = [];
 
-  constructor(userService: UserServices) {
-    this.portfolios = userService.getPortfolios();
-  }
+  constructor(userService: UserServices) {}
 
   ngOnInit(): void {}
 }

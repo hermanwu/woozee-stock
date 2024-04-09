@@ -20,7 +20,9 @@ export const opinionKeyWord = [
 export const factKeyWord = ['Robotics', 'Surgery'];
 
 export const getEarningsByTargetUuid = (targetUuid: string) => {
-  return earnings.filter((item) => item.targetUuids?.includes(targetUuid));
+  return earnings.filter(
+    (item) => item.targetUuids?.[0].indexOf(targetUuid) > -1
+  );
 };
 
 export class Earnings {
@@ -5049,6 +5051,119 @@ export const earnings: Earnings[] = [
     ],
   },
   {
+    targetUuids: ['krus'],
+    releasedDate: getUtcDate(2024, 1, 4),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://ir.kurausa.com/news-releases/news-release-details/kura-sushi-usa-announces-fiscal-first-quarter-2024-financial',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 51.475 * MILLION,
+        previousValue: 39.318 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 51.475 * MILLION - 45.603 * MILLION,
+        previousValue: 39.318 * MILLION - 34.747 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: -2.841 * MILLION,
+        previousValue: -2.156 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: -2.047 * MILLION,
+        previousValue: -2.088 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['lw'],
+    releasedDate: getUtcDate(2024, 4, 4),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investors.lambweston.com/~/media/Files/L/Lamb-Weston-IR/press-release/fy24-q3-earnings-press-release.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 1.4583 * BILLION,
+        previousValue: 1.2536 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 403.7 * MILLION,
+        previousValue: 397.8 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 223.9 * MILLION,
+        previousValue: 266.3 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 146.1 * MILLION,
+        previousValue: 175.1 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['cag'],
+    releasedDate: getUtcDate(2024, 4, 4),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://www.conagrabrands.com/news-room/news-conagra-brands-reports-third-quarter-results-prn-122884',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 3.0329 * BILLION,
+        previousValue: 3.0865 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 3.0329 * BILLION - 2.1741 * BILLION,
+        previousValue: 3.0865 * BILLION - 2.2477 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 308.8 * MILLION,
+        previousValue: 342.2 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
     targetUuids: ['anet:nyse'],
     releasedDate: getUtcDate(2024, 2, 12),
     documents: [
@@ -6015,6 +6130,46 @@ export const earnings: Earnings[] = [
         previousValue: 9.453697 * BILLION,
         timeFrame: TimeFrame.yoy,
         unit: UnitType.rmb,
+      },
+    ],
+  },
+  {
+    targetUuids: ['levi:nyse'],
+    releasedDate: getUtcDate(2024, 1, 25),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://s23.q4cdn.com/172692177/files/doc_financials/2023/q4/Exhibit-99-1-4Q-2023-Press-Release_-1-25-Pre-Final-15.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 1.6423 * BILLION,
+        previousValue: 1.5887 * BILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 949.7 * MILLION,
+        previousValue: 887.3 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 151.2 * MILLION,
+        previousValue: 137.0 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 126.8 * MILLION,
+        previousValue: 150.6 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
       },
     ],
   },

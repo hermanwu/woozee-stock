@@ -326,6 +326,22 @@ export const prices = {
     price: 93.78,
     marketCap: 103.79 * BILLION,
   },
+  'levi:nyse': {
+    price: 18.74,
+    marketCap: 7.41 * BILLION,
+  },
+  krus: {
+    price: 104.16,
+    marketCap: 1.14 * BILLION,
+  },
+  cag: {
+    price: 29.06,
+    marketCap: 14.54 * BILLION,
+  },
+  lw: {
+    price: 101.12,
+    marketCap: 11.78 * BILLION,
+  },
 };
 
 export const getPricesByUuid = (uuid: string) => {

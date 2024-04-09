@@ -3,14 +3,7 @@ import { userInteractions } from 'src/app/mock-data/interactions.mock';
 import { getTradableItemsByUuids } from 'src/app/mock-data/mocks/tradables.mock';
 import { getOrganizationsByUuids } from 'src/app/mock-data/organization.mock';
 import { getPeopleByPersonUuids } from 'src/app/mock-data/person.mock';
-import {
-  getProductsByProductUuids,
-  Product,
-} from 'src/app/mock-data/product.mock';
-import {
-  Organization,
-  Person,
-} from 'src/app/people/components/investor-display/investor-display.component';
+import { getProductsByProductUuids } from 'src/app/mock-data/product.mock';
 
 export interface UserInteractions {
   uuid: string;
@@ -24,7 +17,10 @@ export interface UserInteractions {
     | 'quote'
     | 'opinion'
     | 'event'
-    | 'earnings';
+    | 'earnings'
+    | 'etf'
+    | 'organization'
+    | 'tag';
 
   saved?: boolean;
   bullish?: number;
@@ -55,31 +51,16 @@ export class InteractionServices {
       .slice(0, 20);
   }
 
-  getInteractionTargets(
-    interactions: UserInteractions[]
-  ): [any[], Organization[], Product[], Person[]] {
-    let tradableItems = [];
-    let organizations = [];
-    let products = [];
-    let people = [];
-
-    for (let interaction of interactions) {
-      if (interaction.type === 'tradableItem') {
-        tradableItems.push(
-          ...getTradableItemsByUuids([interaction.targetUuid])
-        );
-      } else if (interaction.type === 'stock') {
-        organizations.push(
-          ...getOrganizationsByUuids([interaction.targetUuid])
-        );
-      } else if (interaction.type === 'product') {
-        products.push(...getProductsByProductUuids([interaction.targetUuid]));
-      } else if (interaction.type === 'person') {
-        people.push(...getPeopleByPersonUuids([interaction.targetUuid]));
-      }
+  getInteractionTarget(interaction: UserInteractions): any {
+    if (interaction.type === 'tradableItem') {
+      return getTradableItemsByUuids([interaction.targetUuid])?.[0];
+    } else if (interaction.type === 'stock') {
+      return getOrganizationsByUuids([interaction.targetUuid])?.[0];
+    } else if (interaction.type === 'product') {
+      return getProductsByProductUuids([interaction.targetUuid])?.[0];
+    } else if (interaction.type === 'person') {
+      return getPeopleByPersonUuids([interaction.targetUuid])?.[0];
     }
-
-    return [tradableItems, organizations, products, people];
   }
 
   getUserInteractionsByUserId(userId: string): UserInteractions[] {

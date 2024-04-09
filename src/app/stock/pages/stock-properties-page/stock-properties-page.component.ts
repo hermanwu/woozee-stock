@@ -102,9 +102,9 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         .getNotesByTargets([this.stockUuid])
         .slice(0, 5);
 
-      const emotions = this.emotionServices.getUserInteractionsByUserId(
-        this.userServices.currentUser.userUuid
-      );
+      // const emotions = this.emotionServices.getUserInteractionsByUserId(
+      //   this.userServices.currentUser.userUuid
+      // );
 
       this.tradableItem = getTradableItemByOrganizationUuid(this.stockUuid);
 

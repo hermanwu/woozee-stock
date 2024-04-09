@@ -22,7 +22,6 @@ export class TradableDisplayComponent implements OnInit {
 
   ngOnChanges() {
     if (this.prices && this.prices.currentPrice) {
-      console.log(this.prices);
       this.dailyPercentageChange =
         (this.prices.currentPrice.c - this.prices.closedPrice.c) /
         this.prices.closedPrice.c;
@@ -30,6 +29,6 @@ export class TradableDisplayComponent implements OnInit {
   }
 
   navigate() {
-    this.navigationServices.navigate('tradable', this.tradable.uuid);
+    this.navigationServices.navigate('tradable', this.tradable.ticker);
   }
 }

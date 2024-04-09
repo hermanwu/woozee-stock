@@ -74,7 +74,6 @@ export class PricesServices {
 
         this.processClosedPrices(closedRes);
         this.processCurrentPrices(currentRes);
-        console.log(this.closedPriceMap);
 
         this.pricesLoaded.next({
           closedPriceMap: this.closedPriceMap,
@@ -88,7 +87,6 @@ export class PricesServices {
   fetchPreviousBusinessDayData(date = new Date()) {
     const previousBusinessDay = getPreviousBusinessDay(date);
     const formattedDate = formatDateToString(previousBusinessDay);
-    console.log(formattedDate);
 
     return this.firestore
       .collection('prices')

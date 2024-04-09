@@ -1,55 +1,58 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
+import firebase from 'firebase/compat/app';
+import { Observable, Subject } from 'rxjs';
+import { map, startWith, takeUntil } from 'rxjs/operators';
 import { userInteractions } from 'src/app/mock-data/interactions.mock';
 import { users } from 'src/app/mock-data/mock-users.data';
-import { getTradableItemByOrganizationUuid } from 'src/app/mock-data/mocks/tradables.mock';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
+import { AuthService } from 'src/app/shared/services/auth.services';
 import { StockData } from 'src/app/stock/services/stock-data.model';
-import { currentUserMock } from '../data/user.mock';
+import { UserInteractions } from 'src/interactions/interaction.services';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserServices {
-  currentUser = currentUserMock;
+export class UserServices implements OnDestroy {
   users = users;
-  entityUuidToInteraction = new Map<string, any>();
-  userTradableItemsSet = new Set<string>();
-  userOrganizationSet = new Set<string>();
-  userProductsSet = new Set<string>();
-  userPeopleSet = new Set<string>();
+  user$: Observable<firebase.User | null>;
+  username$: Observable<string | null>;
+  private unsubscribe$ = new Subject<void>();
+  interactions = [];
+  userStockInteractions = [];
 
-  constructor() {
-    const interactions = userInteractions.filter(
-      (interaction) => interaction.userUuid === this.currentUser.userUuid
+  constructor(private authService: AuthService) {
+    this.user$ = this.authService.getUser();
+    this.username$ = this.user$.pipe(
+      map((user) => (user ? user.email : null)),
+      startWith(undefined),
+      takeUntil(this.unsubscribe$)
     );
 
-    for (let interaction of interactions) {
-      this.entityUuidToInteraction.set(
-        interaction.targetUuid.toLowerCase(),
-        interaction
-      );
-
-      if (interaction.type === 'tradableItem') {
-        this.userTradableItemsSet.add(interaction.targetUuid);
-      } else if (interaction.type === 'stock') {
-        this.userOrganizationSet.add(interaction.targetUuid);
-
-        const tradable = getTradableItemByOrganizationUuid(
-          interaction.targetUuid
+    this.username$.pipe(takeUntil(this.unsubscribe$)).subscribe((username) => {
+      if (username) {
+        this.interactions = userInteractions.filter(
+          (interaction) => interaction.userUuid === username
         );
-        if (tradable) {
-          this.userTradableItemsSet.add(tradable.uuid);
+
+        for (let interaction of this.interactions) {
+          if (
+            interaction.type === 'tradableItem' ||
+            interaction.type === 'stock'
+          ) {
+            this.userStockInteractions.push(interaction);
+          }
         }
-      } else if (interaction.type === 'product') {
-        this.userProductsSet.add(interaction.targetUuid);
-      } else if (interaction.type === 'person') {
-        this.userPeopleSet.add(interaction.targetUuid);
       }
-    }
+    });
   }
 
-  getCurrentUser() {
-    return this.currentUser;
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+  getUsername() {
+    return this.username$;
   }
 
   getRandomUser() {
@@ -60,27 +63,23 @@ export class UserServices {
     return this.users.find((user) => user.uuid === uuid);
   }
 
-  getPortfolios() {
-    return this.currentUser.portfolios;
+  getUserStockInteractions(): UserInteractions[] {
+    return this.userStockInteractions;
   }
+
+  getUserInteractionsByTypeAndTargetUuid(uuid, type): UserInteractions {
+    return this.interactions.find(
+      (interaction) =>
+        interaction.targetUuid === uuid && interaction.type === type
+    );
+  }
+
+  // getPortfolios() {
+  //   return this.currentUser.portfolios;
+  // }
 
   getSavedNotes(): string[] {
     return;
-  }
-
-  // getMyNotes(): string[] {
-
-  // }
-
-  getPortfolioByName(name: string): {
-    name: string;
-    stocks: string[];
-  } {
-    const portfolio = this.currentUser.portfolios.filter(
-      (portfolio) => portfolio.name === name
-    )[0];
-
-    return portfolio;
   }
 
   updateStockRanks(stocks: StockData[], rankings: string[]): StockData[] {
@@ -97,19 +96,6 @@ export class UserServices {
     }
 
     return updatedStocks;
-  }
-
-  getLanguage() {
-    return (
-      this.currentUser.defaultLanguage ||
-      localStorage.getItem('woozee-language') ||
-      'en'
-    );
-  }
-
-  setLanguage(language: string) {
-    this.currentUser.defaultLanguage = language;
-    localStorage.setItem('woozee-language', language);
   }
 
   // updateStockRanks(stock: Stock, lowerRanks: Stock) {}

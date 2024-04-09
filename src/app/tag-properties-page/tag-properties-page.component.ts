@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { InteractionServices } from 'src/interactions/interaction.services';
+import {
+  InteractionServices,
+  UserInteractions,
+} from 'src/interactions/interaction.services';
 import { UserServices } from '../accounts/services/user.services';
-import { getNotesByTagUuid } from '../mock-data/notes-mock.const';
 import { Product } from '../mock-data/product.mock';
 import {
   Organization,
@@ -27,39 +29,45 @@ export class TagPropertiesPageComponent implements OnInit {
   products: Product[];
   people: Person[];
   uuidToInteractionMap;
+  stockInteractions;
 
-  interactions: any[];
+  currentUser;
+
+  displayItems: {
+    tradableItem: any;
+    userInteraction: UserInteractions;
+  }[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private interactionServices: InteractionServices,
     private userServices: UserServices
-  ) {
-    this.uuidToInteractionMap = this.userServices.entityUuidToInteraction;
-  }
+  ) {}
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
       this.tagUuid = params['tagUuid'].toLowerCase();
       this.tag = getTagByUuid(this.tagUuid);
 
-      this.notes = getNotesByTagUuid(this.tagUuid);
+      // this.notes = getNotesByTagUuid(this.tagUuid);
 
-      this.interactions = this.interactionServices
-        .getUserInteractionsByUserId(this.userServices.currentUser.userUuid)
+      const userInteractions = this.interactionServices
+        .getUserInteractionsByUserId('herman.wrt@gmail.com')
         .filter((interaction) => {
           return interaction.listUuids?.includes(this.tagUuid);
         });
 
-      [this.tradableItems, this.organizations, this.products, this.people] =
-        this.interactionServices.getInteractionTargets(this.interactions);
-
-      this.tradableItems.sort((a, b) => {
-        return (
-          (this.uuidToInteractionMap.get(b.uuid)?.vote || 0) -
-          (this.uuidToInteractionMap.get(a.uuid)?.vote || 0)
-        );
-      });
+      this.stockInteractions = userInteractions
+        .filter((interaction) => {
+          return interaction.type === 'tradableItem';
+        })
+        .map((interaction) => ({
+          ticker: interaction.targetUuid.split(':')[0],
+          interaction: interaction,
+        }))
+        .sort((a, b) => {
+          return (b.interaction.vote || 0) - (a.interaction.vote || 0);
+        });
     });
   }
 }

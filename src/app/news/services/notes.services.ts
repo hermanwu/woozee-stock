@@ -21,11 +21,6 @@ export class NotesServices {
     return this.notes.filter((item) => !item.title?.match(/[\u3400-\u9FBF]/));
   }
 
-  getAllNews() {
-    const language = this.userServices.getLanguage();
-    return this.getNewsByLanguage(language);
-  }
-
   getNewsByDate(date: Date) {
     return this.notes.filter(
       (item) => new Date(item.createdDate) >= convertDateToUTC(date)

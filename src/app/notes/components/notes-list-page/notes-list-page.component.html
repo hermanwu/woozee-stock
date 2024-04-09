@@ -4,28 +4,25 @@
 
 <mat-tab-group>
   <mat-tab>
-    <ng-template mat-tab-label> Stocks and ETFs </ng-template>
+    <ng-template mat-tab-label> Stocks </ng-template>
 
-    <div class="mt-5" *ngFor="let item of displayItems; let i = index">
+    <div
+      class="mt-5 tab-content"
+      *ngFor="let item of stockDisplays; let i = index"
+    >
       <span class="text-lg">
         {{ i + 1 }}.
 
         <app-tradable-display
-          [tradable]="item.tradableItem"
+          [tradable]="item"
           [tickerOnly]="true"
-          [prices]="
-            pricesServices.getPriceByTicker(item.tradableItem?.ticker) | async
-          "
+          [prices]="pricesServices.getPriceByTicker(item?.ticker) | async"
           [showPercentage]="'true'"
         ></app-tradable-display>
       </span>
       <span>
         <app-interaction-bar
-          [interactions]="
-            targetUuidToInteractionMap.get(
-              item.tradableItem?.uuid.toLowerCase()
-            )
-          "
+          [interactions]="item.interactions"
           [displayTop3]="true"
         ></app-interaction-bar>
       </span>

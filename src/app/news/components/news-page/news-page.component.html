@@ -94,38 +94,42 @@
   >
     <button
       type="button"
+      mat-raised-button
       (click)="selectedEarningsIndex = selectedEarningsIndex + 1"
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
     >
       Next
     </button>
   </div>
 </div>
 
-<app-title-menu>
-  <div left-items class="inline-display">
-    <h1>Top Notes</h1>
-  </div>
-</app-title-menu>
+<ng-container *ngIf="notes.length > 0">
+  <app-title-menu>
+    <div left-items class="inline-display">
+      <h1>Top Notes</h1>
+    </div>
+  </app-title-menu>
 
-<div class="mb-5">
-  <mat-chip-list *ngIf="notes[selectedNoteIndex]">
-    <mat-chip *ngFor="let item of notes[selectedNoteIndex].targetUuids">
-      <app-entity-display [entityUuid]="item"></app-entity-display>
-    </mat-chip>
-  </mat-chip-list>
+  <div class="mb-5">
+    <mat-chip-list *ngIf="notes[selectedNoteIndex]">
+      <mat-chip *ngFor="let item of notes[selectedNoteIndex].targetUuids">
+        <app-entity-display [entityUuid]="item"></app-entity-display>
+      </mat-chip>
+    </mat-chip-list>
 
-  <div class="news-display">
-    <app-note-container [note]="notes[selectedNoteIndex]"></app-note-container>
-  </div>
+    <div class="news-display">
+      <app-note-container
+        [note]="notes[selectedNoteIndex]"
+      ></app-note-container>
+    </div>
 
-  <div class="flex justify-center" *ngIf="notes[selectedNoteIndex]">
-    <button
-      type="button"
-      (click)="selectedNoteIndex = selectedNoteIndex + 1"
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-    >
-      Next
-    </button>
+    <div class="flex justify-center" *ngIf="notes[selectedNoteIndex]">
+      <button
+        type="button"
+        mat-raised-button
+        (click)="selectedNoteIndex = selectedNoteIndex + 1"
+      >
+        Next
+      </button>
+    </div>
   </div>
-</div>
+</ng-container>

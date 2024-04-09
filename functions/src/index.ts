@@ -6,7 +6,9 @@ import * as functions from 'firebase-functions';
 import * as v2 from 'firebase-functions/v2';
 
 // const corsHandler = cors({ origin: ['https://invesdea.com'] });
-const corsHandler = cors({ origin: true });
+const corsHandler = cors({
+  origin: ['http://localhost:4200', 'https://invesdea.com'],
+});
 const api = '7yhlLmtHv8Q8FhP3RImzpPVdxktmD2Pb';
 
 admin.initializeApp({
@@ -93,7 +95,7 @@ export const downloadImage = async (
     return { error: 'Failed to process request' };
   }
 };
-export const logEndPoint = v2.https.onRequest((request, response) => {
+export const getStockByTicker = v2.https.onRequest((request, response) => {
   corsHandler(request, response, async () => {
     const ticker =
       typeof request.query.ticker === 'string'
@@ -133,7 +135,7 @@ export const logEndPoint = v2.https.onRequest((request, response) => {
       // Download the logo
       const logoUrl = stockDetails?.branding?.logo_url;
       if (logoUrl) {
-        const fileName = `${ticker}-logo.svg`;
+        const fileName = `${ticker}-logo.` + logoUrl.split('.').pop();
         const downloadResult = await downloadImage(
           `${logoUrl}?apiKey=${api}`,
           fileName

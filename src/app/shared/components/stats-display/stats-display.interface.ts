@@ -30,7 +30,7 @@ export enum StatsCategory {
   revenue = 'Revenue',
 }
 
-export interface PriceRange {
+export interface NumberRange {
   low: number;
   high: number;
   average: number;

@@ -1,167 +1,215 @@
-<div class="head-section mb-2">
-  <div class="logo-image">
-    <app-image-display [imageLink]="tradable.logoLink"></app-image-display>
-  </div>
+<ng-container *ngIf="tradable === undefined"> Loading </ng-container>
 
-  <div class="container">
-    <h1>{{ tradable.ticker.toUpperCase() }} - {{ tradable?.displayName }}</h1>
-    <button
-      mat-icon-button
-      [matMenuTriggerFor]="industryMenu"
-      *ngIf="!environment.production"
-    >
-      <mat-icon>more_horiz</mat-icon>
-    </button>
+<ng-container *ngIf="tradable === null"> No result found </ng-container>
 
-    <mat-menu #industryMenu="matMenu">
-      <button mat-menu-item type="button" (click)="showRange = !showRange">
-        <mat-icon>sort</mat-icon>
-      </button>
-    </mat-menu>
+<ng-container *ngIf="tradable">
+  <div class="test-container">
+    <div class="bottom-div">
+      <div class="image-container" style="height: 200px">
+        <img
+          alt="logo image"
+          [src]="tradable?.largeLogoLink"
+          style="object-fit: contain; height: 100%; width: 70%; opacity: 0.7"
+          onerror="this.onerror=null; this.src='https://i.ibb.co/BTr3F4C/Screen-Shot-2023-01-07-at-11-16-38-AM.png'"
+        />
+      </div>
+    </div>
+    <div class="top-div">
+      <div class="container">
+        <div class="profile-image">
+          <app-image-display
+            [imageLink]="tradable?.logoLink"
+          ></app-image-display>
+        </div>
+
+        <h1>
+          {{ tradable?.ticker?.toUpperCase() }} -
+          {{ tradable?.displayName || tradable?.name }}
+
+          <span class="text-sm text-gray-500">
+            ({{ tradable?.primaryExchange }})
+          </span>
+        </h1>
+
+        <div class="last-item">
+          <button
+            mat-icon-button
+            [matMenuTriggerFor]="industryMenu"
+            *ngIf="!environment.production"
+          >
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+        </div>
+
+        <mat-menu #industryMenu="matMenu">
+          <button mat-menu-item type="button" (click)="showRange = !showRange">
+            <mat-icon>sort</mat-icon>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
   </div>
 
   <mat-divider></mat-divider>
 
   <div class="mt-2" *ngIf="showRange">
-    <span *ngIf="historicalPrice"
-      >Last Price: {{ historicalPrice | siUnit : 2 | undefined }}</span
-    >
-    <span class="ml-2" *ngIf="historicalMarketCap"
-      >Market Cap: {{ historicalMarketCap | siUnit : 2 | undefined }}</span
-    >
-
     <span class="ml-2"
-      >Forecast & Price Target Range:
-      <span> ${{ priceRange?.low | number : "1.2-2" }} </span>
+      >Market Cap Target Range:
+      <span> ${{ marketCapRange?.low | siUnit : 2 | undefined }} </span>
       <span>—</span>
-      <span> ${{ priceRange?.high | number : "1.2-2" }} </span>
-      <span *ngIf="priceRange?.average"
-        >(${{ priceRange.average | number : "1.2-2" }} Avg.)
+      <span> ${{ marketCapRange?.high | siUnit : 2 | undefined }} </span>
+      <span *ngIf="marketCapRange?.average"
+        >(${{ marketCapRange.average | siUnit : 2 | undefined }} Avg.)
       </span>
     </span>
   </div>
 
-  <div class="text-2xl mt-5">
-    <app-price-display [prices]="priceData"></app-price-display>
-  </div>
-</div>
+  <div class="text-2xl mt-5 flex justify-between">
+    <span>
+      <app-price-display [prices]="priceData"></app-price-display>
+    </span>
 
-<div>
-  <app-interaction-bar [interactions]="interactions"></app-interaction-bar>
-</div>
-
-<div class="mt-2" *ngIf="organizations?.length > 0">
-  Organizations:
-  <span *ngFor="let org of organizations">
-    <app-stock-display [tagUuid]="org?.uuid"></app-stock-display>
-  </span>
-</div>
-
-<div class="mt-2" *ngIf="competitors?.length > 0">
-  Competitors:
-  <span *ngFor="let item of competitors">
-    <app-tradable-display [tradable]="item"></app-tradable-display>
-  </span>
-</div>
-
-<div class="mt-2">
-  <mat-chip-list>
-    Research Links:
-
-    <mat-chip *ngIf="tradable?.irAddress">
-      <a target="_blank" [href]="tradable.irAddress"> Investor Relations 🔗 </a>
-    </mat-chip>
-
-    <mat-chip>
-      <a
-        target="_blank"
-        [href]="'https://www.google.com/finance/quote/' + tradable.uuid"
-      >
-        Google 🔗
-      </a>
-    </mat-chip>
-
-    <mat-chip>
-      <a
-        target="_blank"
-        [href]="
-          'https://finance.yahoo.com/quote/' + tradable.uuid.split(':')[0]
-        "
-      >
-        Yahoo 🔗
-      </a>
-    </mat-chip>
-
-    <mat-chip>
-      <a
-        target="_blank"
-        [href]="
-          'https://www.finviz.com/quote.ashx?t=' +
-          tradable.uuid.split(':')[0] +
-          '&p=d'
-        "
-      >
-        finviz 🔗
-      </a>
-    </mat-chip>
-    <mat-chip>
-      <a
-        target="_blank"
-        [href]="
-          'https://www.tipranks.com/stocks/' +
-          tradable.uuid.split(':')[0] +
-          '/forecast'
-        "
-      >
-        tipranks.com 🔗
-      </a>
-    </mat-chip>
-
-    <mat-chip>
-      <a
-        target="_blank"
-        [href]="
-          'https://www.reddit.com/r/wallstreetbets/search/?q=' +
-          tradable.uuid.split(':')[0] +
-          '&t=week'
-        "
-      >
-        Wallstreetbets 🔗
-      </a>
-    </mat-chip>
-
-    <mat-chip>
-      <a
-        target="_blank"
-        [href]="
-          'https://seekingalpha.com/symbol/' + tradable.uuid.split(':')[0]
-        "
-      >
-        seekingalpha.com 🔗
-      </a>
-    </mat-chip>
-  </mat-chip-list>
-</div>
-
-<div class="mt-4" *ngIf="tradable.description">
-  {{ tradable.description }}
-</div>
-
-<div *ngIf="earnings?.length > 0" class="mt-4">
-  <div class="mb-2 mt-10">
-    <h2>Earnings</h2>
+    <span
+      class="text-right"
+      *ngIf="
+        tradable?.weightedSharesOutstanding &&
+        (priceData?.currentPrice?.c || priceData?.closedPrice?.c)
+      "
+    >
+      <span class="text-gray-500 text-sm">Market Cap:</span>
+      <span>
+        {{
+          tradable.weightedSharesOutstanding *
+            (priceData?.currentPrice?.c || priceData?.closedPrice?.c)
+            | siUnit : 2
+            | undefined
+        }}
+      </span>
+    </span>
   </div>
 
-  <div *ngFor="let item of earnings">
-    <app-earnings-display [earnings]="item"></app-earnings-display>
-    <app-divider></app-divider>
+  <div class="mt-2">
+    <app-interaction-bar [interactions]="interactions"></app-interaction-bar>
   </div>
-</div>
 
-<div *ngIf="notes && notes.length > 0" class="mt-4">
-  <div class="mb-2 mt-10"><h2>Notes</h2></div>
-  <div *ngFor="let note of notes">
-    <app-note-container [note]="note"></app-note-container>
-    <app-divider></app-divider>
+  <div class="mt-2">
+    <mat-chip-list>
+      <span>Research Links:</span>
+
+      <mat-chip *ngIf="tradable?.homePageUrl">
+        <a target="_blank" [href]="tradable.homePageUrl"> Website 🔗 </a>
+      </mat-chip>
+
+      <mat-chip *ngIf="tradable?.irAddress">
+        <a target="_blank" [href]="tradable.irAddress">
+          Investor Relations 🔗
+        </a>
+      </mat-chip>
+
+      <mat-chip *ngFor="let org of organizations">
+        🏢
+        <span class="ml-1">
+          <app-stock-display [tagUuid]="org?.uuid"></app-stock-display>
+        </span>
+      </mat-chip>
+
+      <mat-chip>
+        <a
+          target="_blank"
+          [href]="
+            'https://www.google.com/finance/quote/' +
+            tradable?.ticker +
+            ':' +
+            tradable?.primaryExchange
+          "
+        >
+          Google 🔗
+        </a>
+      </mat-chip>
+
+      <mat-chip>
+        <a
+          target="_blank"
+          [href]="'https://finance.yahoo.com/quote/' + tradable?.ticker"
+        >
+          Yahoo 🔗
+        </a>
+      </mat-chip>
+
+      <mat-chip>
+        <a
+          target="_blank"
+          [href]="
+            'https://www.finviz.com/quote.ashx?t=' + tradable?.ticker + '&p=d'
+          "
+        >
+          finviz 🔗
+        </a>
+      </mat-chip>
+      <mat-chip>
+        <a
+          target="_blank"
+          [href]="
+            'https://www.tipranks.com/stocks/' + tradable?.ticker + '/forecast'
+          "
+        >
+          tipranks.com 🔗
+        </a>
+      </mat-chip>
+
+      <mat-chip>
+        <a
+          target="_blank"
+          [href]="
+            'https://www.reddit.com/r/wallstreetbets/search/?q=' +
+            tradable?.ticker +
+            '&t=week'
+          "
+        >
+          Wallstreetbets 🔗
+        </a>
+      </mat-chip>
+
+      <mat-chip>
+        <a
+          target="_blank"
+          [href]="'https://seekingalpha.com/symbol/' + tradable?.ticker"
+        >
+          seekingalpha.com 🔗
+        </a>
+      </mat-chip>
+    </mat-chip-list>
   </div>
-</div>
+
+  <div class="mt-4" *ngIf="tradable?.description">
+    <span class="text-gray-500">Standard Industrial Classification:</span>
+    <span class="ml-2 capitalize">{{
+      tradable?.sicDescription?.toLowerCase()
+    }}</span>
+  </div>
+
+  <div class="mt-4" *ngIf="tradable?.description">
+    <div>
+      {{ tradable.description }}
+    </div>
+  </div>
+
+  <div *ngIf="earnings?.length > 0" class="mt-4">
+    <div class="mb-2 mt-10">
+      <h2>Earnings</h2>
+    </div>
+
+    <div *ngFor="let item of earnings">
+      <app-earnings-display [earnings]="item"></app-earnings-display>
+      <app-divider></app-divider>
+    </div>
+  </div>
+
+  <div *ngIf="notes && notes.length > 0" class="mt-4">
+    <div class="mb-2 mt-10"><h2>Notes</h2></div>
+    <div *ngFor="let note of notes">
+      <app-note-container [note]="note"></app-note-container>
+      <app-divider></app-divider>
+    </div>
+  </div>
+</ng-container>

@@ -21,7 +21,7 @@ export class NewsPageComponent implements OnInit {
   chips = new Set();
   environment = environment;
   markets: Industry[];
-  notes: Note[];
+  notes: Note[] = [];
   savedNoteUuids = new Set();
   showAddNotesSection = false;
   showTools: boolean = false;
@@ -55,7 +55,7 @@ export class NewsPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.notes = this.newsService.getAllNews().slice(0, 10);
+    // this.notes = this.newsService.getAllNews().slice(0, 10);
     this.tags = this.tagServices.getTrendTags();
     const interactions = this.interactionServices.getTopTradableInteractions();
     this.tradables = getTradableItemsByUuids(
@@ -113,15 +113,4 @@ export class NewsPageComponent implements OnInit {
     //   }
     // );
   }
-
-  toggleChip = (chip: any) => {
-    const addChip = () => {
-      this.chips.add(chip);
-    };
-    const removeChip = () => {
-      this.chips.delete(chip);
-    };
-
-    this.chips.has(chip) ? removeChip() : addChip();
-  };
 }

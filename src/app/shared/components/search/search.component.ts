@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
   @Input() enableAutoFocus: boolean;
   @Input() stateGroups: StateGroup[];
 
-  searchForm: FormGroup;
+  searchForm: UntypedFormGroup;
   filteredOptions: Observable<string[]>;
   selectedGroup: string;
   selectedText: string;
@@ -30,8 +30,8 @@ export class SearchComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.searchForm = new FormGroup({
-      searchText: new FormControl(''),
+    this.searchForm = new UntypedFormGroup({
+      searchText: new UntypedFormControl(''),
     });
 
     this.stateGroupOptions = this.searchForm

@@ -6,7 +6,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { v4 as generateUuid } from 'uuid';
 import { Note, NoteType } from '../../../shared/data/note.interface';
 import { OpinionEnum } from '../../../stock/models/opinion-type.model';
@@ -19,12 +19,12 @@ import { OpinionEnum } from '../../../stock/models/opinion-type.model';
 export class AddNoteFormComponent implements OnInit, OnChanges {
   @Output() newNote = new EventEmitter<Note>();
 
-  noteForm: FormGroup;
+  noteForm: UntypedFormGroup;
   note: Note;
   noteType = NoteType;
   ratingEnum = OpinionEnum;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: UntypedFormBuilder) {}
 
   ngOnInit(): void {
     this.createForm();

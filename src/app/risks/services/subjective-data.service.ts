@@ -1,4 +1,3 @@
-import { Quote } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { allMarkets } from 'src/app/markets/data/all-markets.const';
 import { allNotes } from 'src/app/mock-data/notes-mock.const';
@@ -19,7 +18,7 @@ import { Risk } from '../models/risk.model';
 export class riskService {
   risks: Risk[];
   catalysts: Catalyst[];
-  newsWithDetails: (Quote | Fact | Opinion | Stats)[];
+  newsWithDetails: (Fact | Opinion | Stats)[];
   markets: Industry[];
 
   catalystMap: Map<string, Catalyst> = new Map();

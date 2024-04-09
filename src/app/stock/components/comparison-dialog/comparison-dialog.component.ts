@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
@@ -25,7 +25,7 @@ export class ComparisonDialogComponent {
   factTypeArray = Object.values(FactType);
   selectedComparisonGroup: string | IndustryType = 'Favorites';
   competitorTypeArray = [];
-  newTickerForm: FormGroup;
+  newTickerForm: UntypedFormGroup;
   stock;
   toCompareList: StockAnalysis[] = [];
   selected;
@@ -40,8 +40,8 @@ export class ComparisonDialogComponent {
     private stockServices: StockServices,
     private userServices: UserServices
   ) {
-    this.newTickerForm = new FormGroup({
-      ticker: new FormControl(),
+    this.newTickerForm = new UntypedFormGroup({
+      ticker: new UntypedFormControl(),
     });
 
     this.selectedFact = dialogData.factType || FactType.growth;

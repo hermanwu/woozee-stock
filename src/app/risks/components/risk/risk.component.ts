@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { NoteDialogComponent } from 'src/app/shared/components/note-dialog/note-dialog.component';
 import { Note } from 'src/app/shared/data/note.interface';
 import { Risk } from '../../models/risk.model';

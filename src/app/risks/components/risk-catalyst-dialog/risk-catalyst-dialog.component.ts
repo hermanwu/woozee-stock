@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MarketDisplay } from '../../../markets/components/market-display/market-display.model';
 import { IndustriesService } from '../../../markets/services/industries.service';
 import { FactType } from '../../models/fact-type.enum';

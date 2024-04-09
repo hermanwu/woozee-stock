@@ -58,14 +58,14 @@
       <h2>Key People</h2>
     </div>
 
-    <mat-chip-list>
+    <mat-chip-listbox>
       <mat-chip
         *ngFor="let item of people"
         (click)="navigateToPersonPage(item.uuid)"
       >
         {{ item.displayName }}
       </mat-chip>
-    </mat-chip-list>
+    </mat-chip-listbox>
 
     <app-people-display [peopleUuids]=""></app-people-display>
   </div>
@@ -85,23 +85,23 @@
       <h2>Products & Services</h2>
     </div>
 
-    <mat-chip-list>
+    <mat-chip-listbox>
       <mat-chip
         *ngFor="let item of brandedProducts"
         (click)="navigateToProductPage(item.uuid)"
       >
         {{ item.name }}
       </mat-chip>
-    </mat-chip-list>
+    </mat-chip-listbox>
 
-    <mat-chip-list>
+    <mat-chip-listbox>
       <mat-chip
         *ngFor="let item of products"
         (click)="navigateToProductPage(item.uuid)"
       >
         {{ item.name }}
       </mat-chip>
-    </mat-chip-list>
+    </mat-chip-listbox>
   </div>
 
   <div *ngIf="partners.length > 0" class="mt-4">
@@ -109,14 +109,14 @@
       <h2>Partners</h2>
     </div>
 
-    <mat-chip-list>
+    <mat-chip-listbox>
       <mat-chip
         *ngFor="let item of partners"
         (click)="navigateToProductPage(item.uuid)"
       >
         {{ item.displayName }}
       </mat-chip>
-    </mat-chip-list>
+    </mat-chip-listbox>
   </div>
 
   <div *ngIf="relatedProducts.length > 0" class="mt-4">
@@ -124,14 +124,14 @@
       <h2>Related</h2>
     </div>
 
-    <mat-chip-list>
+    <mat-chip-listbox>
       <mat-chip
         *ngFor="let item of relatedProducts"
         (click)="navigateToProductPage(item.id)"
       >
         {{ item.name }}
       </mat-chip>
-    </mat-chip-list>
+    </mat-chip-listbox>
   </div>
 
   <div *ngIf="earnings?.length > 0" class="mt-4">

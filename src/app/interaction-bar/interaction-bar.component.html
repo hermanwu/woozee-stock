@@ -1,5 +1,5 @@
 <ng-container>
-  <mat-chip-list>
+  <mat-chip-listbox>
     <mat-chip *ngIf="interactions?.vote && interactions.vote !== 0">
       {{
         interactions.vote > 0 ? emojiUnicode.thumbUp : emojiUnicode.thumbDown
@@ -12,7 +12,7 @@
     </mat-chip>
 
     <app-tag-display *ngFor="let tag of tags" [tag]="tag"></app-tag-display>
-  </mat-chip-list>
+  </mat-chip-listbox>
 </ng-container>
 
 <ng-container *ngIf="editing">

@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { Note } from '../../data/note.interface';
 import { NoteDialogComponent } from '../note-dialog/note-dialog.component';
 

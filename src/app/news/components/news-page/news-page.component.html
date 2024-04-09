@@ -5,9 +5,9 @@
     </div>
   </app-title-menu>
 
-  <mat-chip-list>
+  <mat-chip-listbox>
     <app-tag-display *ngFor="let item of tags" [tag]="item"></app-tag-display>
-  </mat-chip-list>
+  </mat-chip-listbox>
 </div>
 
 <div class="mt-5">
@@ -17,14 +17,14 @@
     </div>
   </app-title-menu>
 
-  <mat-chip-list>
+  <mat-chip-listbox>
     <mat-chip *ngFor="let item of tradables">
       <app-tradable-display
         [tickerOnly]="true"
         [tradable]="item"
       ></app-tradable-display>
     </mat-chip>
-  </mat-chip-list>
+  </mat-chip-listbox>
 </div>
 
 <div class="mt-5" *ngIf="dailyEvents.length > 0">
@@ -40,7 +40,7 @@
       [date]="item.date"
     ></app-date-display>
 
-    <mat-chip-list>
+    <mat-chip-listbox>
       <ng-container *ngIf="item.beforeMarketOpen.length > 0">
         <mat-chip *ngFor="let tradable of item.beforeMarketOpen">
           <app-tradable-display [tradable]="tradable"></app-tradable-display>
@@ -54,16 +54,16 @@
           🌙
         </mat-chip>
       </ng-container>
-    </mat-chip-list>
+    </mat-chip-listbox>
   </div>
 
   <!-- <app-date-display [date]="item.date"></app-date-display>:
 
-    <mat-chip-list>
+    <mat-chip-listbox>
       <mat-chip *ngFor="let stockUuid of item.targetUuids">
         <app-tradable-display [tradableUuid]="stockUuid"></app-tradable-display>
       </mat-chip>
-    </mat-chip-list> -->
+    </mat-chip-listbox> -->
 </div>
 
 <div class="mt-5">
@@ -73,14 +73,14 @@
     </div>
   </app-title-menu>
 
-  <mat-chip-list class="mt-5">
+  <mat-chip-listbox class="mt-5">
     <mat-chip
       class="mr-2"
       *ngFor="let item of earningsDisplays[selectedEarningsIndex]?.targets"
     >
       <app-tradable-display [tradable]="item"></app-tradable-display>
     </mat-chip>
-  </mat-chip-list>
+  </mat-chip-listbox>
 
   <div>
     <app-earnings-display
@@ -110,11 +110,11 @@
   </app-title-menu>
 
   <div class="mb-5">
-    <mat-chip-list *ngIf="notes[selectedNoteIndex]">
+    <mat-chip-listbox *ngIf="notes[selectedNoteIndex]">
       <mat-chip *ngFor="let item of notes[selectedNoteIndex].targetUuids">
         <app-entity-display [entityUuid]="item"></app-entity-display>
       </mat-chip>
-    </mat-chip-list>
+    </mat-chip-listbox>
 
     <div class="news-display">
       <app-note-container

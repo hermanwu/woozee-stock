@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { Subscription } from 'rxjs';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { DragDropRankDialogComponent } from 'src/app/shared/components/drag-drop-rank-dialog/drag-drop-rank-dialog.component';

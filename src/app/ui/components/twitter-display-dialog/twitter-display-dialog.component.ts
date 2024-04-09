@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
 import { StockMetric } from '../../../stock/components/stock-metric-display/stock-metric.enum';
 import { StockAnalysis } from '../../../stock/models/stock-analysis.model';
 import { TwitterDisplayDialogInput } from './twitter-display-dialog-input.interface';

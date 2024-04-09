@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';

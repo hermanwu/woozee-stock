@@ -22,7 +22,9 @@
       </span>
       <span>
         <app-interaction-bar
-          [interactions]="item.interactions"
+          class="inline-block"
+          [interactions]="item.interaction"
+          [targetUuid]="item?.ticker.toLowerCase() + ':tradable'"
           [displayTop3]="true"
         ></app-interaction-bar>
       </span>
@@ -37,7 +39,7 @@
         {{ i + 1 }}.
         <app-tag-display [tag]="tag"></app-tag-display>
 
-        <span *ngIf="tag?.votes && tag?.votes !== 0">
+        <span *ngIf="!environment.production && tag?.votes && tag?.votes !== 0">
           {{ tag.votes > 0 ? emojiUnicode.thumbUp : emojiUnicode.thumbDown }}
           {{ tag?.votes }}
         </span>

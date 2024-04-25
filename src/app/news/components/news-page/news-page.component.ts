@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { earnings } from 'src/app/mock-data/earnings.mock';
-import { events } from 'src/app/mock-data/events.mock';
 import { getTradableItemsByUuids } from 'src/app/mock-data/mocks/tradables.mock';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
+import { formatDateToString } from 'src/app/shared/functions/date.function';
 import { TagServices } from 'src/app/shared/services/tag.services';
 import { Industry } from 'src/app/stock/models/industry.model';
 import { EventType } from 'src/app/stock/models/news.model';
+import { StockServices } from 'src/app/stock/services/stock.service';
 import { environment } from 'src/environments/environment';
 import { InteractionServices } from 'src/interactions/interaction.services';
 import { NotesServices } from '../../services/notes.services';
@@ -40,18 +41,22 @@ export class NewsPageComponent implements OnInit {
     .map((e) => {
       return {
         earnings: e,
-        targets: getTradableItemsByUuids(e.targetUuids),
+        targetUuids: e.targetUuids,
       };
     });
   selectedNoteIndex = 0;
   selectedEarningsIndex = 0;
   dailyEvents = [];
   tradables = [];
+  earningsDate = new Date();
+  beforeMarketOpen = [];
+  afterMarketClose = [];
 
   constructor(
     private newsService: NotesServices,
     private tagServices: TagServices,
-    private interactionServices: InteractionServices
+    private interactionServices: InteractionServices,
+    private stockServices: StockServices
   ) {}
 
   ngOnInit(): void {
@@ -62,45 +67,34 @@ export class NewsPageComponent implements OnInit {
       interactions.map((i) => i.targetUuid)
     );
 
-    this.populateEarnings();
+    this.populateEarnings(this.earningsDate);
   }
 
-  populateEarnings() {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+  populateEarnings(earningsDate) {
+    const dateString = formatDateToString(earningsDate);
 
-    const sevenDaysLater = new Date();
-    sevenDaysLater.setDate(sevenDaysLater.getDate() + 7);
-    sevenDaysLater.setHours(0, 0, 0, 0);
+    this.stockServices
+      .getEarningsReleaseTime(dateString)
+      .subscribe((results: { rows: any }) => {
+        const earningsEvents = results.rows;
+        this.beforeMarketOpen = [];
+        this.afterMarketClose = [];
 
-    const nextSevenDaysEvents = events.filter((event) => {
-      const eventDate = new Date(event.date);
-      return eventDate >= today && eventDate <= sevenDaysLater;
-    });
-
-    const dailyEventMap = new Map();
-
-    for (let event of nextSevenDaysEvents) {
-      const date = new Date(event.date);
-      const key = date.toDateString();
-      if (!dailyEventMap.has(key)) {
-        dailyEventMap.set(key, {
-          date: event.date,
-          beforeMarketOpen: [],
-          afterMarketClose: [],
-        });
-      }
-
-      const tradables = getTradableItemsByUuids(event.targetUuids);
-      if (tradables && tradables.length > 0 && event.beforeMarketOpen) {
-        dailyEventMap.get(key)['beforeMarketOpen'].push(...tradables);
-      } else if (tradables && tradables.length > 0) {
-        dailyEventMap.get(key)['afterMarketClose'].push(...tradables);
-      }
-    }
-    this.dailyEvents = Array.from(dailyEventMap.values()).sort((a, b) => {
-      return new Date(a.date).getTime() - new Date(b.date).getTime();
-    });
+        for (let event of earningsEvents) {
+          if (event.when) {
+            const time = event.when.toLowerCase();
+            if (time.includes('before market open')) {
+              this.beforeMarketOpen.push({
+                ticker: event.act_symbol,
+              });
+            } else if (time.includes('after market close')) {
+              this.afterMarketClose.push({
+                ticker: event.act_symbol,
+              });
+            }
+          }
+        }
+      });
   }
 
   openDailyReportDialog() {
@@ -109,8 +103,19 @@ export class NewsPageComponent implements OnInit {
     //   {
     //     maxHeight: '90vh', //you can adjust the value as per your view
     //     data: {},
-    //     panelClass: 'medium-modal-panel',
+    //     panelClass: '600px',
     //   }
     // );
+  }
+
+  // dateDifference can be positive or negative;
+  // i.e. 1 means the next day, -1 means the previous day；
+  updateEarningsDate(currentDate: Date, dateDifference: number) {
+    this.earningsDate = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      currentDate.getDate() + dateDifference
+    );
+    this.populateEarnings(this.earningsDate);
   }
 }

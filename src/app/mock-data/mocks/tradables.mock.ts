@@ -66,6 +66,20 @@ export interface StockModel {
 
 export const tradable = [
   {
+    uuid: 'fast',
+    displayName: 'Fastenal Company',
+    ticker: 'fast',
+    organizationUuid: 'fast',
+    irAddress: 'https://investor.fastenal.com/investor-overview/default.aspx',
+  },
+  {
+    uuid: 'kmx',
+    displayName: 'CarMax Inc',
+    ticker: 'kmx',
+    organizationUuid: 'kmx',
+    irAddress: 'https://investors.carmax.com/',
+  },
+  {
     uuid: 'levi:nyse',
     displayName: 'Levi Strauss & Co',
     ticker: 'levi',
@@ -186,6 +200,23 @@ export const tradable = [
     irAddress: 'https://investor.axon.com/',
   },
   {
+    uuid: 'asml',
+    ticker: 'asml',
+    irAddress: 'https://www.asml.com/en/investors',
+  },
+  {
+    uuid: 'lvs',
+    ticker: 'lvs',
+    organizationUuid: 'lvs',
+    irAddress: 'https://investor.sands.com/',
+  },
+
+  {
+    uuid: 'ms',
+    ticker: 'ms',
+    irAddress: 'https://www.morganstanley.com/about-us-ir',
+  },
+  {
     uuid: 'VEEV:NYSE',
     displayName: 'Veeva Systems Inc',
     ticker: 'VEEV',
@@ -203,6 +234,7 @@ export const tradable = [
     displayName: 'Cadence Design Systems Inc',
     ticker: 'CDNS',
     organizationUuid: 'cdns',
+    irAddress: 'https://www.cadence.com/en_US/home/company/investors.html',
   },
   {
     ticker: 'PINS',
@@ -310,14 +342,15 @@ export const tradable = [
     uuid: 'JPM:NYSE',
     displayName: 'JPMorgan Chase & Co',
     organizationUuid: 'jpm',
-    irAddress: 'https://www.jpmorganchase.com/',
+    irAddress: 'https://www.jpmorganchase.com/ir',
     logoLink: 'https://i.ibb.co/Jm6LMxp/9cb5qd-Vk-400x400.png',
   },
   {
-    ticker: 'ISRG',
-    uuid: 'ISRG:NASDAQ',
-    displayName: 'Intuitive Surgical Inc',
-    organizationUuid: 'isrg',
+    ticker: 'bx',
+    uuid: 'bx',
+    organizationUuid: 'bx',
+    displayName: 'The Blackstone Group Inc',
+    irAddress: 'https://ir.blackstone.com/',
   },
   {
     uuid: 'COIN:NASDAQ',
@@ -594,6 +627,7 @@ export const tradable = [
     displayName: 'American Express Company',
     ticker: 'AXP',
     organizationUuid: 'axp',
+    irAddress: 'https://ir.americanexpress.com/',
   },
   {
     uuid: 'PLTR:NYSE',
@@ -622,6 +656,11 @@ export const tradable = [
     displayName: 'Twilio Inc',
     ticker: 'TWLO',
     organizationUuid: 'twlo',
+  },
+  {
+    uuid: 'ppg',
+    ticker: 'PPG',
+    irAddress: 'https://investor.ppg.com/',
   },
   {
     uuid: 'NFLX:NASDAQ',
@@ -1130,6 +1169,12 @@ export const tradable = [
     displayName: 'First Solar Inc',
     ticker: 'FSLR',
     organizationUuid: 'fslr',
+  },
+  {
+    uuid: 'isrg',
+    displayName: 'Intuitive Surgical Inc',
+    ticker: 'isrg',
+    irAddress: 'https://isrg.intuitive.com/',
   },
   {
     uuid: 'BLNK:NASDAQ',

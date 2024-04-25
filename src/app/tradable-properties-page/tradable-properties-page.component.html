@@ -22,7 +22,7 @@
           ></app-image-display>
         </div>
 
-        <h1>
+        <h1 class="text-2xl">
           {{ tradable?.ticker?.toUpperCase() }} -
           {{ tradable?.displayName || tradable?.name }}
 
@@ -89,96 +89,107 @@
   </div>
 
   <div class="mt-2">
-    <app-interaction-bar [interactions]="interactions"></app-interaction-bar>
+    <app-interaction-bar
+      [interactions]="interactions"
+      [targetUuid]="tradable?.ticker.toLowerCase() + ':tradable'"
+    ></app-interaction-bar>
   </div>
 
   <div class="mt-2">
-    <mat-chip-listbox>
-      <span>Research Links:</span>
+    <span>Research Links:</span>
+    <span class="inline-block">
+      <mat-chip-listbox>
+        <mat-chip *ngIf="tradable?.homePageUrl">
+          <a target="_blank" [href]="tradable.homePageUrl"> Website 🔗 </a>
+        </mat-chip>
 
-      <mat-chip *ngIf="tradable?.homePageUrl">
-        <a target="_blank" [href]="tradable.homePageUrl"> Website 🔗 </a>
-      </mat-chip>
+        <mat-chip *ngIf="tradable?.irAddress">
+          <a target="_blank" [href]="tradable.irAddress">
+            Investor Relations 🔗
+          </a>
+        </mat-chip>
 
-      <mat-chip *ngIf="tradable?.irAddress">
-        <a target="_blank" [href]="tradable.irAddress">
-          Investor Relations 🔗
-        </a>
-      </mat-chip>
+        <mat-chip>
+          <a
+            target="_blank"
+            [href]="
+              'https://www.google.com/finance/quote/' +
+              tradable?.ticker +
+              ':' +
+              tradable?.primaryExchange
+            "
+          >
+            Live Data 🔗
+          </a>
+        </mat-chip>
 
-      <mat-chip *ngFor="let org of organizations">
-        🏢
-        <span class="ml-1">
-          <app-stock-display [tagUuid]="org?.uuid"></app-stock-display>
-        </span>
-      </mat-chip>
+        <mat-chip>
+          <a
+            target="_blank"
+            [href]="
+              'https://www.tipranks.com/stocks/' +
+              tradable?.ticker +
+              '/forecast'
+            "
+          >
+            Analyst Forecast 🔗
+          </a>
+        </mat-chip>
 
-      <mat-chip>
-        <a
-          target="_blank"
-          [href]="
-            'https://www.google.com/finance/quote/' +
-            tradable?.ticker +
-            ':' +
-            tradable?.primaryExchange
-          "
-        >
-          Google 🔗
-        </a>
-      </mat-chip>
+        <mat-chip>
+          <a
+            target="_blank"
+            [href]="
+              'https://www.finviz.com/quote.ashx?t=' + tradable?.ticker + '&p=d'
+            "
+          >
+            Chart Trend 🔗
+          </a>
+        </mat-chip>
 
-      <mat-chip>
-        <a
-          target="_blank"
-          [href]="'https://finance.yahoo.com/quote/' + tradable?.ticker"
-        >
-          Yahoo 🔗
-        </a>
-      </mat-chip>
+        <mat-chip>
+          <a
+            target="_blank"
+            [href]="
+              'https://www.macrotrends.net/stocks/charts/' +
+              tradable?.ticker +
+              '/' +
+              name +
+              '/pe-ratio'
+            "
+          >
+            PE Ratio 🔗
+          </a>
+        </mat-chip>
 
-      <mat-chip>
-        <a
-          target="_blank"
-          [href]="
-            'https://www.finviz.com/quote.ashx?t=' + tradable?.ticker + '&p=d'
-          "
-        >
-          finviz 🔗
-        </a>
-      </mat-chip>
-      <mat-chip>
-        <a
-          target="_blank"
-          [href]="
-            'https://www.tipranks.com/stocks/' + tradable?.ticker + '/forecast'
-          "
-        >
-          tipranks.com 🔗
-        </a>
-      </mat-chip>
+        <mat-chip>
+          <a
+            target="_blank"
+            [href]="'https://seekingalpha.com/symbol/' + tradable?.ticker"
+          >
+            News and Opinions 🔗
+          </a>
+        </mat-chip>
 
-      <mat-chip>
-        <a
-          target="_blank"
-          [href]="
-            'https://www.reddit.com/r/wallstreetbets/search/?q=' +
-            tradable?.ticker +
-            '&t=week'
-          "
-        >
-          Wallstreetbets 🔗
-        </a>
-      </mat-chip>
+        <mat-chip>
+          <a
+            target="_blank"
+            [href]="'https://marketchameleon.com/Overview/' + tradable?.ticker"
+          >
+            Options 🔗
+          </a>
+        </mat-chip>
 
-      <mat-chip>
-        <a
-          target="_blank"
-          [href]="'https://seekingalpha.com/symbol/' + tradable?.ticker"
-        >
-          seekingalpha.com 🔗
-        </a>
-      </mat-chip>
-    </mat-chip-listbox>
+        <mat-chip>
+          <a
+            target="_blank"
+            [href]="'https://www.reddit.com/r/wallstreetbets/search/?q=' + name"
+          >
+            Wallstreetbets 🔗
+          </a>
+        </mat-chip>
+      </mat-chip-listbox>
+    </span>
   </div>
 
   <div class="mt-4" *ngIf="tradable?.description">
@@ -188,10 +199,20 @@
     }}</span>
   </div>
 
-  <div class="mt-4" *ngIf="tradable?.description">
+  <div class="mt-2" *ngIf="tradable?.description">
     <div>
       {{ tradable.description }}
     </div>
+  </div>
+
+  <div class="mt-2" *ngIf="products.length > 0">
+    Products:
+
+    <mat-chip-listbox>
+      <mat-chip *ngFor="let product of products">
+        {{ product.name }}
+      </mat-chip>
+    </mat-chip-listbox>
   </div>
 
   <div *ngIf="earnings?.length > 0" class="mt-4">

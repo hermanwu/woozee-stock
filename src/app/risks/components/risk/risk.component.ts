@@ -29,7 +29,7 @@ export class RiskComponent implements OnInit, OnChanges {
         title: 'Risk Mitigation',
         notes: this.risk.actions,
       },
-      panelClass: 'medium-modal-panel',
+      panelClass: '600px',
     });
   }
 }

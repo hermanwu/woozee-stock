@@ -52,7 +52,7 @@ export class NoteContainerComponent implements OnInit, OnChanges {
     this.dialogService.open<TwitterDisplayDialogComponent>(
       TwitterDisplayDialogComponent,
       {
-        panelClass: 'medium-modal-panel',
+        panelClass: '600px',
       }
     );
   }

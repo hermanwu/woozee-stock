@@ -1,9 +1,5 @@
-<div class="mt-5">
-  <app-title-menu>
-    <div left-items class="inline-display">
-      <h1>Trending</h1>
-    </div>
-  </app-title-menu>
+<div>
+  <h1 class="text-2xl mb-2">Trending</h1>
 
   <mat-chip-listbox>
     <app-tag-display *ngFor="let item of tags" [tag]="item"></app-tag-display>
@@ -11,95 +7,89 @@
 </div>
 
 <div class="mt-5">
-  <app-title-menu>
-    <div left-items class="inline-display">
-      <h1>Top Picks</h1>
-    </div>
-  </app-title-menu>
+  <h1 class="text-2xl mb-2">Top Picks</h1>
 
   <mat-chip-listbox>
     <mat-chip *ngFor="let item of tradables">
-      <app-tradable-display
-        [tickerOnly]="true"
-        [tradable]="item"
-      ></app-tradable-display>
+      <app-tradable-display [ticker]="item.ticker"></app-tradable-display>
     </mat-chip>
   </mat-chip-listbox>
-</div>
-
-<div class="mt-5" *ngIf="dailyEvents.length > 0">
-  <app-title-menu>
-    <div left-items class="inline-display">
-      <h1>Earnings To Watch</h1>
-    </div>
-  </app-title-menu>
-
-  <div *ngFor="let item of dailyEvents">
-    <app-date-display
-      class="font-bold text-lg"
-      [date]="item.date"
-    ></app-date-display>
-
-    <mat-chip-listbox>
-      <ng-container *ngIf="item.beforeMarketOpen.length > 0">
-        <mat-chip *ngFor="let tradable of item.beforeMarketOpen">
-          <app-tradable-display [tradable]="tradable"></app-tradable-display>
-          ☀️
-        </mat-chip>
-      </ng-container>
-
-      <ng-container *ngIf="item.afterMarketClose.length > 0">
-        <mat-chip *ngFor="let tradable of item.afterMarketClose">
-          <app-tradable-display [tradable]="tradable"></app-tradable-display>
-          🌙
-        </mat-chip>
-      </ng-container>
-    </mat-chip-listbox>
-  </div>
-
-  <!-- <app-date-display [date]="item.date"></app-date-display>:
-
-    <mat-chip-listbox>
-      <mat-chip *ngFor="let stockUuid of item.targetUuids">
-        <app-tradable-display [tradableUuid]="stockUuid"></app-tradable-display>
-      </mat-chip>
-    </mat-chip-listbox> -->
 </div>
 
 <div class="mt-5">
-  <app-title-menu>
-    <div left-items class="inline-display">
-      <h1>Popular Earnings Results</h1>
+  <h1 class="text-2xl">Earnings To Watch</h1>
+  <div class="mb-2">☀️ = Before Market Open 🌙 = After Market Close</div>
+
+  <div class="flex justify-between">
+    <app-date-display
+      class="font-bold text-lg"
+      [date]="earningsDate"
+    ></app-date-display>
+    <div>
+      <button mat-button (click)="updateEarningsDate(earningsDate, -1)">
+        Previous Day
+      </button>
+      <button mat-button (click)="updateEarningsDate(earningsDate, 1)">
+        Next Day
+      </button>
     </div>
-  </app-title-menu>
-
-  <mat-chip-listbox class="mt-5">
-    <mat-chip
-      class="mr-2"
-      *ngFor="let item of earningsDisplays[selectedEarningsIndex]?.targets"
-    >
-      <app-tradable-display [tradable]="item"></app-tradable-display>
-    </mat-chip>
-  </mat-chip-listbox>
-
-  <div>
-    <app-earnings-display
-      [earnings]="earningsDisplays[selectedEarningsIndex].earnings"
-    ></app-earnings-display>
   </div>
 
-  <div
-    class="flex justify-center"
-    *ngIf="earningsDisplays[selectedEarningsIndex]"
-  >
+  <div *ngIf="beforeMarketOpen.length === 0 || afterMarketClose.length === 0">
+    No Earnings
+  </div>
+  <mat-chip-listbox>
+    <ng-container *ngIf="beforeMarketOpen.length > 0">
+      <mat-chip *ngFor="let tradable of beforeMarketOpen">
+        <app-tradable-display [tradable]="tradable"></app-tradable-display>
+        ☀️
+      </mat-chip>
+    </ng-container>
+  </mat-chip-listbox>
+
+  <mat-chip-listbox>
+    <ng-container *ngIf="afterMarketClose.length > 0">
+      <mat-chip *ngFor="let tradable of afterMarketClose">
+        <app-tradable-display [tradable]="tradable"></app-tradable-display>
+        🌙
+      </mat-chip>
+    </ng-container>
+  </mat-chip-listbox>
+</div>
+
+<div class="mt-5">
+  <div class="flex justify-between">
+    <h1 class="text-2xl">Popular Earnings Results</h1>
     <button
+      *ngIf="earningsDisplays[selectedEarningsIndex]"
       type="button"
-      mat-raised-button
+      mat-button
       (click)="selectedEarningsIndex = selectedEarningsIndex + 1"
     >
       Next
     </button>
   </div>
+
+  <mat-card>
+    <mat-card-content>
+      <mat-chip-listbox>
+        <mat-chip
+          class="mr-2"
+          *ngFor="
+            let item of earningsDisplays[selectedEarningsIndex]?.targetUuids
+          "
+        >
+          <app-tradable-display [ticker]="item"></app-tradable-display>
+        </mat-chip>
+      </mat-chip-listbox>
+
+      <div>
+        <app-earnings-display
+          [earnings]="earningsDisplays[selectedEarningsIndex].earnings"
+        ></app-earnings-display>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>
 
 <ng-container *ngIf="notes.length > 0">

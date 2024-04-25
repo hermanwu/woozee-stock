@@ -29,7 +29,7 @@ export class FactComponent implements OnInit {
           stocks: [this.stock],
           stock: this.stock,
         },
-        panelClass: 'large-modal-panel',
+        panelClass: '1000px',
         autoFocus: false,
       }
     );
@@ -43,7 +43,7 @@ export class FactComponent implements OnInit {
           factType: this.factType,
           stock: this.stock,
         },
-        panelClass: 'medium-modal-panel',
+        panelClass: '600px',
         autoFocus: false,
       }
     );

@@ -12,6 +12,12 @@ export const organizations: Organization[] = [
     largeLogoLink: 'https://i.ibb.co/28BD51c/UPST-BIG.png',
   },
   {
+    uuid: 'stz',
+    displayName: 'Constellation Brands',
+    ticker: 'stz',
+    logoLink: 'https://i.ibb.co/9wqRrXt/STZ.png',
+  },
+  {
     uuid: 'cdns',
     displayName: 'Cadence',
     ticker: 'cdns',

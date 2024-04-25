@@ -28,6 +28,12 @@ export interface Tag {
 
 export const mockTags: Tag[] = [
   {
+    uuid: 'auto',
+    type: TagType.Trend,
+    displayName: 'Auto',
+    votes: -5,
+  },
+  {
     uuid: 'online-gambling',
     type: TagType.Trend,
     displayName: 'Online Gambling',
@@ -82,6 +88,12 @@ export const mockTags: Tag[] = [
     displayName: 'Cyclical',
     sentiment: -1,
     votes: -5,
+  },
+  {
+    uuid: 'disappointing-earnings',
+    type: TagType.Business,
+    displayName: 'Disappointing Earnings',
+    votes: -10,
   },
   {
     uuid: 'impressive-earnings',
@@ -193,11 +205,6 @@ export const mockTags: Tag[] = [
     displayName: 'Dividend',
   },
   {
-    uuid: 'semiconductor',
-    type: TagType.Trend,
-    displayName: '⚡ Semiconductor',
-  },
-  {
     uuid: 'talented-employees',
     type: TagType.People,
     displayName: 'Talented Employees',
@@ -207,6 +214,13 @@ export const mockTags: Tag[] = [
     uuid: 'competitive-advantages',
     type: TagType.Business,
     displayName: 'Competitive Advantages',
+    votes: 5,
+  },
+  {
+    uuid: 'semiconductor',
+    type: TagType.Trend,
+    displayName: 'Semiconductor',
+    votes: -1,
   },
   {
     uuid: 'founder-led',
@@ -273,7 +287,7 @@ export const mockTags: Tag[] = [
     uuid: 'decreasing-revenue',
     type: TagType.Business,
     votes: -5,
-    displayName: 'Decreasing Revenue',
+    displayName: 'Declining Revenue',
   },
   {
     uuid: 'weight-loss',

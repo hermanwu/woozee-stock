@@ -1,18 +1,3 @@
-// @use "@angular/material" as mat;
-// @include mat.core(); // Includes common MDC styles
-
-// // Choose a theme
-// $my-theme: mat.define-light-theme(
-//   (
-//     color: (
-//       primary: mat.define-palette(mat.$indigo-palette),
-//       accent: mat.define-palette(mat.$pink-palette),
-//     ),
-//   )
-// );
-
-// @include mat.all-component-themes($my-theme);
-
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
@@ -24,74 +9,9 @@ body {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
 body {
-  margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   letter-spacing: 0.00625em;
-  color: #202124;
   line-height: 1.5rem;
-}
-
-strong {
-  font-weight: 500;
-  letter-spacing: 0.015em;
-}
-
-h1,
-h2,
-h3 {
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: normal !important;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-a {
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.page-padding {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.medium-modal-panel {
-  width: 600px;
-}
-
-.large-modal-panel {
-  width: 1000px;
-}
-
-.show-next-line {
-  white-space: pre-line;
-
-  &:before {
-    content: "🔶 ";
-  }
-}
-
-.inline-display {
-  display: inline-block;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.large-text {
-  font-size: large;
 }

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { UserServices } from 'src/app/accounts/services/user.services';
 import { userInteractions } from 'src/app/mock-data/interactions.mock';
 import { getTradableItemsByUuids } from 'src/app/mock-data/mocks/tradables.mock';
 import { getOrganizationsByUuids } from 'src/app/mock-data/organization.mock';
@@ -6,11 +7,11 @@ import { getPeopleByPersonUuids } from 'src/app/mock-data/person.mock';
 import { getProductsByProductUuids } from 'src/app/mock-data/product.mock';
 
 export interface UserInteractions {
-  uuid: string;
+  uuid?: string;
   userUuid: string;
   targetUuid: string;
   type:
-    | 'tradableItem'
+    | 'tradable'
     | 'stock'
     | 'product'
     | 'person'
@@ -42,17 +43,17 @@ export interface Sentiment {
   providedIn: 'root',
 })
 export class InteractionServices {
-  constructor() {}
+  constructor(private userServices: UserServices) {}
 
   getTopTradableInteractions() {
     return userInteractions
-      .filter((interaction) => interaction.type === 'tradableItem')
+      .filter((interaction) => interaction.type === 'tradable')
       .sort((a, b) => (b.vote || 0) - (a.vote || 0))
       .slice(0, 20);
   }
 
   getInteractionTarget(interaction: UserInteractions): any {
-    if (interaction.type === 'tradableItem') {
+    if (interaction.type === 'tradable') {
       return getTradableItemsByUuids([interaction.targetUuid])?.[0];
     } else if (interaction.type === 'stock') {
       return getOrganizationsByUuids([interaction.targetUuid])?.[0];

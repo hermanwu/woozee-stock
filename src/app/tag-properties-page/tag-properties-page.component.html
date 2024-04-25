@@ -6,15 +6,13 @@
   <h2>Stocks</h2>
   <div class="mt-2" *ngFor="let item of stockInteractions; let i = index">
     {{ i + 1 }}
-    <mat-chip>
-      <app-tradable-display
-        [tradable]="item"
-        [tickerOnly]="true"
-      ></app-tradable-display>
-    </mat-chip>
+    <app-tradable-display
+      [tradable]="item"
+      [tickerOnly]="true"
+    ></app-tradable-display>
 
-    =>
     <app-interaction-bar
+      class="inline-block"
       [interactions]="item.interaction"
     ></app-interaction-bar>
   </div>

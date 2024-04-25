@@ -22,6 +22,25 @@ export class StockServices {
 
   constructor(private http: HttpClient) {}
 
+  getEarningsReleaseTime(date: string) {
+    const url =
+      `https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master?q=SELECT+*%0AFROM+%60earnings_calendar%60%0AWHERE++%60date%60+%3D+%27` +
+      date +
+      `%27%0AORDER+BY+%60act_symbol%60+ASC%2C+%60date%60+ASC%0ALIMIT+1000%3B%0A`;
+
+    console.log(url);
+    return this.http.get(url).pipe(
+      catchError((error) => {
+        // Handle or log the error
+        console.error('Caught in catchError:', error);
+        // You can return an observable of a default item in case of an error
+        // return of(defaultValue);
+        // Or rethrow the error if you want to handle it in the error callback of subscribe()
+        return throwError(() => new Error('Error after catchError'));
+      })
+    );
+  }
+
   getStockByUuid(ticker: string): Observable<any> {
     ticker = ticker.toUpperCase();
     const url = `https://getstockbyticker-igvhya62rq-uc.a.run.app?ticker=${ticker}`;

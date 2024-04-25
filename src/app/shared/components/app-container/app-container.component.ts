@@ -75,7 +75,7 @@ export class AppContainerComponent implements OnInit {
     this.dialog.open<AddNoteFormComponent>(AddNoteFormComponent, {
       maxHeight: '90vh', //you can adjust the value as per your view
       data: {},
-      panelClass: 'medium-modal-panel',
+      panelClass: '600px',
       disableClose: true,
     });
   }

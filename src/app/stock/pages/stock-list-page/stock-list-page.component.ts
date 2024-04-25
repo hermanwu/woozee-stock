@@ -55,7 +55,7 @@ export class StockListPageComponent implements OnInit, OnDestroy {
         data: {
           stocks: this.stocks,
         },
-        panelClass: 'medium-modal-panel',
+        panelClass: '600px',
       }
     );
   }
@@ -100,7 +100,7 @@ export class StockListPageComponent implements OnInit, OnDestroy {
         data: {
           stock: tableOutput.stock,
         },
-        panelClass: 'large-modal-panel',
+        panelClass: '1000px',
         autoFocus: false,
       }
     );

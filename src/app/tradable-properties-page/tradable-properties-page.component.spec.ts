@@ -8,9 +8,8 @@ describe('TradablePropertiesPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TradablePropertiesPageComponent ]
-    })
-    .compileComponents();
+      declarations: [TradablePropertiesPageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

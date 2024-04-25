@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventType } from 'src/app/stock/models/news.model';
-import { getUtcDate } from '../../../shared/functions/getUtcDate.function';
+import { getUtcDate } from '../../../shared/functions/date.function';
 import { NotesServices } from '../../services/notes.services';
 
 @Component({

@@ -10,6 +10,7 @@ export class Product {
   parentCompany?: string;
   rootCompanyId?: string;
   type?: string;
+  stockUuids?: string[];
 }
 
 export const getProductsByProductUuids = (productUuids: string[]) => {
@@ -552,6 +553,10 @@ export const mockProducts: Product[] = [
       'As AI continues to advance at unprecedented pace networks need to adapt to the colossal growth in traffic transiting hundreds and thousands of processors with trillions of transactions and gigabits of throughput. As AI quickly moves out of labs and research projects toward mainstream adoption it demands increases in network and computing resources.',
   },
   {
+    name: 'Audio Network',
+    stockUuids: ['spot'],
+  },
+  {
     uuid: 'chatgpt',
     name: 'ChatGPT',
     rootCompanyId: 'openai',
@@ -591,3 +596,10 @@ export const mockProducts: Product[] = [
     uuid: 'sic',
   },
 ];
+
+export const getProductsByStockTicker = (stockTicker: string) => {
+  console.log(stockTicker);
+  return mockProducts.filter((product) =>
+    product.stockUuids?.includes(stockTicker.toLowerCase())
+  );
+};

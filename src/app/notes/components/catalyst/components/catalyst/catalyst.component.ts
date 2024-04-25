@@ -25,7 +25,7 @@ export class CatalystComponent implements OnInit {
       data: {
         title: 'Catalyst Details',
       },
-      panelClass: 'medium-modal-panel',
+      panelClass: '600px',
     });
   }
 }

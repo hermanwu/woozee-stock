@@ -1,4 +1,4 @@
-import { getUtcDate } from '../shared/functions/getUtcDate.function';
+import { getUtcDate } from '../shared/functions/date.function';
 
 export const events = [
   {

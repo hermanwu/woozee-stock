@@ -10,7 +10,7 @@ import { Price } from '../shared/services/prices.services';
 })
 export class TradableDisplayComponent implements OnInit {
   @Input() tradable: Tradable;
-  @Input() tickerOnly: boolean;
+  @Input() ticker: string;
   @Input() prices: { closedPrice: Price; currentPrice: Price };
   @Input() showPercentage: boolean;
 
@@ -29,6 +29,10 @@ export class TradableDisplayComponent implements OnInit {
   }
 
   navigate() {
-    this.navigationServices.navigate('tradable', this.tradable.ticker);
+    if (this.ticker) {
+      this.navigationServices.navigate('tradable', this.ticker);
+    } else {
+      this.navigationServices.navigate('tradable', this.tradable.ticker);
+    }
   }
 }

@@ -59,7 +59,7 @@ export class TagPropertiesPageComponent implements OnInit {
 
       this.stockInteractions = userInteractions
         .filter((interaction) => {
-          return interaction.type === 'tradableItem';
+          return interaction.type === 'tradable';
         })
         .map((interaction) => ({
           ticker: interaction.targetUuid.split(':')[0],

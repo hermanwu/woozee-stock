@@ -1,11 +1,16 @@
-<span *ngIf="tradable; else tradableUuidDisplay" (click)="navigate()">
-  <span *ngIf="!tickerOnly">{{ tradable.displayName }} -</span>
-  {{ tradable.ticker?.toUpperCase() }}
+<span (click)="navigate()">
+  <span *ngIf="ticker; else displayTradable">{{ ticker.toUpperCase() }}</span>
 
-  <span *ngIf="showPercentage && dailyPercentageChange">
-    <app-percentage-display
-      [percentageDiff]="dailyPercentageChange"
-    ></app-percentage-display>
-  </span>
+  <ng-template #displayTradable>
+    <span *ngIf="!tickerOnly && tradable.displayName"
+      >{{ tradable.displayName }} -</span
+    >
+    {{ tradable.ticker?.toUpperCase() }}
+
+    <span *ngIf="showPercentage && dailyPercentageChange">
+      <app-percentage-display
+        [percentageDiff]="dailyPercentageChange"
+      ></app-percentage-display>
+    </span>
+  </ng-template>
 </span>
-<ng-template #tradableUuidDisplay>{{ tradableUuid | uppercase }}</ng-template>

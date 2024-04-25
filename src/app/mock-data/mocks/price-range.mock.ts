@@ -1,5 +1,5 @@
 import { PriceRange } from 'src/app/shared/components/stats-display/stats-display.interface';
-import { getUtcDate } from 'src/app/shared/functions/getUtcDate.function';
+import { getUtcDate } from 'src/app/shared/functions/date.function';
 
 export const getPriceRangeByTradableUuid = (uuid): PriceRange => {
   const mock = priceRangeMock.find(

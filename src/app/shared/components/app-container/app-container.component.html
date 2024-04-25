@@ -6,48 +6,40 @@
   </div>
   <span class="spacer"></span>
   <span *ngIf="showSearchBar">
-    <span>
-      <app-search
-        enableAutoFocus="'true'"
-        [stateGroups]="searchServices.getSearchOptions()"
-      >
-      </app-search>
-    </span>
+    <app-search
+      enableAutoFocus="'true'"
+      [stateGroups]="searchServices.getSearchOptions()"
+    >
+    </app-search>
   </span>
   <button mat-icon-button (click)="searchIconClicked()">
-    <mat-icon>search</mat-icon>
+    <mat-icon class="text-white">search</mat-icon>
   </button>
 
   <button
     *ngIf="(username$ | async) === null"
-    mat-button
+    mat-flat-button
     [routerLink]="['/login']"
   >
     Login
   </button>
   <button
+    class="ml-3"
     *ngIf="(username$ | async) === null"
-    mat-button
+    mat-flat-button
     [routerLink]="['/signup']"
   >
     Signup
   </button>
   <button [routerLink]="['/me']" *ngIf="username$ | async" mat-icon-button>
-    <mat-icon>swap_vert</mat-icon>
+    <mat-icon class="text-white">swap_vert</mat-icon>
   </button>
   <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="username$ | async">
-    <mat-icon>menu</mat-icon>
+    <mat-icon class="text-white">menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
     <button [routerLink]="['/news']" mat-menu-item i18n>Trending</button>
-    <button
-      [routerLink]="['/me']"
-      [disabled]="environment.production"
-      mat-menu-item
-      i18n
-    >
-      Ranks
-    </button>
+    <button [routerLink]="['/me']" mat-menu-item i18n>Ranks</button>
     <!-- <button mat-menu-item disabled>
       <a [routerLink]="['/stocks']">Stocks</a>
     </button> -->
@@ -63,7 +55,7 @@
     <a mat-menu-item [href]="aboutPage" *ngIf="!environment.production"
       >About</a
     >
-    <button mat-menu-item>
+    <button mat-menu-item [disabled]="environment.production">
       <span>
         <mat-icon>account_circle</mat-icon>
       </span>

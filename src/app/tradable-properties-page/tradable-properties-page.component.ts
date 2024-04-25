@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subject, Subscription, filter, takeUntil } from 'rxjs';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { environment } from 'src/environments/environment';
 import { UserInteractions } from 'src/interactions/interaction.services';
@@ -8,19 +8,19 @@ import { UserServices } from '../accounts/services/user.services';
 import { EarningsKeyWord } from '../mock-data/earnings-key-word.enum';
 import { Earnings, getEarningsByTargetUuid } from '../mock-data/earnings.mock';
 import {
-  getTradableItemByTicker,
-  getTradableItemsByUuids,
   StockModel,
   Tradable,
+  getTradableItemByTicker,
+  getTradableItemsByUuids,
 } from '../mock-data/mocks/tradables.mock';
-import { getOrganizationsByUuids } from '../mock-data/organization.mock';
 import { getPricesByUuid } from '../mock-data/price.mock';
+import { getProductsByStockTicker } from '../mock-data/product.mock';
 import { getCompetitorsByTradableUuid } from '../mock-data/relationship.mock';
 import { NotesServices } from '../news/services/notes.services';
 import {
-  currencyToDollarConversionMap,
   NumberRange,
   UnitType,
+  currencyToDollarConversionMap,
 } from '../shared/components/stats-display/stats-display.interface';
 import { PricesServices } from '../shared/services/prices.services';
 import { StockServices } from '../stock/services/stock.service';
@@ -32,12 +32,14 @@ import { StockServices } from '../stock/services/stock.service';
 })
 export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
   private quoteUuid = 'quoteUuid';
+  private unsubscribe$ = new Subject<void>();
+
   tradable: Tradable | any;
   routeSub: Subscription;
   interactions: UserInteractions;
   targetUuidToInteractionMap;
   earnings;
-  organizations;
+  products = [];
   notes;
   priceRange: NumberRange;
   marketCapRange: NumberRange;
@@ -50,6 +52,7 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
 
   logoLink;
   largeLogoLink;
+  name: string;
 
   readonly environment = environment;
 
@@ -66,6 +69,8 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
+      this.interactions = undefined;
+
       const quoteUuid = params[this.quoteUuid].toLowerCase();
       const ticker = quoteUuid
         .slice(
@@ -77,12 +82,17 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
         ?.toUpperCase();
 
       this.tradable = getTradableItemByTicker(ticker) || { ticker };
+      this.products = getProductsByStockTicker(ticker);
 
-      this.interactions =
-        this.userServices.getUserInteractionsByTypeAndTargetUuid(
-          this.tradable.uuid,
-          'tradableItem'
-        );
+      this.userServices
+        .getUserInteractions()
+        .pipe(
+          filter((interactions) => !!interactions),
+          takeUntil(this.unsubscribe$)
+        )
+        .subscribe((interactions) => {
+          this.interactions = interactions[ticker.toLowerCase() + ':tradable'];
+        });
 
       this.subscription.add(
         this.tradableServices.getStockByUuid(ticker).subscribe({
@@ -92,6 +102,7 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
                 this.tradable,
                 response
               );
+              this.name = this.getCompanyShortName(this.tradable.name);
             }
           },
           error: (error) => {
@@ -115,19 +126,29 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe(); // Prevent memory leaks
-    this.routeSub.unsubscribe();
+  getCompanyShortName(longName: string) {
+    // remove , and . from longName
+    longName = longName.replace(/,/g, '').replace(/\./g, '');
+    const arr = longName.toLowerCase().split(' ');
+    console.log(arr);
+    let endIndex = arr.length;
+    if (arr.indexOf('inc') >= 0) {
+      endIndex = Math.min(endIndex, arr.indexOf('inc'));
+    } else if (arr.indexOf('corp') >= 0) {
+      endIndex = Math.min(endIndex, arr.indexOf('corp'));
+    } else if (arr.indexOf('plc') >= 0) {
+      endIndex = Math.min(endIndex, arr.indexOf('plc'));
+    } else if (arr.indexOf('corporation') >= 0) {
+      endIndex = Math.min(endIndex, arr.indexOf('corporation'));
+    }
+
+    return arr.slice(0, endIndex).join('-');
   }
 
   processStaticInformation(quoteUuid) {
     const stats = getPricesByUuid(quoteUuid);
     this.historicalPrice = stats?.price;
     this.historicalMarketCap = stats?.marketCap;
-
-    this.organizations = getOrganizationsByUuids([
-      this.tradable.organizationUuid,
-    ]);
 
     this.earnings = getEarningsByTargetUuid(quoteUuid).sort((a, b) => {
       return (
@@ -144,18 +165,6 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
         high: marketCapRange[1],
         average: (marketCapRange[0] + marketCapRange[1]) / 2,
       };
-
-      // let targetPriceRange = this.calculateTargetPriceByTargetMarketCap(
-      //   this.historicalMarketCap,
-      //   this.historicalPrice,
-      //   targetMarketCap
-      // );
-
-      // this.priceRange = {
-      //   low: targetPriceRange[0],
-      //   high: targetPriceRange[1],
-      //   average: (targetPriceRange[0] + targetPriceRange[1]) / 2,
-      // };
     }
 
     this.notes = this.notesServices.getNotesByTargets([quoteUuid]).slice(0, 5);
@@ -244,7 +253,6 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     result.marketCap = stockModelData.market_cap;
     result.description = stockModelData.description;
     result.homePageUrl = stockModelData.homepage_url;
-    result.irAddress = stockModelData.irAddress;
     result.market = stockModelData.market;
     result.sicDescription = stockModelData.sic_description;
     result.weightedSharesOutstanding =
@@ -255,6 +263,9 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
         : stockModelData.primary_exchange === 'XNYS'
         ? 'NYSE'
         : stockModelData.primary_exchange;
+    if (stockModelData.irAddress) {
+      result.irAddress = stockModelData.irAddress;
+    }
     if (!result.logoLink) {
       result.logoLink = stockModelData.branding?.icon_url;
     }
@@ -262,5 +273,12 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
       result.largeLogoLink = stockModelData.branding?.logo_url;
     }
     return result;
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+    this.subscription.unsubscribe(); // Prevent memory leaks
+    this.routeSub.unsubscribe();
   }
 }

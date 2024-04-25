@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { BehaviorSubject, forkJoin, Observable, of, throwError } from 'rxjs';
 import { catchError, first, map, switchMap } from 'rxjs/operators';
+import {
+  formatDateToString,
+  getPreviousBusinessDay,
+} from '../functions/date.function';
 
 export class Price {
   T: string; // Ticker
@@ -149,24 +153,4 @@ export class PricesServices {
       })
     );
   }
-}
-
-function getPreviousBusinessDay(inputDate = new Date()) {
-  let date = new Date(inputDate); // Copy the input date
-  date.setDate(date.getDate() - 1); // Start with yesterday
-
-  while (date.getDay() === 0 || date.getDay() === 6) {
-    // Check if it's a weekend
-    date.setDate(date.getDate() - 1); // Go back one day
-  }
-
-  return date;
-}
-
-function formatDateToString(dateObj) {
-  const year = dateObj.getFullYear();
-  const month = (dateObj.getMonth() + 1).toString().padStart(2, '0'); // +1 for zero-based months
-  const day = dateObj.getDate().toString().padStart(2, '0');
-
-  return `${year}-${month}-${day}`;
 }

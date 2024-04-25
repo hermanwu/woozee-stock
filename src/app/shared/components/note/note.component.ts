@@ -29,7 +29,7 @@ export class NoteComponent implements OnInit, OnChanges {
   openDialog(note: Note) {
     this.dialogService.open<NoteDialogComponent>(NoteDialogComponent, {
       data: { title: note.content },
-      panelClass: 'medium-modal-panel',
+      panelClass: '600px',
     });
   }
 }

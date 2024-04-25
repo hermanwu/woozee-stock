@@ -4,7 +4,7 @@ import { NoteType } from '../shared/data/note.interface';
 import {
   convertDateToUTC,
   getUtcDate,
-} from '../shared/functions/getUtcDate.function';
+} from '../shared/functions/date.function';
 import { OpinionEnum } from '../stock/models/opinion-type.model';
 
 export const getOpinionsByCreatorUuid = (creatorUuid: string) => {

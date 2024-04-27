@@ -10,8 +10,8 @@
   <h1 class="text-2xl mb-2">Top Picks</h1>
 
   <mat-chip-listbox>
-    <mat-chip *ngFor="let item of tradables">
-      <app-tradable-display [ticker]="item.ticker"></app-tradable-display>
+    <mat-chip *ngFor="let ticker of tickers">
+      <app-tradable-display [ticker]="ticker"></app-tradable-display>
     </mat-chip>
   </mat-chip-listbox>
 </div>
@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <div *ngIf="beforeMarketOpen.length === 0 || afterMarketClose.length === 0">
+  <div *ngIf="beforeMarketOpen.length === 0 && afterMarketClose.length === 0">
     No Earnings
   </div>
   <mat-chip-listbox>

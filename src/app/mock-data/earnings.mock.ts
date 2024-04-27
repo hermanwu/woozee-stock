@@ -555,6 +555,7 @@ export const earnings: Earnings[] = [
       },
     ],
   },
+
   {
     targetUuids: ['fast'],
     releasedDate: getUtcDate(2024, 1, 18),
@@ -7289,6 +7290,32 @@ export const earnings: Earnings[] = [
     ],
   },
   {
+    targetUuids: ['xom'],
+    releasedDate: getUtcDate(2024, 4, 26),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investor.exxonmobil.com/news-events/press-releases/detail/1162/exxonmobil-announces-first-quarter-2024-results',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 83083 * MILLION,
+        previousValue: 86564 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 8220 * MILLION,
+        previousValue: 11430 * MILLION,
+        timeFrame: TimeFrame.yoy,
+        unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
     targetUuids: ['axon:nasdaq'],
     releasedDate: getUtcDate(2024, 2, 27),
     documents: [
@@ -7893,6 +7920,79 @@ export const earnings: Earnings[] = [
         previousValue: 150 * MILLION,
         timeFrame: TimeFrame.yoy,
         unit: UnitType.dollar,
+      },
+    ],
+  },
+  {
+    targetUuids: ['abbv'],
+    releasedDate: getUtcDate(2024, 4, 26),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://investors.abbvie.com/news-releases/news-release-details/abbvie-reports-first-quarter-2024-financial-results#',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 12310 * MILLION,
+        previousValue: 12225 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: EarningsKeyWord.grossProfit,
+        value: 12310 * MILLION - 4094 * MILLION,
+        previousValue: 12225 * MILLION - 3986 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 2798 * MILLION,
+        previousValue: 2768 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 1372 * MILLION,
+        previousValue: 241 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+      },
+    ],
+  },
+  {
+    targetUuids: ['googl'],
+    releasedDate: getUtcDate(2024, 4, 25),
+    documents: [
+      {
+        name: 'Press Release',
+        link: 'https://abc.xyz/assets/91/b3/3f9213d14ce3ae27e1038e01a0e0/2024q1-alphabet-earnings-release-pdf.pdf',
+      },
+    ],
+    data: [
+      {
+        name: EarningsKeyWord.revenue,
+        value: 80539 * MILLION,
+        previousValue: 69787 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: EarningsKeyWord.operatingIncome,
+        value: 25472 * MILLION,
+        previousValue: 17415 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
+      },
+      {
+        name: EarningsKeyWord.netIncome,
+        value: 23662 * MILLION,
+        previousValue: 15051 * MILLION,
+        unit: UnitType.dollar,
+        timeFrame: TimeFrame.yoy,
       },
     ],
   },

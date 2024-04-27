@@ -4,6 +4,7 @@ import * as cors from 'cors';
 import * as admin from 'firebase-admin';
 import * as functions from 'firebase-functions';
 import * as v2 from 'firebase-functions/v2';
+import { getCompanyShortName } from './functions';
 
 // const corsHandler = cors({ origin: ['https://invesdea.com'] });
 const corsHandler = cors({
@@ -111,7 +112,8 @@ export const getStockByTicker = v2.https.onRequest((request, response) => {
 
     try {
       const doc = await docRef.get();
-      if (doc.exists) {
+      // If the document already exists and last_updated is a week ago, fetch the data again
+      if (doc.exists && doc.data()?.last_updated > Date.now() - 604800000) {
         console.log(`Data for ${ticker} already exists. Skipping fetch.`);
         response.status(200).send(doc.data());
         return;
@@ -119,15 +121,21 @@ export const getStockByTicker = v2.https.onRequest((request, response) => {
 
       const axiosResponse = await axios.get(endpoint);
       const stockDetails = axiosResponse.data.results;
+      stockDetails.last_updated = Date.now();
 
       // Add to search document
       admin
         .firestore()
         .collection('search')
-        .doc('stocks')
+        .doc('searchData')
         .set(
           {
-            [stockDetails.ticker]: stockDetails.name,
+            [stockDetails.ticker]: {
+              market_cap: stockDetails.market_cap,
+              display_name: getCompanyShortName(stockDetails.name),
+              type: 'stock',
+              ticker: stockDetails.ticker,
+            },
           },
           { merge: true }
         );
@@ -160,7 +168,11 @@ export const getStockByTicker = v2.https.onRequest((request, response) => {
         }
       }
 
-      admin.firestore().collection('stocks').doc(ticker).set(stockDetails);
+      admin
+        .firestore()
+        .collection('stocks')
+        .doc(ticker)
+        .set(stockDetails, { merge: true });
       console.log('Document successfully written for ticker:', ticker);
       response.status(200).send(stockDetails); // Sending the data back as the response
     } catch (error) {

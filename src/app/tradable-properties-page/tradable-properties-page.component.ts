@@ -10,12 +10,10 @@ import { Earnings, getEarningsByTargetUuid } from '../mock-data/earnings.mock';
 import {
   StockModel,
   Tradable,
-  getTradableItemByTicker,
-  getTradableItemsByUuids,
+  tradable,
 } from '../mock-data/mocks/tradables.mock';
 import { getPricesByUuid } from '../mock-data/price.mock';
 import { getProductsByStockTicker } from '../mock-data/product.mock';
-import { getCompetitorsByTradableUuid } from '../mock-data/relationship.mock';
 import { NotesServices } from '../news/services/notes.services';
 import {
   NumberRange,
@@ -52,7 +50,7 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
 
   logoLink;
   largeLogoLink;
-  name: string;
+  dashName: string;
 
   readonly environment = environment;
 
@@ -81,7 +79,7 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
         )
         ?.toUpperCase();
 
-      this.tradable = getTradableItemByTicker(ticker) || { ticker };
+      this.tradable = { ticker };
       this.products = getProductsByStockTicker(ticker);
 
       this.userServices
@@ -102,7 +100,7 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
                 this.tradable,
                 response
               );
-              this.name = this.getCompanyShortName(this.tradable.name);
+              this.dashName = this.getCompanyShortDashName(this.tradable.name);
             }
           },
           error: (error) => {
@@ -126,23 +124,48 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  getCompanyShortName(longName: string) {
-    // remove , and . from longName
-    longName = longName.replace(/,/g, '').replace(/\./g, '');
-    const arr = longName.toLowerCase().split(' ');
-    console.log(arr);
-    let endIndex = arr.length;
-    if (arr.indexOf('inc') >= 0) {
-      endIndex = Math.min(endIndex, arr.indexOf('inc'));
-    } else if (arr.indexOf('corp') >= 0) {
-      endIndex = Math.min(endIndex, arr.indexOf('corp'));
-    } else if (arr.indexOf('plc') >= 0) {
-      endIndex = Math.min(endIndex, arr.indexOf('plc'));
-    } else if (arr.indexOf('corporation') >= 0) {
-      endIndex = Math.min(endIndex, arr.indexOf('corporation'));
-    }
+  getCompanyShortDashName(longName: string) {
+    return this.getCompanyShortName(longName).split(' ').join('-');
+  }
 
-    return arr.slice(0, endIndex).join('-');
+  getCompanyShortName(longName: string) {
+    // Remove commas and periods from longName using a regular expression
+    longName = longName.replace(/[,.]/g, '');
+
+    // Define an array of suffixes to check for
+    const suffixes = [
+      'inc',
+      'corp',
+      'plc',
+      'corporation',
+      'ltd',
+      'company',
+      'co',
+      '& co',
+      'sa',
+    ];
+
+    // Split longName into an array of lowercase words
+    const arr = longName.toLowerCase().split(' ');
+
+    // Find the minimum index among the suffixes using reduce
+    const endIndex = suffixes.reduce((minIndex, suffix) => {
+      const index = arr.findIndex((word, i) => {
+        // Check if the current word and the next word (if exists) match the suffix
+        return (
+          word === suffix.split(' ')[0] &&
+          (suffix.split(' ').length === 1 ||
+            arr[i + 1] === suffix.split(' ')[1])
+        );
+      });
+      // If the suffix is found and its index is smaller than the current minimum index,
+      // update the minimum index to the suffix's index
+      return index !== -1 && index < minIndex ? index : minIndex;
+    }, arr.length); // Initialize minIndex with the length of the array
+
+    // Split longName into an array of words, slice it from the start to the endIndex,
+    // and join the resulting words back into a string
+    return longName.split(' ').slice(0, endIndex).join(' ');
   }
 
   processStaticInformation(quoteUuid) {
@@ -168,10 +191,6 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     }
 
     this.notes = this.notesServices.getNotesByTargets([quoteUuid]).slice(0, 5);
-
-    this.competitors = getTradableItemsByUuids(
-      getCompetitorsByTradableUuid(quoteUuid)
-    );
   }
 
   calculateTargetMarketCapByEarnings(earnings: Earnings): [number, number] {
@@ -280,5 +299,43 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
     this.subscription.unsubscribe(); // Prevent memory leaks
     this.routeSub.unsubscribe();
+  }
+
+  testAction() {
+    this.showRange = !this.showRange;
+    return;
+
+    console.log(tradable);
+
+    let start = 0;
+    let end = tradable.length;
+    let mergeObj = {};
+
+    for (let i = start; i < end; i++) {
+      let toTest = tradable[i];
+      if (toTest['ticker']) {
+        const stock = {
+          type: 'stock',
+          ticker: toTest['ticker'],
+        };
+
+        if (toTest['logoLink']) {
+          stock['logo_link'] = toTest['logoLink'];
+        }
+        if (toTest['largeLogoLink']) {
+          stock['large_logo_link'] = toTest['largeLogoLink'];
+        }
+        if (toTest['displayName']) {
+          stock['display_name'] = this.getCompanyShortName(
+            toTest['displayName']
+          );
+        }
+
+        mergeObj[toTest['ticker'].toUpperCase()] = stock;
+      }
+    }
+    console.log(mergeObj);
+
+    this.tradableServices.setSearchData(mergeObj);
   }
 }

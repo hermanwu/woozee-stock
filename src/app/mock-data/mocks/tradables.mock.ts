@@ -1,28 +1,3 @@
-export const getTradableItemsByUuids = (uuids): any[] => {
-  const tradableMap = new Map();
-  for (let item of tradable) {
-    tradableMap.set(item.uuid.toLowerCase(), item);
-  }
-
-  return uuids
-    .map((uuid) => tradableMap.get(uuid.toLowerCase()))
-    .filter((item) => item !== undefined);
-};
-
-export const getTradableItemByTicker = (ticker: string): any => {
-  return tradable.find(
-    (tradable) => tradable?.ticker?.toLowerCase() === ticker.toLowerCase()
-  );
-};
-
-export const getTradableItemByOrganizationUuid = (
-  organizationUuid: string
-): any => {
-  return tradable.find(
-    (tradable) => tradable.organizationUuid === organizationUuid
-  );
-};
-
 export class Tradable {
   ticker: string;
   uuid: string;
@@ -63,7 +38,6 @@ export interface StockModel {
   };
   weighted_shares_outstanding?: number;
 }
-
 export const tradable = [
   {
     uuid: 'fast',

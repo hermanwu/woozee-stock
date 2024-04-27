@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { throwError } from 'rxjs';
 import { catchError, first } from 'rxjs/operators';
-import { tradable } from 'src/app/mock-data/mocks/tradables.mock';
 import { organizations } from 'src/app/mock-data/organization.mock';
 import { mockProducts } from 'src/app/mock-data/product.mock';
 
@@ -19,10 +18,6 @@ export class SearchService {
   stocksMap = {};
 
   constructor(private firestore: AngularFirestore) {
-    for (let stock of tradable) {
-      this.stocksMap[stock.ticker.toUpperCase()] = stock;
-    }
-
     this.stateGroups = [
       {
         label: 'Organization',
@@ -39,12 +34,15 @@ export class SearchService {
     ];
 
     this.getSearchPairsOfStock().subscribe(
-      (data: any) => {
+      (data: { [key: string]: { display_name: string; type: string } }) => {
         // iterate attributes and values of the data object
         for (let [key, value] of Object.entries(data)) {
           // add the stock to the stocksMap
-          if (!this.stocksMap[key]) {
-            this.stocksMap[key] = { ticker: key, displayName: value };
+          if (value.type === 'stock') {
+            this.stocksMap[key] = {
+              ticker: key,
+              displayName: value.display_name,
+            };
           }
         }
 
@@ -72,7 +70,7 @@ export class SearchService {
   getSearchPairsOfStock() {
     return this.firestore
       .collection('search')
-      .doc('stocks')
+      .doc('searchData')
       .valueChanges()
       .pipe(
         first(),

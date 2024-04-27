@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { getTradableItemsByUuids } from 'src/app/mock-data/mocks/tradables.mock';
 import { OrganizationServices } from 'src/app/organizations/services/organization.services';
 import { PeopleServices } from 'src/app/people/services/people.services';
 import { StockServices } from 'src/app/stock/services/stock.service';
@@ -15,17 +14,6 @@ export class EntityServices {
   ) {}
   getEntityByUuid(entityUuid: string): any {
     let cleanedEntityUuid = entityUuid.trim()?.toLowerCase();
-
-    let tradables = getTradableItemsByUuids([cleanedEntityUuid]);
-    if (tradables.length > 0) {
-      return {
-        uuid: cleanedEntityUuid,
-        displayName: tradables[0].displayName,
-        imageLink: tradables[0].logoLink,
-        type: 'tradable',
-        ticker: tradables[0].ticker,
-      };
-    }
 
     let stock = this.stockServices.getOrganizationByUuid(cleanedEntityUuid);
 

@@ -6,7 +6,6 @@ import { Observable, Subscription } from 'rxjs';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { getEarningsByTargetUuid } from 'src/app/mock-data/earnings.mock';
 import { getInteractionsByOrganizationUuid } from 'src/app/mock-data/interactions.mock';
-import { getTradableItemByOrganizationUuid } from 'src/app/mock-data/mocks/tradables.mock';
 import { getOrganizationsByUuids } from 'src/app/mock-data/organization.mock';
 import { getPeopleByPersonUuids } from 'src/app/mock-data/person.mock';
 import {
@@ -105,8 +104,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
       // const emotions = this.emotionServices.getUserInteractionsByUserId(
       //   this.userServices.currentUser.userUuid
       // );
-
-      this.tradableItem = getTradableItemByOrganizationUuid(this.stockUuid);
 
       const relationships = getRelationshipsByStartNodeUuid(this.stockUuid);
       this.stockInteractions = getInteractionsByOrganizationUuid(

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { organizations } from 'src/app/mock-data/organization.mock';
@@ -20,7 +21,26 @@ export class StockServices {
   threePreviousQuarterEr: EarningsReport;
   stock: StockAnalysis;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private firestore: AngularFirestore) {}
+
+  /**
+   *
+   * @param ticker
+   * @param mergeObject Object to merge with the existing stock data.
+   */
+  setStockData(ticker, mergeObject) {
+    this.firestore
+      .collection('stocks')
+      .doc(ticker.toUpperCase())
+      .set(mergeObject, { merge: true });
+  }
+
+  setSearchData(mergeObject) {
+    this.firestore
+      .collection('search')
+      .doc('searchData')
+      .set(mergeObject, { merge: true });
+  }
 
   getEarningsReleaseTime(date: string) {
     const url =

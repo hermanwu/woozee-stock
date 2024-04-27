@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { earnings } from 'src/app/mock-data/earnings.mock';
-import { getTradableItemsByUuids } from 'src/app/mock-data/mocks/tradables.mock';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
 import { formatDateToString } from 'src/app/shared/functions/date.function';
 import { TagServices } from 'src/app/shared/services/tag.services';
@@ -47,7 +46,7 @@ export class NewsPageComponent implements OnInit {
   selectedNoteIndex = 0;
   selectedEarningsIndex = 0;
   dailyEvents = [];
-  tradables = [];
+  tickers = [];
   earningsDate = new Date();
   beforeMarketOpen = [];
   afterMarketClose = [];
@@ -63,9 +62,10 @@ export class NewsPageComponent implements OnInit {
     // this.notes = this.newsService.getAllNews().slice(0, 10);
     this.tags = this.tagServices.getTrendTags();
     const interactions = this.interactionServices.getTopTradableInteractions();
-    this.tradables = getTradableItemsByUuids(
-      interactions.map((i) => i.targetUuid)
-    );
+
+    this.tickers = interactions.map((interaction) => {
+      return interaction.targetUuid.split(':')[0].toUpperCase();
+    });
 
     this.populateEarnings(this.earningsDate);
   }

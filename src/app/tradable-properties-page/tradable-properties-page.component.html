@@ -24,7 +24,7 @@
 
         <h1 class="text-2xl">
           {{ tradable?.ticker?.toUpperCase() }} -
-          {{ tradable?.displayName || tradable?.name }}
+          {{ tradable?.name }}
 
           <span class="text-sm text-gray-500">
             ({{ tradable?.primaryExchange }})
@@ -42,11 +42,24 @@
         </div>
 
         <mat-menu #industryMenu="matMenu">
-          <button mat-menu-item type="button" (click)="showRange = !showRange">
+          <button mat-menu-item type="button" (click)="testAction()">
             <mat-icon>sort</mat-icon>
           </button>
         </mat-menu>
       </div>
+    </div>
+  </div>
+
+  <div class="mt-4" *ngIf="tradable?.description">
+    <span class="text-gray-500">Standard Industrial Classification:</span>
+    <span class="font-bold ml-2 capitalize">{{
+      tradable?.sicDescription?.toLowerCase()
+    }}</span>
+  </div>
+
+  <div class="mt-2 mb-4" *ngIf="tradable?.description">
+    <div>
+      {{ tradable.description }}
     </div>
   </div>
 
@@ -154,7 +167,7 @@
               'https://www.macrotrends.net/stocks/charts/' +
               tradable?.ticker +
               '/' +
-              name +
+              dashName +
               '/pe-ratio'
             "
           >
@@ -183,26 +196,15 @@
         <mat-chip>
           <a
             target="_blank"
-            [href]="'https://www.reddit.com/r/wallstreetbets/search/?q=' + name"
+            [href]="
+              'https://www.reddit.com/r/wallstreetbets/search/?q=' + dashName
+            "
           >
             Wallstreetbets 🔗
           </a>
         </mat-chip>
       </mat-chip-listbox>
     </span>
-  </div>
-
-  <div class="mt-4" *ngIf="tradable?.description">
-    <span class="text-gray-500">Standard Industrial Classification:</span>
-    <span class="ml-2 capitalize">{{
-      tradable?.sicDescription?.toLowerCase()
-    }}</span>
-  </div>
-
-  <div class="mt-2" *ngIf="tradable?.description">
-    <div>
-      {{ tradable.description }}
-    </div>
   </div>
 
   <div class="mt-2" *ngIf="products.length > 0">

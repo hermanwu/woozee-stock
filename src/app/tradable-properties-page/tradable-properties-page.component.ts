@@ -5,21 +5,14 @@ import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { environment } from 'src/environments/environment';
 import { UserInteractions } from 'src/interactions/interaction.services';
 import { UserServices } from '../accounts/services/user.services';
-import { EarningsKeyWord } from '../mock-data/earnings-key-word.enum';
-import { Earnings, getEarningsByTargetUuid } from '../mock-data/earnings.mock';
-import {
-  StockModel,
-  Tradable,
-  tradable,
-} from '../mock-data/mocks/tradables.mock';
-import { getPricesByUuid } from '../mock-data/price.mock';
+import { StockModel, Tradable } from '../mock-data/mocks/tradables.mock';
 import { getProductsByStockTicker } from '../mock-data/product.mock';
 import { NotesServices } from '../news/services/notes.services';
+import { NumberRange } from '../shared/components/stats-display/stats-display.interface';
 import {
-  NumberRange,
-  UnitType,
-  currencyToDollarConversionMap,
-} from '../shared/components/stats-display/stats-display.interface';
+  getCompanyShortDashName,
+  getCompanyShortName,
+} from '../shared/functions/data-transformation.function';
 import { PricesServices } from '../shared/services/prices.services';
 import { StockServices } from '../stock/services/stock.service';
 
@@ -100,7 +93,8 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
                 this.tradable,
                 response
               );
-              this.dashName = this.getCompanyShortDashName(this.tradable.name);
+              this.dashName = getCompanyShortDashName(this.tradable.name);
+              this.populateEarnings(response.earnings);
             }
           },
           error: (error) => {
@@ -124,130 +118,32 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  getCompanyShortDashName(longName: string) {
-    return this.getCompanyShortName(longName).split(' ').join('-');
+  populateEarnings(earnings) {
+    if (!earnings || earnings.length === 0) {
+      this.earnings = [];
+      return;
+    }
+    this.earnings = this.sortValuesByDateKey(earnings);
   }
 
-  getCompanyShortName(longName: string) {
-    // Remove commas and periods from longName using a regular expression
-    longName = longName.replace(/[,.]/g, '');
+  sortValuesByDateKey(obj: { [key: string]: any }): any[] {
+    // Get an array of entries from the object
+    const entries = Object.entries(obj);
 
-    // Define an array of suffixes to check for
-    const suffixes = [
-      'inc',
-      'corp',
-      'plc',
-      'corporation',
-      'ltd',
-      'company',
-      'co',
-      '& co',
-      'sa',
-    ];
+    // Sort the entries array based on the date string keys
+    const sortedEntries = entries.sort(([dateKey1], [dateKey2]) => {
+      // Compare the date strings using the built-in Date object
+      return new Date(dateKey2).getTime() - new Date(dateKey1).getTime();
+    });
 
-    // Split longName into an array of lowercase words
-    const arr = longName.toLowerCase().split(' ');
+    // Extract the sorted values from the sorted entries array
+    const sortedValues = sortedEntries.map(([_, value]) => value);
 
-    // Find the minimum index among the suffixes using reduce
-    const endIndex = suffixes.reduce((minIndex, suffix) => {
-      const index = arr.findIndex((word, i) => {
-        // Check if the current word and the next word (if exists) match the suffix
-        return (
-          word === suffix.split(' ')[0] &&
-          (suffix.split(' ').length === 1 ||
-            arr[i + 1] === suffix.split(' ')[1])
-        );
-      });
-      // If the suffix is found and its index is smaller than the current minimum index,
-      // update the minimum index to the suffix's index
-      return index !== -1 && index < minIndex ? index : minIndex;
-    }, arr.length); // Initialize minIndex with the length of the array
-
-    // Split longName into an array of words, slice it from the start to the endIndex,
-    // and join the resulting words back into a string
-    return longName.split(' ').slice(0, endIndex).join(' ');
+    return sortedValues;
   }
 
   processStaticInformation(quoteUuid) {
-    const stats = getPricesByUuid(quoteUuid);
-    this.historicalPrice = stats?.price;
-    this.historicalMarketCap = stats?.marketCap;
-
-    this.earnings = getEarningsByTargetUuid(quoteUuid).sort((a, b) => {
-      return (
-        new Date(b.releasedDate).getTime() - new Date(a.releasedDate).getTime()
-      );
-    });
-
-    if (this.earnings.length > 0) {
-      const marketCapRange = this.calculateTargetMarketCapByEarnings(
-        this.earnings[0]
-      );
-      this.marketCapRange = {
-        low: marketCapRange[0],
-        high: marketCapRange[1],
-        average: (marketCapRange[0] + marketCapRange[1]) / 2,
-      };
-    }
-
     this.notes = this.notesServices.getNotesByTargets([quoteUuid]).slice(0, 5);
-  }
-
-  calculateTargetMarketCapByEarnings(earnings: Earnings): [number, number] {
-    let revenue = 0;
-    let grossProfit = 0;
-    let operatingIncome = 0;
-    let netIncome = 0;
-    let revenueGrowthRatio = 1;
-    let currencyUnit: string = UnitType.dollar;
-
-    if (earnings && earnings.data) {
-      for (let item of earnings?.data || []) {
-        // remove trailing spaces and to lower case
-        if (item?.name === EarningsKeyWord.revenue) {
-          revenue = item.value;
-          if (item.value && item.previousValue) {
-            revenueGrowthRatio = item.value / item.previousValue;
-          }
-        } else if (item?.name === EarningsKeyWord.grossProfit) {
-          grossProfit = item.value;
-        } else if (item?.name === EarningsKeyWord.operatingIncome) {
-          operatingIncome = item.value;
-        } else if (item?.name === EarningsKeyWord.netIncome) {
-          netIncome = item.value;
-          currencyUnit = item.unit;
-        }
-      }
-    }
-
-    const basePeRatio = 20;
-    let highPossibleProfit =
-      ((grossProfit > 0 ? grossProfit : revenue / 2) +
-        (operatingIncome > 0 ? operatingIncome : revenue / 8)) /
-      2;
-    let lowPossibleProfit =
-      operatingIncome > 0
-        ? operatingIncome
-        : netIncome > 0
-        ? netIncome
-        : grossProfit > 0
-        ? grossProfit / 8
-        : revenue / 16;
-    let highMultiple =
-      revenueGrowthRatio < 1
-        ? 1
-        : 1 + (revenueGrowthRatio - 1) * 3 > 3
-        ? 3
-        : 1 + (revenueGrowthRatio - 1) * 3;
-
-    let lowMarketCap =
-      lowPossibleProfit * basePeRatio * 4 * Math.min(1, revenueGrowthRatio);
-    let highMarketCap = highPossibleProfit * basePeRatio * 4 * highMultiple;
-
-    return [
-      lowMarketCap * currencyToDollarConversionMap[currencyUnit],
-      highMarketCap * currencyToDollarConversionMap[currencyUnit],
-    ];
   }
 
   calculateTargetPriceByTargetMarketCap(
@@ -270,6 +166,7 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     const result = cloneDeep(tradable);
     result.name = stockModelData.name;
     result.marketCap = stockModelData.market_cap;
+    result.displayName = getCompanyShortName(stockModelData.name);
     result.description = stockModelData.description;
     result.homePageUrl = stockModelData.homepage_url;
     result.market = stockModelData.market;
@@ -304,38 +201,5 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
   testAction() {
     this.showRange = !this.showRange;
     return;
-
-    console.log(tradable);
-
-    let start = 0;
-    let end = tradable.length;
-    let mergeObj = {};
-
-    for (let i = start; i < end; i++) {
-      let toTest = tradable[i];
-      if (toTest['ticker']) {
-        const stock = {
-          type: 'stock',
-          ticker: toTest['ticker'],
-        };
-
-        if (toTest['logoLink']) {
-          stock['logo_link'] = toTest['logoLink'];
-        }
-        if (toTest['largeLogoLink']) {
-          stock['large_logo_link'] = toTest['largeLogoLink'];
-        }
-        if (toTest['displayName']) {
-          stock['display_name'] = this.getCompanyShortName(
-            toTest['displayName']
-          );
-        }
-
-        mergeObj[toTest['ticker'].toUpperCase()] = stock;
-      }
-    }
-    console.log(mergeObj);
-
-    this.tradableServices.setSearchData(mergeObj);
   }
 }

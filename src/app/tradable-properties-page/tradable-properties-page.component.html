@@ -24,11 +24,7 @@
 
         <h1 class="text-2xl">
           {{ tradable?.ticker?.toUpperCase() }} -
-          {{ tradable?.name }}
-
-          <span class="text-sm text-gray-500">
-            ({{ tradable?.primaryExchange }})
-          </span>
+          {{ tradable?.displayName }}
         </h1>
 
         <div class="last-item">
@@ -51,7 +47,7 @@
   </div>
 
   <div class="mt-4" *ngIf="tradable?.description">
-    <span class="text-gray-500">Standard Industrial Classification:</span>
+    <span class="text-gray-500">Business:</span>
     <span class="font-bold ml-2 capitalize">{{
       tradable?.sicDescription?.toLowerCase()
     }}</span>
@@ -122,8 +118,10 @@
           </a>
         </mat-chip>
 
-        <mat-chip>
+        <mat-chip [matMenuTriggerFor]="overviewMenu"> Overview </mat-chip>
+        <mat-menu #overviewMenu="matMenu">
           <a
+            mat-menu-item
             target="_blank"
             [href]="
               'https://www.google.com/finance/quote/' +
@@ -132,12 +130,34 @@
               tradable?.primaryExchange
             "
           >
-            Live Data 🔗
+            Google 🔗
           </a>
-        </mat-chip>
 
-        <mat-chip>
           <a
+            mat-menu-item
+            target="_blank"
+            [href]="'https://tradingview.com/symbols/' + tradable?.ticker"
+          >
+            Tradingview 🔗
+          </a>
+        </mat-menu>
+
+        <mat-chip [matMenuTriggerFor]="forecastMenu"> Forecast </mat-chip>
+        <mat-menu #forecastMenu="matMenu">
+          <a
+            mat-menu-item
+            target="_blank"
+            [href]="
+              'https://www.tradingview.com/symbols/' +
+              tradable?.ticker +
+              '/forecast'
+            "
+          >
+            Tradingview 🔗
+          </a>
+
+          <a
+            mat-menu-item
             target="_blank"
             [href]="
               'https://www.tipranks.com/stocks/' +
@@ -145,9 +165,9 @@
               '/forecast'
             "
           >
-            Analyst Forecast 🔗
+            Tipranks 🔗
           </a>
-        </mat-chip>
+        </mat-menu>
 
         <mat-chip>
           <a
@@ -203,6 +223,21 @@
             Wallstreetbets 🔗
           </a>
         </mat-chip>
+
+        <mat-chip [matMenuTriggerFor]="technicalMenu"> Technical </mat-chip>
+        <mat-menu #technicalMenu="matMenu">
+          <a
+            mat-menu-item
+            target="_blank"
+            [href]="
+              'https://www.tradingview.com/symbols/' +
+              tradable?.ticker +
+              '/technicals'
+            "
+          >
+            Trading View 🔗
+          </a>
+        </mat-menu>
       </mat-chip-listbox>
     </span>
   </div>

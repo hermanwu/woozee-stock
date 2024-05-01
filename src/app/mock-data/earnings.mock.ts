@@ -1,4 +1,3 @@
-import { getTicker } from '../accounts/services/user.services';
 import {
   Stats,
   TimeFrame,
@@ -20,11 +19,6 @@ export const opinionKeyWord = [
 ];
 export const factKeyWord = ['Robotics', 'Surgery'];
 
-export const getEarningsByTargetUuid = (targetUuid: string) => {
-  const ticker = getTicker(targetUuid);
-  return earnings.filter((item) => getTicker(item.targetUuids?.[0]) === ticker);
-};
-
 export class Earnings {
   releasedDate?: Date;
   revenue?: Stats;
@@ -34,7 +28,7 @@ export class Earnings {
   tenQ?: string;
   operatingExpenses?: Stats;
   netIncome?: Stats;
-  data?: Stats[];
+  data?: { [key: string]: Stats };
   quotes?: any[];
   targetUuids?: string[];
   documents?: any[];
@@ -42,7 +36,7 @@ export class Earnings {
   beforeMarketOpen?: boolean;
 }
 
-export const earnings: Earnings[] = [
+export const mockEarnings = [
   {
     targetUuids: ['tsla'],
     releasedDate: getUtcDate(2024, 4, 23),

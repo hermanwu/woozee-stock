@@ -122,6 +122,7 @@ export const getStockByTicker = v2.https.onRequest((request, response) => {
       const axiosResponse = await axios.get(endpoint);
       const stockDetails = axiosResponse.data.results;
       stockDetails.last_updated = Date.now();
+      stockDetails.display_name = getCompanyShortName(stockDetails.name);
 
       // Add to search document
       admin
@@ -132,7 +133,7 @@ export const getStockByTicker = v2.https.onRequest((request, response) => {
           {
             [stockDetails.ticker]: {
               market_cap: stockDetails.market_cap,
-              display_name: getCompanyShortName(stockDetails.name),
+              display_name: stockDetails.display_name,
               type: 'stock',
               ticker: stockDetails.ticker,
             },

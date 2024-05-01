@@ -11,31 +11,20 @@
 
 <div>
   💰 Earnings Results on
-  <app-date-display [date]="earnings.releasedDate"></app-date-display>
+  <app-date-display [date]="releasedDate"></app-date-display>
 </div>
 
-<div *ngIf="earnings.data?.length > 0">
-  <div *ngFor="let data of earnings?.data">
-    <span *ngIf="data.value">🔷</span>
-    <app-stats-display [statsDisplay]="data"></app-stats-display>
-
-    <ng-container *ngIf="data.data">
-      <div *ngFor="let data2 of data?.data">
-        🔹
-        <app-stats-display [statsDisplay]="data2"></app-stats-display>
-      </div>
-    </ng-container>
-  </div>
-  <div *ngIf="grossMargin">
-    🔷 Gross Margin: {{ grossMargin | percent : "1.1-2" }}
-  </div>
-  <div *ngIf="operatingMargin">
-    🔷 Operating Margin: {{ operatingMargin | percent : "1.1-2" }}
-  </div>
-  <div *ngIf="netMargin">
-    🔷 Net Margin: {{ netMargin | percent : "1.1-2" }}
-  </div>
+<div *ngFor="let item of otherData">
+  <span *ngIf="item.value">🔷</span>
+  <app-stats-display [statsDisplay]="item"></app-stats-display>
 </div>
+<div *ngIf="grossMargin">
+  🔷 Gross Margin: {{ grossMargin | percent : "1.1-2" }}
+</div>
+<div *ngIf="operatingMargin">
+  🔷 Operating Margin: {{ operatingMargin | percent : "1.1-2" }}
+</div>
+<div *ngIf="netMargin">🔷 Net Margin: {{ netMargin | percent : "1.1-2" }}</div>
 
 <div class="mt-2" *ngIf="earnings?.quotes">
   <div *ngFor="let earnings of earnings.quotes">

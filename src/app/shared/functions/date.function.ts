@@ -13,6 +13,13 @@ export const convertDateToUTC = (date: Date): Date => {
   );
 };
 
+export const formatDateToUTCString = (dateObj) => {
+  const year = dateObj.getUTCFullYear();
+  const month = (dateObj.getUTCMonth() + 1).toString().padStart(2, '0'); // +1 for zero-based months
+  const day = dateObj.getUTCDate().toString().padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
 export const formatDateToString = (dateObj) => {
   const year = dateObj.getFullYear();
   const month = (dateObj.getMonth() + 1).toString().padStart(2, '0'); // +1 for zero-based months

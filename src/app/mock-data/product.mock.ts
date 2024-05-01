@@ -598,7 +598,6 @@ export const mockProducts: Product[] = [
 ];
 
 export const getProductsByStockTicker = (stockTicker: string) => {
-  console.log(stockTicker);
   return mockProducts.filter((product) =>
     product.stockUuids?.includes(stockTicker.toLowerCase())
   );

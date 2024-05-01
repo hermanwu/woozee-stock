@@ -4,7 +4,6 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import { getEarningsByTargetUuid } from 'src/app/mock-data/earnings.mock';
 import { getInteractionsByOrganizationUuid } from 'src/app/mock-data/interactions.mock';
 import { getOrganizationsByUuids } from 'src/app/mock-data/organization.mock';
 import { getPeopleByPersonUuids } from 'src/app/mock-data/person.mock';
@@ -52,9 +51,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   noteUuidToEmotionMap = {};
   earnings = [];
   stockInteractions;
-
   tradableItem;
-
   brandedProducts = [];
   products = [];
   relatedProducts = [];
@@ -136,7 +133,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
 
       // get all parents ids from product list
       this.relatedProducts = getAllParents(this.products);
-      this.earnings = getEarningsByTargetUuid(this.stockUuid);
     });
   }
 

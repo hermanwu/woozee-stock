@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { earnings } from 'src/app/mock-data/earnings.mock';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
 import { formatDateToString } from 'src/app/shared/functions/date.function';
 import { TagServices } from 'src/app/shared/services/tag.services';
@@ -27,22 +26,7 @@ export class NewsPageComponent implements OnInit {
   showTools: boolean = false;
   selectedNote: Note;
   tags = [];
-  earningsDisplays = earnings
-    .sort((a, b) => {
-      // Convert date strings to Date objects
-      const dateA = new Date(a.releasedDate);
-      const dateB = new Date(b.releasedDate);
-
-      // Compare the dates
-      return dateB.getTime() - dateA.getTime();
-    })
-    .slice(0, 10)
-    .map((e) => {
-      return {
-        earnings: e,
-        targetUuids: e.targetUuids,
-      };
-    });
+  earnings = [];
   selectedNoteIndex = 0;
   selectedEarningsIndex = 0;
   dailyEvents = [];

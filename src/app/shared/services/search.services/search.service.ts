@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { throwError } from 'rxjs';
 import { catchError, first } from 'rxjs/operators';
-import { organizations } from 'src/app/mock-data/organization.mock';
-import { mockProducts } from 'src/app/mock-data/product.mock';
 
 export interface StateGroup {
   label: string;
@@ -19,18 +17,18 @@ export class SearchService {
 
   constructor(private firestore: AngularFirestore) {
     this.stateGroups = [
-      {
-        label: 'Organization',
-        items: organizations,
-      },
-      {
-        label: 'Product',
-        items: mockProducts,
-      },
-      {
-        label: 'People',
-        items: [],
-      },
+      // {
+      //   label: 'Organization',
+      //   items: organizations,
+      // },
+      // {
+      //   label: 'Product',
+      //   items: mockProducts,
+      // },
+      // {
+      //   label: 'People',
+      //   items: [],
+      // },
     ];
 
     this.getSearchPairsOfStock().subscribe(

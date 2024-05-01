@@ -29,7 +29,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/assets"],
-            "styles": ["src/theme.scss", "src/styles.scss"],
+            "styles": ["src/styles.scss", "src/theme.scss"],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,

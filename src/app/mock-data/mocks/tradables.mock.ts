@@ -37,6 +37,7 @@ export interface StockModel {
     logo_url?: string;
   };
   weighted_shares_outstanding?: number;
+  display_name?: string;
 }
 export const tradable = [
   {

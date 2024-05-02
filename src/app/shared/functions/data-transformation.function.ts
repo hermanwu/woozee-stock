@@ -59,6 +59,7 @@ export const getCompanyShortName = (longName) => {
     '& co',
     'sa',
     'incorporated',
+    'a/s',
   ];
 
   // Convert to lowercase and split longName into an array of words

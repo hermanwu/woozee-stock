@@ -119,6 +119,7 @@
         </mat-chip>
 
         <mat-chip [matMenuTriggerFor]="overviewMenu"> Overview </mat-chip>
+
         <mat-menu #overviewMenu="matMenu">
           <a
             mat-menu-item
@@ -242,7 +243,7 @@
     </span>
   </div>
 
-  <div class="mt-2" *ngIf="products.length > 0">
+  <div class="mt-2" *ngIf="products?.length > 0">
     Products:
 
     <mat-chip-listbox>

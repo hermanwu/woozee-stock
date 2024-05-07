@@ -80,30 +80,6 @@
     </span>
   </div>
 
-  <div *ngIf="brandedProducts.length > 0 || products.length > 0" class="mt-4">
-    <div class="mb-2">
-      <h2>Products & Services</h2>
-    </div>
-
-    <mat-chip-listbox>
-      <mat-chip
-        *ngFor="let item of brandedProducts"
-        (click)="navigateToProductPage(item.uuid)"
-      >
-        {{ item.name }}
-      </mat-chip>
-    </mat-chip-listbox>
-
-    <mat-chip-listbox>
-      <mat-chip
-        *ngFor="let item of products"
-        (click)="navigateToProductPage(item.uuid)"
-      >
-        {{ item.name }}
-      </mat-chip>
-    </mat-chip-listbox>
-  </div>
-
   <div *ngIf="partners.length > 0" class="mt-4">
     <div class="mb-2">
       <h2>Partners</h2>

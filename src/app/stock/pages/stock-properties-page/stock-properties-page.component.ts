@@ -7,11 +7,6 @@ import { UserServices } from 'src/app/accounts/services/user.services';
 import { getInteractionsByOrganizationUuid } from 'src/app/mock-data/interactions.mock';
 import { getOrganizationsByUuids } from 'src/app/mock-data/organization.mock';
 import { getPeopleByPersonUuids } from 'src/app/mock-data/person.mock';
-import {
-  getAllParents,
-  getProductsByProductUuids,
-  getProductsByRootCompanyId,
-} from 'src/app/mock-data/product.mock';
 import { getRelationshipsByStartNodeUuid } from 'src/app/mock-data/relationship.mock';
 import { NotesServices } from 'src/app/news/services/notes.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
@@ -52,9 +47,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   earnings = [];
   stockInteractions;
   tradableItem;
-  brandedProducts = [];
   products = [];
-  relatedProducts = [];
   people = [];
   partners = [];
   industries = [];
@@ -73,8 +66,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
       this.stockUuid = params[this.stockId].toLowerCase();
-
-      this.brandedProducts = getProductsByRootCompanyId(this.stockUuid);
 
       // Reset everything.
       this.imageLinks = [];
@@ -107,12 +98,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         this.stockUuid
       );
 
-      this.products = getProductsByProductUuids(
-        relationships
-          .filter((r) => r.endNodeType === 'product')
-          .map((r) => r.endNodeUuid)
-      );
-
       this.industries = getIndustriesByUuids(
         relationships
           .filter((r) => r.endNodeType === 'industry')
@@ -132,7 +117,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
       );
 
       // get all parents ids from product list
-      this.relatedProducts = getAllParents(this.products);
     });
   }
 

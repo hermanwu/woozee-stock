@@ -13,6 +13,16 @@ export const underscoreToCamelCase = (obj: any): any => {
   }
 };
 
+export const toKebabCase = (str: string): string => {
+  // make string to lowercase
+  // replace spaces with hyphens
+  // remove all non-alphanumeric or hyphen characters
+  return str
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+};
+
 export const camelToUnderscoreString = (camelStr: string): string => {
   return camelStr
     .split(/(?=[A-Z])/)
@@ -60,6 +70,9 @@ export const getCompanyShortName = (longName) => {
     'sa',
     'incorporated',
     'a/s',
+    'p.l.c.',
+    'ag',
+    'n.v',
   ];
 
   // Convert to lowercase and split longName into an array of words

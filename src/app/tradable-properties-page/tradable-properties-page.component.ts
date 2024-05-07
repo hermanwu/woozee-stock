@@ -6,7 +6,6 @@ import { environment } from 'src/environments/environment';
 import { UserInteractions } from 'src/interactions/interaction.services';
 import { UserServices } from '../accounts/services/user.services';
 import { StockModel, Tradable } from '../mock-data/mocks/tradables.mock';
-import { getProductsByStockTicker } from '../mock-data/product.mock';
 import { NotesServices } from '../news/services/notes.services';
 import { NumberRange } from '../shared/components/stats-display/stats-display.interface';
 import {
@@ -73,7 +72,6 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
         ?.toUpperCase();
 
       this.tradable = { ticker };
-      this.products = getProductsByStockTicker(ticker);
 
       this.userServices
         .getUserInteractions()
@@ -95,6 +93,11 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
               );
               this.dashName = getCompanyShortDashName(this.tradable.name);
               this.populateEarnings(response.earnings);
+              if (response.products) {
+                this.products = Object.entries(response.products).map(
+                  ([key, value]: [string, any]) => ({ uuid: key, ...value })
+                );
+              }
             }
           },
           error: (error) => {
@@ -146,19 +149,6 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     this.notes = this.notesServices.getNotesByTargets([quoteUuid]).slice(0, 5);
   }
 
-  calculateTargetPriceByTargetMarketCap(
-    marketCap,
-    price,
-    targetMarketCap: [number, number]
-  ): [number, number] {
-    if (marketCap && price && targetMarketCap) {
-      return [
-        (targetMarketCap[0] / marketCap) * price,
-        (targetMarketCap[1] / marketCap) * price,
-      ];
-    }
-  }
-
   updateTradableBasedStockModelData(
     tradable: Tradable,
     stockModelData: StockModel
@@ -199,7 +189,6 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
   }
 
   testAction() {
-    this.showRange = !this.showRange;
     return;
   }
 }

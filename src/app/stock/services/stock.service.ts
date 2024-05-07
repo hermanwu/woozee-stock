@@ -35,6 +35,13 @@ export class StockServices {
       .set(mergeObject, { merge: true });
   }
 
+  setProductData(productUuid, mergeObject) {
+    this.firestore
+      .collection('products')
+      .doc(productUuid)
+      .set(mergeObject, { merge: true });
+  }
+
   setSearchData(mergeObject) {
     this.firestore
       .collection('search')

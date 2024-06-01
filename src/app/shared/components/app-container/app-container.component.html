@@ -17,7 +17,7 @@
   </button>
 
   <button
-    *ngIf="(username$ | async) === null"
+    *ngIf="(user$ | async) === null"
     mat-flat-button
     [routerLink]="['/login']"
   >
@@ -25,16 +25,16 @@
   </button>
   <button
     class="ml-3"
-    *ngIf="(username$ | async) === null"
+    *ngIf="(user$ | async) === null"
     mat-flat-button
     [routerLink]="['/signup']"
   >
     Signup
   </button>
-  <button [routerLink]="['/me']" *ngIf="username$ | async" mat-icon-button>
+  <button [routerLink]="['/me']" *ngIf="user$ | async" mat-icon-button>
     <mat-icon class="text-white">swap_vert</mat-icon>
   </button>
-  <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="username$ | async">
+  <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="user$ | async">
     <mat-icon class="text-white">menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
@@ -65,10 +65,26 @@
   </mat-menu>
 </mat-toolbar>
 <div class="content-container">
-  <div *ngIf="(username$ | async) !== undefined">
+  <div
+    *ngIf="
+      (user$ | async) !== undefined && metaDataObjectLoaded$ | async;
+      else loading
+    "
+  >
     <router-outlet></router-outlet>
   </div>
+  <ng-template #loading>
+    <div class="flex justify-center items-center mt-20">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
 </div>
+
+<!-- a button to move to top of the page -->
+<div *ngIf="showBackToTopButton" class="flex justify-center mt-10 pb-10">
+  <button mat-button (click)="scrollToTop()">back to top</button>
+</div>
+
 <button
   mat-icon-button
   class="float-button"

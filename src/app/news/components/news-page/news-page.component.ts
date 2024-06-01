@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { InteractionServices } from 'src/app/interactions/interaction.services';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
 import { formatDateToString } from 'src/app/shared/functions/date.function';
+import { SearchService } from 'src/app/shared/services/search.services/search.service';
 import { TagServices } from 'src/app/shared/services/tag.services';
 import { Industry } from 'src/app/stock/models/industry.model';
 import { EventType } from 'src/app/stock/models/news.model';
 import { StockServices } from 'src/app/stock/services/stock.service';
 import { environment } from 'src/environments/environment';
-import { InteractionServices } from 'src/interactions/interaction.services';
 import { NotesServices } from '../../services/notes.services';
 
 @Component({
@@ -34,24 +35,27 @@ export class NewsPageComponent implements OnInit {
   earningsDate = new Date();
   beforeMarketOpen = [];
   afterMarketClose = [];
+  metaDataObject;
 
   constructor(
     private newsService: NotesServices,
     private tagServices: TagServices,
     private interactionServices: InteractionServices,
-    private stockServices: StockServices
+    private stockServices: StockServices,
+    private searchServices: SearchService
   ) {}
 
   ngOnInit(): void {
     // this.notes = this.newsService.getAllNews().slice(0, 10);
     this.tags = this.tagServices.getTrendTags();
-    const interactions = this.interactionServices.getTopTradableInteractions();
+    const interactions = [];
 
     this.tickers = interactions.map((interaction) => {
       return interaction.targetUuid.split(':')[0].toUpperCase();
     });
 
     this.populateEarnings(this.earningsDate);
+    this.metaDataObject = this.searchServices.getMetaDataObject();
   }
 
   populateEarnings(earningsDate) {
@@ -78,18 +82,28 @@ export class NewsPageComponent implements OnInit {
             }
           }
         }
+
+        this.sortEarningsEventByMarketCap();
       });
   }
 
-  openDailyReportDialog() {
-    // this.dialogService.open<DailyMediumReportDisplayDialogComponent>(
-    //   DailyMediumReportDisplayDialogComponent,
-    //   {
-    //     maxHeight: '90vh', //you can adjust the value as per your view
-    //     data: {},
-    //     panelClass: '600px',
-    //   }
-    // );
+  sortEarningsEventByMarketCap() {
+    this.beforeMarketOpen = this.beforeMarketOpen.sort(
+      (a: { ticker: string }, b: { ticker: string }) => {
+        return (
+          (this.metaDataObject[b.ticker]?.market_cap || 0) -
+          (this.metaDataObject[a.ticker]?.market_cap || 0)
+        );
+      }
+    );
+    this.afterMarketClose = this.afterMarketClose.sort(
+      (a: { ticker: string }, b: { ticker: string }) => {
+        return (
+          (this.metaDataObject[b.ticker]?.market_cap || 0) -
+          (this.metaDataObject[a.ticker]?.market_cap || 0)
+        );
+      }
+    );
   }
 
   // dateDifference can be positive or negative;

@@ -2,27 +2,25 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
+import { SignupComponent } from './accounts/signup/signup.component';
 import { AssetListPageComponent } from './assets/components/asset-list-page/asset-list-page.component';
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
-import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
 import { LoginComponent } from './login/login.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
 import { RegionPropertiesPageComponent } from './markets/components/region-properties-page/region-properties-page.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
-import { NoteFormListComponent } from './note-form-list/note-form-list.component';
 import { CatalystPageComponent } from './notes/components/catalyst/components/catalyst-page/catalyst-page.component';
 import { NotesListPageComponent } from './notes/components/notes-list-page/notes-list-page.component';
 import { MePageComponent } from './notes/components/opinion-page/blog-page.component';
 import { AddPersonFormComponent } from './people/components/add-person-form/add-person-form.component';
-import { PersonPropertyPageComponent } from './person-property-page/person-property-page.component';
+import { PersonPropertyPageComponent } from './people/person-property-page/person-property-page.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
 import { ProductPropertiesPageComponent } from './product-properties-page/product-properties-page.component';
 import { AppContainerComponent } from './shared/components/app-container/app-container.component';
 import { DemoPageComponent } from './shared/components/demo-page/demo-page.component';
-import { SignupComponent } from './signup/signup.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
-import { TagPropertiesPageComponent } from './tag-properties-page/tag-properties-page.component';
+import { TagPropertiesPageComponent } from './tag/tag-properties-page/tag-properties-page.component';
 import { TradablePropertiesPageComponent } from './tradable-properties-page/tradable-properties-page.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
 import { TrendComponent } from './trend/trend.component';
@@ -101,11 +99,6 @@ const routes: Routes = [
         component: UiComponentsPageComponent,
         children: [
           {
-            path: 'note-form',
-            pathMatch: 'full',
-            component: NoteFormListComponent,
-          },
-          {
             path: 'add-person',
             pathMatch: 'full',
             component: AddPersonFormComponent,
@@ -155,10 +148,6 @@ const routes: Routes = [
       {
         path: 'portfolios',
         component: PortfolioListComponent,
-      },
-      {
-        path: 'industries/:marketType',
-        component: IndustryPropertiesPageComponent,
       },
       {
         path: 'industries',

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { getInteractionsByProductId } from '../mock-data/interactions.mock';
 
 @Component({
   selector: 'app-product-properties-page',
@@ -20,7 +19,7 @@ export class ProductPropertiesPageComponent implements OnInit {
     this.routeSub = this.route.params.subscribe((params) => {
       const productId = params[this.productId].toLowerCase();
 
-      this.interactions = getInteractionsByProductId(productId);
+      this.interactions = [];
     });
   }
 

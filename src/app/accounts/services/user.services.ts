@@ -1,48 +1,78 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import {
+  AngularFirestore,
+  DocumentSnapshot,
+} from '@angular/fire/compat/firestore';
 import firebase from 'firebase/compat/app';
-import { BehaviorSubject, EMPTY, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, EMPTY, Observable, Subject, from } from 'rxjs';
 import {
   catchError,
   filter,
   map,
+  shareReplay,
   startWith,
+  switchMap,
   take,
   takeUntil,
 } from 'rxjs/operators';
-import { users } from 'src/app/mock-data/mock-users.data';
-import { cloneDeep } from 'src/app/shared/functions/clone-deep';
+import { UserInteractions } from 'src/app/interactions/interaction.services';
+import { Tag } from 'src/app/shared/data/tag.model';
 import { AuthService } from 'src/app/shared/services/auth.services';
-import { StockData } from 'src/app/stock/services/stock-data.model';
-import { UserInteractions } from 'src/interactions/interaction.services';
+import { SearchService } from 'src/app/shared/services/search.services/search.service';
 
-export interface UserData {
-  email: string;
-  name?: string;
-  interactions?: UserInteractions[];
-}
-
-export const getTicker = (original: string) => {
-  return original.split(':')[0]?.toLowerCase();
-};
 @Injectable({
   providedIn: 'root',
 })
 export class UserServices implements OnDestroy {
-  users = users;
-  user$: Observable<firebase.User | null>;
   private unsubscribe$ = new Subject<void>();
-  userStockInteractions = [];
-  userData: UserData = {
-    email: '',
-  };
+  private username: string;
+
+  user$: Observable<firebase.User | null> = this.authService.getUser();
   interactions$ = new BehaviorSubject<UserInteractions[]>([]);
+  notes$ = new BehaviorSubject<any>({});
+  tags$ = new BehaviorSubject<{
+    [x: string]: Tag;
+  }>({});
+  predictions$ = new BehaviorSubject<{ [x: string]: string }>({});
+  userData$: Observable<DocumentSnapshot<UserData> | null>;
 
   constructor(
     private authService: AuthService,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private searchServices: SearchService
   ) {
-    this.user$ = this.authService.getUser();
+    this.user$ = this.authService
+      .getUser()
+      .pipe(startWith(undefined), takeUntil(this.unsubscribe$));
+
+    this.userData$ = this.user$.pipe(
+      filter((user): user is firebase.User => !!user),
+      switchMap((user) => {
+        const docRef = firebase.firestore().collection('users').doc(user.email);
+        return from(docRef.get()).pipe(
+          filter(
+            (docSnapshot): docSnapshot is DocumentSnapshot<UserData> =>
+              docSnapshot.exists
+          ), // Filter out non-existent docs
+          catchError((error) => {
+            console.error('Error getting document:', error);
+            return EMPTY; // or throw error based on your error handling
+          })
+        );
+      }),
+      shareReplay(1)
+    );
+
+    this.userData$
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((docSnapshot) => {
+        const data = docSnapshot.data();
+        this.interactions$.next(data?.interactions || []);
+        this.notes$.next(processNotes(data?.notes));
+        this.tags$.next(data?.tags || {});
+        this.predictions$.next(data?.predictions || {});
+      });
+
     this.user$
       .pipe(
         map((user) => (user ? user.email : null)),
@@ -50,26 +80,7 @@ export class UserServices implements OnDestroy {
         takeUntil(this.unsubscribe$)
       )
       .subscribe((username) => {
-        if (username) {
-          const documentRef = firebase
-            .firestore()
-            .collection('users')
-            .doc(username);
-
-          documentRef
-            .get()
-            .then((doc) => {
-              if (doc.exists) {
-                this.interactions$.next(doc.data().interactions);
-              } else {
-                throw new Error('Document not found');
-              }
-            })
-            .catch((error) => {
-              console.log('Error getting document:', error);
-              throw error;
-            });
-        }
+        this.username = username;
       });
   }
 
@@ -78,127 +89,176 @@ export class UserServices implements OnDestroy {
     this.unsubscribe$.complete();
   }
 
+  getUser() {
+    return this.user$;
+  }
+
   getUsername() {
-    return this.user$.pipe(
-      map((user) => (user ? user.email : null)),
-      startWith(undefined),
-      takeUntil(this.unsubscribe$)
-    );
+    return this.username;
   }
 
   getUserInteractions() {
     return this.interactions$;
   }
 
-  getRandomUser() {
-    return this.users[Math.floor(Math.random() * this.users.length)];
+  getTags(): Observable<{
+    [x: string]: Tag;
+  }> {
+    return this.tags$;
   }
 
-  getUserByUuid(uuid: string) {
-    return this.users.find((user) => user.uuid === uuid);
+  getUserNotes() {
+    return this.notes$;
   }
 
-  getUserStockInteractions(): UserInteractions[] {
-    console.log(this.userStockInteractions);
-    return this.userStockInteractions;
+  getUserData() {
+    return this.userData$;
   }
 
-  getSavedNotes(): string[] {
-    return;
+  getPredications() {
+    return this.predictions$;
   }
 
-  updateStockRanks(stocks: StockData[], rankings: string[]): StockData[] {
-    const updatedStocks = cloneDeep(stocks);
+  async setUserData(mergeObject: Partial<UserData>): Promise<void> {
+    const docSnapshot = await this.userData$
+      .pipe(
+        filter((doc): doc is DocumentSnapshot<UserData> => !!doc),
+        take(1)
+      )
+      .toPromise(); // Convert observable to a promise
 
-    const stockRankMap = {};
+    if (docSnapshot) {
+      await docSnapshot.ref.set(mergeObject, { merge: true });
 
-    for (let i = 0; i < rankings.length; i++) {
-      stockRankMap[rankings[i].toLowerCase()] = i;
+      // Fetch the updated document data
+      const updatedDocSnapshot = await docSnapshot.ref.get();
+      const updatedData = updatedDocSnapshot.data();
+
+      // Emit the updated values to the observables
+      this.interactions$.next(updatedData?.interactions || []);
+      this.notes$.next(processNotes(updatedData?.notes));
+      this.tags$.next(updatedData?.tags || {});
+      this.predictions$.next(updatedData?.predictions || {});
+    } else {
+      // Handle the case where the document doesn't exist
+      console.error('Document not found.');
     }
-
-    for (let stock of updatedStocks) {
-      stock.rank = stockRankMap[stock.ticker.toLowerCase()];
-    }
-
-    return updatedStocks;
   }
 
-  // const mockInteractions = userInteractions;
+  async deleteUserNotes(noteId: string): Promise<void> {
+    try {
+      const docSnapshot = await this.userData$
+        .pipe(
+          filter((doc): doc is DocumentSnapshot<UserData> => !!doc),
+          take(1)
+        )
+        .toPromise();
 
-  // const interactions = {};
+      if (docSnapshot && noteId) {
+        await docSnapshot.ref.update({
+          [`notes.${noteId}`]: firebase.firestore.FieldValue.delete(),
+        });
+      }
+    } catch (error) {
+      console.error('Error deleting note:', error);
+      throw error; // Re-throw the error to be caught by the caller
+    }
+  }
 
-  // for (let interaction of mockInteractions) {
-  //   const key =
-  //     getTicker(interaction.targetUuid)?.toLowerCase() +
-  //     ':' +
-  //     interaction.type?.toLowerCase();
-  //   interactions[key] = {
-  //     listUuids: interaction.listUuids || [],
-  //     targetUuid: key,
-  //     vote: interaction.vote || 0,
-  //     type: interaction.type,
-  //   };
-  // }
-  // console.log(interactions);
-  // Store user data into 'users' collection, user email as document ID and user data as document.
-  updateVote(targetUuid, vote) {
+  async updateVote(targetUuid: string, vote: number): Promise<void> {
     if (typeof vote !== 'number') {
       console.error('Invalid vote value. Expected a number.');
       return;
     }
 
-    this.getUsername()
-      .pipe(
-        filter((username) => !!username),
-        take(1),
-        catchError((error) => {
-          console.error('Error retrieving username:', error);
-          return EMPTY;
-        })
-      )
-      .subscribe((username) => {
-        if (username) {
-          let updatedInteractions;
-          const userDocRef = this.firestore.collection('users').doc(username);
-          userDocRef
-            .get()
-            .toPromise()
-            .then((doc) => {
-              const userData = doc.data() as {
-                interactions: UserInteractions[];
-              };
-              const userInteractions = userData?.interactions || {};
+    if (!this.username) {
+      console.error('User not authenticated');
+      return;
+    }
 
-              if (userInteractions.hasOwnProperty(targetUuid)) {
-                // Update existing vote
-                userInteractions[targetUuid].vote = vote;
-              } else {
-                // Add new entry
-                userInteractions[targetUuid] = {
-                  targetUuid: targetUuid,
-                  vote: vote,
-                  type: targetUuid.split(':')[1],
-                };
-              }
+    const userDocRef = this.firestore.collection('users').doc(this.username);
 
-              updatedInteractions = userInteractions;
-              return userDocRef.update({
-                interactions: userInteractions,
-              });
-            })
-            .then(() => {
-              this.interactions$.next(updatedInteractions);
+    try {
+      const doc = await userDocRef.get().toPromise();
+      const userData = doc.data() as { interactions: any };
+      const userInteractions = userData?.interactions || {};
 
-              console.log('Interactions updated successfully');
-            })
-            .catch((error) => {
-              console.error('Error updating interactions:', error);
-              // Handle the error and show an error message to the user
-            });
-        } else {
-          console.error('User not authenticated');
-          return EMPTY;
-        }
-      });
+      let originalValue = 0;
+      if (userInteractions.hasOwnProperty(targetUuid)) {
+        // Update existing vote
+        const diff = vote - userInteractions[targetUuid].vote || 0;
+        this.searchServices.incrementVote(targetUuid, diff);
+
+        userInteractions[targetUuid].vote = vote;
+      } else {
+        // Add new entry
+
+        userInteractions[targetUuid] = {
+          targetUuid: targetUuid,
+          vote: vote,
+          type: targetUuid.split(':')[1],
+        };
+      }
+
+      await userDocRef.update({ interactions: userInteractions });
+      this.interactions$.next(userInteractions);
+      console.log('Interactions updated successfully');
+    } catch (error) {
+      console.error('Error updating interactions:', error);
+      // Handle the error and show an error message to the user
+      throw error; // Rethrow the error to be handled by the caller
+    }
   }
+}
+
+export interface UserData {
+  email: string;
+  name?: string;
+  interactions?: UserInteractions[];
+  notes?: { [x: string]: { content: any } };
+  tags?: {
+    [x: string]: Tag;
+  };
+  predictions?: { [x: string]: string };
+}
+
+export const getTicker = (original: string) => {
+  return original.split(':')[0]?.toLowerCase();
+};
+
+export function processNotes(notes) {
+  const typeToNotesMap = {
+    generalNotes: [],
+    stock: {},
+  };
+  // sort notes.
+  for (let [key, value] of Object.entries(notes) as [
+    string,
+    { content: string }
+  ][]) {
+    const metaData = key.split(':');
+    if (metaData.length === 3) {
+      let ticker = metaData[0];
+      let type = metaData[1];
+      let time = metaData[2];
+
+      if (type === 'stock') {
+        if (!typeToNotesMap[type].hasOwnProperty(ticker)) {
+          typeToNotesMap[type][ticker] = [];
+        }
+        typeToNotesMap[type][ticker].push({
+          attributeId: key,
+          createdTimestamp: parseInt(time),
+          content: value.content,
+        });
+      }
+    } else {
+      typeToNotesMap['generalNotes'].push({
+        createdTimestamp: parseInt(key),
+        content: value,
+      });
+    }
+  }
+
+  return typeToNotesMap;
 }

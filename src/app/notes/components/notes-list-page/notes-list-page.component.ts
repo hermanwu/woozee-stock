@@ -1,15 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, filter, takeUntil } from 'rxjs';
+import { InteractionServices } from 'src/app/interactions/interaction.services';
 import { NotesServices } from 'src/app/news/services/notes.services';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
-import { getAllTags } from 'src/app/shared/data/tag.model';
 import { NavigationServices } from 'src/app/shared/services/navgiation.services';
 import { PricesServices } from 'src/app/shared/services/prices.services';
 import { StockServices } from 'src/app/stock/services/stock.service';
 import { environment } from 'src/environments/environment';
-import { InteractionServices } from 'src/interactions/interaction.services';
 import { UserServices } from '../../../accounts/services/user.services';
 import { AddNoteFormComponent } from '../add-note-form/add-note-form.component';
 
@@ -42,9 +41,17 @@ export class NotesListPageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.tags = getAllTags().sort((a, b) => {
-      return (b.votes || 0) - (a.votes || 0);
-    });
+    this.userServices
+      .getTags()
+      .pipe(
+        filter((tags) => !!tags),
+        takeUntil(this.unsubscribe$)
+      )
+      .subscribe((tags) => {
+        this.tags = Object.values(tags).sort(
+          (a, b) => (b.votes || 0) - (a.votes || 0)
+        );
+      });
 
     this.userServices
       .getUserInteractions()

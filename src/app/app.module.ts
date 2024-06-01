@@ -15,30 +15,26 @@ import { NgChartsModule } from 'ng2-charts';
 import { environment } from 'src/environments/environment';
 import { AboutComponent } from './about/about.component';
 import { PortfolioListComponent } from './accounts/components/portfolio-list/portfolio-list.component';
-import { AddNoteDialogComponent } from './add-note-dialog/add-note-dialog.component';
+import { SignupComponent } from './accounts/signup/signup.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AssetListPageComponent } from './assets/components/asset-list-page/asset-list-page.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
-import { ComparisonNoteComponent } from './comparison-note/comparison-note.component';
 import { EarningsDisplayComponent } from './earnings-display/earnings-display.component';
 import { EntityDisplayComponent } from './entity-display/entity-display.component';
 import { ImageDisplayComponent } from './images/components/image-display/image-display.component';
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';
-import { IndustryPropertiesPageComponent } from './industries/industry-properties-page/industry-properties-page.component';
-import { InteractionBarComponent } from './interaction-bar/interaction-bar.component';
+import { InteractionBarComponent } from './interactions/interaction-bar/interaction-bar.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { MarketDisplayComponent } from './markets/components/market-display/market-display.component';
 import { MarketListComponent } from './markets/components/market-list/market-list.component';
 import { MarketPageComponent } from './markets/components/market-page/market-page.component';
 import { RegionPropertiesPageComponent } from './markets/components/region-properties-page/region-properties-page.component';
-import { DailyMediumReportDisplayDialogComponent } from './news/components/daily-medium-report-display-dialog/daily-medium-report-display-dialog.component';
 import { MediaLinkComponent } from './news/components/media-link/media-link.component';
 import { InstagramNewsDisplayDialogComponent } from './news/components/news-display-dialog/news-display-dialog.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
-import { NoteContainerComponent } from './note-container/note-container.component';
-import { NoteFormListComponent } from './note-form-list/note-form-list.component';
+import { ComparisonNoteComponent } from './notes/comparison-note/comparison-note.component';
 import { AddNoteFormComponent } from './notes/components/add-note-form/add-note-form.component';
 import { BoosterComponent } from './notes/components/catalyst/booster/booster.component';
 import { CatalystListComponent } from './notes/components/catalyst/components/catalyst-list/catalyst-list.component';
@@ -47,16 +43,18 @@ import { CatalystTotalDisplayComponent } from './notes/components/catalyst/compo
 import { CatalystComponent } from './notes/components/catalyst/components/catalyst/catalyst.component';
 import { ComparisionDisplayComponent } from './notes/components/comparision-display/comparision-display.component';
 import { ContentDisplayComponent } from './notes/components/content-display/content-display.component';
+import { NoteContainerComponent } from './notes/components/note-container/note-container.component';
 import { NotesListPageComponent } from './notes/components/notes-list-page/notes-list-page.component';
 import { OpinionDisplayComponent } from './notes/components/opinion-display/opinion-display.component';
 import { OpinionItemDisplayComponent } from './notes/components/opinion-item-display/opinion-item-display.component';
 import { MePageComponent } from './notes/components/opinion-page/blog-page.component';
 import { QuoteDisplayComponent } from './notes/components/quote-display/quote-display.component';
-import { PeopleDisplayComponent } from './people-display/people-display.component';
 import { AddPersonFormComponent } from './people/components/add-person-form/add-person-form.component';
 import { InvestorDisplayComponent } from './people/components/investor-display/investor-display.component';
+import { PeopleDisplayComponent } from './people/people-display/people-display.component';
+import { PersonPropertyPageComponent } from './people/person-property-page/person-property-page.component';
 import { PercentageDisplayComponent } from './percentage-display/percentage-display.component';
-import { PersonPropertyPageComponent } from './person-property-page/person-property-page.component';
+import { PredictionDisplayComponent } from './prediction/prediction-display/predication-display.component';
 import { ThumbnailComponent } from './presentation/components/thumbnail/thumbnail.component';
 import { PresentationHeaderComponent } from './presentation/presentation-header/presentation-header.component';
 import { PresentationComponent } from './presentation/presentation.component';
@@ -90,8 +88,6 @@ import { SafePipe } from './shared/pipes/safe.pipe';
 import { SiUnitPipeModule } from './shared/pipes/si-unit/si-unit-pipe.module';
 import { UndefinedPipeModule } from './shared/pipes/undefined-pipe/undefined-pipe.module';
 import { AppMaterialModule } from './shared/styles/app-material.module';
-import { SignupComponent } from './signup/signup.component';
-import { StockDisplayComponent } from './stock-display/stock-display.component';
 import { BusinessOverviewComponent } from './stock/components/business-overview/business-overview.component';
 import { ComparisonDialogComponent } from './stock/components/comparison-dialog/comparison-dialog.component';
 import { FactComponent } from './stock/components/facts/components/fact/fact.component';
@@ -116,8 +112,9 @@ import { StockProductsListComponent } from './stock/molecules/stock-products-lis
 import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/thoughts-display.component';
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
-import { TagDisplayComponent } from './tag-display/tag-display.component';
-import { TagPropertiesPageComponent } from './tag-properties-page/tag-properties-page.component';
+import { StockDisplayComponent } from './stock/stock-display/stock-display.component';
+import { TagDisplayComponent } from './tag/tag-display/tag-display.component';
+import { TagPropertiesPageComponent } from './tag/tag-properties-page/tag-properties-page.component';
 import { TradableDisplayComponent } from './tradable-display/tradable-display.component';
 import { TradablePropertiesPageComponent } from './tradable-properties-page/tradable-properties-page.component';
 import { HighGrowthIndustryComponent } from './trend/high-growth-industry/high-growth-industry.component';
@@ -203,7 +200,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     InstagramNewsDisplayDialogComponent,
     StockImageDisplayComponent,
     TwitterDisplayDialogComponent,
-    DailyMediumReportDisplayDialogComponent,
     PriceDisplayComponent,
     StockMetricDisplayComponent,
     UiComponentsPageComponent,
@@ -216,7 +212,6 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     StockBadgeListComponent,
     OpinionItemDisplayComponent,
     IndustryListPageComponent,
-    IndustryPropertiesPageComponent,
     MarketPageComponent,
     RegionPropertiesPageComponent,
     AssetListPageComponent,
@@ -237,12 +232,10 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     ComparisonNoteComponent,
     UiImagesDisplayComponent,
     NoteContainerComponent,
-    NoteFormListComponent,
     TagDisplayComponent,
     LoginComponent,
     SignupComponent,
     LandingComponent,
-    AddNoteDialogComponent,
     BarChartComponent,
     ProductPropertiesPageComponent,
     EarningsDisplayComponent,
@@ -272,6 +265,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     AngularFirestoreModule,
     AngularFireAuthModule,
     NgChartsModule,
+    PredictionDisplayComponent,
   ],
   providers: [
     { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig },

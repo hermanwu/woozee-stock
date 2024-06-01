@@ -1,13 +1,16 @@
 import {
   Component,
-  EventEmitter,
+  Inject,
   OnChanges,
   OnInit,
-  Output,
   SimpleChanges,
 } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { v4 as generateUuid } from 'uuid';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {
+  UserData,
+  UserServices,
+} from 'src/app/accounts/services/user.services';
 import { Note, NoteType } from '../../../shared/data/note.interface';
 import { OpinionEnum } from '../../../stock/models/opinion-type.model';
 
@@ -17,14 +20,17 @@ import { OpinionEnum } from '../../../stock/models/opinion-type.model';
   styleUrls: ['./add-note-form.component.scss'],
 })
 export class AddNoteFormComponent implements OnInit, OnChanges {
-  @Output() newNote = new EventEmitter<Note>();
-
   noteForm: UntypedFormGroup;
   note: Note;
   noteType = NoteType;
   ratingEnum = OpinionEnum;
 
-  constructor(private formBuilder: UntypedFormBuilder) {}
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private formBuilder: UntypedFormBuilder,
+    private userServices: UserServices,
+    private dialogRef: MatDialogRef<AddNoteFormComponent>
+  ) {}
 
   ngOnInit(): void {
     this.createForm();
@@ -34,18 +40,8 @@ export class AddNoteFormComponent implements OnInit, OnChanges {
 
   createForm() {
     this.noteForm = this.formBuilder.group({
-      targetUuids: [],
-      title: [],
-      content: [],
-      tags: [],
-      sourceLink: [],
-      rating: [],
-      uuid: [generateUuid()],
-      authorUuid: [],
-      creatorUuid: 'hwu1106@gmail.com',
-      parentUuid: [],
-      emotions: [],
-      noteType: [NoteType.Fact],
+      for: [{ value: this.data.stock || '', disabled: true }],
+      content: [''], // Set the max length to 200 characters
     });
   }
 
@@ -53,39 +49,37 @@ export class AddNoteFormComponent implements OnInit, OnChanges {
    * Submit the form
    */
   onSubmit(): void {
-    let tags = this.noteForm.value.tags
-      ? this.noteForm.value.tags.split(',')
-      : [];
+    const content = this.noteForm.get('content').value.trim();
+    const stockValue = this.noteForm.get('for').value; // Access the value of the disabled control
 
-    const note = {
-      title: this.noteForm.value.title,
-      noteType: this.noteForm.value.noteType,
-      content: this.noteForm.value.content,
-      tagUuids: [...tags],
-      sourceLink: this.noteForm.value.sourceLink,
-      rating: this.noteForm.value.rating,
-      uuid: this.noteForm.value.uuid,
-      authorUuid: this.noteForm.value.authorUuid,
-      targetUuids: this.noteForm.value.targetUuids
-        ?.split(',')
-        .map((target) => target.trim()),
-      createdDate: new Date(),
-      emotions: this.noteForm.value.emotions,
-      creatorUuid: 'hwu106@gmail.com',
-    };
+    if (stockValue && content) {
+      const createdTimestamp = Date.now();
+      const attributeId =
+        stockValue.toLowerCase() + ':' + 'stock' + ':' + createdTimestamp;
 
-    for (let key in note) {
-      if (note[key] === null || note[key] === undefined) {
-        delete note[key];
-      }
+      const mergeNote: Partial<UserData> = {
+        notes: {
+          [attributeId]: {
+            content,
+          },
+        },
+      };
+
+      this.userServices
+        .setUserData(mergeNote)
+        .then(() => {
+          console.log({
+            attributeId,
+            createdTimestamp,
+            content,
+          });
+          return this.dialogRef.close({
+            attributeId,
+            createdTimestamp,
+            content,
+          });
+        })
+        .catch((error) => console.error('Error saving note:', error));
     }
-
-    this.note = note;
-
-    this.newNote.emit(note);
-  }
-
-  setNoteType(noteType: NoteType): void {
-    this.noteForm.patchValue({ noteType: noteType });
   }
 }

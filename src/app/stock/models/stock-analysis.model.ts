@@ -4,7 +4,6 @@ import { EarningsReport } from './earnings.model';
 import { MyScore } from './herman-score.model';
 import { News } from './news.model';
 import { OpinionEnum } from './opinion-type.model';
-import { Predication } from './predication.model';
 import { Trend } from './trend.enum';
 
 export interface Product {
@@ -32,7 +31,6 @@ export interface StockAnalysis {
   // POTENTIALS:
   revenueGrowth?: number;
   PS?: any;
-  predications?: Predication[];
   propertiesPageEnabled?: boolean;
   irAddress?: string;
   secFilings?: string;

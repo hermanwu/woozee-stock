@@ -9,12 +9,3 @@ export class BetterOption {
   betterOptionUuid: string;
   reasons: string[];
 }
-export class Predication {
-  uuid?: string;
-  start?: Date;
-  days?: number;
-  price?: number;
-  action?: PredicationAction;
-  stockId?: string;
-  betterOptionUuids?: string[];
-}

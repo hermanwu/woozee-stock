@@ -1,0 +1,20 @@
+<mat-chip
+  [ngClass]="{
+    'negative-tag': lastPrediction?.predication === 'bearish',
+    'positive-tag': lastPrediction?.predication === 'bullish'
+  }"
+>
+  <span
+    class="capitalize"
+    *ngIf="lastPrediction; else noPrediction"
+    matTooltip="Since {{ lastPrediction.price | currency }}&#13;&#10;{{
+      lastPrediction.timestamp | date : 'medium'
+    }}"
+  >
+    🔮 {{ lastPrediction.predication }}
+  </span>
+
+  <ng-template #noPrediction>
+    <span matTooltip="Bullish or Bearish"> Predict </span>
+  </ng-template>
+</mat-chip>

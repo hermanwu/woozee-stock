@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -17,10 +17,23 @@ export class AppContainerComponent implements OnInit {
   environment = environment;
   aboutPage = 'https://mailchi.mp/5377c7dfbe07/about';
 
+  metaDataObjectLoaded$ = this.searchServices.metaDataObjectLoaded$;
   showSearchBar: boolean;
   showDisclaimer;
   language: string;
-  username$: Observable<string | null>;
+  user$: Observable<any>;
+
+  showBackToTopButton = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollPosition =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+    this.showBackToTopButton = scrollPosition > 100; // Adjust the threshold value as needed
+  }
 
   constructor(
     private authService: AuthService,
@@ -30,22 +43,17 @@ export class AppContainerComponent implements OnInit {
     private router: Router
   ) {
     this.showDisclaimer = localStorage.getItem('showDisclaimer');
-    this.username$ = this.userServices.getUsername();
+    this.user$ = this.userServices.getUser();
   }
 
-  ngOnInit(): void {
-    // this.authService.getLoggedInDisplayName().subscribe((name) => {
-    //   if (!name && localStorage.getItem('showDisclaimer') !== 'false') {
-    //     const dialogRef = this.dialog.open(LandingComponent, {
-    //       width: '500px',
-    //       disableClose: true, // Disable dialog close on Esc or click outside
-    //     });
-    //   }
-    // });
-  }
+  ngOnInit(): void {}
 
   searchIconClicked(): void {
     this.showSearchBar = true;
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   updateLanguage(): void {
@@ -72,9 +80,14 @@ export class AppContainerComponent implements OnInit {
   }
 
   addNote() {
+    const url = this.router.url;
+    const lastPart = url.substring(url.lastIndexOf('/') + 1);
+
     this.dialog.open<AddNoteFormComponent>(AddNoteFormComponent, {
       maxHeight: '90vh', //you can adjust the value as per your view
-      data: {},
+      data: {
+        stock: lastPart,
+      },
       panelClass: '600px',
       disableClose: true,
     });

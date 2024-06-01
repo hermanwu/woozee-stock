@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Tags</h2>
+<mat-dialog-content class="mat-typography">
+  <form>
+    <mat-form-field class="tag-input-list">
+      <mat-label>Tags</mat-label>
+      <mat-chip-grid #chipGrid aria-label="Tag selection">
+        @for (tag of selectedTags; track tag.uuid) {
+        <mat-chip-row (removed)="remove(tag)">
+          {{ tag.name }}
+          <button matChipRemove [attr.aria-label]="'remove ' + tag.name">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+        }
+      </mat-chip-grid>
+      <input
+        placeholder="New Tag..."
+        #tagInput
+        [formControl]="tagCtrl"
+        [matChipInputFor]="chipGrid"
+        [matAutocomplete]="auto"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        (matChipInputTokenEnd)="add($event)"
+      />
+      <mat-autocomplete
+        #auto="matAutocomplete"
+        (optionSelected)="selected($event)"
+      >
+        @for (tag of filteredTags | async; track tag.uuid) {
+        <mat-option [value]="tag">{{ tag.name }}</mat-option>
+        }
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <div>
+    <button mat-button (click)="openCreateNewTagDialog()">
+      Create New Tag
+    </button>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button cdkFocusInitial mat-dialog-close>Cancel</button>
+  <button mat-button (click)="onConfirm()">Confirm</button>
+</mat-dialog-actions>

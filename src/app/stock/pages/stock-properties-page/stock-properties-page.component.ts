@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { UserServices } from 'src/app/accounts/services/user.services';
-import { getInteractionsByOrganizationUuid } from 'src/app/mock-data/interactions.mock';
+import { InteractionServices } from 'src/app/interactions/interaction.services';
 import { getOrganizationsByUuids } from 'src/app/mock-data/organization.mock';
 import { getPeopleByPersonUuids } from 'src/app/mock-data/person.mock';
 import { getRelationshipsByStartNodeUuid } from 'src/app/mock-data/relationship.mock';
@@ -15,7 +15,6 @@ import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
 import { Note } from 'src/app/shared/data/note.interface';
 import { NavigationServices } from 'src/app/shared/services/navgiation.services';
 import { environment } from 'src/environments/environment';
-import { InteractionServices } from 'src/interactions/interaction.services';
 import { getIndustriesByUuids } from '../../models/industry.model';
 import { StockAnalysis } from '../../models/stock-analysis.model';
 import { StockServices } from '../../services/stock.service';
@@ -89,14 +88,7 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
         .getNotesByTargets([this.stockUuid])
         .slice(0, 5);
 
-      // const emotions = this.emotionServices.getUserInteractionsByUserId(
-      //   this.userServices.currentUser.userUuid
-      // );
-
       const relationships = getRelationshipsByStartNodeUuid(this.stockUuid);
-      this.stockInteractions = getInteractionsByOrganizationUuid(
-        this.stockUuid
-      );
 
       this.industries = getIndustriesByUuids(
         relationships

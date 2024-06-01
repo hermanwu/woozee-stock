@@ -38,7 +38,7 @@ export class OpinionItemDisplayComponent implements OnInit, OnChanges {
         this.opinion?.authorUuid
       );
 
-      this.authorName = this.author?.displayName || this.opinion.authorUuid;
+      this.authorName = this.author?.name || this.opinion.authorUuid;
     }
   }
 

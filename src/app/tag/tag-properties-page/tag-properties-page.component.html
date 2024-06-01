@@ -1,0 +1,48 @@
+<h1>
+  {{ tag ? tag.name : tagUuid }}
+</h1>
+
+<div *ngIf="stockInteractions?.length > 0" class="mt-2">
+  <h2>Stocks</h2>
+  <div class="mt-2" *ngFor="let item of stockInteractions; let i = index">
+    {{ i + 1 }}
+    <app-tradable-display
+      [tradable]="item"
+      [tickerOnly]="true"
+    ></app-tradable-display>
+
+    <app-interaction-bar
+      class="inline-block"
+      [interactions]="item.interaction"
+    ></app-interaction-bar>
+  </div>
+</div>
+
+<!-- <div *ngIf="organizations?.length > 0" class="mt-2">
+  <h2>Organizations</h2>
+  <div *ngFor="let organization of organizations">
+    <app-stock-display [tagUuid]="organization?.uuid"></app-stock-display>
+  </div>
+</div> -->
+
+<div *ngIf="people?.length > 0" class="mt-2">
+  <h2>People</h2>
+  <div *ngFor="let person of people">
+    <app-person-display [tagUuid]="person?.uuid"></app-person-display>
+  </div>
+</div>
+
+<div *ngIf="products?.length > 0" class="mt-2">
+  <h2>Products</h2>
+  <div *ngFor="let product of products">
+    <app-product-display [tagUuid]="product?.uuid"></app-product-display>
+  </div>
+</div>
+
+<div *ngIf="notes?.length > 0" class="mt-2">
+  <h2>Notes</h2>
+
+  <div *ngFor="let note of notes">
+    <app-note-container [note]="note"></app-note-container>
+  </div>
+</div>

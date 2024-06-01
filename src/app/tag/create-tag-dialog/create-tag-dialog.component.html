@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Create New Tag</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="newTagForm">
+    <div class="flex justify-center">
+      <mat-form-field class="custom-width">
+        <mat-label>Tag Name</mat-label>
+        <input matInput formControlName="name" />
+
+        <mat-error *ngIf="newTagForm.get('name').hasError('required')">
+          Tag name is required.
+        </mat-error>
+        <mat-error *ngIf="newTagForm.get('name').hasError('maxlength')">
+          Tag name cannot exceed 50 characters.
+        </mat-error>
+        <mat-error *ngIf="newTagForm.get('name').hasError('duplicateUuid')">
+          Tag with the same UUID already exists.
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close cdkFocusInitial>Cancel</button>
+  <button mat-button (click)="onConfirm()" [disabled]="newTagForm.invalid">
+    Confirm
+  </button>
+</mat-dialog-actions>

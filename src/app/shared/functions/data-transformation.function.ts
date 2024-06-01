@@ -75,6 +75,15 @@ export const getCompanyShortName = (longName) => {
     'n.v',
   ];
 
+  const containWords = ['American Depositary Shares'];
+
+  // remove containWords and words after;
+  for (let i = 0; i < containWords.length; i++) {
+    if (longName.includes(containWords[i])) {
+      longName = longName.split(containWords[i])[0];
+    }
+  }
+
   // Convert to lowercase and split longName into an array of words
   const words = longName.toLowerCase().split(' ');
 

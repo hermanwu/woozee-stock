@@ -18,9 +18,8 @@
 
 <div class="mt-5">
   <h1 class="text-2xl">Earnings To Watch</h1>
-  <div class="mb-2">☀️ = Before Market Open 🌙 = After Market Close</div>
 
-  <div class="flex justify-between">
+  <div class="mt-3 flex justify-between">
     <app-date-display
       class="font-bold text-lg"
       [date]="earningsDate"
@@ -38,23 +37,55 @@
   <div *ngIf="beforeMarketOpen.length === 0 && afterMarketClose.length === 0">
     No Earnings
   </div>
-  <mat-chip-listbox>
-    <ng-container *ngIf="beforeMarketOpen.length > 0">
-      <mat-chip *ngFor="let tradable of beforeMarketOpen">
+
+  <div class="mb-2" *ngIf="beforeMarketOpen.length > 0">
+    ☀️ = Before Market Open
+    <mat-chip-listbox>
+      <mat-chip
+        *ngFor="
+          let tradable of beforeMarketOpen
+            | slice : 0 : (showFullBMOList ? beforeMarketOpen.length : 15)
+        "
+      >
         <app-tradable-display [tradable]="tradable"></app-tradable-display>
         ☀️
       </mat-chip>
-    </ng-container>
-  </mat-chip-listbox>
 
-  <mat-chip-listbox>
-    <ng-container *ngIf="afterMarketClose.length > 0">
-      <mat-chip *ngFor="let tradable of afterMarketClose">
+      <button
+        *ngIf="beforeMarketOpen.length > 15"
+        mat-button
+        color="primary"
+        (click)="showFullBMOList = !showFullBMOList"
+      >
+        {{ showFullBMOList ? "Show Less" : "Show Full List" }}
+      </button>
+    </mat-chip-listbox>
+  </div>
+
+  <div class="mt-2" *ngIf="afterMarketClose.length > 0">
+    🌙 = After Market Close
+
+    <mat-chip-listbox>
+      <mat-chip
+        *ngFor="
+          let tradable of afterMarketClose
+            | slice : 0 : (showFullAMCList ? afterMarketClose.length : 15)
+        "
+      >
         <app-tradable-display [tradable]="tradable"></app-tradable-display>
         🌙
       </mat-chip>
-    </ng-container>
-  </mat-chip-listbox>
+
+      <button
+        *ngIf="afterMarketClose.length > 15"
+        mat-button
+        color="primary"
+        (click)="showFullAMCList = !showFullAMCList"
+      >
+        {{ showFullAMCList ? "Show Less" : "Show Full List" }}
+      </button>
+    </mat-chip-listbox>
+  </div>
 </div>
 
 <ng-container *ngIf="notes.length > 0">

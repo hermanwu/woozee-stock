@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { userInteractions } from 'src/app/mock-data/interactions.mock';
-import { getTagByUuid, Tag } from '../data/tag.model';
+import { Tag } from '../data/tag.model';
 
 @Injectable({
   providedIn: 'root',
@@ -10,23 +9,22 @@ export class TagServices {
   tags = new Map<string, Tag>();
 
   constructor() {
-    this.interactions = userInteractions;
+    this.interactions = [];
     for (let interaction of this.interactions) {
-      if (interaction.listUuids) {
-        for (let listUuid of interaction.listUuids) {
-          let tag = this.tags.get(listUuid);
-
-          if (tag) {
-            tag.totalVotes++;
-          } else {
-            tag = getTagByUuid(listUuid);
-            if (tag) {
-              tag.totalVotes = 1;
-              this.tags.set(listUuid, tag);
-            }
-          }
-        }
-      }
+      // if (interaction.listUuids) {
+      //   for (let listUuid of interaction.listUuids) {
+      //     let tag = this.tags.get(listUuid);
+      //     if (tag) {
+      //       tag.totalVotes++;
+      //     } else {
+      //       tag = getTagByUuid(listUuid);
+      //       if (tag) {
+      //         tag.totalVotes = 1;
+      //         this.tags.set(listUuid, tag);
+      //       }
+      //     }
+      //   }
+      // }
     }
   }
 

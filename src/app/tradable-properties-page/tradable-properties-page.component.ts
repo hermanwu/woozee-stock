@@ -1,12 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, Subscription, filter, takeUntil } from 'rxjs';
+import { UserInteractions } from 'src/app/interactions/interaction.services';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { environment } from 'src/environments/environment';
-import { UserInteractions } from 'src/interactions/interaction.services';
 import { UserServices } from '../accounts/services/user.services';
 import { StockModel, Tradable } from '../mock-data/mocks/tradables.mock';
 import { NotesServices } from '../news/services/notes.services';
+import { AddNoteFormComponent } from '../notes/components/add-note-form/add-note-form.component';
 import { NumberRange } from '../shared/components/stats-display/stats-display.interface';
 import {
   getCompanyShortDashName,
@@ -31,17 +33,7 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
   earnings;
   products = [];
   notes;
-  priceRange: NumberRange;
   marketCapRange: NumberRange;
-  competitors;
-  historicalPrice;
-  historicalMarketCap;
-  previousPrice;
-  currentPrice;
-  showRange;
-
-  logoLink;
-  largeLogoLink;
   dashName: string;
 
   readonly environment = environment;
@@ -51,10 +43,11 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private userServices: UserServices,
     private notesServices: NotesServices,
     private priceServices: PricesServices,
-    private tradableServices: StockServices
+    private tradableServices: StockServices,
+    private userServices: UserServices,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -81,6 +74,17 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
         )
         .subscribe((interactions) => {
           this.interactions = interactions[ticker.toLowerCase() + ':tradable'];
+        });
+
+      this.userServices
+        .getUserNotes()
+        .pipe(
+          filter((noteMap) => !!noteMap),
+          takeUntil(this.unsubscribe$)
+        )
+        .subscribe((noteMap) => {
+          this.notes = noteMap['stock']?.[ticker.toLowerCase()];
+          console.log(this.notes);
         });
 
       this.subscription.add(
@@ -116,8 +120,6 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
           }
         })
       );
-
-      this.processStaticInformation(quoteUuid);
     });
   }
 
@@ -143,10 +145,6 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     const sortedValues = sortedEntries.map(([_, value]) => value);
 
     return sortedValues;
-  }
-
-  processStaticInformation(quoteUuid) {
-    this.notes = this.notesServices.getNotesByTargets([quoteUuid]).slice(0, 5);
   }
 
   updateTradableBasedStockModelData(
@@ -190,5 +188,34 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
 
   testAction() {
     return;
+  }
+
+  // delete note and once successful remove from the notes array
+  deleteNote(note: { attributeId: string; content: string }) {
+    this.userServices
+      .deleteUserNotes(note.attributeId)
+      .then(() => {
+        this.notes = this.notes.filter(
+          (n) => n.attributeId !== note.attributeId
+        );
+        console.log('Note deleted successfully and removed from array');
+      })
+      .catch((error) => {
+        console.error('Error deleting note:', error);
+      });
+  }
+
+  addNote() {
+    const dialogRef = this.dialog.open<AddNoteFormComponent>(
+      AddNoteFormComponent,
+      {
+        maxHeight: '90vh', //you can adjust the value as per your view
+        data: {
+          stock: this.tradable.ticker,
+        },
+        panelClass: '600px',
+        disableClose: true,
+      }
+    );
   }
 }

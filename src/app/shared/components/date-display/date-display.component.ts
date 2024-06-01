@@ -6,6 +6,7 @@ import { Component, Input, OnChanges } from '@angular/core';
   styleUrls: ['./date-display.component.scss'],
 })
 export class DateDisplayComponent implements OnChanges {
+  @Input() timestamp: number;
   @Input() date: Date;
 
   constructor() {
@@ -16,6 +17,8 @@ export class DateDisplayComponent implements OnChanges {
   }
 
   ngOnChanges() {
-    // console.log(this.date.getTimezoneOffset());
+    if (this.timestamp) {
+      this.date = new Date(this.timestamp);
+    }
   }
 }

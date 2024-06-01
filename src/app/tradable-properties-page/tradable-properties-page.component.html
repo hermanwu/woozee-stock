@@ -128,7 +128,8 @@
               'https://www.google.com/finance/quote/' +
               tradable?.ticker +
               ':' +
-              tradable?.primaryExchange
+              tradable?.primaryExchange +
+              '?window=1Y'
             "
           >
             Google 🔗
@@ -254,21 +255,68 @@
   </div>
 
   <div *ngIf="earnings?.length > 0" class="mt-4">
-    <div class="mb-2 mt-10">
-      <h2>Earnings</h2>
+    <div class="mb-2 mt-10 flex items-center">
+      <span>
+        <h2>Earnings</h2>
+      </span>
+      <span>
+        <button
+          mat-icon-button
+          (click)="earningsDropdownOpen = !earningsDropdownOpen"
+        >
+          <mat-icon>{{
+            earningsDropdownOpen ? "expand_less" : "expand_more"
+          }}</mat-icon>
+        </button>
+      </span>
     </div>
 
-    <div *ngFor="let item of earnings">
-      <app-earnings-display [earnings]="item"></app-earnings-display>
+    <div *ngIf="earnings.length > 0">
+      <app-earnings-display [earnings]="earnings[0]"></app-earnings-display>
       <app-divider></app-divider>
+    </div>
+
+    <div *ngIf="earningsDropdownOpen">
+      <div *ngFor="let item of earnings.slice(1)">
+        <app-earnings-display [earnings]="item"></app-earnings-display>
+        <app-divider></app-divider>
+      </div>
     </div>
   </div>
 
-  <div *ngIf="notes && notes.length > 0" class="mt-4">
-    <div class="mb-2 mt-10"><h2>Notes</h2></div>
-    <div *ngFor="let note of notes">
-      <app-note-container [note]="note"></app-note-container>
-      <app-divider></app-divider>
+  <div class="mt-4">
+    <div class="mb-2 mt-10 flex items-center">
+      <span>
+        <h2>Notes</h2>
+      </span>
+      <span>
+        <button mat-icon-button (click)="addNote()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </span>
     </div>
+    <ng-container *ngIf="notes && notes.length > 0">
+      <mat-card *ngFor="let note of notes" class="mb-3">
+        <mat-card-content>
+          <app-note-container [note]="note"></app-note-container>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <span *ngIf="note.createdTimestamp">
+            <app-date-display
+              [timestamp]="note.createdTimestamp"
+            ></app-date-display>
+          </span>
+          <span *ngIf="note.createdDate">
+            <app-date-display [date]="note.createdDate"></app-date-display>
+          </span>
+          <span
+            ><button mat-icon-button (click)="deleteNote(note)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </span>
+        </mat-card-actions>
+      </mat-card>
+    </ng-container>
   </div>
 </ng-container>

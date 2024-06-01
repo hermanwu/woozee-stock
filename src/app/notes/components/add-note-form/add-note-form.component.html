@@ -1,32 +1,11 @@
-<form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
-  <div>
-    <mat-button-toggle-group
-      #ratingToggleGroup="matButtonToggleGroup"
-      (change)="setNoteType(ratingToggleGroup.value)"
-    >
-      <mat-button-toggle checked [value]="noteType.Action"
-        >Event</mat-button-toggle
-      >
-      <mat-button-toggle [value]="noteType.Stats">Number</mat-button-toggle>
-      <mat-button-toggle [value]="noteType.Opinion">Opinion</mat-button-toggle>
-    </mat-button-toggle-group>
-  </div>
-
-  <div>
+<h2 mat-dialog-title>Add Notes</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="noteForm">
     <mat-form-field>
-      <mat-label>targetUuids</mat-label>
-      <input matInput formControlName="targetUuids" />
+      <mat-label>For</mat-label>
+      <input matInput formControlName="for" type="text" />
     </mat-form-field>
-  </div>
 
-  <div *ngIf="noteForm.value.noteType === noteType.Stats; else notNumber">
-    <mat-form-field>
-      <mat-label>Change Rate</mat-label>
-      <input matInput type="number" />
-    </mat-form-field>
-  </div>
-
-  <ng-template #notNumber>
     <mat-form-field appearance="fill" class="full-width">
       <mat-label
         >Content: <span> {{ noteForm.value?.content?.length || 0 }}</span>
@@ -37,46 +16,12 @@
         cdkTextareaAutosize
         cdkAutosizeMinRows="10"
         cdkAutosizeMaxRows="50"
+        cdkFocusInitial
       ></textarea>
     </mat-form-field>
-  </ng-template>
-
-  <div>
-    <mat-form-field>
-      <mat-label>Author UUID</mat-label>
-      <input matInput formControlName="authorUuid" />
-    </mat-form-field>
-  </div>
-
-  <div>
-    <mat-form-field>
-      <mat-label>sources</mat-label>
-      <input matInput formControlName="sourceLink" />
-    </mat-form-field>
-  </div>
-
-  <!-- <div>
-    <mat-form-field>
-      <mat-label>parent UUID</mat-label>
-      <input matInput formControlName="parentUuid" />
-    </mat-form-field>
-  </div> -->
-
-  <div *ngIf="noteForm.value.noteType === noteType.Opinion">
-    <mat-form-field>
-      <mat-label>Author</mat-label>
-      <input matInput formControlName="authorUuid" />
-    </mat-form-field>
-  </div>
-
-  <!-- <div>
-    <div><mat-label>title</mat-label></div>
-    <div>
-      <textarea rows="5" cols="40" formControlName="title"></textarea>
-    </div>
-  </div> -->
-
-  <button matSuffix mat-button aria-label="Go" type="submit">Update</button>
-</form>
-
-{{ note | json }}
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="onSubmit()">Add</button>
+</mat-dialog-actions>

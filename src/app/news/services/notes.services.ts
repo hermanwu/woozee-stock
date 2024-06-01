@@ -3,13 +3,12 @@ import { UserServices } from 'src/app/accounts/services/user.services';
 import { Opinion } from 'src/app/notes/components/opinion-display/opinion.interface';
 import { Fact } from 'src/app/risks/models/fact.model';
 import { convertDateToUTC } from 'src/app/shared/functions/date.function';
-import { allNotes } from '../../mock-data/notes-mock.const';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NotesServices {
-  notes: (Opinion | Fact)[] = allNotes;
+  notes: (Opinion | Fact)[];
 
   constructor(private userServices: UserServices) {}
 

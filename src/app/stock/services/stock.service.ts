@@ -55,7 +55,6 @@ export class StockServices {
       date +
       `%27%0AORDER+BY+%60act_symbol%60+ASC%2C+%60date%60+ASC%0ALIMIT+1000%3B%0A`;
 
-    console.log(url);
     return this.http.get(url).pipe(
       catchError((error) => {
         // Handle or log the error

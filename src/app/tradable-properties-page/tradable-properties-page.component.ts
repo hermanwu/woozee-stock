@@ -84,7 +84,6 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
         )
         .subscribe((noteMap) => {
           this.notes = noteMap['stock']?.[ticker.toLowerCase()];
-          console.log(this.notes);
         });
 
       this.subscription.add(

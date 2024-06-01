@@ -7,10 +7,10 @@ import { NotesServices } from 'src/app/news/services/notes.services';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
 import { NavigationServices } from 'src/app/shared/services/navgiation.services';
 import { PricesServices } from 'src/app/shared/services/prices.services';
+import { SearchService } from 'src/app/shared/services/search.services/search.service';
 import { StockServices } from 'src/app/stock/services/stock.service';
 import { environment } from 'src/environments/environment';
 import { UserServices } from '../../../accounts/services/user.services';
-import { AddNoteFormComponent } from '../add-note-form/add-note-form.component';
 
 @Component({
   selector: 'app-notes-list-page',
@@ -37,7 +37,8 @@ export class NotesListPageComponent implements OnInit, OnDestroy {
     private interactionServices: InteractionServices,
     private stockServices: StockServices,
     private navigationServices: NavigationServices,
-    private pricesServices: PricesServices
+    private pricesServices: PricesServices,
+    private searchServices: SearchService
   ) {}
 
   ngOnInit(): void {
@@ -77,14 +78,7 @@ export class NotesListPageComponent implements OnInit, OnDestroy {
       });
   }
 
-  addNote() {
-    this.dialogService.open<AddNoteFormComponent>(AddNoteFormComponent, {
-      maxHeight: '90vh', //you can adjust the value as per your view
-      data: {},
-      panelClass: '600px',
-      disableClose: true,
-    });
-  }
+  openAddTagDialog() {}
 
   ngOnDestroy() {
     this.unsubscribe$.next();

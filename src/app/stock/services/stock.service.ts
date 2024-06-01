@@ -42,13 +42,6 @@ export class StockServices {
       .set(mergeObject, { merge: true });
   }
 
-  setSearchData(mergeObject) {
-    this.firestore
-      .collection('search')
-      .doc('searchData')
-      .set(mergeObject, { merge: true });
-  }
-
   getEarningsReleaseTime(date: string) {
     const url =
       `https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master?q=SELECT+*%0AFROM+%60earnings_calendar%60%0AWHERE++%60date%60+%3D+%27` +

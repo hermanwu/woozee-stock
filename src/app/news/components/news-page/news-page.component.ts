@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { InteractionServices } from 'src/app/interactions/interaction.services';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
 import { formatDateToString } from 'src/app/shared/functions/date.function';
 import { SearchService } from 'src/app/shared/services/search.services/search.service';
-import { TagServices } from 'src/app/shared/services/tag.services';
 import { Industry } from 'src/app/stock/models/industry.model';
 import { EventType } from 'src/app/stock/models/news.model';
 import { StockServices } from 'src/app/stock/services/stock.service';
@@ -39,20 +37,19 @@ export class NewsPageComponent implements OnInit {
 
   constructor(
     private newsService: NotesServices,
-    private tagServices: TagServices,
-    private interactionServices: InteractionServices,
     private stockServices: StockServices,
     private searchServices: SearchService
   ) {}
 
   ngOnInit(): void {
     // this.notes = this.newsService.getAllNews().slice(0, 10);
-    this.tags = this.tagServices.getTrendTags();
-    const interactions = [];
-
-    this.tickers = interactions.map((interaction) => {
-      return interaction.targetUuid.split(':')[0].toUpperCase();
-    });
+    this.tags = this.searchServices
+      .getTopTags()
+      .sort((a, b) => b.votes - a.votes);
+    this.tickers = this.searchServices
+      .getTopStocks()
+      .sort((a, b) => b.votes - a.votes)
+      .map((stock) => stock.ticker.toUpperCase());
 
     this.populateEarnings(this.earningsDate);
     this.metaDataObject = this.searchServices.getMetaDataObject();

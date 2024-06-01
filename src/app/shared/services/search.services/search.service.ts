@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable, ReplaySubject, throwError } from 'rxjs';
-import { catchError, first } from 'rxjs/operators';
+import { Observable, ReplaySubject, Subject, throwError } from 'rxjs';
+import { catchError, first, takeUntil } from 'rxjs/operators';
 
 export interface StateGroup {
   label: string;
@@ -11,12 +11,16 @@ export interface StateGroup {
 @Injectable({
   providedIn: 'root',
 })
-export class SearchService {
+export class SearchService implements OnDestroy {
   stateGroups: StateGroup[] = [];
   stocksMap = {};
   metaData$: Observable<any>;
   metaDataObject: any;
   metaDataObjectLoaded$: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
+  topStocks: any[] = [];
+  topTags: any[] = [];
+
+  private subscription$ = new Subject<void>();
 
   constructor(private firestore: AngularFirestore) {
     this.metaData$ = this.firestore
@@ -27,25 +31,43 @@ export class SearchService {
         first(),
         catchError((err) => {
           console.error('Error fetching search/stocks:', err);
-          // Depending on your error handling, you might want to stop the recursion here
-          // and return an empty observable or rethrow the error
           this.metaDataObjectLoaded$.next(false);
           this.metaDataObjectLoaded$.complete();
           return throwError(err);
-        })
+        }),
+        takeUntil(this.subscription$)
       );
 
     this.metaData$.subscribe(
-      (data: { [key: string]: { display_name: string; type: string } }) => {
+      (data: {
+        [key: string]: {
+          name?: string;
+          display_name: string;
+          type: string;
+          votes?: number;
+        };
+      }) => {
         this.metaDataObject = data;
-        // iterate attributes and values of the data object
         for (let [key, value] of Object.entries(data)) {
-          // add the stock to the stocksMap
-          if (value.type === 'stock') {
+          if (key.endsWith('::tag')) {
+            this.topTags.push({
+              uuid: key.slice(0, -5),
+              name: value.name,
+              votes: value.votes,
+            });
+          } else if (value.type === 'stock') {
             this.stocksMap[key] = {
               ticker: key,
               displayName: value.display_name,
             };
+
+            if (value.votes > 0) {
+              this.topStocks.push({
+                ticker: key,
+                displayName: value.display_name,
+                votes: value.votes,
+              });
+            }
           }
         }
 
@@ -69,12 +91,32 @@ export class SearchService {
     );
   }
 
+  ngOnDestroy() {
+    this.subscription$.next();
+    this.subscription$.complete();
+  }
+
+  getTopStocks() {
+    return this.topStocks;
+  }
+
+  getTopTags() {
+    return this.topTags;
+  }
+
   getSearchOptions(): StateGroup[] {
     return this.stateGroups;
   }
 
   getMetaDataObject(): any {
     return this.metaDataObject;
+  }
+
+  setSearchData(mergeObject) {
+    this.firestore
+      .collection('search')
+      .doc('searchData')
+      .set(mergeObject, { merge: true });
   }
 
   incrementVote(id: string, incrementValue: number, type?: string): void {}

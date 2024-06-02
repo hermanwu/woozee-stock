@@ -4,6 +4,7 @@ import {
   Component,
   ElementRef,
   Inject,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -24,7 +25,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
-import { Observable, map, startWith } from 'rxjs';
+import { Observable, Subject, map, startWith, takeUntil } from 'rxjs';
 import { UserServices } from '../../accounts/services/user.services';
 import { Tag } from '../../shared/data/tag.model';
 import { CreateTagDialogComponent } from '../create-tag-dialog/create-tag-dialog.component';
@@ -50,13 +51,15 @@ import { CreateTagDialogComponent } from '../create-tag-dialog/create-tag-dialog
   templateUrl: './add-tag-dialog.component.html',
   styleUrl: './add-tag-dialog.component.scss',
 })
-export class AddTagDialogComponent implements OnInit {
+export class AddTagDialogComponent implements OnInit, OnDestroy {
   separatorKeysCodes: number[] = [ENTER, COMMA];
   tagCtrl = new FormControl('');
   filteredTags: Observable<Tag[]>;
 
   selectedTags: Tag[] = [];
   allTags: Tag[] = [];
+
+  private destroy$ = new Subject<void>();
 
   @ViewChild('tagInput') tagInput: ElementRef<HTMLInputElement>;
 
@@ -82,8 +85,29 @@ export class AddTagDialogComponent implements OnInit {
         } else {
           return this.allTags.slice();
         }
-      })
+      }),
+      takeUntil(this.destroy$)
     );
+  }
+
+  ngOnInit() {
+    this.userServices
+      .getTags()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((tags) => {
+        this.allTags = Object.values(tags);
+
+        const selectedTags = this.data.tagUuids
+          .map((uuid) => tags[uuid])
+          .filter((tag) => tag);
+
+        this.selectedTags = selectedTags;
+      });
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   add(event: MatChipInputEvent): void {
@@ -124,18 +148,6 @@ export class AddTagDialogComponent implements OnInit {
     return this.allTags.filter((tag) =>
       tag.name.toLowerCase().includes(filterValue)
     );
-  }
-
-  ngOnInit() {
-    this.userServices.getTags().subscribe((tags) => {
-      this.allTags = Object.values(tags);
-
-      const selectedTags = this.data.tagUuids
-        .map((uuid) => tags[uuid])
-        .filter((tag) => tag);
-
-      this.selectedTags = selectedTags;
-    });
   }
 
   openCreateNewTagDialog() {

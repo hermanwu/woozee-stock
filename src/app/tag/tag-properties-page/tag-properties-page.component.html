@@ -1,9 +1,17 @@
-<h1>
+<h1 class="text-2xl page-margin-top">
   {{ tag ? tag.name : tagUuid }}
 </h1>
 
-<div *ngIf="stockInteractions?.length > 0" class="mt-2">
+<div class="mt-2">
   <h2>Stocks</h2>
+  <div class="mt-2" *ngFor="let item of stocks; let i = index">
+    {{ i + 1 }}
+    <app-tradable-display
+      [ticker]="item"
+      [tickerOnly]="true"
+    ></app-tradable-display>
+  </div>
+
   <div class="mt-2" *ngFor="let item of stockInteractions; let i = index">
     {{ i + 1 }}
     <app-tradable-display
@@ -17,13 +25,6 @@
     ></app-interaction-bar>
   </div>
 </div>
-
-<!-- <div *ngIf="organizations?.length > 0" class="mt-2">
-  <h2>Organizations</h2>
-  <div *ngFor="let organization of organizations">
-    <app-stock-display [tagUuid]="organization?.uuid"></app-stock-display>
-  </div>
-</div> -->
 
 <div *ngIf="people?.length > 0" class="mt-2">
   <h2>People</h2>

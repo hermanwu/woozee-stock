@@ -78,8 +78,6 @@ export class NotesListPageComponent implements OnInit, OnDestroy {
       });
   }
 
-  openAddTagDialog() {}
-
   ngOnDestroy() {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();

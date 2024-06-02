@@ -2,6 +2,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable, ReplaySubject, Subject, throwError } from 'rxjs';
 import { catchError, first, takeUntil } from 'rxjs/operators';
+import { Tag } from '../../data/tag.model';
 
 export interface StateGroup {
   label: string;
@@ -45,15 +46,17 @@ export class SearchService implements OnDestroy {
           display_name: string;
           type: string;
           votes?: number;
+          stocks?: string[];
         };
       }) => {
         this.metaDataObject = data;
         for (let [key, value] of Object.entries(data)) {
-          if (key.endsWith('::tag')) {
+          if (key.endsWith('::tag') && value.votes !== undefined) {
             this.topTags.push({
               uuid: key.slice(0, -5),
               name: value.name,
               votes: value.votes,
+              stocks: value.stocks,
             });
           } else if (value.type === 'stock') {
             this.stocksMap[key] = {
@@ -100,7 +103,7 @@ export class SearchService implements OnDestroy {
     return this.topStocks;
   }
 
-  getTopTags() {
+  getTopTags(): Tag[] {
     return this.topTags;
   }
 

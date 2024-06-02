@@ -11,4 +11,5 @@ export interface Tag {
   type?: TagType;
   votes?: number;
   name: string;
+  stocks?: string[];
 }

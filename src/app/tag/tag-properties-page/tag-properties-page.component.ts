@@ -5,6 +5,7 @@ import {
   InteractionServices,
   UserInteractions,
 } from 'src/app/interactions/interaction.services';
+import { SearchService } from 'src/app/shared/services/search.services/search.service';
 import { UserServices } from '../../accounts/services/user.services';
 import { Product } from '../../mock-data/product.mock';
 import {
@@ -25,12 +26,12 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
   tagUuid: string;
   tag: any;
   notes: Note[];
-  tradableItems: any[];
   organizations: Organization[];
   products: Product[];
   people: Person[];
   uuidToInteractionMap;
-  stockInteractions;
+  stockInteractions = [];
+  stocks = [];
 
   currentUser;
 
@@ -42,12 +43,18 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private interactionServices: InteractionServices,
-    private userServices: UserServices
+    private userServices: UserServices,
+    private searchServices: SearchService
   ) {}
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
       this.tagUuid = params['tagUuid'].toLowerCase();
+
+      const publicTag = this.searchServices
+        .getTopTags()
+        .filter((tag) => tag.uuid === this.tagUuid);
+      this.stocks.push(...publicTag[0].stocks);
 
       this.userServices
         .getTags()
@@ -58,8 +65,6 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
         .subscribe((tags) => {
           this.tag = tags[this.tagUuid];
         });
-
-      this.stockInteractions = [];
     });
   }
 

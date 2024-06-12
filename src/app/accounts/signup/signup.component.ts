@@ -23,29 +23,45 @@ export class SignupComponent {
     private router: Router
   ) {}
 
-  signupWithEmail() {
+  async signupWithEmail() {
     const { email, password } = this.signupForm.value;
 
-    this.authService
-      .register(email, password)
-      .then(() => {
-        console.log('Signed up with email');
-        // Redirect to the login page upon successful signup
-        this.router.navigate(['/login']); // Adjust '/login' as per your route configuration
-      })
-      .catch((error) => {
-        console.error('Error signing up:', error);
+    try {
+      const userCredential = await this.authService.register(email, password);
+      const user = userCredential.user;
+
+      // Update the user's profile with the username
+      await user.updateProfile({
+        displayName: this.generateUsername(email),
       });
+
+      console.log('Signed up with email');
+      this.router.navigate(['/news']);
+    } catch (error) {
+      console.error('Error signing up:', error);
+    }
   }
 
-  signupWithGoogle(): Promise<void> {
-    return this.afAuth
-      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then(() => {
-        console.log('Signed up with Google');
-        this.router.navigate(['/news']);
-      })
-      .catch((error) => console.error('Error:', error));
+  async signupWithGoogle(): Promise<void> {
+    try {
+      const userCredential = await this.afAuth.signInWithPopup(
+        new firebase.auth.GoogleAuthProvider()
+      );
+      const user = userCredential.user;
+
+      // Generate a username based on the user's email or name
+      const username = this.generateUsername(user.email);
+
+      // Update the user's profile with the generated username
+      await user.updateProfile({
+        displayName: username,
+      });
+
+      console.log('Signed up with Google');
+      this.router.navigate(['/news']);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
 
   ngOnInit() {
@@ -56,5 +72,11 @@ export class SignupComponent {
       ]),
       password: new UntypedFormControl('', Validators.required),
     });
+  }
+
+  private generateUsername(value: string): string {
+    const username =
+      value.split('@')[0].slice(0, 5) + Math.floor(Math.random() * 1000000);
+    return username;
   }
 }

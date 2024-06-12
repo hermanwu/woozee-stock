@@ -1,7 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, filter, shareReplay, take } from 'rxjs';
+import { ChangeDisplayNameDialogComponent } from 'src/app/accounts/components/change-display-name-dialog/change-display-name-dialog.component';
 import { UserServices } from 'src/app/accounts/services/user.services';
 import { AddNoteFormComponent } from 'src/app/notes/components/add-note-form/add-note-form.component';
 import { environment } from 'src/environments/environment';
@@ -43,7 +44,7 @@ export class AppContainerComponent implements OnInit {
     private router: Router
   ) {
     this.showDisclaimer = localStorage.getItem('showDisclaimer');
-    this.user$ = this.userServices.getUser();
+    this.user$ = this.userServices.getUser().pipe(shareReplay(1));
   }
 
   ngOnInit(): void {}
@@ -91,5 +92,21 @@ export class AppContainerComponent implements OnInit {
       panelClass: '600px',
       disableClose: true,
     });
+  }
+
+  changeDisplayName(): void {
+    // open a dialog to change the display name
+    this.userServices
+      .getUser()
+      .pipe(
+        filter((user) => !!user),
+        take(1)
+      )
+      .subscribe((user) => {
+        const dialogRef = this.dialog.open(ChangeDisplayNameDialogComponent, {
+          width: '400px',
+          data: { currentDisplayName: user.displayName },
+        });
+      });
   }
 }

@@ -1,4 +1,3 @@
-import { portfolioCatalysts } from 'src/app/accounts/ mock-data/portoflio-catalysts.const';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { Term } from 'src/app/risks/models/risk-level.model';
 import { Catalyst } from 'src/app/shared/models/booster.interface';
@@ -113,7 +112,6 @@ export const catalysts: Catalyst[] = [
     type: FactType.event,
     date: new Date('2022-04-18'),
   },
-  ...portfolioCatalysts,
   // {
   //   content:
   //     'Robinhood Financial officially rolled out its cryptocurrency wallet on Thursday',

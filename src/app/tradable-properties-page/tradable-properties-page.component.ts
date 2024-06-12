@@ -143,9 +143,7 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     });
 
     for (let earning_data of quarterlyEarnings) {
-      console.log(earning_data);
       const earningData = convertEarningsDataToEarnings(earning_data);
-      console.log(earningData);
       this.earnings.push(earningData);
     }
 

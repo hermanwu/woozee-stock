@@ -10,16 +10,19 @@ import { Observable } from 'rxjs';
 export class AuthService {
   constructor(public afAuth: AngularFireAuth, private _snackBar: MatSnackBar) {}
 
-  register(email: string, password: string): Promise<void> {
+  register(
+    email: string,
+    password: string
+  ): Promise<firebase.auth.UserCredential> {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         console.log('Signed up with email');
         // Send verification email
-        return userCredential.user.sendEmailVerification();
+        userCredential.user.sendEmailVerification();
+        return userCredential;
       })
-      .then(() => {
-        this.afAuth.signOut(); // Sign out the user after sending the verification email
+      .then((userCredential) => {
         let snackBarRef = this._snackBar.open(
           'Verification email sent. Please verify your email address.',
           'Close'
@@ -28,6 +31,8 @@ export class AuthService {
         snackBarRef.onAction().subscribe(() => {
           snackBarRef.dismiss();
         });
+
+        return userCredential;
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -53,5 +58,16 @@ export class AuthService {
 
   getUser(): Observable<firebase.User> {
     return this.afAuth.authState;
+  }
+
+  async updateDisplayName(displayName: string): Promise<void> {
+    const user = await this.afAuth.currentUser;
+    if (user) {
+      return user.updateProfile({
+        displayName: displayName,
+      });
+    } else {
+      throw new Error('User not authenticated');
+    }
   }
 }

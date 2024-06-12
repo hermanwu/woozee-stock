@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Change Display Name</h2>
+<form [formGroup]="displayNameForm" (ngSubmit)="onSave()">
+  <mat-dialog-content>
+    <mat-form-field>
+      <input
+        matInput
+        formControlName="displayName"
+        placeholder="New Display Name"
+      />
+      <mat-error
+        *ngIf="displayNameForm.get('displayName').hasError('required')"
+      >
+        Please enter a display name.
+      </mat-error>
+      <mat-error *ngIf="displayNameForm.get('displayName').hasError('spaces')">
+        Display name cannot contain spaces.
+      </mat-error>
+      <mat-error
+        *ngIf="displayNameForm.get('displayName').hasError('maxlength')"
+      >
+        Display name cannot exceed 50 characters.
+      </mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button type="button" (click)="onCancel()">Cancel</button>
+    <button
+      mat-button
+      color="primary"
+      type="submit"
+      [disabled]="displayNameForm.invalid"
+    >
+      Save
+    </button>
+  </mat-dialog-actions>
+</form>

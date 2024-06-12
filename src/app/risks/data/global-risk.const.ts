@@ -1,4 +1,3 @@
-import { portfolioRisks } from 'src/app/accounts/ mock-data/portoflio-risks.const';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
 import { FactType } from '../models/fact-type.enum';
 import { Term } from '../models/risk-level.model';
@@ -168,5 +167,4 @@ export const allRisks: Risk[] = [
     type: FactType.profit,
     updatedTime: new Date('2022-04-19'),
   },
-  ...portfolioRisks,
 ];

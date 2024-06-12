@@ -27,7 +27,9 @@ export class UserServices implements OnDestroy {
   private unsubscribe$ = new Subject<void>();
   private username: string;
 
-  user$: Observable<firebase.User | null> = this.authService.getUser();
+  user$: Observable<firebase.User | null> = this.authService
+    .getUser()
+    .pipe(shareReplay(1));
   interactions$ = new BehaviorSubject<UserInteractions[]>([]);
   notes$ = new BehaviorSubject<any>({});
   tags$ = new BehaviorSubject<{
@@ -163,6 +165,10 @@ export class UserServices implements OnDestroy {
       console.error('Error deleting note:', error);
       throw error; // Re-throw the error to be caught by the caller
     }
+  }
+
+  async updateDisplayName(displayName: string): Promise<void> {
+    return this.authService.updateDisplayName(displayName);
   }
 
   async updateVote(targetUuid: string, vote: number): Promise<void> {

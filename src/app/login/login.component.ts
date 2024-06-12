@@ -39,16 +39,9 @@ export class LoginComponent implements OnInit {
       this.authService
         .signInWithEmailAndPassword(email, password)
         .then((result) => {
-          if (result.user && result.user.emailVerified) {
-            console.log('Logged in successfully');
-            // Navigate to the next page since the email is verified
-            this.router.navigate(['/news']); // Adjust as per your routing setup
-          } else {
-            // Handle the case where the email is not verified
-            this.errorMessage = 'Please verify your email before logging in.';
-            // Optionally, sign the user out if you don't want an unverified user to be signed in
-            this.afAuth.signOut();
-          }
+          console.log('Logged in successfully');
+          // Navigate to the next page since the email is verified
+          this.router.navigate(['/news']); // Adjust as per your routing setup
         })
         .catch((error) => {
           console.error('Login error:', error);

@@ -20,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AssetListPageComponent } from './assets/components/asset-list-page/asset-list-page.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
-import { EarningsDisplayComponent } from './earnings-display/earnings-display.component';
+import { EarningsDisplayComponent } from './earnings/components/earnings-display/earnings-display.component';
 import { EntityDisplayComponent } from './entity-display/entity-display.component';
 import { ImageDisplayComponent } from './images/components/image-display/image-display.component';
 import { IndustryListPageComponent } from './industries/industry-list-page/industry-list-page.component';

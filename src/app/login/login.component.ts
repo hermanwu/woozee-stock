@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import {
+  UntypedFormControl,
+  UntypedFormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/services/auth.services';
 
@@ -21,7 +25,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = new UntypedFormGroup({
-      email: new UntypedFormControl(null, [Validators.required, Validators.email]),
+      email: new UntypedFormControl(null, [
+        Validators.required,
+        Validators.email,
+      ]),
       password: new UntypedFormControl(null, Validators.required),
     });
   }

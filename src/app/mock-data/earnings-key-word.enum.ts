@@ -1,5 +1,5 @@
 export enum EarningsKeyWord {
-  revenue = 'revenue',
+  revenue = 'revenues',
   operatingIncome = 'operatingIncome',
   netIncome = 'netIncome',
   grossProfit = 'grossProfit',

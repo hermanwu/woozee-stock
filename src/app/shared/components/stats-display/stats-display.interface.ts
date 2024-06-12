@@ -11,7 +11,7 @@ export enum TimeFrame {
 }
 
 export enum UnitType {
-  dollar = 'dollar',
+  dollar = 'USD',
   rmb = 'rmb',
   euro = 'euro',
   chf = 'CHF',

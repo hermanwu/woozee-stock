@@ -2,6 +2,7 @@ import { Stats } from '../shared/components/stats-display/stats-display.interfac
 
 export class Earnings {
   releasedDate?: Date;
+  endDate?: string;
   revenue?: Stats;
   pressReleaseLink?: string;
   presentationLink?: string;

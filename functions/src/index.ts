@@ -81,8 +81,7 @@ export const downloadImage = async (
 
     const uploadedFileRef = await saveImage(downloadAddress, fileName);
     if (!uploadedFileRef) {
-      console.log('Failed to fetch data');
-      return { error: 'Failed to fetch data' };
+      return { error: 'Failed to save image' };
     }
     await fileRef.makePublic();
     console.log('File uploaded successfully.');
@@ -100,7 +99,7 @@ export const getStockByTicker = v2.https.onRequest((request, response) => {
   corsHandler(request, response, async () => {
     const ticker =
       typeof request.query.ticker === 'string'
-        ? request.query.ticker.trim()
+        ? request.query.ticker.trim().toUpperCase()
         : '';
     if (!ticker) {
       response.status(400).send({ error: 'No valid ticker provided' });
@@ -120,9 +119,16 @@ export const getStockByTicker = v2.https.onRequest((request, response) => {
       }
 
       const axiosResponse = await axios.get(endpoint);
+
       const stockDetails = axiosResponse.data.results;
       stockDetails.last_updated = Date.now();
       stockDetails.display_name = getCompanyShortName(stockDetails.name);
+
+      const { latestEarningsDate, earnings } = await getEarnings(ticker);
+      if (latestEarningsDate && earnings) {
+        stockDetails.latest_earnings_date = latestEarningsDate;
+        stockDetails.earnings = earnings;
+      }
 
       // Add to search document
       admin
@@ -254,21 +260,43 @@ export const testDownloadImage = v2.https.onRequest((request, response) => {
   });
 });
 
-// export const hello = functions.https.onRequest((request, response) => {
-//   functions.logger.info('Hello logs!', { structuredData: true });
-//   response.send('Hello from Firebase!');
-// });
+export const getEarnings = async (ticker: string) => {
+  const endpoint = `https://api.polygon.io/vX/reference/financials?ticker=${ticker}&limit=15&apiKey=${api}`;
 
-// export const scheduledFunction = functions.pubsub
-//   .schedule('every 120 minutes')
-//   .onRun((context) => {
-//     const api = '7yhlLmtHv8Q8FhP3RImzpPVdxktmD2Pb';
-//     const endpoint = `https://api.polygon.io/v2/aggs/ticker/AAPL/prev?adjusted=true&apiKey=${api}`;
-//     // const endpoint = `https://api.polygon.io/v2/aggs/grouped/locale/us/market/stocks/2024-03-19?adjusted=true&apiKey=${api}`;
+  try {
+    const axiosResponse = await axios.get(endpoint);
+    const financialResults = axiosResponse.data.results;
 
-//     axios.get<any>(endpoint).then((response) => {
-//       functions.logger.info(response.data);
-//     });
+    const earnings: Record<string, any> = {};
+    let latestEarningsDate: string | undefined;
 
-//     return null;
-//   });
+    for (const result of financialResults) {
+      if (result.end_date && result.timeframe) {
+        let key = result.end_date;
+        if (result.timeframe === 'quarterly') {
+          key += '_Q';
+        } else if (result.timeframe === 'annual') {
+          key += '_Y';
+        } else if (result.timeframe === 'ttm') {
+          key += '_TTM';
+        }
+
+        earnings[key] = result;
+
+        // Update the latest earnings date if it's not set or if the current date is later
+        if (!latestEarningsDate || result.end_date > latestEarningsDate) {
+          latestEarningsDate = result.end_date;
+        }
+      }
+    }
+
+    console.log('Financial results successfully stored for ticker:', ticker);
+    return {
+      latestEarningsDate,
+      earnings,
+    };
+  } catch (error) {
+    console.error('Error fetching or storing financial results: ', error);
+    throw error; // Rethrow the error to propagate it to the caller
+  }
+};

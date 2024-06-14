@@ -1,22 +1,4 @@
-<div>
-  <h1 class="text-2xl page-margin-top mb-2">Trending</h1>
-
-  <mat-chip-listbox>
-    <app-tag-display *ngFor="let item of tags" [tag]="item"></app-tag-display>
-  </mat-chip-listbox>
-</div>
-
-<div class="mt-5">
-  <h1 class="text-2xl mb-2">Top Picks</h1>
-
-  <mat-chip-listbox>
-    <mat-chip *ngFor="let ticker of tickers">
-      <app-tradable-display [ticker]="ticker"></app-tradable-display>
-    </mat-chip>
-  </mat-chip-listbox>
-</div>
-
-<div class="mt-5">
+<div class="page-margin-top">
   <h1 class="text-2xl">Earnings To Watch</h1>
 
   <div class="mt-3 flex justify-between">
@@ -34,58 +16,84 @@
     </div>
   </div>
 
-  <div *ngIf="beforeMarketOpen.length === 0 && afterMarketClose.length === 0">
-    No Earnings
+  <div *ngIf="!earningsDataLoaded; else earningsDateLoaded">
+    <div class="flex justify-center items-center">
+      <mat-spinner></mat-spinner>
+    </div>
   </div>
 
-  <div class="mb-2" *ngIf="beforeMarketOpen.length > 0">
-    ☀️ = Before Market Open
-    <mat-chip-listbox>
-      <mat-chip
-        *ngFor="
-          let tradable of beforeMarketOpen
-            | slice : 0 : (showFullBMOList ? beforeMarketOpen.length : 15)
-        "
-      >
-        <app-tradable-display [tradable]="tradable"></app-tradable-display>
-        ☀️
-      </mat-chip>
+  <ng-template #earningsDateLoaded>
+    <div *ngIf="beforeMarketOpen.length === 0 && afterMarketClose.length === 0">
+      No Earnings
+    </div>
 
-      <button
-        *ngIf="beforeMarketOpen.length > 15"
-        mat-button
-        color="primary"
-        (click)="showFullBMOList = !showFullBMOList"
-      >
-        {{ showFullBMOList ? "Show Less" : "Show Full List" }}
-      </button>
-    </mat-chip-listbox>
-  </div>
+    <div class="mb-2" *ngIf="beforeMarketOpen.length > 0">
+      ☀️ = Before Market Open
+      <mat-chip-listbox>
+        <mat-chip
+          *ngFor="
+            let tradable of beforeMarketOpen
+              | slice : 0 : (showFullBMOList ? beforeMarketOpen.length : 15)
+          "
+        >
+          <app-tradable-display [tradable]="tradable"></app-tradable-display>
+          ☀️
+        </mat-chip>
 
-  <div class="mt-2" *ngIf="afterMarketClose.length > 0">
-    🌙 = After Market Close
+        <button
+          *ngIf="beforeMarketOpen.length > 15"
+          mat-button
+          color="primary"
+          (click)="showFullBMOList = !showFullBMOList"
+        >
+          {{ showFullBMOList ? "Show Less" : "Show Full List" }}
+        </button>
+      </mat-chip-listbox>
+    </div>
 
-    <mat-chip-listbox>
-      <mat-chip
-        *ngFor="
-          let tradable of afterMarketClose
-            | slice : 0 : (showFullAMCList ? afterMarketClose.length : 15)
-        "
-      >
-        <app-tradable-display [tradable]="tradable"></app-tradable-display>
-        🌙
-      </mat-chip>
+    <div class="mt-2" *ngIf="afterMarketClose.length > 0">
+      🌙 = After Market Close
 
-      <button
-        *ngIf="afterMarketClose.length > 15"
-        mat-button
-        color="primary"
-        (click)="showFullAMCList = !showFullAMCList"
-      >
-        {{ showFullAMCList ? "Show Less" : "Show Full List" }}
-      </button>
-    </mat-chip-listbox>
-  </div>
+      <mat-chip-listbox>
+        <mat-chip
+          *ngFor="
+            let tradable of afterMarketClose
+              | slice : 0 : (showFullAMCList ? afterMarketClose.length : 15)
+          "
+        >
+          <app-tradable-display [tradable]="tradable"></app-tradable-display>
+          🌙
+        </mat-chip>
+
+        <button
+          *ngIf="afterMarketClose.length > 15"
+          mat-button
+          color="primary"
+          (click)="showFullAMCList = !showFullAMCList"
+        >
+          {{ showFullAMCList ? "Show Less" : "Show Full List" }}
+        </button>
+      </mat-chip-listbox>
+    </div>
+  </ng-template>
+</div>
+
+<div class="mt-5">
+  <h1 class="text-2xl mb-2">Popular List</h1>
+
+  <mat-chip-listbox>
+    <app-tag-display *ngFor="let item of tags" [tag]="item"></app-tag-display>
+  </mat-chip-listbox>
+</div>
+
+<div class="mt-5">
+  <h1 class="text-2xl mb-2">Top Picks</h1>
+
+  <mat-chip-listbox>
+    <mat-chip *ngFor="let ticker of tickers">
+      <app-tradable-display [ticker]="ticker"></app-tradable-display>
+    </mat-chip>
+  </mat-chip-listbox>
 </div>
 
 <ng-container *ngIf="notes.length > 0">

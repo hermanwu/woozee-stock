@@ -81,11 +81,27 @@ export class SearchComponent implements OnInit {
       filterValue = filterValue.toLowerCase();
     }
 
-    return opt.filter(
-      (item) =>
-        item?.displayName?.toLowerCase().includes(filterValue) ||
-        item?.name?.toLowerCase().includes(filterValue) ||
-        item?.ticker?.toLowerCase().includes(filterValue)
+    // Filter items based on ticker match
+    const tickerMatches = opt.filter((item) =>
+      item?.ticker?.toLowerCase().includes(filterValue)
     );
+
+    // Filter items based on displayName match (excluding ticker matches)
+    const displayNameMatches = opt.filter(
+      (item) =>
+        !tickerMatches.includes(item) &&
+        item?.displayName?.toLowerCase().includes(filterValue)
+    );
+
+    // Filter items based on name match (excluding ticker and displayName matches)
+    const nameMatches = opt.filter(
+      (item) =>
+        !tickerMatches.includes(item) &&
+        !displayNameMatches.includes(item) &&
+        item?.name?.toLowerCase().includes(filterValue)
+    );
+
+    // Combine the matches in the desired order
+    return [...tickerMatches, ...displayNameMatches, ...nameMatches];
   };
 }

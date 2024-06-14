@@ -80,7 +80,6 @@ export class CreateTagDialogComponent implements OnInit {
       this.userServices
         .setUserData(mergeTag)
         .then(() => {
-          console.log('Tag saved:', tagName);
           this.dialogRef.close({
             uuid: uuid,
             name: tagName,

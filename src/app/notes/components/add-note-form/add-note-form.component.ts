@@ -68,11 +68,6 @@ export class AddNoteFormComponent implements OnInit, OnChanges {
       this.userServices
         .setUserData(mergeNote)
         .then(() => {
-          console.log({
-            attributeId,
-            createdTimestamp,
-            content,
-          });
           return this.dialogRef.close({
             attributeId,
             createdTimestamp,

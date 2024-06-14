@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
 import { formatDateToString } from 'src/app/shared/functions/date.function';
 import { SearchService } from 'src/app/shared/services/search.services/search.service';
@@ -13,7 +14,7 @@ import { NotesServices } from '../../services/notes.services';
   templateUrl: './news-page.component.html',
   styleUrls: ['./news-page.component.scss'],
 })
-export class NewsPageComponent implements OnInit {
+export class NewsPageComponent implements OnInit, OnDestroy {
   readonly NoteType = NoteType;
   readonly eventType = EventType;
   chips = new Set();
@@ -24,16 +25,21 @@ export class NewsPageComponent implements OnInit {
   showAddNotesSection = false;
   showTools: boolean = false;
   selectedNote: Note;
-  tags = [];
-  earnings = [];
+  tags: any[] = [];
+  earnings: any[] = [];
   selectedNoteIndex = 0;
   selectedEarningsIndex = 0;
-  dailyEvents = [];
-  tickers = [];
+  dailyEvents: any[] = [];
+  tickers: string[] = [];
   earningsDate = new Date();
-  beforeMarketOpen = [];
-  afterMarketClose = [];
-  metaDataObject;
+  beforeMarketOpen: { ticker: string }[] = [];
+  afterMarketClose: { ticker: string }[] = [];
+  metaDataObject: { [key: string]: any };
+  earningsDataLoaded = false;
+  showFullBMOList = false;
+  showFullAMCList = false;
+
+  private unsubscribe$ = new Subject<void>();
 
   constructor(
     private newsService: NotesServices,
@@ -42,70 +48,63 @@ export class NewsPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.notes = this.newsService.getAllNews().slice(0, 10);
+    this.populateEarnings(this.earningsDate);
+    this.fetchTagsAndTickers();
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+  fetchTagsAndTickers(): void {
     this.tags = this.searchServices
       .getTopTags()
       .sort((a, b) => b.votes - a.votes);
+
     this.tickers = this.searchServices
       .getTopStocks()
       .sort((a, b) => b.votes - a.votes)
       .map((stock) => stock.ticker.toUpperCase());
-
-    this.populateEarnings(this.earningsDate);
-    this.metaDataObject = this.searchServices.getMetaDataObject();
   }
 
-  populateEarnings(earningsDate) {
+  populateEarnings(earningsDate: Date): void {
     const dateString = formatDateToString(earningsDate);
 
     this.stockServices
       .getEarningsReleaseTime(dateString)
+      .pipe(takeUntil(this.unsubscribe$))
       .subscribe((results: { rows: any }) => {
         const earningsEvents = results.rows;
-        this.beforeMarketOpen = [];
-        this.afterMarketClose = [];
 
-        for (let event of earningsEvents) {
-          if (event.when) {
-            const time = event.when.toLowerCase();
-            if (time.includes('before market open')) {
-              this.beforeMarketOpen.push({
-                ticker: event.act_symbol,
-              });
-            } else if (time.includes('after market close')) {
-              this.afterMarketClose.push({
-                ticker: event.act_symbol,
-              });
-            }
-          }
-        }
+        this.beforeMarketOpen = earningsEvents
+          .filter((event) =>
+            event.when?.toLowerCase().includes('before market open')
+          )
+          .map((event) => ({ ticker: event.act_symbol }));
 
+        this.afterMarketClose = earningsEvents
+          .filter((event) =>
+            event.when?.toLowerCase().includes('after market close')
+          )
+          .map((event) => ({ ticker: event.act_symbol }));
+
+        this.metaDataObject = this.searchServices.getMetaDataObject();
         this.sortEarningsEventByMarketCap();
+        this.earningsDataLoaded = true;
       });
   }
 
-  sortEarningsEventByMarketCap() {
-    this.beforeMarketOpen = this.beforeMarketOpen.sort(
-      (a: { ticker: string }, b: { ticker: string }) => {
-        return (
-          (this.metaDataObject[b.ticker]?.market_cap || 0) -
-          (this.metaDataObject[a.ticker]?.market_cap || 0)
-        );
-      }
-    );
-    this.afterMarketClose = this.afterMarketClose.sort(
-      (a: { ticker: string }, b: { ticker: string }) => {
-        return (
-          (this.metaDataObject[b.ticker]?.market_cap || 0) -
-          (this.metaDataObject[a.ticker]?.market_cap || 0)
-        );
-      }
-    );
+  sortEarningsEventByMarketCap(): void {
+    const compareByMarketCap = (a: { ticker: string }, b: { ticker: string }) =>
+      (this.metaDataObject[b.ticker]?.market_cap || 0) -
+      (this.metaDataObject[a.ticker]?.market_cap || 0);
+
+    this.beforeMarketOpen.sort(compareByMarketCap);
+    this.afterMarketClose.sort(compareByMarketCap);
   }
 
-  // dateDifference can be positive or negative;
-  // i.e. 1 means the next day, -1 means the previous day；
-  updateEarningsDate(currentDate: Date, dateDifference: number) {
+  updateEarningsDate(currentDate: Date, dateDifference: number): void {
     this.earningsDate = new Date(
       currentDate.getFullYear(),
       currentDate.getMonth(),

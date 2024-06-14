@@ -2,7 +2,7 @@
   <div>
     <a [routerLink]="['/news']">
       <img src="assets/favicon.png" alt="Logo" class="logo" />
-      <span class="name">Invesdea</span>
+      <span class="name md:block hidden">Invesdea</span>
     </a>
   </div>
   <span class="spacer"></span>
@@ -32,6 +32,10 @@
     [routerLink]="['/signup']"
   >
     Signup
+  </button>
+
+  <button [routerLink]="['/news']" mat-icon-button>
+    <mat-icon class="text-white">home</mat-icon>
   </button>
 
   <ng-container *ngIf="user$ | async as user">

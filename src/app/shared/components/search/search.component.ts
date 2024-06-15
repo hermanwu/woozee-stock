@@ -50,11 +50,18 @@ export class SearchComponent implements OnInit {
   onSelectionChange($event, group: string): void {
     if ($event.source.selected) {
       const searchItem = $event.source.value;
-      this.selectedGroup = group;
-      this.navigationServices.navigate(
-        group,
-        searchItem.id || searchItem.uuid || searchItem.ticker
-      );
+      if (group === 'Search') {
+        this.navigationServices.navigate(
+          'stocks and etfs',
+          searchItem.searchText
+        );
+      } else {
+        this.selectedGroup = group;
+        this.navigationServices.navigate(
+          group,
+          searchItem.id || searchItem.uuid || searchItem.ticker
+        );
+      }
       this.searchForm.reset();
     }
   }
@@ -63,12 +70,24 @@ export class SearchComponent implements OnInit {
 
   private _filterGroup(value: string): StateGroup[] {
     if (value) {
-      return this.stateGroups
+      const filteredGroups = this.stateGroups
         .map((group) => ({
           label: group.label,
           items: this._filter(group.items, value),
         }))
         .filter((group) => group.items.length > 0);
+
+      // Add the 'Search' item to the filtered results
+      const searchItem = {
+        label: 'Search',
+        items: [
+          {
+            displayName: `Ticker: "${value.toUpperCase()}"`,
+            searchText: value,
+          },
+        ],
+      };
+      return [...filteredGroups, searchItem];
     }
 
     return this.stateGroups;

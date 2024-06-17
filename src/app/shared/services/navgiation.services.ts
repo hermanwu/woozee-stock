@@ -37,4 +37,8 @@ export class NavigationServices {
         return;
     }
   }
+
+  navigateToLogin() {
+    this.router.navigate(['/login']);
+  }
 }

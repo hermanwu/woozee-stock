@@ -7,13 +7,14 @@ import {
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {
+  MAT_DIALOG_DATA,
   MatDialogModule,
   MatDialogRef,
-  MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
 
 @Component({
   selector: 'app-vote-dialog',
@@ -31,6 +32,7 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class VoteDialogComponent {
   voteForm: FormGroup;
+  emojiUnicode = EmojiUnicode;
 
   constructor(
     private formBuilder: FormBuilder,

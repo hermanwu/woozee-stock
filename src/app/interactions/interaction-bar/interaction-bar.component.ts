@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 import { UserInteractions } from 'src/app/interactions/interaction.services';
+import { NavigationServices } from 'src/app/shared/services/navgiation.services';
 import { environment } from 'src/environments/environment';
 import { UserServices } from '../../accounts/services/user.services';
 import { PredicationDialogComponent } from '../../prediction/predication-dialog/predication-dialog.component';
@@ -33,7 +34,11 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
   } | null = null;
   predictionString: string = '';
 
-  constructor(public dialog: MatDialog, private userServices: UserServices) {}
+  constructor(
+    public dialog: MatDialog,
+    private userServices: UserServices,
+    private navigationServices: NavigationServices
+  ) {}
 
   ngOnInit(): void {}
 
@@ -79,8 +84,8 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
   }
 
   openVoteDialog(currentVoteCount) {
-    if (environment.production) {
-      return;
+    if (!this.userServices.getUsername()) {
+      return this.navigationServices.navigateToLogin();
     }
 
     const dialogRef = this.dialog.open(VoteDialogComponent, {
@@ -97,10 +102,9 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
   }
 
   openPredictionDialog() {
-    if (environment.production) {
-      return;
+    if (!this.userServices.getUsername()) {
+      return this.navigationServices.navigateToLogin();
     }
-
     const stockTicker = this.targetUuid.split(':')[0];
     const dialogRef = this.dialog.open(PredicationDialogComponent, {
       data: {
@@ -117,14 +121,14 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
   }
 
   openAddTagDialog() {
-    if (environment.production) {
-      return;
+    if (!this.userServices.getUsername()) {
+      return this.navigationServices.navigateToLogin();
     }
 
     const dialogRef = this.dialog.open(AddTagDialogComponent, {
       data: {
         interactionUuid: this.targetUuid,
-        tagUuids: this.interactions.listUuids,
+        tagUuids: this.interactions?.listUuids || [],
       },
       width: '800px',
     });

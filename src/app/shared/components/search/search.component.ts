@@ -78,16 +78,20 @@ export class SearchComponent implements OnInit {
         .filter((group) => group.items.length > 0);
 
       // Add the 'Search' item to the filtered results
-      const searchItem = {
-        label: 'Search',
-        items: [
-          {
-            displayName: `Ticker: "${value.toUpperCase()}"`,
-            searchText: value,
-          },
-        ],
-      };
-      return [...filteredGroups, searchItem];
+
+      if (value?.length > 0) {
+        const searchItem = {
+          label: 'Search',
+          items: [
+            {
+              displayName: `Ticker: "${value.toUpperCase()}"`,
+              searchText: value,
+            },
+          ],
+        };
+        return [...filteredGroups, searchItem];
+      }
+      return [...filteredGroups];
     }
 
     return this.stateGroups;

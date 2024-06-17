@@ -169,7 +169,6 @@ export class AddTagDialogComponent implements OnInit, OnDestroy {
   }
 
   onConfirm() {
-    console.log(this.selectedTags);
     const listUuids: string[] = this.selectedTags.map((tag) => tag.uuid);
     const mergeObj = {
       interactions: {

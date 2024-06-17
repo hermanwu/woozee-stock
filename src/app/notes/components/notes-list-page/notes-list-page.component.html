@@ -2,6 +2,10 @@
   <mat-tab>
     <ng-template mat-tab-label> Stocks </ng-template>
 
+    <div *ngIf="stockDisplays.length === 0" class="flex justify-center mt-20">
+      <button mat-button routerLink="/news">Discover and save stocks</button>
+    </div>
+
     <div
       class="mt-5 tab-content"
       *ngFor="let item of stockDisplays; let i = index"
@@ -29,6 +33,10 @@
 
   <mat-tab>
     <ng-template mat-tab-label> Tags </ng-template>
+
+    <div *ngIf="stockDisplays.length === 0" class="flex justify-center mt-20">
+      <button mat-button routerLink="/news">Discover and save stocks</button>
+    </div>
 
     <div class="mt-5" *ngFor="let tag of tags; let i = index">
       <div>

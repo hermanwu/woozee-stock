@@ -14,7 +14,7 @@
       *ngIf="!interactions || !interactions?.vote"
       (click)="openVoteDialog()"
     >
-      Vote
+      {{ emojiUnicode.arrowUp }} Vote
     </mat-chip>
 
     <app-prediction-display
@@ -22,10 +22,19 @@
       [predictionString]="predictionString"
     ></app-prediction-display>
 
-    <app-tag-display *ngFor="let tag of tags" [tag]="tag"></app-tag-display>
+    <mat-chip
+      *ngIf="!tags || tags.length === 0; else editTags"
+      (click)="openAddTagDialog()"
+    >
+      🔖 Add Tag
+    </mat-chip>
 
-    <button mat-icon-button (click)="openAddTagDialog()">
-      <mat-icon>edit</mat-icon>
-    </button>
+    <ng-template #editTags>
+      <app-tag-display *ngFor="let tag of tags" [tag]="tag"></app-tag-display>
+
+      <button mat-icon-button (click)="openAddTagDialog()">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </ng-template>
   </mat-chip-set>
 </ng-container>

@@ -1,19 +1,25 @@
 <div class="page-margin-top">
   <h1 class="text-2xl mb-2">Top Picks</h1>
 
-  <mat-chip-listbox>
-    <mat-chip *ngFor="let ticker of tickers">
-      <app-tradable-display [ticker]="ticker"></app-tradable-display>
-    </mat-chip>
-  </mat-chip-listbox>
+  <div class="scroll-container">
+    <div class="scroll-content">
+      <div *ngFor="let ticker of tickers" class="item aspect-9/16">
+        <app-tradable-display [ticker]="ticker"></app-tradable-display>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="mt-5">
   <h1 class="text-2xl mb-2">Popular Tags</h1>
 
-  <mat-chip-listbox>
-    <app-tag-display *ngFor="let item of tags" [tag]="item"></app-tag-display>
-  </mat-chip-listbox>
+  <div class="scroll-container">
+    <div class="scroll-content">
+      <div *ngFor="let item of tags" class="item">
+        <app-tag-display [tag]="item"></app-tag-display>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="mt-5">
@@ -47,51 +53,27 @@
 
     <div class="mb-2" *ngIf="beforeMarketOpen.length > 0">
       ☀️ = Before Market Open
-      <mat-chip-listbox>
-        <mat-chip
-          *ngFor="
-            let tradable of beforeMarketOpen
-              | slice : 0 : (showFullBMOList ? beforeMarketOpen.length : 15)
-          "
-        >
-          <app-tradable-display [tradable]="tradable"></app-tradable-display>
-          ☀️
-        </mat-chip>
-
-        <button
-          *ngIf="beforeMarketOpen.length > 15"
-          mat-button
-          color="primary"
-          (click)="showFullBMOList = !showFullBMOList"
-        >
-          {{ showFullBMOList ? "Show Less" : "Show Full List" }}
-        </button>
-      </mat-chip-listbox>
+      <div class="scroll-container">
+        <div class="scroll-content">
+          <div *ngFor="let tradable of beforeMarketOpen" class="item">
+            <app-tradable-display [tradable]="tradable"></app-tradable-display>
+            ☀️
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="mt-2" *ngIf="afterMarketClose.length > 0">
       🌙 = After Market Close
 
-      <mat-chip-listbox>
-        <mat-chip
-          *ngFor="
-            let tradable of afterMarketClose
-              | slice : 0 : (showFullAMCList ? afterMarketClose.length : 15)
-          "
-        >
-          <app-tradable-display [tradable]="tradable"></app-tradable-display>
-          🌙
-        </mat-chip>
-
-        <button
-          *ngIf="afterMarketClose.length > 15"
-          mat-button
-          color="primary"
-          (click)="showFullAMCList = !showFullAMCList"
-        >
-          {{ showFullAMCList ? "Show Less" : "Show Full List" }}
-        </button>
-      </mat-chip-listbox>
+      <div class="scroll-container">
+        <div class="scroll-content">
+          <div *ngFor="let tradable of afterMarketClose" class="item">
+            <app-tradable-display [tradable]="tradable"></app-tradable-display>
+            🌙
+          </div>
+        </div>
+      </div>
     </div>
   </ng-template>
 </div>

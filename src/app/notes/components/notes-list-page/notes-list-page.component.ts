@@ -61,7 +61,7 @@ export class NotesListPageComponent implements OnInit, OnDestroy {
         const stockInteractions = [];
         for (const [key, interaction] of Object.entries(interactions)) {
           if (interaction.type === 'tradable' || interaction.type === 'stock') {
-            if (interaction.vote > 0 || interaction.vote < 0) {
+            if (interaction.vote !== undefined) {
               stockInteractions.push(interaction);
             }
           }

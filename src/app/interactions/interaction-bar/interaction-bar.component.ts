@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 import { UserInteractions } from 'src/app/interactions/interaction.services';
 import { NavigationServices } from 'src/app/shared/services/navgiation.services';
+import { RemoveStockDialogComponent } from 'src/app/stock/dialogs/remove-stock-dialog/remove-stock-dialog.component';
 import { environment } from 'src/environments/environment';
 import { UserServices } from '../../accounts/services/user.services';
 import { PredicationDialogComponent } from '../../prediction/predication-dialog/predication-dialog.component';
@@ -131,6 +132,18 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
         tagUuids: this.interactions?.listUuids || [],
       },
       width: '800px',
+    });
+  }
+
+  removeStock() {
+    if (!this.userServices.getUsername()) {
+      return this.navigationServices.navigateToLogin();
+    }
+
+    const dialogRef = this.dialog.open(RemoveStockDialogComponent, {
+      data: {
+        interactionKey: this.targetUuid,
+      },
     });
   }
 }

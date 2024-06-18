@@ -20,10 +20,6 @@
   </div>
 
   <div>
-    <span *ngIf="stockAnalysis?.headquarters">
-      Headquartered in {{ stockAnalysis.headquarters }};
-    </span>
-
     <span *ngIf="stockAnalysis?.descriptions?.length > 0">
       <span *ngFor="let item of stockAnalysis.descriptions">
         {{ item }}

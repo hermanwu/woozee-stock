@@ -30,7 +30,7 @@ export class UserServices implements OnDestroy {
   user$: Observable<firebase.User | null> = this.authService
     .getUser()
     .pipe(shareReplay(1));
-  interactions$ = new BehaviorSubject<UserInteractions[]>([]);
+  interactions$ = new BehaviorSubject<{ [x: string]: UserInteractions }>({});
   notes$ = new BehaviorSubject<any>({});
   tags$ = new BehaviorSubject<{
     [x: string]: Tag;
@@ -69,7 +69,7 @@ export class UserServices implements OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((docSnapshot) => {
         const data = docSnapshot.data();
-        this.interactions$.next(data?.interactions || []);
+        this.interactions$.next(data?.interactions);
         this.notes$.next(processNotes(data?.notes));
         this.tags$.next(data?.tags || {});
         this.predictions$.next(data?.predictions || {});
@@ -137,7 +137,7 @@ export class UserServices implements OnDestroy {
       const updatedData = updatedDocSnapshot.data();
 
       // Emit the updated values to the observables
-      this.interactions$.next(updatedData?.interactions || []);
+      this.interactions$.next(updatedData?.interactions);
       this.notes$.next(processNotes(updatedData?.notes));
       this.tags$.next(updatedData?.tags || {});
       this.predictions$.next(updatedData?.predictions || {});
@@ -220,7 +220,7 @@ export class UserServices implements OnDestroy {
 export interface UserData {
   email: string;
   name?: string;
-  interactions?: UserInteractions[];
+  interactions?: { [x: string]: UserInteractions };
   notes?: { [x: string]: { content: any } };
   tags?: {
     [x: string]: Tag;

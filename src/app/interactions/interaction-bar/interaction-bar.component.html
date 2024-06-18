@@ -22,19 +22,19 @@
       [predictionString]="predictionString"
     ></app-prediction-display>
 
-    <mat-chip
-      *ngIf="!tags || tags.length === 0; else editTags"
-      (click)="openAddTagDialog()"
-    >
+    <mat-chip *ngIf="!tags || tags.length === 0" (click)="openAddTagDialog()">
       🔖 Add Tag
     </mat-chip>
 
-    <ng-template #editTags>
-      <app-tag-display *ngFor="let tag of tags" [tag]="tag"></app-tag-display>
+    <app-tag-display *ngFor="let tag of tags" [tag]="tag"></app-tag-display>
 
-      <button mat-icon-button (click)="openAddTagDialog()">
-        <mat-icon>edit</mat-icon>
-      </button>
-    </ng-template>
+    <button mat-icon-button [matMenuTriggerFor]="interactionMenu">
+      <mat-icon>more_horiz</mat-icon>
+    </button>
+
+    <mat-menu #interactionMenu="matMenu">
+      <button mat-menu-item (click)="openAddTagDialog()">Edit Tags</button>
+      <button mat-menu-item (click)="removeStock()">Remove Stock</button>
+    </mat-menu>
   </mat-chip-set>
 </ng-container>

@@ -3,8 +3,33 @@
 
   <div class="scroll-container">
     <div class="scroll-content">
-      <div *ngFor="let ticker of tickers" class="item aspect-9/16">
-        <app-tradable-display [ticker]="ticker"></app-tradable-display>
+      <div *ngFor="let item of stocks" class="item">
+        <div class="text-sm mb-2 word-wrap w-full">
+          {{ item.displayName }}
+        </div>
+        <div class="mb-5">
+          <app-tradable-display [ticker]="item?.ticker"></app-tradable-display>
+        </div>
+        <div class="button-container">
+          <mat-icon
+            *ngIf="
+              stockInteractionMap.get(item?.ticker?.toLowerCase()) !==
+                undefined;
+              else saved
+            "
+            >check_circle</mat-icon
+          >
+          <ng-template #saved>
+            <mat-button
+              type="button"
+              class="cursor-pointer"
+              mat-icon-button
+              (click)="saveStock(item?.ticker)"
+            >
+              <mat-icon>radio_button_unchecked</mat-icon>
+            </mat-button>
+          </ng-template>
+        </div>
       </div>
     </div>
   </div>

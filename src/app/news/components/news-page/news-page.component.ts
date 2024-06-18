@@ -1,5 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
+import {
+  UserData,
+  UserServices,
+} from 'src/app/accounts/services/user.services';
+import { UserInteractions } from 'src/app/interactions/interaction.services';
+import { Tradable } from 'src/app/mock-data/mocks/tradables.mock';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
 import { formatDateToString } from 'src/app/shared/functions/date.function';
 import { SearchService } from 'src/app/shared/services/search.services/search.service';
@@ -30,7 +36,7 @@ export class NewsPageComponent implements OnInit, OnDestroy {
   selectedNoteIndex = 0;
   selectedEarningsIndex = 0;
   dailyEvents: any[] = [];
-  tickers: string[] = [];
+  stocks: Tradable[] = [];
   earningsDate = new Date();
   beforeMarketOpen: { ticker: string }[] = [];
   afterMarketClose: { ticker: string }[] = [];
@@ -38,18 +44,37 @@ export class NewsPageComponent implements OnInit, OnDestroy {
   earningsDataLoaded = false;
   showFullBMOList = false;
   showFullAMCList = false;
+  stockInteractionMap = new Map();
 
   private unsubscribe$ = new Subject<void>();
 
   constructor(
     private newsService: NotesServices,
     private stockServices: StockServices,
-    private searchServices: SearchService
+    private searchServices: SearchService,
+    private userServices: UserServices
   ) {}
 
   ngOnInit(): void {
     this.populateEarnings(this.earningsDate);
     this.fetchTagsAndTickers();
+
+    this.userServices
+      .getUserInteractions()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((interactions) => {
+        for (const [key, value] of Object.entries(interactions)) {
+          const [uuid, type] = key.split(':');
+
+          if (type === 'tradable') {
+            if (uuid === 'mndy') {
+              console.log(uuid);
+              console.log(value.vote);
+            }
+            this.stockInteractionMap.set(uuid, value.vote);
+          }
+        }
+      });
   }
 
   ngOnDestroy(): void {
@@ -62,10 +87,9 @@ export class NewsPageComponent implements OnInit, OnDestroy {
       .getTopTags()
       .sort((a, b) => b.votes - a.votes);
 
-    this.tickers = this.searchServices
+    this.stocks = this.searchServices
       .getTopStocks()
-      .sort((a, b) => b.votes - a.votes)
-      .map((stock) => stock.ticker.toUpperCase());
+      .sort((a, b) => b.votes - a.votes);
   }
 
   populateEarnings(earningsDate: Date): void {
@@ -111,5 +135,14 @@ export class NewsPageComponent implements OnInit, OnDestroy {
       currentDate.getDate() + dateDifference
     );
     this.populateEarnings(this.earningsDate);
+  }
+
+  saveStock(ticker) {
+    const mergeObj: Partial<UserData> = {
+      interactions: {
+        [ticker.toLowerCase() + ':tradable']: { vote: 0 } as UserInteractions,
+      },
+    };
+    this.userServices.setUserData(mergeObj);
   }
 }

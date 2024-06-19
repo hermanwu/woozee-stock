@@ -3,7 +3,7 @@
     <ng-template mat-tab-label> Stocks </ng-template>
 
     <div *ngIf="stockDisplays.length === 0" class="flex justify-center mt-20">
-      <button mat-button routerLink="/news">Discover and save stocks</button>
+      <button mat-button routerLink="/news">Discover Stocks</button>
     </div>
 
     <div
@@ -23,7 +23,7 @@
       <span>
         <app-interaction-bar
           class="inline-block"
-          [interactions]="item.interaction"
+          [interactions]="item"
           [targetUuid]="item?.ticker.toLowerCase() + ':tradable'"
           [displayTop3]="true"
         ></app-interaction-bar>
@@ -34,8 +34,14 @@
   <mat-tab>
     <ng-template mat-tab-label> Tags </ng-template>
 
-    <div *ngIf="stockDisplays.length === 0" class="flex justify-center mt-20">
-      <button mat-button routerLink="/news">Discover and save stocks</button>
+    <div>
+      <button mat-button (click)="openCreateNewTagDialog()">Create Tag</button>
+    </div>
+
+    <div *ngIf="!tags || tags.length === 0" class="flex justify-center mt-20">
+      <div>
+        <button mat-button routerLink="/news">Discover Tags</button>
+      </div>
     </div>
 
     <div class="mt-5" *ngFor="let tag of tags; let i = index">

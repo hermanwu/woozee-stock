@@ -42,11 +42,6 @@
   </button>
 
   <mat-menu #menu="matMenu">
-    <div *ngFor="let portfolio of mockPortfolios">
-      <button mat-menu-item i18n (click)="changePortfolio(portfolio)">
-        {{ portfolio.name }}
-      </button>
-    </div>
     <button mat-menu-item i18n (click)="changePortfolio(null)">
       Following
     </button>

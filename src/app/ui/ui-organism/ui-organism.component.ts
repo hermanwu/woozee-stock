@@ -1,6 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
-import { currentUserMock } from 'src/app/accounts/data/user.mock';
 import { UserServices } from 'src/app/accounts/services/user.services';
 
 @Component({
@@ -14,7 +13,6 @@ export class UiOrganismComponent implements OnInit {
     ['tsla', 'aapl', 'meta', 'amzn'],
   ];
 
-  mockPortfolios = currentUserMock.portfolios;
   mockStocks = [
     {
       name: 'Stock A',

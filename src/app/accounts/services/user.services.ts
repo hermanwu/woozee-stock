@@ -25,7 +25,7 @@ import { SearchService } from 'src/app/shared/services/search.services/search.se
 })
 export class UserServices implements OnDestroy {
   private unsubscribe$ = new Subject<void>();
-  private username: string;
+  private userUid: string;
 
   user$: Observable<firebase.User | null> = this.authService
     .getUser()
@@ -50,7 +50,7 @@ export class UserServices implements OnDestroy {
     this.userData$ = this.user$.pipe(
       filter((user): user is firebase.User => !!user),
       switchMap((user) => {
-        const docRef = firebase.firestore().collection('users').doc(user.email);
+        const docRef = firebase.firestore().collection('users').doc(user.uid);
         return from(docRef.get()).pipe(
           filter(
             (docSnapshot): docSnapshot is DocumentSnapshot<UserData> =>
@@ -77,12 +77,12 @@ export class UserServices implements OnDestroy {
 
     this.user$
       .pipe(
-        map((user) => (user ? user.email : null)),
+        map((user) => (user ? user.uid : null)),
         startWith(undefined),
         takeUntil(this.unsubscribe$)
       )
-      .subscribe((username) => {
-        this.username = username;
+      .subscribe((uid) => {
+        this.userUid = uid;
       });
   }
 
@@ -95,8 +95,8 @@ export class UserServices implements OnDestroy {
     return this.user$;
   }
 
-  getUsername() {
-    return this.username;
+  getUserUid() {
+    return this.userUid;
   }
 
   getUserInteractions() {
@@ -131,7 +131,7 @@ export class UserServices implements OnDestroy {
 
     if (docSnapshot) {
       await docSnapshot.ref.set(mergeObject, { merge: true });
-
+      console.log('Document updated successfully.');
       // Fetch the updated document data
       const updatedDocSnapshot = await docSnapshot.ref.get();
       const updatedData = updatedDocSnapshot.data();
@@ -177,12 +177,12 @@ export class UserServices implements OnDestroy {
       return;
     }
 
-    if (!this.username) {
+    if (!this.userUid) {
       console.error('User not authenticated');
       return;
     }
 
-    const userDocRef = this.firestore.collection('users').doc(this.username);
+    const userDocRef = this.firestore.collection('users').doc(this.userUid);
 
     try {
       const doc = await userDocRef.get().toPromise();
@@ -233,6 +233,10 @@ export const getTicker = (original: string) => {
 };
 
 export function processNotes(notes) {
+  if (!notes) {
+    return;
+  }
+
   const typeToNotesMap = {
     generalNotes: [],
     stock: {},

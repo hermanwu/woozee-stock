@@ -51,11 +51,6 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
     this.routeSub = this.route.params.subscribe((params) => {
       this.tagUuid = params['tagUuid'].toLowerCase();
 
-      const publicTag = this.searchServices
-        .getTopTags()
-        .filter((tag) => tag.uuid === this.tagUuid);
-      this.stocks.push(...publicTag[0].stocks);
-
       this.userServices
         .getTags()
         .pipe(

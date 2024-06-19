@@ -85,7 +85,7 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
   }
 
   openVoteDialog(currentVoteCount) {
-    if (!this.userServices.getUsername()) {
+    if (!this.userServices.getUserUid()) {
       return this.navigationServices.navigateToLogin();
     }
 
@@ -103,7 +103,7 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
   }
 
   openPredictionDialog() {
-    if (!this.userServices.getUsername()) {
+    if (!this.userServices.getUserUid()) {
       return this.navigationServices.navigateToLogin();
     }
     const stockTicker = this.targetUuid.split(':')[0];
@@ -122,7 +122,7 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
   }
 
   openAddTagDialog() {
-    if (!this.userServices.getUsername()) {
+    if (!this.userServices.getUserUid()) {
       return this.navigationServices.navigateToLogin();
     }
 
@@ -136,7 +136,7 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
   }
 
   removeStock() {
-    if (!this.userServices.getUsername()) {
+    if (!this.userServices.getUserUid()) {
       return this.navigationServices.navigateToLogin();
     }
 

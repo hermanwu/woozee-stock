@@ -41,7 +41,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   imageLinks = [];
   notes = [];
   myNotes: Note[] = [];
-  mySentiment;
   noteUuidToEmotionMap = {};
   earnings = [];
   stockInteractions;
@@ -68,7 +67,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
 
       // Reset everything.
       this.imageLinks = [];
-      this.mySentiment = null;
       this.myNotes = [];
       this.notes = [];
 

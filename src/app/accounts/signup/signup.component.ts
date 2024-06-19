@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import {
   UntypedFormControl,
   UntypedFormGroup,
@@ -20,7 +21,8 @@ export class SignupComponent {
   constructor(
     private afAuth: AngularFireAuth,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private firestore: AngularFirestore
   ) {}
 
   async signupWithEmail() {
@@ -34,6 +36,7 @@ export class SignupComponent {
       await user.updateProfile({
         displayName: this.generateUsername(email),
       });
+      await this.createUserDoc(user);
 
       console.log('Signed up with email');
       this.router.navigate(['/news']);
@@ -50,12 +53,13 @@ export class SignupComponent {
       const user = userCredential.user;
 
       // Generate a username based on the user's email or name
-      const username = this.generateUsername(user.email);
+      const displayName = this.generateUsername(user.email);
 
       // Update the user's profile with the generated username
       await user.updateProfile({
-        displayName: username,
+        displayName,
       });
+      await this.createUserDoc(user);
 
       console.log('Signed up with Google');
       this.router.navigate(['/news']);
@@ -72,6 +76,28 @@ export class SignupComponent {
       ]),
       password: new UntypedFormControl('', Validators.required),
     });
+  }
+
+  private async createUserDoc(user: firebase.User): Promise<void> {
+    const userRef = this.firestore.collection('users').doc(user.uid);
+    const userDoc = await userRef.get().toPromise();
+
+    if (!userDoc.exists) {
+      const userData: any = {
+        uid: user.uid,
+        email: user.email,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      };
+
+      try {
+        await userRef.set(userData);
+        console.log('User document created successfully');
+      } catch (error) {
+        console.error('Error creating user document:', error);
+      }
+    } else {
+      console.log('User document already exists');
+    }
   }
 
   private generateUsername(value: string): string {

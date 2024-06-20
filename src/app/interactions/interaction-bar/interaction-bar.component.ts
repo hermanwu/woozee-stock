@@ -18,7 +18,7 @@ import { VoteDialogComponent } from '../vote-dialog/vote-dialog.component';
   styleUrls: ['./interaction-bar.component.scss'],
 })
 export class InteractionBarComponent implements OnInit, OnDestroy {
-  @Input() targetUuid: string;
+  @Input() interactionKey: string;
   @Input() interactions: UserInteractions;
   @Input() displayTop3: boolean;
 
@@ -72,7 +72,7 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((predications) => {
         const predicationUuid =
-          this.targetUuid.split(':')[0].toLowerCase() + ':stock';
+          this.interactionKey.split(':')[0].toLowerCase() + ':stock';
         this.predictionString = predications[predicationUuid]
           ? predications[predicationUuid]
           : null;
@@ -98,7 +98,7 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
         return;
       }
       // Update the interactions object with the new vote count
-      this.userServices.updateVote(this.targetUuid, result);
+      this.userServices.updateVote(this.interactionKey, result);
     });
   }
 
@@ -106,7 +106,7 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
     if (!this.userServices.getUserUid()) {
       return this.navigationServices.navigateToLogin();
     }
-    const stockTicker = this.targetUuid.split(':')[0];
+    const stockTicker = this.interactionKey.split(':')[0];
     const dialogRef = this.dialog.open(PredicationDialogComponent, {
       data: {
         stockTicker,
@@ -128,7 +128,7 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
 
     const dialogRef = this.dialog.open(AddTagDialogComponent, {
       data: {
-        interactionUuid: this.targetUuid,
+        interactionUuid: this.interactionKey,
         tagUuids: this.interactions?.listUuids || [],
       },
       width: '800px',
@@ -142,7 +142,7 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
 
     const dialogRef = this.dialog.open(RemoveStockDialogComponent, {
       data: {
-        interactionKey: this.targetUuid,
+        interactionKey: this.interactionKey,
       },
     });
   }

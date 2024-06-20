@@ -113,6 +113,7 @@ import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/tho
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
 import { StockDisplayComponent } from './stock/stock-display/stock-display.component';
+import { TagInteractionBarComponent } from './tag-interaction-bar/tag-interaction-bar.component';
 import { TagDisplayComponent } from './tag/tag-display/tag-display.component';
 import { TagPropertiesPageComponent } from './tag/tag-properties-page/tag-properties-page.component';
 import { TradableDisplayComponent } from './tradable-display/tradable-display.component';
@@ -248,6 +249,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     TradableDisplayComponent,
     EntityDisplayComponent,
     PercentageDisplayComponent,
+    TagInteractionBarComponent,
   ],
   imports: [
     BrowserModule,

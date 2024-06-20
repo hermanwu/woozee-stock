@@ -8,6 +8,7 @@ import { NavigationServices } from '../../shared/services/navgiation.services';
   styleUrls: ['./tag-display.component.scss'],
 })
 export class TagDisplayComponent implements OnInit {
+  @Input() displayNameOnly: boolean;
   @Input() tag: Tag;
 
   constructor(private navigationServices: NavigationServices) {}

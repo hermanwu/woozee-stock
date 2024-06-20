@@ -1,0 +1,11 @@
+<mat-chip
+  *ngIf="tag?.votes && tag.votes !== 0"
+  (click)="openVoteDialog(tag.votes || 0)"
+>
+  {{ tag.votes > 0 ? emojiUnicode.arrowUp : emojiUnicode.arrowDown }}
+  {{ tag.votes }}
+</mat-chip>
+
+<mat-chip *ngIf="!tag || !tag?.votes" (click)="openVoteDialog()">
+  {{ emojiUnicode.arrowUp }} Vote
+</mat-chip>

@@ -24,7 +24,7 @@
         <app-interaction-bar
           class="inline-block"
           [interactions]="item"
-          [targetUuid]="item?.ticker.toLowerCase() + ':tradable'"
+          [interactionKey]="item?.ticker.toLowerCase() + ':tradable'"
           [displayTop3]="true"
         ></app-interaction-bar>
       </span>
@@ -32,14 +32,18 @@
   </mat-tab>
 
   <mat-tab>
-    <ng-template mat-tab-label> Tags </ng-template>
-
-    <div>
-      <button mat-button (click)="openCreateNewTagDialog()">Create Tag</button>
-    </div>
+    <ng-template mat-tab-label>
+      Tags
+      <button mat-icon-button (click)="openCreateNewTagDialog()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </ng-template>
 
     <div *ngIf="!tags || tags.length === 0" class="flex justify-center mt-20">
       <div>
+        <button mat-button (click)="openCreateNewTagDialog()">
+          🔖 Add Tag
+        </button>
         <button mat-button routerLink="/news">Discover Tags</button>
       </div>
     </div>
@@ -47,12 +51,9 @@
     <div class="mt-5" *ngFor="let tag of tags; let i = index">
       <div>
         {{ i + 1 }}.
-        <app-tag-display [tag]="tag"></app-tag-display>
+        <app-tag-display [tag]="tag" [displayNameOnly]="true"></app-tag-display>
 
-        <span *ngIf="!environment.production && tag?.votes && tag?.votes !== 0">
-          {{ tag.votes > 0 ? emojiUnicode.thumbUp : emojiUnicode.thumbDown }}
-          {{ tag?.votes }}
-        </span>
+        <app-tag-interaction-bar [tag]="tag"></app-tag-interaction-bar>
       </div>
     </div>
   </mat-tab>

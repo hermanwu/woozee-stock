@@ -30,8 +30,8 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
   products: Product[];
   people: Person[];
   uuidToInteractionMap;
-  stockInteractions = [];
   stocks = [];
+  stockInteractions = [];
 
   currentUser;
 
@@ -59,6 +59,26 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
         )
         .subscribe((tags) => {
           this.tag = tags[this.tagUuid];
+
+          this.userServices.interactions$
+            .pipe(takeUntil(this.unsubscribe$))
+            .subscribe((interactions) => {
+              this.stockInteractions = [];
+              for (const [key, interaction] of Object.entries(interactions)) {
+                if (
+                  interaction.listUuids &&
+                  interaction.listUuids.includes(this.tagUuid)
+                ) {
+                  const [uuid, type] = key.split(':');
+
+                  if (type === 'tradable') {
+                    this.stockInteractions.push(interaction);
+                  }
+                }
+              }
+
+              this.stockInteractions.sort((a, b) => b?.vote - a?.vote);
+            });
         });
     });
   }

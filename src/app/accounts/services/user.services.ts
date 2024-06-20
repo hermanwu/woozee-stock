@@ -215,6 +215,39 @@ export class UserServices implements OnDestroy {
       throw error; // Rethrow the error to be handled by the caller
     }
   }
+
+  async updateTag(tag: Tag): Promise<void> {
+    if (!this.userUid) {
+      console.error('User not authenticated');
+      return;
+    }
+
+    const userDocRef = this.firestore.collection('users').doc(this.userUid);
+
+    try {
+      await userDocRef.set(
+        {
+          tags: {
+            [tag.uuid]: tag,
+          },
+        },
+        { merge: true }
+      );
+
+      const updatedDoc = await userDocRef.get().toPromise();
+      const updatedTags = (updatedDoc.data() as any)?.tags as Record<
+        string,
+        Tag
+      >;
+
+      this.tags$.next(updatedTags);
+      console.log('Tag updated successfully');
+    } catch (error) {
+      console.error('Error updating tag:', error);
+      // Handle the error and show an error message to the user
+      throw error; // Rethrow the error to be handled by the caller
+    }
+  }
 }
 
 export interface UserData {

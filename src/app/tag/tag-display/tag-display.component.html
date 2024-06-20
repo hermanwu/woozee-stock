@@ -1,4 +1,10 @@
-<ng-container *ngIf="tag; else uuidOnly">
+<ng-container *ngIf="displayNameOnly; else displayAsTag">
+  <span (click)="navigate(tag.uuid)">
+    {{ tag.name }}
+  </span>
+</ng-container>
+
+<ng-template #displayAsTag>
   <ng-container *ngIf="tag.votes > 0">
     <mat-chip class="positive-tag" (click)="navigate(tag.uuid)">
       <span class="text-green-900">{{ tag.name }}</span>
@@ -16,10 +22,4 @@
       <span>{{ tag.name }}</span>
     </mat-chip>
   </ng-container>
-</ng-container>
-
-<ng-template #uuidOnly>
-  <mat-chip (click)="navigate(tagUuid)">
-    {{ tagUuid }}
-  </mat-chip>
 </ng-template>

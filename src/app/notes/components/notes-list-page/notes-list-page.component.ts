@@ -40,6 +40,7 @@ export class NotesListPageComponent implements OnInit, OnDestroy {
         takeUntil(this.unsubscribe$)
       )
       .subscribe((tags) => {
+        console.log(tags);
         this.tags = Object.values(tags).sort(
           (a, b) => (b.votes || 0) - (a.votes || 0)
         );
@@ -56,9 +57,11 @@ export class NotesListPageComponent implements OnInit, OnDestroy {
             stockInteractions.push({
               ...interaction,
               ticker: uuid.toUpperCase(),
+              type: 'stock',
             });
           }
         }
+
         stockInteractions.sort((a, b) => (b?.vote || 0) - (a?.vote || 0));
 
         this.stockDisplays = stockInteractions;

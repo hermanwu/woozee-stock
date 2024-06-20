@@ -12,7 +12,7 @@
 
     <mat-chip
       *ngIf="!interactions || !interactions?.vote"
-      (click)="openVoteDialog()"
+      (click)="openVoteDialog(0)"
     >
       {{ emojiUnicode.arrowUp }} Vote
     </mat-chip>

@@ -4,24 +4,18 @@
 
 <div class="mt-2">
   <h2>Stocks</h2>
-  <div class="mt-2" *ngFor="let item of stocks; let i = index">
-    {{ i + 1 }}
-    <app-tradable-display
-      [ticker]="item"
-      [tickerOnly]="true"
-    ></app-tradable-display>
-  </div>
 
   <div class="mt-2" *ngFor="let item of stockInteractions; let i = index">
     {{ i + 1 }}
+
     <app-tradable-display
-      [tradable]="item"
-      [tickerOnly]="true"
+      [ticker]="item?.targetUuid?.split(':')?.[0]"
     ></app-tradable-display>
 
     <app-interaction-bar
-      class="inline-block"
-      [interactions]="item.interaction"
+      class="inline-block ml-2"
+      [interactions]="item"
+      [interactionKey]="item?.targetUuid"
     ></app-interaction-bar>
   </div>
 </div>

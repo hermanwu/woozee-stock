@@ -39,10 +39,8 @@
   <h1 class="text-2xl mb-2">Popular Tags</h1>
 
   <div class="scroll-container">
-    <div class="scroll-content">
-      <div *ngFor="let item of tags" class="item">
-        <app-tag-display [tag]="item"></app-tag-display>
-      </div>
+    <div *ngFor="let item of tags" class="item text-lg">
+      <app-tag-display [tag]="item" [displayNameOnly]="true"></app-tag-display>
     </div>
   </div>
 </div>

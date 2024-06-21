@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { StockListPageComponent } from './stock-list-page.component';
+import { RankingPageComponent } from './ranking-page.component';
 
-describe('StockListPageComponent', () => {
-  let component: StockListPageComponent;
-  let fixture: ComponentFixture<StockListPageComponent>;
+describe('RankingPageComponent', () => {
+  let component: RankingPageComponent;
+  let fixture: ComponentFixture<RankingPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [StockListPageComponent],
+      declarations: [RankingPageComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StockListPageComponent);
+    fixture = TestBed.createComponent(RankingPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

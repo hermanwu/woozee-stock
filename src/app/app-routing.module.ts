@@ -10,8 +10,8 @@ import { MarketPageComponent } from './markets/components/market-page/market-pag
 import { RegionPropertiesPageComponent } from './markets/components/region-properties-page/region-properties-page.component';
 import { NewsPageComponent } from './news/components/news-page/news-page.component';
 import { CatalystPageComponent } from './notes/components/catalyst/components/catalyst-page/catalyst-page.component';
-import { NotesListPageComponent } from './notes/components/notes-list-page/notes-list-page.component';
-import { MePageComponent } from './notes/components/opinion-page/blog-page.component';
+import { RankingPageComponent } from './notes/components/ranking-page/ranking-page.component';
+import { TagListPageComponent } from './notes/components/tag-list-page/tag-list-page.component';
 import { AddPersonFormComponent } from './people/components/add-person-form/add-person-form.component';
 import { PersonPropertyPageComponent } from './people/person-property-page/person-property-page.component';
 import { SlideDemoComponent } from './presentation/slide/slide-demo/slide-demo.component';
@@ -81,16 +81,21 @@ const routes: Routes = [
       },
       {
         path: 'me',
-        component: MePageComponent,
+        component: RankingPageComponent,
         children: [
           {
-            path: 'opinions',
-            component: NotesListPageComponent,
+            path: 'stocks',
+            component: StockListPageComponent,
+            pathMatch: 'full',
+          },
+          {
+            path: 'tags',
+            component: TagListPageComponent,
             pathMatch: 'full',
           },
           {
             path: '**',
-            redirectTo: 'opinions',
+            redirectTo: 'stocks',
           },
         ],
       },

@@ -1,38 +1,24 @@
-<app-title-menu>
-  <div header-1 i18n>Stocks / ETFs</div>
+<div *ngIf="stockDisplays.length === 0" class="flex justify-center mt-20">
+  <button mat-button routerLink="/news">Discover Stocks</button>
+</div>
 
-  <div right-items>
-    <button mat-button *ngIf="!environment.production" (click)="rankStocks()">
-      Rank
-    </button>
+<div class="mt-5 tab-content" *ngFor="let item of stockDisplays; let i = index">
+  <span class="text-lg">
+    {{ i + 1 }}.
 
-    <button
-      mat-button
-      *ngIf="!environment.production"
-      [matMenuTriggerFor]="menu"
-    >
-      {{ selectedPortfolio ? selectedPortfolio.name : "Following" }}
-      <mat-icon>arrow_drop_down</mat-icon>
-    </button>
-
-    <mat-menu #menu="matMenu">
-      <div *ngFor="let portfolio of portfolios">
-        <button mat-menu-item i18n (click)="updatePortfolio(portfolio)">
-          {{ portfolio.name }}
-        </button>
-      </div>
-      <button mat-menu-item i18n (click)="updatePortfolio(null)">
-        Following
-      </button>
-    </mat-menu>
-  </div>
-</app-title-menu>
-
-<app-card>
-  <div class="stock-list-table">
-    <app-stock-list-table
-      [stocks]="stocks"
-      (stockListTableAction)="stockListTableAction($event)"
-    ></app-stock-list-table>
-  </div>
-</app-card>
+    <app-tradable-display
+      [tradable]="item"
+      [tickerOnly]="true"
+      [prices]="pricesServices.getPriceByTicker(item?.ticker) | async"
+      [showPercentage]="'true'"
+    ></app-tradable-display>
+  </span>
+  <span>
+    <app-interaction-bar
+      class="inline-block"
+      [interactions]="item"
+      [interactionKey]="item?.ticker.toLowerCase() + ':tradable'"
+      [displayTop3]="true"
+    ></app-interaction-bar>
+  </span>
+</div>

@@ -2,16 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-opinion-page',
-  templateUrl: './blog-page.component.html',
-  styleUrls: ['./blog-page.component.scss'],
+  selector: 'app-ranking-page',
+  templateUrl: './ranking-page.component.html',
+  styleUrls: ['./ranking-page.component.scss'],
 })
-export class MePageComponent implements OnInit {
-  readonly notesRoute = 'notes';
-  readonly actionsRoute = 'actions';
-  readonly listRoute = 'lists';
-  readonly opinionsRoute = 'opinions';
-  activeRoute: string = this.notesRoute;
+export class RankingPageComponent implements OnInit {
+  readonly stocksRoute = 'stocks';
+  readonly tagsRoute = 'tags';
+  activeRoute: string = this.stocksRoute;
 
   constructor(private router: Router) {}
 

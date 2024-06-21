@@ -1,0 +1,20 @@
+<nav mat-tab-nav-bar>
+  <a
+    mat-tab-link
+    [routerLink]="[stocksRoute]"
+    [active]="activeRoute === stocksRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+    >Stocks</a
+  >
+
+  <a
+    mat-tab-link
+    [routerLink]="[tagsRoute]"
+    [active]="activeRoute === tagsRoute"
+    (click)="onAnchorLinkClicked($event.target)"
+    i18n
+    >Tags</a
+  >
+</nav>
+<router-outlet></router-outlet>

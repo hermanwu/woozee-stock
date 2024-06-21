@@ -1,8 +1,48 @@
-woozee-stock-list-table {
-  display: block;
-  margin: 20px;
+.float-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f371f3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.margin-top-1rem {
-  margin-top: 1rem;
+.logo-image {
+  // center image in the div
+  // add margin top and bottom with 10px
+
+  // set image height to 150px
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  align-self: flex-start;
+}
+
+.right {
+  align-self: flex-end;
+}
+
+.card {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.tab-content {
+  overflow: hidden;
 }

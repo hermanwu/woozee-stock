@@ -31,4 +31,12 @@
       </span>
     </ng-template>
   </mat-chip>
+
+  <button mat-icon-button [matMenuTriggerFor]="interactionMenu">
+    <mat-icon>more_horiz</mat-icon>
+  </button>
+
+  <mat-menu #interactionMenu="matMenu">
+    <button mat-menu-item (click)="deleteTag()">Delete Tag</button>
+  </mat-menu>
 </div>

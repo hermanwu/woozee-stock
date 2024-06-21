@@ -3,33 +3,24 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Subject, filter, takeUntil } from 'rxjs';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
-import { PricesServices } from 'src/app/shared/services/prices.services';
 import { CreateTagDialogComponent } from 'src/app/tag/create-tag-dialog/create-tag-dialog.component';
-import { environment } from 'src/environments/environment';
 import { UserServices } from '../../../accounts/services/user.services';
 
 @Component({
-  selector: 'app-notes-list-page',
-  templateUrl: './notes-list-page.component.html',
-  styleUrls: ['./notes-list-page.component.scss'],
+  selector: 'app-tag-list-page',
+  templateUrl: './tag-list-page.component.html',
+  styleUrls: ['./tag-list-page.component.scss'],
 })
-export class NotesListPageComponent implements OnInit, OnDestroy {
+export class TagListPageComponent implements OnInit, OnDestroy {
   private unsubscribe$ = new Subject<void>();
 
   tags = [];
-  stockInteractions = [];
   emojiUnicode = EmojiUnicode;
-  stockDisplays: {
-    ticker: string;
-    vote: string;
-  }[] = [];
-  environment = environment;
 
   constructor(
     private dialog: MatDialog,
     private userServices: UserServices,
-    private router: Router,
-    private pricesServices: PricesServices
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -43,27 +34,6 @@ export class NotesListPageComponent implements OnInit, OnDestroy {
         this.tags = Object.values(tags).sort(
           (a, b) => (b.votes || 0) - (a.votes || 0)
         );
-      });
-
-    this.userServices
-      .getUserInteractions()
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((interactions) => {
-        const stockInteractions = [];
-        for (const [key, interaction] of Object.entries(interactions)) {
-          const [uuid, type] = key.split(':');
-          if (type === 'tradable') {
-            stockInteractions.push({
-              ...interaction,
-              ticker: uuid.toUpperCase(),
-              type: 'stock',
-            });
-          }
-        }
-
-        stockInteractions.sort((a, b) => (b?.vote || 0) - (a?.vote || 0));
-
-        this.stockDisplays = stockInteractions;
       });
   }
 

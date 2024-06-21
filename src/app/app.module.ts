@@ -44,11 +44,11 @@ import { CatalystComponent } from './notes/components/catalyst/components/cataly
 import { ComparisionDisplayComponent } from './notes/components/comparision-display/comparision-display.component';
 import { ContentDisplayComponent } from './notes/components/content-display/content-display.component';
 import { NoteContainerComponent } from './notes/components/note-container/note-container.component';
-import { NotesListPageComponent } from './notes/components/notes-list-page/notes-list-page.component';
 import { OpinionDisplayComponent } from './notes/components/opinion-display/opinion-display.component';
 import { OpinionItemDisplayComponent } from './notes/components/opinion-item-display/opinion-item-display.component';
-import { MePageComponent } from './notes/components/opinion-page/blog-page.component';
 import { QuoteDisplayComponent } from './notes/components/quote-display/quote-display.component';
+import { RankingPageComponent } from './notes/components/ranking-page/ranking-page.component';
+import { TagListPageComponent } from './notes/components/tag-list-page/tag-list-page.component';
 import { AddPersonFormComponent } from './people/components/add-person-form/add-person-form.component';
 import { InvestorDisplayComponent } from './people/components/investor-display/investor-display.component';
 import { PeopleDisplayComponent } from './people/people-display/people-display.component';
@@ -204,7 +204,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     PriceDisplayComponent,
     StockMetricDisplayComponent,
     UiComponentsPageComponent,
-    MePageComponent,
+    RankingPageComponent,
     RegionDisplayComponent,
     OpinionDisplayComponent,
     DragDropRankDialogComponent,
@@ -218,7 +218,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     AssetListPageComponent,
     AddNoteFormComponent,
     ContentDisplayComponent,
-    NotesListPageComponent,
+    TagListPageComponent,
     QuoteDisplayComponent,
     InvestorDisplayComponent,
     SquareContainerComponent,

@@ -1,0 +1,22 @@
+<div>
+  <button mat-button (click)="openCreateNewTagDialog()">
+    Create Tag
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<div *ngIf="!tags || tags.length === 0" class="flex justify-center mt-20">
+  <div>
+    <button mat-button (click)="openCreateNewTagDialog()">🔖 Add Tag</button>
+    <button mat-button routerLink="/news">Discover Tags</button>
+  </div>
+</div>
+
+<div class="mt-5" *ngFor="let tag of tags; let i = index">
+  <div>
+    {{ i + 1 }}.
+    <app-tag-display [tag]="tag" [displayNameOnly]="true"></app-tag-display>
+
+    <app-tag-interaction-bar class="ml-2" [tag]="tag"></app-tag-interaction-bar>
+  </div>
+</div>

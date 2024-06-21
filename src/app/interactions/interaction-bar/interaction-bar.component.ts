@@ -52,12 +52,15 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
           takeUntil(this.unsubscribe$)
         )
         .subscribe((tags) => {
+          const matchingTags = [];
           for (let tagUuid of this.interactions.listUuids) {
             if (tags[tagUuid]) {
-              this.tags.push(tags[tagUuid]);
+              matchingTags.push(tags[tagUuid]);
             }
           }
-          this.tags.sort((a, b) => Math.abs(b.votes) - Math.abs(a.votes));
+          this.tags = matchingTags.sort(
+            (a, b) => Math.abs(b.votes) - Math.abs(a.votes)
+          );
         });
 
       if (this.displayTop3 === true) {

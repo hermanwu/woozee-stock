@@ -1,28 +1,34 @@
-<mat-chip
-  *ngIf="tag?.votes && tag.votes !== 0"
-  (click)="openVoteDialog(tag.votes || 0)"
->
-  {{ tag.votes > 0 ? emojiUnicode.arrowUp : emojiUnicode.arrowDown }}
-  {{ tag.votes }}
-</mat-chip>
+<div class="inline-flex items-center space-x-1 sm:space-x-2 md:space-x-3">
+  <mat-chip
+    *ngIf="tag?.votes && tag.votes !== 0"
+    (click)="openVoteDialog(tag.votes || 0)"
+  >
+    {{ tag.votes > 0 ? emojiUnicode.arrowUp : emojiUnicode.arrowDown }}
+    {{ tag.votes }}
+  </mat-chip>
 
-<mat-chip *ngIf="!tag || !tag?.votes" (click)="openVoteDialog()">
-  {{ emojiUnicode.arrowUp }} Vote
-</mat-chip>
+  <mat-chip *ngIf="!tag || !tag?.votes" (click)="openVoteDialog()">
+    {{ emojiUnicode.arrowUp }} Vote
+  </mat-chip>
 
-<mat-chip
-  [ngClass]="{
+  <mat-chip
+    [ngClass]="{
     'negative-tag': tag?.sentiment === 'bearish',
     'positive-tag': tag?.sentiment === 'bullish',
   }"
->
-  <span class="capitalize" *ngIf="tag.sentiment; else noSentiment">
-    🔮 {{ tag.sentiment }}
-  </span>
-
-  <ng-template #noSentiment>
-    <span (click)="openTagPredicationDialog()" matTooltip="Bullish or Bearish"
-      >🔮 Predict
+  >
+    <span
+      class="capitalize"
+      *ngIf="tag.sentiment; else noSentiment"
+      (click)="openTagPredicationDialog()"
+    >
+      🔮 {{ tag.sentiment }}
     </span>
-  </ng-template>
-</mat-chip>
+
+    <ng-template #noSentiment>
+      <span (click)="openTagPredicationDialog()" matTooltip="Bullish or Bearish"
+        >🔮 Predict
+      </span>
+    </ng-template>
+  </mat-chip>
+</div>

@@ -1,13 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  ReactiveFormsModule,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { Subject, takeUntil } from 'rxjs';
-import { UserData, UserServices } from '../../accounts/services/user.services';
+import { UserServices } from '../../accounts/services/user.services';
 import { Tag } from '../../shared/data/tag.model';
 
 @Component({
@@ -45,6 +51,7 @@ export class CreateTagDialogComponent implements OnInit {
           Validators.required,
           Validators.maxLength(50),
           this.tagNameValidator.bind(this),
+          this.noUnderscoreValidator,
         ],
       ],
     });
@@ -67,18 +74,13 @@ export class CreateTagDialogComponent implements OnInit {
       const tagName = this.newTagForm.get('name').value;
       const uuid = this.generateTagUuid(tagName);
 
-      const mergeTag: Partial<UserData> = {
-        tags: {
-          [uuid]: {
-            uuid: uuid,
-            name: tagName,
-            votes: 0,
-          },
-        },
-      };
-
       this.userServices
-        .setUserData(mergeTag)
+        .updateTag({
+          uuid: uuid,
+          name: tagName,
+          votes: 0,
+          sentiment: null,
+        })
         .then(() => {
           this.dialogRef.close({
             uuid: uuid,
@@ -93,7 +95,9 @@ export class CreateTagDialogComponent implements OnInit {
   generateTagUuid(tagName: string): string {
     const trimmedName = tagName.trim();
     const lowercaseName = trimmedName.toLowerCase();
-    const uuid = lowercaseName.replace(/\s+/g, '%20');
+    const alphanumericWithSpaces = lowercaseName.replace(/[^a-z0-9\s]/g, ' ');
+    const singleSpaced = alphanumericWithSpaces.replace(/\s+/g, ' ');
+    const uuid = singleSpaced.replace(/ /g, '_');
     return uuid;
   }
 
@@ -106,5 +110,10 @@ export class CreateTagDialogComponent implements OnInit {
       return { duplicateName: true };
     }
     return null;
+  }
+  // New validator to disallow underscores
+  noUnderscoreValidator(control: AbstractControl): ValidationErrors | null {
+    const hasUnderscore = /[_]/.test(control.value);
+    return hasUnderscore ? { underscore: true } : null;
   }
 }

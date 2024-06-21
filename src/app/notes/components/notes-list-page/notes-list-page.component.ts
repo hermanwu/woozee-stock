@@ -40,7 +40,6 @@ export class NotesListPageComponent implements OnInit, OnDestroy {
         takeUntil(this.unsubscribe$)
       )
       .subscribe((tags) => {
-        console.log(tags);
         this.tags = Object.values(tags).sort(
           (a, b) => (b.votes || 0) - (a.votes || 0)
         );

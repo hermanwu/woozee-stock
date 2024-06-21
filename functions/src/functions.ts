@@ -37,3 +37,14 @@ export const getCompanyShortName = (longName: string) => {
   // and join the resulting words back into a string
   return longName.split(' ').slice(0, endIndex).join(' ');
 };
+
+export const getToday = () => {
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  // getMonth() returns 0 for January, 11 for December,
+  // so we add 1 to get the correct month number
+  // (-2) Ensures two digits
+  const month = ('0' + (currentDate.getMonth() + 1)).slice(-2);
+  const day = ('0' + currentDate.getDate()).slice(-2); // Ensures two digits
+  return `${year}-${month}-${day}`;
+};

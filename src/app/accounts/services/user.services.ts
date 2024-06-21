@@ -223,8 +223,10 @@ export class UserServices implements OnDestroy {
     }
 
     const userDocRef = this.firestore.collection('users').doc(this.userUid);
+    const tagDocRef = this.firestore.collection('tags').doc(tag.uuid);
 
     try {
+      // Update the user's tag data
       await userDocRef.set(
         {
           tags: {
@@ -234,14 +236,47 @@ export class UserServices implements OnDestroy {
         { merge: true }
       );
 
+      // Fetch the updated user document
       const updatedDoc = await userDocRef.get().toPromise();
       const updatedTags = (updatedDoc.data() as any)?.tags as Record<
         string,
         Tag
       >;
-
       this.tags$.next(updatedTags);
-      console.log('Tag updated successfully');
+      console.log('Tag updated successfully in user document.');
+
+      // Prepare the merge object for the tag document
+      const mergeObject = {
+        name: tag.name, // Include the tag name
+        interactions: {
+          [this.userUid]: {
+            votes: tag.votes,
+            sentiment: tag.sentiment,
+          },
+        },
+      };
+
+      // Check if the tag document exists
+      const tagDoc = await tagDocRef.get().toPromise();
+
+      if (!tagDoc.exists) {
+        // If the document doesn't exist, create it with initial data
+        await tagDocRef.set({
+          name: tag.name,
+          // createdAt: this.firestore.FieldValue.serverTimestamp(),
+          interactions: {
+            [this.userUid]: {
+              votes: tag.votes,
+              sentiment: tag.sentiment,
+            },
+          },
+        });
+        console.log('New tag document created successfully.');
+      } else {
+        // If the document exists, update it
+        await tagDocRef.set(mergeObject, { merge: true });
+        console.log('Global Tag data updated successfully.');
+      }
     } catch (error) {
       console.error('Error updating tag:', error);
       // Handle the error and show an error message to the user

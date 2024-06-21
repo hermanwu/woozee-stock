@@ -1,6 +1,12 @@
-<h1 class="text-2xl page-margin-top">
-  {{ tag ? tag.name : tagUuid }}
-</h1>
+<div
+  class="flex flex-col sm:flex-row justify-between items-center page-margin-top"
+>
+  <h1 class="text-2xl">
+    {{ tag ? tag.name : tagUuid }}
+  </h1>
+
+  <app-tag-interaction-bar [tag]="tag"></app-tag-interaction-bar>
+</div>
 
 <div class="mt-2">
   <h2>Stocks</h2>

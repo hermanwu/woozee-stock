@@ -4,7 +4,8 @@ import * as cors from 'cors';
 import * as admin from 'firebase-admin';
 import * as functions from 'firebase-functions';
 import * as v2 from 'firebase-functions/v2';
-import { getCompanyShortName } from './functions';
+import { getCompanyShortName, getToday } from './functions';
+import { updateGlobalTagData } from './scheduled.functions';
 
 // const corsHandler = cors({ origin: ['https://invesdea.com'] });
 const corsHandler = cors({
@@ -15,6 +16,8 @@ const api = '7yhlLmtHv8Q8FhP3RImzpPVdxktmD2Pb';
 admin.initializeApp({
   storageBucket: 'invesdea',
 });
+
+export { updateGlobalTagData };
 
 const saveImage = async (url: string, fileName: string) => {
   const fileRef = admin.storage().bucket().file(fileName);
@@ -213,15 +216,6 @@ export const getLatestStockData = functions.pubsub
       console.error('Error fetching or writing document: ', error);
     }
   });
-
-export const getToday = () => {
-  const currentDate = new Date();
-  const year = currentDate.getFullYear();
-  // getMonth() returns 0 for January, 11 for December, so we add 1 to get the correct month number
-  const month = ('0' + (currentDate.getMonth() + 1)).slice(-2); // Ensures two digits
-  const day = ('0' + currentDate.getDate()).slice(-2); // Ensures two digits
-  return `${year}-${month}-${day}`;
-};
 
 export const getPreviousBusinessDay = () => {
   const today = new Date();

@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Prediction</h2>
+<mat-dialog-content class="mat-typography">
+  <mat-button-toggle-group
+    [formControl]="predictionControl"
+    aria-label="Predication"
+  >
+    <mat-button-toggle class="positive-tag" [value]="PredictionType.Bullish"
+      >Bullish</mat-button-toggle
+    >
+    <mat-button-toggle class="neutral-tag" [value]="PredictionType.Neutral"
+      >Neutral</mat-button-toggle
+    >
+    <mat-button-toggle class="negative-tag" [value]="PredictionType.Bearish"
+      >Bearish</mat-button-toggle
+    >
+  </mat-button-toggle-group>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button cdkFocusInitial mat-dialog-close>Cancel</button>
+  <button
+    mat-button
+    (click)="onConfirm()"
+    [disabled]="predictionControl.invalid"
+  >
+    Confirm
+  </button>
+</mat-dialog-actions>

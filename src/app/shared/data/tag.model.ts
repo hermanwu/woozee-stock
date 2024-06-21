@@ -12,4 +12,5 @@ export interface Tag {
   votes?: number;
   name: string;
   stocks?: string[];
+  sentiment?: string;
 }

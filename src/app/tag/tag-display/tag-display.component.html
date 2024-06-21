@@ -5,19 +5,21 @@
 </ng-container>
 
 <ng-template #displayAsTag>
-  <ng-container *ngIf="tag.votes > 0">
+  <ng-container *ngIf="tag.sentiment === 'bullish'">
     <mat-chip class="positive-tag" (click)="navigate(tag.uuid)">
       <span class="text-green-900">{{ tag.name }}</span>
     </mat-chip>
   </ng-container>
 
-  <ng-container *ngIf="tag.votes < 0">
+  <ng-container *ngIf="tag.sentiment === 'bearish'">
     <mat-chip class="negative-tag" (click)="navigate(tag.uuid)">
       <span class="text-white">{{ tag.name }}</span>
     </mat-chip>
   </ng-container>
 
-  <ng-container *ngIf="!tag.votes">
+  <ng-container
+    *ngIf="tag.sentiment !== 'bullish' && tag.sentiment !== 'bearish'"
+  >
     <mat-chip (click)="navigate(tag.uuid)">
       <span>{{ tag.name }}</span>
     </mat-chip>

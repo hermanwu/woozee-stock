@@ -5,6 +5,7 @@ import { VoteDialogComponent } from '../interactions/vote-dialog/vote-dialog.com
 import { EmojiUnicode } from '../shared/data/enum/emoji.enum';
 import { Tag } from '../shared/data/tag.model';
 import { NavigationServices } from '../shared/services/navgiation.services';
+import { TagPredicationDialogComponent } from '../tag-predication-dialog/tag-predication-dialog.component';
 
 @Component({
   selector: 'app-tag-interaction-bar',
@@ -39,6 +40,20 @@ export class TagInteractionBarComponent {
       const updatedTag = { ...this.tag, votes: result };
       // Update the interactions object with the new vote count
       this.userServices.updateTag(updatedTag);
+    });
+  }
+
+  openTagPredicationDialog() {
+    const dialogRef = this.dialog.open(TagPredicationDialogComponent, {
+      width: '400px', // Adjust as needed
+      data: { tag: this.tag },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        console.log('Dialog closed with result:', result);
+        // Handle the result here (e.g., update local data, refresh view)
+      }
     });
   }
 }

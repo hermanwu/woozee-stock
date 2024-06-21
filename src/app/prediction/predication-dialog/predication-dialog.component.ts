@@ -16,7 +16,7 @@ import { PricesServices } from '../../shared/services/prices.services';
 import { PredictionDisplayComponent } from '../prediction-display/predication-display.component';
 
 // Enum representing the different types of predication
-enum PredictionType {
+export enum PredictionType {
   Bullish = 'bullish',
   Bearish = 'bearish',
   Neutral = 'neutral',

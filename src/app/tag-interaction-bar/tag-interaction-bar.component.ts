@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { UserServices } from '../accounts/services/user.services';
+import { DeleteTagDialogComponent } from '../delete-tag-dialog/delete-tag-dialog.component';
 import { VoteDialogComponent } from '../interactions/vote-dialog/vote-dialog.component';
 import { EmojiUnicode } from '../shared/data/enum/emoji.enum';
 import { Tag } from '../shared/data/tag.model';
@@ -20,7 +22,8 @@ export class TagInteractionBarComponent {
   constructor(
     public dialog: MatDialog,
     private userServices: UserServices,
-    private navigationServices: NavigationServices
+    private navigationServices: NavigationServices,
+    private router: Router
   ) {}
 
   openVoteDialog(currentVoteCount) {
@@ -57,5 +60,31 @@ export class TagInteractionBarComponent {
     });
   }
 
-  deleteTag() {}
+  deleteTag() {
+    if (!this.userServices.getUserUid()) {
+      return this.navigationServices.navigateToLogin();
+    }
+
+    const tagUid = this.tag.uuid;
+    const dialogRef = this.dialog.open(DeleteTagDialogComponent, {
+      data: {
+        tag: this.tag,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result?.success) {
+        // Perform the deletion logic here
+
+        // Check if the current URL matches the tag page URL pattern
+        const currentUrl = this.router.url;
+        const tagPageUrlPattern = `/tags/${tagUid}`;
+
+        if (currentUrl.endsWith(tagPageUrlPattern)) {
+          // Redirect to the tags page
+          this.router.navigate(['/me/tags']);
+        }
+      }
+    });
+  }
 }

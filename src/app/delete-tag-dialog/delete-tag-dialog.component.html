@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Delete Tag</h2>
+<mat-dialog-content>
+  <p>Are you sure you want to delete the tag "{{ data.tag.name }}"?</p>
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button [disabled]="isDeleting" (click)="onCancel()">
+    Cancel
+  </button>
+  <button
+    mat-button
+    color="warn"
+    [disabled]="isDeleting"
+    (click)="onDeleteTag()"
+  >
+    <mat-icon *ngIf="isDeleting">hourglass_empty</mat-icon>
+    <span *ngIf="!isDeleting">Delete</span>
+  </button>
+</mat-dialog-actions>

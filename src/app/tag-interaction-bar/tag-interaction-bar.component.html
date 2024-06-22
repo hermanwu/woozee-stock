@@ -19,7 +19,7 @@
   >
     <span
       class="capitalize"
-      *ngIf="tag.sentiment; else noSentiment"
+      *ngIf="tag?.sentiment; else noSentiment"
       (click)="openTagPredicationDialog()"
     >
       🔮 {{ tag.sentiment }}

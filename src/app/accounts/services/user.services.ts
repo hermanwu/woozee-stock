@@ -216,6 +216,76 @@ export class UserServices implements OnDestroy {
     }
   }
 
+  async deleteTag(tag: Tag): Promise<void> {
+    if (!this.userUid) {
+      console.error('User not authenticated');
+      return;
+    }
+
+    const userDocRef = this.firestore.doc(`users/${this.userUid}`).ref;
+    const tagDocRef = this.firestore.doc(`tags/${tag.uuid}`).ref;
+
+    try {
+      await this.firestore.firestore.runTransaction(async (transaction) => {
+        // Read user document
+        const userDoc = await transaction.get(userDocRef);
+        const interactions: Record<string, UserInteractions> = (
+          userDoc.data() as any
+        )?.interactions;
+        const updatedInteractions = {};
+
+        if (interactions) {
+          for (const [key, value] of Object.entries(interactions)) {
+            if (
+              value.listUuids?.length > 0 &&
+              value.listUuids.includes(tag.uuid)
+            ) {
+              updatedInteractions[key] = {
+                listUuids: value.listUuids.filter((uuid) => uuid !== tag.uuid),
+              };
+            }
+          }
+        }
+
+        // Read tag document
+        const tagDoc = await transaction.get(tagDocRef);
+
+        // Perform updates
+        transaction.update(userDocRef, {
+          [`tags.${tag.uuid}`]: firebase.firestore.FieldValue.delete(),
+        });
+
+        if (Object.keys(updatedInteractions).length > 0) {
+          transaction.set(
+            userDocRef,
+            { interactions: updatedInteractions },
+            { merge: true }
+          );
+        }
+
+        if (tagDoc.exists) {
+          transaction.update(tagDocRef, {
+            [`interactions.${this.userUid}`]:
+              firebase.firestore.FieldValue.delete(),
+          });
+        }
+      });
+
+      // Fetch the updated user document and update the local observable
+      const updatedDoc = await userDocRef.get();
+      const updatedTags = (updatedDoc.data() as any)?.tags as Record<
+        string,
+        Tag
+      >;
+      this.tags$.next(updatedTags);
+      console.log('Tag deleted successfully from user document.');
+    } catch (error) {
+      console.error('Error deleting tag:', error);
+      // Handle the error and show an error message to the user
+      throw error; // Rethrow the error to be handled by the caller
+    }
+  }
+
   async updateTag(tag: Tag): Promise<void> {
     if (!this.userUid) {
       console.error('User not authenticated');
@@ -295,10 +365,6 @@ export interface UserData {
   };
   predictions?: { [x: string]: string };
 }
-
-export const getTicker = (original: string) => {
-  return original.split(':')[0]?.toLowerCase();
-};
 
 export function processNotes(notes) {
   if (!notes) {

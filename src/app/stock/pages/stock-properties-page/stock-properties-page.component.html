@@ -46,7 +46,9 @@
   </div>
 
   <div class="mt-5">
-    <app-interaction-bar></app-interaction-bar>
+    <app-interaction-bar
+      [interactionKey]="tradableItem?.ticker.toLowerCase() + ':tradable'"
+    ></app-interaction-bar>
   </div>
 
   <div *ngIf="people?.length > 0" class="mt-4">

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-ranking-page',
@@ -7,33 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./ranking-page.component.scss'],
 })
 export class RankingPageComponent implements OnInit {
+  @ViewChild('tabPanel') tabPanel: any;
+
   readonly stocksRoute = 'stocks';
   readonly tagsRoute = 'tags';
   activeRoute: string = this.stocksRoute;
 
+  navLinks = [
+    { path: this.stocksRoute, label: $localize`Stocks` },
+    { path: this.tagsRoute, label: $localize`Tags` },
+  ];
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.activeRoute = this.getLastSegmentOfUrl(this.router.url);
-    }, 0);
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.activeRoute = this.getLastSegmentOfUrl(this.router.url);
+      });
   }
 
-  /**
-   * Get the target href of anchor link
-   *  and set the activeRoute property accordingly.
-   * @param target Anchor link's target.
-   */
-  onAnchorLinkClicked(target: HTMLAnchorElement): void {
-    const href = target.href;
-
-    this.activeRoute = this.getLastSegmentOfUrl(href);
-  }
-
-  /**
-   * Get the url segment after last '/'.
-   * @param url Url string.
-   */
   private getLastSegmentOfUrl(url: string): string {
     return url.substr(url.lastIndexOf('/') + 1);
   }

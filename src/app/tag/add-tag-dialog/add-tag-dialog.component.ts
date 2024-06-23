@@ -178,8 +178,6 @@ export class AddTagDialogComponent implements OnInit, OnDestroy {
       },
     };
 
-    console.log(mergeObj);
-
     this.userServices
       .setUserData(mergeObj as any)
       .then(() => {

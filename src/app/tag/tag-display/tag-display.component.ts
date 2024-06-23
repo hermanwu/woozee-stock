@@ -16,11 +16,7 @@ export class TagDisplayComponent implements OnInit {
   ngOnInit(): void {}
 
   navigate(tagUuid: string) {
-    // if (environment.production) {
-    //   return;
-    // }
-
-    this.navigationServices.navigate('tag', tagUuid);
+    this.navigationServices.navigate('tags', tagUuid);
   }
 
   getTagColor(tag) {

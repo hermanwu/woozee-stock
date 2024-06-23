@@ -10,6 +10,7 @@ export interface Tag {
   uuid: string;
   type?: TagType;
   votes?: number;
+  displayName?: string;
   name: string;
   stocks?: string[];
   sentiment?: string;

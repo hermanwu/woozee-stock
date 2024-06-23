@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subject, takeUntil } from 'rxjs';
 import {
   UserData,
@@ -7,6 +8,7 @@ import {
 import { UserInteractions } from 'src/app/interactions/interaction.services';
 import { Tradable } from 'src/app/mock-data/mocks/tradables.mock';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
+import { Tag } from 'src/app/shared/data/tag.model';
 import { formatDateToString } from 'src/app/shared/functions/date.function';
 import { SearchService } from 'src/app/shared/services/search.services/search.service';
 import { Industry } from 'src/app/stock/models/industry.model';
@@ -31,7 +33,7 @@ export class NewsPageComponent implements OnInit, OnDestroy {
   showAddNotesSection = false;
   showTools: boolean = false;
   selectedNote: Note;
-  tags: any[] = [];
+  tags: Tag[] = [];
   earnings: any[] = [];
   selectedNoteIndex = 0;
   selectedEarningsIndex = 0;
@@ -44,7 +46,8 @@ export class NewsPageComponent implements OnInit, OnDestroy {
   earningsDataLoaded = false;
   showFullBMOList = false;
   showFullAMCList = false;
-  stockInteractionMap = new Map();
+  interactionSet = new Set();
+  tagUidSet = new Set();
 
   private unsubscribe$ = new Subject<void>();
 
@@ -52,7 +55,8 @@ export class NewsPageComponent implements OnInit, OnDestroy {
     private newsService: NotesServices,
     private stockServices: StockServices,
     private searchServices: SearchService,
-    private userServices: UserServices
+    private userServices: UserServices,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -64,15 +68,16 @@ export class NewsPageComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((interactions) => {
         for (const [key, value] of Object.entries(interactions)) {
-          const [uuid, type] = key.split(':');
+          this.interactionSet.add(key);
+        }
+      });
 
-          if (type === 'tradable') {
-            if (uuid === 'mndy') {
-              console.log(uuid);
-              console.log(value.vote);
-            }
-            this.stockInteractionMap.set(uuid, value.vote);
-          }
+    this.userServices
+      .getTags()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((tags) => {
+        for (const [key, value] of Object.entries(tags)) {
+          this.tagUidSet.add(key);
         }
       });
   }
@@ -143,6 +148,21 @@ export class NewsPageComponent implements OnInit, OnDestroy {
         [ticker.toLowerCase() + ':tradable']: { vote: 0 } as UserInteractions,
       },
     };
-    this.userServices.setUserData(mergeObj);
+    this.userServices.setUserData(mergeObj).then(() => {
+      this._snackBar.open('Stock saved', 'Dismiss', { duration: 2000 });
+    });
+  }
+
+  saveTag(tag: Tag) {
+    this.userServices
+      .updateTag({
+        uuid: tag.uuid,
+        name: tag.name,
+        votes: 0,
+        sentiment: null,
+      })
+      .then(() => {
+        this._snackBar.open('Tag saved', 'Dismiss', { duration: 2000 });
+      });
   }
 }

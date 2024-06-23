@@ -19,7 +19,7 @@ export class SearchService implements OnDestroy {
   metaDataObject: any;
   metaDataObjectLoaded$: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
   topStocks: any[] = [];
-  topTags: any[] = [];
+  topTags: Tag[] = [];
 
   private subscription$ = new Subject<void>();
 
@@ -43,20 +43,26 @@ export class SearchService implements OnDestroy {
       (data: {
         [key: string]: {
           name?: string;
-          display_name: string;
-          type: string;
+          display_name?: string;
+          type?: string;
           votes?: number;
           stocks?: string[];
+          isBullish?: number;
         };
       }) => {
         this.metaDataObject = data;
         for (let [key, value] of Object.entries(data)) {
-          if (key.endsWith('::tag') && value.votes !== undefined) {
+          if (key.endsWith('::tag') && value.votes > 0) {
             this.topTags.push({
               uuid: key.slice(0, -5),
-              name: value.name,
+              name: value.display_name || value.name,
               votes: value.votes,
-              stocks: value.stocks,
+              sentiment:
+                value.isBullish > 0
+                  ? 'bullish'
+                  : value.isBullish < 0
+                  ? 'bearish'
+                  : null,
             });
           } else if (value.type === 'stock') {
             this.stocksMap[key] = {
@@ -79,9 +85,14 @@ export class SearchService implements OnDestroy {
         );
         this.stocksMap = Object.fromEntries(sortedEntries);
 
-        this.stateGroups.unshift({
+        this.stateGroups.push({
           label: 'Stocks and ETFs',
           items: Object.values(this.stocksMap),
+        });
+
+        this.stateGroups.push({
+          label: 'Tags',
+          items: this.topTags,
         });
 
         this.metaDataObjectLoaded$.next(true);

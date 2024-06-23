@@ -13,13 +13,12 @@
         <div class="button-container">
           <mat-icon
             *ngIf="
-              stockInteractionMap.get(item?.ticker?.toLowerCase()) !==
-                undefined;
-              else saved
+              interactionSet.has(item?.ticker?.toLowerCase() + ':tradable');
+              else unsavedStock
             "
             >check_circle</mat-icon
           >
-          <ng-template #saved>
+          <ng-template #unsavedStock>
             <mat-button
               type="button"
               class="cursor-pointer"
@@ -41,6 +40,22 @@
   <div class="scroll-container">
     <div *ngFor="let item of tags" class="item text-lg">
       <app-tag-display [tag]="item" [displayNameOnly]="true"></app-tag-display>
+
+      <div class="button-container mt-2">
+        <mat-icon *ngIf="tagUidSet.has(item.uuid); else unsavedTag"
+          >check_circle</mat-icon
+        >
+        <ng-template #unsavedTag>
+          <mat-button
+            type="button"
+            class="cursor-pointer"
+            mat-icon-button
+            (click)="saveTag(item)"
+          >
+            <mat-icon>radio_button_unchecked</mat-icon>
+          </mat-button>
+        </ng-template>
+      </div>
     </div>
   </div>
 </div>

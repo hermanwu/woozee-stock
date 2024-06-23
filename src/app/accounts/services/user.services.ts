@@ -189,7 +189,6 @@ export class UserServices implements OnDestroy {
       const userData = doc.data() as { interactions: any };
       const userInteractions = userData?.interactions || {};
 
-      let originalValue = 0;
       if (userInteractions.hasOwnProperty(targetUuid)) {
         // Update existing vote
         const diff = vote - userInteractions[targetUuid].vote || 0;
@@ -337,10 +336,11 @@ export class UserServices implements OnDestroy {
           interactions: {
             [this.userUid]: {
               votes: tag.votes,
-              sentiment: tag.sentiment,
+              sentiment: tag.sentiment || 'neutral',
             },
           },
         });
+
         console.log('New tag document created successfully.');
       } else {
         // If the document exists, update it

@@ -1,6 +1,12 @@
 import * as admin from 'firebase-admin';
 import * as functions from 'firebase-functions';
 
+export type TagSearchData = {
+  display_name: string;
+  votes: number;
+  isBullish: number;
+};
+
 export const updateGlobalTagData = functions.pubsub
   .schedule('0 * * * *')
   .onRun(async (context) => {
@@ -10,15 +16,12 @@ export const updateGlobalTagData = functions.pubsub
       const tagsSnapshot = await db.collection('tags').get();
 
       // Initialize an object to store vote counts
-      const tagDataForSearch: Record<
-        string,
-        { totalVotes: number; isBullish: number }
-      > = {};
+      const tagDataForSearch: Record<string, TagSearchData> = {};
 
       tagsSnapshot.forEach((doc) => {
         const tagUid = doc.id;
         const tagData = doc.data();
-        let totalVotes = 0;
+        let votes = 0;
         let isBullish = 0;
 
         if (tagData.interactions) {
@@ -28,7 +31,7 @@ export const updateGlobalTagData = functions.pubsub
               sentiment?: 'bullish' | 'bearish';
             };
 
-            totalVotes += interaction.votes || 0;
+            votes += interaction.votes || 0;
             if (interaction.sentiment === 'bullish') {
               isBullish++;
             } else if (interaction.sentiment === 'bearish') {
@@ -39,19 +42,20 @@ export const updateGlobalTagData = functions.pubsub
 
         const uid = tagUid + '::tag';
         tagDataForSearch[uid] = {
-          totalVotes,
+          display_name: tagData.name || '',
+          votes,
           isBullish,
         };
       });
 
       // Get top 10 items by votes
       const top10Tags = Object.entries(tagDataForSearch)
-        .sort(([, a], [, b]) => b.totalVotes - a.totalVotes)
+        .sort(([, a], [, b]) => b.votes - a.votes)
         .slice(0, 10)
         .reduce((obj, [key, value]) => {
           obj[key] = value;
           return obj;
-        }, {} as Record<string, { totalVotes: number; isBullish: number }>);
+        }, {} as Record<string, TagSearchData>);
 
       // Add top 10 tags to searchData document in search collection
       const searchDataRef = db.collection('search').doc('searchData');

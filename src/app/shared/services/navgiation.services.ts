@@ -31,7 +31,7 @@ export class NavigationServices {
         return this.router.navigate([`/woozee/products/${routeWord}`]);
       case 'person':
         return this.router.navigate([`/woozee/people/${routeWord}`]);
-      case 'tag':
+      case 'tags':
         return this.router.navigate([`/woozee/tags/${routeWord}`]);
       default:
         return;

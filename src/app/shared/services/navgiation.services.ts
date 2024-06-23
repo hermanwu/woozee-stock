@@ -13,26 +13,26 @@ export class NavigationServices {
 
   navigate(type: string, routeWord: string) {
     if (!type) {
-      return this.router.navigate([`/woozee/quotes/${routeWord}`]);
+      return this.router.navigate([`/quotes/${routeWord}`]);
     }
 
     type = type.toLowerCase();
     switch (type) {
       case 'tradable':
       case 'stocks and etfs':
-        return this.router.navigate([`/woozee/quotes/${routeWord}`]);
+        return this.router.navigate([`/quotes/${routeWord}`]);
       case 'company':
-        return this.router.navigate([`/woozee/companies/${routeWord}`]);
+        return this.router.navigate([`/companies/${routeWord}`]);
       case 'organization':
-        return this.router.navigate([`/woozee/stocks/${routeWord}`]);
+        return this.router.navigate([`/stocks/${routeWord}`]);
       case 'industry':
-        return this.router.navigate([`/woozee/industries/${routeWord}`]);
+        return this.router.navigate([`/industries/${routeWord}`]);
       case 'product':
-        return this.router.navigate([`/woozee/products/${routeWord}`]);
+        return this.router.navigate([`/products/${routeWord}`]);
       case 'person':
-        return this.router.navigate([`/woozee/people/${routeWord}`]);
+        return this.router.navigate([`/people/${routeWord}`]);
       case 'tags':
-        return this.router.navigate([`/woozee/tags/${routeWord}`]);
+        return this.router.navigate([`/tags/${routeWord}`]);
       default:
         return;
     }

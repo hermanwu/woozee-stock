@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subject, Subscription, filter, takeUntil } from 'rxjs';
+import { Subject, Subscription, takeUntil } from 'rxjs';
 import {
   InteractionServices,
   UserInteractions,
 } from 'src/app/interactions/interaction.services';
+import { Tag } from 'src/app/shared/data/tag.model';
 import { SearchService } from 'src/app/shared/services/search.services/search.service';
 import { UserServices } from '../../accounts/services/user.services';
 import { Product } from '../../mock-data/product.mock';
@@ -24,7 +25,7 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
 
   routeSub: Subscription;
   tagUuid: string;
-  tag: any;
+  tag: Tag;
   notes: Note[];
   organizations: Organization[];
   products: Product[];
@@ -53,12 +54,9 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
 
       this.userServices
         .getTags()
-        .pipe(
-          filter((tags) => !!tags),
-          takeUntil(this.unsubscribe$)
-        )
+        .pipe(takeUntil(this.unsubscribe$))
         .subscribe((tags) => {
-          this.tag = tags[this.tagUuid];
+          this.tag = tags[this.tagUuid] || null;
 
           this.userServices.interactions$
             .pipe(takeUntil(this.unsubscribe$))

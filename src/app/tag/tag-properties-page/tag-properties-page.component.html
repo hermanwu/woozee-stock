@@ -1,49 +1,62 @@
 <div
-  class="flex flex-col sm:flex-row justify-between items-center page-margin-top"
+  *ngIf="tag === null"
+  class="flex flex-col items-center justify-center page-margin-top"
 >
-  <h1 class="text-2xl">
-    {{ tag ? tag.name : tagUuid }}
-  </h1>
+  <div>No Tag Found.</div>
 
-  <app-tag-interaction-bar [tag]="tag"></app-tag-interaction-bar>
+  <button mat-button routerLink="/me/tags">Back to My Tags Ranking Page</button>
 </div>
 
-<div class="mt-2">
-  <h2>Stocks</h2>
+<div *ngIf="tag === undefined">
+  <mat-spinner></mat-spinner>
+</div>
 
-  <div class="mt-2" *ngFor="let item of stockInteractions; let i = index">
-    {{ i + 1 }}
+<ng-container *ngIf="tag">
+  <div
+    class="flex flex-col sm:flex-row justify-between items-center page-margin-top"
+  >
+    <h1 class="text-2xl">{{ tag.name }}</h1>
 
-    <app-tradable-display
-      [ticker]="item?.targetUuid?.split(':')?.[0]"
-    ></app-tradable-display>
-
-    <app-interaction-bar
-      class="inline-block ml-2"
-      [interactions]="item"
-      [interactionKey]="item?.targetUuid"
-    ></app-interaction-bar>
+    <app-tag-interaction-bar [tag]="tag"></app-tag-interaction-bar>
   </div>
-</div>
 
-<div *ngIf="people?.length > 0" class="mt-2">
-  <h2>People</h2>
-  <div *ngFor="let person of people">
-    <app-person-display [tagUuid]="person?.uuid"></app-person-display>
+  <div class="mt-2">
+    <h2>Stocks</h2>
+
+    <div class="mt-2" *ngFor="let item of stockInteractions; let i = index">
+      {{ i + 1 }}
+
+      <app-tradable-display
+        [ticker]="item?.targetUuid?.split(':')?.[0]"
+      ></app-tradable-display>
+
+      <app-interaction-bar
+        class="inline-block ml-2"
+        [interactions]="item"
+        [interactionKey]="item?.targetUuid"
+      ></app-interaction-bar>
+    </div>
   </div>
-</div>
 
-<div *ngIf="products?.length > 0" class="mt-2">
-  <h2>Products</h2>
-  <div *ngFor="let product of products">
-    <app-product-display [tagUuid]="product?.uuid"></app-product-display>
+  <div *ngIf="people?.length > 0" class="mt-2">
+    <h2>People</h2>
+    <div *ngFor="let person of people">
+      <app-person-display [tagUuid]="person?.uuid"></app-person-display>
+    </div>
   </div>
-</div>
 
-<div *ngIf="notes?.length > 0" class="mt-2">
-  <h2>Notes</h2>
-
-  <div *ngFor="let note of notes">
-    <app-note-container [note]="note"></app-note-container>
+  <div *ngIf="products?.length > 0" class="mt-2">
+    <h2>Products</h2>
+    <div *ngFor="let product of products">
+      <app-product-display [tagUuid]="product?.uuid"></app-product-display>
+    </div>
   </div>
-</div>
+
+  <div *ngIf="notes?.length > 0" class="mt-2">
+    <h2>Notes</h2>
+
+    <div *ngFor="let note of notes">
+      <app-note-container [note]="note"></app-note-container>
+    </div>
+  </div>
+</ng-container>

@@ -1,5 +1,5 @@
 <span *ngIf="environment.production; else dev">{{ marketType }}</span>
 
 <ng-template #dev>
-  <a href [routerLink]="['/woozee/industries', marketType]">{{ marketType }}</a>
+  <a href [routerLink]="['/industries', marketType]">{{ marketType }}</a>
 </ng-template>

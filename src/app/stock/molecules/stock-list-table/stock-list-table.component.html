@@ -81,7 +81,7 @@
         <ng-container *ngSwitchCase="stockListTableColumn.ticker">
           <div>
             <a
-              [routerLink]="['/woozee/stocks', stock.ticker]"
+              [routerLink]="['/stocks', stock.ticker]"
               class="margin-left-20"
               matTooltip="{{ stock.name }}{{ stock.chineseName }}"
             >

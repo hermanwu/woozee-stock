@@ -48,6 +48,7 @@ export class SearchService implements OnDestroy {
           votes?: number;
           stocks?: string[];
           isBullish?: number;
+          logo_link?: string;
         };
       }) => {
         this.metaDataObject = data;
@@ -75,6 +76,7 @@ export class SearchService implements OnDestroy {
                 ticker: key,
                 displayName: value.display_name,
                 votes: value.votes,
+                logoLink: value.logo_link,
               });
             }
           }

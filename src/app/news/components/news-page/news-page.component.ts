@@ -95,6 +95,7 @@ export class NewsPageComponent implements OnInit, OnDestroy {
     this.stocks = this.searchServices
       .getTopStocks()
       .sort((a, b) => b.votes - a.votes);
+    console.log(this.stocks);
   }
 
   populateEarnings(earningsDate: Date): void {

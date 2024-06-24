@@ -4,6 +4,12 @@
   <div class="scroll-container">
     <div class="scroll-content">
       <div *ngFor="let item of stocks" class="item">
+        <div
+          class="w-16 h-16 overflow-hidden rounded-lg mb-2 flex items-center justify-center"
+        >
+          <app-image-display [imageLink]="item?.logoLink"></app-image-display>
+        </div>
+
         <div class="text-sm mb-2 word-wrap w-full">
           {{ item.displayName }}
         </div>

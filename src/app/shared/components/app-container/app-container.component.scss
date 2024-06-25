@@ -47,8 +47,8 @@ mat-toolbar {
 
 .float-button {
   position: fixed;
+  right: 20px; // Default position for all screen sizes
   bottom: 20px;
-  right: 20px;
   background-color: #f371f3;
   color: white;
   border: none;
@@ -60,6 +60,14 @@ mat-toolbar {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000; // Ensure it's above other elements
+}
+
+@media (min-width: 860px) {
+  // 800px + 2 * 30px for some extra space
+  .float-button {
+    right: calc(50% - 400px + 20px);
+  }
 }
 
 .logo {

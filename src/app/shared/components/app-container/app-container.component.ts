@@ -82,14 +82,25 @@ export class AppContainerComponent implements OnInit {
 
   addNote() {
     const url = this.router.url;
-    const lastPart = url.substring(url.lastIndexOf('/') + 1);
+    const urlParts = url.split('/').filter((part) => part !== '');
+    const lastTwoParts = urlParts.slice(-2);
+
+    let dialogData: { stockTicker?: string; tagUuid?: string } = {};
+
+    if (lastTwoParts.length === 2) {
+      const [possibleType, possibleUuid] = lastTwoParts;
+
+      if (possibleType === 'quotes') {
+        dialogData.stockTicker = possibleUuid;
+      } else if (possibleType === 'tags') {
+        dialogData.tagUuid = possibleUuid;
+      }
+    }
 
     this.dialog.open<AddNoteFormComponent>(AddNoteFormComponent, {
       maxHeight: '90vh', //you can adjust the value as per your view
-      data: {
-        stock: lastPart,
-      },
-      panelClass: '600px',
+      data: dialogData,
+      width: '600px',
       disableClose: true,
     });
   }

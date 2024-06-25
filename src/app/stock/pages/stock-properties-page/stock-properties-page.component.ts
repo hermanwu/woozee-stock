@@ -12,7 +12,6 @@ import { NotesServices } from 'src/app/news/services/notes.services';
 import { FactType } from 'src/app/risks/models/fact-type.enum';
 import { DisplayMode } from 'src/app/shared/data/display-mode.enum';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
-import { Note } from 'src/app/shared/data/note.interface';
 import { NavigationServices } from 'src/app/shared/services/navgiation.services';
 import { environment } from 'src/environments/environment';
 import { getIndustriesByUuids } from '../../models/industry.model';
@@ -40,7 +39,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
   rank$: Observable<number>;
   imageLinks = [];
   notes = [];
-  myNotes: Note[] = [];
   noteUuidToEmotionMap = {};
   earnings = [];
   stockInteractions;
@@ -67,7 +65,6 @@ export class StockPropertiesPageComponent implements OnInit, OnDestroy {
 
       // Reset everything.
       this.imageLinks = [];
-      this.myNotes = [];
       this.notes = [];
 
       this.stockAnalysis = this.stockServices.getOrganizationByUuid(

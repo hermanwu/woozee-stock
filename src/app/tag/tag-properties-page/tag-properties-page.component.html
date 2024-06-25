@@ -52,11 +52,39 @@
     </div>
   </div>
 
-  <div *ngIf="notes?.length > 0" class="mt-2">
-    <h2>Notes</h2>
-
-    <div *ngFor="let note of notes">
-      <app-note-container [note]="note"></app-note-container>
+  <div class="mt-4">
+    <div class="mb-2 mt-10 flex items-center">
+      <span>
+        <h2>Notes</h2>
+      </span>
+      <span>
+        <button mat-icon-button (click)="addNote()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </span>
     </div>
+    <ng-container *ngIf="notes && notes.length > 0">
+      <mat-card *ngFor="let note of notes" class="mb-3">
+        <mat-card-content>
+          <app-note-container [note]="note"></app-note-container>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <span *ngIf="note.createdTimestamp">
+            <app-date-display
+              [timestamp]="note.createdTimestamp"
+            ></app-date-display>
+          </span>
+          <span *ngIf="note.createdDate">
+            <app-date-display [date]="note.createdDate"></app-date-display>
+          </span>
+          <span
+            ><button mat-icon-button (click)="deleteNote(note)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </span>
+        </mat-card-actions>
+      </mat-card>
+    </ng-container>
   </div>
 </ng-container>

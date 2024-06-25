@@ -78,4 +78,7 @@ export interface Note {
   question?: string;
   links?: any[];
   data?: any[];
+  type?: string;
+  createdTimestamp?: number;
+  ticker?: string;
 }

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, Subscription, filter, takeUntil } from 'rxjs';
 import { UserInteractions } from 'src/app/interactions/interaction.services';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
@@ -50,7 +50,8 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     private priceServices: PricesServices,
     private tradableServices: StockServices,
     private userServices: UserServices,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -83,14 +84,16 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
 
       this.userServices
         .getUserNotes()
-        .pipe(
-          filter((noteMap) => !!noteMap),
-          takeUntil(this.unsubscribe$)
-        )
-        .subscribe((noteMap) => {
-          this.notes = noteMap['stock']?.[ticker.toLowerCase()]?.sort(
-            (a, b) => b.createdTimestamp - a.createdTimestamp
-          );
+        .pipe(takeUntil(this.unsubscribe$))
+        .subscribe((notes) => {
+          console.log(notes);
+          this.notes = notes
+            ?.filter(
+              (note) =>
+                note.type === 'stock' &&
+                note.ticker?.toLowerCase() === ticker.toLowerCase()
+            )
+            .sort((a, b) => b.createdTimestamp - a.createdTimestamp);
         });
 
       this.subscription.add(
@@ -223,36 +226,33 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     this.routeSub.unsubscribe();
   }
 
-  testAction() {
-    return;
-  }
-
   // delete note and once successful remove from the notes array
   deleteNote(note: { attributeId: string; content: string }) {
-    this.userServices
-      .deleteUserNotes(note.attributeId)
-      .then(() => {
-        this.notes = this.notes.filter(
-          (n) => n.attributeId !== note.attributeId
-        );
-        console.log('Note deleted successfully and removed from array');
-      })
-      .catch((error) => {
-        console.error('Error deleting note:', error);
-      });
+    this.userServices.deleteUserNotes(note.attributeId);
   }
 
   addNote() {
-    const dialogRef = this.dialog.open<AddNoteFormComponent>(
-      AddNoteFormComponent,
-      {
-        maxHeight: '90vh', //you can adjust the value as per your view
-        data: {
-          stock: this.tradable.ticker,
-        },
-        panelClass: '600px',
-        disableClose: true,
+    const url = this.router.url;
+    const urlParts = url.split('/').filter((part) => part !== '');
+    const lastTwoParts = urlParts.slice(-2);
+
+    let dialogData: { stockTicker?: string; tagUuid?: string } = {};
+
+    if (lastTwoParts.length === 2) {
+      const [possibleType, possibleUuid] = lastTwoParts;
+
+      if (possibleType === 'quotes') {
+        dialogData.stockTicker = possibleUuid;
+      } else if (possibleType === 'tags') {
+        dialogData.tagUuid = possibleUuid;
       }
-    );
+    }
+
+    this.dialog.open<AddNoteFormComponent>(AddNoteFormComponent, {
+      maxHeight: '90vh', //you can adjust the value as per your view
+      data: dialogData,
+      width: '600px',
+      disableClose: true,
+    });
   }
 }

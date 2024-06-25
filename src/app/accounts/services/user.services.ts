@@ -16,6 +16,7 @@ import {
   takeUntil,
 } from 'rxjs/operators';
 import { UserInteractions } from 'src/app/interactions/interaction.services';
+import { Note } from 'src/app/shared/data/note.interface';
 import { Tag } from 'src/app/shared/data/tag.model';
 import { AuthService } from 'src/app/shared/services/auth.services';
 import { SearchService } from 'src/app/shared/services/search.services/search.service';
@@ -31,7 +32,7 @@ export class UserServices implements OnDestroy {
     .getUser()
     .pipe(shareReplay(1));
   interactions$ = new BehaviorSubject<{ [x: string]: UserInteractions }>({});
-  notes$ = new BehaviorSubject<any>({});
+  notes$ = new BehaviorSubject<Note[]>([]);
   tags$ = new BehaviorSubject<{
     [x: string]: Tag;
   }>({});
@@ -148,22 +149,34 @@ export class UserServices implements OnDestroy {
   }
 
   async deleteUserNotes(noteId: string): Promise<void> {
+    console.log('Attempting to delete note:', noteId);
     try {
-      const docSnapshot = await this.userData$
-        .pipe(
-          filter((doc): doc is DocumentSnapshot<UserData> => !!doc),
-          take(1)
-        )
-        .toPromise();
+      // Fetch the latest document data directly from Firestore
+      const userDocRef = this.firestore.collection('users').doc(this.userUid);
+      const docSnapshot = await userDocRef.get().toPromise();
 
-      if (docSnapshot && noteId) {
-        await docSnapshot.ref.update({
-          [`notes.${noteId}`]: firebase.firestore.FieldValue.delete(),
-        });
+      if (docSnapshot && docSnapshot.exists && noteId) {
+        const userData = docSnapshot.data() as UserData;
+        if (userData.notes && userData.notes[noteId]) {
+          await userDocRef.update({
+            [`notes.${noteId}`]: firebase.firestore.FieldValue.delete(),
+          });
+
+          // Update local data
+          const updatedNotes = { ...userData.notes };
+          delete updatedNotes[noteId];
+
+          this.notes$.next(processNotes(updatedNotes));
+          console.log('Note deleted successfully.');
+        } else {
+          console.log('Note not found in the latest data');
+        }
+      } else {
+        console.log('User document not found or noteId is invalid');
       }
     } catch (error) {
       console.error('Error deleting note:', error);
-      throw error; // Re-throw the error to be caught by the caller
+      throw error;
     }
   }
 
@@ -359,26 +372,23 @@ export interface UserData {
   email: string;
   name?: string;
   interactions?: { [x: string]: UserInteractions };
-  notes?: { [x: string]: { content: any } };
+  notes?: { [x: string]: { content: any; tagUuids?: string[] } };
   tags?: {
     [x: string]: Tag;
   };
   predictions?: { [x: string]: string };
 }
 
-export function processNotes(notes) {
+export function processNotes(notes): Note[] {
   if (!notes) {
     return;
   }
 
-  const typeToNotesMap = {
-    generalNotes: [],
-    stock: {},
-  };
+  let results = [];
   // sort notes.
   for (let [key, value] of Object.entries(notes) as [
     string,
-    { content: string }
+    { content: string; tagUuids: string[] }
   ][]) {
     const metaData = key.split(':');
     if (metaData.length === 3) {
@@ -387,22 +397,24 @@ export function processNotes(notes) {
       let time = metaData[2];
 
       if (type === 'stock') {
-        if (!typeToNotesMap[type].hasOwnProperty(ticker)) {
-          typeToNotesMap[type][ticker] = [];
-        }
-        typeToNotesMap[type][ticker].push({
+        results.push({
           attributeId: key,
           createdTimestamp: parseInt(time),
           content: value.content,
+          type: 'stock',
+          ticker: ticker,
+          tagUuids: value.tagUuids,
         });
       }
     } else {
-      typeToNotesMap['generalNotes'].push({
+      results.push({
+        attributeId: key,
         createdTimestamp: parseInt(key),
-        content: value,
+        content: value.content,
+        tagUuids: value.tagUuids,
       });
     }
   }
 
-  return typeToNotesMap;
+  return results;
 }

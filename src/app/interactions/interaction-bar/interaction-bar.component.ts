@@ -88,8 +88,8 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
   }
 
   openVoteDialog(currentVoteCount) {
-    if (!this.userServices.getUserUid()) {
-      return this.navigationServices.navigateToLogin();
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
     }
 
     const dialogRef = this.dialog.open(VoteDialogComponent, {
@@ -106,9 +106,10 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
   }
 
   openPredictionDialog() {
-    if (!this.userServices.getUserUid()) {
-      return this.navigationServices.navigateToLogin();
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
     }
+
     const stockTicker = this.interactionKey.split(':')[0];
     const dialogRef = this.dialog.open(PredicationDialogComponent, {
       data: {
@@ -125,8 +126,8 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
   }
 
   openAddTagDialog() {
-    if (!this.userServices.getUserUid()) {
-      return this.navigationServices.navigateToLogin();
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
     }
 
     const dialogRef = this.dialog.open(AddTagDialogComponent, {
@@ -139,8 +140,8 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
   }
 
   removeStock() {
-    if (!this.userServices.getUserUid()) {
-      return this.navigationServices.navigateToLogin();
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
     }
 
     const dialogRef = this.dialog.open(RemoveStockDialogComponent, {

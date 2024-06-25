@@ -25,14 +25,14 @@
             >check_circle</mat-icon
           >
           <ng-template #unsavedStock>
-            <mat-button
+            <button
               type="button"
               class="cursor-pointer"
-              mat-icon-button
+              mat-button
               (click)="saveStock(item?.ticker)"
             >
-              <mat-icon>radio_button_unchecked</mat-icon>
-            </mat-button>
+              save
+            </button>
           </ng-template>
         </div>
       </div>
@@ -52,14 +52,14 @@
           >check_circle</mat-icon
         >
         <ng-template #unsavedTag>
-          <mat-button
+          <button
             type="button"
             class="cursor-pointer"
-            mat-icon-button
+            mat-button
             (click)="saveTag(item)"
           >
-            <mat-icon>radio_button_unchecked</mat-icon>
-          </mat-button>
+            save
+          </button>
         </ng-template>
       </div>
     </div>

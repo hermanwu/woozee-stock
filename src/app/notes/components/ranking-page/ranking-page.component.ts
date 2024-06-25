@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { UserServices } from 'src/app/accounts/services/user.services';
 
 @Component({
   selector: 'app-ranking-page',
@@ -19,9 +20,13 @@ export class RankingPageComponent implements OnInit {
     { path: this.tagsRoute, label: $localize`Tags` },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private userServices: UserServices) {}
 
   ngOnInit(): void {
+    if (!this.userServices.checkUserLoggedIn()) {
+      this.router.navigate(['/']);
+    }
+
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {

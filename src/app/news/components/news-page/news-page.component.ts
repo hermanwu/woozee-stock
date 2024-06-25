@@ -143,6 +143,10 @@ export class NewsPageComponent implements OnInit, OnDestroy {
   }
 
   saveStock(ticker) {
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
+    }
+
     const mergeObj: Partial<UserData> = {
       interactions: {
         [ticker.toLowerCase() + ':tradable']: { vote: 0 } as UserInteractions,
@@ -154,6 +158,10 @@ export class NewsPageComponent implements OnInit, OnDestroy {
   }
 
   saveTag(tag: Tag) {
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
+    }
+
     this.userServices
       .updateTag({
         uuid: tag.uuid,

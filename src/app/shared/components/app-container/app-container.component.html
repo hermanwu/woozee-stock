@@ -77,6 +77,11 @@
   <button mat-button (click)="scrollToTop()">back to top</button>
 </div>
 
-<button mat-icon-button class="float-button" (click)="addNote()">
+<button
+  *ngIf="user$ | async"
+  mat-icon-button
+  class="float-button"
+  (click)="addNote()"
+>
   <mat-icon>edit_square</mat-icon>
 </button>

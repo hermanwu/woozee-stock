@@ -100,6 +100,10 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
   }
 
   addNote() {
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
+    }
+
     const url = this.router.url;
     const urlParts = url.split('/').filter((part) => part !== '');
     const lastTwoParts = urlParts.slice(-2);
@@ -126,6 +130,10 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
 
   // delete note and once successful remove from the notes array
   deleteNote(note: { attributeId: string; content: string }) {
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
+    }
+
     this.userServices.deleteUserNotes(note.attributeId);
   }
 }

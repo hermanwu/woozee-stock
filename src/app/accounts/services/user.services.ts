@@ -3,6 +3,8 @@ import {
   AngularFirestore,
   DocumentSnapshot,
 } from '@angular/fire/compat/firestore';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import firebase from 'firebase/compat/app';
 import { BehaviorSubject, EMPTY, Observable, Subject, from } from 'rxjs';
 import {
@@ -42,7 +44,9 @@ export class UserServices implements OnDestroy {
   constructor(
     private authService: AuthService,
     private firestore: AngularFirestore,
-    private searchServices: SearchService
+    private searchServices: SearchService,
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {
     this.user$ = this.authService
       .getUser()
@@ -122,6 +126,28 @@ export class UserServices implements OnDestroy {
     return this.predictions$;
   }
 
+  checkUserLoggedIn() {
+    if (this.userUid) {
+      return true;
+    } else {
+      const snackBarRef = this.snackBar.open(
+        'Please log in to continue',
+        'Login',
+        {
+          duration: 2000, // Snackbar will be displayed for 5 seconds
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        }
+      );
+
+      snackBarRef.onAction().subscribe(() => {
+        this.router.navigate(['/login']); // Navigate to login page when 'Login' is clicked
+      });
+
+      return false;
+    }
+  }
+
   async setUserData(mergeObject: Partial<UserData>): Promise<void> {
     const docSnapshot = await this.userData$
       .pipe(
@@ -149,7 +175,6 @@ export class UserServices implements OnDestroy {
   }
 
   async deleteUserNotes(noteId: string): Promise<void> {
-    console.log('Attempting to delete note:', noteId);
     try {
       // Fetch the latest document data directly from Firestore
       const userDocRef = this.firestore.collection('users').doc(this.userUid);

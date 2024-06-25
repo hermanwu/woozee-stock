@@ -293,16 +293,14 @@
   <div *ngIf="earnings?.length > 0" class="mt-4">
     <div class="mb-2 mt-10 flex items-center">
       <span>
-        <h2>Earnings</h2>
+        <h2>Past Earnings</h2>
       </span>
       <span>
         <button
-          mat-icon-button
+          mat-button
           (click)="earningsDropdownOpen = !earningsDropdownOpen"
         >
-          <mat-icon>{{
-            earningsDropdownOpen ? "expand_less" : "expand_more"
-          }}</mat-icon>
+          {{ earningsDropdownOpen ? "less" : "more" }}
         </button>
       </span>
     </div>

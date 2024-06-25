@@ -2,9 +2,9 @@
   *ngIf="tag === null"
   class="flex flex-col items-center justify-center page-margin-top"
 >
-  <div>No Tag Found.</div>
+  <div>You haven't created/saved this Tag</div>
 
-  <button mat-button routerLink="/me/tags">Back to My Tags Ranking Page</button>
+  <button mat-button routerLink="/me/tags">Start to create</button>
 </div>
 
 <div *ngIf="tag === undefined">

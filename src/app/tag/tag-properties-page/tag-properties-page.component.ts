@@ -2,12 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, Subscription, takeUntil } from 'rxjs';
-import {
-  InteractionServices,
-  UserInteractions,
-} from 'src/app/interactions/interaction.services';
+import { AddToTagDialogComponent } from 'src/app/add-to-tag-dialog/add-to-tag-dialog.component';
+import { InteractionServices } from 'src/app/interactions/interaction.services';
 import { AddNoteFormComponent } from 'src/app/notes/components/add-note-form/add-note-form.component';
 import { Tag } from 'src/app/shared/data/tag.model';
+import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { SearchService } from 'src/app/shared/services/search.services/search.service';
 import { UserServices } from '../../accounts/services/user.services';
 import { Product } from '../../mock-data/product.mock';
@@ -32,16 +31,8 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
   organizations: Organization[];
   products: Product[];
   people: Person[];
-  uuidToInteractionMap;
-  stocks = [];
-  stockInteractions = [];
-
-  currentUser;
-
-  displayItems: {
-    tradableItem: any;
-    userInteraction: UserInteractions;
-  }[] = [];
+  stockTickers: string[];
+  interactions;
 
   constructor(
     private route: ActivatedRoute,
@@ -65,16 +56,17 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
           this.userServices.interactions$
             .pipe(takeUntil(this.unsubscribe$))
             .subscribe((interactions) => {
-              this.stockInteractions = [];
-              for (const [key, interaction] of Object.entries(interactions)) {
-                const [uuid, type] = key.split(':');
+              this.interactions = interactions;
 
-                if (type === 'tradable' && this.tag?.stocks?.[uuid]) {
-                  this.stockInteractions.push(interaction);
-                }
-              }
-
-              this.stockInteractions.sort((a, b) => b?.vote - a?.vote);
+              this.stockTickers = this.tag?.stocks
+                ? Object.keys(cloneDeep(this.tag.stocks))
+                : [];
+              this.stockTickers.sort((a, b) => {
+                return (
+                  (this.interactions?.[`${b}:tradable`]?.vote || 0) -
+                  (this.interactions?.[`${a}:tradable`]?.vote || 0)
+                );
+              });
             });
         });
 
@@ -123,10 +115,19 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  addItemToTag() {
+  addStock() {
     if (!this.userServices.checkUserLoggedIn()) {
       return;
     }
+
+    this.dialog.open<AddToTagDialogComponent>(AddToTagDialogComponent, {
+      maxHeight: '90vh', //you can adjust the value as per your view
+      data: {
+        tagUuid: this.tagUuid,
+      },
+      width: '600px',
+      disableClose: true,
+    });
   }
 
   // delete note and once successful remove from the notes array

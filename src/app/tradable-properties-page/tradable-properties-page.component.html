@@ -59,18 +59,6 @@
 
   <mat-divider></mat-divider>
 
-  <div class="mt-2" *ngIf="showRange">
-    <span class="ml-2"
-      >Market Cap Target Range:
-      <span> ${{ marketCapRange?.low | siUnit : 2 | undefined }} </span>
-      <span>—</span>
-      <span> ${{ marketCapRange?.high | siUnit : 2 | undefined }} </span>
-      <span *ngIf="marketCapRange?.average"
-        >(${{ marketCapRange.average | siUnit : 2 | undefined }} Avg.)
-      </span>
-    </span>
-  </div>
-
   <div class="text-2xl mt-5 flex justify-between">
     <span>
       <app-price-display [prices]="priceData"></app-price-display>
@@ -95,11 +83,19 @@
     </span>
   </div>
 
-  <div class="mt-2">
+  <div class="mt-2 flex items-center">
     <app-interaction-bar
       [interactions]="interactions"
       [interactionKey]="tradable?.ticker?.toLowerCase() + ':tradable'"
     ></app-interaction-bar>
+
+    <button mat-icon-button [matMenuTriggerFor]="interactionMenu">
+      <mat-icon>more_horiz</mat-icon>
+    </button>
+
+    <mat-menu #interactionMenu="matMenu">
+      <button mat-menu-item (click)="removeStock()">Remove Stock</button>
+    </mat-menu>
   </div>
 
   <div class="mt-2">

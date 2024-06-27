@@ -12,12 +12,12 @@ import { Earnings } from '../mock-data/earnings.mock';
 import { StockModel, Tradable } from '../mock-data/mocks/tradables.mock';
 import { NotesServices } from '../news/services/notes.services';
 import { AddNoteFormComponent } from '../notes/components/add-note-form/add-note-form.component';
-import { NumberRange } from '../shared/components/stats-display/stats-display.interface';
 import {
   getCompanyShortDashName,
   getCompanyShortName,
 } from '../shared/functions/data-transformation.function';
 import { PricesServices } from '../shared/services/prices.services';
+import { RemoveStockDialogComponent } from '../stock/dialogs/remove-stock-dialog/remove-stock-dialog.component';
 import { StockServices } from '../stock/services/stock.service';
 
 @Component({
@@ -36,7 +36,6 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
   earnings: Earnings[] = [];
   products = [];
   notes;
-  marketCapRange: NumberRange;
   dashName: string;
   tags = [];
 
@@ -284,5 +283,17 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
 
   saveStock(ticker) {
     this.stockServices.saveStock(ticker);
+  }
+
+  removeStock() {
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
+    }
+
+    const dialogRef = this.dialog.open(RemoveStockDialogComponent, {
+      data: {
+        interactionKey: this.tradable?.ticker?.toLowerCase() + ':tradable',
+      },
+    });
   }
 }

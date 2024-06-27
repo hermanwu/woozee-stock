@@ -4,7 +4,6 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { UserInteractions } from 'src/app/interactions/interaction.services';
 import { NavigationServices } from 'src/app/shared/services/navgiation.services';
-import { RemoveStockDialogComponent } from 'src/app/stock/dialogs/remove-stock-dialog/remove-stock-dialog.component';
 import { environment } from 'src/environments/environment';
 import { UserServices } from '../../accounts/services/user.services';
 import { PredicationDialogComponent } from '../../prediction/predication-dialog/predication-dialog.component';
@@ -93,18 +92,6 @@ export class InteractionBarComponent implements OnInit, OnDestroy {
       if (result?.length > 0) {
         this.predictionString = result;
       }
-    });
-  }
-
-  removeStock() {
-    if (!this.userServices.checkUserLoggedIn()) {
-      return;
-    }
-
-    const dialogRef = this.dialog.open(RemoveStockDialogComponent, {
-      data: {
-        interactionKey: this.interactionKey,
-      },
     });
   }
 }

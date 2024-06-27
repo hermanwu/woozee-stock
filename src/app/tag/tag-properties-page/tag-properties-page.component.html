@@ -25,26 +25,26 @@
       <span>
         <h2>Stocks</h2>
       </span>
-      <!-- <span>
-        <button mat-icon-button (click)="addTag()">
+      <span>
+        <button mat-icon-button (click)="addStock()">
           <mat-icon>add</mat-icon>
         </button>
-      </span> -->
+      </span>
     </div>
 
-    <div class="mt-2" *ngFor="let item of stockInteractions; let i = index">
-      {{ i + 1 }}
+    <ng-container *ngIf="stockTickers">
+      <div class="mt-2" *ngFor="let item of stockTickers; let i = index">
+        {{ i + 1 }}
 
-      <app-tradable-display
-        [ticker]="item?.targetUuid?.split(':')?.[0]"
-      ></app-tradable-display>
+        <app-tradable-display [ticker]="item"></app-tradable-display>
 
-      <app-interaction-bar
-        class="inline-block ml-2"
-        [interactions]="item"
-        [interactionKey]="item?.targetUuid"
-      ></app-interaction-bar>
-    </div>
+        <app-interaction-bar
+          class="inline-block ml-2"
+          [interactions]="interactions[item + ':tradable']"
+          [interactionKey]="item + ':tradable'"
+        ></app-interaction-bar>
+      </div>
+    </ng-container>
   </div>
 
   <div *ngIf="people?.length > 0" class="mt-2">

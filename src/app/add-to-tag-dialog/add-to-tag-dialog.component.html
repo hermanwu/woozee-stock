@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Add Stock to Tag</h2>
+<mat-dialog-content>
+  <form [formGroup]="stockForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Ticker</mat-label>
+      <input
+        matInput
+        formControlName="ticker"
+        placeholder="Enter stock ticker"
+        maxlength="5"
+      />
+      <mat-error *ngIf="stockForm.get('ticker')?.hasError('required')"
+        >Ticker is required</mat-error
+      >
+      <mat-error *ngIf="stockForm.get('ticker')?.hasError('maxlength')"
+        >Ticker must be 5 characters or less</mat-error
+      >
+      <mat-error *ngIf="stockForm.get('ticker')?.hasError('pattern')"
+        >Ticker must contain only English letters</mat-error
+      >
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button
+    mat-button
+    color="primary"
+    [disabled]="!stockForm.valid"
+    (click)="onConfirm()"
+  >
+    Confirm
+  </button>
+</mat-dialog-actions>

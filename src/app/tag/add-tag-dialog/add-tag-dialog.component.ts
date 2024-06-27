@@ -147,7 +147,6 @@ export class AddTagDialogComponent implements OnInit, OnDestroy {
 
   private _filter(value: string): Tag[] {
     const filterValue = value.toLowerCase();
-    console.log(this.allTags);
     return this.allTags.filter((tag) =>
       tag.name.toLowerCase().includes(filterValue)
     );

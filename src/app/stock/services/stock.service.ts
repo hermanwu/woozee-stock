@@ -1,8 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import {
+  UserData,
+  UserServices,
+} from 'src/app/accounts/services/user.services';
+import { UserInteractions } from 'src/app/interactions/interaction.services';
 import { organizations } from 'src/app/mock-data/organization.mock';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
@@ -21,8 +27,29 @@ export class StockServices {
   threePreviousQuarterEr: EarningsReport;
   stock: StockAnalysis;
 
-  constructor(private http: HttpClient, private firestore: AngularFirestore) {}
+  constructor(
+    private http: HttpClient,
+    private firestore: AngularFirestore,
+    private userServices: UserServices,
+    private _snackBar: MatSnackBar
+  ) {}
 
+  saveStock(ticker: string) {
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
+    }
+
+    if (ticker?.length > 0) {
+      const mergeObj: Partial<UserData> = {
+        interactions: {
+          [ticker.toLowerCase() + ':tradable']: { vote: 0 } as UserInteractions,
+        },
+      };
+      this.userServices.setUserData(mergeObj).then(() => {
+        this._snackBar.open('Stock saved', 'Dismiss', { duration: 2000 });
+      });
+    }
+  }
   /**
    *
    * @param ticker

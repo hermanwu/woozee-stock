@@ -1,11 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subject, takeUntil } from 'rxjs';
-import {
-  UserData,
-  UserServices,
-} from 'src/app/accounts/services/user.services';
-import { UserInteractions } from 'src/app/interactions/interaction.services';
+import { UserServices } from 'src/app/accounts/services/user.services';
 import { Tradable } from 'src/app/mock-data/mocks/tradables.mock';
 import { Note, NoteType } from 'src/app/shared/data/note.interface';
 import { Tag } from 'src/app/shared/data/tag.model';
@@ -143,18 +139,7 @@ export class NewsPageComponent implements OnInit, OnDestroy {
   }
 
   saveStock(ticker) {
-    if (!this.userServices.checkUserLoggedIn()) {
-      return;
-    }
-
-    const mergeObj: Partial<UserData> = {
-      interactions: {
-        [ticker.toLowerCase() + ':tradable']: { vote: 0 } as UserInteractions,
-      },
-    };
-    this.userServices.setUserData(mergeObj).then(() => {
-      this._snackBar.open('Stock saved', 'Dismiss', { duration: 2000 });
-    });
+    this.stockServices.saveStock(ticker);
   }
 
   saveTag(tag: Tag) {

@@ -52,7 +52,8 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     private tradableServices: StockServices,
     private userServices: UserServices,
     private dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private stockServices: StockServices
   ) {}
 
   ngOnInit(): void {
@@ -80,7 +81,9 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
           takeUntil(this.unsubscribe$)
         )
         .subscribe((interactions) => {
-          this.interactions = interactions[ticker.toLowerCase() + ':tradable'];
+          this.interactions = interactions[ticker.toLowerCase() + ':tradable']
+            ? interactions[ticker.toLowerCase() + ':tradable']
+            : null;
         });
 
       this.userServices
@@ -279,5 +282,7 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  saveStock() {}
+  saveStock(ticker) {
+    this.stockServices.saveStock(ticker);
+  }
 }

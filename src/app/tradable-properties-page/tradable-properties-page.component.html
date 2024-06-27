@@ -27,11 +27,19 @@
           {{ tradable?.displayName }}
         </h1>
 
-        <!-- <div class="last-item">
-          <button mat-icon-button (click)="saveStock()">
-            <mat-icon>add</mat-icon>
-          </button>
-        </div> -->
+        <div class="last-item">
+          <ng-container *ngIf="interactions">
+            <mat-icon matTooltip="{{ tradable?.ticker }} is saved">
+              check_circle
+            </mat-icon>
+          </ng-container>
+
+          <ng-container *ngIf="interactions === null">
+            <button mat-icon-button (click)="saveStock(tradable?.ticker)">
+              <mat-icon>add</mat-icon>
+            </button>
+          </ng-container>
+        </div>
       </div>
     </div>
   </div>

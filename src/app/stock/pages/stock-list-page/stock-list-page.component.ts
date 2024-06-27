@@ -55,7 +55,6 @@ export class StockListPageComponent implements OnInit, OnDestroy {
       .getTags()
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((tags) => {
-        console.log(tags);
         this.stockUuidToTagsMap = {};
         const sortedTags = Object.values(tags).sort(
           (a, b) => (b.votes || 0) - (a.votes || 0)

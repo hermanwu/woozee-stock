@@ -173,12 +173,19 @@ export class AddTagDialogComponent implements OnInit, OnDestroy {
 
   onConfirm() {
     const updatedTagUuids: string[] = this.selectedTags.map((tag) => tag.uuid);
-    const toMerge = updateUuidToTags(
+    let toMerge = updateUuidToTags(
       this.data.tagUuids,
       updatedTagUuids,
       this.data.targetUuid,
       this.data.type
     );
+
+    // If there are no changes to the tags, close the dialog.
+    // Make sure nested objects are not empty.
+    if (!toMerge || !Object.keys(toMerge).length) {
+      this.dialogRef.close();
+      return;
+    }
 
     this.userServices
       .setUserData({ tags: toMerge } as any)

@@ -29,7 +29,7 @@ export class TagListComponent {
       data: {
         type: this.targetType,
         targetUuid: this.targetUuid,
-        tagUuids: this.tags.map((tag) => tag.uuid),
+        tagUuids: this.tags ? this.tags.map((tag) => tag.uuid) : [],
       },
       width: '800px',
     });

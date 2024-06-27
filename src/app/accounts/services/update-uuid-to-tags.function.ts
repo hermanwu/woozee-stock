@@ -21,14 +21,6 @@ export const updateUuidToTags = (
     notes?: { [key: string]: boolean | firebase.firestore.FieldValue };
   }
 > => {
-  const toMerge: Record<
-    string,
-    {
-      stocks?: { [key: string]: boolean | firebase.firestore.FieldValue };
-      notes?: { [key: string]: boolean | firebase.firestore.FieldValue };
-    }
-  > = {};
-
   const existingTagSet = new Set(existingTagUuids);
   const updatedTagSet = new Set(updatedTagUuids);
 
@@ -38,6 +30,18 @@ export const updateUuidToTags = (
   const removedTags = existingTagUuids.filter(
     (tagUuid) => !updatedTagSet.has(tagUuid)
   );
+
+  if (!newTags.length && !removedTags.length) {
+    return null;
+  }
+
+  const toMerge: Record<
+    string,
+    {
+      stocks?: { [key: string]: boolean | firebase.firestore.FieldValue };
+      notes?: { [key: string]: boolean | firebase.firestore.FieldValue };
+    }
+  > = {};
 
   // Add or update tags
   for (let tagUuid of newTags) {

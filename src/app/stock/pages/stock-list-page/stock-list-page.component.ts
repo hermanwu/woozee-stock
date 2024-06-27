@@ -20,6 +20,7 @@ export class StockListPageComponent implements OnInit, OnDestroy {
     ticker: string;
     vote: string;
   }[] = [];
+  stockUuidToTagsMap = {};
 
   constructor(
     private dialog: MatDialog,
@@ -48,6 +49,35 @@ export class StockListPageComponent implements OnInit, OnDestroy {
         stockInteractions.sort((a, b) => (b?.vote || 0) - (a?.vote || 0));
 
         this.stockDisplays = stockInteractions;
+      });
+
+    this.userServices
+      .getTags()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((tags) => {
+        console.log(tags);
+        this.stockUuidToTagsMap = {};
+        const sortedTags = Object.values(tags).sort(
+          (a, b) => (b.votes || 0) - (a.votes || 0)
+        );
+
+        for (let tag of sortedTags) {
+          if (tag.stocks) {
+            for (let stockUuid of Object.keys(tag.stocks)) {
+              if (!this.stockUuidToTagsMap[stockUuid]) {
+                this.stockUuidToTagsMap[stockUuid] = [];
+              }
+              this.stockUuidToTagsMap[stockUuid].push({
+                uuid: tag.uuid,
+                name: tag.name,
+                votes: tag.votes,
+                sentiment: tag.sentiment,
+              });
+            }
+          }
+        }
+
+        console.log(this.stockUuidToTagsMap);
       });
   }
 

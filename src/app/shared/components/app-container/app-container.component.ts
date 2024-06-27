@@ -81,6 +81,10 @@ export class AppContainerComponent implements OnInit {
   }
 
   addNote() {
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
+    }
+
     const url = this.router.url;
     const urlParts = url.split('/').filter((part) => part !== '');
     const lastTwoParts = urlParts.slice(-2);

@@ -141,7 +141,10 @@ export const getStockByTicker = v2.https.onRequest((request, response) => {
         .set(
           {
             [stockDetails.ticker]: {
-              market_cap: stockDetails.market_cap,
+              // Conditionally include market_cap only if it has a value
+              ...(stockDetails.market_cap && {
+                market_cap: stockDetails.market_cap,
+              }),
               display_name: stockDetails.display_name,
               type: 'stock',
               ticker: stockDetails.ticker,

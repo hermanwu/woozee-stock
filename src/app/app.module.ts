@@ -114,6 +114,7 @@ import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
 import { StockDisplayComponent } from './stock/stock-display/stock-display.component';
 import { TagInteractionBarComponent } from './tag-interaction-bar/tag-interaction-bar.component';
+import { TagListComponent } from './tag-list/tag-list.component';
 import { TagDisplayComponent } from './tag/tag-display/tag-display.component';
 import { TagPropertiesPageComponent } from './tag/tag-properties-page/tag-properties-page.component';
 import { TradableDisplayComponent } from './tradable-display/tradable-display.component';
@@ -250,6 +251,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     EntityDisplayComponent,
     PercentageDisplayComponent,
     TagInteractionBarComponent,
+    TagListComponent,
   ],
   imports: [
     BrowserModule,

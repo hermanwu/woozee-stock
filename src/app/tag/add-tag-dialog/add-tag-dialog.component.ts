@@ -26,6 +26,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { Observable, Subject, map, startWith, takeUntil } from 'rxjs';
+import { updateUuidToTags } from 'src/app/accounts/services/update-uuid-to-tags.function';
 import { UserServices } from '../../accounts/services/user.services';
 import { Tag } from '../../shared/data/tag.model';
 import { CreateTagDialogComponent } from '../create-tag-dialog/create-tag-dialog.component';
@@ -69,7 +70,8 @@ export class AddTagDialogComponent implements OnInit, OnDestroy {
     private dialogRef: MatDialogRef<AddTagDialogComponent>,
     @Inject(MAT_DIALOG_DATA)
     public data: {
-      interactionUuid: string;
+      type: 'note' | 'stock';
+      targetUuid: string;
       tagUuids: string[];
     }
   ) {
@@ -80,7 +82,7 @@ export class AddTagDialogComponent implements OnInit, OnDestroy {
         if (tag && typeof tag === 'string') {
           const filterValue = tag.toLowerCase();
           return this.allTags.filter((t) =>
-            t.name.toLowerCase().includes(filterValue)
+            t?.name?.toLowerCase()?.includes(filterValue)
           );
         } else {
           return this.allTags.slice();
@@ -145,6 +147,7 @@ export class AddTagDialogComponent implements OnInit, OnDestroy {
 
   private _filter(value: string): Tag[] {
     const filterValue = value.toLowerCase();
+    console.log(this.allTags);
     return this.allTags.filter((tag) =>
       tag.name.toLowerCase().includes(filterValue)
     );
@@ -169,19 +172,18 @@ export class AddTagDialogComponent implements OnInit, OnDestroy {
   }
 
   onConfirm() {
-    const listUuids: string[] = this.selectedTags.map((tag) => tag.uuid);
-    const mergeObj = {
-      interactions: {
-        [this.data.interactionUuid]: {
-          listUuids: listUuids,
-        },
-      },
-    };
+    const updatedTagUuids: string[] = this.selectedTags.map((tag) => tag.uuid);
+    const toMerge = updateUuidToTags(
+      this.data.tagUuids,
+      updatedTagUuids,
+      this.data.targetUuid,
+      this.data.type
+    );
 
     this.userServices
-      .setUserData(mergeObj as any)
+      .setUserData({ tags: toMerge } as any)
       .then(() => {
-        this.dialogRef.close(listUuids);
+        this.dialogRef.close(updateUuidToTags);
       })
       .catch((error) => console.error('Error saving note:', error));
   }

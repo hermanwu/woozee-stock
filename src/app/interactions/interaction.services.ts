@@ -25,7 +25,6 @@ export interface UserInteractions {
   vote?: number;
   hearted?: number;
   used?: number;
-  listUuids?: string[];
   using?: number;
   targetPrice?: number;
 }

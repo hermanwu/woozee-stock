@@ -266,23 +266,6 @@ export class UserServices implements OnDestroy {
       await this.firestore.firestore.runTransaction(async (transaction) => {
         // Read user document
         const userDoc = await transaction.get(userDocRef);
-        const interactions: Record<string, UserInteractions> = (
-          userDoc.data() as any
-        )?.interactions;
-        const updatedInteractions = {};
-
-        if (interactions) {
-          for (const [key, value] of Object.entries(interactions)) {
-            if (
-              value.listUuids?.length > 0 &&
-              value.listUuids.includes(tag.uuid)
-            ) {
-              updatedInteractions[key] = {
-                listUuids: value.listUuids.filter((uuid) => uuid !== tag.uuid),
-              };
-            }
-          }
-        }
 
         // Read tag document
         const tagDoc = await transaction.get(tagDocRef);
@@ -291,14 +274,6 @@ export class UserServices implements OnDestroy {
         transaction.update(userDocRef, {
           [`tags.${tag.uuid}`]: firebase.firestore.FieldValue.delete(),
         });
-
-        if (Object.keys(updatedInteractions).length > 0) {
-          transaction.set(
-            userDocRef,
-            { interactions: updatedInteractions },
-            { merge: true }
-          );
-        }
 
         if (tagDoc.exists) {
           transaction.update(tagDocRef, {

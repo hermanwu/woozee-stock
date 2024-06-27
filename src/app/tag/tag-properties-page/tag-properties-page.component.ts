@@ -67,15 +67,10 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
             .subscribe((interactions) => {
               this.stockInteractions = [];
               for (const [key, interaction] of Object.entries(interactions)) {
-                if (
-                  interaction.listUuids &&
-                  interaction.listUuids.includes(this.tagUuid)
-                ) {
-                  const [uuid, type] = key.split(':');
+                const [uuid, type] = key.split(':');
 
-                  if (type === 'tradable') {
-                    this.stockInteractions.push(interaction);
-                  }
+                if (type === 'tradable' && this.tag?.stocks?.[uuid]) {
+                  this.stockInteractions.push(interaction);
                 }
               }
 
@@ -126,6 +121,12 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
       width: '600px',
       disableClose: true,
     });
+  }
+
+  addItemToTag() {
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
+    }
   }
 
   // delete note and once successful remove from the notes array

@@ -1,0 +1,15 @@
+<mat-chip-set>
+  <mat-chip *ngIf="!tags || tags.length === 0" (click)="openAddTagDialog()">
+    Add Tag
+  </mat-chip>
+
+  <app-tag-display *ngFor="let tag of tags" [tag]="tag"></app-tag-display>
+
+  <button mat-icon-button [matMenuTriggerFor]="interactionMenu">
+    <mat-icon>more_horiz</mat-icon>
+  </button>
+
+  <mat-menu #interactionMenu="matMenu">
+    <button mat-menu-item (click)="openAddTagDialog()">Edit Tags</button>
+  </mat-menu>
+</mat-chip-set>

@@ -3,22 +3,30 @@
 </div>
 
 <div class="mt-5 tab-content" *ngFor="let item of stockDisplays; let i = index">
-  <span class="text-lg">
-    {{ i + 1 }}.
+  <div>
+    <span class="text-lg">
+      {{ i + 1 }}.
 
-    <app-tradable-display
-      [tradable]="item"
-      [tickerOnly]="true"
-      [prices]="pricesServices.getPriceByTicker(item?.ticker) | async"
-      [showPercentage]="'true'"
-    ></app-tradable-display>
-  </span>
-  <span>
-    <app-interaction-bar
-      class="inline-block"
-      [interactions]="item"
-      [interactionKey]="item?.ticker.toLowerCase() + ':tradable'"
-      [displayTop3]="true"
-    ></app-interaction-bar>
-  </span>
+      <app-tradable-display
+        [tradable]="item"
+        [tickerOnly]="true"
+        [prices]="pricesServices.getPriceByTicker(item?.ticker) | async"
+        [showPercentage]="'true'"
+      ></app-tradable-display>
+    </span>
+    <span>
+      <app-interaction-bar
+        class="inline-block"
+        [interactions]="item"
+        [interactionKey]="item?.ticker.toLowerCase() + ':tradable'"
+        [displayTop3]="true"
+      ></app-interaction-bar>
+    </span>
+  </div>
+  <div>
+    <span class="mr-2">🔖</span>
+    <app-tag-list
+      [tags]="stockUuidToTagsMap[item.ticker.toLowerCase()]"
+    ></app-tag-list>
+  </div>
 </div>

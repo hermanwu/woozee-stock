@@ -27,21 +27,11 @@
           {{ tradable?.displayName }}
         </h1>
 
-        <div class="last-item">
-          <button
-            mat-icon-button
-            [matMenuTriggerFor]="industryMenu"
-            *ngIf="!environment.production"
-          >
-            <mat-icon>more_horiz</mat-icon>
+        <!-- <div class="last-item">
+          <button mat-icon-button (click)="saveStock()">
+            <mat-icon>add</mat-icon>
           </button>
-        </div>
-
-        <mat-menu #industryMenu="matMenu">
-          <button mat-menu-item type="button" (click)="testAction()">
-            <mat-icon>sort</mat-icon>
-          </button>
-        </mat-menu>
+        </div> -->
       </div>
     </div>
   </div>
@@ -100,8 +90,17 @@
   <div class="mt-2">
     <app-interaction-bar
       [interactions]="interactions"
-      [interactionKey]="tradable?.ticker.toLowerCase() + ':tradable'"
+      [interactionKey]="tradable?.ticker?.toLowerCase() + ':tradable'"
     ></app-interaction-bar>
+  </div>
+
+  <div class="mt-2">
+    <span>🔖: </span>
+    <app-tag-list
+      [tags]="tags"
+      [targetType]="'stock'"
+      [targetUuid]="tradable?.ticker?.toLowerCase()"
+    ></app-tag-list>
   </div>
 
   <div class="mt-2">

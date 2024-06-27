@@ -38,6 +38,7 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
   notes;
   marketCapRange: NumberRange;
   dashName: string;
+  tags = [];
 
   readonly environment = environment;
 
@@ -86,7 +87,6 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
         .getUserNotes()
         .pipe(takeUntil(this.unsubscribe$))
         .subscribe((notes) => {
-          console.log(notes);
           this.notes = notes
             ?.filter(
               (note) =>
@@ -94,6 +94,21 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
                 note.ticker?.toLowerCase() === ticker.toLowerCase()
             )
             .sort((a, b) => b.createdTimestamp - a.createdTimestamp);
+        });
+
+      this.userServices
+        .getTags()
+        .pipe(takeUntil(this.unsubscribe$))
+        .subscribe((tags) => {
+          const sortedTags = [];
+          for (let tag of Object.values(tags)) {
+            if (tag.stocks?.[ticker.toLowerCase()]) {
+              sortedTags.push(tag);
+            }
+          }
+          this.tags = sortedTags.sort(
+            (a, b) => (b.votes || 0) - (a.votes || 0)
+          );
         });
 
       this.subscription.add(
@@ -263,4 +278,6 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
       disableClose: true,
     });
   }
+
+  saveStock() {}
 }

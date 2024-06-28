@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, Subscription, takeUntil } from 'rxjs';
+import { updateUuidToTags } from 'src/app/accounts/services/update-uuid-to-tags.function';
 import { AddToTagDialogComponent } from 'src/app/add-to-tag-dialog/add-to-tag-dialog.component';
 import { InteractionServices } from 'src/app/interactions/interaction.services';
 import { AddNoteFormComponent } from 'src/app/notes/components/add-note-form/add-note-form.component';
@@ -40,7 +42,8 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
     private userServices: UserServices,
     private searchServices: SearchService,
     private dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -137,5 +140,34 @@ export class TagPropertiesPageComponent implements OnInit, OnDestroy {
     }
 
     this.userServices.deleteUserNotes(note.attributeId);
+  }
+
+  removeStock(stockTicker) {
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
+    }
+
+    let toMerge = updateUuidToTags([this.tagUuid], [], stockTicker, 'stock');
+
+    // If there are no changes to the tags, close the dialog.
+    // Make sure nested objects are not empty.
+    if (!toMerge || !Object.keys(toMerge).length) {
+      return;
+    }
+
+    this.userServices
+      .setUserData({ tags: toMerge } as any)
+      .then(() => {
+        const snackBarRef = this.snackBar.open(
+          'Removed tag from stock',
+          'Dismiss',
+          {
+            duration: 2000,
+            horizontalPosition: 'center',
+            verticalPosition: 'bottom',
+          }
+        );
+      })
+      .catch((error) => console.error('Error saving note:', error));
   }
 }

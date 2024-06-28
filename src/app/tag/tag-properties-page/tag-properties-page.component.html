@@ -33,8 +33,11 @@
     </div>
 
     <ng-container *ngIf="stockTickers">
-      <div class="mt-2" *ngFor="let item of stockTickers; let i = index">
-        {{ i + 1 }}
+      <div
+        class="mt-2 flex items-center space-x-1 sm:space-x-2 md:space-x-3"
+        *ngFor="let item of stockTickers; let i = index"
+      >
+        <span>{{ i + 1 }}.</span>
 
         <app-tradable-display [ticker]="item"></app-tradable-display>
 
@@ -43,6 +46,16 @@
           [interactions]="interactions[item + ':tradable']"
           [interactionKey]="item + ':tradable'"
         ></app-interaction-bar>
+
+        <button mat-icon-button [matMenuTriggerFor]="interactionMenu">
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+
+        <mat-menu #interactionMenu="matMenu">
+          <button mat-menu-item (click)="removeStock(item)">
+            Remove from Tag
+          </button>
+        </mat-menu>
       </div>
     </ng-container>
   </div>

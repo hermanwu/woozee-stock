@@ -98,7 +98,7 @@ export class AddToTagDialogComponent implements OnInit {
             'Added stock to tag',
             'Dismiss',
             {
-              duration: 1000,
+              duration: 2000,
               horizontalPosition: 'center',
               verticalPosition: 'bottom',
             }

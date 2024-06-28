@@ -6,12 +6,6 @@
       <input matInput formControlName="for" type="text" />
     </mat-form-field>
 
-    <div *ngIf="tags?.length > 0">
-      <mat-label>Tags: </mat-label>
-      <app-tag-display *ngFor="let tag of tags" [tag]="tag"></app-tag-display>
-      <!-- <button mat-button (click)="openAddTagDialog()">🔖 Add Tag</button> -->
-    </div>
-
     <mat-form-field appearance="fill" class="full-width">
       <mat-label
         >Content: <span> {{ noteForm.value?.content?.length || 0 }}</span>
@@ -25,9 +19,22 @@
         cdkFocusInitial
       ></textarea>
     </mat-form-field>
+
+    <div>🔖</div>
+    <app-tag-input
+      [allTagsMap]="allTagsMap"
+      [selectedTagUuids]="[data.tagUuid]"
+      (updatedTagUuids)="onTagUuidsChange($event)"
+    ></app-tag-input>
   </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button (click)="onSubmit()">Add</button>
+  <button
+    mat-button
+    [disabled]="!(noteForm.get('content').value?.trim()?.length > 0)"
+    (click)="onSubmit()"
+  >
+    Add Note
+  </button>
 </mat-dialog-actions>

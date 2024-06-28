@@ -113,6 +113,7 @@ import { ThoughtsDisplayComponent } from './stock/molecules/thoughts-display/tho
 import { StockListPageComponent } from './stock/pages/stock-list-page/stock-list-page.component';
 import { StockPropertiesPageComponent } from './stock/pages/stock-properties-page/stock-properties-page.component';
 import { StockDisplayComponent } from './stock/stock-display/stock-display.component';
+import { TagInputComponent } from './tag-input/tag-input.component';
 import { TagInteractionBarComponent } from './tag-interaction-bar/tag-interaction-bar.component';
 import { TagListComponent } from './tag-list/tag-list.component';
 import { TagDisplayComponent } from './tag/tag-display/tag-display.component';
@@ -270,6 +271,7 @@ const globalRippleConfig: RippleGlobalOptions = { disabled: true };
     AngularFireAuthModule,
     NgChartsModule,
     PredictionDisplayComponent,
+    TagInputComponent,
   ],
   providers: [
     { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig },

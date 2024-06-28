@@ -10,7 +10,6 @@ import {
   UserData,
   UserServices,
 } from 'src/app/accounts/services/user.services';
-import { Tag } from 'src/app/shared/data/tag.model';
 import { Note, NoteType } from '../../../shared/data/note.interface';
 import { OpinionEnum } from '../../../stock/models/opinion-type.model';
 
@@ -25,7 +24,8 @@ export class AddNoteFormComponent implements OnInit, OnDestroy {
   note: Note;
   noteType = NoteType;
   ratingEnum = OpinionEnum;
-  tags: Tag[] = [];
+  allTagsMap = {};
+  tagUuids: string[] = this.data.tagUuid ? [this.data.tagUuid] : [];
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
@@ -44,9 +44,7 @@ export class AddNoteFormComponent implements OnInit, OnDestroy {
       .getTags()
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((tagMap) => {
-        if (this.data.tagUuid && tagMap[this.data.tagUuid]) {
-          this.tags.push(tagMap[this.data.tagUuid]);
-        }
+        this.allTagsMap = tagMap;
       });
 
     this.createForm();
@@ -57,11 +55,15 @@ export class AddNoteFormComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 
-  openAddTagDialog() {}
+  onTagUuidsChange(tagUuids: string[]) {
+    this.tagUuids = tagUuids;
+  }
 
   createForm() {
     this.noteForm = this.formBuilder.group({
-      for: [{ value: this.data.stockTicker || '', disabled: true }],
+      for: [
+        { value: this.data.stockTicker?.toUpperCase() || '', disabled: true },
+      ],
       content: [''], // Set the max length to 200 characters
     });
   }
@@ -82,7 +84,7 @@ export class AddNoteFormComponent implements OnInit, OnDestroy {
         notes: {
           [attributeId]: {
             content,
-            tagUuids: this.data.tagUuid ? [this.data.tagUuid] : [],
+            tagUuids: this.tagUuids,
           },
         },
       };

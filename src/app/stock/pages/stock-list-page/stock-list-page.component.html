@@ -23,10 +23,23 @@
       ></app-interaction-bar>
     </span>
   </div>
-  <div>
+  <div class="mt-2 flex items-center space-x-0">
     <span class="mr-2">🔖</span>
-    <app-tag-list
-      [tags]="stockUuidToTagsMap[item.ticker.toLowerCase()]"
-    ></app-tag-list>
+    <app-tag-list [tags]="stockUuidToTagsMap[item.ticker]"></app-tag-list>
+
+    <ng-container
+      *ngIf="stockUuidToTagsMap[item.ticker]?.length > 0; else noTag"
+    >
+      <button mat-icon-button [matMenuTriggerFor]="interactionMenu">
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+      <mat-menu #interactionMenu="matMenu">
+        <button mat-menu-item (click)="editTag(item)">Edit Tags</button>
+      </mat-menu>
+    </ng-container>
+
+    <ng-template #noTag>
+      <button mat-button (click)="editTag(item)">Add Tag</button>
+    </ng-template>
   </div>
 </div>

@@ -98,13 +98,22 @@
     </mat-menu>
   </div>
 
-  <div class="mt-2">
-    <span>🔖: </span>
-    <app-tag-list
-      [tags]="tags"
-      [targetType]="'stock'"
-      [targetUuid]="tradable?.ticker?.toLowerCase()"
-    ></app-tag-list>
+  <div class="mt-2 flex items-center space-x-1">
+    <span>🔖</span>
+    <app-tag-list [tags]="tags"></app-tag-list>
+
+    <ng-container *ngIf="tags.length > 0; else noTag">
+      <button mat-icon-button [matMenuTriggerFor]="interactionMenu">
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+      <mat-menu #interactionMenu="matMenu">
+        <button mat-menu-item (click)="editTag(tradable)">Edit Tags</button>
+      </mat-menu>
+    </ng-container>
+
+    <ng-template #noTag>
+      <button mat-button (click)="editTag(tradable)">Add Tag</button>
+    </ng-template>
   </div>
 
   <div class="mt-2">

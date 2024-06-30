@@ -5,6 +5,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { EmojiUnicode } from 'src/app/shared/data/enum/emoji.enum';
 import { PricesServices } from 'src/app/shared/services/prices.services';
 import { UserServices } from '../../../accounts/services/user.services';
+import { StockServices } from '../../services/stock.service';
 
 @Component({
   selector: 'app-stock-list-page',
@@ -26,7 +27,8 @@ export class StockListPageComponent implements OnInit, OnDestroy {
     private dialog: MatDialog,
     private userServices: UserServices,
     private router: Router,
-    private pricesServices: PricesServices
+    private pricesServices: PricesServices,
+    private stockServices: StockServices
   ) {}
 
   ngOnInit(): void {
@@ -40,7 +42,7 @@ export class StockListPageComponent implements OnInit, OnDestroy {
           if (type === 'tradable') {
             stockInteractions.push({
               ...interaction,
-              ticker: uuid.toUpperCase(),
+              ticker: uuid,
               type: 'stock',
             });
           }
@@ -83,5 +85,12 @@ export class StockListPageComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+  }
+
+  editTag(stock) {
+    this.stockServices.editStockTag(
+      stock.ticker,
+      this.stockUuidToTagsMap[stock.ticker]?.map((tag) => tag.uuid)
+    );
   }
 }

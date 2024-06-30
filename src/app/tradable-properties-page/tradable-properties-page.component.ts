@@ -69,7 +69,7 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
             ? quoteUuid.indexOf(':')
             : quoteUuid.length
         )
-        ?.toUpperCase();
+        ?.toLowerCase();
 
       this.tradable = { ticker };
 
@@ -279,6 +279,15 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
       width: '600px',
       disableClose: true,
     });
+  }
+
+  editTag(stock) {
+    console.log(stock);
+
+    this.stockServices.editStockTag(
+      stock.ticker,
+      this.tags.map((tag) => tag.uuid)
+    );
   }
 
   saveStock(ticker) {

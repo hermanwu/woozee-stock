@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -12,6 +13,7 @@ import { UserInteractions } from 'src/app/interactions/interaction.services';
 import { organizations } from 'src/app/mock-data/organization.mock';
 import { cloneDeep } from 'src/app/shared/functions/clone-deep';
 import { IndustryType } from 'src/app/stock/components/facts/data/area.enum';
+import { AddTagDialogComponent } from 'src/app/tag/add-tag-dialog/add-tag-dialog.component';
 import { EarningsReport } from '../models/earnings.model';
 import { StockAnalysis } from '../models/stock-analysis.model';
 import { StockData } from './stock-data.model';
@@ -31,7 +33,8 @@ export class StockServices {
     private http: HttpClient,
     private firestore: AngularFirestore,
     private userServices: UserServices,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) {}
 
   saveStock(ticker: string) {
@@ -67,6 +70,21 @@ export class StockServices {
       .collection('products')
       .doc(productUuid)
       .set(mergeObject, { merge: true });
+  }
+
+  editStockTag(targetUuid: string, tagUuids: string[] = []) {
+    if (!this.userServices.checkUserLoggedIn()) {
+      return;
+    }
+
+    const dialogRef = this.dialog.open(AddTagDialogComponent, {
+      data: {
+        type: 'stock',
+        targetUuid,
+        tagUuids,
+      },
+      width: '800px',
+    });
   }
 
   getEarningsReleaseTime(date: string) {

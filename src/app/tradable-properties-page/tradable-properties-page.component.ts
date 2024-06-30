@@ -38,6 +38,7 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
   notes;
   dashName: string;
   tags = [];
+  tagsMap = {};
 
   readonly environment = environment;
 
@@ -101,9 +102,10 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
       this.userServices
         .getTags()
         .pipe(takeUntil(this.unsubscribe$))
-        .subscribe((tags) => {
+        .subscribe((tagsMap) => {
+          this.tagsMap = tagsMap;
           const sortedTags = [];
-          for (let tag of Object.values(tags)) {
+          for (let tag of Object.values(tagsMap)) {
             if (tag.stocks?.[ticker.toLowerCase()]) {
               sortedTags.push(tag);
             }
@@ -281,9 +283,11 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
     });
   }
 
+  /**
+   * Edit the tags for the stock
+   * @param stock
+   */
   editTag(stock) {
-    console.log(stock);
-
     this.stockServices.editStockTag(
       stock.ticker,
       this.tags.map((tag) => tag.uuid)
@@ -304,5 +308,21 @@ export class TradablePropertiesPageComponent implements OnInit, OnDestroy {
         interactionKey: this.tradable?.ticker?.toLowerCase() + ':tradable',
       },
     });
+  }
+
+  getTagsByUuids(uuids: string[]): any[] {
+    if (!uuids) {
+      return [];
+    }
+
+    let results = [];
+
+    for (let uuid of uuids) {
+      if (this.tagsMap[uuid]) {
+        results.push(this.tagsMap[uuid]);
+      }
+    }
+
+    return results;
   }
 }

@@ -281,6 +281,8 @@
       <mat-card *ngFor="let note of notes" class="mb-3">
         <mat-card-content>
           <app-note-container [note]="note"></app-note-container>
+
+          <app-tag-list [tags]="getTagsByUuids(note.tagUuids)"></app-tag-list>
         </mat-card-content>
 
         <mat-card-actions>
